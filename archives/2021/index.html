@@ -105,11 +105,6 @@
 												title="gitee" target="_blank"><i class="icon-gitee"></i></a>
 					
 				
-					
-						<a class="linkedin" href="https://www.linkedin.com/in/%E9%87%91%E8%B4%A4-%E9%BB%84-220a36204/" 
-												title="linkedin" target="_blank"><i class="icon-linkedin"></i></a>
-					
-				
 			</div>
 		
 		</nav>
@@ -118,12 +113,6 @@
 
     </div>
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
-      
-      
-      <a class="forkMe" style="position:absolute;z-index:999;top:0;right:0.5em;" 
-        href="https://github.com/JoeyBling/hexo-theme-yilia-plus" target="_blank">
-        <img src="/img/forkme.png"
-          class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
       
       
 <nav id="mobile-nav">
@@ -163,11 +152,6 @@
 						
 						<a class="gitee" target="_blank" 
 							href="https://gitee.com/hjxstart" title="gitee"><i class="icon-gitee"></i></a>
-						
-					
-						
-						<a class="linkedin" target="_blank" 
-							href="https://www.linkedin.com/in/%E9%87%91%E8%B4%A4-%E9%BB%84-220a36204/" title="linkedin"><i class="icon-linkedin"></i></a>
 						
 					
 				</div>
@@ -347,23 +331,6 @@
 
 
 <!--  -->
-
-<script>
-  /* 标签页标题切换 */
-  var originTitle = document.title;
-  var titleTime;
-  document.addEventListener("visibilitychange", function () {
-    if (document.hidden) {
-      document.title = "(つェ⊂) 我藏好了哦~ " + originTitle;
-      clearTimeout(titleTime);
-    } else {
-      document.title = "(*´∇｀*) 被你发现啦~ " + originTitle;
-      titleTime = setTimeout(function () {
-        document.title = originTitle;
-      }, 2000);
-    }
-  });
-</script>
 
 
     
@@ -608,35 +575,6 @@
   </div>
 
   
-<script type="text/javascript" src="/plugins/TweenMax/TweenMax.min.js"></script>
-<script type="text/javascript" src="/plugins/TweenMax/HoverImg.js"></script>
-
-<script>
-
-
-  var hoverEffect = {
-    "subNav": ".left-col .social a"
-  }
-
-
-  for (var x in hoverEffect) {
-    // 初始化data-img属性值
-    let $em = document.querySelectorAll(hoverEffect[x]);
-    $em.forEach(($a) => {
-      //console.log($a.href);
-      if (isImageType($a.href)) {
-        $a.setAttribute("data-img", $a.href)
-      }
-    })
-    // 实现悬停元素预览图片效果
-    let $a = document.querySelectorAll(hoverEffect[x] + "[data-img]");
-    $a.forEach(($em) => {
-      new HoverImgFx1($em)
-    })
-  }
-
-</script>
-
   
 <script type="text/javascript" src="/plugins/activate-power-mode/activate-power-mode.js"></script>
 <script>
