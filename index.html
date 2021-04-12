@@ -194,6 +194,137 @@
             
 
   
+    <article id="post-《Head-First-Java》" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2021/04/12/%E3%80%8AHead-First-Java%E3%80%8B/" target="_blank">《Head First Java》</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2021/04/12/%E3%80%8AHead-First-Java%E3%80%8B/" class="archive-article-date">
+        <time datetime="2021-04-12T01:52:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-12</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="继承与多态"><a href="#继承与多态" class="headerlink" title="继承与多态"></a>继承与多态</h1><h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p><strong>5个更好的设计步骤、3个多态的技巧以及8种让程序更有适应性的方法。</strong></p>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><p><strong>用继承来防止子类中出现重复的程序代码；寻找更多抽象化的机会；</strong></p>
+<ol>
+<li>找出具有共同属性和行为的对象。</li>
+<li>设计代表共同状态与行为的类。</li>
+<li>决定子类是否需要让某项行为（也就是方法的实现）有特定不同的运行方式。</li>
+<li>通过寻找使用共同行为的子类来找出更多抽象化的机会。</li>
+<li>完成类的继承层次</li>
+<li>注意：覆盖的规则，参数必须要一样，且返回类型必须兼容；不能降低方法的存取权限。<h3 id="要点"><a href="#要点" class="headerlink" title="要点"></a>要点</h3></li>
+<li>子类是extends父类出来的。</li>
+<li>子类会继承父类所有public类型的实例变量和方法，但不会继承父类所有private类型的变量和方法。</li>
+<li>继承下来的方法可以被覆盖掉，但实例变量不能被覆盖掉。</li>
+<li>使用IS-A测试来验证继承结构的合理性。</li>
+<li>IS-A关系是但方向的，河马是动物，但动物不一定是河马。</li>
+<li>当某个方法在子类中被覆盖过，调用这个方法时会调用到覆盖过的版本。</li>
+<li>如果类Y是extends类X，且类Y是类Z的父类，则Z应该能通过IS-A X的测试。<h3 id="意义"><a href="#意义" class="headerlink" title="意义"></a>意义</h3></li>
+<li>避免了重复的程序代码。</li>
+<li>定义出共同的协议。<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2></li>
+</ol>
+<p><strong>1.在多态下，引用与对象可以是不同的类型。运用多态时，引用类型可以是实际对象类型的父类。不仅如此！还有呢！参数和返回类型也可以多态！</strong><br><strong>2.如果我将程序代码编写成使用多态参数，也就是说将参数声明成父类类型，我就可以在运行时传入任何的子类对象。这样一来，就是对父类添加新类型的子类，我的方法依然还是能够运行。</strong></p>
+<h1 id="接口与抽象类，深入多态"><a href="#接口与抽象类，深入多态" class="headerlink" title="接口与抽象类，深入多态"></a>接口与抽象类，深入多态</h1><h2 id="抽象"><a href="#抽象" class="headerlink" title="抽象"></a>抽象</h2><ol>
+<li>只有通过设计和编写接口规格才能达成的适应性与扩展性。</li>
+<li>有些类不应该被初始化(new)!例如Animal类，初始化的Animal对象应该长什么样子！</li>
+<li>抽象类除了被继承过之外，是没有用途，没有值，没有目的的。</li>
+<li>你必须实现所有抽象的方法。实现抽象的方法就如同覆盖过方法一样。</li>
+<li>抽象的方法没有内容，他只是为了标记出多态而存在。</li>
+</ol>
+<hr>
+<p><strong>问</strong>:为什么要有抽象的方法？我认为抽象类的重点就在于可以被子类继承的共同程序代码。<br><strong>答</strong>:将可继承的方法体（也就是有内容的方法）放在父类中是个好主意。但有时就是没有办法作出给任何子类都有意义的共同程序代码。抽象方法的意义是就算无法实现出方法的内容，但还是可以定义出一组子型共同的协议。</p>
+<hr>
+<p><strong>问</strong>:这样做的好处是……?<br><strong>答</strong>:就是多态！记住，你想达成的目标是要使用父型作为方法的参数、返回值类型或者数组的类型。通过这个机制，你可以加入新的子型到程序中，却又不必重写或修改处理这些类型的程序。想象一下如果不是使用Animal作为Vet的方法参数程序会写成什么样子……你必须为每一种动物写出不同的方法！因此多态的好处就在于所有子型都会有哪些抽象的方法！因此多态的好处就在于所有子型都会有哪些抽象的方法。</p>
+<hr>
+<h3 id="多态的使用"><a href="#多态的使用" class="headerlink" title="多态的使用"></a>多态的使用</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyAnimalList</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> Animal[] animals = <span class="keyword">new</span> Animal[<span class="number">5</span>];</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span>[] animals = <span class="keyword">new</span> Animal[<span class="number">5</span>];</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(Animal a)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (nextIndex &lt; animals.length) &#123;</span><br><span class="line">			animals[nextIndex] = a;</span><br><span class="line">			System.out.println(<span class="string">&quot;Animal added at&quot;</span> + nextIndex);</span><br><span class="line">			nextIndex++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AnimalTestDrive</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		MyAnimalList list = <span class="keyword">new</span> MyAnimalList();</span><br><span class="line">		Dog a = <span class="keyword">new</span> Dog();</span><br><span class="line">		Cat c = <span class="keyword">new</span> Cat();</span><br><span class="line">		list.add(a);</span><br><span class="line">		list.add(c);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="终极对象"><a href="#终极对象" class="headerlink" title="终极对象"></a>终极对象</h3><p><strong>终极对象有的方法</strong></p>
+<ol>
+<li>equals(Object o):判断某对象是否与其他对象相等的方法。</li>
+<li>getClass():获取对象从那个类初始化的。</li>
+<li>hashCode():列出此对象的哈希代码，你可以把它想成是一个唯一的ID。</li>
+<li>toString():列出类的名称和一个我们不关心的数字。</li>
+</ol>
+<hr>
+<p><strong>问</strong>:Object这个类是抽象的吗？<br><strong>答</strong>:不是，至少不是正式的Java抽象类。因为它可以被所有类继承下来的方法都实现程序代码，所以没有必须覆盖过的方法。</p>
+<hr>
+<p><strong>问</strong>:所以Object的主要目的是提供多态的参数与返回类型吗？<br><strong>答</strong>:这个Object类有两个主要的目的：作为多态让方法可以应付多种类型的机制，以及提供Java在执行期对任何对象都有需要的方法的实现程序代码（让所有的类都会继承到）。有一部分的方法是与线程有关，这会在后面的章节说明。 </p>
+<h2 id="多态-1"><a href="#多态-1" class="headerlink" title="多态"></a>多态</h2><p><strong>1.“多态意味着”“很多形式”。你可以把Snowboard当作Snowboard或者Ojbect。如果引用是个遥控器，则当你在继承数往下走时，会发现遥控器的按钮越来越多。Object的遥控器只有几个按钮而已，但Snowboard的遥控器就会包含有来自Object和自定义的按钮。越接近具体的类会有越多的按钮。</strong><br><strong>2.当你把对象装进ArrayList<Object>时，不管它原来是什么，你只能把它当作是Object。从ArrayList<Object>取出引用时，引用的类型只会是Object。这代表你只会取得Object的遥控器。不过可以使用强制类型转换把ArrayList<Object>取出来的对象回复成Dog</strong></p>
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p><strong>万一想要修改合约怎么办。</strong></p>
+<ol>
+<li>方法一：采用最简单的做法，把宠物方法加进Animal类中。优点，所有的动物马上就可以继承宠物的行为，不需要改变所有子类的程序代码，而新增加的动物也会取得同样的行为。缺点，你什么时候看过宠物店贩卖河马？又是什么时候看到饲主跟河马亲热，带河马去公园散步？并且我们也知道狗跟猫表现亲热的方式不太一样啊。</li>
+<li>方法二：采用方法一，但是把宠物的方法设定成抽象的，强迫每个动物子类覆盖他们。优点，这样就可以让非宠物类的动物在覆盖这些方法时，作出合理的动作，或者是什么也不作。缺点，所有具体的动物都得实现宠物的行为，这样很浪费时间，并且这种合约不太理想，不论有没有实质的行为，非宠物也得声明出有宠物行为的外观，对狮子老虎的尊严是个打击。最重要的是这会让Animal的定义变得有些局限性，反而让其他类型的程序难以重复利用。</li>
+<li>方法三：把方法加到需要的第方法。优点，不必担心如何跟河马亲热，只有宠物才会有宠物的行为。缺点，首先，这样就会失去了该有的合约保证，你无法确定宠物可以执行的是doFriendly()还是beFriendly()，其次，多态将无法起作用，因为Animal不会有共同的宠物行为，你的针对个别有共同的宠物行为，你得针对个别宠物设计程序。</li>
+<li>所以我们真正需要的方法是：（1）一种可以让宠物行为只应用在宠物身上的方法。（2）<strong>一种确保所有宠物的类都有相同的方法定义的方法。</strong>（3）一种是可以运用到多态的方法。</li>
+<li>看起来，我们需要两个上层的父类。但是这个注意又一个问题–“致命方块”。接口是我们的救星！接口解决致命方块的方法很简单：把全部的方法设为抽象的！如此一来，子类就得实现此方法，因此Java虚拟机在执行期间就不会搞不清楚要用哪一个继承版本。</li>
+</ol>
+<hr>
+<p><strong>问</strong>:等一下！接口并不是真正的多重继承，因为你无法在它里面实现程序代码，不是吗？如果是这样，那还要接口做什么？<br><strong>答</strong>:多态、多态、多态。接口有无比的适用性，<strong>若你以接口取代具体的子类或抽象的父类作为参数或返回类型，则你就可以传入任何有实现该接口的东西。</strong>这么说吧，使用接口你就可以继承超过一个以上的来源。类可以extend过某个父类，并且实现其他接口。同时其他的类也可以实现同一个接口。因此你就可以为不同的需求组合出不同的继承层次。事实上，如果使用接口编写程序，你就是在说：“不管你来这哪里，只要你实现这个接口，别人就会知道你一定会旅履行这个合约”。大部分良好的设计也不需要在抽象的层次定义出实现细节，我们所需的只是一个共同的合约定义。让细节在具体的子类上实现也是很合理的。</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/04/12/%E3%80%8AHead-First-Java%E3%80%8B/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-信息系统项目管理师5天修炼第三版总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
