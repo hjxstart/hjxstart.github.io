@@ -280,6 +280,51 @@
 </ol>
 <hr>
 <p><strong>问</strong>:等一下！接口并不是真正的多重继承，因为你无法在它里面实现程序代码，不是吗？如果是这样，那还要接口做什么？<br><strong>答</strong>:多态、多态、多态。接口有无比的适用性，<strong>若你以接口取代具体的子类或抽象的父类作为参数或返回类型，则你就可以传入任何有实现该接口的东西。</strong>这么说吧，使用接口你就可以继承超过一个以上的来源。类可以extend过某个父类，并且实现其他接口。同时其他的类也可以实现同一个接口。因此你就可以为不同的需求组合出不同的继承层次。事实上，如果使用接口编写程序，你就是在说：“不管你来这哪里，只要你实现这个接口，别人就会知道你一定会旅履行这个合约”。大部分良好的设计也不需要在抽象的层次定义出实现细节，我们所需的只是一个共同的合约定义。让细节在具体的子类上实现也是很合理的。</p>
+<h2 id="第18章-远程程序调用（Remote-Method-Invocation-RMI）技术"><a href="#第18章-远程程序调用（Remote-Method-Invocation-RMI）技术" class="headerlink" title="第18章 远程程序调用（Remote Method Invocation, RMI）技术"></a>第18章 远程程序调用（Remote Method Invocation, RMI）技术</h2><p>解决要调用不同机器上的对象的方法。例如调用方法的过程：客户端对象对辅助设施对象调用doBigThing();客户端辅助设施把调用信息打包通过网络送到服务器的辅助设施；服务端的辅助设施解开来自客户端辅助设施的信息，并以此调用真正的服务。</p>
+<hr>
+<h3 id="1-远程过程调用的设计"><a href="#1-远程过程调用的设计" class="headerlink" title="1.远程过程调用的设计"></a>1.远程过程调用的设计</h3><p><strong>要创建出4种东西：服务器、客户端、服务器辅助设施（skeleton）和客户端辅助设施(stub)</strong></p>
+<ol>
+<li>创建客户端和服务器应用程序。服务器应用程序是个远程服务，是个带有客户端会调用的对象。</li>
+<li>创建客户端和服务端的辅助设施（helper）。它们会处理所有客户端和服务器的底层网络输入/输出细节，让你的客户端和程序好像在处理本机调用一样。</li>
+</ol>
+<hr>
+<h3 id="2-Java-RMI"><a href="#2-Java-RMI" class="headerlink" title="2.Java RMI"></a>2.Java RMI</h3><p><strong>提供客户端和服务器端的辅助设施对象！</strong></p>
+<ol>
+<li>会有风险！会抛出异常的。</li>
+<li>使用RMI时，必须要决定协议：JRMP或是IIOP。JRMP是RMI原生的协议，他是为了Java对Java间的远程调用而设计的。</li>
+</ol>
+<hr>
+<h3 id="3-创建远程服务的5个步骤"><a href="#3-创建远程服务的5个步骤" class="headerlink" title="3.创建远程服务的5个步骤"></a>3.创建远程服务的5个步骤</h3><h4 id="1-创建Remote接口"><a href="#1-创建Remote接口" class="headerlink" title="1.创建Remote接口"></a>1.创建Remote接口</h4><p><strong>远程的接口定义了客户端可以远程调用的方法。它是个作为服务的多态化类。stub和服务都会实现此接口！</strong></p>
+<ol>
+<li>继承java.rmi.Remote</li>
+<li>声明所有的方法都会抛出RemoteException</li>
+<li>确定参数和返回值都是primitive主数据类型或Serializable</li>
+</ol>
+<hr>
+<h4 id="2-实现Remote"><a href="#2-实现Remote" class="headerlink" title="2.实现Remote"></a>2.实现Remote</h4><p><strong>这是真正执行的类。它实现出定义在该接口上的方法。他是客户端会调用的对象。</strong></p>
+<ol>
+<li>实现Remote这个接口</li>
+<li>继承UnicastRemoteObject</li>
+<li>编写声明RemoteException的无参数构造函数</li>
+<li>向RMI registry注册服务</li>
+</ol>
+<hr>
+<h4 id="3-用rmic产生stub与skeleton"><a href="#3-用rmic产生stub与skeleton" class="headerlink" title="3.用rmic产生stub与skeleton"></a>3.用rmic产生stub与skeleton</h4><p><strong>客户端和服务器都有helper。你无需创建这些类或产生这些类的源代码。这都会在你执行JDK所附的rmic工具时自动地处理掉。</strong></p>
+<ol>
+<li>对实现出的类（不是remote接口）执行rmic<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%rmic MyRemoteImpl</span><br></pre></td></tr></table></figure>
+伴随Java Software Development Kit而来的rmic工具会以服务的实现产生出两个新的类：stub和skeleton。他会按照命名规则在你的远程实现名称后面加上_Stub或_Skeleton。rmic有几个选项，包括了不产生skeleton、观察产生类的源代码或使用IIOP作为👨‍🎓协议等。我们在此使用的是一般的方式。产出的类会放在当前目录下。要记住rmic必须能够找到你所实现的类，因此你或许要从实现所在的目录执行rmic。</li>
+</ol>
+<hr>
+<h4 id="4-启动RMI-registry（rmiregistry）"><a href="#4-启动RMI-registry（rmiregistry）" class="headerlink" title="4.启动RMI registry（rmiregistry）"></a>4.启动RMI registry（rmiregistry）</h4><p><strong>rmiregistry就像是电话簿。用户会从此处取得代理（客户端的subb/helper对象）。</strong><br>1.调用命令行来启动 rmiregistry</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%rmiregistry</span><br></pre></td></tr></table></figure>
+<p>要确定你是从可以存取到该类的目录来启动。最简单的方法就是从类这个目录来运行。</p>
+<hr>
+<h4 id="5-启动远程服务"><a href="#5-启动远程服务" class="headerlink" title="5.启动远程服务"></a>5.启动远程服务</h4><p><strong>你必须让服务对象开始执行。实现服务的类会起始服务的实例并向RMI registry注册。要有注册后才能对用户提供服务。</strong></p>
+<ol>
+<li>调用另一个命令行来启动服务<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%java MyRemoteImpl</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>这可能是从你所实现的类上的main()或独立的启动用类来进行。在这个简单的范例中，我们把启动程序代码放在类的实现中，他的main()会将对象初始化并把它注册给RMI registry。</p>
+<hr>
 
     
 
