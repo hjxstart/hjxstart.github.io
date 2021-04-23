@@ -19,8 +19,9 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/images/2021/04/18/7291c4c4-aec5-4d0c-8883-bdd2e4a4f5fe.png">
 <meta property="og:image" content="http://example.com/images/2021/04/20/4a2c8f37-32be-424c-ad5f-1c7932066617.png">
+<meta property="og:image" content="http://example.com/images/2021/04/23/a2c4ef40-4bd5-46ae-89b4-0a1f9b421c13.png">
 <meta property="article:published_time" content="2021-04-18T14:19:45.000Z">
-<meta property="article:modified_time" content="2021-04-20T12:03:18.182Z">
+<meta property="article:modified_time" content="2021-04-23T12:46:25.926Z">
 <meta property="article:author" content="hjxstart">
 <meta property="article:tag" content="设计模式">
 <meta name="twitter:card" content="summary">
@@ -225,7 +226,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.2k字</span>
+      <span class="post-count">1.7k字</span>
     </span>
   </span>
 
@@ -234,7 +235,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">5分</span>
+      <span class="post-count">8分</span>
     </span>
   </span>
 </div>
@@ -286,6 +287,55 @@
 <li>测试代码<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ObserverTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ConcreteSubject1 subject1 = <span class="keyword">new</span> ConcreteSubject1();</span><br><span class="line">        ConcreteSubject2 subject2 = <span class="keyword">new</span> ConcreteSubject2();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">new</span> ConcreteObserver1(subject1);</span><br><span class="line">        <span class="keyword">new</span> ConcreteObserver2(subject1, subject2);</span><br><span class="line">        <span class="keyword">new</span> ConcreteObserver3(subject2);</span><br><span class="line">        subject1.setChanged();</span><br><span class="line">        subject1.setMeasurements(<span class="string">&quot;test&quot;</span>);</span><br><span class="line">        subject2.setMeasurements(<span class="string">&quot;test2&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 <li>测试结果<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ java ObserverTest</span><br><span class="line">我是观察者1，我的主题1更新了</span><br><span class="line">我是观察者2，我的主题1更新了</span><br><span class="line">我是观察者2，我的主题2更新了</span><br><span class="line">我是观察者3, 我的主题2更新了</span><br></pre></td></tr></table></figure></li>
 <li>java.util包实现了Observable类，也可以满足一些观察者的情况。首先，因为没有Observer接口，所以无法建立自己的实现，和Java内置的Observer API搭配使用。</li>
+</ol>
+<hr>
+<h2 id="第3招-装饰者模式"><a href="#第3招-装饰者模式" class="headerlink" title="第3招 装饰者模式"></a>第3招 装饰者模式</h2><p><strong>装饰纸模式:动态地将责任附加到对象上。想要扩展功能，装饰者提供有别于继承的另一种选择。</strong></p>
+<hr>
+<h3 id="3-1设计原则"><a href="#3-1设计原则" class="headerlink" title="3.1设计原则"></a>3.1设计原则</h3><ol>
+<li>封装变化</li>
+<li>多用组合，少用继承</li>
+<li>针对接口编程，不针对实现编程</li>
+<li>为交互对象之间的松耦合设计而努力</li>
+<li><strong>对扩展开发，对修改关闭</strong></li>
+</ol>
+<hr>
+<h3 id="3-2上UML图"><a href="#3-2上UML图" class="headerlink" title="3.2上UML图"></a>3.2上UML图</h3><p><strong>先决定那种咖啡，在决定使用什么配料。</strong><br><img src="/images/2021/04/23/a2c4ef40-4bd5-46ae-89b4-0a1f9b421c13.png" alt="装饰者模式.png"></p>
+<hr>
+<h3 id="3-3上代码"><a href="#3-3上代码" class="headerlink" title="3.3上代码"></a>3.3上代码</h3><ol>
+<li>定义饮料类，必须设置一个抽象方法。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Beverage</span> </span>&#123;</span><br><span class="line">    String description = <span class="string">&quot;Unknown Beverage&quot;</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getDescription</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> description;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">double</span> <span class="title">cost</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<hr>
+<ol start="2">
+<li>深烘咖啡，实现夫类的抽象方法。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DarkRoast</span> <span class="keyword">extends</span> <span class="title">Beverage</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DarkRoast</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        description = <span class="string">&quot;DarkRoast Coffee&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">cost</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1.19</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<hr>
+<ol start="3">
+<li>定义装饰者。调味装饰者<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">CondimentDecorator</span> <span class="keyword">extends</span> <span class="title">Beverage</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> String <span class="title">getDescription</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<hr>
+<ol start="4">
+<li>实现第一个一个装饰者。牛奶配料<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Milk</span> <span class="keyword">extends</span> <span class="title">CondimentDecorator</span></span>&#123;</span><br><span class="line">    Beverage beverage;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Milk</span><span class="params">(Beverage beverage)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.beverage = beverage;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getDescription</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> beverage.getDescription() + <span class="string">&quot;, Milk&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">cost</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">.10</span> + beverage.cost();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<hr>
+<ol start="5">
+<li>实现第二个装饰者。摩卡配料<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Mocha</span> <span class="keyword">extends</span> <span class="title">CondimentDecorator</span> </span>&#123;</span><br><span class="line">    Beverage beverage;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Mocha</span><span class="params">(Beverage beverage)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.beverage = beverage;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getDescription</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> beverage.getDescription() + <span class="string">&quot;, Mocha&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">cost</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">.20</span> + beverage.cost();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<hr>
+<ol start="6">
+<li>测试代码<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StarbuzzCoffee</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 没有配料的拿铁咖啡</span></span><br><span class="line">        Beverage beverage = <span class="keyword">new</span> DarkRoast();</span><br><span class="line">        System.out.println(beverage.getDescription() + <span class="string">&quot; $&quot;</span> + beverage.cost());</span><br><span class="line">        <span class="comment">// 摩卡， 牛奶， 拿铁咖啡(DarkRoast)</span></span><br><span class="line">        Beverage beverage2 = <span class="keyword">new</span> DarkRoast();</span><br><span class="line">        beverage2 = <span class="keyword">new</span> Mocha(beverage2);</span><br><span class="line">        beverage2 = <span class="keyword">new</span> Milk(beverage2);</span><br><span class="line">        System.out.println(beverage2.getDescription() + <span class="string">&quot; $&quot;</span> + beverage2.cost());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<hr>
+<ol start="7">
+<li>运行结果<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">java StarbuzzCoffee</span><br><span class="line">DarkRoast Coffee <span class="variable">$1</span>.19</span><br><span class="line">DarkRoast Coffee, Mocha, Milk <span class="variable">$1</span>.49</span><br></pre></td></tr></table></figure></li>
+</ol>
+<hr>
+<h2 id="第四招-工厂模式"><a href="#第四招-工厂模式" class="headerlink" title="第四招 工厂模式"></a>第四招 工厂模式</h2><p><strong>工厂方法模式</strong>：定义了一个创建对象的接口，但由子类决定要实例化的类是哪一个。工厂方法让类把实例化推迟到子类。</p>
+<h3 id="4-1设计原则"><a href="#4-1设计原则" class="headerlink" title="4.1设计原则"></a>4.1设计原则</h3><ol>
+<li>多用组合，少用继承</li>
+<li>针对接口编程，不针对实现编程</li>
+<li>为交互对象之间的松耦合设计而努力</li>
+<li>类应该对扩展开放，对修改关闭</li>
+<li>依赖抽象，不要依赖具体类。</li>
 </ol>
 
     
