@@ -225,17 +225,18 @@
     
     <h2 id="Linux中的权限、用户和组"><a href="#Linux中的权限、用户和组" class="headerlink" title="Linux中的权限、用户和组"></a>Linux中的权限、用户和组</h2><h3 id="一、修改权限"><a href="#一、修改权限" class="headerlink" title="一、修改权限"></a>一、修改权限</h3><ol>
 <li><p>字母修改权限<br>关键字有：[u, g, o, a][+, -][r, w, x]</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># chmod a+w filename.txt</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod a+w filename.txt</span><br></pre></td></tr></table></figure></li>
 <li><p>数字修改权限<br>(r=0, w=1, x=0) =&gt; (010=2)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># chmod 222 filename.txt</span></span><br></pre></td></tr></table></figure>
-<h3 id="二、修改用户和组"><a href="#二、修改用户和组" class="headerlink" title="二、修改用户和组"></a>二、修改用户和组</h3></li>
-<li><p>修改所属用户：chown [-R] 目标用户 文件或文件夹</p>
-</li>
-<li><p>修改所属组：chown [-R] 目标组 文件或文件夹</p>
-</li>
-<li><p>同时修改所属用户和组：chown [-R] 目标用户 目标组 文件或文件夹</p>
-</li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 222 filename.txt</span><br></pre></td></tr></table></figure></li>
 </ol>
+<hr>
+<h3 id="二、修改用户和组"><a href="#二、修改用户和组" class="headerlink" title="二、修改用户和组"></a>二、修改用户和组</h3><ol>
+<li>修改所属用户：chown [-R] 目标用户 文件或文件夹<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown username filename.txt</span><br></pre></td></tr></table></figure></li>
+<li>修改所属组：chown [-R] 目标组 文件或文件夹<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chgrp groupname filename.txt</span><br></pre></td></tr></table></figure></li>
+<li>同时修改所属用户和组：chown [-R] 目标用户 目标组 文件或文件夹<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">chown username:groupname filename.txt</span><br><span class="line"><span class="comment"># 递归修改，目录包含的子文件或目录也修改</span></span><br><span class="line">chown -R username:groupname filename.txt</span><br></pre></td></tr></table></figure></li>
+</ol>
+<hr>
+<h3 id="三、Linux目录配置"><a href="#三、Linux目录配置" class="headerlink" title="三、Linux目录配置"></a>三、Linux目录配置</h3><p>bin:可执行命令文件<br>boot:启动文件<br>dev:设备文件<br>etc:配置文件<br>home:用户的目录（每个用户在其下有一个用户的文件夹）<br>lib:库文件<br>media:设备挂载点文件（U盘）<br>mnt:手动设备挂载点<br>opt:大型软件安装包（源码安装包）<br>usr:软件安装包（类似Windows中的Programfiles）</p>
 
     
 
