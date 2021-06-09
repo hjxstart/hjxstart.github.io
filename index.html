@@ -194,6 +194,232 @@
             
 
   
+    <article id="post-Linux自动化运维" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2021/06/09/Linux%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4/" target="_blank">Linux自动化运维</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2021/06/09/Linux%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4/" class="archive-article-date">
+        <time datetime="2021-06-09T00:29:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-09</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="第1讲-运维基础"><a href="#第1讲-运维基础" class="headerlink" title="第1讲 运维基础"></a>第1讲 运维基础</h1><h2 id="1-1-计划任务简介"><a href="#1-1-计划任务简介" class="headerlink" title="1.1 计划任务简介"></a>1.1 计划任务简介</h2><ol>
+<li>经验丰富的系统运维工程师可以使得Linux在无需人为介 入的情况下，在指定的时间段自动启用或停止某些服务或 命令，从而实现运维的自动化。</li>
+<li>作用:计划任务主要是做一些周期性的任务，目前最主要的 用途是定期备份数据</li>
+<li>分类:</li>
+</ol>
+<ul>
+<li>次性计划任务:今晚11点30分开启网站服务。</li>
+<li>长期性计划任务:每周一的凌晨2点20分把/data/wwwroot目录打包备份为backup.tar.gz。</li>
+</ul>
+<ol start="4">
+<li>一次性计划任务只执行一次，一般用于满足临时的工作需求。我 们可以用at命令实现这种功能，只需要写成“at 时间”的形式就 可以。</li>
+<li>at的语法结构为:<br>at [OPTION]… TIME<br>TIME可以设定为以下的形式，非常灵活多变: HH:MM [YYYY-mm-dd]<br>noon，midnight, teatime<br>tomorrow<br>now+#<br>UNIT:minutes, hours, days, OR weeks 比如:<br>now +5minutes 表示任务将在5分钟后执行; now +1hours 表示任务将在1小时候执行;<br>now + 31days 表示任务将在1个月后执行; now +1weeks表示任务将在1周后执行;<br>12:32 表示任务将在今天的12:32分的时候执行</li>
+<li>示例练习:今晚11点30分开启网站服务</li>
+</ol>
+<ul>
+<li>前提:系统开启atd服务。<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# yum install at</span><br><span class="line">[root@localhost ~]# systemctl start atd.service //开启服务</span><br><span class="line">[root@localhost ~]# systemctl enable atd.service // 开机自启动</span><br><span class="line">[root@localhost ~]# systemctl status atd // 查看当前的</span><br></pre></td></tr></table></figure></li>
+<li>创建:<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# at 23:30 // 设置当前用户的一次性任务</span><br><span class="line"><span class="meta">at&gt;</span><span class="bash"> systemctl restart httpd</span></span><br><span class="line"><span class="meta">at&gt;</span><span class="bash"> &lt;EOT&gt;</span></span><br><span class="line">job 1 at Mon Sep 23 23:30:00 2019</span><br><span class="line">// 一次性的计划任务使用ctr+D来结束提交</span><br></pre></td></tr></table></figure></li>
+<li>一次性计划任务:Ctrl + D组合键来结束编写计划任务 </li>
+<li>at命令接收前面echo命令的输出信息，以达到通过非交互式的方式创建计划一次性任务的目的<br>[root@localhost ~]# echo “systemctl restart httpd” | at 23:30<br>job 2 at Mon Sep 23 23:30:00 2019</li>
+<li>查看:at -l<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# at -l</span><br><span class="line">1 Mon Sep 23 23:30:00 2019 a root </span><br><span class="line">2 Mon Sep 23 23:30:00 2019 a root</span><br></pre></td></tr></table></figure></li>
+<li>删除:atrm<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# atrm 2</span><br></pre></td></tr></table></figure></li>
+<li>help 或 man<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# at --help</span><br><span class="line">[root@localhost ~]# man at</span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h2 id="1-2-cron基础"><a href="#1-2-cron基础" class="headerlink" title="1.2 cron基础"></a>1.2 cron基础</h2><ol>
+<li>简介</li>
+</ol>
+<ul>
+<li>如果我们希望Linux系统能够周期性地、有规律地执行某 些具体的任务，那么Linux系统中默认启用的crond服务</li>
+<li>创建、编辑计划任务的命令为“crontab -e”，查看当前 计划任务的命令为“crontab -l”，删除某条计划任务的 命令为“crontab -r”。</li>
+<li>crontab命令中加上-u参数来编辑他人的计划任务</li>
+</ul>
+<ol start="2">
+<li>参数格式<br><img src="/images/2021/06/09/02e49f81-65f9-451b-8aa6-6794e740882d.png" alt="image.png"></li>
+<li>crontab命令书写格式中符号的含义</li>
+</ol>
+<ul>
+<li>（*） 代表每</li>
+<li>逗号(,)来分别表示多个时间段，例如“8,9,12”表示8月、9月和12月</li>
+<li>减号(-)来表示一段连续的时间周期(例如字段“日”的取值为“12-15”，则表示每月的12~15日)</li>
+<li>除号(/)表示执行任务的间隔时间(例如“*/2”表示每隔2分钟执行一次任务)</li>
+<li>示例 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">25 3 * * 1,3,5  // 每周1，周3，周五的3:25分</span><br><span class="line">0 1 * * 1-5 // 每周工作日(周一至周五)1:00</span><br><span class="line">*/5 * * * * // 每隔5分钟</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="4">
+<li>书写定时计划任务的注意点</li>
+</ol>
+<ul>
+<li>每个任务添加注释，谁写的，什么时间写的，完成什么需求? l 执行脚本使用/bin/sh(防止脚本无执行权限)，要执行的文件使用绝对路径</li>
+<li>尽量把要执行的命令放在脚本里，然后把脚本放在定时计划任务里。</li>
+<li>对于调用脚本的定时任务，可以把标准输出错误输出重定向到空。</li>
+<li>如果时上有值，分钟必须有值。</li>
+<li>“日”和“星期”字段不能同时使用，否则就会发生冲突 l 定时任务中%无法执行，需要转义%</li>
+<li>示例<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3,15 8-11 * * * myCommand // 在上午8点到11点的第3和 第15分钟执行</span><br><span class="line">3,15 8-11 */2 * * // 每隔两天的上午8点到11点的第3 和第15分钟执行</span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h2 id="1-3-系统级的计划任务"><a href="#1-3-系统级的计划任务" class="headerlink" title="1.3 系统级的计划任务"></a>1.3 系统级的计划任务</h2><ol>
+<li>简述<br>这个是系统设置好了，清理系统垃圾或者是自动执行某些脚本的系统任务，一般我们做了解就行了，不要更改配置文件是/etc/crontab，比如</li>
+</ol>
+<ul>
+<li>更新whatis数据库</li>
+<li>更新updatedb数据库 l 日志定期轮转(切割)</li>
+<li>清理/tmp,/var/tmp</li>
+<li>收集系统的状态信息</li>
+</ul>
+<ol start="2">
+<li>文件/etc/crontab<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@kongd ~]# cat /etc/crontab SHELL=/bin/bash PATH=/sbin:/bin:/usr/sbin:/usr/bin MAILTO=root</span><br><span class="line"><span class="meta">#</span><span class="bash"> For details see man 4 crontabs</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Example of job definition:</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> .---------------- minute (0 - 59)</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> | .------------- hour (0 - 23)</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> | | .---------- day of month (1 - 31)</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> | | | .------- month (1 - 12) OR jan,feb,mar,apr ...</span></span><br><span class="line"><span class="meta">#</span><span class="bash">| | | | .----dayofweek(0-6)(Sunday=0or7)OR</span></span><br><span class="line">sun,mon,tue,wed,thu,fri,sat</span><br><span class="line"><span class="meta">#</span><span class="bash">|||||</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> * * * * * user-name <span class="built_in">command</span> to be executed</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li>SHELL:就是运行计划任务的解释器，默认是bash</li>
+<li>PATH:执行命令的环境变量</li>
+<li>MAILTO:计划任务的出发者用户</li>
+<li>HOME:家目录为/run-parts是一个脚本，在/usr/bin/run-parts，作用是执行一个目 录下的所有脚本/程序。</li>
+<li>run-parts /etc/cron.hourly执行目录/etc/cron.hourly/之下的所有 脚本/程序.</li>
+<li>run-parts下面就是运行的命令</li>
+</ul>
+<hr>
+<h2 id="1-4-用户级的计划任务"><a href="#1-4-用户级的计划任务" class="headerlink" title="1.4 用户级的计划任务"></a>1.4 用户级的计划任务</h2><ol>
+<li>crontab常用选项</li>
+</ol>
+<ul>
+<li>-e: 编辑计划任务 edit</li>
+<li>-l: 查看计划任务 display</li>
+<li>-u: 指定用户 user</li>
+<li>-r: 删除计划任务 remove</li>
+</ul>
+<ol start="2">
+<li>示例<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 1、每月1、10、22日的4:45重启network服务</span> </span><br><span class="line">45 4 1,10,22 * * systemctl restart network</span><br><span class="line">45 4 1,10,22 * * /usr/bin/systemctl restart network</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 2、每周六、周日的1:10重启network服务</span></span><br><span class="line">10 1 * * 6-7 sytemctl restart network</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 3、每天18:00至23:00之间每隔30分钟重启network服务</span> </span><br><span class="line">*/30 18-23 * * * systemctl restart network</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 4、每隔两天的上午8点到11点的第3和第15分钟执行一次重启</span> </span><br><span class="line">3,15 8-11 */2 * * systemctl reboot</span><br><span class="line"><span class="meta">#</span><span class="bash"> 5、每周日凌晨2点30分，运行cp命令对/etc/fstab文件进行备份，存储位置为/backup/fstab-YYYY-MM-DD-hh-mm-ss;</span> </span><br><span class="line"><span class="meta">#</span><span class="bash"> date +%F-%H-%M-%S &gt; 2021-06-09-09-35-38</span></span><br><span class="line">30 2 * * 7 cp /etc/fatab /backup/fstab-date +\%F-\%H-\%M-\%S </span><br><span class="line">30 2 * * 0 cp /etc/fatab /backup/fstab-date +\%F-\%H-\%M-\%S </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 6、晚上11点到早上7点之间，每隔一小时重启smb</span></span><br><span class="line">0 23,0-7/1 * * * systemctl restart smb</span><br></pre></td></tr></table></figure></li>
+<li>vim /etc/crontab 与crontab -e写入的定时运行的区别?。</li>
+</ol>
+<ul>
+<li>vim /etc/crontab:是系统级别定义的crontab，/etc/crontab 的所有者和组都是root</li>
+<li>crontab -e :是用户自定义的crontab，是所有的用户都可以写入的 /var/spool/cron/username</li>
+</ul>
+<ol start="4">
+<li>作业</li>
+</ol>
+<ul>
+<li>1.设置一次性计划任务在18:00时关闭系统，并查看任务 信息。</li>
+<li>2.每周日凌晨2点30分，运行cp命令对/etc/fstab文件进行 备份，存储位置为/backup/fstab-YYYY-MM-DD-hh-mm- ss。</li>
+<li>3.每周2、4、7备份/var/log/secure文件至/logs目录中， 文件名格式为“secure-yyyymmdd”。</li>
+<li>4.每两小时取出当前系统/proc/meminfo文件中以S或M开 头的行信息追加至/tmp/meminfo.txt文件中。<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 1.设置一次性计划任务在18:00时关闭系统，并查看任务 信息。</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="comment"># at 18:00</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> &gt; systemctl poweroff</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> &gt; at -l</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> &gt; EOF</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 2.每周日凌晨2点30分，运行cp命令对/etc/fstab文件进行 备份，存储位置为/backup/fstab-YYYY-MM-DD-hh-mm-ss。</span></span><br><span class="line">30 2 * * 7 cp /etc/fstab /backup/fstab-$(date +\%F-\%H-\%M-\%S)</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 3.每周2、4、7备份/var/<span class="built_in">log</span>/secure文件至/logs目录中， 文件名格式为“secure-yyyymmdd”。</span></span><br><span class="line">0 0 * * 2,4,7 cp /var/log/secure /logs/secure-$(date + \%Y\%m\%d)</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 4.每两小时取出当前系统/proc/meminfo文件中以S或M开 头的行信息追加至/tmp/meminfo.txt文件中。</span></span><br><span class="line">0 */2 * * * grep ^[SM] /proc/meminfo  &gt;&gt; /tem/meminfo.txt</span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h2 id="1-5-rsyslog日志管理"><a href="#1-5-rsyslog日志管理" class="headerlink" title="1.5 rsyslog日志管理"></a>1.5 rsyslog日志管理</h2><h3 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h3><ol>
+<li>在 CentOS 6.x 中日志服务已经由 rsyslogd 取代了原先的 syslogd 服务。Redhat 认为 syslogd 已经不能满足在工作中的需求，rsyslogd 相比 syslogd 具有一些新的特点:</li>
+</ol>
+<ul>
+<li>基于 TCP 网络协议传输日志信息;</li>
+<li>更安全的网络传输方式;</li>
+<li>有日志消息的及时分析框架;</li>
+<li>后台数据库;</li>
+<li>配置文件中可以写简单的逻辑判断; ü 与 syslog 配置文件相兼容。</li>
+</ul>
+<ol start="2">
+<li>系统中常见的日志文件<br><img src="/images/2021/06/09/368b2d91-da3f-400a-9691-e41d61c50891.png" alt="image.png"></li>
+<li>除了系统默认的日志之外，采用 RPM 方式安装的系统服 务也会默认把日志记录在/var/log/目录中(源码包安装的 服务日志是在源码包指定目录中)。不过这些日志不是由 rsyslogd 服务来记录和管理的，而是各个服务使用自己 的日志管理文档来记录自身日志</li>
+</ol>
+<ul>
+<li>比如:/var/log/httpd/ RPM 包安装的 apache 服务的 默认日志目录<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# yum install httpd -y // 安装</span><br><span class="line">[root@localhost ~]# systemctl start httpd // 启动</span><br><span class="line">[root@localhost ~]# ls /var/log/httpd/</span><br><span class="line">access_log  error_log</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="4">
+<li>日志格式。只要是由日志服务 rsyslogd 记录的日志文件，他们的格式是一样的。基本日志格式包含以下四列:</li>
+</ol>
+<ul>
+<li>事件产生的时间;</li>
+<li>发生事件的服务器的主机名;</li>
+<li>产生事件的服务名或程序名;</li>
+<li>事件的具体信息。<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# tail -2 /var/log/messages </span><br><span class="line">Jun  9 10:11:03 localhost dbus[6555]: [system] Activating service name=&#x27;org.freedesktop.problems&#x27; (using servicehelper)</span><br><span class="line">Jun  9 10:11:03 localhost dbus[6555]: [system] Successfully activated service &#x27;org.freedesktop.problems&#x27;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="5">
+<li>/etc/rsyslog.conf 配置文件格式</li>
+</ol>
+<ul>
+<li>authpriv.* /var/log/secure<br>服务名称[连接符号]日志等级 日志记录位置<br>认证相关服务.所有日志等级 记录在/var/log/secure 日志中</li>
+</ul>
+<hr>
+<ul>
+<li>服务名称<br><img src="/images/2021/06/09/e0d9edd7-b93e-42c3-920c-0d5faaec706d.png" alt="image.png"></li>
+<li>连接符<br>日志服务[连接符号]日志等级 日志记录位置<br>（1）“.”代表只要比后面的等级高的(包含该等级)日志都记 录下来。比如:“cron.info”代表 cron 服务产生的日志，只 要日志等级大于等于 info 级别，就记录<br>（2）“.=”代表只记录所需等级的日志，其他等级的都不记录。 比如:“*.=emerg”代表任何日志服务产生的日志，只要等 级是 emerg 等级就记录。这种用法及少见，了解就好<br>（3）“.!”代表不等于，也就是除了该等级的日志外，其他等级 的日志都记录。</li>
+<li>日志等级<br>（1）debug(LOG_DEBUG) 一般的调试信息说明<br>（2）info(LOG_INFO) 基本的通知信息<br>（3）notice(LOG_NOTICE) 普通信息，但是有一定的重要性<br>（4）warning(LOG_WARNING) 警告信息，但是还不会影响到服务或系统的运行<br>（5）err(LOG_ERR) 错误信息，一般达到 err 等级的信息以及可以影响到服务或系统的运行了。<br>（6）crit(LOG_CRIT) 临界状况信息，比 err 等级还要严重 lalert(LOG_ALERT) 警告状态信息，比 crit 还要严重，必须立即采取行动。<br>（7）emerg(LOG_EMERG) 疼痛等级信息，系统已经无法使用了<br>（8）* 代表所有日志等级，比如:“authpriv.*”代表 authpriv 认证信息服务产生的日志，所有的日志等级都记录。 l日志等级这里还可以识别“none”，如果日志等级是 none，就说明忽略这个日志服务，该服务的所有日志都不再记录。</li>
+<li>日记记录位置<br>日志记录位置就是当前日志输出到哪个日志文件中保存，当然也可以把日志输出到打印机打印，或者输出到远程日志服务器上(当然日志服务器要允许接收才行)。日志的记录位置也是固定的。<br>（1）日志文件的绝对路径。最常见的日志保存方法，如“/var/log/secure”就是保 存系统验证和授权信息日志的。<br>（2）系统设备文件。如“/dev/lp0”。<br>（3）转发给远程主机。因为可以选择使用 TCP 协议和 UDP 协议传输日志信息， 所以有两种发送格式。1）如使用“@192.168.0.210:514”，就会把日志内容使用 UDP 协议发送到 192.168.0.210 的 UDP 514 端口上;2）如果使用“@@192.168.0.210:514”就会把日志内容使用 TCP 协议发送到 192.168.0.210 的 TCP 514 端口上。<br>（4）用户名。如“root”，就会把日志发送给 root 用户，当然 root 要在线，否 则就收不到日志信息了。发送日志给用户时，可以使用“*”代表发送给所有在线用 户，如“mail.*”就会把 mail 服务产生的所有级别的日志发送给所有在线用户。如果 需要把日志发送给多个在线用户，用户名之间用“，”分隔。</li>
+<li>示例:把所有服务的“err”以上的错误都保存在 /var/log/err.log 日志中:<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@kongd ~]# cp /etc/rsyslog.conf&#123;,.bak&#125;</span><br><span class="line">[root@kongd ~]# vim /etc/rsyslog.conf</span><br><span class="line">*.err /var/log/err.log</span><br><span class="line">[root@kongd ~]# systemctl restart rsyslog // 需要生效需要重启服务</span><br><span class="line">[root@localhost ~]# vim /etc/httpd/conf/httpd.conf // 制造错误测试</span><br><span class="line">[root@localhost ~]# systemctl restart httpd // 重启错误服务</span><br><span class="line">Job for httpd.service failed because the control process exited with error code. See &quot;systemctl status httpd.service&quot; and &quot;journalctl -xe&quot; for details.</span><br><span class="line">[root@localhost ~]# cat /var/log/err.log | tail -1 # 查看错误log</span><br><span class="line">Jun  9 10:39:10 localhost systemd: Failed to start The Apache HTTP Server.</span><br></pre></td></tr></table></figure>
+<h3 id="2-日志服务-rsyslogd"><a href="#2-日志服务-rsyslogd" class="headerlink" title="2. 日志服务 rsyslogd"></a>2. 日志服务 rsyslogd</h3></li>
+</ul>
+<ol>
+<li>存放日志的服务器（开启接受功能）:192.168.17.130<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# vim /etc/rsyslog.conf // 编辑配置文件</span><br><span class="line"><span class="meta">#</span><span class="bash"> Provides UDP syslog reception // 开启UDP传输</span></span><br><span class="line"><span class="meta">$</span><span class="bash">ModLoad imudp</span></span><br><span class="line"><span class="meta">$</span><span class="bash">UDPServerRun 514</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> Provides TCP syslog reception // 开启TCP传输</span></span><br><span class="line"><span class="meta">$</span><span class="bash">ModLoad imtcp</span></span><br><span class="line"><span class="meta">$</span><span class="bash">InputTCPServerRun 514</span></span><br><span class="line">[root@localhost ~]# systemctl restart rsyslog // 重启服务</span><br><span class="line">[root@localhost ~]# netstat -tnlup | grep :514 // 查看514端口是否在监听</span><br><span class="line">[root@s ~]# tail /var/log/maillog -f // 实时查看日志后，进行测试</span><br><span class="line">Jun  9 11:15:53 localhost root: this is a test for rmote log.</span><br></pre></td></tr></table></figure></li>
+<li>产生日志服务器（发送日志）:192.168.17.133<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 默认端口为514</span></span><br><span class="line">echo &#x27;mail.info @192.168.17.130:514&#x27;&gt;&gt; /etc/rsyslog.conf</span><br><span class="line"><span class="meta">#</span><span class="bash"> 测试</span></span><br><span class="line">[root@localhost ~]# systemctl restart rsyslog # 重启服务</span><br><span class="line"><span class="meta">#</span><span class="bash"> 发送测试消息</span></span><br><span class="line">[root@localhost ~]# logger -p mail.info &quot;this is a test for rmote log.&quot;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li>扩展：集中日志管理工具elk, 有收集，分析，展示日志功能，并支持分布式</li>
+</ul>
+<hr>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/06/09/Linux%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Linux-常用命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
