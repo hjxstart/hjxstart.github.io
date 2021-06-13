@@ -514,6 +514,8 @@
 <h3 id="八-安装常用软件"><a href="#八-安装常用软件" class="headerlink" title="八.安装常用软件"></a>八.安装常用软件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yum install lrzsz ntpdate sysstat net-tools wget vim bash-completion dos2unix -y</span><br></pre></td></tr></table></figure>
 <hr>
 <h3 id="九-更新系统到最新"><a href="#九-更新系统到最新" class="headerlink" title="九.更新系统到最新"></a>九.更新系统到最新</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 更新补丁并升级系统版本</span></span><br><span class="line">$ yum update  -y </span><br><span class="line">	</span><br><span class="line"><span class="comment"># 只更新安全补丁，不升级系统版本</span></span><br><span class="line">$ yum --security check-update    <span class="comment">#检查是否有安全补丁</span></span><br></pre></td></tr></table></figure>
+<h3 id="十-分区"><a href="#十-分区" class="headerlink" title="十.分区"></a>十.分区</h3><p>/blos boot 2M<br>/boot 1G<br>/ 10G 修改为固定<br>/home 5G<br>swap 1G</p>
+
     
 
     
