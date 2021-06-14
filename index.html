@@ -468,6 +468,159 @@
 
 
   
+    <article id="post-SpringBoot2学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2021/06/08/SpringBoot2%E5%AD%A6%E4%B9%A0/" target="_blank">SpringBoot2学习</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2021/06/08/SpringBoot2%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
+        <time datetime="2021-06-08T08:51:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-08</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="SpringBoot2核心技术-核心功能"><a href="#SpringBoot2核心技术-核心功能" class="headerlink" title="SpringBoot2核心技术-核心功能"></a>SpringBoot2核心技术-核心功能</h1><h2 id="1、配置文件"><a href="#1、配置文件" class="headerlink" title="1、配置文件"></a>1、配置文件</h2><h3 id="1-1、yaml"><a href="#1-1、yaml" class="headerlink" title="1.1、yaml"></a>1.1、yaml</h3><h4 id="1-1-1、简介"><a href="#1-1-1、简介" class="headerlink" title="1.1.1、简介"></a>1.1.1、简介</h4><p>YAML 是一种采用递归缩进表示层级关系的标记语言，非常适合用来以数据为中心的配置文件.<br>可以使用</p>
+<h4 id="1-1-2、基本语法"><a href="#1-1-2、基本语法" class="headerlink" title="1.1.2、基本语法"></a>1.1.2、基本语法</h4><ul>
+<li>key: value; kv之间有空格</li>
+<li>大小写敏感</li>
+<li>使用缩进表示层次关系</li>
+<li>缩进不允许使用tab，只允许空格</li>
+<li>缩进的空格数不重要，只要相同层级的元素左对齐即可</li>
+<li>‘#’表示注释</li>
+<li>“与”表示字符串内容会被 转义/不转义<h4 id="1-1-3、数据类型"><a href="#1-1-3、数据类型" class="headerlink" title="1.1.3、数据类型"></a>1.1.3、数据类型</h4></li>
+<li>字面量：单个的，不可再分的值。date、boolean、string、number、null<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">k:</span> <span class="string">v</span></span><br></pre></td></tr></table></figure></li>
+<li>对象：键值对的集合。map、hash、set、object<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">行内写法：k:</span> &#123;<span class="string">k1:v1</span>,<span class="string">k2:v2</span>,<span class="string">k3:v3</span>&#125;</span><br><span class="line"><span class="comment">#或</span></span><br><span class="line"><span class="attr">k:</span></span><br><span class="line">  <span class="attr">k1:</span> <span class="string">v1</span></span><br><span class="line">  <span class="attr">k2:</span> <span class="string">v2</span></span><br><span class="line">  <span class="attr">k3:</span> <span class="string">v3</span></span><br><span class="line">  <span class="attr">K4:</span> <span class="string">v4</span></span><br></pre></td></tr></table></figure></li>
+<li>数组：一组按次序排列的值。array、list、queue<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">行内写法：k:</span> [<span class="string">v1</span>,<span class="string">v2</span>,<span class="string">v3</span>]</span><br><span class="line"><span class="comment">#或者</span></span><br><span class="line"><span class="attr">k:</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">v1</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">v2</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">v3</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h4 id="1-1-4、示例"><a href="#1-1-4、示例" class="headerlink" title="1.1.4、示例"></a>1.1.4、示例</h4><ul>
+<li><p>Person.java &amp; Pet.java</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ConfigurationProperties(prefix = &quot;data.person&quot;)</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@ToString</span></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> String userName;</span><br><span class="line">    <span class="keyword">private</span> Boolean boss;</span><br><span class="line">    <span class="keyword">private</span> Date birth;</span><br><span class="line">    <span class="keyword">private</span> Integer age;</span><br><span class="line">    <span class="keyword">private</span> Pet pet;</span><br><span class="line">    <span class="keyword">private</span> String[] interests;</span><br><span class="line">    <span class="keyword">private</span> List&lt;String&gt; animal;</span><br><span class="line">    <span class="keyword">private</span> Map&lt;String, Object&gt; score;</span><br><span class="line">    <span class="keyword">private</span> Set&lt;Double&gt; salarys;</span><br><span class="line">    <span class="keyword">private</span> Map&lt;String, List&lt;Pet&gt;&gt; allPets;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@ToString</span></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Pet</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> Double weight;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>application.yaml</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">data:</span></span><br><span class="line">  <span class="attr">person:</span></span><br><span class="line">    <span class="attr">userName:</span> <span class="string">hjxstart</span></span><br><span class="line">    <span class="attr">boss:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">birth:</span> <span class="number">1998</span><span class="string">/5/11</span></span><br><span class="line">    <span class="attr">age:</span> <span class="number">23</span></span><br><span class="line">    <span class="attr">interests:</span> [<span class="string">跑步</span>,<span class="string">游泳</span>]</span><br><span class="line">    <span class="attr">animal:</span> [<span class="string">猫</span>,<span class="string">狗</span>]</span><br><span class="line">    <span class="attr">socre:</span></span><br><span class="line">      <span class="attr">java:</span> <span class="number">80</span></span><br><span class="line">      <span class="attr">mysql:</span> <span class="number">90</span></span><br><span class="line">      <span class="attr">linux:</span> <span class="number">100</span></span><br><span class="line">    <span class="attr">salarys:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">9999.98</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">9999.99</span></span><br><span class="line">    <span class="attr">pet:</span></span><br><span class="line">      <span class="attr">name:</span> <span class="string">猫</span></span><br><span class="line">      <span class="attr">weight:</span> <span class="number">99.99</span></span><br><span class="line">    <span class="attr">allPets:</span></span><br><span class="line">      <span class="attr">sick:</span></span><br><span class="line">        <span class="bullet">-</span> &#123;<span class="attr">name:</span> <span class="string">阿狗</span>,<span class="attr">weight:</span> <span class="number">99.99</span>&#125;</span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">阿猫</span></span><br><span class="line">          <span class="attr">weight:</span> <span class="number">88.88</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">小鱼</span></span><br><span class="line">          <span class="attr">weight:</span> <span class="number">77.77</span></span><br><span class="line">      <span class="attr">health:</span> [&#123;<span class="attr">name:</span> <span class="string">阿花</span>, <span class="attr">weight:</span> <span class="number">19.99</span>&#125;,&#123;<span class="attr">name:</span> <span class="string">阿明</span>, <span class="attr">weight:</span> <span class="number">9.99</span>&#125;]</span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h2 id="2、web开发"><a href="#2、web开发" class="headerlink" title="2、web开发"></a>2、web开发</h2><p><a target="_blank" rel="noopener" href="https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/reference/html/spring-boot-features.html#boot-features-developing-web-applications">参考文档</a></p>
+<h3 id="2-1-简单功能分析"><a href="#2-1-简单功能分析" class="headerlink" title="2.1 简单功能分析"></a>2.1 简单功能分析</h3><h4 id="2-1-1、静态资源访问"><a href="#2-1-1、静态资源访问" class="headerlink" title="2.1.1、静态资源访问"></a>2.1.1、静态资源访问</h4><ul>
+<li>默认支持的静态资源的目录<br>/static(or /public or /resources or /META-INF/resources)</li>
+<li>可以自定义静态资源访问前缀(默认为”/**”)和静态资源目录</li>
+</ul>
+<p><strong>注意</strong>：自定义静态资源访问前缀会导致对欢迎页和Favicon的支持失效</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">mvc:</span></span><br><span class="line">    <span class="attr">static-path-pattern:</span> <span class="string">/res/**</span> <span class="comment">#自定义静态资源访问前缀</span></span><br><span class="line">  <span class="attr">resources:</span></span><br><span class="line">    <span class="attr">static-locations:</span> [<span class="string">classpath:/staticfile</span>] <span class="comment"># 自定义静态资源目录</span></span><br></pre></td></tr></table></figure>
+
+
+<h4 id="2-1-2、欢迎页支持"><a href="#2-1-2、欢迎页支持" class="headerlink" title="2.1.2、欢迎页支持"></a>2.1.2、欢迎页支持</h4><ul>
+<li>把欢迎页(index.html)放在 /static or /template 目录下即可。</li>
+<li>如果在上面两个文件目录下找不到就处理 / 的Controller。</li>
+</ul>
+<h4 id="2-1-3、自定义favicon"><a href="#2-1-3、自定义favicon" class="headerlink" title="2.1.3、自定义favicon"></a>2.1.3、自定义favicon</h4><ul>
+<li>把 favicon 放在静态资源目录下即可，默认放在(/static)</li>
+</ul>
+<h4 id="2-1-4、静态资源配置原理"><a href="#2-1-4、静态资源配置原理" class="headerlink" title="2.1.4、静态资源配置原理"></a>2.1.4、静态资源配置原理</h4><ol>
+<li>补充：配置类只有一个有参构造器的情况</li>
+</ol>
+<ul>
+<li>示例<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 有参构造器所有参数的值都会从容器中确定</span></span><br><span class="line"><span class="comment">//ResourceProperties resourceProperties；获取和spring.resources绑定的所有的值的对象</span></span><br><span class="line"><span class="comment">//WebMvcProperties mvcProperties 获取和spring.mvc绑定的所有的值的对象</span></span><br><span class="line"><span class="comment">//ListableBeanFactory beanFactory Spring的beanFactory</span></span><br><span class="line"><span class="comment">//HttpMessageConverters 找到所有的HttpMessageConverters</span></span><br><span class="line"><span class="comment">//ResourceHandlerRegistrationCustomizer 找到 资源处理器的自定义器。=========</span></span><br><span class="line"><span class="comment">//DispatcherServletPath  </span></span><br><span class="line"><span class="comment">//ServletRegistrationBean   给应用注册Servlet、Filter....</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">WebMvcAutoConfigurationAdapter</span><span class="params">(ResourceProperties resourceProperties, WebMvcProperties mvcProperties,</span></span></span><br><span class="line"><span class="function"><span class="params">                ListableBeanFactory beanFactory, ObjectProvider&lt;HttpMessageConverters&gt; messageConvertersProvider,</span></span></span><br><span class="line"><span class="function"><span class="params">                ObjectProvider&lt;ResourceHandlerRegistrationCustomizer&gt; resourceHandlerRegistrationCustomizerProvider,</span></span></span><br><span class="line"><span class="function"><span class="params">                ObjectProvider&lt;DispatcherServletPath&gt; dispatcherServletPath,</span></span></span><br><span class="line"><span class="function"><span class="params">                ObjectProvider&lt;ServletRegistrationBean&lt;?&gt;&gt; servletRegistrations)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.resourceProperties = resourceProperties;</span><br><span class="line">            <span class="keyword">this</span>.mvcProperties = mvcProperties;</span><br><span class="line">            <span class="keyword">this</span>.beanFactory = beanFactory;</span><br><span class="line">            <span class="keyword">this</span>.messageConvertersProvider = messageConvertersProvider;</span><br><span class="line">            <span class="keyword">this</span>.resourceHandlerRegistrationCustomizer = resourceHandlerRegistrationCustomizerProvider.getIfAvailable();</span><br><span class="line">            <span class="keyword">this</span>.dispatcherServletPath = dispatcherServletPath;</span><br><span class="line">            <span class="keyword">this</span>.servletRegistrations = servletRegistrations;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="2">
+<li>资源处理的默认规则</li>
+</ol>
+<ul>
+<li></li>
+</ul>
+<ol start="3">
+<li><p>欢迎页的处理规则</p>
+</li>
+<li><p>faivcon</p>
+</li>
+</ol>
+<h3 id="2-2-请求参数处理"><a href="#2-2-请求参数处理" class="headerlink" title="2.2 请求参数处理"></a>2.2 请求参数处理</h3><h3 id="2-2-1、请求映射"><a href="#2-2-1、请求映射" class="headerlink" title="2.2.1、请求映射"></a>2.2.1、请求映射</h3><h3 id="2-2-2、普通参数与基本注解"><a href="#2-2-2、普通参数与基本注解" class="headerlink" title="2.2.2、普通参数与基本注解"></a>2.2.2、普通参数与基本注解</h3><ol>
+<li>常用注解<br>@PathVariable, @RequestHeader, @RequestParam, @CookieValue, @ModelAttribute, @MatriVariable, @RequestBody</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@PathVariable</span> <span class="comment">// 获取 url 路径变量(id, username)的值</span></span><br><span class="line"><span class="meta">@RequestHeader</span> <span class="comment">// 获取请求的Header的值</span></span><br><span class="line"><span class="meta">@RequestParam</span> <span class="comment">// 获取 url 的参数(age, inters)的值</span></span><br><span class="line"><span class="meta">@CookieValue</span> <span class="comment">// 获取 Cookie 的值</span></span><br><span class="line"><span class="meta">@ModelAttribute</span> <span class="comment">// 获取request域属性的值</span></span><br><span class="line">    <span class="comment">// /car/3/owner/lisi?age=18&amp;inters=basketball&amp;inters=game</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/car/&#123;id&#125;/owner/&#123;username&#125;&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Map&lt;String, Object&gt; <span class="title">getCar</span><span class="params">(<span class="meta">@PathVariable(&quot;id&quot;)</span> Integer id,</span></span></span><br><span class="line"><span class="function"><span class="params">                                      <span class="meta">@PathVariable(&quot;username&quot;)</span> String name, //</span></span></span><br><span class="line"><span class="function"><span class="params">                                      <span class="meta">@PathVariable</span> Map&lt;String, String&gt; pv,</span></span></span><br><span class="line"><span class="function"><span class="params">                                      <span class="meta">@RequestHeader(&quot;User-Agent&quot;)</span> String userAgent,</span></span></span><br><span class="line"><span class="function"><span class="params">                                      <span class="meta">@RequestHeader</span> Map&lt;String, String&gt; rh,</span></span></span><br><span class="line"><span class="function"><span class="params">                                      <span class="meta">@RequestParam(&quot;age&quot;)</span> Integer age,</span></span></span><br><span class="line"><span class="function"><span class="params">                                      <span class="meta">@RequestParam(&quot;inters&quot;)</span> List&lt;String&gt; inters,</span></span></span><br><span class="line"><span class="function"><span class="params">                                      <span class="meta">@RequestParam</span> Map&lt;String,String&gt; rp,</span></span></span><br><span class="line"><span class="function"><span class="params">                                      <span class="meta">@CookieValue(&quot;Idea-b83d5636&quot;)</span> String idea,</span></span></span><br><span class="line"><span class="function"><span class="params">                                      <span class="meta">@CookieValue(&quot;testcookie&quot;)</span> Cookie cookie)</span> </span>&#123;</span><br><span class="line">        Map&lt;String,Object&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        map.put(<span class="string">&quot;PV_Id&quot;</span>, id);</span><br><span class="line">        map.put(<span class="string">&quot;PV_Username&quot;</span>, name);</span><br><span class="line">        map.put(<span class="string">&quot;PV_Map&quot;</span>, pv);</span><br><span class="line">        map.put(<span class="string">&quot;RH_UserAgent&quot;</span>, userAgent);</span><br><span class="line">        map.put(<span class="string">&quot;RH_Map&quot;</span>, rh);</span><br><span class="line">        map.put(<span class="string">&quot;RP_age&quot;</span>, age);</span><br><span class="line">        map.put(<span class="string">&quot;RP_inters&quot;</span>, inters);</span><br><span class="line">        map.put(<span class="string">&quot;RP_Map&quot;</span>, rp);</span><br><span class="line">        map.put(<span class="string">&quot;CV_idea&quot;</span>, idea);</span><br><span class="line">        map.put(<span class="string">&quot;Cookie&quot;</span>, cookie);</span><br><span class="line">        <span class="keyword">return</span> map;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@MatriVariable</span> <span class="comment">// 获取矩阵变量的值。(面试题：禁用cookie后如何传输sessionId)</span></span><br><span class="line">    <span class="comment">// /boss/1;age=20/2;age=10</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/boss/&#123;bossId&#125;/&#123;empId&#125;&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Map <span class="title">boss</span><span class="params">(<span class="meta">@MatrixVariable(value = &quot;age&quot;, pathVar = &quot;bossId&quot;)</span> Integer bossAge,</span></span></span><br><span class="line"><span class="function"><span class="params">                    <span class="meta">@MatrixVariable(value = &quot;age&quot;, pathVar = &quot;empId&quot;)</span> Integer empAge)</span> </span>&#123;</span><br><span class="line">        Map&lt;String, Object&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        map.put(<span class="string">&quot;bossAge&quot;</span>, bossAge);</span><br><span class="line">        map.put(<span class="string">&quot;empAge&quot;</span>, empAge);</span><br><span class="line">        <span class="keyword">return</span> map;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RequestBody</span> <span class="comment">// 获取请求体（只有POST请求才有）的值</span></span><br><span class="line">    <span class="meta">@PostMapping(&quot;/save&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Map <span class="title">postMethod</span><span class="params">(<span class="meta">@RequestBody</span> String content)</span> </span>&#123;</span><br><span class="line">        Map&lt;String, Object&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        map.put(<span class="string">&quot;RequestBody&quot;</span>, content);</span><br><span class="line">        <span class="keyword">return</span> map;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>原理：</li>
+</ul>
+<ol start="2">
+<li>Servlet API:<br>WebRequest, ServletRequest, MultipartRequest, HttpSession、javax.servlet.http.PushBuilder, Principal, InputStream, Reader, HttpMethod, Locale, TimeZone, Zoneld</li>
+</ol>
+<ul>
+<li></li>
+</ul>
+<ol start="3">
+<li><p>复杂参数<br>Map, Errors/BindingResult, Model, RedirectAttributes, ServletResponse, SessionStatus, UriComponentsBuilder, ServletUriComponentsBuilder</p>
+</li>
+<li><p>自定义对象参数<br>可以自动类型与格式化，可以级联封装。</p>
+</li>
+</ol>
+<hr>
+<h2 id="3、数据访问"><a href="#3、数据访问" class="headerlink" title="3、数据访问"></a>3、数据访问</h2><hr>
+<h2 id="4、单元测试"><a href="#4、单元测试" class="headerlink" title="4、单元测试"></a>4、单元测试</h2><hr>
+<h2 id="5、指标监控"><a href="#5、指标监控" class="headerlink" title="5、指标监控"></a>5、指标监控</h2><hr>
+<h2 id="6、原来解析"><a href="#6、原来解析" class="headerlink" title="6、原来解析"></a>6、原来解析</h2><hr>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/06/08/SpringBoot2%E5%AD%A6%E4%B9%A0/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-CentOS7优化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1406,105 +1559,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2021/03/14/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-信息系统项目管理师" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2021/03/14/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/" target="_blank">信息系统项目管理师</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2021/03/14/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/" class="archive-article-date">
-        <time datetime="2021-03-14T10:54:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-14</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="第1章-信息化和信息系统"><a href="#第1章-信息化和信息系统" class="headerlink" title="第1章 信息化和信息系统"></a>第1章 信息化和信息系统</h1><h2 id="1-1-信息系统和信息化"><a href="#1-1-信息系统和信息化" class="headerlink" title="1.1 信息系统和信息化"></a>1.1 信息系统和信息化</h2><ol>
-<li>信息：信息是能够用来消除不确定行的东西；</li>
-<li>信息技术：是为了解决信息的处理问题而发展起来的技术；</li>
-<li>信息系统：是输入数据，通过加工处理，产生信息的系统；</li>
-<li>信息化：宏观概念。通常是指现代信息技术应用，特别是促成应用对象或领域发生转变的过程；是推动经济社会发展转型的历史过程。</li>
-</ol>
-<hr>
-<h3 id="1-1-1-信息"><a href="#1-1-1-信息" class="headerlink" title="1.1.1 信息"></a>1.1.1 信息</h3><p><strong>信息特性</strong>：<br>宏观性、普遍性、无限性、动态性、相对性、依附性、变换性、传递性、层次性、系统性、转化性。</p>
-    
-    <a class="article-more-a" href="/2021/03/14/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">个人</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">证书</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/03/14/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/">展开全文 >></a>
     </p>
     
 
