@@ -6,29 +6,25 @@
   <meta name="keywords" content=" Linux ">
   <meta name="description" content="CentOS7优化 | hjxstart的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="第1讲 运维基础1.1 计划任务简介 经验丰富的系统运维工程师可以使得Linux在无需人为介 入的情况下，在指定的时间段自动启用或停止某些服务或 命令，从而实现运维的自动化。 作用:计划任务主要是做一些周期性的任务，目前最主要的 用途是定期备份数据 分类:   次性计划任务:今晚11点30分开启网站服务。 长期性计划任务:每周一的凌晨2点20分把&#x2F;data&#x2F;wwwroot目录打包备份为backup">
+<meta name="description" content="第一章 CDN开发1.1、开发环境介绍hjx:~ jxh$ node --version v14.15.1 hjx:~ jxh$ npm --version 7.17.0 hjx:~ jxh$ vue --version @vue&#x2F;cli 4.5.13   1.2、CDN方式使用Vue&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;vue@2.6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux自动化运维">
-<meta property="og:url" content="http://example.com/2021/06/09/Linux%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4/index.html">
+<meta property="og:title" content="Vue基础">
+<meta property="og:url" content="http://example.com/2021/06/23/Vue%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="hjxstart的博客">
-<meta property="og:description" content="第1讲 运维基础1.1 计划任务简介 经验丰富的系统运维工程师可以使得Linux在无需人为介 入的情况下，在指定的时间段自动启用或停止某些服务或 命令，从而实现运维的自动化。 作用:计划任务主要是做一些周期性的任务，目前最主要的 用途是定期备份数据 分类:   次性计划任务:今晚11点30分开启网站服务。 长期性计划任务:每周一的凌晨2点20分把&#x2F;data&#x2F;wwwroot目录打包备份为backup">
+<meta property="og:description" content="第一章 CDN开发1.1、开发环境介绍hjx:~ jxh$ node --version v14.15.1 hjx:~ jxh$ npm --version 7.17.0 hjx:~ jxh$ vue --version @vue&#x2F;cli 4.5.13   1.2、CDN方式使用Vue&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;vue@2.6">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/images/2021/06/09/02e49f81-65f9-451b-8aa6-6794e740882d.png">
-<meta property="og:image" content="http://example.com/images/2021/06/09/368b2d91-da3f-400a-9691-e41d61c50891.png">
-<meta property="og:image" content="http://example.com/images/2021/06/09/e0d9edd7-b93e-42c3-920c-0d5faaec706d.png">
-<meta property="article:published_time" content="2021-06-09T00:29:17.000Z">
-<meta property="article:modified_time" content="2021-06-23T08:25:04.904Z">
+<meta property="article:published_time" content="2021-06-23T02:48:20.000Z">
+<meta property="article:modified_time" content="2021-06-23T08:31:31.277Z">
 <meta property="article:author" content="hjxstart">
-<meta property="article:tag" content="Java，静心">
+<meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/2021/06/09/02e49f81-65f9-451b-8aa6-6794e740882d.png">
 
 
 <link rel="icon" href="/img/favicon.ico">
 
 <link href="/css/style.css?v=1.1.0" rel="stylesheet">
 
-<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+<link href="/css/hl_theme/atom-dark.css?v=1.1.0" rel="stylesheet">
 
 <link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
 
@@ -542,23 +538,157 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="一-关闭selinux"><a href="#一-关闭selinux" class="headerlink" title="一.关闭selinux"></a>一.关闭selinux</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sed -i <span class="string">&#x27;s/=enforcing/=disabled/&#x27;</span> /etc/selinux/config</span><br><span class="line">$ setenforce 0</span><br></pre></td></tr></table></figure>
+        <h3 id="一-关闭selinux"><a href="#一-关闭selinux" class="headerlink" title="一.关闭selinux"></a>一.关闭selinux</h3><pre><code class="bash">$ sed -i &#39;s/=enforcing/=disabled/&#39; /etc/selinux/config
+$ setenforce 0
+</code></pre>
 <hr>
-<h3 id="二-更改为阿里yum源"><a href="#二-更改为阿里yum源" class="headerlink" title="二.更改为阿里yum源"></a>二.更改为阿里yum源</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup</span><br><span class="line">$ wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo</span><br><span class="line">$ yum makecache</span><br></pre></td></tr></table></figure>
+<h3 id="二-更改为阿里yum源"><a href="#二-更改为阿里yum源" class="headerlink" title="二.更改为阿里yum源"></a>二.更改为阿里yum源</h3><pre><code class="bash">$ mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+$ wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+$ yum makecache
+</code></pre>
 <hr>
-<h3 id="三-优化ssh远程登录配置"><a href="#三-优化ssh远程登录配置" class="headerlink" title="三.优化ssh远程登录配置"></a>三.优化ssh远程登录配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#备份/etc/ssh/sshd_conf</span></span><br><span class="line">$ cp /etc/ssh/sshd_config&#123;,.`date +%F`.bak&#125;</span><br><span class="line">	</span><br><span class="line"><span class="comment">#不允许基于GSSAPI的用户认证</span></span><br><span class="line">$ sed -i <span class="string">&#x27;s/^GSSAPIAuthentication yes$/GSSAPIAuthentication no/&#x27;</span> /etc/ssh/sshd_config</span><br><span class="line">	</span><br><span class="line"><span class="comment"># 不允许sshd对远程主机名进行反向解析</span></span><br><span class="line">$ sed -i <span class="string">&#x27;s/#UseDNS yes/UseDNS no/&#x27;</span> /etc/ssh/sshd_config</span><br><span class="line">$ systemctl restart sshd</span><br></pre></td></tr></table></figure>
+<h3 id="三-优化ssh远程登录配置"><a href="#三-优化ssh远程登录配置" class="headerlink" title="三.优化ssh远程登录配置"></a>三.优化ssh远程登录配置</h3><pre><code class="bash">#备份/etc/ssh/sshd_conf
+$ cp /etc/ssh/sshd_config&#123;,.`date +%F`.bak&#125;
+    
+#不允许基于GSSAPI的用户认证
+$ sed -i &#39;s/^GSSAPIAuthentication yes$/GSSAPIAuthentication no/&#39; /etc/ssh/sshd_config
+    
+# 不允许sshd对远程主机名进行反向解析
+$ sed -i &#39;s/#UseDNS yes/UseDNS no/&#39; /etc/ssh/sshd_config
+$ systemctl restart sshd
+</code></pre>
+<h3 id="四-历史记录数及登录超时环境变量设置"><a href="#四-历史记录数及登录超时环境变量设置" class="headerlink" title="四.历史记录数及登录超时环境变量设置"></a>四.历史记录数及登录超时环境变量设置</h3><pre><code class="bash"># 设置闲置超时时间为300s
+$ echo &#39;export TMOUT=300&#39; &gt;&gt;/etc/profile
 
-<h3 id="四-历史记录数及登录超时环境变量设置"><a href="#四-历史记录数及登录超时环境变量设置" class="headerlink" title="四.历史记录数及登录超时环境变量设置"></a>四.历史记录数及登录超时环境变量设置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置闲置超时时间为300s</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&#x27;export TMOUT=300&#x27;</span> &gt;&gt;/etc/profile</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置历史记录文件的命令数量为100</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&#x27;export HISTFILESIZE=100&#x27;</span> &gt;&gt;/etc/profile</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置命令行的历史记录数量</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&#x27;export HISTSIZE=100&#x27;</span> &gt;&gt;/etc/profile</span><br><span class="line"></span><br><span class="line"><span class="comment"># 格式化输出历史记录(以年月日分时秒的格式输出)</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&#x27;export HISTTIMEFORMAT=&quot;%Y-%m-%d %H:%M:%S&quot;&#x27;</span> &gt;&gt;/etc/profile</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">source</span> /etc/profile</span><br><span class="line">$ tail -4 /etc/profile</span><br></pre></td></tr></table></figure>
+# 设置历史记录文件的命令数量为100
+$ echo &#39;export HISTFILESIZE=100&#39; &gt;&gt;/etc/profile
+
+# 设置命令行的历史记录数量
+$ echo &#39;export HISTSIZE=100&#39; &gt;&gt;/etc/profile
+
+# 格式化输出历史记录(以年月日分时秒的格式输出)
+$ echo &#39;export HISTTIMEFORMAT=&quot;%Y-%m-%d %H:%M:%S&quot;&#39; &gt;&gt;/etc/profile
+
+$ source /etc/profile
+$ tail -4 /etc/profile
+</code></pre>
 <hr>
-<h3 id="五-调整linux描述符"><a href="#五-调整linux描述符" class="headerlink" title="五.调整linux描述符"></a>五.调整linux描述符</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#文件描述符是由无符号整数表示的句柄,进程使用它来标识打开的文件.文件描述符与包括相关信息(如文件的打开模式,文件的位置类型,文件的初始类型等)的文件对象相关联,这些信息被称作文件的上下文.文件描述符的有效范围是0到OPEN_MAX.</span></span><br><span class="line">	</span><br><span class="line"><span class="comment">#对于内核而言,所有打开的文件都是通过文件的描述符引用的.当打开一个现有文件或创建一个新文件时,内核向进程返回一个文件描述符,当读或写一个文件时,使用open或create返回的文件描述符标识该文件,并将其作为参数传递给read或write.</span></span><br><span class="line"><span class="comment"># 查看系统文件描述符设置的情况可以使用下面的命令,文件描述符大小默认是1024.</span></span><br><span class="line">$ <span class="built_in">ulimit</span> -n</span><br><span class="line"><span class="comment"># 对于高并发的业务Linux服务器来说,这个默认的设置值是不够的,需要调整.</span></span><br><span class="line"><span class="comment"># 调整方法一:</span></span><br><span class="line"><span class="comment"># 调整系统文件描述符为65535</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&#x27;*        -    nofile    65535&#x27;</span> &gt;&gt;/etc/security/limits.conf</span><br><span class="line">$ tail -l /etc/security/limits.conf</span><br><span class="line"><span class="comment"># 调整方法二:</span></span><br><span class="line"><span class="comment"># 直接把ulimit -SHn 65535命令加入/etc/rc.d/rc.local,用以设置每次开机启动时配置生效,命令如下:</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot; ulimit -HSn 65535&quot;</span> &gt;&gt;/etc/rc.d/rc.local</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot; ulimit -s 65535&quot;</span> &gt;&gt;/etc/rc.d/rc.local</span><br></pre></td></tr></table></figure>
+<h3 id="五-调整linux描述符"><a href="#五-调整linux描述符" class="headerlink" title="五.调整linux描述符"></a>五.调整linux描述符</h3><pre><code class="bash">#文件描述符是由无符号整数表示的句柄,进程使用它来标识打开的文件.文件描述符与包括相关信息(如文件的打开模式,文件的位置类型,文件的初始类型等)的文件对象相关联,这些信息被称作文件的上下文.文件描述符的有效范围是0到OPEN_MAX.
+    
+#对于内核而言,所有打开的文件都是通过文件的描述符引用的.当打开一个现有文件或创建一个新文件时,内核向进程返回一个文件描述符,当读或写一个文件时,使用open或create返回的文件描述符标识该文件,并将其作为参数传递给read或write.
+# 查看系统文件描述符设置的情况可以使用下面的命令,文件描述符大小默认是1024.
+$ ulimit -n
+# 对于高并发的业务Linux服务器来说,这个默认的设置值是不够的,需要调整.
+# 调整方法一:
+# 调整系统文件描述符为65535
+$ echo &#39;*        -    nofile    65535&#39; &gt;&gt;/etc/security/limits.conf
+$ tail -l /etc/security/limits.conf
+# 调整方法二:
+# 直接把ulimit -SHn 65535命令加入/etc/rc.d/rc.local,用以设置每次开机启动时配置生效,命令如下:
+$ echo &quot; ulimit -HSn 65535&quot; &gt;&gt;/etc/rc.d/rc.local
+$ echo &quot; ulimit -s 65535&quot; &gt;&gt;/etc/rc.d/rc.local
+</code></pre>
 <hr>
-<h3 id="六-定时清理邮件服务临时目录垃圾文件"><a href="#六-定时清理邮件服务临时目录垃圾文件" class="headerlink" title="六.定时清理邮件服务临时目录垃圾文件"></a>六.定时清理邮件服务临时目录垃圾文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># centos7默认是安装了Postfix邮件服务的,因此邮件临时存放地点的路径为/var/spool/postfix/maildrop,为了防止目录被垃圾文件填满,导致系统额inode数量不够用,需要定期清理.</span></span><br><span class="line"><span class="comment"># 定时清理的方法为:将清理命令写成脚本,然后做成定时任务,每日凌晨0点执行一次.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建存放脚本的目录</span></span><br><span class="line">$ [ -d /server/scripts/shell ] &amp;&amp; <span class="built_in">echo</span> <span class="string">&quot;directory already exists.&quot;</span> || mkdir /server/scripts/shell -p</span><br><span class="line"></span><br><span class="line"><span class="comment"># 编写脚本文件</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&#x27;find /var/spool/postfix/maildrop/ -type f|xargs rm -f&#x27;</span> &gt;/server/scripts/shell/del_mail_file.sh</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看</span></span><br><span class="line">$ cat /server/scripts/shell/del_mail_file.sh</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加入计划任务</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;00 00 * * * /bin/bash /server/scripts/shell/del_mail_file.sh &gt;/dev/null &amp;1&quot;</span> &gt;&gt;/var/spool/cron/root</span><br><span class="line">$ crontab -l</span><br></pre></td></tr></table></figure>
+<h3 id="六-定时清理邮件服务临时目录垃圾文件"><a href="#六-定时清理邮件服务临时目录垃圾文件" class="headerlink" title="六.定时清理邮件服务临时目录垃圾文件"></a>六.定时清理邮件服务临时目录垃圾文件</h3><pre><code class="bash"># centos7默认是安装了Postfix邮件服务的,因此邮件临时存放地点的路径为/var/spool/postfix/maildrop,为了防止目录被垃圾文件填满,导致系统额inode数量不够用,需要定期清理.
+# 定时清理的方法为:将清理命令写成脚本,然后做成定时任务,每日凌晨0点执行一次.
+
+# 创建存放脚本的目录
+$ [ -d /server/scripts/shell ] &amp;&amp; echo &quot;directory already exists.&quot; || mkdir /server/scripts/shell -p
+
+# 编写脚本文件
+$ echo &#39;find /var/spool/postfix/maildrop/ -type f|xargs rm -f&#39; &gt;/server/scripts/shell/del_mail_file.sh
+
+# 查看
+$ cat /server/scripts/shell/del_mail_file.sh
+
+# 加入计划任务
+$ echo &quot;00 00 * * * /bin/bash /server/scripts/shell/del_mail_file.sh &gt;/dev/null &amp;1&quot; &gt;&gt;/var/spool/cron/root
+$ crontab -l
+</code></pre>
 <hr>
-<h3 id="七-内核优化"><a href="#七-内核优化" class="headerlink" title="七.内核优化"></a>七.内核优化</h3><h1 id="Linux服务器内核参数优化-主要是指在Linux系统中针对业务服务应用而进行的系统内核参数调整-优化并无一定的标准-下面是生产环境下Linux常见的内核优化"><a href="#Linux服务器内核参数优化-主要是指在Linux系统中针对业务服务应用而进行的系统内核参数调整-优化并无一定的标准-下面是生产环境下Linux常见的内核优化" class="headerlink" title="Linux服务器内核参数优化,主要是指在Linux系统中针对业务服务应用而进行的系统内核参数调整,优化并无一定的标准.下面是生产环境下Linux常见的内核优化:"></a>Linux服务器内核参数优化,主要是指在Linux系统中针对业务服务应用而进行的系统内核参数调整,优化并无一定的标准.下面是生产环境下Linux常见的内核优化:</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line">cat &gt;&gt;/etc/sysctl.conf&lt;&lt;<span class="string">EOF</span></span><br><span class="line"><span class="string">#kernel_flag</span></span><br><span class="line"><span class="string">#关闭ipv6</span></span><br><span class="line"><span class="string">net.ipv6.conf.all.disable_ipv6 = 1</span></span><br><span class="line"><span class="string">net.ipv6.conf.default.disable_ipv6 = 1</span></span><br><span class="line"><span class="string"># 避免放大攻击</span></span><br><span class="line"><span class="string">net.ipv4.icmp_echo_ignore_broadcasts = 1</span></span><br><span class="line"><span class="string"># 开启恶意icmp错误消息保护</span></span><br><span class="line"><span class="string">net.ipv4.icmp_ignore_bogus_error_responses = 1</span></span><br><span class="line"><span class="string">#关闭路由转发</span></span><br><span class="line"><span class="string">#net.ipv4.ip_forward = 0</span></span><br><span class="line"><span class="string">#net.ipv4.conf.all.send_redirects = 0</span></span><br><span class="line"><span class="string">#net.ipv4.conf.default.send_redirects = 0</span></span><br><span class="line"><span class="string">#开启反向路径过滤</span></span><br><span class="line"><span class="string">net.ipv4.conf.all.rp_filter = 1</span></span><br><span class="line"><span class="string">net.ipv4.conf.default.rp_filter = 1</span></span><br><span class="line"><span class="string">#处理无源路由的包</span></span><br><span class="line"><span class="string">net.ipv4.conf.all.accept_source_route = 0</span></span><br><span class="line"><span class="string">net.ipv4.conf.default.accept_source_route = 0</span></span><br><span class="line"><span class="string">#关闭sysrq功能</span></span><br><span class="line"><span class="string">kernel.sysrq = 0</span></span><br><span class="line"><span class="string">#core文件名中添加pid作为扩展名</span></span><br><span class="line"><span class="string">kernel.core_uses_pid = 1</span></span><br><span class="line"><span class="string"># 开启SYN洪水攻击保护</span></span><br><span class="line"><span class="string">net.ipv4.tcp_syncookies = 1</span></span><br><span class="line"><span class="string">#修改消息队列长度</span></span><br><span class="line"><span class="string">kernel.msgmnb = 65536</span></span><br><span class="line"><span class="string">kernel.msgmax = 65536</span></span><br><span class="line"><span class="string">#设置最大内存共享段大小bytes</span></span><br><span class="line"><span class="string">kernel.shmmax = 68719476736</span></span><br><span class="line"><span class="string">kernel.shmall = 4294967296</span></span><br><span class="line"><span class="string">#timewait的数量，默认180000</span></span><br><span class="line"><span class="string">net.ipv4.tcp_max_tw_buckets = 6000</span></span><br><span class="line"><span class="string">net.ipv4.tcp_sack = 1</span></span><br><span class="line"><span class="string">net.ipv4.tcp_window_scaling = 1</span></span><br><span class="line"><span class="string">net.ipv4.tcp_rmem = 4096        87380   4194304</span></span><br><span class="line"><span class="string">net.ipv4.tcp_wmem = 4096        16384   4194304</span></span><br><span class="line"><span class="string">net.core.wmem_default = 8388608</span></span><br><span class="line"><span class="string">net.core.rmem_default = 8388608</span></span><br><span class="line"><span class="string">net.core.rmem_max = 16777216</span></span><br><span class="line"><span class="string">net.core.wmem_max = 16777216</span></span><br><span class="line"><span class="string">#每个网络接口接收数据包的速率比内核处理这些包的速率快时，允许送到队列的数据包的最大数目</span></span><br><span class="line"><span class="string">net.core.netdev_max_backlog = 262144</span></span><br><span class="line"><span class="string">#限制仅仅是为了防止简单的DoS 攻击</span></span><br><span class="line"><span class="string">net.ipv4.tcp_max_orphans = 3276800</span></span><br><span class="line"><span class="string">#未收到客户端确认信息的连接请求的最大值</span></span><br><span class="line"><span class="string">net.ipv4.tcp_max_syn_backlog = 262144</span></span><br><span class="line"><span class="string">net.ipv4.tcp_timestamps = 0</span></span><br><span class="line"><span class="string">#内核放弃建立连接之前发送SYNACK 包的数量</span></span><br><span class="line"><span class="string">net.ipv4.tcp_synack_retries = 1</span></span><br><span class="line"><span class="string">#内核放弃建立连接之前发送SYN 包的数量</span></span><br><span class="line"><span class="string">net.ipv4.tcp_syn_retries = 1</span></span><br><span class="line"><span class="string">#启用timewait 快速回收</span></span><br><span class="line"><span class="string">net.ipv4.tcp_tw_recycle = 1</span></span><br><span class="line"><span class="string">#开启重用。允许将TIME-WAIT sockets 重新用于新的TCP 连接</span></span><br><span class="line"><span class="string">net.ipv4.tcp_tw_reuse = 1</span></span><br><span class="line"><span class="string">net.ipv4.tcp_mem = 94500000 915000000 927000000</span></span><br><span class="line"><span class="string">net.ipv4.tcp_fin_timeout = 1</span></span><br><span class="line"><span class="string">#当keepalive 起用的时候，TCP 发送keepalive 消息的频度。缺省是2 小时</span></span><br><span class="line"><span class="string">net.ipv4.tcp_keepalive_time = 30</span></span><br><span class="line"><span class="string">#允许系统打开的端口范围</span></span><br><span class="line"><span class="string">net.ipv4.ip_local_port_range = 1024    65000</span></span><br><span class="line"><span class="string">#修改防火墙表大小，默认65536</span></span><br><span class="line"><span class="string">#net.netfilter.nf_conntrack_max=655350</span></span><br><span class="line"><span class="string">#net.netfilter.nf_conntrack_tcp_timeout_established=1200</span></span><br><span class="line"><span class="string"># 确保无人能修改路由表</span></span><br><span class="line"><span class="string">#net.ipv4.conf.all.accept_redirects = 0</span></span><br><span class="line"><span class="string">#net.ipv4.conf.default.accept_redirects = 0</span></span><br><span class="line"><span class="string">#net.ipv4.conf.all.secure_redirects = 0</span></span><br><span class="line"><span class="string">#net.ipv4.conf.default.secure_redirects = 0</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line">/sbin/sysctl -p</span><br></pre></td></tr></table></figure>
+<h3 id="七-内核优化"><a href="#七-内核优化" class="headerlink" title="七.内核优化"></a>七.内核优化</h3><h1 id="Linux服务器内核参数优化-主要是指在Linux系统中针对业务服务应用而进行的系统内核参数调整-优化并无一定的标准-下面是生产环境下Linux常见的内核优化"><a href="#Linux服务器内核参数优化-主要是指在Linux系统中针对业务服务应用而进行的系统内核参数调整-优化并无一定的标准-下面是生产环境下Linux常见的内核优化" class="headerlink" title="Linux服务器内核参数优化,主要是指在Linux系统中针对业务服务应用而进行的系统内核参数调整,优化并无一定的标准.下面是生产环境下Linux常见的内核优化:"></a>Linux服务器内核参数优化,主要是指在Linux系统中针对业务服务应用而进行的系统内核参数调整,优化并无一定的标准.下面是生产环境下Linux常见的内核优化:</h1><pre><code class="bash">cat &gt;&gt;/etc/sysctl.conf&lt;&lt;EOF
+#kernel_flag
+#关闭ipv6
+net.ipv6.conf.all.disable_ipv6 = 1
+net.ipv6.conf.default.disable_ipv6 = 1
+# 避免放大攻击
+net.ipv4.icmp_echo_ignore_broadcasts = 1
+# 开启恶意icmp错误消息保护
+net.ipv4.icmp_ignore_bogus_error_responses = 1
+#关闭路由转发
+#net.ipv4.ip_forward = 0
+#net.ipv4.conf.all.send_redirects = 0
+#net.ipv4.conf.default.send_redirects = 0
+#开启反向路径过滤
+net.ipv4.conf.all.rp_filter = 1
+net.ipv4.conf.default.rp_filter = 1
+#处理无源路由的包
+net.ipv4.conf.all.accept_source_route = 0
+net.ipv4.conf.default.accept_source_route = 0
+#关闭sysrq功能
+kernel.sysrq = 0
+#core文件名中添加pid作为扩展名
+kernel.core_uses_pid = 1
+# 开启SYN洪水攻击保护
+net.ipv4.tcp_syncookies = 1
+#修改消息队列长度
+kernel.msgmnb = 65536
+kernel.msgmax = 65536
+#设置最大内存共享段大小bytes
+kernel.shmmax = 68719476736
+kernel.shmall = 4294967296
+#timewait的数量，默认180000
+net.ipv4.tcp_max_tw_buckets = 6000
+net.ipv4.tcp_sack = 1
+net.ipv4.tcp_window_scaling = 1
+net.ipv4.tcp_rmem = 4096        87380   4194304
+net.ipv4.tcp_wmem = 4096        16384   4194304
+net.core.wmem_default = 8388608
+net.core.rmem_default = 8388608
+net.core.rmem_max = 16777216
+net.core.wmem_max = 16777216
+#每个网络接口接收数据包的速率比内核处理这些包的速率快时，允许送到队列的数据包的最大数目
+net.core.netdev_max_backlog = 262144
+#限制仅仅是为了防止简单的DoS 攻击
+net.ipv4.tcp_max_orphans = 3276800
+#未收到客户端确认信息的连接请求的最大值
+net.ipv4.tcp_max_syn_backlog = 262144
+net.ipv4.tcp_timestamps = 0
+#内核放弃建立连接之前发送SYNACK 包的数量
+net.ipv4.tcp_synack_retries = 1
+#内核放弃建立连接之前发送SYN 包的数量
+net.ipv4.tcp_syn_retries = 1
+#启用timewait 快速回收
+net.ipv4.tcp_tw_recycle = 1
+#开启重用。允许将TIME-WAIT sockets 重新用于新的TCP 连接
+net.ipv4.tcp_tw_reuse = 1
+net.ipv4.tcp_mem = 94500000 915000000 927000000
+net.ipv4.tcp_fin_timeout = 1
+#当keepalive 起用的时候，TCP 发送keepalive 消息的频度。缺省是2 小时
+net.ipv4.tcp_keepalive_time = 30
+#允许系统打开的端口范围
+net.ipv4.ip_local_port_range = 1024    65000
+#修改防火墙表大小，默认65536
+#net.netfilter.nf_conntrack_max=655350
+#net.netfilter.nf_conntrack_tcp_timeout_established=1200
+# 确保无人能修改路由表
+#net.ipv4.conf.all.accept_redirects = 0
+#net.ipv4.conf.default.accept_redirects = 0
+#net.ipv4.conf.all.secure_redirects = 0
+#net.ipv4.conf.default.secure_redirects = 0
+EOF
+/sbin/sysctl -p
+</code></pre>
 <hr>
-<h3 id="八-安装常用软件"><a href="#八-安装常用软件" class="headerlink" title="八.安装常用软件"></a>八.安装常用软件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yum install lrzsz ntpdate sysstat net-tools wget vim bash-completion dos2unix -y</span><br></pre></td></tr></table></figure>
+<h3 id="八-安装常用软件"><a href="#八-安装常用软件" class="headerlink" title="八.安装常用软件"></a>八.安装常用软件</h3><pre><code class="bash">$ yum install lrzsz ntpdate sysstat net-tools wget vim bash-completion dos2unix -y
+</code></pre>
 <hr>
-<h3 id="九-更新系统到最新"><a href="#九-更新系统到最新" class="headerlink" title="九.更新系统到最新"></a>九.更新系统到最新</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 更新补丁并升级系统版本</span></span><br><span class="line">$ yum update  -y </span><br><span class="line">	</span><br><span class="line"><span class="comment"># 只更新安全补丁，不升级系统版本</span></span><br><span class="line">$ yum --security check-update    <span class="comment">#检查是否有安全补丁</span></span><br></pre></td></tr></table></figure>
+<h3 id="九-更新系统到最新"><a href="#九-更新系统到最新" class="headerlink" title="九.更新系统到最新"></a>九.更新系统到最新</h3><pre><code class="bash"># 更新补丁并升级系统版本
+$ yum update  -y 
+    
+# 只更新安全补丁，不升级系统版本
+$ yum --security check-update    #检查是否有安全补丁
+</code></pre>
 <h3 id="十-分区"><a href="#十-分区" class="headerlink" title="十.分区"></a>十.分区</h3><p>/blos boot 2M<br>/boot 1G<br>/ 10G 修改为固定<br>/home 5G<br>swap 1G</p>
 
       
@@ -566,10 +696,6 @@
     </div>
 </article>
 
-
-<p>
-    <a  class="dashang" onclick="dashangToggle()">赏</a>
-</p>
 
 
 
@@ -596,24 +722,6 @@
     </div>
 </div>
 
-<div class="hide_box" onclick="dashangToggle()"></div>
-<div class="shang_box">
-    <a class="shang_close"  onclick="dashangToggle()">×</a>
-    <div class="shang_tit">
-        <p>喜欢就点赞,疼爱就打赏</p>
-    </div>
-    <div class="shang_payimg">
-        <div class="pay_img">
-            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
-            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
-        </div>
-    </div>
-    <div class="shang_payselect">
-        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
-    </div>
-</div>
-
-
 </body>
 <script src="/js/jquery.pjax.js?v=1.1.0" ></script>
 
@@ -627,14 +735,6 @@
         
 
         /*渲染打赏样式*/
-        
-        $("input[name=pay]").on("click", function () {
-            if($("input[name=pay]:checked").val()=="weixin"){
-                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
-            } else {
-                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
-            }
-        })
         
 
         /*高亮代码块行号*/
@@ -653,11 +753,6 @@
     }
 
     /*打赏页面隐藏与展示*/
-    
-    function dashangToggle() {
-        $(".shang_box").fadeToggle();
-        $(".hide_box").fadeToggle();
-    }
     
 
 </script>

@@ -6,29 +6,25 @@
   <meta name="keywords" content="">
   <meta name="description" content="Linux自动化运维 | hjxstart的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="第1讲 运维基础1.1 计划任务简介 经验丰富的系统运维工程师可以使得Linux在无需人为介 入的情况下，在指定的时间段自动启用或停止某些服务或 命令，从而实现运维的自动化。 作用:计划任务主要是做一些周期性的任务，目前最主要的 用途是定期备份数据 分类:   次性计划任务:今晚11点30分开启网站服务。 长期性计划任务:每周一的凌晨2点20分把&#x2F;data&#x2F;wwwroot目录打包备份为backup">
+<meta name="description" content="第一章 CDN开发1.1、开发环境介绍hjx:~ jxh$ node --version v14.15.1 hjx:~ jxh$ npm --version 7.17.0 hjx:~ jxh$ vue --version @vue&#x2F;cli 4.5.13   1.2、CDN方式使用Vue&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;vue@2.6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux自动化运维">
-<meta property="og:url" content="http://example.com/2021/06/09/Linux%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4/index.html">
+<meta property="og:title" content="Vue基础">
+<meta property="og:url" content="http://example.com/2021/06/23/Vue%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="hjxstart的博客">
-<meta property="og:description" content="第1讲 运维基础1.1 计划任务简介 经验丰富的系统运维工程师可以使得Linux在无需人为介 入的情况下，在指定的时间段自动启用或停止某些服务或 命令，从而实现运维的自动化。 作用:计划任务主要是做一些周期性的任务，目前最主要的 用途是定期备份数据 分类:   次性计划任务:今晚11点30分开启网站服务。 长期性计划任务:每周一的凌晨2点20分把&#x2F;data&#x2F;wwwroot目录打包备份为backup">
+<meta property="og:description" content="第一章 CDN开发1.1、开发环境介绍hjx:~ jxh$ node --version v14.15.1 hjx:~ jxh$ npm --version 7.17.0 hjx:~ jxh$ vue --version @vue&#x2F;cli 4.5.13   1.2、CDN方式使用Vue&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;vue@2.6">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/images/2021/06/09/02e49f81-65f9-451b-8aa6-6794e740882d.png">
-<meta property="og:image" content="http://example.com/images/2021/06/09/368b2d91-da3f-400a-9691-e41d61c50891.png">
-<meta property="og:image" content="http://example.com/images/2021/06/09/e0d9edd7-b93e-42c3-920c-0d5faaec706d.png">
-<meta property="article:published_time" content="2021-06-09T00:29:17.000Z">
-<meta property="article:modified_time" content="2021-06-23T08:25:04.904Z">
+<meta property="article:published_time" content="2021-06-23T02:48:20.000Z">
+<meta property="article:modified_time" content="2021-06-23T08:31:31.277Z">
 <meta property="article:author" content="hjxstart">
-<meta property="article:tag" content="Java，静心">
+<meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/2021/06/09/02e49f81-65f9-451b-8aa6-6794e740882d.png">
 
 
 <link rel="icon" href="/img/favicon.ico">
 
 <link href="/css/style.css?v=1.1.0" rel="stylesheet">
 
-<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+<link href="/css/hl_theme/atom-dark.css?v=1.1.0" rel="stylesheet">
 
 <link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
 
@@ -519,7 +515,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC1%E8%AE%B2-%E8%BF%90%E7%BB%B4%E5%9F%BA%E7%A1%80"><span class="toc-text">第1讲 运维基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E7%AE%80%E4%BB%8B"><span class="toc-text">1.1 计划任务简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-cron%E5%9F%BA%E7%A1%80"><span class="toc-text">1.2 cron基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-%E7%B3%BB%E7%BB%9F%E7%BA%A7%E7%9A%84%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1"><span class="toc-text">1.3 系统级的计划任务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-%E7%94%A8%E6%88%B7%E7%BA%A7%E7%9A%84%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1"><span class="toc-text">1.4 用户级的计划任务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-rsyslog%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86"><span class="toc-text">1.5 rsyslog日志管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%AE%80%E4%BB%8B"><span class="toc-text">1. 简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%97%A5%E5%BF%97%E6%9C%8D%E5%8A%A1-rsyslogd"><span class="toc-text">2. 日志服务 rsyslogd</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-6-logrotate%E6%97%A5%E5%BF%97%E8%BD%AE%E8%BD%AC"><span class="toc-text">1.6 logrotate日志轮转</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%97%A5%E5%BF%97%E8%BD%AE%E8%BD%AC"><span class="toc-text">1.日志轮转</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99"><span class="toc-text">2.日志文件命名规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-logrotate-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-text">3.logrotate 配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E8%BD%AE%E8%BD%AC%E6%A1%88%E4%BE%8B-%E5%AF%B9-var-log-err-log%E8%BD%AE%E8%BD%AC"><span class="toc-text">4.轮转案例:对&#x2F;var&#x2F;log&#x2F;err.log轮转</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-7-sshd"><span class="toc-text">1.7 sshd</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-sshd%E7%AE%80%E4%BB%8B"><span class="toc-text">1.sshd简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%85%8D%E7%BD%AEsshd%E6%9C%8D%E5%8A%A1"><span class="toc-text">2.配置sshd服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%AE%89%E5%85%A8%E5%AF%86%E9%92%A5%E9%AA%8C%E8%AF%81"><span class="toc-text">3.安全密钥验证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E8%BF%9C%E7%A8%8B%E4%BC%A0%E8%BE%93%E5%91%BD%E4%BB%A4"><span class="toc-text">4.远程传输命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%AE%89%E5%85%A8%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AEsftp"><span class="toc-text">5.安全文件传输协议sftp</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC1%E8%AE%B2-%E8%BF%90%E7%BB%B4%E5%9F%BA%E7%A1%80"><span class="toc-text">第1讲 运维基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E7%AE%80%E4%BB%8B"><span class="toc-text">1.1 计划任务简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-cron%E5%9F%BA%E7%A1%80"><span class="toc-text">1.2 cron基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-%E7%B3%BB%E7%BB%9F%E7%BA%A7%E7%9A%84%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1"><span class="toc-text">1.3 系统级的计划任务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-%E7%94%A8%E6%88%B7%E7%BA%A7%E7%9A%84%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1"><span class="toc-text">1.4 用户级的计划任务</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1%E3%80%81%E6%AF%8F%E6%9C%881%E3%80%8110%E3%80%8122%E6%97%A5%E7%9A%844-45%E9%87%8D%E5%90%AFnetwork%E6%9C%8D%E5%8A%A1"><span class="toc-text">1、每月1、10、22日的4:45重启network服务</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%E3%80%81%E6%AF%8F%E5%91%A8%E5%85%AD%E3%80%81%E5%91%A8%E6%97%A5%E7%9A%841-10%E9%87%8D%E5%90%AFnetwork%E6%9C%8D%E5%8A%A1"><span class="toc-text">2、每周六、周日的1:10重启network服务</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3%E3%80%81%E6%AF%8F%E5%A4%A918-00%E8%87%B323-00%E4%B9%8B%E9%97%B4%E6%AF%8F%E9%9A%9430%E5%88%86%E9%92%9F%E9%87%8D%E5%90%AFnetwork%E6%9C%8D%E5%8A%A1"><span class="toc-text">3、每天18:00至23:00之间每隔30分钟重启network服务</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4%E3%80%81%E6%AF%8F%E9%9A%94%E4%B8%A4%E5%A4%A9%E7%9A%84%E4%B8%8A%E5%8D%888%E7%82%B9%E5%88%B011%E7%82%B9%E7%9A%84%E7%AC%AC3%E5%92%8C%E7%AC%AC15%E5%88%86%E9%92%9F%E6%89%A7%E8%A1%8C%E4%B8%80%E6%AC%A1%E9%87%8D%E5%90%AF"><span class="toc-text">4、每隔两天的上午8点到11点的第3和第15分钟执行一次重启</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5%E3%80%81%E6%AF%8F%E5%91%A8%E6%97%A5%E5%87%8C%E6%99%A82%E7%82%B930%E5%88%86%EF%BC%8C%E8%BF%90%E8%A1%8Ccp%E5%91%BD%E4%BB%A4%E5%AF%B9-etc-fstab%E6%96%87%E4%BB%B6%E8%BF%9B%E8%A1%8C%E5%A4%87%E4%BB%BD%EF%BC%8C%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE%E4%B8%BA-backup-fstab-YYYY-MM-DD-hh-mm-ss"><span class="toc-text">5、每周日凌晨2点30分，运行cp命令对&#x2F;etc&#x2F;fstab文件进行备份，存储位置为&#x2F;backup&#x2F;fstab-YYYY-MM-DD-hh-mm-ss;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#date-F-H-M-S-gt-2021-06-09-09-35-38"><span class="toc-text">date +%F-%H-%M-%S &gt; 2021-06-09-09-35-38</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6%E3%80%81%E6%99%9A%E4%B8%8A11%E7%82%B9%E5%88%B0%E6%97%A9%E4%B8%8A7%E7%82%B9%E4%B9%8B%E9%97%B4%EF%BC%8C%E6%AF%8F%E9%9A%94%E4%B8%80%E5%B0%8F%E6%97%B6%E9%87%8D%E5%90%AFsmb"><span class="toc-text">6、晚上11点到早上7点之间，每隔一小时重启smb</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-rsyslog%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86"><span class="toc-text">1.5 rsyslog日志管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%AE%80%E4%BB%8B"><span class="toc-text">1. 简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99"><span class="toc-text">2.日志文件命名规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-logrotate-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-text">3.logrotate 配置文件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#vim-etc-logrotate-conf"><span class="toc-text">vim &#x2F;etc&#x2F;logrotate.conf</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%85%8D%E7%BD%AEsshd%E6%9C%8D%E5%8A%A1"><span class="toc-text">2.配置sshd服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%AE%89%E5%85%A8%E5%AF%86%E9%92%A5%E9%AA%8C%E8%AF%81"><span class="toc-text">3.安全密钥验证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E8%BF%9C%E7%A8%8B%E4%BC%A0%E8%BE%93%E5%91%BD%E4%BB%A4"><span class="toc-text">4.远程传输命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%AE%89%E5%85%A8%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AEsftp"><span class="toc-text">5.安全文件传输协议sftp</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -550,13 +546,33 @@
 <li>示例练习:今晚11点30分开启网站服务</li>
 </ol>
 <ul>
-<li>前提:系统开启atd服务。<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# yum install at</span><br><span class="line">[root@localhost ~]# systemctl start atd.service //开启服务</span><br><span class="line">[root@localhost ~]# systemctl enable atd.service // 开机自启动</span><br><span class="line">[root@localhost ~]# systemctl status atd // 查看当前的</span><br></pre></td></tr></table></figure></li>
-<li>创建:<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# at 23:30 // 设置当前用户的一次性任务</span><br><span class="line"><span class="meta">at&gt;</span><span class="bash"> systemctl restart httpd</span></span><br><span class="line"><span class="meta">at&gt;</span><span class="bash"> &lt;EOT&gt;</span></span><br><span class="line">job 1 at Mon Sep 23 23:30:00 2019</span><br><span class="line">// 一次性的计划任务使用ctr+D来结束提交</span><br></pre></td></tr></table></figure></li>
+<li>前提:系统开启atd服务。<pre><code class="shell">[root@localhost ~]# yum install at
+[root@localhost ~]# systemctl start atd.service //开启服务
+[root@localhost ~]# systemctl enable atd.service // 开机自启动
+[root@localhost ~]# systemctl status atd // 查看当前的
+</code></pre>
+</li>
+<li>创建:<pre><code class="shell">[root@localhost ~]# at 23:30 // 设置当前用户的一次性任务
+at&gt; systemctl restart httpd
+at&gt; &lt;EOT&gt;
+job 1 at Mon Sep 23 23:30:00 2019
+// 一次性的计划任务使用ctr+D来结束提交
+</code></pre>
+</li>
 <li>一次性计划任务:Ctrl + D组合键来结束编写计划任务 </li>
 <li>at命令接收前面echo命令的输出信息，以达到通过非交互式的方式创建计划一次性任务的目的<br>[root@localhost ~]# echo “systemctl restart httpd” | at 23:30<br>job 2 at Mon Sep 23 23:30:00 2019</li>
-<li>查看:at -l<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# at -l</span><br><span class="line">1 Mon Sep 23 23:30:00 2019 a root </span><br><span class="line">2 Mon Sep 23 23:30:00 2019 a root</span><br></pre></td></tr></table></figure></li>
-<li>删除:atrm<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# atrm 2</span><br></pre></td></tr></table></figure></li>
-<li>help 或 man<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# at --help</span><br><span class="line">[root@localhost ~]# man at</span><br></pre></td></tr></table></figure></li>
+<li>查看:at -l<pre><code class="shell">[root@localhost ~]# at -l
+1 Mon Sep 23 23:30:00 2019 a root 
+2 Mon Sep 23 23:30:00 2019 a root
+</code></pre>
+</li>
+<li>删除:atrm<pre><code class="shell">[root@localhost ~]# atrm 2
+</code></pre>
+</li>
+<li>help 或 man<pre><code class="shell">[root@localhost ~]# at --help
+[root@localhost ~]# man at
+</code></pre>
+</li>
 </ul>
 <hr>
 <h2 id="1-2-cron基础"><a href="#1-2-cron基础" class="headerlink" title="1.2 cron基础"></a>1.2 cron基础</h2><ol>
@@ -576,19 +592,20 @@
 <li>逗号(,)来分别表示多个时间段，例如“8,9,12”表示8月、9月和12月</li>
 <li>减号(-)来表示一段连续的时间周期(例如字段“日”的取值为“12-15”，则表示每月的12~15日)</li>
 <li>除号(/)表示执行任务的间隔时间(例如“*/2”表示每隔2分钟执行一次任务)</li>
-<li>示例 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">25 3 * * 1,3,5  // 每周1，周3，周五的3:25分</span><br><span class="line">0 1 * * 1-5 // 每周工作日(周一至周五)1:00</span><br><span class="line">*/5 * * * * // 每隔5分钟</span><br></pre></td></tr></table></figure></li>
+<li>示例<br>```shell<br>25 3 * * 1,3,5  // 每周1，周3，周五的3:25分<br>0 1 * * 1-5 // 每周工作日(周一至周五)1:00</li>
 </ul>
-<ol start="4">
-<li>书写定时计划任务的注意点</li>
-</ol>
-<ul>
-<li>每个任务添加注释，谁写的，什么时间写的，完成什么需求? l 执行脚本使用/bin/sh(防止脚本无执行权限)，要执行的文件使用绝对路径</li>
-<li>尽量把要执行的命令放在脚本里，然后把脚本放在定时计划任务里。</li>
-<li>对于调用脚本的定时任务，可以把标准输出错误输出重定向到空。</li>
-<li>如果时上有值，分钟必须有值。</li>
-<li>“日”和“星期”字段不能同时使用，否则就会发生冲突 l 定时任务中%无法执行，需要转义%</li>
-<li>示例<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3,15 8-11 * * * myCommand // 在上午8点到11点的第3和 第15分钟执行</span><br><span class="line">3,15 8-11 */2 * * // 每隔两天的上午8点到11点的第3 和第15分钟执行</span><br></pre></td></tr></table></figure></li>
-</ul>
+<p>*/5 * * * * // 每隔5分钟</p>
+<pre><code>4. 书写定时计划任务的注意点
+- 每个任务添加注释，谁写的，什么时间写的，完成什么需求? l 执行脚本使用/bin/sh(防止脚本无执行权限)，要执行的文件使用绝对路径
+- 尽量把要执行的命令放在脚本里，然后把脚本放在定时计划任务里。
+- 对于调用脚本的定时任务，可以把标准输出错误输出重定向到空。
+- 如果时上有值，分钟必须有值。
+- “日”和“星期”字段不能同时使用，否则就会发生冲突 l 定时任务中%无法执行，需要转义\%
+- 示例
+```shell
+3,15 8-11 * * * myCommand // 在上午8点到11点的第3和 第15分钟执行
+3,15 8-11 */2 * * // 每隔两天的上午8点到11点的第3 和第15分钟执行
+</code></pre>
 <hr>
 <h2 id="1-3-系统级的计划任务"><a href="#1-3-系统级的计划任务" class="headerlink" title="1.3 系统级的计划任务"></a>1.3 系统级的计划任务</h2><ol>
 <li>简述<br>这个是系统设置好了，清理系统垃圾或者是自动执行某些脚本的系统任务，一般我们做了解就行了，不要更改配置文件是/etc/crontab，比如</li>
@@ -600,7 +617,19 @@
 <li>收集系统的状态信息</li>
 </ul>
 <ol start="2">
-<li>文件/etc/crontab<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@kongd ~]# cat /etc/crontab SHELL=/bin/bash PATH=/sbin:/bin:/usr/sbin:/usr/bin MAILTO=root</span><br><span class="line"><span class="meta">#</span><span class="bash"> For details see man 4 crontabs</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Example of job definition:</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> .---------------- minute (0 - 59)</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> | .------------- hour (0 - 23)</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> | | .---------- day of month (1 - 31)</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> | | | .------- month (1 - 12) OR jan,feb,mar,apr ...</span></span><br><span class="line"><span class="meta">#</span><span class="bash">| | | | .----dayofweek(0-6)(Sunday=0or7)OR</span></span><br><span class="line">sun,mon,tue,wed,thu,fri,sat</span><br><span class="line"><span class="meta">#</span><span class="bash">|||||</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> * * * * * user-name <span class="built_in">command</span> to be executed</span></span><br></pre></td></tr></table></figure></li>
+<li>文件/etc/crontab<pre><code class="shell">[root@kongd ~]# cat /etc/crontab SHELL=/bin/bash PATH=/sbin:/bin:/usr/sbin:/usr/bin MAILTO=root
+# For details see man 4 crontabs
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# | .------------- hour (0 - 23)
+# | | .---------- day of month (1 - 31)
+# | | | .------- month (1 - 12) OR jan,feb,mar,apr ...
+#| | | | .----dayofweek(0-6)(Sunday=0or7)OR
+sun,mon,tue,wed,thu,fri,sat
+#|||||
+# * * * * * user-name command to be executed
+</code></pre>
+</li>
 </ol>
 <ul>
 <li>SHELL:就是运行计划任务的解释器，默认是bash</li>
@@ -621,22 +650,37 @@
 <li>-r: 删除计划任务 remove</li>
 </ul>
 <ol start="2">
-<li>示例<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 1、每月1、10、22日的4:45重启network服务</span> </span><br><span class="line">45 4 1,10,22 * * systemctl restart network</span><br><span class="line">45 4 1,10,22 * * /usr/bin/systemctl restart network</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 2、每周六、周日的1:10重启network服务</span></span><br><span class="line">10 1 * * 6-7 sytemctl restart network</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 3、每天18:00至23:00之间每隔30分钟重启network服务</span> </span><br><span class="line">*/30 18-23 * * * systemctl restart network</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 4、每隔两天的上午8点到11点的第3和第15分钟执行一次重启</span> </span><br><span class="line">3,15 8-11 */2 * * systemctl reboot</span><br><span class="line"><span class="meta">#</span><span class="bash"> 5、每周日凌晨2点30分，运行cp命令对/etc/fstab文件进行备份，存储位置为/backup/fstab-YYYY-MM-DD-hh-mm-ss;</span> </span><br><span class="line"><span class="meta">#</span><span class="bash"> date +%F-%H-%M-%S &gt; 2021-06-09-09-35-38</span></span><br><span class="line">30 2 * * 7 cp /etc/fatab /backup/fstab-date +\%F-\%H-\%M-\%S </span><br><span class="line">30 2 * * 0 cp /etc/fatab /backup/fstab-date +\%F-\%H-\%M-\%S </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 6、晚上11点到早上7点之间，每隔一小时重启smb</span></span><br><span class="line">0 23,0-7/1 * * * systemctl restart smb</span><br></pre></td></tr></table></figure></li>
-<li>vim /etc/crontab 与crontab -e写入的定时运行的区别?。</li>
+<li>示例<br>```shell<h1 id="1、每月1、10、22日的4-45重启network服务"><a href="#1、每月1、10、22日的4-45重启network服务" class="headerlink" title="1、每月1、10、22日的4:45重启network服务"></a>1、每月1、10、22日的4:45重启network服务</h1>45 4 1,10,22 * * systemctl restart network<br>45 4 1,10,22 * * /usr/bin/systemctl restart network</li>
 </ol>
-<ul>
-<li>vim /etc/crontab:是系统级别定义的crontab，/etc/crontab 的所有者和组都是root</li>
-<li>crontab -e :是用户自定义的crontab，是所有的用户都可以写入的 /var/spool/cron/username</li>
-</ul>
-<ol start="4">
-<li>作业</li>
-</ol>
-<ul>
-<li>1.设置一次性计划任务在18:00时关闭系统，并查看任务 信息。</li>
-<li>2.每周日凌晨2点30分，运行cp命令对/etc/fstab文件进行 备份，存储位置为/backup/fstab-YYYY-MM-DD-hh-mm- ss。</li>
-<li>3.每周2、4、7备份/var/log/secure文件至/logs目录中， 文件名格式为“secure-yyyymmdd”。</li>
-<li>4.每两小时取出当前系统/proc/meminfo文件中以S或M开 头的行信息追加至/tmp/meminfo.txt文件中。<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 1.设置一次性计划任务在18:00时关闭系统，并查看任务 信息。</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="comment"># at 18:00</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> &gt; systemctl poweroff</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> &gt; at -l</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> &gt; EOF</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 2.每周日凌晨2点30分，运行cp命令对/etc/fstab文件进行 备份，存储位置为/backup/fstab-YYYY-MM-DD-hh-mm-ss。</span></span><br><span class="line">30 2 * * 7 cp /etc/fstab /backup/fstab-$(date +\%F-\%H-\%M-\%S)</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 3.每周2、4、7备份/var/<span class="built_in">log</span>/secure文件至/logs目录中， 文件名格式为“secure-yyyymmdd”。</span></span><br><span class="line">0 0 * * 2,4,7 cp /var/log/secure /logs/secure-$(date + \%Y\%m\%d)</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 4.每两小时取出当前系统/proc/meminfo文件中以S或M开 头的行信息追加至/tmp/meminfo.txt文件中。</span></span><br><span class="line">0 */2 * * * grep ^[SM] /proc/meminfo  &gt;&gt; /tem/meminfo.txt</span><br></pre></td></tr></table></figure></li>
-</ul>
+<h1 id="2、每周六、周日的1-10重启network服务"><a href="#2、每周六、周日的1-10重启network服务" class="headerlink" title="2、每周六、周日的1:10重启network服务"></a>2、每周六、周日的1:10重启network服务</h1><p>10 1 * * 6-7 sytemctl restart network</p>
+<h1 id="3、每天18-00至23-00之间每隔30分钟重启network服务"><a href="#3、每天18-00至23-00之间每隔30分钟重启network服务" class="headerlink" title="3、每天18:00至23:00之间每隔30分钟重启network服务"></a>3、每天18:00至23:00之间每隔30分钟重启network服务</h1><p>*/30 18-23 * * * systemctl restart network</p>
+<h1 id="4、每隔两天的上午8点到11点的第3和第15分钟执行一次重启"><a href="#4、每隔两天的上午8点到11点的第3和第15分钟执行一次重启" class="headerlink" title="4、每隔两天的上午8点到11点的第3和第15分钟执行一次重启"></a>4、每隔两天的上午8点到11点的第3和第15分钟执行一次重启</h1><p>3,15 8-11 */2 * * systemctl reboot</p>
+<h1 id="5、每周日凌晨2点30分，运行cp命令对-etc-fstab文件进行备份，存储位置为-backup-fstab-YYYY-MM-DD-hh-mm-ss"><a href="#5、每周日凌晨2点30分，运行cp命令对-etc-fstab文件进行备份，存储位置为-backup-fstab-YYYY-MM-DD-hh-mm-ss" class="headerlink" title="5、每周日凌晨2点30分，运行cp命令对/etc/fstab文件进行备份，存储位置为/backup/fstab-YYYY-MM-DD-hh-mm-ss;"></a>5、每周日凌晨2点30分，运行cp命令对/etc/fstab文件进行备份，存储位置为/backup/fstab-YYYY-MM-DD-hh-mm-ss;</h1><h1 id="date-F-H-M-S-gt-2021-06-09-09-35-38"><a href="#date-F-H-M-S-gt-2021-06-09-09-35-38" class="headerlink" title="date +%F-%H-%M-%S &gt; 2021-06-09-09-35-38"></a>date +%F-%H-%M-%S &gt; 2021-06-09-09-35-38</h1><p>30 2 * * 7 cp /etc/fatab /backup/fstab-date +%F-%H-%M-%S<br>30 2 * * 0 cp /etc/fatab /backup/fstab-date +%F-%H-%M-%S </p>
+<h1 id="6、晚上11点到早上7点之间，每隔一小时重启smb"><a href="#6、晚上11点到早上7点之间，每隔一小时重启smb" class="headerlink" title="6、晚上11点到早上7点之间，每隔一小时重启smb"></a>6、晚上11点到早上7点之间，每隔一小时重启smb</h1><p>0 23,0-7/1 * * * systemctl restart smb</p>
+<pre><code>3. vim /etc/crontab 与crontab -e写入的定时运行的区别?。
+- vim /etc/crontab:是系统级别定义的crontab，/etc/crontab 的所有者和组都是root
+- crontab -e :是用户自定义的crontab，是所有的用户都可以写入的 /var/spool/cron/username
+4. 作业
+- 1.设置一次性计划任务在18:00时关闭系统，并查看任务 信息。
+- 2.每周日凌晨2点30分，运行cp命令对/etc/fstab文件进行 备份，存储位置为/backup/fstab-YYYY-MM-DD-hh-mm- ss。
+- 3.每周2、4、7备份/var/log/secure文件至/logs目录中， 文件名格式为“secure-yyyymmdd”。
+- 4.每两小时取出当前系统/proc/meminfo文件中以S或M开 头的行信息追加至/tmp/meminfo.txt文件中。
+```shell
+# 1.设置一次性计划任务在18:00时关闭系统，并查看任务 信息。
+# # at 18:00
+# &gt; systemctl poweroff
+# &gt; at -l
+# &gt; EOF
+
+# 2.每周日凌晨2点30分，运行cp命令对/etc/fstab文件进行 备份，存储位置为/backup/fstab-YYYY-MM-DD-hh-mm-ss。
+30 2 * * 7 cp /etc/fstab /backup/fstab-$(date +\%F-\%H-\%M-\%S)
+
+# 3.每周2、4、7备份/var/log/secure文件至/logs目录中， 文件名格式为“secure-yyyymmdd”。
+0 0 * * 2,4,7 cp /var/log/secure /logs/secure-$(date + \%Y\%m\%d)
+
+# 4.每两小时取出当前系统/proc/meminfo文件中以S或M开 头的行信息追加至/tmp/meminfo.txt文件中。
+0 */2 * * * grep ^[SM] /proc/meminfo  &gt;&gt; /tem/meminfo.txt
+</code></pre>
 <hr>
 <h2 id="1-5-rsyslog日志管理"><a href="#1-5-rsyslog日志管理" class="headerlink" title="1.5 rsyslog日志管理"></a>1.5 rsyslog日志管理</h2><h3 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h3><ol>
 <li>在 CentOS 6.x 中日志服务已经由 rsyslogd 取代了原先的 syslogd 服务。Redhat 认为 syslogd 已经不能满足在工作中的需求，rsyslogd 相比 syslogd 具有一些新的特点:</li>
@@ -653,7 +697,12 @@
 <li>除了系统默认的日志之外，采用 RPM 方式安装的系统服 务也会默认把日志记录在/var/log/目录中(源码包安装的 服务日志是在源码包指定目录中)。不过这些日志不是由 rsyslogd 服务来记录和管理的，而是各个服务使用自己 的日志管理文档来记录自身日志</li>
 </ol>
 <ul>
-<li>比如:/var/log/httpd/ RPM 包安装的 apache 服务的 默认日志目录<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# yum install httpd -y // 安装</span><br><span class="line">[root@localhost ~]# systemctl start httpd // 启动</span><br><span class="line">[root@localhost ~]# ls /var/log/httpd/</span><br><span class="line">access_log  error_log</span><br></pre></td></tr></table></figure></li>
+<li>比如:/var/log/httpd/ RPM 包安装的 apache 服务的 默认日志目录<pre><code class="shell">[root@localhost ~]# yum install httpd -y // 安装
+[root@localhost ~]# systemctl start httpd // 启动
+[root@localhost ~]# ls /var/log/httpd/
+access_log  error_log
+</code></pre>
+</li>
 </ul>
 <ol start="4">
 <li>日志格式。只要是由日志服务 rsyslogd 记录的日志文件，他们的格式是一样的。基本日志格式包含以下四列:</li>
@@ -662,7 +711,11 @@
 <li>事件产生的时间;</li>
 <li>发生事件的服务器的主机名;</li>
 <li>产生事件的服务名或程序名;</li>
-<li>事件的具体信息。<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# tail -2 /var/log/messages </span><br><span class="line">Jun  9 10:11:03 localhost dbus[6555]: [system] Activating service name=&#x27;org.freedesktop.problems&#x27; (using servicehelper)</span><br><span class="line">Jun  9 10:11:03 localhost dbus[6555]: [system] Successfully activated service &#x27;org.freedesktop.problems&#x27;</span><br></pre></td></tr></table></figure></li>
+<li>事件的具体信息。<pre><code class="shell">[root@localhost ~]# tail -2 /var/log/messages 
+Jun  9 10:11:03 localhost dbus[6555]: [system] Activating service name=&#39;org.freedesktop.problems&#39; (using servicehelper)
+Jun  9 10:11:03 localhost dbus[6555]: [system] Successfully activated service &#39;org.freedesktop.problems&#39;
+</code></pre>
+</li>
 </ul>
 <ol start="5">
 <li>/etc/rsyslog.conf 配置文件格式</li>
@@ -676,25 +729,69 @@
 <li>连接符<br>日志服务[连接符号]日志等级 日志记录位置<br>（1）“.”代表只要比后面的等级高的(包含该等级)日志都记 录下来。比如:“cron.info”代表 cron 服务产生的日志，只 要日志等级大于等于 info 级别，就记录<br>（2）“.=”代表只记录所需等级的日志，其他等级的都不记录。 比如:“*.=emerg”代表任何日志服务产生的日志，只要等 级是 emerg 等级就记录。这种用法及少见，了解就好<br>（3）“.!”代表不等于，也就是除了该等级的日志外，其他等级 的日志都记录。</li>
 <li>日志等级<br>（1）debug(LOG_DEBUG) 一般的调试信息说明<br>（2）info(LOG_INFO) 基本的通知信息<br>（3）notice(LOG_NOTICE) 普通信息，但是有一定的重要性<br>（4）warning(LOG_WARNING) 警告信息，但是还不会影响到服务或系统的运行<br>（5）err(LOG_ERR) 错误信息，一般达到 err 等级的信息以及可以影响到服务或系统的运行了。<br>（6）crit(LOG_CRIT) 临界状况信息，比 err 等级还要严重 lalert(LOG_ALERT) 警告状态信息，比 crit 还要严重，必须立即采取行动。<br>（7）emerg(LOG_EMERG) 疼痛等级信息，系统已经无法使用了<br>（8）* 代表所有日志等级，比如:“authpriv.*”代表 authpriv 认证信息服务产生的日志，所有的日志等级都记录。 l日志等级这里还可以识别“none”，如果日志等级是 none，就说明忽略这个日志服务，该服务的所有日志都不再记录。</li>
 <li>日记记录位置<br>日志记录位置就是当前日志输出到哪个日志文件中保存，当然也可以把日志输出到打印机打印，或者输出到远程日志服务器上(当然日志服务器要允许接收才行)。日志的记录位置也是固定的。<br>（1）日志文件的绝对路径。最常见的日志保存方法，如“/var/log/secure”就是保 存系统验证和授权信息日志的。<br>（2）系统设备文件。如“/dev/lp0”。<br>（3）转发给远程主机。因为可以选择使用 TCP 协议和 UDP 协议传输日志信息， 所以有两种发送格式。1）如使用“@192.168.0.210:514”，就会把日志内容使用 UDP 协议发送到 192.168.0.210 的 UDP 514 端口上;2）如果使用“@@192.168.0.210:514”就会把日志内容使用 TCP 协议发送到 192.168.0.210 的 TCP 514 端口上。<br>（4）用户名。如“root”，就会把日志发送给 root 用户，当然 root 要在线，否 则就收不到日志信息了。发送日志给用户时，可以使用“*”代表发送给所有在线用 户，如“mail.*”就会把 mail 服务产生的所有级别的日志发送给所有在线用户。如果 需要把日志发送给多个在线用户，用户名之间用“，”分隔。</li>
-<li>示例:把所有服务的“err”以上的错误都保存在 /var/log/err.log 日志中:<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@kongd ~]# cp /etc/rsyslog.conf&#123;,.bak&#125;</span><br><span class="line">[root@kongd ~]# vim /etc/rsyslog.conf</span><br><span class="line">*.err /var/log/err.log</span><br><span class="line">[root@kongd ~]# systemctl restart rsyslog // 需要生效需要重启服务</span><br><span class="line">[root@localhost ~]# vim /etc/httpd/conf/httpd.conf // 制造错误测试</span><br><span class="line">[root@localhost ~]# systemctl restart httpd // 重启错误服务</span><br><span class="line">Job for httpd.service failed because the control process exited with error code. See &quot;systemctl status httpd.service&quot; and &quot;journalctl -xe&quot; for details.</span><br><span class="line">[root@localhost ~]# cat /var/log/err.log | tail -1 # 查看错误log</span><br><span class="line">Jun  9 10:39:10 localhost systemd: Failed to start The Apache HTTP Server.</span><br></pre></td></tr></table></figure>
-<h3 id="2-日志服务-rsyslogd"><a href="#2-日志服务-rsyslogd" class="headerlink" title="2. 日志服务 rsyslogd"></a>2. 日志服务 rsyslogd</h3></li>
+<li>示例:把所有服务的“err”以上的错误都保存在 /var/log/err.log 日志中:<br>```shell<br>[root@kongd ~]# cp /etc/rsyslog.conf{,.bak}<br>[root@kongd ~]# vim /etc/rsyslog.conf</li>
 </ul>
-<ol>
-<li>存放日志的服务器（开启接受功能）:192.168.17.130<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# vim /etc/rsyslog.conf // 编辑配置文件</span><br><span class="line"><span class="meta">#</span><span class="bash"> Provides UDP syslog reception // 开启UDP传输</span></span><br><span class="line"><span class="meta">$</span><span class="bash">ModLoad imudp</span></span><br><span class="line"><span class="meta">$</span><span class="bash">UDPServerRun 514</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> Provides TCP syslog reception // 开启TCP传输</span></span><br><span class="line"><span class="meta">$</span><span class="bash">ModLoad imtcp</span></span><br><span class="line"><span class="meta">$</span><span class="bash">InputTCPServerRun 514</span></span><br><span class="line">[root@localhost ~]# systemctl restart rsyslog // 重启服务</span><br><span class="line">[root@localhost ~]# netstat -tnlup | grep :514 // 查看514端口是否在监听</span><br><span class="line">[root@s ~]# tail /var/log/maillog -f // 实时查看日志后，进行测试</span><br><span class="line">Jun  9 11:15:53 localhost root: this is a test for rmote log.</span><br></pre></td></tr></table></figure></li>
-<li>产生日志服务器（发送日志）:192.168.17.133<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 默认端口为514</span></span><br><span class="line">echo &#x27;mail.info @192.168.17.130:514&#x27;&gt;&gt; /etc/rsyslog.conf</span><br><span class="line"><span class="meta">#</span><span class="bash"> 测试</span></span><br><span class="line">[root@localhost ~]# systemctl restart rsyslog # 重启服务</span><br><span class="line"><span class="meta">#</span><span class="bash"> 发送测试消息</span></span><br><span class="line">[root@localhost ~]# logger -p mail.info &quot;this is a test for rmote log.&quot;</span><br></pre></td></tr></table></figure></li>
+<p>*.err /var/log/err.log<br>[root@kongd ~]# systemctl restart rsyslog // 需要生效需要重启服务<br>[root@localhost ~]# vim /etc/httpd/conf/httpd.conf // 制造错误测试<br>[root@localhost ~]# systemctl restart httpd // 重启错误服务<br>Job for httpd.service failed because the control process exited with error code. See “systemctl status httpd.service” and “journalctl -xe” for details.<br>[root@localhost ~]# cat /var/log/err.log | tail -1 # 查看错误log<br>Jun  9 10:39:10 localhost systemd: Failed to start The Apache HTTP Server.</p>
+<pre><code>### 2. 日志服务 rsyslogd
+1. 存放日志的服务器（开启接受功能）:192.168.17.130
+```shell
+[root@localhost ~]# vim /etc/rsyslog.conf // 编辑配置文件
+# Provides UDP syslog reception // 开启UDP传输
+$ModLoad imudp
+$UDPServerRun 514
+
+# Provides TCP syslog reception // 开启TCP传输
+$ModLoad imtcp
+$InputTCPServerRun 514
+[root@localhost ~]# systemctl restart rsyslog // 重启服务
+[root@localhost ~]# netstat -tnlup | grep :514 // 查看514端口是否在监听
+[root@s ~]# tail /var/log/maillog -f // 实时查看日志后，进行测试
+Jun  9 11:15:53 localhost root: this is a test for rmote log.
+</code></pre>
+<ol start="2">
+<li>产生日志服务器（发送日志）:192.168.17.133<pre><code class="shell"># 默认端口为514
+echo &#39;mail.info @192.168.17.130:514&#39;&gt;&gt; /etc/rsyslog.conf
+# 测试
+[root@localhost ~]# systemctl restart rsyslog # 重启服务
+# 发送测试消息
+[root@localhost ~]# logger -p mail.info &quot;this is a test for rmote log.&quot;
+</code></pre>
+</li>
 </ol>
 <ul>
 <li>扩展：集中日志管理工具elk, 有收集，分析，展示日志功能，并支持分布式</li>
-<li>作业<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">1.将authpriv设备日志记录到 /var/log/auth.log</span><br><span class="line">	1).修改日志文件位置</span><br><span class="line"><span class="meta">	#</span><span class="bash"> vim /etc/rsyslog.conf</span></span><br><span class="line"><span class="meta">	#</span><span class="bash">authpriv.* /var/<span class="built_in">log</span>/secure</span></span><br><span class="line">	authpriv.* /var/log/auth.log</span><br><span class="line">	2).重启程序，触发日志生成</span><br><span class="line"><span class="meta">	#</span><span class="bash"> systemctl restart rsyslog.service</span></span><br><span class="line"><span class="meta">	#</span><span class="bash"> ll /var/<span class="built_in">log</span>/auth.log</span></span><br><span class="line">2.改变应用程序sshd的日志设备为local5,并定义lcoal5设备日志记录到/var/log/local5.local。</span><br><span class="line">	1).设置ssh程序的日志设备为自定义设备。</span><br><span class="line"><span class="meta">	#</span><span class="bash"> vim /etc/ssh/sshd_config</span></span><br><span class="line"><span class="meta">	#</span><span class="bash">SyslogFacility AUTHPRIV</span></span><br><span class="line">	SyslogFacility FOCAL5</span><br><span class="line">	2).设置自定义设备日志文件存放位置。</span><br><span class="line"><span class="meta">	#</span><span class="bash"> vim /etc/rsyslog.conf</span></span><br><span class="line">	local5.* /var/log/local5.local</span><br><span class="line">	3).重启失效</span><br><span class="line"><span class="meta">	#</span><span class="bash"> systemctl restart ssh // 重启sshd程序</span></span><br><span class="line"><span class="meta">	#</span><span class="bash"> systemctl restart rsyslog // 重启日志</span></span><br><span class="line">	4).尝试登录，触发日志。</span><br><span class="line">	5).观察日志。理解自定义日志设备。</span><br><span class="line">3.使用logger程序写日志到指定的设备及级别。</span><br><span class="line">	服务器1(192.168.17.133)发送日志</span><br><span class="line"><span class="meta">	#</span><span class="bash"> vim /etc/ssh/sshd_config</span></span><br><span class="line"><span class="meta">	#</span><span class="bash">SyslogFacility AUTHPRIV // 将原来配置注释</span></span><br><span class="line">	SyslogFacility LOCAL5 // 自定义接受设备 local5</span><br><span class="line"><span class="meta">	#</span><span class="bash"> vim /etc/rsyslog.conf // 此文件来管理日志</span></span><br><span class="line">	local5.* @192.168.17.130:514 // 此处填写日志服务器的IP地址</span><br><span class="line"><span class="meta">	#</span><span class="bash"> systemctl restart sshd // 重启sshd程序</span></span><br><span class="line"><span class="meta">	#</span><span class="bash"> systemctl restart rsyslog // 重启日志</span></span><br><span class="line"></span><br><span class="line">	服务器2(192.168.17.130)接受日志</span><br><span class="line"><span class="meta">	#</span><span class="bash"> vim /etc/rsyslog.conf</span></span><br><span class="line"><span class="meta">	$</span><span class="bash">ModLoad imudp</span></span><br><span class="line"><span class="meta">	$</span><span class="bash">UDPServerRun 514 // 这两个注释去掉，使用udp</span></span><br><span class="line">	local5.* /var/log/server12.log</span><br><span class="line"><span class="meta">	#</span><span class="bash"> systemctl restart rsyslog</span></span><br><span class="line">	尝试ssh登录服务器1,并观察本地日志</span><br><span class="line"><span class="meta">	#</span><span class="bash"> tail -f /var/<span class="built_in">log</span>/server12.log</span></span><br></pre></td></tr></table></figure></li>
+<li>作业<br>```shell</li>
 </ul>
-<hr>
-<h2 id="1-6-logrotate日志轮转"><a href="#1-6-logrotate日志轮转" class="headerlink" title="1.6 logrotate日志轮转"></a>1.6 logrotate日志轮转</h2><h3 id="1-日志轮转"><a href="#1-日志轮转" class="headerlink" title="1.日志轮转"></a>1.日志轮转</h3><p>为什么需要日志轮转</p>
-<ul>
-<li>日志轮转也叫日志轮替，日志切割:</li>
-<li>如果没有日志轮转，日文件会越来越大;</li>
-<li>将丢弃系统中最旧的日志文件，以节省空间;</li>
-<li>logrotate本身不是系统守护进程，它是通过计划任务crond每天执行;<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@kongd ~]# cat /etc/cron.daily/logrotate</span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/sh</span></span><br><span class="line"></span><br><span class="line">/usr/sbin/logrotate -s /var/lib/logrotate/logrotate.status /etc/logrotate.conf</span><br><span class="line">EXITVALUE=$?</span><br><span class="line">if [ $EXITVALUE != 0 ]; then</span><br><span class="line">    /usr/bin/logger -t logrotate &quot;ALERT exited abnormally with [$EXITVALUE]&quot;</span><br><span class="line">fi</span><br><span class="line">exit 0</span><br></pre></td></tr></table></figure></li>
-</ul>
+<p>1.将authpriv设备日志记录到 /var/log/auth.log<br>    1).修改日志文件位置<br>    # vim /etc/rsyslog.conf<br>    #authpriv.* /var/log/secure<br>    authpriv.* /var/log/auth.log<br>    2).重启程序，触发日志生成<br>    # systemctl restart rsyslog.service<br>    # ll /var/log/auth.log<br>2.改变应用程序sshd的日志设备为local5,并定义lcoal5设备日志记录到/var/log/local5.local。<br>    1).设置ssh程序的日志设备为自定义设备。<br>    # vim /etc/ssh/sshd_config<br>    #SyslogFacility AUTHPRIV<br>    SyslogFacility FOCAL5<br>    2).设置自定义设备日志文件存放位置。<br>    # vim /etc/rsyslog.conf<br>    local5.* /var/log/local5.local<br>    3).重启失效<br>    # systemctl restart ssh // 重启sshd程序<br>    # systemctl restart rsyslog // 重启日志<br>    4).尝试登录，触发日志。<br>    5).观察日志。理解自定义日志设备。<br>3.使用logger程序写日志到指定的设备及级别。<br>    服务器1(192.168.17.133)发送日志<br>    # vim /etc/ssh/sshd_config<br>    #SyslogFacility AUTHPRIV // 将原来配置注释<br>    SyslogFacility LOCAL5 // 自定义接受设备 local5<br>    # vim /etc/rsyslog.conf // 此文件来管理日志<br>    local5.* @192.168.17.130:514 // 此处填写日志服务器的IP地址<br>    # systemctl restart sshd // 重启sshd程序<br>    # systemctl restart rsyslog // 重启日志</p>
+<pre><code>服务器2(192.168.17.130)接受日志
+# vim /etc/rsyslog.conf
+$ModLoad imudp
+$UDPServerRun 514 // 这两个注释去掉，使用udp
+local5.* /var/log/server12.log
+# systemctl restart rsyslog
+尝试ssh登录服务器1,并观察本地日志
+# tail -f /var/log/server12.log
+</code></pre>
+<pre><code>---
+## 1.6 logrotate日志轮转
+
+### 1.日志轮转
+为什么需要日志轮转
+- 日志轮转也叫日志轮替，日志切割:
+- 如果没有日志轮转，日文件会越来越大;
+- 将丢弃系统中最旧的日志文件，以节省空间;
+- logrotate本身不是系统守护进程，它是通过计划任务crond每天执行;
+```shell
+[root@kongd ~]# cat /etc/cron.daily/logrotate
+#!/bin/sh
+
+/usr/sbin/logrotate -s /var/lib/logrotate/logrotate.status /etc/logrotate.conf
+EXITVALUE=$?
+if [ $EXITVALUE != 0 ]; then
+    /usr/bin/logger -t logrotate &quot;ALERT exited abnormally with [$EXITVALUE]&quot;
+fi
+exit 0
+</code></pre>
 <hr>
 <h3 id="2-日志文件命名规则"><a href="#2-日志文件命名规则" class="headerlink" title="2.日志文件命名规则"></a>2.日志文件命名规则</h3><p>日志轮替最主要的作用就是把旧的日志文件移动并改名， 同时建立新的空日志文件，当旧日志文件超出保存的范围 之后，就会进行删除。那么旧的日志文件改名之后，如何 命名呢?主要依靠/etc/logrotate.conf 配置文件中<br>“dateext”参数:</p>
 <ul>
@@ -703,33 +800,96 @@
 </ul>
 <hr>
 <h3 id="3-logrotate-配置文件"><a href="#3-logrotate-配置文件" class="headerlink" title="3.logrotate 配置文件"></a>3.logrotate 配置文件</h3><ol>
-<li>logrotate.conf配置文件<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> vim /etc/logrotate.conf</span></span><br><span class="line">weekly  // 轮转的周期，一周轮转</span><br><span class="line">rotate 4 // 保留4份</span><br><span class="line">create // 轮转后创建新文件</span><br><span class="line">dateext // 使用日期作为后缀</span><br><span class="line"><span class="meta">#</span><span class="bash">compress // 是否压缩，</span></span><br><span class="line">include /etc/logrotate.d // 包含该目录下的文件也轮询</span><br><span class="line"></span><br><span class="line">/var/log/wtmp &#123; // 对该日志文件设置轮转的方法</span><br><span class="line">    monthly	// 一月轮转一次</span><br><span class="line">    create 0664 root utmp	// 轮转后创建新文件，并设置权限</span><br><span class="line">    minsize 1M	// 最小达到1M才轮转</span><br><span class="line">    rotate 1	// 保留一份</span><br><span class="line">&#125;</span><br><span class="line">/var/log/btmp &#123;</span><br><span class="line">    missingok	// 丢失不提示</span><br><span class="line">    monthly	// 每月轮转一次</span><br><span class="line">    create 0600 root utmp	// 轮转后创建新文件，并设置权限</span><br><span class="line">    rotate 1	// 保留一份</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>其他配置信息</li>
+<li>logrotate.conf配置文件<br>```shell<h1 id="vim-etc-logrotate-conf"><a href="#vim-etc-logrotate-conf" class="headerlink" title="vim /etc/logrotate.conf"></a>vim /etc/logrotate.conf</h1>weekly  // 轮转的周期，一周轮转<br>rotate 4 // 保留4份<br>create // 轮转后创建新文件<br>dateext // 使用日期作为后缀<br>#compress // 是否压缩，<br>include /etc/logrotate.d // 包含该目录下的文件也轮询</li>
 </ol>
+<p>/var/log/wtmp { // 对该日志文件设置轮转的方法<br>    monthly    // 一月轮转一次<br>    create 0664 root utmp    // 轮转后创建新文件，并设置权限<br>    minsize 1M    // 最小达到1M才轮转<br>    rotate 1    // 保留一份<br>}<br>/var/log/btmp {<br>    missingok    // 丢失不提示<br>    monthly    // 每月轮转一次<br>    create 0600 root utmp    // 轮转后创建新文件，并设置权限<br>    rotate 1    // 保留一份<br>}</p>
+<pre><code>2. 其他配置信息
+- size 大小:日志只有大于指定大小才进行日志轮替，而不是按 照时间轮替。如 size 100k
+- prerotate/endscript:在日志轮替之前执行脚本命令。 endscript 标示prerotate 脚本结束。
+- postrotate/endscript:在日志轮替之后执行脚本命令。 endscript 标示 postrotate 脚本结束
+3. logrotate 命令的格式
+- [root@localhost ~]# logrotate [选项] 配置文件名
+- 选项: 如果此命令没有选项，则会按照配置文件中的条件进行日志轮替
+-v: 显示日志轮替过程。加了-v 选项，会显示日志的轮替的过程
+-f: 强制进行日志轮替。不管日志轮替的条件是否已经符合，强制配置文件中所有的日志进行轮替
+---
+### 4.轮转案例:对/var/log/err.log轮转
+```shell
+# vim /etc/logrotate.d/err_log # 编辑轮转规则
+/var/log/err.log &#123;
+        # 每天轮转
+        daily
+        # 使用日期命名
+        dateext
+        # 创建新文件
+        create
+        # 保留5分
+        rotate 5
+        # 丢失不提示
+        missingok
+&#125;
+
+[root@localhost ~]# logrotate -f /etc/logrotate.d/err_log # 手动强制启动轮转
+[root@localhost ~]# ll /var/log/
+-rw-------. 1 root   root    11449 6月   8 03:31 boot.log-20210608
+</code></pre>
 <ul>
-<li>size 大小:日志只有大于指定大小才进行日志轮替，而不是按 照时间轮替。如 size 100k</li>
-<li>prerotate/endscript:在日志轮替之前执行脚本命令。 endscript 标示prerotate 脚本结束。</li>
-<li>postrotate/endscript:在日志轮替之后执行脚本命令。 endscript 标示 postrotate 脚本结束</li>
+<li>作业<br>```shell<br>logrotate日志轮转</li>
 </ul>
-<ol start="3">
-<li>logrotate 命令的格式</li>
-</ol>
-<ul>
-<li>[root@localhost ~]# logrotate [选项] 配置文件名</li>
-<li>选项: 如果此命令没有选项，则会按照配置文件中的条件进行日志轮替</li>
-<li>v: 显示日志轮替过程。加了-v 选项，会显示日志的轮替的过程</li>
-<li>f: 强制进行日志轮替。不管日志轮替的条件是否已经符合，强制配置文件中所有的日志进行轮替</li>
-</ul>
-<hr>
-<h3 id="4-轮转案例-对-var-log-err-log轮转"><a href="#4-轮转案例-对-var-log-err-log轮转" class="headerlink" title="4.轮转案例:对/var/log/err.log轮转"></a>4.轮转案例:对/var/log/err.log轮转</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> vim /etc/logrotate.d/err_log <span class="comment"># 编辑轮转规则</span></span></span><br><span class="line">/var/log/err.log &#123;</span><br><span class="line">        # 每天轮转</span><br><span class="line">        daily</span><br><span class="line">        # 使用日期命名</span><br><span class="line">        dateext</span><br><span class="line">        # 创建新文件</span><br><span class="line">        create</span><br><span class="line">        # 保留5分</span><br><span class="line">        rotate 5</span><br><span class="line">        # 丢失不提示</span><br><span class="line">        missingok</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# logrotate -f /etc/logrotate.d/err_log # 手动强制启动轮转</span><br><span class="line">[root@localhost ~]# ll /var/log/</span><br><span class="line">-rw-------. 1 root   root    11449 6月   8 03:31 boot.log-20210608</span><br></pre></td></tr></table></figure>
-<ul>
-<li>作业<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">logrotate日志轮转</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">1、将我们自己生产的/var/log/err.log 日志志加入日志轮替的策略</span><br><span class="line">	vim /etc/logrotate.d/err</span><br><span class="line"><span class="meta">	#</span><span class="bash"> 创建err文件，把/var/<span class="built_in">log</span>/err.log加入轮替</span></span><br><span class="line">	</span><br><span class="line">	/var/log/err.log &#123;</span><br><span class="line">		weekly				#每周轮替一次</span><br><span class="line">		rotate 6			#保留6个轮替日志</span><br><span class="line">		sharedscripts		#以下命令只执行一次</span><br><span class="line">		prerotate</span><br><span class="line">			/usr/bin/chattr -a /var/log/err.log</span><br><span class="line"><span class="meta">			#</span><span class="bash">在日志轮替前取消a属性，以便让日志可以轮替</span></span><br><span class="line">		endscript</span><br><span class="line">		</span><br><span class="line">		sharedscripts</span><br><span class="line">		postretate</span><br><span class="line">			/usr/bin/chattr +a /var/log/err.log</span><br><span class="line"><span class="meta">			#</span><span class="bash">日志轮替完毕再加上a属性</span></span><br><span class="line">		endscript</span><br><span class="line">		</span><br><span class="line">		sharedscripts</span><br><span class="line">		postrotate</span><br><span class="line">			/bin/kill -HUP $(/bin/cat /var/run/syslogd.pid 2&gt;/dev/null) &amp;&gt;/dev/null</span><br><span class="line"><span class="meta">			#</span><span class="bash">重启rsyslog服务，确保日志轮替正常</span></span><br><span class="line">		endscript	</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">2、要把 Nginx 服务的日志加入日志轮替，则也需要重启 Nginx 服务</span><br><span class="line">	首先，安装nginx</span><br><span class="line">	// yum install http://nginx.org/packages/rhel/7/x86_64/RPMS/nginx-1.10.3-1.el7.ngx.x86_64.rpm</span><br><span class="line">	其次，启动服务后，客户端访问及可产生日志</span><br><span class="line"><span class="meta">		#</span><span class="bash"> systemctl start nginx</span></span><br><span class="line"><span class="meta">		#</span><span class="bash"> systemctl <span class="built_in">enable</span> nginx<span class="comment">#</span></span></span><br><span class="line"><span class="meta">		#</span><span class="bash"> ls /var/<span class="built_in">log</span>/nginx/</span></span><br><span class="line">		access.log  error.log</span><br><span class="line"></span><br><span class="line">	最后，对访问和错误日志加入轮替</span><br><span class="line">	vim /etc/logrotate.d/nginx</span><br><span class="line">	/var/log/nginx/access.log /var/log/nginx/error.log &#123;</span><br><span class="line">		daily</span><br><span class="line">		rotate 15</span><br><span class="line">		sharedscripts</span><br><span class="line">		postrotate</span><br><span class="line">			/bin/kill -HUP $(/bin/cat /var/run/syslogd.pid) &amp;&gt;/dev/null</span><br><span class="line"><span class="meta">			#</span><span class="bash">重启 rsyslog 服务</span></span><br><span class="line">			/bin/kill -HUP $(/bin/cat /var/run/nginx.pid) &amp;&gt;/dev/null</span><br><span class="line"><span class="meta">			#</span><span class="bash">重启 Nginx 服务</span></span><br><span class="line">		endscript</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<hr>
-<h2 id="1-7-sshd"><a href="#1-7-sshd" class="headerlink" title="1.7 sshd"></a>1.7 sshd</h2><h3 id="1-sshd简介"><a href="#1-sshd简介" class="headerlink" title="1.sshd简介"></a>1.sshd简介</h3><ul>
-<li>传统的网络服务程序，如:ftp和telnet在本质上都是不安全的，因为它们在网络上用明文传送口令和数据，别有用心的人非常容易就可以截获这些口令和数据。</li>
-<li>演示tcpdump截获ftp用户名和密码。<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">1.前置条件</span><br><span class="line">[root@localhost ~]# yum install vsftpd -y	// 安装 ftp 服务期端</span><br><span class="line">[root@localhost ~]# systemctl start vsftpd	// 启动 ftp 服务</span><br><span class="line">[root@localhost ~]# yum install tcpdump		// 安装 tcpdump</span><br><span class="line">[root@localhost ~]# tcpdump -i ens33 -nnX port 21	// 使用 tcpdump 监听 21端口</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# useradd ftpuser	// 创建ftp测试用户</span><br><span class="line">[root@localhost ~]# echo &quot;hadoop&quot; | passwd --stdin ftpuser</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ul>
+<p>1、将我们自己生产的/var/log/err.log 日志志加入日志轮替的策略<br>    vim /etc/logrotate.d/err<br>    # 创建err文件，把/var/log/err.log加入轮替</p>
+<pre><code>/var/log/err.log &#123;
+    weekly                #每周轮替一次
+    rotate 6            #保留6个轮替日志
+    sharedscripts        #以下命令只执行一次
+    prerotate
+        /usr/bin/chattr -a /var/log/err.log
+        #在日志轮替前取消a属性，以便让日志可以轮替
+    endscript
+    
+    sharedscripts
+    postretate
+        /usr/bin/chattr +a /var/log/err.log
+        #日志轮替完毕再加上a属性
+    endscript
+    
+    sharedscripts
+    postrotate
+        /bin/kill -HUP $(/bin/cat /var/run/syslogd.pid 2&gt;/dev/null) &amp;&gt;/dev/null
+        #重启rsyslog服务，确保日志轮替正常
+    endscript    
+&#125;
+</code></pre>
+<p>2、要把 Nginx 服务的日志加入日志轮替，则也需要重启 Nginx 服务<br>    首先，安装nginx<br>    // yum install <a target="_blank" rel="noopener" href="http://nginx.org/packages/rhel/7/x86_64/RPMS/nginx-1.10.3-1.el7.ngx.x86_64.rpm">http://nginx.org/packages/rhel/7/x86_64/RPMS/nginx-1.10.3-1.el7.ngx.x86_64.rpm</a><br>    其次，启动服务后，客户端访问及可产生日志<br>        # systemctl start nginx<br>        # systemctl enable nginx#<br>        # ls /var/log/nginx/<br>        access.log  error.log</p>
+<pre><code>最后，对访问和错误日志加入轮替
+vim /etc/logrotate.d/nginx
+/var/log/nginx/access.log /var/log/nginx/error.log &#123;
+    daily
+    rotate 15
+    sharedscripts
+    postrotate
+        /bin/kill -HUP $(/bin/cat /var/run/syslogd.pid) &amp;&gt;/dev/null
+        #重启 rsyslog 服务
+        /bin/kill -HUP $(/bin/cat /var/run/nginx.pid) &amp;&gt;/dev/null
+        #重启 Nginx 服务
+    endscript
+&#125;
+</code></pre>
+<pre><code>---
+## 1.7 sshd
+### 1.sshd简介
+- 传统的网络服务程序，如:ftp和telnet在本质上都是不安全的，因为它们在网络上用明文传送口令和数据，别有用心的人非常容易就可以截获这些口令和数据。
+- 演示tcpdump截获ftp用户名和密码。
+```shell
+1.前置条件
+[root@localhost ~]# yum install vsftpd -y    // 安装 ftp 服务期端
+[root@localhost ~]# systemctl start vsftpd    // 启动 ftp 服务
+[root@localhost ~]# yum install tcpdump        // 安装 tcpdump
+[root@localhost ~]# tcpdump -i ens33 -nnX port 21    // 使用 tcpdump 监听 21端口
+
+[root@localhost ~]# useradd ftpuser    // 创建ftp测试用户
+[root@localhost ~]# echo &quot;hadoop&quot; | passwd --stdin ftpuser
+
+</code></pre>
 <hr>
 <h3 id="2-配置sshd服务"><a href="#2-配置sshd服务" class="headerlink" title="2.配置sshd服务"></a>2.配置sshd服务</h3><hr>
 <h3 id="3-安全密钥验证"><a href="#3-安全密钥验证" class="headerlink" title="3.安全密钥验证"></a>3.安全密钥验证</h3><hr>
@@ -741,10 +901,6 @@
     </div>
 </article>
 
-
-<p>
-    <a  class="dashang" onclick="dashangToggle()">赏</a>
-</p>
 
 
 
@@ -771,24 +927,6 @@
     </div>
 </div>
 
-<div class="hide_box" onclick="dashangToggle()"></div>
-<div class="shang_box">
-    <a class="shang_close"  onclick="dashangToggle()">×</a>
-    <div class="shang_tit">
-        <p>喜欢就点赞,疼爱就打赏</p>
-    </div>
-    <div class="shang_payimg">
-        <div class="pay_img">
-            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
-            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
-        </div>
-    </div>
-    <div class="shang_payselect">
-        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
-    </div>
-</div>
-
-
 </body>
 <script src="/js/jquery.pjax.js?v=1.1.0" ></script>
 
@@ -802,14 +940,6 @@
         
 
         /*渲染打赏样式*/
-        
-        $("input[name=pay]").on("click", function () {
-            if($("input[name=pay]:checked").val()=="weixin"){
-                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
-            } else {
-                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
-            }
-        })
         
 
         /*高亮代码块行号*/
@@ -828,11 +958,6 @@
     }
 
     /*打赏页面隐藏与展示*/
-    
-    function dashangToggle() {
-        $(".shang_box").fadeToggle();
-        $(".hide_box").fadeToggle();
-    }
     
 
 </script>

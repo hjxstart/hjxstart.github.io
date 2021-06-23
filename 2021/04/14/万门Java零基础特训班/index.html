@@ -6,29 +6,25 @@
   <meta name="keywords" content="">
   <meta name="description" content="万门Java零基础特训班 | hjxstart的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="第1讲 运维基础1.1 计划任务简介 经验丰富的系统运维工程师可以使得Linux在无需人为介 入的情况下，在指定的时间段自动启用或停止某些服务或 命令，从而实现运维的自动化。 作用:计划任务主要是做一些周期性的任务，目前最主要的 用途是定期备份数据 分类:   次性计划任务:今晚11点30分开启网站服务。 长期性计划任务:每周一的凌晨2点20分把&#x2F;data&#x2F;wwwroot目录打包备份为backup">
+<meta name="description" content="第一章 CDN开发1.1、开发环境介绍hjx:~ jxh$ node --version v14.15.1 hjx:~ jxh$ npm --version 7.17.0 hjx:~ jxh$ vue --version @vue&#x2F;cli 4.5.13   1.2、CDN方式使用Vue&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;vue@2.6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux自动化运维">
-<meta property="og:url" content="http://example.com/2021/06/09/Linux%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4/index.html">
+<meta property="og:title" content="Vue基础">
+<meta property="og:url" content="http://example.com/2021/06/23/Vue%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="hjxstart的博客">
-<meta property="og:description" content="第1讲 运维基础1.1 计划任务简介 经验丰富的系统运维工程师可以使得Linux在无需人为介 入的情况下，在指定的时间段自动启用或停止某些服务或 命令，从而实现运维的自动化。 作用:计划任务主要是做一些周期性的任务，目前最主要的 用途是定期备份数据 分类:   次性计划任务:今晚11点30分开启网站服务。 长期性计划任务:每周一的凌晨2点20分把&#x2F;data&#x2F;wwwroot目录打包备份为backup">
+<meta property="og:description" content="第一章 CDN开发1.1、开发环境介绍hjx:~ jxh$ node --version v14.15.1 hjx:~ jxh$ npm --version 7.17.0 hjx:~ jxh$ vue --version @vue&#x2F;cli 4.5.13   1.2、CDN方式使用Vue&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;vue@2.6">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/images/2021/06/09/02e49f81-65f9-451b-8aa6-6794e740882d.png">
-<meta property="og:image" content="http://example.com/images/2021/06/09/368b2d91-da3f-400a-9691-e41d61c50891.png">
-<meta property="og:image" content="http://example.com/images/2021/06/09/e0d9edd7-b93e-42c3-920c-0d5faaec706d.png">
-<meta property="article:published_time" content="2021-06-09T00:29:17.000Z">
-<meta property="article:modified_time" content="2021-06-23T08:25:04.904Z">
+<meta property="article:published_time" content="2021-06-23T02:48:20.000Z">
+<meta property="article:modified_time" content="2021-06-23T08:31:31.277Z">
 <meta property="article:author" content="hjxstart">
-<meta property="article:tag" content="Java，静心">
+<meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/2021/06/09/02e49f81-65f9-451b-8aa6-6794e740882d.png">
 
 
 <link rel="icon" href="/img/favicon.ico">
 
 <link href="/css/style.css?v=1.1.0" rel="stylesheet">
 
-<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+<link href="/css/hl_theme/atom-dark.css?v=1.1.0" rel="stylesheet">
 
 <link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
 
@@ -546,10 +542,6 @@
 </article>
 
 
-<p>
-    <a  class="dashang" onclick="dashangToggle()">赏</a>
-</p>
-
 
 
 
@@ -575,24 +567,6 @@
     </div>
 </div>
 
-<div class="hide_box" onclick="dashangToggle()"></div>
-<div class="shang_box">
-    <a class="shang_close"  onclick="dashangToggle()">×</a>
-    <div class="shang_tit">
-        <p>喜欢就点赞,疼爱就打赏</p>
-    </div>
-    <div class="shang_payimg">
-        <div class="pay_img">
-            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
-            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
-        </div>
-    </div>
-    <div class="shang_payselect">
-        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
-    </div>
-</div>
-
-
 </body>
 <script src="/js/jquery.pjax.js?v=1.1.0" ></script>
 
@@ -606,14 +580,6 @@
         
 
         /*渲染打赏样式*/
-        
-        $("input[name=pay]").on("click", function () {
-            if($("input[name=pay]:checked").val()=="weixin"){
-                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
-            } else {
-                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
-            }
-        })
         
 
         /*高亮代码块行号*/
@@ -632,11 +598,6 @@
     }
 
     /*打赏页面隐藏与展示*/
-    
-    function dashangToggle() {
-        $(".shang_box").fadeToggle();
-        $(".hide_box").fadeToggle();
-    }
     
 
 </script>

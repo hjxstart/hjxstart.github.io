@@ -6,29 +6,25 @@
   <meta name="keywords" content=" 设计模式 ">
   <meta name="description" content="Head First 设计模式 | hjxstart的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="第1讲 运维基础1.1 计划任务简介 经验丰富的系统运维工程师可以使得Linux在无需人为介 入的情况下，在指定的时间段自动启用或停止某些服务或 命令，从而实现运维的自动化。 作用:计划任务主要是做一些周期性的任务，目前最主要的 用途是定期备份数据 分类:   次性计划任务:今晚11点30分开启网站服务。 长期性计划任务:每周一的凌晨2点20分把&#x2F;data&#x2F;wwwroot目录打包备份为backup">
+<meta name="description" content="第一章 CDN开发1.1、开发环境介绍hjx:~ jxh$ node --version v14.15.1 hjx:~ jxh$ npm --version 7.17.0 hjx:~ jxh$ vue --version @vue&#x2F;cli 4.5.13   1.2、CDN方式使用Vue&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;vue@2.6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux自动化运维">
-<meta property="og:url" content="http://example.com/2021/06/09/Linux%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4/index.html">
+<meta property="og:title" content="Vue基础">
+<meta property="og:url" content="http://example.com/2021/06/23/Vue%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="hjxstart的博客">
-<meta property="og:description" content="第1讲 运维基础1.1 计划任务简介 经验丰富的系统运维工程师可以使得Linux在无需人为介 入的情况下，在指定的时间段自动启用或停止某些服务或 命令，从而实现运维的自动化。 作用:计划任务主要是做一些周期性的任务，目前最主要的 用途是定期备份数据 分类:   次性计划任务:今晚11点30分开启网站服务。 长期性计划任务:每周一的凌晨2点20分把&#x2F;data&#x2F;wwwroot目录打包备份为backup">
+<meta property="og:description" content="第一章 CDN开发1.1、开发环境介绍hjx:~ jxh$ node --version v14.15.1 hjx:~ jxh$ npm --version 7.17.0 hjx:~ jxh$ vue --version @vue&#x2F;cli 4.5.13   1.2、CDN方式使用Vue&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;vue@2.6">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/images/2021/06/09/02e49f81-65f9-451b-8aa6-6794e740882d.png">
-<meta property="og:image" content="http://example.com/images/2021/06/09/368b2d91-da3f-400a-9691-e41d61c50891.png">
-<meta property="og:image" content="http://example.com/images/2021/06/09/e0d9edd7-b93e-42c3-920c-0d5faaec706d.png">
-<meta property="article:published_time" content="2021-06-09T00:29:17.000Z">
-<meta property="article:modified_time" content="2021-06-23T08:25:04.904Z">
+<meta property="article:published_time" content="2021-06-23T02:48:20.000Z">
+<meta property="article:modified_time" content="2021-06-23T08:31:31.277Z">
 <meta property="article:author" content="hjxstart">
-<meta property="article:tag" content="Java，静心">
+<meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/2021/06/09/02e49f81-65f9-451b-8aa6-6794e740882d.png">
 
 
 <link rel="icon" href="/img/favicon.ico">
 
 <link href="/css/style.css?v=1.1.0" rel="stylesheet">
 
-<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+<link href="/css/hl_theme/atom-dark.css?v=1.1.0" rel="stylesheet">
 
 <link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
 
@@ -553,16 +549,95 @@
 </ol>
 <hr>
 <h3 id="1-2-上🦆UML"><a href="#1-2-上🦆UML" class="headerlink" title="1.2 上🦆UML"></a>1.2 上🦆UML</h3><h2 id=""><a href="#" class="headerlink" title=""></a><img src="/images/2021/04/18/7291c4c4-aec5-4d0c-8883-bdd2e4a4f5fe.png" alt="DuckUML.png"></h2><h3 id="1-3-上🦆代码"><a href="#1-3-上🦆代码" class="headerlink" title="1.3 上🦆代码"></a>1.3 上🦆代码</h3><p><strong>封装飞行行为</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">FlyBehavior</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">fly</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FlyWithWings</span> <span class="keyword">implements</span> <span class="title">FlyBehavior</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fly</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;鸭子的飞行了&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FlyNoWay</span> <span class="keyword">implements</span> <span class="title">FlyBehavior</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fly</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;鸭子不会飞&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>封装呱呱叫行为</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">QuackBehavior</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">quack</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Qucak</span> <span class="keyword">implements</span> <span class="title">QuackBehavior</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">quack</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;鸭子呱呱叫&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Squeak</span> <span class="keyword">implements</span> <span class="title">QuackBehavior</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">quack</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;鸭子吱吱叫&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MuteQuack</span> <span class="keyword">implements</span> <span class="title">QuackBehavior</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">quack</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;不会叫&quot;</span>)；</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>客户使用封装好的飞行和呱呱叫算法族</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Duck</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> FlyBehavior flyBehavior;</span><br><span class="line">    <span class="keyword">private</span> QuackBehavior quackBehavior;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">swim</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;鸭子会游泳&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">performQuack</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        quackBehavior.quack();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">performFly</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        flyBehavior.fly();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setFlyBehavior</span><span class="params">(FlyBehavior flyBehavior)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.flyBehavior = flyBehavior;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setQuackBehavior</span><span class="params">(QuackBehavior quackBehavior)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.quackBehavior = quackBehavior;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MallardDuck</span> <span class="keyword">extends</span> <span class="title">Duck</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;gree duck&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>Test类</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StrategymodeTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String [] args)</span> </span>&#123;</span><br><span class="line">        Duck d1 = <span class="keyword">new</span> MallardDuck();</span><br><span class="line">        d1.setFlyBehavior(<span class="keyword">new</span> FlyWithWings());</span><br><span class="line">        d1.performFly();</span><br><span class="line">        d1.setQuackBehavior(<span class="keyword">new</span> Qucak());</span><br><span class="line">        d1.performQuack();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输入结果</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ java StrategymodeTest</span><br><span class="line">鸭子的飞行了</span><br><span class="line">鸭子呱呱叫</span><br></pre></td></tr></table></figure>
+<pre><code class="Java">interface FlyBehavior &#123;
+    void fly();
+&#125;
 
+public class FlyWithWings implements FlyBehavior &#123;
+    public void fly() &#123;
+        System.out.println(&quot;鸭子的飞行了&quot;);
+    &#125;
+&#125;
+
+public class FlyNoWay implements FlyBehavior &#123;
+    public void fly() &#123;
+        System.out.println(&quot;鸭子不会飞&quot;);
+    &#125;
+&#125;
+</code></pre>
+<p><strong>封装呱呱叫行为</strong></p>
+<pre><code class="Java">interface QuackBehavior &#123;
+    void quack();
+&#125;
+
+public class Qucak implements QuackBehavior &#123;
+    public void quack() &#123;
+        System.out.println(&quot;鸭子呱呱叫&quot;);
+    &#125;
+&#125;
+
+public class Squeak implements QuackBehavior &#123;
+    public void quack() &#123;
+        System.out.println(&quot;鸭子吱吱叫&quot;);
+    &#125;
+&#125;
+
+public class MuteQuack implements QuackBehavior &#123;
+    public void quack() &#123;
+        System.out.println(&quot;不会叫&quot;)；
+    &#125;
+&#125;
+</code></pre>
+<p><strong>客户使用封装好的飞行和呱呱叫算法族</strong></p>
+<pre><code class="Java">public abstract class Duck&#123;
+    private FlyBehavior flyBehavior;
+    private QuackBehavior quackBehavior;
+
+    public void swim() &#123;
+        System.out.println(&quot;鸭子会游泳&quot;);
+    &#125;
+
+    public abstract void display();
+
+    public void performQuack() &#123;
+        quackBehavior.quack();
+    &#125;
+
+    public void performFly() &#123;
+        flyBehavior.fly();
+    &#125;
+
+    public void setFlyBehavior(FlyBehavior flyBehavior) &#123;
+        this.flyBehavior = flyBehavior;
+    &#125;
+
+    public void setQuackBehavior(QuackBehavior quackBehavior) &#123;
+        this.quackBehavior = quackBehavior;
+    &#125;
+&#125;
+
+public class MallardDuck extends Duck &#123;
+    public void display() &#123;
+        System.out.println(&quot;gree duck&quot;);
+    &#125;
+&#125;
+</code></pre>
+<p><strong>Test类</strong></p>
+<pre><code class="Java">public class StrategymodeTest &#123;
+    public static void main(String [] args) &#123;
+        Duck d1 = new MallardDuck();
+        d1.setFlyBehavior(new FlyWithWings());
+        d1.performFly();
+        d1.setQuackBehavior(new Qucak());
+        d1.performQuack();
+    &#125;
+&#125;
+</code></pre>
+<p>输入结果</p>
+<pre><code class="bash">$ java StrategymodeTest
+鸭子的飞行了
+鸭子呱呱叫
+</code></pre>
 <hr>
 <h2 id="第二招-观察者模式"><a href="#第二招-观察者模式" class="headerlink" title="第二招 观察者模式"></a>第二招 观察者模式</h2><h3 id="2-1-设计原则"><a href="#2-1-设计原则" class="headerlink" title="2.1 设计原则"></a>2.1 设计原则</h3><ol>
 <li>找出应用中可能需要变化之处，把它们独立出来，不要和哪些不需要变化的代码混在一起。</li>
@@ -574,14 +649,165 @@
 <h3 id="2-2-上UML图"><a href="#2-2-上UML图" class="headerlink" title="2.2 上UML图"></a>2.2 上UML图</h3><p><img src="/images/2021/04/20/4a2c8f37-32be-424c-ad5f-1c7932066617.png" alt="观察者模式.png"></p>
 <hr>
 <h3 id="2-3-上代码"><a href="#2-3-上代码" class="headerlink" title="2.3 上代码"></a>2.3 上代码</h3><ol>
-<li>主题和观察者的接口<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 主题接口</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Subject</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">registerObserver</span><span class="params">(Observer o)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">removeObserver</span><span class="params">(Observer o)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">notifyObserver</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 观察者接口</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Observer</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(Subject o, Object arg)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>具体主题1<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteSubject1</span> <span class="keyword">implements</span> <span class="title">Subject</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> ArrayList&lt;Observer&gt; observers;</span><br><span class="line">    <span class="keyword">private</span> ArrayList&lt;String&gt; arg;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> changed = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ConcreteSubject1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        observers = <span class="keyword">new</span> ArrayList&lt;Observer&gt;();</span><br><span class="line">        arg = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">registerObserver</span><span class="params">(Observer o)</span> </span>&#123;</span><br><span class="line">        observers.add(o);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">removeObserver</span><span class="params">(Observer o)</span> </span>&#123;</span><br><span class="line">        observers.remove(o);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">notifyObserver</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (changed) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; observers.size(); i++) &#123;</span><br><span class="line">                Observer observer = (Observer)observers.get(i);</span><br><span class="line">                observer.update(<span class="keyword">this</span>, arg);</span><br><span class="line">            &#125;</span><br><span class="line">            changed = <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">setChanged</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        changed = <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMeasurements</span><span class="params">(String data)</span> </span>&#123;</span><br><span class="line">        arg.add(data);</span><br><span class="line">        notifyObserver();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>具体主题2<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteSubject2</span> <span class="keyword">implements</span> <span class="title">Subject</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> ArrayList&lt;Observer&gt; observers;</span><br><span class="line">    <span class="keyword">private</span> ArrayList&lt;String&gt; arg;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> changed = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ConcreteSubject2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        observers = <span class="keyword">new</span> ArrayList&lt;Observer&gt;();</span><br><span class="line">        arg = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">registerObserver</span><span class="params">(Observer o)</span> </span>&#123;</span><br><span class="line">        observers.add(o);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">removeObserver</span><span class="params">(Observer o)</span> </span>&#123;</span><br><span class="line">        observers.remove(o);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">notifyObserver</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (changed) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; observers.size(); i++) &#123;</span><br><span class="line">                Observer observer = (Observer)observers.get(i);</span><br><span class="line">                observer.update(<span class="keyword">this</span>, arg);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">setChanged</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        changed = <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMeasurements</span><span class="params">(String data)</span> </span>&#123;</span><br><span class="line">        arg.add(data);</span><br><span class="line">        notifyObserver();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>关注具体主题1的具体观察者1<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteObserver1</span> <span class="keyword">implements</span> <span class="title">Observer</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Subject subject;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ConcreteObserver1</span><span class="params">(Subject subject)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.subject = subject;</span><br><span class="line">        subject.registerObserver(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">(Subject o, Object arg)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我是观察者1，我的主题1更新了&quot;</span>);</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>关注具体主题1，2的具体观察者2<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteObserver2</span> <span class="keyword">implements</span> <span class="title">Observer</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Subject subject1;</span><br><span class="line">    <span class="keyword">private</span> Subject subject2;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ConcreteObserver2</span><span class="params">(Subject subject1, Subject subject2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.subject1 = (Subject)subject1;</span><br><span class="line">        <span class="keyword">this</span>.subject2 = (Subject)subject2;</span><br><span class="line">        subject1.registerObserver(<span class="keyword">this</span>);</span><br><span class="line">        subject2.registerObserver(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">(Subject o, Object arg)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (o <span class="keyword">instanceof</span> ConcreteSubject1) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;我是观察者2，我的主题1更新了&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (o <span class="keyword">instanceof</span> ConcreteSubject2) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;我是观察者2，我的主题2更新了&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>关注具体主题2的具体观察者3<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteObserver3</span> <span class="keyword">implements</span> <span class="title">Observer</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Subject subject;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ConcreteObserver3</span><span class="params">(Subject subject)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.subject = subject;</span><br><span class="line">        subject.registerObserver(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">(Subject o, Object arg)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我是观察者3, 我的主题2更新了&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>测试代码<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ObserverTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ConcreteSubject1 subject1 = <span class="keyword">new</span> ConcreteSubject1();</span><br><span class="line">        ConcreteSubject2 subject2 = <span class="keyword">new</span> ConcreteSubject2();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">new</span> ConcreteObserver1(subject1);</span><br><span class="line">        <span class="keyword">new</span> ConcreteObserver2(subject1, subject2);</span><br><span class="line">        <span class="keyword">new</span> ConcreteObserver3(subject2);</span><br><span class="line">        subject1.setChanged();</span><br><span class="line">        subject1.setMeasurements(<span class="string">&quot;test&quot;</span>);</span><br><span class="line">        subject2.setMeasurements(<span class="string">&quot;test2&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>测试结果<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ java ObserverTest</span><br><span class="line">我是观察者1，我的主题1更新了</span><br><span class="line">我是观察者2，我的主题1更新了</span><br><span class="line">我是观察者2，我的主题2更新了</span><br><span class="line">我是观察者3, 我的主题2更新了</span><br></pre></td></tr></table></figure></li>
+<li>主题和观察者的接口<pre><code class="Java">// 主题接口
+interface Subject &#123;
+ void registerObserver(Observer o);
+ void removeObserver(Observer o);
+ void notifyObserver();
+&#125;
+// 观察者接口
+interface Observer &#123;
+ void update(Subject o, Object arg);
+&#125;
+</code></pre>
+</li>
+<li>具体主题1<br>```Java<br>import java.util.ArrayList;</li>
+</ol>
+<p>public class ConcreteSubject1 implements Subject{<br>    private ArrayList<Observer> observers;<br>    private ArrayList<String> arg;<br>    private boolean changed = false;</p>
+<pre><code>public ConcreteSubject1() &#123;
+    observers = new ArrayList&lt;Observer&gt;();
+    arg = new ArrayList&lt;String&gt;();
+&#125;
+
+public void registerObserver(Observer o) &#123;
+    observers.add(o);
+&#125;
+public void removeObserver(Observer o) &#123;
+    observers.remove(o);
+&#125;
+public void notifyObserver() &#123;
+    if (changed) &#123;
+        for (int i = 0; i &lt; observers.size(); i++) &#123;
+            Observer observer = (Observer)observers.get(i);
+            observer.update(this, arg);
+        &#125;
+        changed = false;
+    &#125;
+&#125;
+
+protected void setChanged() &#123;
+    changed = true;
+&#125;
+public void setMeasurements(String data) &#123;
+    arg.add(data);
+    notifyObserver();
+&#125;
+</code></pre>
+<p>}</p>
+<pre><code>3. 具体主题2
+```Java
+import java.util.ArrayList;
+
+public class ConcreteSubject2 implements Subject&#123;
+    private ArrayList&lt;Observer&gt; observers;
+    private ArrayList&lt;String&gt; arg;
+    private boolean changed = false;
+
+    public ConcreteSubject2() &#123;
+        observers = new ArrayList&lt;Observer&gt;();
+        arg = new ArrayList&lt;String&gt;();
+    &#125;
+
+    public void registerObserver(Observer o) &#123;
+        observers.add(o);
+    &#125;
+    public void removeObserver(Observer o) &#123;
+        observers.remove(o);
+    &#125;
+    public void notifyObserver() &#123;
+        if (changed) &#123;
+            for (int i = 0; i &lt; observers.size(); i++) &#123;
+                Observer observer = (Observer)observers.get(i);
+                observer.update(this, arg);
+            &#125;
+        &#125;
+    &#125;
+
+    protected void setChanged() &#123;
+        changed = true;
+    &#125;
+    public void setMeasurements(String data) &#123;
+        arg.add(data);
+        notifyObserver();
+    &#125;
+&#125;
+</code></pre>
+<ol start="4">
+<li><p>关注具体主题1的具体观察者1</p>
+<pre><code class="Java">public class ConcreteObserver1 implements Observer &#123;
+ private Subject subject;
+
+ public ConcreteObserver1(Subject subject) &#123;
+     this.subject = subject;
+     subject.registerObserver(this);
+ &#125;
+
+ public void update(Subject o, Object arg) &#123;
+     System.out.println(&quot;我是观察者1，我的主题1更新了&quot;);
+ &#125; 
+&#125;
+</code></pre>
+</li>
+<li><p>关注具体主题1，2的具体观察者2</p>
+<pre><code class="Java">public class ConcreteObserver2 implements Observer &#123;
+ private Subject subject1;
+ private Subject subject2;
+
+ public ConcreteObserver2(Subject subject1, Subject subject2) &#123;
+     this.subject1 = (Subject)subject1;
+     this.subject2 = (Subject)subject2;
+     subject1.registerObserver(this);
+     subject2.registerObserver(this);
+ &#125;
+
+ public void update(Subject o, Object arg) &#123;
+     if (o instanceof ConcreteSubject1) &#123;
+         System.out.println(&quot;我是观察者2，我的主题1更新了&quot;);
+     &#125;
+     if (o instanceof ConcreteSubject2) &#123;
+         System.out.println(&quot;我是观察者2，我的主题2更新了&quot;);
+     &#125;
+ &#125;
+&#125;
+</code></pre>
+</li>
+<li><p>关注具体主题2的具体观察者3</p>
+<pre><code class="Java">public class ConcreteObserver3 implements Observer &#123;
+ private Subject subject;
+
+ public ConcreteObserver3(Subject subject) &#123;
+     this.subject = subject;
+     subject.registerObserver(this);
+ &#125;
+
+ public void update(Subject o, Object arg) &#123;
+     System.out.println(&quot;我是观察者3, 我的主题2更新了&quot;);
+ &#125;
+&#125;
+</code></pre>
+</li>
+<li><p>测试代码<br>```Java<br>import java.util.ArrayList;</p>
+</li>
+</ol>
+<p>public class ObserverTest {<br>    public static void main(String[] args) {<br>        ConcreteSubject1 subject1 = new ConcreteSubject1();<br>        ConcreteSubject2 subject2 = new ConcreteSubject2();</p>
+<pre><code>    new ConcreteObserver1(subject1);
+    new ConcreteObserver2(subject1, subject2);
+    new ConcreteObserver3(subject2);
+    subject1.setChanged();
+    subject1.setMeasurements(&quot;test&quot;);
+    subject2.setMeasurements(&quot;test2&quot;);
+&#125;
+</code></pre>
+<p>}</p>
+<pre><code>8. 测试结果
+```bash
+$ java ObserverTest
+我是观察者1，我的主题1更新了
+我是观察者2，我的主题1更新了
+我是观察者2，我的主题2更新了
+我是观察者3, 我的主题2更新了
+</code></pre>
+<ol start="9">
 <li>java.util包实现了Observable类，也可以满足一些观察者的情况。首先，因为没有Observer接口，所以无法建立自己的实现，和Java内置的Observer API搭配使用。</li>
 </ol>
 <hr>
@@ -598,31 +824,95 @@
 <h3 id="3-2上UML图"><a href="#3-2上UML图" class="headerlink" title="3.2上UML图"></a>3.2上UML图</h3><p><strong>先决定那种咖啡，在决定使用什么配料。</strong><br><img src="/images/2021/04/23/a2c4ef40-4bd5-46ae-89b4-0a1f9b421c13.png" alt="装饰者模式.png"></p>
 <hr>
 <h3 id="3-3上代码"><a href="#3-3上代码" class="headerlink" title="3.3上代码"></a>3.3上代码</h3><ol>
-<li>定义饮料类，必须设置一个抽象方法。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Beverage</span> </span>&#123;</span><br><span class="line">    String description = <span class="string">&quot;Unknown Beverage&quot;</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getDescription</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> description;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">double</span> <span class="title">cost</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>定义饮料类，必须设置一个抽象方法。<pre><code class="Java">public abstract class Beverage &#123;
+ String description = &quot;Unknown Beverage&quot;;
+ public String getDescription() &#123;
+     return description;
+ &#125;
+ public abstract double cost();
+&#125;
+</code></pre>
+</li>
 </ol>
 <hr>
 <ol start="2">
-<li>深烘咖啡，实现夫类的抽象方法。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DarkRoast</span> <span class="keyword">extends</span> <span class="title">Beverage</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DarkRoast</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        description = <span class="string">&quot;DarkRoast Coffee&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">cost</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1.19</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>深烘咖啡，实现夫类的抽象方法。<pre><code class="Java">public class DarkRoast extends Beverage &#123;
+ public DarkRoast() &#123;
+     description = &quot;DarkRoast Coffee&quot;;
+ &#125;
+ public double cost() &#123;
+     return 1.19;
+ &#125;
+&#125;
+</code></pre>
+</li>
 </ol>
 <hr>
 <ol start="3">
-<li>定义装饰者。调味装饰者<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">CondimentDecorator</span> <span class="keyword">extends</span> <span class="title">Beverage</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> String <span class="title">getDescription</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>定义装饰者。调味装饰者<pre><code class="Java">public abstract class CondimentDecorator extends Beverage &#123;
+ public abstract String getDescription();
+&#125;
+</code></pre>
+</li>
 </ol>
 <hr>
 <ol start="4">
-<li>实现第一个一个装饰者。牛奶配料<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Milk</span> <span class="keyword">extends</span> <span class="title">CondimentDecorator</span></span>&#123;</span><br><span class="line">    Beverage beverage;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Milk</span><span class="params">(Beverage beverage)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.beverage = beverage;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getDescription</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> beverage.getDescription() + <span class="string">&quot;, Milk&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">cost</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">.10</span> + beverage.cost();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>实现第一个一个装饰者。牛奶配料<pre><code class="Java">public class Milk extends CondimentDecorator&#123;
+ Beverage beverage;
+ public Milk(Beverage beverage) &#123;
+     this.beverage = beverage;
+ &#125;
+ public String getDescription() &#123;
+     return beverage.getDescription() + &quot;, Milk&quot;;
+ &#125;
+ public double cost() &#123;
+     return .10 + beverage.cost();
+ &#125;
+&#125;
+</code></pre>
+</li>
 </ol>
 <hr>
 <ol start="5">
-<li>实现第二个装饰者。摩卡配料<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Mocha</span> <span class="keyword">extends</span> <span class="title">CondimentDecorator</span> </span>&#123;</span><br><span class="line">    Beverage beverage;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Mocha</span><span class="params">(Beverage beverage)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.beverage = beverage;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getDescription</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> beverage.getDescription() + <span class="string">&quot;, Mocha&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">cost</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">.20</span> + beverage.cost();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>实现第二个装饰者。摩卡配料<pre><code class="Java">public class Mocha extends CondimentDecorator &#123;
+ Beverage beverage;
+ public Mocha(Beverage beverage) &#123;
+     this.beverage = beverage;
+ &#125;
+ public String getDescription() &#123;
+     return beverage.getDescription() + &quot;, Mocha&quot;;
+ &#125;
+ public double cost() &#123;
+     return .20 + beverage.cost();
+ &#125;
+&#125;
+</code></pre>
+</li>
 </ol>
 <hr>
 <ol start="6">
-<li>测试代码<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StarbuzzCoffee</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 没有配料的拿铁咖啡</span></span><br><span class="line">        Beverage beverage = <span class="keyword">new</span> DarkRoast();</span><br><span class="line">        System.out.println(beverage.getDescription() + <span class="string">&quot; $&quot;</span> + beverage.cost());</span><br><span class="line">        <span class="comment">// 摩卡， 牛奶， 拿铁咖啡(DarkRoast)</span></span><br><span class="line">        Beverage beverage2 = <span class="keyword">new</span> DarkRoast();</span><br><span class="line">        beverage2 = <span class="keyword">new</span> Mocha(beverage2);</span><br><span class="line">        beverage2 = <span class="keyword">new</span> Milk(beverage2);</span><br><span class="line">        System.out.println(beverage2.getDescription() + <span class="string">&quot; $&quot;</span> + beverage2.cost());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>测试代码<pre><code class="Java">public class StarbuzzCoffee &#123;
+ public static void main(String[] args) &#123;
+     // 没有配料的拿铁咖啡
+     Beverage beverage = new DarkRoast();
+     System.out.println(beverage.getDescription() + &quot; $&quot; + beverage.cost());
+     // 摩卡， 牛奶， 拿铁咖啡(DarkRoast)
+     Beverage beverage2 = new DarkRoast();
+     beverage2 = new Mocha(beverage2);
+     beverage2 = new Milk(beverage2);
+     System.out.println(beverage2.getDescription() + &quot; $&quot; + beverage2.cost());
+ &#125;
+&#125;
+</code></pre>
+</li>
 </ol>
 <hr>
 <ol start="7">
-<li>运行结果<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">java StarbuzzCoffee</span><br><span class="line">DarkRoast Coffee <span class="variable">$1</span>.19</span><br><span class="line">DarkRoast Coffee, Mocha, Milk <span class="variable">$1</span>.49</span><br></pre></td></tr></table></figure></li>
+<li>运行结果<pre><code class="bash">java StarbuzzCoffee
+DarkRoast Coffee $1.19
+DarkRoast Coffee, Mocha, Milk $1.49
+</code></pre>
+</li>
 </ol>
 <hr>
 <h2 id="第四招-工厂模式"><a href="#第四招-工厂模式" class="headerlink" title="第四招 工厂模式"></a>第四招 工厂模式</h2><p><strong>工厂方法模式</strong>：定义了一个创建对象的接口，但由子类决定要实例化的类是哪一个。工厂方法让类把实例化推迟到子类。</p>
@@ -639,10 +929,6 @@
     </div>
 </article>
 
-
-<p>
-    <a  class="dashang" onclick="dashangToggle()">赏</a>
-</p>
 
 
 
@@ -669,24 +955,6 @@
     </div>
 </div>
 
-<div class="hide_box" onclick="dashangToggle()"></div>
-<div class="shang_box">
-    <a class="shang_close"  onclick="dashangToggle()">×</a>
-    <div class="shang_tit">
-        <p>喜欢就点赞,疼爱就打赏</p>
-    </div>
-    <div class="shang_payimg">
-        <div class="pay_img">
-            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
-            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
-        </div>
-    </div>
-    <div class="shang_payselect">
-        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
-    </div>
-</div>
-
-
 </body>
 <script src="/js/jquery.pjax.js?v=1.1.0" ></script>
 
@@ -700,14 +968,6 @@
         
 
         /*渲染打赏样式*/
-        
-        $("input[name=pay]").on("click", function () {
-            if($("input[name=pay]:checked").val()=="weixin"){
-                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
-            } else {
-                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
-            }
-        })
         
 
         /*高亮代码块行号*/
@@ -726,11 +986,6 @@
     }
 
     /*打赏页面隐藏与展示*/
-    
-    function dashangToggle() {
-        $(".shang_box").fadeToggle();
-        $(".hide_box").fadeToggle();
-    }
     
 
 </script>

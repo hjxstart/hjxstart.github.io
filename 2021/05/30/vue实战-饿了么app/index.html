@@ -6,29 +6,25 @@
   <meta name="keywords" content="">
   <meta name="description" content="vue实战-饿了么app | hjxstart的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="第1讲 运维基础1.1 计划任务简介 经验丰富的系统运维工程师可以使得Linux在无需人为介 入的情况下，在指定的时间段自动启用或停止某些服务或 命令，从而实现运维的自动化。 作用:计划任务主要是做一些周期性的任务，目前最主要的 用途是定期备份数据 分类:   次性计划任务:今晚11点30分开启网站服务。 长期性计划任务:每周一的凌晨2点20分把&#x2F;data&#x2F;wwwroot目录打包备份为backup">
+<meta name="description" content="第一章 CDN开发1.1、开发环境介绍hjx:~ jxh$ node --version v14.15.1 hjx:~ jxh$ npm --version 7.17.0 hjx:~ jxh$ vue --version @vue&#x2F;cli 4.5.13   1.2、CDN方式使用Vue&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;vue@2.6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux自动化运维">
-<meta property="og:url" content="http://example.com/2021/06/09/Linux%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4/index.html">
+<meta property="og:title" content="Vue基础">
+<meta property="og:url" content="http://example.com/2021/06/23/Vue%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="hjxstart的博客">
-<meta property="og:description" content="第1讲 运维基础1.1 计划任务简介 经验丰富的系统运维工程师可以使得Linux在无需人为介 入的情况下，在指定的时间段自动启用或停止某些服务或 命令，从而实现运维的自动化。 作用:计划任务主要是做一些周期性的任务，目前最主要的 用途是定期备份数据 分类:   次性计划任务:今晚11点30分开启网站服务。 长期性计划任务:每周一的凌晨2点20分把&#x2F;data&#x2F;wwwroot目录打包备份为backup">
+<meta property="og:description" content="第一章 CDN开发1.1、开发环境介绍hjx:~ jxh$ node --version v14.15.1 hjx:~ jxh$ npm --version 7.17.0 hjx:~ jxh$ vue --version @vue&#x2F;cli 4.5.13   1.2、CDN方式使用Vue&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;vue@2.6">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/images/2021/06/09/02e49f81-65f9-451b-8aa6-6794e740882d.png">
-<meta property="og:image" content="http://example.com/images/2021/06/09/368b2d91-da3f-400a-9691-e41d61c50891.png">
-<meta property="og:image" content="http://example.com/images/2021/06/09/e0d9edd7-b93e-42c3-920c-0d5faaec706d.png">
-<meta property="article:published_time" content="2021-06-09T00:29:17.000Z">
-<meta property="article:modified_time" content="2021-06-23T08:25:04.904Z">
+<meta property="article:published_time" content="2021-06-23T02:48:20.000Z">
+<meta property="article:modified_time" content="2021-06-23T08:31:31.277Z">
 <meta property="article:author" content="hjxstart">
-<meta property="article:tag" content="Java，静心">
+<meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/2021/06/09/02e49f81-65f9-451b-8aa6-6794e740882d.png">
 
 
 <link rel="icon" href="/img/favicon.ico">
 
 <link href="/css/style.css?v=1.1.0" rel="stylesheet">
 
-<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+<link href="/css/hl_theme/atom-dark.css?v=1.1.0" rel="stylesheet">
 
 <link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
 
@@ -511,7 +507,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-text">1.环境搭建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E6%AD%A5%E9%AA%A4"><span class="toc-text">2.项目创建步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0%E8%BF%87%E7%A8%8B"><span class="toc-text">3.功能实现过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1%E5%AE%9E%E7%8E%B0%E7%99%BB%E9%99%86%E6%A8%A1%E5%9D%97"><span class="toc-text">3.1实现登陆模块</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%85%B6%E4%BB%96%E8%AF%B4%E6%98%8E"><span class="toc-text">4.其他说明</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E8%B0%83%E6%95%B4%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%91%BD%E5%90%8D%E5%92%8C%E4%BD%8D%E7%BD%AE"><span class="toc-text">4.1 调整项目文件的命名和位置</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-text">1.环境搭建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E6%AD%A5%E9%AA%A4"><span class="toc-text">2.项目创建步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0%E8%BF%87%E7%A8%8B"><span class="toc-text">3.功能实现过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1%E5%AE%9E%E7%8E%B0%E7%99%BB%E9%99%86%E6%A8%A1%E5%9D%97"><span class="toc-text">3.1实现登陆模块</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -528,7 +524,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="1-环境搭建"><a href="#1-环境搭建" class="headerlink" title="1.环境搭建"></a>1.环境搭建</h3><h3 id="2-项目创建步骤"><a href="#2-项目创建步骤" class="headerlink" title="2.项目创建步骤"></a>2.项目创建步骤</h3><ol>
-<li>在当前路径下创建一个项目<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vue create .</span></span><br></pre></td></tr></table></figure></li>
+<li>在当前路径下创建一个项目<pre><code class="bash"># vue create .
+</code></pre>
+</li>
 <li>同意在当前文件夹下创建项目：y</li>
 <li>选择对应的版本：Manually select features</li>
 <li>空格选择要使用：choose vue version, Babel, Vuex, Router;</li>
@@ -537,55 +535,330 @@
 <li>选择 package.json</li>
 <li>不保存：n</li>
 <li>调整一下项目文件的命名和位置：参考4.1项目说明</li>
-<li>项目启动命令：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run serve</span><br></pre></td></tr></table></figure></li>
+<li>项目启动命令：<pre><code class="bash">npm run serve
+</code></pre>
+</li>
 </ol>
 <h3 id="3-功能实现过程"><a href="#3-功能实现过程" class="headerlink" title="3.功能实现过程"></a>3.功能实现过程</h3><h4 id="3-1实现登陆模块"><a href="#3-1实现登陆模块" class="headerlink" title="3.1实现登陆模块"></a>3.1实现登陆模块</h4><ol>
-<li><p>创建 src/views/Login.vue, 代码如下所示</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;login&quot;&gt;</span><br><span class="line">    Login</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#39;login&#39;,</span><br><span class="line">  components: &#123;</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.login &#123;</span><br><span class="line">    width: 100%;</span><br><span class="line">    height: 100%;</span><br><span class="line">    padding: 30px;</span><br><span class="line">    box-sizing: border-box;</span><br><span class="line">    background: #fff;</span><br><span class="line">    text-align: center;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure></li>
-<li><p>设置当前路由 route.js 和 按需加载</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    path: &#39;&#x2F;&#39;,</span><br><span class="line">    name: &#39;Index&#39;,</span><br><span class="line">    &#x2F;&#x2F; component: Index</span><br><span class="line">    component: () &#x3D;&gt; import(&quot;.&#x2F;views&#x2F;Index.vue&quot;)</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    path: &#39;&#x2F;login&#39;,</span><br><span class="line">    name: &#39;login&#39;,</span><br><span class="line">    component: () &#x3D;&gt; import(&quot;.&#x2F;views&#x2F;Login.vue&quot;) &#x2F;&#x2F; 按需加载</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>设置路由守卫，route.js</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 路由守卫</span><br><span class="line">router.beforeEach((to, from, next) &#x3D;&gt; &#123;</span><br><span class="line">  const isLogin &#x3D; localStorage.ele_login ? true : false;</span><br><span class="line">  if (to.path &#x3D;&#x3D; &#39;&#x2F;login&#39;) &#123;</span><br><span class="line">    next();</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    &#x2F;&#x2F; 是否在登陆状态下，如果是就正常跳转，否则返回到 login页面去</span><br><span class="line">    isLogin ? next() : next(&quot;&#x2F;login&quot; )</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">export default router</span><br></pre></td></tr></table></figure></li>
-<li><p>导入logo到 assets中，在 login中使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;login&quot;&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;logo&quot;&gt;</span><br><span class="line">        &lt;img src&#x3D;&quot;..&#x2F;assets&#x2F;logo.jpeg&quot; alt&#x3D;&quot;my logo image&quot;&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.login &#123;</span><br><span class="line">    width: 100%;</span><br><span class="line">    height: 100%;</span><br><span class="line">    padding: 30px;</span><br><span class="line">    box-sizing: border-box;</span><br><span class="line">    background: #fff;</span><br><span class="line">&#125;</span><br><span class="line">.logo &#123;</span><br><span class="line">    text-align: center;</span><br><span class="line">&#125;</span><br><span class="line">.login img &#123;</span><br><span class="line">    width: 150px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-<li><p>input组件封装，创建 components/InputGroup.vue</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;text_group&quot;&gt;</span><br><span class="line">    &lt;!-- 组件结构 --&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 组件容器 --&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;input_group&quot;&gt;</span><br><span class="line">        &lt;!-- 输入框， 获取输入框的值 --&gt;</span><br><span class="line">        &lt;input </span><br><span class="line">          :type&#x3D;&quot;type&quot; </span><br><span class="line">          :name&#x3D;&quot;name&quot; </span><br><span class="line">          :placeholder&#x3D;&quot;placeholder&quot; </span><br><span class="line">          @input&#x3D;&quot;$emit(&#39;input&#39;, $event.target.value)&quot; </span><br><span class="line">        &gt;</span><br><span class="line">        &lt;!-- 输入框后面的按钮， 绑定一个点击时间--&gt;</span><br><span class="line">        &lt;button v-if&#x3D;&quot;btnTitle&quot; :disabled&#x3D;&quot;disabled&quot; @click&#x3D;&quot;$emit(&#39;btnClick&#39;)&quot;&gt;&#123;&#123;btnTitle&#125;&#125;&lt;&#x2F;button&gt;</span><br><span class="line">        &lt;!-- 错误提醒, error有值就显示错误信息 --&gt;</span><br><span class="line">        &lt;div v-if&#x3D;&quot;error&quot; class&#x3D;&quot;invalid-feedback&quot;&gt;&#123;&#123;error&#125;&#125;&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#39;inputGroup&#39;,</span><br><span class="line">  props: &#123; &#x2F;&#x2F; 通过传入参数实现组件复用</span><br><span class="line">      type: &#123;</span><br><span class="line">          type: String,</span><br><span class="line">          default: &quot;text&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      value: String,</span><br><span class="line">      placeholder: String, &#x2F;&#x2F; 提示</span><br><span class="line">      name: String,</span><br><span class="line">      btnTitle: String, &#x2F;&#x2F; 是否显示获取验证码按钮</span><br><span class="line">      disabled: Boolean, &#x2F;&#x2F; 判断是否可用状态</span><br><span class="line">      error: String, &#x2F;&#x2F; 错误提醒 </span><br><span class="line">  &#125;,</span><br><span class="line">  components: &#123;</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">.input_group &#123;</span><br><span class="line">  border: 1px solid #ccc;</span><br><span class="line">  border-radius: 4px;</span><br><span class="line">  padding: 10px;</span><br><span class="line">  display: flex;</span><br><span class="line">  flex-direction: row;</span><br><span class="line">  justify-content: space-between;</span><br><span class="line">&#125;</span><br><span class="line">.input_group input &#123;</span><br><span class="line">  height: 100%;</span><br><span class="line">  width: 60%;</span><br><span class="line">  outline: none;</span><br><span class="line">&#125;</span><br><span class="line">.input_group button &#123;</span><br><span class="line">  border: none;</span><br><span class="line">  outline: none;</span><br><span class="line">  background: #fff;</span><br><span class="line">&#125;</span><br><span class="line">.input_group button[disabled] &#123;</span><br><span class="line">  color: #aaa;</span><br><span class="line">&#125;</span><br><span class="line">.is-invalid &#123;</span><br><span class="line">  border: 1px solid red;</span><br><span class="line">&#125;</span><br><span class="line">.invalid-feedback &#123;</span><br><span class="line">  color: red;</span><br><span class="line">  padding-top: 5px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure></li>
-<li><p>使用组件，在login.vue 的 script引用组件,在components{}注册组件，创建组件需要的data</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;login&quot;&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;logo&quot;&gt;</span><br><span class="line">        &lt;img src&#x3D;&quot;..&#x2F;assets&#x2F;logo.jpeg&quot; alt&#x3D;&quot;my logo image&quot;&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;!-- 手机号 --&gt;</span><br><span class="line">    &lt;InputGroup type&#x3D;&quot;number&quot; v-model&#x3D;&quot;phone&quot; placeholder&#x3D;&quot;手机号&quot;</span><br><span class="line">    :btnTitle&#x3D;&quot;btnTitle&quot; :disabled&#x3D;&quot;disabled&quot; :error&#x3D;&quot;errors.phone&quot;&#x2F;&gt;</span><br><span class="line">    &lt;!-- 验证码 --&gt;</span><br><span class="line">    &lt;InputGroup type&#x3D;&quot;number&quot; v-model&#x3D;&quot;verifyCode&quot; placeholder&#x3D;&quot;验证码&quot;</span><br><span class="line">    :error&#x3D;&quot;errors.code&quot;&#x2F;&gt;</span><br><span class="line">    &lt;!-- 用户服务协议 --&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;login_des&quot;&gt;</span><br><span class="line">      &lt;p&gt;</span><br><span class="line">        新用户登陆即自动注册，表示已同意</span><br><span class="line">        &lt;span&gt;《用户服务协议》&lt;&#x2F;span&gt;</span><br><span class="line">      &lt;&#x2F;p&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;!-- 登陆按钮 --&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;login_btn&quot;&gt;</span><br><span class="line">      &lt;button&gt;登录&lt;&#x2F;button&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import InputGroup from &quot;..&#x2F;components&#x2F;InputGroup&quot;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#39;login&#39;,</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      phone: &quot;&quot;,</span><br><span class="line">      verifyCode: &quot;&quot;,</span><br><span class="line">      errors: &#123;&#125;, &#x2F;&#x2F; 有手机错误或者验证码错误</span><br><span class="line">      btnTitle: &quot;获取验证码&quot;,</span><br><span class="line">      disabled: false</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  components: &#123;</span><br><span class="line">    InputGroup</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.login &#123;</span><br><span class="line">    width: 100%;</span><br><span class="line">    height: 100%;</span><br><span class="line">    padding: 30px;</span><br><span class="line">    box-sizing: border-box;</span><br><span class="line">    background: #fff;</span><br><span class="line">&#125;</span><br><span class="line">.logo &#123;</span><br><span class="line">    text-align: center;</span><br><span class="line">&#125;</span><br><span class="line">.login img &#123;</span><br><span class="line">    width: 150px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.login_des &#123;</span><br><span class="line">  color: #aaa;</span><br><span class="line">  line-height: 22px;</span><br><span class="line">&#125;</span><br><span class="line">.login_des span &#123;</span><br><span class="line">  color: #4d90fe;</span><br><span class="line">&#125;</span><br><span class="line">.login_btn button &#123;</span><br><span class="line">  width: 100%;</span><br><span class="line">  height: 40px;</span><br><span class="line">  background-color: #48ca38;</span><br><span class="line">  border-radius: 4px;</span><br><span class="line">  color: white;</span><br><span class="line">  font-size: 14px;</span><br><span class="line">  border: none;</span><br><span class="line">  outline: none;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure></li>
-<li></li>
+<li>创建 src/views/Login.vue, 代码如下所示<br>```Vue<template>
+<div class="login">
+ Login
+</div>
+</template></li>
 </ol>
-<h3 id="4-其他说明"><a href="#4-其他说明" class="headerlink" title="4.其他说明"></a>4.其他说明</h3><h4 id="4-1-调整项目文件的命名和位置"><a href="#4-1-调整项目文件的命名和位置" class="headerlink" title="4.1 调整项目文件的命名和位置"></a>4.1 调整项目文件的命名和位置</h4><ol>
-<li><p>删除 src/components/HelloWorld.Vue,</p>
-</li>
-<li><p>删除 src/views/About.vue </p>
-</li>
-<li><p>重命名并移动 src/store/index.js 为 src/store.js， 删除 src/store;</p>
-</li>
-<li><p>重命名并移动 src/router/index.js 为 src/router.js， 删除 src/router;</p>
-</li>
-<li><p>新建 public/css/reset.css, 拷贝 reset.css的代码过来，可以上网拷贝。</p>
-</li>
-<li><p>修改 src/main.js 内容为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &#39;vue&#39;</span><br><span class="line">import App from &#39;.&#x2F;App.vue&#39;</span><br><span class="line">import router from &#39;.&#x2F;router.js&#39;</span><br><span class="line">import store from &#39;.&#x2F;store.js&#39;</span><br><span class="line"></span><br><span class="line">Vue.config.productionTip &#x3D; false</span><br><span class="line"></span><br><span class="line">new Vue(&#123;</span><br><span class="line">  router,</span><br><span class="line">  store,</span><br><span class="line">  render: h &#x3D;&gt; h(App)</span><br><span class="line">&#125;).$mount(&#39;#app&#39;)</span><br></pre></td></tr></table></figure></li>
-<li><p>修改 router.js 的内容为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &#39;vue&#39;</span><br><span class="line">import VueRouter from &#39;vue-router&#39;</span><br><span class="line">import Index from &#39;.&#x2F;views&#x2F;Index.vue&#39;</span><br><span class="line"></span><br><span class="line">Vue.use(VueRouter)</span><br><span class="line"></span><br><span class="line">const routes &#x3D; [</span><br><span class="line">  &#123;</span><br><span class="line">    path: &#39;&#x2F;&#39;,</span><br><span class="line">    name: &#39;Index&#39;,</span><br><span class="line">    component: Index</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">const router &#x3D; new VueRouter(&#123;</span><br><span class="line">  mode: &#39;history&#39;,</span><br><span class="line">  base: process.env.BASE_URL,</span><br><span class="line">  routes</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">export default router</span><br></pre></td></tr></table></figure></li>
-<li><p>src/App.vue里面全部内容。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">    &lt;router-view&#x2F;&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#39;App&#39;,</span><br><span class="line">  components: &#123; </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt; </span><br><span class="line">&lt;style&gt;</span><br><span class="line">#app &#123;</span><br><span class="line">  width: 100%;</span><br><span class="line">  height: 100%;</span><br><span class="line">  font-size: 14px;</span><br><span class="line">  background: #f1f1f1;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure></li>
-<li><p>重命名 src/views/Home.vue为Index.vue,修改其内容为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;index&quot;&gt;</span><br><span class="line">    主页</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#39;Index&#39;,</span><br><span class="line">  components: &#123;  </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure></li>
-<li><p>在 public/index.html 引用 ./css/reset.css和修改部分内容</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;./css/reset.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">  <span class="selector-tag">html</span>,<span class="selector-tag">body</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="attribute">width</span>: <span class="number">100%</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">height</span>: <span class="number">100%</span>;</span></span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<script>
+export default {
+  name: 'login',
+  components: {
+    
+  }
+}
+</script>
+
+<style>
+.login {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+    background: #fff;
+    text-align: center;
+}
+</style>
+<pre><code>2. 设置当前路由 route.js 和 按需加载
+```Vue
+&#123;
+    path: &#39;/&#39;,
+    name: &#39;Index&#39;,
+    // component: Index
+    component: () =&gt; import(&quot;./views/Index.vue&quot;)
+  &#125;,
+  &#123;
+    path: &#39;/login&#39;,
+    name: &#39;login&#39;,
+    component: () =&gt; import(&quot;./views/Login.vue&quot;) // 按需加载
+  &#125;
+</code></pre>
+<ol start="3">
+<li>设置路由守卫，route.js<br>```Vue<br>// 路由守卫<br>router.beforeEach((to, from, next) =&gt; {<br>const isLogin = localStorage.ele_login ? true : false;<br>if (to.path == ‘/login’) {<br> next();<br>} else {<br> // 是否在登陆状态下，如果是就正常跳转，否则返回到 login页面去<br> isLogin ? next() : next(“/login” )</li>
 </ol>
+<p>  }<br>})</p>
+<p>export default router</p>
+<pre><code>4.导入logo到 assets中，在 login中使用
+```Vue
+&lt;template&gt;
+  &lt;div class=&quot;login&quot;&gt;
+    &lt;div class=&quot;logo&quot;&gt;
+        &lt;img src=&quot;../assets/logo.jpeg&quot; alt=&quot;my logo image&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;style&gt;
+.login &#123;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+    background: #fff;
+&#125;
+.logo &#123;
+    text-align: center;
+&#125;
+.login img &#123;
+    width: 150px;
+&#125;
+&lt;/style&gt;
+</code></pre>
+<p>5.input组件封装，创建 components/InputGroup.vue</p>
+<pre><code class="vue">&lt;template&gt;
+  &lt;div class=&quot;text_group&quot;&gt;
+    &lt;!-- 组件结构 --&gt;
+
+    &lt;!-- 组件容器 --&gt;
+    &lt;div class=&quot;input_group&quot;&gt;
+        &lt;!-- 输入框， 获取输入框的值 --&gt;
+        &lt;input 
+          :type=&quot;type&quot; 
+          :name=&quot;name&quot; 
+          :placeholder=&quot;placeholder&quot; 
+          @input=&quot;$emit(&#39;input&#39;, $event.target.value)&quot; 
+        &gt;
+        &lt;!-- 输入框后面的按钮， 绑定一个点击时间--&gt;
+        &lt;button v-if=&quot;btnTitle&quot; :disabled=&quot;disabled&quot; @click=&quot;$emit(&#39;btnClick&#39;)&quot;&gt;&#123;&#123;btnTitle&#125;&#125;&lt;/button&gt;
+        &lt;!-- 错误提醒, error有值就显示错误信息 --&gt;
+        &lt;div v-if=&quot;error&quot; class=&quot;invalid-feedback&quot;&gt;&#123;&#123;error&#125;&#125;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+
+export default &#123;
+  name: &#39;inputGroup&#39;,
+  props: &#123; // 通过传入参数实现组件复用
+      type: &#123;
+          type: String,
+          default: &quot;text&quot;
+      &#125;,
+      value: String,
+      placeholder: String, // 提示
+      name: String,
+      btnTitle: String, // 是否显示获取验证码按钮
+      disabled: Boolean, // 判断是否可用状态
+      error: String, // 错误提醒 
+  &#125;,
+  components: &#123;
+    
+  &#125;
+&#125;
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+.input_group &#123;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+&#125;
+.input_group input &#123;
+  height: 100%;
+  width: 60%;
+  outline: none;
+&#125;
+.input_group button &#123;
+  border: none;
+  outline: none;
+  background: #fff;
+&#125;
+.input_group button[disabled] &#123;
+  color: #aaa;
+&#125;
+.is-invalid &#123;
+  border: 1px solid red;
+&#125;
+.invalid-feedback &#123;
+  color: red;
+  padding-top: 5px;
+&#125;
+&lt;/style&gt;
+</code></pre>
+<ol start="6">
+<li>使用组件，在login.vue 的 script引用组件,在components{}注册组件，创建组件需要的data<br>```vue<template>
+<div class="login">
+ <div class="logo">
+     <img src="../assets/logo.jpeg" alt="my logo image">
+ </div>
+ <!-- 手机号 -->
+ <InputGroup type="number" v-model="phone" placeholder="手机号"
+ :btnTitle="btnTitle" :disabled="disabled" :error="errors.phone"/>
+ <!-- 验证码 -->
+ <InputGroup type="number" v-model="verifyCode" placeholder="验证码"
+ :error="errors.code"/>
+ <!-- 用户服务协议 -->
+ <div class="login_des">
+   <p>
+     新用户登陆即自动注册，表示已同意
+     <span>《用户服务协议》</span>
+   </p>
+ </div>
+ <!-- 登陆按钮 -->
+ <div class="login_btn">
+   <button>登录</button>
+ </div>
+</div>
+</template></li>
+</ol>
+<script>
+import InputGroup from "../components/InputGroup"
+export default {
+  name: 'login',
+  data() {
+    return {
+      phone: "",
+      verifyCode: "",
+      errors: {}, // 有手机错误或者验证码错误
+      btnTitle: "获取验证码",
+      disabled: false
+    }
+  },
+  components: {
+    InputGroup
+  }
+}
+</script>
+
+<style>
+.login {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+    background: #fff;
+}
+.logo {
+    text-align: center;
+}
+.login img {
+    width: 150px;
+}
+
+.login_des {
+  color: #aaa;
+  line-height: 22px;
+}
+.login_des span {
+  color: #4d90fe;
+}
+.login_btn button {
+  width: 100%;
+  height: 40px;
+  background-color: #48ca38;
+  border-radius: 4px;
+  color: white;
+  font-size: 14px;
+  border: none;
+  outline: none;
+}
+</style>
+<pre><code>
+7. 
+
+
+
+
+
+
+
+
+
+
+### 4.其他说明
+#### 4.1 调整项目文件的命名和位置
+1. 删除 src/components/HelloWorld.Vue,
+2. 删除 src/views/About.vue 
+3. 重命名并移动 src/store/index.js 为 src/store.js， 删除 src/store;
+4. 重命名并移动 src/router/index.js 为 src/router.js， 删除 src/router;
+5. 新建 public/css/reset.css, 拷贝 reset.css的代码过来，可以上网拷贝。
+6. 修改 src/main.js 内容为
+```Vue
+import Vue from &#39;vue&#39;
+import App from &#39;./App.vue&#39;
+import router from &#39;./router.js&#39;
+import store from &#39;./store.js&#39;
+
+Vue.config.productionTip = false
+
+new Vue(&#123;
+  router,
+  store,
+  render: h =&gt; h(App)
+&#125;).$mount(&#39;#app&#39;)
+</code></pre>
+<ol start="7">
+<li>修改 router.js 的内容为<br>```Vue<br>import Vue from ‘vue’<br>import VueRouter from ‘vue-router’<br>import Index from ‘./views/Index.vue’</li>
+</ol>
+<p>Vue.use(VueRouter)</p>
+<p>const routes = [<br>  {<br>    path: ‘/‘,<br>    name: ‘Index’,<br>    component: Index<br>  }<br>]</p>
+<p>const router = new VueRouter({<br>  mode: ‘history’,<br>  base: process.env.BASE_URL,<br>  routes<br>})</p>
+<p>export default router</p>
+<pre><code>
+8. src/App.vue里面全部内容。
+```Vue
+&lt;template&gt;
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;router-view/&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+export default &#123;
+  name: &#39;App&#39;,
+  components: &#123; 
+  &#125;
+&#125;
+&lt;/script&gt; 
+&lt;style&gt;
+#app &#123;
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  background: #f1f1f1;
+&#125;
+&lt;/style&gt;
+</code></pre>
+<ol start="9">
+<li>重命名 src/views/Home.vue为Index.vue,修改其内容为<pre><code class="Vue">&lt;template&gt;
+&lt;div class=&quot;index&quot;&gt;
+ 主页
+&lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+export default &#123;
+name: &#39;Index&#39;,
+components: &#123;  
+&#125;
+&#125;
+&lt;/script&gt;
+</code></pre>
+</li>
+<li>在 public/index.html 引用 ./css/reset.css和修改部分内容<br>```html<link rel="stylesheet" href="./css/reset.css">
+<style>
+  html,body {
+    width: 100%;
+    height: 100%;
+  }
+</style></li>
+</ol>
+<pre><code>
+</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
     </div>
 </article>
 
-
-<p>
-    <a  class="dashang" onclick="dashangToggle()">赏</a>
-</p>
 
 
 
@@ -612,24 +885,6 @@
     </div>
 </div>
 
-<div class="hide_box" onclick="dashangToggle()"></div>
-<div class="shang_box">
-    <a class="shang_close"  onclick="dashangToggle()">×</a>
-    <div class="shang_tit">
-        <p>喜欢就点赞,疼爱就打赏</p>
-    </div>
-    <div class="shang_payimg">
-        <div class="pay_img">
-            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
-            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
-        </div>
-    </div>
-    <div class="shang_payselect">
-        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
-    </div>
-</div>
-
-
 </body>
 <script src="/js/jquery.pjax.js?v=1.1.0" ></script>
 
@@ -643,14 +898,6 @@
         
 
         /*渲染打赏样式*/
-        
-        $("input[name=pay]").on("click", function () {
-            if($("input[name=pay]:checked").val()=="weixin"){
-                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
-            } else {
-                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
-            }
-        })
         
 
         /*高亮代码块行号*/
@@ -669,11 +916,6 @@
     }
 
     /*打赏页面隐藏与展示*/
-    
-    function dashangToggle() {
-        $(".shang_box").fadeToggle();
-        $(".hide_box").fadeToggle();
-    }
     
 
 </script>

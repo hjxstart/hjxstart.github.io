@@ -6,29 +6,25 @@
   <meta name="keywords" content="">
   <meta name="description" content="Linux 常用命令 | hjxstart的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="第1讲 运维基础1.1 计划任务简介 经验丰富的系统运维工程师可以使得Linux在无需人为介 入的情况下，在指定的时间段自动启用或停止某些服务或 命令，从而实现运维的自动化。 作用:计划任务主要是做一些周期性的任务，目前最主要的 用途是定期备份数据 分类:   次性计划任务:今晚11点30分开启网站服务。 长期性计划任务:每周一的凌晨2点20分把&#x2F;data&#x2F;wwwroot目录打包备份为backup">
+<meta name="description" content="第一章 CDN开发1.1、开发环境介绍hjx:~ jxh$ node --version v14.15.1 hjx:~ jxh$ npm --version 7.17.0 hjx:~ jxh$ vue --version @vue&#x2F;cli 4.5.13   1.2、CDN方式使用Vue&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;vue@2.6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux自动化运维">
-<meta property="og:url" content="http://example.com/2021/06/09/Linux%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4/index.html">
+<meta property="og:title" content="Vue基础">
+<meta property="og:url" content="http://example.com/2021/06/23/Vue%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="hjxstart的博客">
-<meta property="og:description" content="第1讲 运维基础1.1 计划任务简介 经验丰富的系统运维工程师可以使得Linux在无需人为介 入的情况下，在指定的时间段自动启用或停止某些服务或 命令，从而实现运维的自动化。 作用:计划任务主要是做一些周期性的任务，目前最主要的 用途是定期备份数据 分类:   次性计划任务:今晚11点30分开启网站服务。 长期性计划任务:每周一的凌晨2点20分把&#x2F;data&#x2F;wwwroot目录打包备份为backup">
+<meta property="og:description" content="第一章 CDN开发1.1、开发环境介绍hjx:~ jxh$ node --version v14.15.1 hjx:~ jxh$ npm --version 7.17.0 hjx:~ jxh$ vue --version @vue&#x2F;cli 4.5.13   1.2、CDN方式使用Vue&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;vue@2.6">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/images/2021/06/09/02e49f81-65f9-451b-8aa6-6794e740882d.png">
-<meta property="og:image" content="http://example.com/images/2021/06/09/368b2d91-da3f-400a-9691-e41d61c50891.png">
-<meta property="og:image" content="http://example.com/images/2021/06/09/e0d9edd7-b93e-42c3-920c-0d5faaec706d.png">
-<meta property="article:published_time" content="2021-06-09T00:29:17.000Z">
-<meta property="article:modified_time" content="2021-06-23T08:25:04.904Z">
+<meta property="article:published_time" content="2021-06-23T02:48:20.000Z">
+<meta property="article:modified_time" content="2021-06-23T08:31:31.277Z">
 <meta property="article:author" content="hjxstart">
-<meta property="article:tag" content="Java，静心">
+<meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/2021/06/09/02e49f81-65f9-451b-8aa6-6794e740882d.png">
 
 
 <link rel="icon" href="/img/favicon.ico">
 
 <link href="/css/style.css?v=1.1.0" rel="stylesheet">
 
-<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+<link href="/css/hl_theme/atom-dark.css?v=1.1.0" rel="stylesheet">
 
 <link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
 
@@ -537,15 +533,27 @@
       
         <h2 id="Linux中的权限、用户和组"><a href="#Linux中的权限、用户和组" class="headerlink" title="Linux中的权限、用户和组"></a>Linux中的权限、用户和组</h2><h3 id="一、修改权限"><a href="#一、修改权限" class="headerlink" title="一、修改权限"></a>一、修改权限</h3><ol>
 <li><p>字母修改权限<br>关键字有：[u, g, o, a][+, -][r, w, x]</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod a+w filename.txt</span><br></pre></td></tr></table></figure></li>
+<pre><code class="bash">chmod a+w filename.txt
+</code></pre>
+</li>
 <li><p>数字修改权限<br>(r=0, w=1, x=0) =&gt; (010=2)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 222 filename.txt</span><br></pre></td></tr></table></figure></li>
+<pre><code class="bash">chmod 222 filename.txt
+</code></pre>
+</li>
 </ol>
 <hr>
 <h3 id="二、修改用户和组"><a href="#二、修改用户和组" class="headerlink" title="二、修改用户和组"></a>二、修改用户和组</h3><ol>
-<li>修改所属用户：chown [-R] 目标用户 文件或文件夹<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown username filename.txt</span><br></pre></td></tr></table></figure></li>
-<li>修改所属组：chown [-R] 目标组 文件或文件夹<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chgrp groupname filename.txt</span><br></pre></td></tr></table></figure></li>
-<li>同时修改所属用户和组：chown [-R] 目标用户 目标组 文件或文件夹<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">chown username:groupname filename.txt</span><br><span class="line"><span class="comment"># 递归修改，目录包含的子文件或目录也修改</span></span><br><span class="line">chown -R username:groupname filename.txt</span><br></pre></td></tr></table></figure></li>
+<li>修改所属用户：chown [-R] 目标用户 文件或文件夹<pre><code class="bash">chown username filename.txt
+</code></pre>
+</li>
+<li>修改所属组：chown [-R] 目标组 文件或文件夹<pre><code class="bash">chgrp groupname filename.txt
+</code></pre>
+</li>
+<li>同时修改所属用户和组：chown [-R] 目标用户 目标组 文件或文件夹<pre><code class="bash">chown username:groupname filename.txt
+# 递归修改，目录包含的子文件或目录也修改
+chown -R username:groupname filename.txt
+</code></pre>
+</li>
 </ol>
 <hr>
 <h3 id="三、Linux目录配置"><a href="#三、Linux目录配置" class="headerlink" title="三、Linux目录配置"></a>三、Linux目录配置</h3><p>bin:可执行命令文件<br>boot:启动文件<br>dev:设备文件<br>etc:配置文件<br>home:用户的目录（每个用户在其下有一个用户的文件夹）<br>lib:库文件<br>media:设备挂载点文件（U盘）<br>mnt:手动设备挂载点<br>opt:大型软件安装包（源码安装包）<br>usr:软件安装包（类似Windows中的Programfiles）</p>
@@ -557,57 +565,218 @@
 <hr>
 <h3 id="五、档案内容查阅"><a href="#五、档案内容查阅" class="headerlink" title="五、档案内容查阅"></a>五、档案内容查阅</h3><ol>
 <li><p>cat: 由第一行开始显示文件内容</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat filename</span><br></pre></td></tr></table></figure></li>
+<pre><code class="bash">cat filename
+</code></pre>
+</li>
 <li><p>tac: 从最后一行开始显示，可以看出 tac 是 cat 的倒置显示</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tac filename</span><br></pre></td></tr></table></figure></li>
+<pre><code class="bash">tac filename
+</code></pre>
+</li>
 <li><p>nl: 显示的时候，顺道输出行号！</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nl filename</span><br><span class="line"><span class="comment"># 等同于</span></span><br><span class="line">cat -n filename</span><br></pre></td></tr></table></figure></li>
+<pre><code class="bash">nl filename
+# 等同于
+cat -n filename
+</code></pre>
+</li>
 <li><p>more: 一页一页的显示文件内容。空格下一页，q退出。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">more filename</span><br></pre></td></tr></table></figure></li>
+<pre><code class="bash">more filename
+</code></pre>
+</li>
 <li><p>less: 与 more 类似，但是比 more 更好的是，他可以通过方向键往前翻页！</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">less filename</span><br></pre></td></tr></table></figure></li>
+<pre><code class="bash">less filename
+</code></pre>
+</li>
 <li><p>head: 只看头几行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">head filename</span><br><span class="line">head -3 filename</span><br></pre></td></tr></table></figure></li>
+<pre><code class="bash">head filename
+head -3 filename
+</code></pre>
+</li>
 <li><p>tail: 只看尾巴几行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tail filename</span><br><span class="line"><span class="comment"># 查看日志是，只查看后几行并实时更新</span></span><br><span class="line">tail -f filename.log</span><br></pre></td></tr></table></figure></li>
+<pre><code class="bash">tail filename
+# 查看日志是，只查看后几行并实时更新
+tail -f filename.log
+</code></pre>
+</li>
 <li><p>od: 以二进位的方式读取文件内容（string）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">od binfilename</span><br><span class="line">string binfilename</span><br></pre></td></tr></table></figure></li>
+<pre><code class="bash">od binfilename
+string binfilename
+</code></pre>
+</li>
 </ol>
 <hr>
 <h3 id="六、档案和目录的默认权限与隐藏权限"><a href="#六、档案和目录的默认权限与隐藏权限" class="headerlink" title="六、档案和目录的默认权限与隐藏权限"></a>六、档案和目录的默认权限与隐藏权限</h3><ol>
-<li>文件默认权限：umask,使用默认权限进行过来<br>默认文件权限666: 110 110 110<br>umask值为0 022:  000 010 010<br>默认文件权限 &amp; umask值 = 过滤后的权限<br>过滤文件权限644: 110 100 100<br>一开始是文件权限(755);默认创建文件夹的权限(644)<br>默认创建文件的权限(666);默认创建文件夹的权限(777)<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">umask</span></span><br><span class="line">&gt;0022 <span class="comment"># 默认0(标志) 0(谁都不过滤) 2(过滤组的w权限) 2(过滤其他用户的w权限) </span></span><br><span class="line">$ <span class="built_in">umask</span> 000 <span class="comment"># 修改 umask 值</span></span><br><span class="line"></span><br><span class="line">$ <span class="built_in">umask</span> -S</span><br><span class="line">u=rwx,g=r,o=r <span class="comment"># umask的理解，umask -S 的命令</span></span><br></pre></td></tr></table></figure></li>
-<li>文件隐藏权限<br>文件的i权限(不能修改)和a权限(只能添加)<br>修改隐藏权限: chattr [+-] [attr] 文件或文件夹<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ chattr +a dir <span class="comment"># dir目录下只能添加文件，不能删除文件</span></span><br><span class="line">$ chattr +i dir <span class="comment"># dir目录下不能操作文件</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li>文件默认权限：umask,使用默认权限进行过来<br>默认文件权限666: 110 110 110<br>umask值为0 022:  000 010 010<br>默认文件权限 &amp; umask值 = 过滤后的权限<br>过滤文件权限644: 110 100 100<br>一开始是文件权限(755);默认创建文件夹的权限(644)<br>默认创建文件的权限(666);默认创建文件夹的权限(777)<br>```bash<br>$ umask<blockquote>
+<p>0022 # 默认0(标志) 0(谁都不过滤) 2(过滤组的w权限) 2(过滤其他用户的w权限)<br>$ umask 000 # 修改 umask 值</p>
+</blockquote>
+</li>
 </ol>
+<p>$ umask -S<br>u=rwx,g=r,o=r # umask的理解，umask -S 的命令</p>
+<pre><code>2. 文件隐藏权限
+文件的i权限(不能修改)和a权限(只能添加)
+修改隐藏权限: chattr [+-] [attr] 文件或文件夹
+```bash
+$ chattr +a dir # dir目录下只能添加文件，不能删除文件
+$ chattr +i dir # dir目录下不能操作文件
+</code></pre>
 <hr>
 <h3 id="七、文件类型查看"><a href="#七、文件类型查看" class="headerlink" title="七、文件类型查看"></a>七、文件类型查看</h3><ol>
-<li>file命令<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ file /bin/touch</span><br><span class="line">$ file /usr/bin/passwd</span><br><span class="line">$ file /var/lib/mlocate/mlocate.db</span><br></pre></td></tr></table></figure></li>
+<li>file命令<pre><code class="bash">$ file /bin/touch
+$ file /usr/bin/passwd
+$ file /var/lib/mlocate/mlocate.db
+</code></pre>
+</li>
 </ol>
 <hr>
-<h3 id="八、用户相关命令："><a href="#八、用户相关命令：" class="headerlink" title="八、用户相关命令："></a>八、用户相关命令：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$ id		<span class="comment"># 显示当前用户信息</span></span><br><span class="line">$ passwd	<span class="comment"># 修改当前用户的密码</span></span><br><span class="line">$ groups	<span class="comment"># 查看所属组</span></span><br><span class="line"></span><br><span class="line">添加用户：useradd [options] username</span><br><span class="line">选项：	-g	主组 	指定用户所属的用户组</span><br><span class="line">	-G	附属组	指定用户所属的附加组</span><br><span class="line">	-r	等效于--system 表示创建一个系统账号</span><br><span class="line">注：默认不会为系统用户创建对应的主目录</span><br><span class="line"></span><br><span class="line">锁定或解锁用户：passwd [options] [username]</span><br><span class="line">如果只提供用户名，则修改当前用户的密码</span><br><span class="line">选项：	-l	锁定用户</span><br><span class="line">	-u	解锁用户</span><br><span class="line">	-d	设置用户无密码，用户下次登陆时系统不再询问密码。</span><br><span class="line"></span><br><span class="line">非root用户临时使用root权限：sudo</span><br><span class="line">注：有时需要修改 vim /etc/sudoers, 把用户添加进去才可以</span><br></pre></td></tr></table></figure>
+<h3 id="八、用户相关命令："><a href="#八、用户相关命令：" class="headerlink" title="八、用户相关命令："></a>八、用户相关命令：</h3><pre><code class="bash">$ id        # 显示当前用户信息
+$ passwd    # 修改当前用户的密码
+$ groups    # 查看所属组
+
+添加用户：useradd [options] username
+选项：    -g    主组     指定用户所属的用户组
+    -G    附属组    指定用户所属的附加组
+    -r    等效于--system 表示创建一个系统账号
+注：默认不会为系统用户创建对应的主目录
+
+锁定或解锁用户：passwd [options] [username]
+如果只提供用户名，则修改当前用户的密码
+选项：    -l    锁定用户
+    -u    解锁用户
+    -d    设置用户无密码，用户下次登陆时系统不再询问密码。
+
+非root用户临时使用root权限：sudo
+注：有时需要修改 vim /etc/sudoers, 把用户添加进去才可以
+</code></pre>
 <hr>
-<h3 id="九、组相关命令"><a href="#九、组相关命令" class="headerlink" title="九、组相关命令"></a>九、组相关命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1.添加组：groupadd groupname</span><br><span class="line">$ groupadd javadevgroup</span><br><span class="line">2.删除组：groupdel [options] groupname</span><br><span class="line">$ groupdel javadevgroup</span><br><span class="line">注：-r 同时删除该用户的主目录</span><br><span class="line">3.修改用户所属组：usermod [options] username</span><br><span class="line">$ usermod -G javadevgroup hjx</span><br><span class="line">注：-g 主组	-G 附属组</span><br></pre></td></tr></table></figure>
+<h3 id="九、组相关命令"><a href="#九、组相关命令" class="headerlink" title="九、组相关命令"></a>九、组相关命令</h3><pre><code class="bash">1.添加组：groupadd groupname
+$ groupadd javadevgroup
+2.删除组：groupdel [options] groupname
+$ groupdel javadevgroup
+注：-r 同时删除该用户的主目录
+3.修改用户所属组：usermod [options] username
+$ usermod -G javadevgroup hjx
+注：-g 主组    -G 附属组
+</code></pre>
 <hr>
 <h3 id="十、指令与档案的搜寻"><a href="#十、指令与档案的搜寻" class="headerlink" title="十、指令与档案的搜寻"></a>十、指令与档案的搜寻</h3><ol>
-<li>查找指令：which 命令<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">查找文件：find [查找位置] [查找参数]</span><br><span class="line">示例：find . -name <span class="string">&quot;s*&quot;</span> 按文件名查找，可使用通配符</span><br><span class="line">选项：</span><br><span class="line">	-name 查找文件/文件夹名称</span><br><span class="line">	-iname 忽略大小写的名称查找</span><br><span class="line">	-user    查找所属用户的文件</span><br><span class="line">	-group 查找所属组的文件</span><br><span class="line">	-or 或条件</span><br><span class="line">$ <span class="built_in">which</span> ls</span><br></pre></td></tr></table></figure></li>
-<li>查找内容：grep（全称 Global Regular Expression Pring）<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">grep [option] pattern file</span><br><span class="line">基于正则表达式搜索文本，并吧匹配的行显示出来。如果正则表达式中包括空格，则必须使用引号将正则表达式引起来。</span><br><span class="line">选项:	-n    <span class="comment">#显示行号</span></span><br><span class="line">	-i        <span class="comment">#忽略大小写</span></span><br><span class="line">	-w       <span class="comment"># 单词完整匹配</span></span><br><span class="line">$ grep <span class="string">&#x27;linux&#x27;</span> test.txt <span class="comment">#从文件中查找关键词</span></span><br><span class="line">$ grep ^u test.txt <span class="comment"># 找出以u开头的行</span></span><br><span class="line">$ grep hat$   test.txt <span class="comment"># 找出以hat结尾的行</span></span><br></pre></td></tr></table></figure></li>
+<li>查找指令：which 命令<pre><code class="bash">查找文件：find [查找位置] [查找参数]
+示例：find . -name &quot;s*&quot; 按文件名查找，可使用通配符
+选项：
+ -name 查找文件/文件夹名称
+ -iname 忽略大小写的名称查找
+ -user    查找所属用户的文件
+ -group 查找所属组的文件
+ -or 或条件
+$ which ls
+</code></pre>
+</li>
+<li>查找内容：grep（全称 Global Regular Expression Pring）<pre><code class="bash">grep [option] pattern file
+基于正则表达式搜索文本，并吧匹配的行显示出来。如果正则表达式中包括空格，则必须使用引号将正则表达式引起来。
+选项:    -n    #显示行号
+ -i        #忽略大小写
+ -w       # 单词完整匹配
+$ grep &#39;linux&#39; test.txt #从文件中查找关键词
+$ grep ^u test.txt # 找出以u开头的行
+$ grep hat$   test.txt # 找出以hat结尾的行
+</code></pre>
+</li>
 </ol>
 <hr>
-<h3 id="十一、Linux常见的压缩与打包指令"><a href="#十一、Linux常见的压缩与打包指令" class="headerlink" title="十一、Linux常见的压缩与打包指令"></a>十一、Linux常见的压缩与打包指令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">1. zip压缩（归档）：</span><br><span class="line">	zip [目标压缩文件名] [源文件名]</span><br><span class="line">$ zip test1to3 test1.txt test2.txt test3.txt</span><br><span class="line">	unzip [压缩文件名]</span><br><span class="line">$ unzip testto3.zip</span><br><span class="line"></span><br><span class="line">2. gzip压缩 (压缩)：</span><br><span class="line">	gzip [file-list] <span class="comment"># 压缩后会删除原始文件，压缩后的文件后缀为.gz</span></span><br><span class="line">$ gzip file1 file2</span><br><span class="line">	gzip -d [zip-file-list] <span class="comment"># 解压缩文件</span></span><br><span class="line">$ gzip -d file.gz</span><br><span class="line"></span><br><span class="line">3. tar (归档)</span><br><span class="line">$ tar -cvf filename.tar ./dir1 <span class="comment"># 将dir1目录归档</span></span><br><span class="line">$ tar -xvf filename.tar <span class="comment"># 解压</span></span><br><span class="line"></span><br><span class="line">$ tar -cvzf filename.tar.gz ./dir1 <span class="comment">#归档的同时使用gzip压缩</span></span><br><span class="line">$ tar -xvzf filename.tar.gz <span class="comment"># 解压</span></span><br></pre></td></tr></table></figure>
+<h3 id="十一、Linux常见的压缩与打包指令"><a href="#十一、Linux常见的压缩与打包指令" class="headerlink" title="十一、Linux常见的压缩与打包指令"></a>十一、Linux常见的压缩与打包指令</h3><pre><code class="bash">1. zip压缩（归档）：
+    zip [目标压缩文件名] [源文件名]
+$ zip test1to3 test1.txt test2.txt test3.txt
+    unzip [压缩文件名]
+$ unzip testto3.zip
+
+2. gzip压缩 (压缩)：
+    gzip [file-list] # 压缩后会删除原始文件，压缩后的文件后缀为.gz
+$ gzip file1 file2
+    gzip -d [zip-file-list] # 解压缩文件
+$ gzip -d file.gz
+
+3. tar (归档)
+$ tar -cvf filename.tar ./dir1 # 将dir1目录归档
+$ tar -xvf filename.tar # 解压
+
+$ tar -cvzf filename.tar.gz ./dir1 #归档的同时使用gzip压缩
+$ tar -xvzf filename.tar.gz # 解压
+</code></pre>
 <hr>
-<h3 id="十二、Linux安装软件的方式"><a href="#十二、Linux安装软件的方式" class="headerlink" title="十二、Linux安装软件的方式"></a>十二、Linux安装软件的方式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#二进制文件的安装，常用于归档的编译好的文件压缩包。（XXX.tar 或者 XXX.tar.gz）</span></span><br><span class="line">1. rmp文件安装</span><br><span class="line"><span class="comment"># rpm(Red-Hat Package Manager)红帽的一种安装包方式</span></span><br><span class="line">$ rpm -qa | grep [keywords] <span class="comment"># 查询是否已经安装某个应用程序</span></span><br><span class="line">$ rpm -ivh software.rpm <span class="comment"># 安装软件 -v显示纤细安装信息， -h 显示进度</span></span><br><span class="line">$ rpm -e --nodeps software.rpm <span class="comment"># 卸载软件 --nodeps表示不检查依赖关系，强制卸载</span></span><br><span class="line"></span><br><span class="line">2. yum安装：</span><br><span class="line"><span class="comment"># 是一个rpm的前端程序，使用在线仓库来检索和安装RPM软件包，能够自动解决RPM的依赖关系。</span></span><br><span class="line">$ yum list installed | grep [keywords] <span class="comment"># 查看是否已经安装某个应用程序</span></span><br><span class="line">$ yum search keywords <span class="comment"># 从仓库中查找软件包</span></span><br><span class="line">$ yum install software-name <span class="comment"># 安装软件包</span></span><br><span class="line">$ yum remove software-name <span class="comment"># 卸载软件包</span></span><br></pre></td></tr></table></figure>
+<h3 id="十二、Linux安装软件的方式"><a href="#十二、Linux安装软件的方式" class="headerlink" title="十二、Linux安装软件的方式"></a>十二、Linux安装软件的方式</h3><pre><code class="bash">#二进制文件的安装，常用于归档的编译好的文件压缩包。（XXX.tar 或者 XXX.tar.gz）
+1. rmp文件安装
+# rpm(Red-Hat Package Manager)红帽的一种安装包方式
+$ rpm -qa | grep [keywords] # 查询是否已经安装某个应用程序
+$ rpm -ivh software.rpm # 安装软件 -v显示纤细安装信息， -h 显示进度
+$ rpm -e --nodeps software.rpm # 卸载软件 --nodeps表示不检查依赖关系，强制卸载
+
+2. yum安装：
+# 是一个rpm的前端程序，使用在线仓库来检索和安装RPM软件包，能够自动解决RPM的依赖关系。
+$ yum list installed | grep [keywords] # 查看是否已经安装某个应用程序
+$ yum search keywords # 从仓库中查找软件包
+$ yum install software-name # 安装软件包
+$ yum remove software-name # 卸载软件包
+</code></pre>
 <hr>
-<h3 id="十三、安装JDK8和Tomcat8"><a href="#十三、安装JDK8和Tomcat8" class="headerlink" title="十三、安装JDK8和Tomcat8"></a>十三、安装JDK8和Tomcat8</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">1.安装JDK8</span><br><span class="line"><span class="comment"># 上传文件到 /opt 下，并解压，修改解压文件名称为 jkd8，</span></span><br><span class="line"><span class="comment"># 再到/etc/profile中添加环境变量PATH</span></span><br><span class="line"><span class="built_in">export</span> PATH USER LOGNAME MAIL HOSTNAME HISTSIZE HISTCONTROL</span><br><span class="line">JAVA_HOME=<span class="string">&quot;/opt/jdk8&quot;</span></span><br><span class="line">PATH=<span class="variable">$JAVA_HOME</span><span class="string">&quot;/bin:&quot;</span><span class="variable">$PATH</span></span><br><span class="line"></span><br><span class="line">2.安装Tomcat8，跟JDK8类似</span><br><span class="line"><span class="comment"># 网卡配置</span></span><br><span class="line">DEVICE=eth0</span><br><span class="line">HWADDR=00:0C:29:6D:73:FA</span><br><span class="line">TYPE=Ethernet</span><br><span class="line">UUID=ee3f1297-cff6-416d-9bb4-a95939413426</span><br><span class="line">ONBOOT=yes</span><br><span class="line">NM_CONTROLLED=yes</span><br><span class="line">BOOTPROTO=dhcp</span><br><span class="line"></span><br><span class="line">改为</span><br><span class="line">ONBOOT=yes</span><br><span class="line">BOOTPROTO=statics</span><br><span class="line">IPADDR=192.168.17.130</span><br><span class="line">NETMASK=255.255.255.0</span><br></pre></td></tr></table></figure>
+<h3 id="十三、安装JDK8和Tomcat8"><a href="#十三、安装JDK8和Tomcat8" class="headerlink" title="十三、安装JDK8和Tomcat8"></a>十三、安装JDK8和Tomcat8</h3><pre><code class="bash">1.安装JDK8
+# 上传文件到 /opt 下，并解压，修改解压文件名称为 jkd8，
+# 再到/etc/profile中添加环境变量PATH
+export PATH USER LOGNAME MAIL HOSTNAME HISTSIZE HISTCONTROL
+JAVA_HOME=&quot;/opt/jdk8&quot;
+PATH=$JAVA_HOME&quot;/bin:&quot;$PATH
+
+2.安装Tomcat8，跟JDK8类似
+# 网卡配置
+DEVICE=eth0
+HWADDR=00:0C:29:6D:73:FA
+TYPE=Ethernet
+UUID=ee3f1297-cff6-416d-9bb4-a95939413426
+ONBOOT=yes
+NM_CONTROLLED=yes
+BOOTPROTO=dhcp
+
+改为
+ONBOOT=yes
+BOOTPROTO=statics
+IPADDR=192.168.17.130
+NETMASK=255.255.255.0
+</code></pre>
 <hr>
-<h3 id="十四、安装MySQL8"><a href="#十四、安装MySQL8" class="headerlink" title="十四、安装MySQL8"></a>十四、安装MySQL8</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">$ rpm -qa | grep mysql <span class="comment"># 查看老版本mysql</span></span><br><span class="line">$ rpm -e --nodeps mysqll-XXXX（一个一个）<span class="comment"># 删除老版本mysql </span></span><br><span class="line">$ rm -rf /usr/share/mysql <span class="comment"># 删除mysql的文件</span></span><br><span class="line">$ rm -rf /var/lib/mysql <span class="comment"># 删除mysql文件</span></span><br><span class="line"><span class="comment"># 下载并解压在/opt/mysql文件下</span></span><br><span class="line">$ tar -xvf mysql-8.0.20-1.el7.x86_64.rpm-bundle.tar</span><br><span class="line"></span><br><span class="line">顺序安装MySql</span><br><span class="line">$ rpm -ivh mysql-community-common-8.0.20-1.el7.x86_64.rpm</span><br><span class="line">$ rpm -ivh mysql-community-libs-8.0.20-1.el7.x86_64.rpm --force --nodeps</span><br><span class="line">$ rpm -ivh mysql-community-client-8.0.20-1.el7.x86_64.rpm --force --nodeps</span><br><span class="line">$ rpm -ivh mysql-community-server-8.0.20-1.el7.x86_64.rpm --force --nodeps</span><br><span class="line">$ rpm -ivh mysql-community-devel-8.0.20-1.el7.x86_64.rpm --force --nodeps</span><br><span class="line"></span><br><span class="line"><span class="comment"># Yum安装</span></span><br><span class="line">$ wget -i -c https://dev.mysql.com/get/mysql80-community-release-el6-3.noarch.rpm</span><br><span class="line">$ yum -y install mysql80-community-release-el7-3.noarch.rpm</span><br><span class="line">$ yum -y install mysql-community-server</span><br><span class="line"></span><br><span class="line">$ service mysqld start <span class="comment"># 启动服务</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#root用户的初始密码在/var/log/mysqld.log文件中，查看密码：</span></span><br><span class="line">$ grep <span class="string">&#x27;temporary password&#x27;</span> /var/<span class="built_in">log</span>/mysqld.log</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重置mysql密码</span></span><br><span class="line">mysql&gt; alter user <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> identified by <span class="string">&#x27;password&#x27;</span>;</span><br><span class="line"></span><br><span class="line">重启mysql服务</span><br><span class="line">$ service mysqld stop</span><br><span class="line">$ service mysqld start</span><br></pre></td></tr></table></figure>
+<h3 id="十四、安装MySQL8"><a href="#十四、安装MySQL8" class="headerlink" title="十四、安装MySQL8"></a>十四、安装MySQL8</h3><pre><code class="bash">$ rpm -qa | grep mysql # 查看老版本mysql
+$ rpm -e --nodeps mysqll-XXXX（一个一个）# 删除老版本mysql 
+$ rm -rf /usr/share/mysql # 删除mysql的文件
+$ rm -rf /var/lib/mysql # 删除mysql文件
+# 下载并解压在/opt/mysql文件下
+$ tar -xvf mysql-8.0.20-1.el7.x86_64.rpm-bundle.tar
+
+顺序安装MySql
+$ rpm -ivh mysql-community-common-8.0.20-1.el7.x86_64.rpm
+$ rpm -ivh mysql-community-libs-8.0.20-1.el7.x86_64.rpm --force --nodeps
+$ rpm -ivh mysql-community-client-8.0.20-1.el7.x86_64.rpm --force --nodeps
+$ rpm -ivh mysql-community-server-8.0.20-1.el7.x86_64.rpm --force --nodeps
+$ rpm -ivh mysql-community-devel-8.0.20-1.el7.x86_64.rpm --force --nodeps
+
+# Yum安装
+$ wget -i -c https://dev.mysql.com/get/mysql80-community-release-el6-3.noarch.rpm
+$ yum -y install mysql80-community-release-el7-3.noarch.rpm
+$ yum -y install mysql-community-server
+
+$ service mysqld start # 启动服务
+
+#root用户的初始密码在/var/log/mysqld.log文件中，查看密码：
+$ grep &#39;temporary password&#39; /var/log/mysqld.log
+
+# 重置mysql密码
+mysql&gt; alter user &#39;root&#39;@&#39;localhost&#39; identified by &#39;password&#39;;
+
+重启mysql服务
+$ service mysqld stop
+$ service mysqld start
+</code></pre>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
     </div>
 </article>
 
-
-<p>
-    <a  class="dashang" onclick="dashangToggle()">赏</a>
-</p>
 
 
 
@@ -634,24 +803,6 @@
     </div>
 </div>
 
-<div class="hide_box" onclick="dashangToggle()"></div>
-<div class="shang_box">
-    <a class="shang_close"  onclick="dashangToggle()">×</a>
-    <div class="shang_tit">
-        <p>喜欢就点赞,疼爱就打赏</p>
-    </div>
-    <div class="shang_payimg">
-        <div class="pay_img">
-            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
-            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
-        </div>
-    </div>
-    <div class="shang_payselect">
-        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
-    </div>
-</div>
-
-
 </body>
 <script src="/js/jquery.pjax.js?v=1.1.0" ></script>
 
@@ -665,14 +816,6 @@
         
 
         /*渲染打赏样式*/
-        
-        $("input[name=pay]").on("click", function () {
-            if($("input[name=pay]:checked").val()=="weixin"){
-                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
-            } else {
-                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
-            }
-        })
         
 
         /*高亮代码块行号*/
@@ -691,11 +834,6 @@
     }
 
     /*打赏页面隐藏与展示*/
-    
-    function dashangToggle() {
-        $(".shang_box").fadeToggle();
-        $(".hide_box").fadeToggle();
-    }
     
 
 </script>
