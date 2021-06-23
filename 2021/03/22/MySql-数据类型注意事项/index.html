@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>JDK环境配置 | hjxstart的博客</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="JDK环境配置 | hjxstart的博客">
+  <title>MySql 数据类型注意事项 | hjxstart的博客</title>
+  <meta name="keywords" content=" mysql ">
+  <meta name="description" content="MySql 数据类型注意事项 | hjxstart的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="第1讲 运维基础1.1 计划任务简介 经验丰富的系统运维工程师可以使得Linux在无需人为介 入的情况下，在指定的时间段自动启用或停止某些服务或 命令，从而实现运维的自动化。 作用:计划任务主要是做一些周期性的任务，目前最主要的 用途是定期备份数据 分类:   次性计划任务:今晚11点30分开启网站服务。 长期性计划任务:每周一的凌晨2点20分把&#x2F;data&#x2F;wwwroot目录打包备份为backup">
 <meta property="og:type" content="article">
@@ -477,27 +477,26 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-JDK环境配置" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-MySql-数据类型注意事项" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">JDK环境配置</h1>
+        <h1 class="article-title">MySql 数据类型注意事项</h1>
     
     <div class="article-meta">
         
         
         
-        <span class="book">
-            <i class="iconfont icon-category"></i>
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
             
-            
-            <a  data-rel="后端">后端</a>
+            <a class="color1">mysql</a>
             
         </span>
-        
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-06-23 16:27:16'>2021-03-21 17:18</time>
+            发布时间 : <time class="date" title='最后更新: 2021-06-23 16:32:00'>2021-03-22 23:47</time>
         
     </div>
     <div class="article-meta">
@@ -519,7 +518,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#JAVA-HOME"><span class="toc-text">JAVA_HOME</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9"><span class="toc-text">浮点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DECIMAL-Fixed-Point-Types-%E5%87%86%E7%A1%AE%E5%80%BC"><span class="toc-text">DECIMAL Fixed-Point Types 准确值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">字符串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%9A%E4%B8%BE"><span class="toc-text">枚举</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -535,7 +534,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="JAVA-HOME"><a href="#JAVA-HOME" class="headerlink" title="JAVA_HOME"></a>JAVA_HOME</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">JAVA_HOME=C:\Program Files\Java\jdk1<span class="number">.8</span><span class="number">.0_131</span></span><br><span class="line">Path=%JAVA_HOME%\bin</span><br></pre></td></tr></table></figure>
+        <h2 id="浮点"><a href="#浮点" class="headerlink" title="浮点"></a>浮点</h2><h2 id="DECIMAL-Fixed-Point-Types-准确值"><a href="#DECIMAL-Fixed-Point-Types-准确值" class="headerlink" title="DECIMAL Fixed-Point Types 准确值"></a>DECIMAL Fixed-Point Types 准确值</h2><h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>VARCHAR(x): user name, email, country, subject, password<br>TEXT: message, emails, comments, formatted text, html, code, images, links<br>–</p>
+<h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><p>ENUM:像单选<br>SET：像多选</p>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
     </div>

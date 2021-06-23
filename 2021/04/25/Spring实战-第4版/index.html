@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>JDK环境配置 | hjxstart的博客</title>
+  <title>Spring实战(第4版) | hjxstart的博客</title>
   <meta name="keywords" content="">
-  <meta name="description" content="JDK环境配置 | hjxstart的博客">
+  <meta name="description" content="Spring实战(第4版) | hjxstart的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="第1讲 运维基础1.1 计划任务简介 经验丰富的系统运维工程师可以使得Linux在无需人为介 入的情况下，在指定的时间段自动启用或停止某些服务或 命令，从而实现运维的自动化。 作用:计划任务主要是做一些周期性的任务，目前最主要的 用途是定期备份数据 分类:   次性计划任务:今晚11点30分开启网站服务。 长期性计划任务:每周一的凌晨2点20分把&#x2F;data&#x2F;wwwroot目录打包备份为backup">
 <meta property="og:type" content="article">
@@ -477,27 +477,19 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-JDK环境配置" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Spring实战-第4版" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">JDK环境配置</h1>
+        <h1 class="article-title">Spring实战(第4版)</h1>
     
     <div class="article-meta">
         
         
-        
-        <span class="book">
-            <i class="iconfont icon-category"></i>
-            
-            
-            <a  data-rel="后端">后端</a>
-            
-        </span>
         
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-06-23 16:27:16'>2021-03-21 17:18</time>
+            发布时间 : <time class="date" title='最后更新: 2021-06-23 16:31:49'>2021-04-25 18:38</time>
         
     </div>
     <div class="article-meta">
@@ -519,7 +511,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#JAVA-HOME"><span class="toc-text">JAVA_HOME</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%A3%85%E9%85%8DBean"><span class="toc-text">1.装配Bean</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8DBean"><span class="toc-text">1.1自动装配Bean</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%AD%A5%E9%AA%A4"><span class="toc-text">使用步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BA%E7%BB%84%E4%BB%B6%E6%89%AB%E6%8F%8F%E7%9A%84bean%E5%91%BD%E5%90%8D"><span class="toc-text">为组件扫描的bean命名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E7%BB%84%E4%BB%B6%E6%89%AB%E6%8F%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E5%8C%85"><span class="toc-text">设置组件扫描的基础包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E4%B8%BAbean%E6%B7%BB%E5%8A%A0%E6%B3%A8%E8%A7%A3%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D"><span class="toc-text">通过为bean添加注解实现自动装配</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -535,7 +527,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="JAVA-HOME"><a href="#JAVA-HOME" class="headerlink" title="JAVA_HOME"></a>JAVA_HOME</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">JAVA_HOME=C:\Program Files\Java\jdk1<span class="number">.8</span><span class="number">.0_131</span></span><br><span class="line">Path=%JAVA_HOME%\bin</span><br></pre></td></tr></table></figure>
+        <h2 id="1-装配Bean"><a href="#1-装配Bean" class="headerlink" title="1.装配Bean"></a>1.装配Bean</h2><ol>
+<li>创建应用对象之间协作关系的行为通常称为装配(Wiring)，这也是依赖注入(DI)的本质。</li>
+<li>Spring提供了三种主要的装配机制：在XML中进行显示配置；在Java中进行显示配置；隐式的bean发现机制和自动装配。</li>
+</ol>
+<hr>
+<h3 id="1-1自动装配Bean"><a href="#1-1自动装配Bean" class="headerlink" title="1.1自动装配Bean"></a>1.1自动装配Bean</h3><h4 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h4><ol>
+<li>使用（@Component）告知Spring要为这个类创建bean;</li>
+<li>使用（@Autowired）告知Spring要为这个类注入依赖;</li>
+<li>创建Config类，使用（@ComponentScan）自动扫描与配置类相同的包及其子包;</li>
+<li>也可以使用XML来启动组件自动扫描。<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">&quot;包路径&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<hr>
+<h4 id="为组件扫描的bean命名"><a href="#为组件扫描的bean命名" class="headerlink" title="为组件扫描的bean命名"></a>为组件扫描的bean命名</h4><ol>
+<li>Spring应用上下文中所有的bean都会给定一个ID。默认为类名的第一个字母变为小写，例如clasName;</li>
+<li>使用 @Component 自定义 bean ID（@Component(“idName”)）<strong>推荐使用</strong>;</li>
+<li>使用 @Named 自定义 bean ID（@Named(“idName”)）。</li>
+</ol>
+<hr>
+<h4 id="设置组件扫描的基础包"><a href="#设置组件扫描的基础包" class="headerlink" title="设置组件扫描的基础包"></a>设置组件扫描的基础包</h4><ol>
+<li>可以通过指定value来扫描特定的包，例如(@ComponentScan(“package.name”));</li>
+<li>可以通过basePackage属性进行配置基础包，例如(@ComponentScan(“base.package.name”))或者(@ComponentScan(“package1”, “package2”));</li>
+</ol>
+<hr>
+<h4 id="通过为bean添加注解实现自动装配"><a href="#通过为bean添加注解实现自动装配" class="headerlink" title="通过为bean添加注解实现自动装配"></a>通过为bean添加注解实现自动装配</h4><p>自动装配就是让Spring自动满足bean依赖的一种方法，在满足依赖过程中，会在Spring应用上下文中寻找匹配某个bean需求的其他bean。为了声明要进行自动装配，可以使用@AutoWired 或 @Inject注解。</p>
+<ol>
+<li>应用范围：构造器、Setter方法;</li>
+<li>没有匹配的bean异常：可以设置@Autowired(required=false);</li>
+</ol>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
     </div>

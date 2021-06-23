@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>JDK环境配置 | hjxstart的博客</title>
+  <title>Spring实战(第五版) | hjxstart的博客</title>
   <meta name="keywords" content="">
-  <meta name="description" content="JDK环境配置 | hjxstart的博客">
+  <meta name="description" content="Spring实战(第五版) | hjxstart的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="第1讲 运维基础1.1 计划任务简介 经验丰富的系统运维工程师可以使得Linux在无需人为介 入的情况下，在指定的时间段自动启用或停止某些服务或 命令，从而实现运维的自动化。 作用:计划任务主要是做一些周期性的任务，目前最主要的 用途是定期备份数据 分类:   次性计划任务:今晚11点30分开启网站服务。 长期性计划任务:每周一的凌晨2点20分把&#x2F;data&#x2F;wwwroot目录打包备份为backup">
 <meta property="og:type" content="article">
@@ -477,27 +477,19 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-JDK环境配置" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Spring实战-第五版" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">JDK环境配置</h1>
+        <h1 class="article-title">Spring实战(第五版)</h1>
     
     <div class="article-meta">
         
         
-        
-        <span class="book">
-            <i class="iconfont icon-category"></i>
-            
-            
-            <a  data-rel="后端">后端</a>
-            
-        </span>
         
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-06-23 16:27:16'>2021-03-21 17:18</time>
+            发布时间 : <time class="date" title='最后更新: 2021-06-23 16:32:44'>2021-06-02 09:42</time>
         
     </div>
     <div class="article-meta">
@@ -519,7 +511,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#JAVA-HOME"><span class="toc-text">JAVA_HOME</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%84%E5%BB%BASpring%E6%AD%A5%E9%AA%A4"><span class="toc-text">构建Spring步骤</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -535,7 +527,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="JAVA-HOME"><a href="#JAVA-HOME" class="headerlink" title="JAVA_HOME"></a>JAVA_HOME</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">JAVA_HOME=C:\Program Files\Java\jdk1<span class="number">.8</span><span class="number">.0_131</span></span><br><span class="line">Path=%JAVA_HOME%\bin</span><br></pre></td></tr></table></figure>
+        <h2 id="构建Spring步骤"><a href="#构建Spring步骤" class="headerlink" title="构建Spring步骤"></a>构建Spring步骤</h2><ol>
+<li><p>使用 Spring Initializr 创建初始的项目结构；</p>
+</li>
+<li><p>编写控制器类处理针对主页的请求；</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> tacos;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.GetMapping;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HomeController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@GetMapping(&quot;/&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">home</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;home&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>定义一个视图模版来渲染主页；</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">&quot;en&quot;</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">    &lt;title&gt;Taco Cloud&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;h1&gt;Welcome to...&lt;/h1&gt;</span><br><span class="line">  &lt;img th:src=<span class="string">&quot;@&#123;/images/TacoCloud.png&#125;&quot;</span> /&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></li>
+<li><p>编写了一个简单的测试类来验证工作符合预期。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> tacos;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.hamcrest.Matchers.containsString;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.RunWith;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.context.junit4.SpringRunner;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.web.servlet.MockMvc;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RunWith(SpringRunner.class)</span></span><br><span class="line"><span class="meta">@WebMvcTest(HomeController.class)</span>   <span class="comment">// &lt;1&gt;</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HomeControllerTest</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> MockMvc mockMvc;   <span class="comment">// &lt;2&gt;</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testHomePage</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        mockMvc.perform(get(<span class="string">&quot;/&quot;</span>))    <span class="comment">// &lt;3&gt;</span></span><br><span class="line">                .andExpect(status().isOk())  <span class="comment">// &lt;4&gt;</span></span><br><span class="line">                .andExpect(view().name(<span class="string">&quot;home&quot;</span>))  <span class="comment">// &lt;5&gt;</span></span><br><span class="line">                .andExpect(content().string(           <span class="comment">// &lt;6&gt;</span></span><br><span class="line">                        containsString(<span class="string">&quot;Welcome to...&quot;</span>)));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
     </div>
