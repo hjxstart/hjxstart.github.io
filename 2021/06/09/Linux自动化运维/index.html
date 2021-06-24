@@ -485,7 +485,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-06-23 16:25:04'>2021-06-09 08:29</time>
+            发布时间 : <time class="date" title='最后更新: 2021-06-24 08:39:36'>2021-06-09 08:29</time>
         
     </div>
     <div class="article-meta">
@@ -642,14 +642,15 @@ sun,mon,tue,wed,thu,fri,sat
 <li>-r: 删除计划任务 remove</li>
 </ul>
 <ol start="2">
-<li>示例<br>```shell<h1 id="1、每月1、10、22日的4-45重启network服务"><a href="#1、每月1、10、22日的4-45重启network服务" class="headerlink" title="1、每月1、10、22日的4:45重启network服务"></a>1、每月1、10、22日的4:45重启network服务</h1>45 4 1,10,22 * * systemctl restart network<br>45 4 1,10,22 * * /usr/bin/systemctl restart network</li>
+<li>示例<br>```bash<h1 id="1、每月1、10、22日的4-45重启network服务"><a href="#1、每月1、10、22日的4-45重启network服务" class="headerlink" title="1、每月1、10、22日的4:45重启network服务"></a>1、每月1、10、22日的4:45重启network服务</h1>45 4 1,10,22 * * systemctl restart network<br>45 4 1,10,22 * * /usr/bin/systemctl restart network</li>
 </ol>
 <h1 id="2、每周六、周日的1-10重启network服务"><a href="#2、每周六、周日的1-10重启network服务" class="headerlink" title="2、每周六、周日的1:10重启network服务"></a>2、每周六、周日的1:10重启network服务</h1><p>10 1 * * 6-7 sytemctl restart network</p>
 <h1 id="3、每天18-00至23-00之间每隔30分钟重启network服务"><a href="#3、每天18-00至23-00之间每隔30分钟重启network服务" class="headerlink" title="3、每天18:00至23:00之间每隔30分钟重启network服务"></a>3、每天18:00至23:00之间每隔30分钟重启network服务</h1><p>*/30 18-23 * * * systemctl restart network</p>
 <h1 id="4、每隔两天的上午8点到11点的第3和第15分钟执行一次重启"><a href="#4、每隔两天的上午8点到11点的第3和第15分钟执行一次重启" class="headerlink" title="4、每隔两天的上午8点到11点的第3和第15分钟执行一次重启"></a>4、每隔两天的上午8点到11点的第3和第15分钟执行一次重启</h1><p>3,15 8-11 */2 * * systemctl reboot</p>
 <h1 id="5、每周日凌晨2点30分，运行cp命令对-etc-fstab文件进行备份，存储位置为-backup-fstab-YYYY-MM-DD-hh-mm-ss"><a href="#5、每周日凌晨2点30分，运行cp命令对-etc-fstab文件进行备份，存储位置为-backup-fstab-YYYY-MM-DD-hh-mm-ss" class="headerlink" title="5、每周日凌晨2点30分，运行cp命令对/etc/fstab文件进行备份，存储位置为/backup/fstab-YYYY-MM-DD-hh-mm-ss;"></a>5、每周日凌晨2点30分，运行cp命令对/etc/fstab文件进行备份，存储位置为/backup/fstab-YYYY-MM-DD-hh-mm-ss;</h1><h1 id="date-F-H-M-S-gt-2021-06-09-09-35-38"><a href="#date-F-H-M-S-gt-2021-06-09-09-35-38" class="headerlink" title="date +%F-%H-%M-%S &gt; 2021-06-09-09-35-38"></a>date +%F-%H-%M-%S &gt; 2021-06-09-09-35-38</h1><p>30 2 * * 7 cp /etc/fatab /backup/fstab-date +%F-%H-%M-%S<br>30 2 * * 0 cp /etc/fatab /backup/fstab-date +%F-%H-%M-%S </p>
 <h1 id="6、晚上11点到早上7点之间，每隔一小时重启smb"><a href="#6、晚上11点到早上7点之间，每隔一小时重启smb" class="headerlink" title="6、晚上11点到早上7点之间，每隔一小时重启smb"></a>6、晚上11点到早上7点之间，每隔一小时重启smb</h1><p>0 23,0-7/1 * * * systemctl restart smb</p>
-<pre><code>3. vim /etc/crontab 与crontab -e写入的定时运行的区别?。
+<pre><code>
+3. vim /etc/crontab 与crontab -e写入的定时运行的区别?。
 - vim /etc/crontab:是系统级别定义的crontab，/etc/crontab 的所有者和组都是root
 - crontab -e :是用户自定义的crontab，是所有的用户都可以写入的 /var/spool/cron/username
 4. 作业
