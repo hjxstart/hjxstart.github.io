@@ -6,18 +6,22 @@
   <meta name="keywords" content="">
   <meta name="description" content="Linux 常用命令 | hjxstart的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="第一章 CDN开发1.1、开发环境介绍$ node --version v14.15.1 $ npm --version 7.17.0 $ vue --version @vue&#x2F;cli 4.5.13   1.2、CDN方式使用Vue&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;vue@2.6.14&#x2F;dist&#x2F;vue.js&quot;&gt;&amp;l">
+<meta name="description" content="第1讲 运维基础1.1 计划任务简介 经验丰富的系统运维工程师可以使得Linux在无需人为介 入的情况下，在指定的时间段自动启用或停止某些服务或 命令，从而实现运维的自动化。 作用:计划任务主要是做一些周期性的任务，目前最主要的 用途是定期备份数据 分类:   次性计划任务:今晚11点30分开启网站服务。 长期性计划任务:每周一的凌晨2点20分把&#x2F;data&#x2F;wwwroot目录打包备份为backup">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue基础">
-<meta property="og:url" content="http://example.com/2021/06/23/Vue%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:title" content="Linux自动化运维">
+<meta property="og:url" content="http://example.com/2021/06/09/Linux%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4/index.html">
 <meta property="og:site_name" content="hjxstart的博客">
-<meta property="og:description" content="第一章 CDN开发1.1、开发环境介绍$ node --version v14.15.1 $ npm --version 7.17.0 $ vue --version @vue&#x2F;cli 4.5.13   1.2、CDN方式使用Vue&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;vue@2.6.14&#x2F;dist&#x2F;vue.js&quot;&gt;&amp;l">
+<meta property="og:description" content="第1讲 运维基础1.1 计划任务简介 经验丰富的系统运维工程师可以使得Linux在无需人为介 入的情况下，在指定的时间段自动启用或停止某些服务或 命令，从而实现运维的自动化。 作用:计划任务主要是做一些周期性的任务，目前最主要的 用途是定期备份数据 分类:   次性计划任务:今晚11点30分开启网站服务。 长期性计划任务:每周一的凌晨2点20分把&#x2F;data&#x2F;wwwroot目录打包备份为backup">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-06-23T02:48:20.000Z">
-<meta property="article:modified_time" content="2021-06-23T11:06:13.648Z">
+<meta property="og:image" content="http://example.com/images/2021/06/09/02e49f81-65f9-451b-8aa6-6794e740882d.png">
+<meta property="og:image" content="http://example.com/images/2021/06/09/368b2d91-da3f-400a-9691-e41d61c50891.png">
+<meta property="og:image" content="http://example.com/images/2021/06/09/e0d9edd7-b93e-42c3-920c-0d5faaec706d.png">
+<meta property="article:published_time" content="2021-06-09T00:29:17.000Z">
+<meta property="article:modified_time" content="2021-06-23T08:25:04.904Z">
 <meta property="article:author" content="hjxstart">
-<meta property="article:tag" content="Vue">
+<meta property="article:tag" content="Java，静心">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/2021/06/09/02e49f81-65f9-451b-8aa6-6794e740882d.png">
 
 
 <link rel="icon" href="/img/favicon.ico">
@@ -485,7 +489,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-06-23 19:18:52'>2021-05-31 18:42</time>
+            发布时间 : <time class="date" title='最后更新: 2021-06-24 08:32:12'>2021-05-31 18:42</time>
         
     </div>
     <div class="article-meta">
@@ -507,7 +511,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E4%B8%AD%E7%9A%84%E6%9D%83%E9%99%90%E3%80%81%E7%94%A8%E6%88%B7%E5%92%8C%E7%BB%84"><span class="toc-text">Linux中的权限、用户和组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BF%AE%E6%94%B9%E6%9D%83%E9%99%90"><span class="toc-text">一、修改权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BF%AE%E6%94%B9%E7%94%A8%E6%88%B7%E5%92%8C%E7%BB%84"><span class="toc-text">二、修改用户和组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81Linux%E7%9B%AE%E5%BD%95%E9%85%8D%E7%BD%AE"><span class="toc-text">三、Linux目录配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81PATH-%E8%BF%90%E8%A1%8C%E5%8F%98%E9%87%8F"><span class="toc-text">四、PATH 运行变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%A1%A3%E6%A1%88%E5%86%85%E5%AE%B9%E6%9F%A5%E9%98%85"><span class="toc-text">五、档案内容查阅</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E6%A1%A3%E6%A1%88%E5%92%8C%E7%9B%AE%E5%BD%95%E7%9A%84%E9%BB%98%E8%AE%A4%E6%9D%83%E9%99%90%E4%B8%8E%E9%9A%90%E8%97%8F%E6%9D%83%E9%99%90"><span class="toc-text">六、档案和目录的默认权限与隐藏权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AB%E3%80%81%E7%94%A8%E6%88%B7%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="toc-text">八、用户相关命令：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%9D%E3%80%81%E7%BB%84%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4"><span class="toc-text">九、组相关命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%81%E3%80%81%E6%8C%87%E4%BB%A4%E4%B8%8E%E6%A1%A3%E6%A1%88%E7%9A%84%E6%90%9C%E5%AF%BB"><span class="toc-text">十、指令与档案的搜寻</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%81%E4%B8%80%E3%80%81Linux%E5%B8%B8%E8%A7%81%E7%9A%84%E5%8E%8B%E7%BC%A9%E4%B8%8E%E6%89%93%E5%8C%85%E6%8C%87%E4%BB%A4"><span class="toc-text">十一、Linux常见的压缩与打包指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%81%E4%BA%8C%E3%80%81Linux%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-text">十二、Linux安装软件的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%81%E4%B8%89%E3%80%81%E5%AE%89%E8%A3%85JDK8%E5%92%8CTomcat8"><span class="toc-text">十三、安装JDK8和Tomcat8</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%81%E5%9B%9B%E3%80%81%E5%AE%89%E8%A3%85MySQL8"><span class="toc-text">十四、安装MySQL8</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E4%B8%AD%E7%9A%84%E6%9D%83%E9%99%90%E3%80%81%E7%94%A8%E6%88%B7%E5%92%8C%E7%BB%84"><span class="toc-text">Linux中的权限、用户和组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BF%AE%E6%94%B9%E6%9D%83%E9%99%90"><span class="toc-text">一、修改权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BF%AE%E6%94%B9%E7%94%A8%E6%88%B7%E5%92%8C%E7%BB%84"><span class="toc-text">二、修改用户和组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81Linux%E7%9B%AE%E5%BD%95%E9%85%8D%E7%BD%AE"><span class="toc-text">三、Linux目录配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81PATH-%E8%BF%90%E8%A1%8C%E5%8F%98%E9%87%8F"><span class="toc-text">四、PATH 运行变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%A1%A3%E6%A1%88%E5%86%85%E5%AE%B9%E6%9F%A5%E9%98%85"><span class="toc-text">五、档案内容查阅</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E6%A1%A3%E6%A1%88%E5%92%8C%E7%9B%AE%E5%BD%95%E7%9A%84%E9%BB%98%E8%AE%A4%E6%9D%83%E9%99%90%E4%B8%8E%E9%9A%90%E8%97%8F%E6%9D%83%E9%99%90"><span class="toc-text">六、档案和目录的默认权限与隐藏权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E6%9F%A5%E7%9C%8B"><span class="toc-text">七、文件类型查看</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AB%E3%80%81%E7%94%A8%E6%88%B7%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="toc-text">八、用户相关命令：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%9D%E3%80%81%E7%BB%84%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4"><span class="toc-text">九、组相关命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%81%E3%80%81%E6%8C%87%E4%BB%A4%E4%B8%8E%E6%A1%A3%E6%A1%88%E7%9A%84%E6%90%9C%E5%AF%BB"><span class="toc-text">十、指令与档案的搜寻</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%81%E4%B8%80%E3%80%81Linux%E5%B8%B8%E8%A7%81%E7%9A%84%E5%8E%8B%E7%BC%A9%E4%B8%8E%E6%89%93%E5%8C%85%E6%8C%87%E4%BB%A4"><span class="toc-text">十一、Linux常见的压缩与打包指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%81%E4%BA%8C%E3%80%81Linux%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-text">十二、Linux安装软件的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%81%E4%B8%89%E3%80%81%E5%AE%89%E8%A3%85JDK8%E5%92%8CTomcat8"><span class="toc-text">十三、安装JDK8和Tomcat8</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%81%E5%9B%9B%E3%80%81%E5%AE%89%E8%A3%85MySQL8"><span class="toc-text">十四、安装MySQL8</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -597,24 +601,28 @@ string binfilename
 </ol>
 <hr>
 <h3 id="六、档案和目录的默认权限与隐藏权限"><a href="#六、档案和目录的默认权限与隐藏权限" class="headerlink" title="六、档案和目录的默认权限与隐藏权限"></a>六、档案和目录的默认权限与隐藏权限</h3><ol>
-<li>文件默认权限：umask,使用默认权限进行过来<br>默认文件权限666: 110 110 110<br>umask值为0 022:  000 010 010<br>默认文件权限 &amp; umask值 = 过滤后的权限<br>过滤文件权限644: 110 100 100<br>一开始是文件权限(755);默认创建文件夹的权限(644)<br>默认创建文件的权限(666);默认创建文件夹的权限(777)<pre><code class="bash">umask
+<li><p>文件默认权限：umask,使用默认权限进行过来<br>默认文件权限666: 110 110 110<br>umask值为0 022:  000 010 010<br>默认文件权限 &amp; umask值 = 过滤后的权限<br>过滤文件权限644: 110 100 100<br>一开始是文件权限(755);默认创建文件夹的权限(644)<br>默认创建文件的权限(666);默认创建文件夹的权限(777)</p>
+<pre><code class="bash">umask
 #0022 # 默认0(标志) 0(谁都不过滤) 2(过滤组的w权限) 2(过滤其他用户的w权限) 
 umask 000 # 修改 umask 值
 umask -S
 #u=rwx,g=r,o=r # umask的理解，umask -S 的命令
 </code></pre>
 </li>
-<li>文件隐藏权限<br>文件的i权限(不能修改)和a权限(只能添加)<br>修改隐藏权限: chattr [+-] [attr] 文件或文件夹<br>```bash<br>chattr +a dir # dir目录下只能添加文件，不能删除文件<br>chattr +i dir # dir目录下不能操作文件</li>
+<li><p>文件隐藏权限<br>文件的i权限(不能修改)和a权限(只能添加)<br>修改隐藏权限: chattr [+-] [attr] 文件或文件夹</p>
+<pre><code class="bash">chattr +a dir # dir目录下只能添加文件，不能删除文件
+chattr +i dir # dir目录下不能操作文件
+</code></pre>
+</li>
 </ol>
-<pre><code>---
-
-### 七、文件类型查看
-1. file命令
-```bash
-file /bin/touch
+<hr>
+<h3 id="七、文件类型查看"><a href="#七、文件类型查看" class="headerlink" title="七、文件类型查看"></a>七、文件类型查看</h3><ol>
+<li>file命令<pre><code class="bash">file /bin/touch
 file /usr/bin/passwd
 file /var/lib/mlocate/mlocate.db
 </code></pre>
+</li>
+</ol>
 <hr>
 <h3 id="八、用户相关命令："><a href="#八、用户相关命令：" class="headerlink" title="八、用户相关命令："></a>八、用户相关命令：</h3><pre><code class="bash">id    # 显示当前用户信息
 passwd    # 修改当前用户的密码
@@ -646,7 +654,8 @@ usermod -G javadevgroup hjx
 </code></pre>
 <hr>
 <h3 id="十、指令与档案的搜寻"><a href="#十、指令与档案的搜寻" class="headerlink" title="十、指令与档案的搜寻"></a>十、指令与档案的搜寻</h3><ol>
-<li>查找指令：which 命令<pre><code class="bash"># 查找文件：find [查找位置] [查找参数]
+<li><p>查找指令：which 命令</p>
+<pre><code class="bash"># 查找文件：find [查找位置] [查找参数]
 # 示例：find . -name &quot;s*&quot; 按文件名查找，可使用通配符
 # 选项：
 #    -name 查找文件/文件夹名称
@@ -657,7 +666,8 @@ usermod -G javadevgroup hjx
 which ls
 </code></pre>
 </li>
-<li>查找内容：grep（全称 Global Regular Expression Pring）<pre><code class="bash"># grep [option] pattern file
+<li><p>查找内容：grep（全称 Global Regular Expression Pring）</p>
+<pre><code class="bash"># grep [option] pattern file
 # 基于正则表达式搜索文本，并吧匹配的行显示出来。如果正则表达式中包括空格，则必须使# 用引号将正则表达式引起来。
 # 选项:    -n    #显示行号
 #    -i        #忽略大小写
