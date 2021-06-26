@@ -6,15 +6,15 @@
   <meta name="keywords" content=" SSM ">
   <meta name="description" content="校园交易项目 | hjxstart的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="第一章 简单的SSM项目搭建1.1、环境配置 JDK8  Maven3.3.9  MySQL8.0.12  Tomcat8  Eclipse   1.2、创建 Maven project的步骤1.2.1、 选择 maven-archetype-webapp类型1.2.2、 项目名字1.2.3、引入tomcat的一个jar包 选择项目&gt;属性&gt;Java Build Path&gt;Libr">
+<meta name="description" content="第一章 简单的SSM项目搭建1.1、环境配置JDK8, Maven3.3.9, MySQL8.0.12, Tomcat8, Eclipse  1.2、创建 Maven project的步骤 选择 maven-archetype-webapp类型。 输入项目名称。 引入tomcat的一个jar包。选择项目&gt;属性&gt;Java Build Path&gt;Libraries&gt;Add Li">
 <meta property="og:type" content="article">
 <meta property="og:title" content="校园交易项目">
 <meta property="og:url" content="http://example.com/2021/06/26/%E6%A0%A1%E5%9B%AD%E4%BA%A4%E6%98%93%E9%A1%B9%E7%9B%AE/index.html">
 <meta property="og:site_name" content="hjxstart的博客">
-<meta property="og:description" content="第一章 简单的SSM项目搭建1.1、环境配置 JDK8  Maven3.3.9  MySQL8.0.12  Tomcat8  Eclipse   1.2、创建 Maven project的步骤1.2.1、 选择 maven-archetype-webapp类型1.2.2、 项目名字1.2.3、引入tomcat的一个jar包 选择项目&gt;属性&gt;Java Build Path&gt;Libr">
+<meta property="og:description" content="第一章 简单的SSM项目搭建1.1、环境配置JDK8, Maven3.3.9, MySQL8.0.12, Tomcat8, Eclipse  1.2、创建 Maven project的步骤 选择 maven-archetype-webapp类型。 输入项目名称。 引入tomcat的一个jar包。选择项目&gt;属性&gt;Java Build Path&gt;Libraries&gt;Add Li">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-06-25T23:58:18.000Z">
-<meta property="article:modified_time" content="2021-06-26T01:22:31.694Z">
+<meta property="article:modified_time" content="2021-06-26T01:58:48.087Z">
 <meta property="article:author" content="hjxstart">
 <meta property="article:tag" content="SSM">
 <meta name="twitter:card" content="summary">
@@ -504,7 +504,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-06-26 09:22:31'>2021-06-26 07:58</time>
+            发布时间 : <time class="date" title='最后更新: 2021-06-26 09:58:48'>2021-06-26 07:58</time>
         
     </div>
     <div class="article-meta">
@@ -526,7 +526,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E7%AE%80%E5%8D%95%E7%9A%84SSM%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA"><span class="toc-text">第一章 简单的SSM项目搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1%E3%80%81%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-text">1.1、环境配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2%E3%80%81%E5%88%9B%E5%BB%BA-Maven-project%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="toc-text">1.2、创建 Maven project的步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-1%E3%80%81-%E9%80%89%E6%8B%A9-maven-archetype-webapp%E7%B1%BB%E5%9E%8B"><span class="toc-text">1.2.1、 选择 maven-archetype-webapp类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-2%E3%80%81-%E9%A1%B9%E7%9B%AE%E5%90%8D%E5%AD%97"><span class="toc-text">1.2.2、 项目名字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-3%E3%80%81%E5%BC%95%E5%85%A5tomcat%E7%9A%84%E4%B8%80%E4%B8%AAjar%E5%8C%85"><span class="toc-text">1.2.3、引入tomcat的一个jar包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-4%E3%80%81%E4%BF%AE%E6%94%B9pom-xml%E7%9A%84JRE%E7%89%88%E6%9C%AC%E4%B8%BA1-8%EF%BC%8C%E5%86%8Dupdata%E9%A1%B9%E7%9B%AE"><span class="toc-text">1.2.4、修改pom.xml的JRE版本为1.8，再updata项目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-5%E3%80%81%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAmaven%E7%BB%93%E6%9E%84%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9-%E5%B9%B6%E4%BF%AE%E6%94%B9%E5%B1%9E%E6%80%A7"><span class="toc-text">1.2.5、创建一个maven结构的文件夹,并修改属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-6%E3%80%81%E4%BF%AE%E6%94%B9Dynamic-Web-Module%E7%9A%84%E7%89%88%E6%9C%AC%EF%BC%8C%E6%8F%90%E9%AB%98%E6%80%A7%E8%83%BD"><span class="toc-text">1.2.6、修改Dynamic Web Module的版本，提高性能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-7%E3%80%81%E4%BF%AE%E6%94%B9web-xml%E7%9A%84%E8%A7%84%E8%8C%83%E5%A4%B4-%E5%9B%A0%E4%B8%BADWM%E7%89%88%E6%9C%AC%E6%8F%90%E9%AB%98%E4%BA%86"><span class="toc-text">1.2.7、修改web.xml的规范头(因为DWM版本提高了)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-8%E3%80%81%E8%BF%90%E8%A1%8C%E9%A1%B9%E7%9B%AE"><span class="toc-text">1.2.8、运行项目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-9%E3%80%81%E5%9C%A8web-xml%E6%8C%87%E5%AE%9A%E9%BB%98%E8%AE%A4%E7%9A%84%E9%A1%B5%E9%9D%A2"><span class="toc-text">1.2.9、在web.xml指定默认的页面</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-text">第二章 系统功能模块的实现</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#SSM%E6%A1%86%E6%9E%B6%E5%AE%9E%E7%8E%B0%E5%8A%9F%E8%83%BD%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="toc-text">SSM框架实现功能的步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E5%9C%A8-dao-%E5%B1%82"><span class="toc-text">1、在 dao 层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81%E5%9C%A8-mapper-%E4%B8%AD"><span class="toc-text">2、在 mapper 中</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E3%80%81%E5%9C%A8-service-%E5%B1%82"><span class="toc-text">3、在 service 层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4%E3%80%81%E5%9C%A8-controller-%E5%B1%82"><span class="toc-text">4、在 controller 层</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Junit%E6%B5%8B%E8%AF%95%E6%AD%A5%E9%AA%A4"><span class="toc-text">Junit测试步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E5%9F%BA%E7%B1%BB"><span class="toc-text">1、定义一个基类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E5%AE%9E%E7%8E%B0%E7%B1%BB"><span class="toc-text">2、定义一个实现类</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SSM%E9%87%8D%E7%82%B9%E7%9F%A5%E8%AF%86"><span class="toc-text">SSM重点知识</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81SpringMVC-DispatcherServlet"><span class="toc-text">1、SpringMVC: DispatcherServlet</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81Spring-IOC%E5%92%8CAOP"><span class="toc-text">2、Spring: IOC和AOP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E3%80%81MyBatis-ORM"><span class="toc-text">3、MyBatis:ORM</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E7%AE%80%E5%8D%95%E7%9A%84SSM%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA"><span class="toc-text">第一章 简单的SSM项目搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1%E3%80%81%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-text">1.1、环境配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2%E3%80%81%E5%88%9B%E5%BB%BA-Maven-project%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="toc-text">1.2、创建 Maven project的步骤</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97"><span class="toc-text">第二章 系统功能模块</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1%E3%80%81%E6%A8%A1%E5%9D%97%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E"><span class="toc-text">2.1、模块功能说明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1%E3%80%81%E5%89%8D%E7%AB%AF%E5%B1%95%E7%A4%BA%E7%B3%BB%E7%BB%9F"><span class="toc-text">2.1.1、前端展示系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2%E3%80%81%E5%BA%97%E5%AE%B6%E7%B3%BB%E7%BB%9F"><span class="toc-text">2.1.2、店家系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3%E3%80%81%E8%B6%85%E7%BA%A7%E7%AE%A1%E7%90%86%E5%91%98%E7%B3%BB%E7%BB%9F"><span class="toc-text">2.1.3、超级管理员系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2%E3%80%81%E6%A8%A1%E5%9D%97%E5%8A%9F%E8%83%BD%E5%AF%B9%E8%B1%A1"><span class="toc-text">2.2、模块功能对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1%E3%80%81%E5%89%8D%E7%AB%AF%E5%B1%95%E7%A4%BA%E7%B3%BB%E7%BB%9F"><span class="toc-text">2.2.1、前端展示系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2%E3%80%81%E5%BA%97%E5%AE%B6%E7%B3%BB%E7%BB%9F"><span class="toc-text">2.2.2、店家系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-3%E3%80%81%E8%B6%85%E7%BA%A7%E7%AE%A1%E7%90%86%E5%91%98%E7%B3%BB%E7%BB%9F"><span class="toc-text">2.2.3、超级管理员系统</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#SSM%E6%A1%86%E6%9E%B6%E5%AE%9E%E7%8E%B0%E5%8A%9F%E8%83%BD%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="toc-text">SSM框架实现功能的步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E5%9C%A8-dao-%E5%B1%82"><span class="toc-text">1、在 dao 层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81%E5%9C%A8-mapper-%E4%B8%AD"><span class="toc-text">2、在 mapper 中</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E3%80%81%E5%9C%A8-service-%E5%B1%82"><span class="toc-text">3、在 service 层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4%E3%80%81%E5%9C%A8-controller-%E5%B1%82"><span class="toc-text">4、在 controller 层</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Junit%E6%B5%8B%E8%AF%95%E6%AD%A5%E9%AA%A4"><span class="toc-text">Junit测试步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E5%9F%BA%E7%B1%BB"><span class="toc-text">1、定义一个基类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E5%AE%9E%E7%8E%B0%E7%B1%BB"><span class="toc-text">2、定义一个实现类</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SSM%E9%87%8D%E7%82%B9%E7%9F%A5%E8%AF%86"><span class="toc-text">SSM重点知识</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81SpringMVC-DispatcherServlet"><span class="toc-text">1、SpringMVC: DispatcherServlet</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81Spring-IOC%E5%92%8CAOP"><span class="toc-text">2、Spring: IOC和AOP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E3%80%81MyBatis-ORM"><span class="toc-text">3、MyBatis:ORM</span></a></li></ol></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -542,66 +542,81 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="第一章-简单的SSM项目搭建"><a href="#第一章-简单的SSM项目搭建" class="headerlink" title="第一章 简单的SSM项目搭建"></a>第一章 简单的SSM项目搭建</h1><h2 id="1-1、环境配置"><a href="#1-1、环境配置" class="headerlink" title="1.1、环境配置"></a>1.1、环境配置</h2><ol>
-<li><p>JDK8</p>
-</li>
-<li><p>Maven3.3.9</p>
-</li>
-<li><p>MySQL8.0.12</p>
-</li>
-<li><p>Tomcat8</p>
-</li>
-<li><p>Eclipse</p>
-</li>
-</ol>
-<h2 id="1-2、创建-Maven-project的步骤"><a href="#1-2、创建-Maven-project的步骤" class="headerlink" title="1.2、创建 Maven project的步骤"></a>1.2、创建 Maven project的步骤</h2><h4 id="1-2-1、-选择-maven-archetype-webapp类型"><a href="#1-2-1、-选择-maven-archetype-webapp类型" class="headerlink" title="1.2.1、 选择 maven-archetype-webapp类型"></a>1.2.1、 选择 maven-archetype-webapp类型</h4><h4 id="1-2-2、-项目名字"><a href="#1-2-2、-项目名字" class="headerlink" title="1.2.2、 项目名字"></a>1.2.2、 项目名字</h4><h4 id="1-2-3、引入tomcat的一个jar包"><a href="#1-2-3、引入tomcat的一个jar包" class="headerlink" title="1.2.3、引入tomcat的一个jar包"></a>1.2.3、引入tomcat的一个jar包</h4><ol>
-<li>选择项目&gt;属性&gt;Java Build Path&gt;Libraries&gt;Add Library&gt;Server Runtime&gt;Apache Tomcat v8.0</li>
-</ol>
+        <h1 id="第一章-简单的SSM项目搭建"><a href="#第一章-简单的SSM项目搭建" class="headerlink" title="第一章 简单的SSM项目搭建"></a>第一章 简单的SSM项目搭建</h1><h2 id="1-1、环境配置"><a href="#1-1、环境配置" class="headerlink" title="1.1、环境配置"></a>1.1、环境配置</h2><p>JDK8, Maven3.3.9, MySQL8.0.12, Tomcat8, Eclipse</p>
 <hr>
-<h4 id="1-2-4、修改pom-xml的JRE版本为1-8，再updata项目"><a href="#1-2-4、修改pom-xml的JRE版本为1-8，再updata项目" class="headerlink" title="1.2.4、修改pom.xml的JRE版本为1.8，再updata项目"></a>1.2.4、修改pom.xml的JRE版本为1.8，再updata项目</h4><pre><code class="xml">    &lt;finalName&gt;o2o&lt;/finalName&gt;
-    &lt;plugins&gt;
-        &lt;plugin&gt;
-            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
-            &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
-            &lt;version&gt;3.3&lt;/version&gt;
-            &lt;configuration&gt;
-                &lt;encoding&gt;UTF-8&lt;/encoding&gt;
-                &lt;source&gt;1.8&lt;/source&gt;
-                &lt;target&gt;1.8&lt;/target&gt;
-            &lt;/configuration&gt;
-        &lt;/plugin&gt;
-    &lt;/plugins&gt;
+<h2 id="1-2、创建-Maven-project的步骤"><a href="#1-2、创建-Maven-project的步骤" class="headerlink" title="1.2、创建 Maven project的步骤"></a>1.2、创建 Maven project的步骤</h2><ol>
+<li>选择 maven-archetype-webapp类型。</li>
+<li>输入项目名称。</li>
+<li>引入tomcat的一个jar包。选择项目&gt;属性&gt;Java Build Path&gt;Libraries&gt;Add Library&gt;Server Runtime&gt;Apache Tomcat v8.0。</li>
+<li>修改pom.xml的JRE版本为1.8，再updata项目。<pre><code class="xml"> &lt;finalName&gt;o2o&lt;/finalName&gt;
+ &lt;plugins&gt;
+     &lt;plugin&gt;
+         &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+         &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+         &lt;version&gt;3.3&lt;/version&gt;
+         &lt;configuration&gt;
+             &lt;encoding&gt;UTF-8&lt;/encoding&gt;
+             &lt;source&gt;1.8&lt;/source&gt;
+             &lt;target&gt;1.8&lt;/target&gt;
+         &lt;/configuration&gt;
+     &lt;/plugin&gt;
+ &lt;/plugins&gt;
 </code></pre>
-<hr>
-<h4 id="1-2-5、创建一个maven结构的文件夹-并修改属性"><a href="#1-2-5、创建一个maven结构的文件夹-并修改属性" class="headerlink" title="1.2.5、创建一个maven结构的文件夹,并修改属性"></a>1.2.5、创建一个maven结构的文件夹,并修改属性</h4><ol>
-<li>创建src/test/resources文件夹</li>
-<li>修改工程属性&gt;Java Build Path&gt; Source &gt; resources的output属性</li>
-</ol>
-<hr>
-<h4 id="1-2-6、修改Dynamic-Web-Module的版本，提高性能"><a href="#1-2-6、修改Dynamic-Web-Module的版本，提高性能" class="headerlink" title="1.2.6、修改Dynamic Web Module的版本，提高性能"></a>1.2.6、修改Dynamic Web Module的版本，提高性能</h4><ol>
-<li>查看,项目属性&gt;Project Facetes</li>
-<li>修改, vim 项目路径/.settings/org.eclipse.wst.common.project.facet.core.xml</li>
-<li>修改, jst.web的 version</li>
-</ol>
-<hr>
-<h4 id="1-2-7、修改web-xml的规范头-因为DWM版本提高了"><a href="#1-2-7、修改web-xml的规范头-因为DWM版本提高了" class="headerlink" title="1.2.7、修改web.xml的规范头(因为DWM版本提高了)"></a>1.2.7、修改web.xml的规范头(因为DWM版本提高了)</h4><pre><code class="xml">&lt;web-app xmlns=&quot;http://xmlns.jcp.org/xml/ns/javaee&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
-    xsi:schemaLocation=&quot;http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd&quot;
-    version=&quot;3.1&quot; metadata-complete=&quot;true&quot;&gt;
+</li>
+<li>创建一个maven结构的文件夹,并修改属性。创建src/test/resources文件夹，并修改工程属性&gt;Java Build Path&gt; Source &gt; resources的output属性。</li>
+<li>修改Dynamic Web Module的版本，提高性能。查看,项目属性&gt;Project Facetes；修改, vim “projectsrc”/.settings/org.eclipse.wst.common.project.facet.core.xml；修改, jst.web的 version。</li>
+<li>修改web.xml的规范头(因为DWM版本提高了)。<pre><code class="xml">&lt;web-app xmlns=&quot;http://xmlns.jcp.org/xml/ns/javaee&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+ xsi:schemaLocation=&quot;http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd&quot;
+ version=&quot;3.1&quot; metadata-complete=&quot;true&quot;&gt;
 </code></pre>
-<hr>
-<h4 id="1-2-8、运行项目"><a href="#1-2-8、运行项目" class="headerlink" title="1.2.8、运行项目"></a>1.2.8、运行项目</h4><ol>
-<li>在Tomcat中 add 项目</li>
-<li>在Tomcat中clean项目</li>
-<li>start</li>
+</li>
+<li>运行项目。在Tomcat中 add 项目；再Tomcat中clean项目；start项目.</li>
+<li>在web.xml指定默认的页面。<pre><code class="xml">&lt;welcome-file-list&gt;
+   &lt;welcome-file&gt;index.js&lt;/welcome-file&gt;
+   &lt;welcome-file&gt;index.html&lt;/welcome-file&gt;
+&lt;/welcome-file-list&gt;
+</code></pre>
+</li>
 </ol>
 <hr>
-<h4 id="1-2-9、在web-xml指定默认的页面"><a href="#1-2-9、在web-xml指定默认的页面" class="headerlink" title="1.2.9、在web.xml指定默认的页面"></a>1.2.9、在web.xml指定默认的页面</h4><pre><code class="xml">  &lt;welcome-file-list&gt;
-      &lt;welcome-file&gt;index.js&lt;/welcome-file&gt;
-      &lt;welcome-file&gt;index.html&lt;/welcome-file&gt;
-  &lt;/welcome-file-list&gt;
-</code></pre>
+<h1 id="第二章-系统功能模块"><a href="#第二章-系统功能模块" class="headerlink" title="第二章 系统功能模块"></a>第二章 系统功能模块</h1><h2 id="2-1、模块功能说明"><a href="#2-1、模块功能说明" class="headerlink" title="2.1、模块功能说明"></a>2.1、模块功能说明</h2><h3 id="2-1-1、前端展示系统"><a href="#2-1-1、前端展示系统" class="headerlink" title="2.1.1、前端展示系统"></a>2.1.1、前端展示系统</h3><ol>
+<li>头条展示</li>
+<li>店铺类别展示</li>
+<li>区域展示</li>
+<li>店铺（列表展示，查询，详情）</li>
+<li>商品（列表展示，查询，详情）<h3 id="2-1-2、店家系统"><a href="#2-1-2、店家系统" class="headerlink" title="2.1.2、店家系统"></a>2.1.2、店家系统</h3></li>
+<li>Local账号维护</li>
+<li>微信账号维护</li>
+<li>店铺信息维护</li>
+<li>权限验证</li>
+<li>商品类别维护<h3 id="2-1-3、超级管理员系统"><a href="#2-1-3、超级管理员系统" class="headerlink" title="2.1.3、超级管理员系统"></a>2.1.3、超级管理员系统</h3></li>
+<li>头条信息维护</li>
+<li>店铺类别信息维护</li>
+<li>区域信息维护</li>
+<li>权限验证</li>
+<li>店铺管理</li>
+<li>用户管理</li>
+</ol>
 <hr>
-<h1 id="第二章-系统功能模块的实现"><a href="#第二章-系统功能模块的实现" class="headerlink" title="第二章 系统功能模块的实现"></a>第二章 系统功能模块的实现</h1><hr>
+<h2 id="2-2、模块功能对象"><a href="#2-2、模块功能对象" class="headerlink" title="2.2、模块功能对象"></a>2.2、模块功能对象</h2><h3 id="2-2-1、前端展示系统"><a href="#2-2-1、前端展示系统" class="headerlink" title="2.2.1、前端展示系统"></a>2.2.1、前端展示系统</h3><ol>
+<li>头条展示</li>
+<li>店铺类别展示</li>
+<li>区域展示</li>
+<li>店铺（列表展示，查询，详情）</li>
+<li>商品（列表展示，查询，详情）<h3 id="2-2-2、店家系统"><a href="#2-2-2、店家系统" class="headerlink" title="2.2.2、店家系统"></a>2.2.2、店家系统</h3></li>
+<li>Local账号维护</li>
+<li>微信账号维护</li>
+<li>店铺信息维护</li>
+<li>权限验证</li>
+<li>商品类别维护<h3 id="2-2-3、超级管理员系统"><a href="#2-2-3、超级管理员系统" class="headerlink" title="2.2.3、超级管理员系统"></a>2.2.3、超级管理员系统</h3></li>
+<li>头条信息维护</li>
+<li>店铺类别信息维护</li>
+<li>区域信息维护</li>
+<li>权限验证</li>
+<li>店铺管理</li>
+<li>用户管理</li>
+</ol>
+<hr>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h2 id="SSM框架实现功能的步骤"><a href="#SSM框架实现功能的步骤" class="headerlink" title="SSM框架实现功能的步骤"></a>SSM框架实现功能的步骤</h2><h4 id="1、在-dao-层"><a href="#1、在-dao-层" class="headerlink" title="1、在 dao 层"></a>1、在 dao 层</h4><ol>
 <li>创建出相应的接口</li>
 <li>定义相关的方法<h4 id="2、在-mapper-中"><a href="#2、在-mapper-中" class="headerlink" title="2、在 mapper 中"></a>2、在 mapper 中</h4></li>
