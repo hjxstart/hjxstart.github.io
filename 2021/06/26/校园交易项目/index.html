@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Spring实战(第五版) | hjxstart的博客</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="Spring实战(第五版) | hjxstart的博客">
+  <title>校园交易项目 | hjxstart的博客</title>
+  <meta name="keywords" content=" SSM ">
+  <meta name="description" content="校园交易项目 | hjxstart的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="第一章 简单的SSM项目搭建1.1、环境配置 JDK8  Maven3.3.9  MySQL8.0.12  Tomcat8  Eclipse   1.2、创建 Maven project的步骤1.2.1、 选择 maven-archetype-webapp类型1.2.2、 项目名字1.2.3、引入tomcat的一个jar包 选择项目&gt;属性&gt;Java Build Path&gt;Libr">
 <meta property="og:type" content="article">
@@ -477,19 +477,34 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-Spring实战-第五版" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-校园交易项目" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Spring实战(第五版)</h1>
+        <h1 class="article-title">校园交易项目</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="后端">后端</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color4">SSM</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-06-23 16:32:44'>2021-06-02 09:42</time>
+            发布时间 : <time class="date" title='最后更新: 2021-06-26 09:05:44'>2021-06-26 07:58</time>
         
     </div>
     <div class="article-meta">
@@ -511,7 +526,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%84%E5%BB%BASpring%E6%AD%A5%E9%AA%A4"><span class="toc-text">构建Spring步骤</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E7%AE%80%E5%8D%95%E7%9A%84SSM%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA"><span class="toc-text">第一章 简单的SSM项目搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1%E3%80%81%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-text">1.1、环境配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2%E3%80%81%E5%88%9B%E5%BB%BA-Maven-project%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="toc-text">1.2、创建 Maven project的步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-1%E3%80%81-%E9%80%89%E6%8B%A9-maven-archetype-webapp%E7%B1%BB%E5%9E%8B"><span class="toc-text">1.2.1、 选择 maven-archetype-webapp类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-2%E3%80%81-%E9%A1%B9%E7%9B%AE%E5%90%8D%E5%AD%97"><span class="toc-text">1.2.2、 项目名字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-3%E3%80%81%E5%BC%95%E5%85%A5tomcat%E7%9A%84%E4%B8%80%E4%B8%AAjar%E5%8C%85"><span class="toc-text">1.2.3、引入tomcat的一个jar包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-4%E3%80%81%E4%BF%AE%E6%94%B9pom-xml%E7%9A%84JRE%E7%89%88%E6%9C%AC%E4%B8%BA1-8%EF%BC%8C%E5%86%8Dupdata%E9%A1%B9%E7%9B%AE"><span class="toc-text">1.2.4、修改pom.xml的JRE版本为1.8，再updata项目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-5%E3%80%81%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAmaven%E7%BB%93%E6%9E%84%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9-%E5%B9%B6%E4%BF%AE%E6%94%B9%E5%B1%9E%E6%80%A7"><span class="toc-text">1.2.5、创建一个maven结构的文件夹,并修改属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-6%E3%80%81%E4%BF%AE%E6%94%B9Dynamic-Web-Module%E7%9A%84%E7%89%88%E6%9C%AC%EF%BC%8C%E6%8F%90%E9%AB%98%E6%80%A7%E8%83%BD"><span class="toc-text">1.2.6、修改Dynamic Web Module的版本，提高性能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-7%E3%80%81%E4%BF%AE%E6%94%B9web-xml%E7%9A%84%E8%A7%84%E8%8C%83%E5%A4%B4-%E5%9B%A0%E4%B8%BADWM%E7%89%88%E6%9C%AC%E6%8F%90%E9%AB%98%E4%BA%86"><span class="toc-text">1.2.7、修改web.xml的规范头(因为DWM版本提高了)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-8%E3%80%81%E8%BF%90%E8%A1%8C%E9%A1%B9%E7%9B%AE"><span class="toc-text">1.2.8、运行项目</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#SSM%E6%A1%86%E6%9E%B6%E5%AE%9E%E7%8E%B0%E5%8A%9F%E8%83%BD%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="toc-text">SSM框架实现功能的步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E5%9C%A8-dao-%E5%B1%82"><span class="toc-text">1、在 dao 层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81%E5%9C%A8-mapper-%E4%B8%AD"><span class="toc-text">2、在 mapper 中</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E3%80%81%E5%9C%A8-service-%E5%B1%82"><span class="toc-text">3、在 service 层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4%E3%80%81%E5%9C%A8-controller-%E5%B1%82"><span class="toc-text">4、在 controller 层</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Junit%E6%B5%8B%E8%AF%95%E6%AD%A5%E9%AA%A4"><span class="toc-text">Junit测试步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E5%9F%BA%E7%B1%BB"><span class="toc-text">1、定义一个基类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E5%AE%9E%E7%8E%B0%E7%B1%BB"><span class="toc-text">2、定义一个实现类</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SSM%E9%87%8D%E7%82%B9%E7%9F%A5%E8%AF%86"><span class="toc-text">SSM重点知识</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81SpringMVC-DispatcherServlet"><span class="toc-text">1、SpringMVC: DispatcherServlet</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81Spring-IOC%E5%92%8CAOP"><span class="toc-text">2、Spring: IOC和AOP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E3%80%81MyBatis-ORM"><span class="toc-text">3、MyBatis:ORM</span></a></li></ol></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -527,34 +542,80 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="构建Spring步骤"><a href="#构建Spring步骤" class="headerlink" title="构建Spring步骤"></a>构建Spring步骤</h2><ol>
-<li>使用 Spring Initializr 创建初始的项目结构；</li>
-<li>编写控制器类处理针对主页的请求；<br>```Java<br>package tacos;</li>
+        <h1 id="第一章-简单的SSM项目搭建"><a href="#第一章-简单的SSM项目搭建" class="headerlink" title="第一章 简单的SSM项目搭建"></a>第一章 简单的SSM项目搭建</h1><h2 id="1-1、环境配置"><a href="#1-1、环境配置" class="headerlink" title="1.1、环境配置"></a>1.1、环境配置</h2><ol>
+<li><p>JDK8</p>
+</li>
+<li><p>Maven3.3.9</p>
+</li>
+<li><p>MySQL8.0.12</p>
+</li>
+<li><p>Tomcat8</p>
+</li>
+<li><p>Eclipse</p>
+</li>
 </ol>
-<p>import org.springframework.stereotype.Controller;<br>import org.springframework.web.bind.annotation.GetMapping;</p>
-<p>@Controller<br>public class HomeController {<br>    @GetMapping(“/“)<br>    public String home() {<br>        return “home”;<br>    }<br>}</p>
-<pre><code>3. 定义一个视图模版来渲染主页；
-```Java
-&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;Taco Cloud&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;Welcome to...&lt;/h1&gt;
-  &lt;img th:src=&quot;@&#123;/images/TacoCloud.png&#125;&quot; /&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+<h2 id="1-2、创建-Maven-project的步骤"><a href="#1-2、创建-Maven-project的步骤" class="headerlink" title="1.2、创建 Maven project的步骤"></a>1.2、创建 Maven project的步骤</h2><h4 id="1-2-1、-选择-maven-archetype-webapp类型"><a href="#1-2-1、-选择-maven-archetype-webapp类型" class="headerlink" title="1.2.1、 选择 maven-archetype-webapp类型"></a>1.2.1、 选择 maven-archetype-webapp类型</h4><h4 id="1-2-2、-项目名字"><a href="#1-2-2、-项目名字" class="headerlink" title="1.2.2、 项目名字"></a>1.2.2、 项目名字</h4><h4 id="1-2-3、引入tomcat的一个jar包"><a href="#1-2-3、引入tomcat的一个jar包" class="headerlink" title="1.2.3、引入tomcat的一个jar包"></a>1.2.3、引入tomcat的一个jar包</h4><ol>
+<li>选择项目&gt;属性&gt;Java Build Path&gt;Libraries&gt;Add Library&gt;Server Runtime&gt;Apache Tomcat v8.0<h4 id="1-2-4、修改pom-xml的JRE版本为1-8，再updata项目"><a href="#1-2-4、修改pom-xml的JRE版本为1-8，再updata项目" class="headerlink" title="1.2.4、修改pom.xml的JRE版本为1.8，再updata项目"></a>1.2.4、修改pom.xml的JRE版本为1.8，再updata项目</h4><pre><code class="xml">&lt;finalName&gt;o2o&lt;/finalName&gt;
+ &lt;plugins&gt;
+     &lt;plugin&gt;
+         &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+         &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+         &lt;version&gt;3.3&lt;/version&gt;
+         &lt;configuration&gt;
+             &lt;encoding&gt;UTF-8&lt;/encoding&gt;
+             &lt;source&gt;1.8&lt;/source&gt;
+             &lt;target&gt;1.8&lt;/target&gt;
+         &lt;/configuration&gt;
+     &lt;/plugin&gt;
+ &lt;/plugins&gt;
 </code></pre>
-<ol start="4">
-<li>编写了一个简单的测试类来验证工作符合预期。<br>```Java<br>package tacos;</li>
+<h4 id="1-2-5、创建一个maven结构的文件夹-并修改属性"><a href="#1-2-5、创建一个maven结构的文件夹-并修改属性" class="headerlink" title="1.2.5、创建一个maven结构的文件夹,并修改属性"></a>1.2.5、创建一个maven结构的文件夹,并修改属性</h4></li>
+<li>创建src/test/resources文件夹</li>
+<li>修改工程属性&gt;Java Build Path&gt; Source &gt; resources的output属性</li>
 </ol>
-<p>import static org.hamcrest.Matchers.containsString;<br>import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;<br>import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;<br>import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;<br>import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;</p>
-<p>import org.junit.Test;<br>import org.junit.runner.RunWith;<br>import org.springframework.beans.factory.annotation.Autowired;<br>import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;<br>import org.springframework.test.context.junit4.SpringRunner;<br>import org.springframework.test.web.servlet.MockMvc;</p>
-<p>@RunWith(SpringRunner.class)<br>@WebMvcTest(HomeController.class)   // &lt;1&gt;<br>public class HomeControllerTest {<br>    @Autowired<br>    private MockMvc mockMvc;   // &lt;2&gt;<br>    @Test<br>    public void testHomePage() throws Exception {<br>        mockMvc.perform(get(“/“))    // &lt;3&gt;<br>                .andExpect(status().isOk())  // &lt;4&gt;<br>                .andExpect(view().name(“home”))  // &lt;5&gt;<br>                .andExpect(content().string(           // &lt;6&gt;<br>                        containsString(“Welcome to…”)));<br>    }<br>}</p>
-<pre><code>
+<h4 id="1-2-6、修改Dynamic-Web-Module的版本，提高性能"><a href="#1-2-6、修改Dynamic-Web-Module的版本，提高性能" class="headerlink" title="1.2.6、修改Dynamic Web Module的版本，提高性能"></a>1.2.6、修改Dynamic Web Module的版本，提高性能</h4><ol>
+<li>查看,项目属性&gt;Project Facetes</li>
+<li>修改, vim 项目路径/.settings/org.eclipse.wst.common.project.facet.core.xml</li>
+<li>修改, jst.web的 version</li>
+</ol>
+<h4 id="1-2-7、修改web-xml的规范头-因为DWM版本提高了"><a href="#1-2-7、修改web-xml的规范头-因为DWM版本提高了" class="headerlink" title="1.2.7、修改web.xml的规范头(因为DWM版本提高了)"></a>1.2.7、修改web.xml的规范头(因为DWM版本提高了)</h4><pre><code class="xml">&lt;web-app xmlns=&quot;http://xmlns.jcp.org/xml/ns/javaee&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation=&quot;http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd&quot;
+    version=&quot;3.1&quot; metadata-complete=&quot;true&quot;&gt;
 </code></pre>
+<h4 id="1-2-8、运行项目"><a href="#1-2-8、运行项目" class="headerlink" title="1.2.8、运行项目"></a>1.2.8、运行项目</h4><ol>
+<li>在Tomcat中 add 项目</li>
+<li>在Tomcat中clean项目</li>
+<li>start</li>
+</ol>
+<hr>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h2 id="SSM框架实现功能的步骤"><a href="#SSM框架实现功能的步骤" class="headerlink" title="SSM框架实现功能的步骤"></a>SSM框架实现功能的步骤</h2><h4 id="1、在-dao-层"><a href="#1、在-dao-层" class="headerlink" title="1、在 dao 层"></a>1、在 dao 层</h4><ol>
+<li>创建出相应的接口</li>
+<li>定义相关的方法<h4 id="2、在-mapper-中"><a href="#2、在-mapper-中" class="headerlink" title="2、在 mapper 中"></a>2、在 mapper 中</h4></li>
+<li>在 resources/mapper 下面创建出与 dao层一一对应的xml文件</li>
+<li>在xml文件中定义出方法所需要的SQL<h4 id="3、在-service-层"><a href="#3、在-service-层" class="headerlink" title="3、在 service 层"></a>3、在 service 层</h4></li>
+<li>实现类继承接口，包含类注解(@Service)，</li>
+<li>使用注解(@Autowired)将 dao 层接口注入进来</li>
+<li>调用 dao 层的方法，将我们需要的数据返回到 Controller 去<h4 id="4、在-controller-层"><a href="#4、在-controller-层" class="headerlink" title="4、在 controller 层"></a>4、在 controller 层</h4></li>
+<li>包含有注解(@Controller，@RequestMapping(“/url”))的类 </li>
+<li>使用注解(@Autowired)将 dao 层接口注入进来</li>
+<li>创建包含有注解(@RequestMapping, @ResponseBody)的方法。</li>
+<li>调用 dao 层接口的方法获取数据后，直接将数据返回前台。</li>
+</ol>
+<hr>
+<h2 id="Junit测试步骤"><a href="#Junit测试步骤" class="headerlink" title="Junit测试步骤"></a>Junit测试步骤</h2><h4 id="1、定义一个基类"><a href="#1、定义一个基类" class="headerlink" title="1、定义一个基类"></a>1、定义一个基类</h4><ol>
+<li>一个包含类注解(@RunWith(SpringJunit4ClassRunner.class))的类,指定使用那个类来单元测试</li>
+<li>一个包含类注解(@ContextConfiguration({“1.xml”,”2.xml”}))的类,指定junit spring配置文件的文件，1.xml为junit的dao层做服务的，2.xml为service单元测试做服务配置的。<h4 id="2、定义一个实现类"><a href="#2、定义一个实现类" class="headerlink" title="2、定义一个实现类"></a>2、定义一个实现类</h4></li>
+<li>定义一个方法，包含注解(@Test)的测试方法。</li>
+</ol>
+<hr>
+<h2 id="SSM重点知识"><a href="#SSM重点知识" class="headerlink" title="SSM重点知识"></a>SSM重点知识</h2><h4 id="1、SpringMVC-DispatcherServlet"><a href="#1、SpringMVC-DispatcherServlet" class="headerlink" title="1、SpringMVC: DispatcherServlet"></a>1、SpringMVC: DispatcherServlet</h4><ol>
+<li><h4 id="2、Spring-IOC和AOP"><a href="#2、Spring-IOC和AOP" class="headerlink" title="2、Spring: IOC和AOP"></a>2、Spring: IOC和AOP</h4></li>
+<li>IOC</li>
+<li>Aop<br>例如，增删改查的操作，都需要做权限验证，我们并不希望权限验证的代码杂糅在我们增删改查的方法里，我们可以通过AOP在程序运行时候动态的将我们权限代码植入到我们的增删改查方法的前面，以完成权限的验证。</li>
+<li>AOP的实现方式，就是动态代理。动态代理有JDK和CJL两种方式实现。<h4 id="3、MyBatis-ORM"><a href="#3、MyBatis-ORM" class="headerlink" title="3、MyBatis:ORM"></a>3、MyBatis:ORM</h4></li>
+<li>ORM就是通过使用描述对象和数据库之间映射的元数据，将程序中的对象自动持久化到关系数据库中。</li>
+<li>关系映射的实现方式。</li>
+</ol>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1726283687@qq.com </span>
