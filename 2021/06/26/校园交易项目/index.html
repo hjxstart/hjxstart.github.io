@@ -14,7 +14,7 @@
 <meta property="og:description" content="第一章 简单的SSM项目搭建1.1、环境配置JDK8, Maven3.3.9, MySQL8.0.12, Tomcat8, Eclipse  1.2、创建 Maven project的步骤 选择 maven-archetype-webapp类型。 输入项目名称。 引入tomcat的一个jar包。选择项目&gt;属性&gt;Java Build Path&gt;Libraries&gt;Add Li">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-06-25T23:58:18.000Z">
-<meta property="article:modified_time" content="2021-06-27T03:13:49.785Z">
+<meta property="article:modified_time" content="2021-06-27T03:18:25.566Z">
 <meta property="article:author" content="hjxstart">
 <meta property="article:tag" content="SSM">
 <meta name="twitter:card" content="summary">
@@ -504,7 +504,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-06-27 11:13:49'>2021-06-26 07:58</time>
+            发布时间 : <time class="date" title='最后更新: 2021-06-27 11:18:25'>2021-06-26 07:58</time>
         
     </div>
     <div class="article-meta">
@@ -526,7 +526,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E7%AE%80%E5%8D%95%E7%9A%84SSM%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA"><span class="toc-text">第一章 简单的SSM项目搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1%E3%80%81%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-text">1.1、环境配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2%E3%80%81%E5%88%9B%E5%BB%BA-Maven-project%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="toc-text">1.2、创建 Maven project的步骤</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97"><span class="toc-text">第二章 系统功能模块</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1%E3%80%81%E6%A8%A1%E5%9D%97%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E"><span class="toc-text">2.1、模块功能说明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1%E3%80%81%E5%89%8D%E7%AB%AF%E5%B1%95%E7%A4%BA%E7%B3%BB%E7%BB%9F"><span class="toc-text">2.1.1、前端展示系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2%E3%80%81%E5%BA%97%E5%AE%B6%E7%B3%BB%E7%BB%9F"><span class="toc-text">2.1.2、店家系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3%E3%80%81%E8%B6%85%E7%BA%A7%E7%AE%A1%E7%90%86%E5%91%98%E7%B3%BB%E7%BB%9F"><span class="toc-text">2.1.3、超级管理员系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2%E3%80%81%E6%A8%A1%E5%9D%97%E5%8A%9F%E8%83%BD%E5%AF%B9%E8%B1%A1"><span class="toc-text">2.2、模块功能对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1%E3%80%81%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%85%B3%E7%B3%BB%E5%9B%BE"><span class="toc-text">2.2.1、实体类关系图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2%E3%80%81%E5%AE%9E%E4%BD%93%E7%B1%BB%E4%BB%A3%E7%A0%81"><span class="toc-text">2.2.2、实体类代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3%E3%80%81%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-text">2.3、代码实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-1%E3%80%81%E5%88%9B%E5%BB%BA%E7%9B%B8%E5%BA%94%E7%9A%84%E7%B1%BB"><span class="toc-text">2.3.1、创建相应的类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-2%E3%80%81%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8"><span class="toc-text">2.3.2、创建数据库表</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE"><span class="toc-text">第三章 项目配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1%E3%80%81-%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E8%AF%B4%E6%98%8E"><span class="toc-text">3.1、 项目目录说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2%E3%80%81%E5%88%9B%E5%BB%BAsources-%E8%B5%84%E6%BA%90%E5%8C%85"><span class="toc-text">3.2、创建sources 资源包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3%E3%80%81%E5%88%9B%E5%BB%BApackage"><span class="toc-text">3.3、创建package</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4%E3%80%81%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE"><span class="toc-text">3.4、项目配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-1%E3%80%81%E9%85%8D%E7%BD%AE%E6%80%9D%E8%B7%AF%EF%BC%9A%E8%87%AA%E4%B8%8B%E8%80%8C%E4%B8%8A%E7%9A%84%E9%85%8D%E7%BD%AE%E3%80%82"><span class="toc-text">3.4.1、配置思路：自下而上的配置。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-2%E3%80%81%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86"><span class="toc-text">3.4.2、依赖管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-3%E3%80%81-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E9%85%8D%E7%BD%AE%E6%93%8D%E4%BD%9C"><span class="toc-text">3.4.3、 数据库的配置操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-4%E3%80%81-Spring%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE"><span class="toc-text">3.4.4、 Spring相关配置</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-text">第四章 代码实现</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1%E3%80%81%E7%AE%80%E5%8D%95%E7%9A%84SSM%E6%A1%88%E4%BE%8B-Area"><span class="toc-text">4.1、简单的SSM案例-Area</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-1%E3%80%81dao%E5%B1%82"><span class="toc-text">4.1.1、dao层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-2%E3%80%81-Service%E5%B1%82"><span class="toc-text">4.1.2、 Service层</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#SSM%E6%A1%86%E6%9E%B6%E5%AE%9E%E7%8E%B0%E5%8A%9F%E8%83%BD%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="toc-text">SSM框架实现功能的步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Junit%E6%B5%8B%E8%AF%95%E6%AD%A5%E9%AA%A4"><span class="toc-text">Junit测试步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E5%9F%BA%E7%B1%BB"><span class="toc-text">1、定义一个基类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E5%AE%9E%E7%8E%B0%E7%B1%BB"><span class="toc-text">2、定义一个实现类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SSM%E9%87%8D%E7%82%B9%E7%9F%A5%E8%AF%86"><span class="toc-text">SSM重点知识</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E7%AE%80%E5%8D%95%E7%9A%84SSM%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA"><span class="toc-text">第一章 简单的SSM项目搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1%E3%80%81%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-text">1.1、环境配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2%E3%80%81%E5%88%9B%E5%BB%BA-Maven-project%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="toc-text">1.2、创建 Maven project的步骤</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97"><span class="toc-text">第二章 系统功能模块</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1%E3%80%81%E6%A8%A1%E5%9D%97%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E"><span class="toc-text">2.1、模块功能说明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1%E3%80%81%E5%89%8D%E7%AB%AF%E5%B1%95%E7%A4%BA%E7%B3%BB%E7%BB%9F"><span class="toc-text">2.1.1、前端展示系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2%E3%80%81%E5%BA%97%E5%AE%B6%E7%B3%BB%E7%BB%9F"><span class="toc-text">2.1.2、店家系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3%E3%80%81%E8%B6%85%E7%BA%A7%E7%AE%A1%E7%90%86%E5%91%98%E7%B3%BB%E7%BB%9F"><span class="toc-text">2.1.3、超级管理员系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2%E3%80%81%E6%A8%A1%E5%9D%97%E5%8A%9F%E8%83%BD%E5%AF%B9%E8%B1%A1"><span class="toc-text">2.2、模块功能对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1%E3%80%81%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%85%B3%E7%B3%BB%E5%9B%BE"><span class="toc-text">2.2.1、实体类关系图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2%E3%80%81%E5%AE%9E%E4%BD%93%E7%B1%BB%E4%BB%A3%E7%A0%81"><span class="toc-text">2.2.2、实体类代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3%E3%80%81%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-text">2.3、代码实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-1%E3%80%81%E5%88%9B%E5%BB%BA%E7%9B%B8%E5%BA%94%E7%9A%84%E7%B1%BB"><span class="toc-text">2.3.1、创建相应的类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-2%E3%80%81%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8"><span class="toc-text">2.3.2、创建数据库表</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE"><span class="toc-text">第三章 项目配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1%E3%80%81-%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E8%AF%B4%E6%98%8E"><span class="toc-text">3.1、 项目目录说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2%E3%80%81%E5%88%9B%E5%BB%BAsources-%E8%B5%84%E6%BA%90%E5%8C%85"><span class="toc-text">3.2、创建sources 资源包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3%E3%80%81%E5%88%9B%E5%BB%BApackage"><span class="toc-text">3.3、创建package</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4%E3%80%81%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE"><span class="toc-text">3.4、项目配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-1%E3%80%81%E9%85%8D%E7%BD%AE%E6%80%9D%E8%B7%AF%EF%BC%9A%E8%87%AA%E4%B8%8B%E8%80%8C%E4%B8%8A%E7%9A%84%E9%85%8D%E7%BD%AE%E3%80%82"><span class="toc-text">3.4.1、配置思路：自下而上的配置。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-2%E3%80%81%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86"><span class="toc-text">3.4.2、依赖管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-3%E3%80%81-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E9%85%8D%E7%BD%AE%E6%93%8D%E4%BD%9C"><span class="toc-text">3.4.3、 数据库的配置操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-4%E3%80%81-Spring%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE"><span class="toc-text">3.4.4、 Spring相关配置</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-text">第四章 代码实现</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1%E3%80%81%E7%AE%80%E5%8D%95%E7%9A%84SSM%E6%A1%88%E4%BE%8B-Area"><span class="toc-text">4.1、简单的SSM案例-Area</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-1%E3%80%81dao%E5%B1%82"><span class="toc-text">4.1.1、dao层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-2%E3%80%81Service%E5%B1%82"><span class="toc-text">4.1.2、Service层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-3%E3%80%81web%E5%B1%82"><span class="toc-text">4.1.3、web层</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#SSM%E6%A1%86%E6%9E%B6%E5%AE%9E%E7%8E%B0%E5%8A%9F%E8%83%BD%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="toc-text">SSM框架实现功能的步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Junit%E6%B5%8B%E8%AF%95%E6%AD%A5%E9%AA%A4"><span class="toc-text">Junit测试步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E5%9F%BA%E7%B1%BB"><span class="toc-text">1、定义一个基类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E5%AE%9E%E7%8E%B0%E7%B1%BB"><span class="toc-text">2、定义一个实现类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SSM%E9%87%8D%E7%82%B9%E7%9F%A5%E8%AF%86"><span class="toc-text">SSM重点知识</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1007,7 +1007,8 @@ jdbc.password=&quot;密码&quot;
 <li>/<br>@RunWith(SpringJUnit4ClassRunner.class)<br>// 告诉Junit spring配置文件的位置<br>@ContextConfiguration({“classpath:spring/spring-dao.xml”, “classpath:spring/spring-service.xml”})<br>public class BaseTest {</li>
 </ul>
 <p>}</p>
-<pre><code>- 测试类
+<pre><code>
+- 测试类
 ```Java
 package com.imooc.o2o.dao;
 
@@ -1030,13 +1031,15 @@ public class AreaDaoTest extends BaseTest &#123;
 &#125;
 </code></pre>
 <hr>
-<h3 id="4-1-2、-Service层"><a href="#4-1-2、-Service层" class="headerlink" title="4.1.2、 Service层"></a>4.1.2、 Service层</h3><ol>
+<h3 id="4-1-2、Service层"><a href="#4-1-2、Service层" class="headerlink" title="4.1.2、Service层"></a>4.1.2、Service层</h3><ol>
 <li>service AreaService.java 接口类<br>```java<br>package com.imooc.o2o.service;</li>
 </ol>
 <p>import java.util.List;</p>
 <p>import com.imooc.o2o.entity.Area;</p>
 <p>public interface AreaService {<br>    List<Area> getAreaList();<br>}</p>
-<pre><code>2. service.impl  AreaServiceImpl.java 实现类
+<pre><code>
+2. service.impl  AreaServiceImpl.java 实现类
+
 ```java
 package com.imooc.o2o.service.impi;
 
@@ -1063,22 +1066,32 @@ public class AreaServiceImpl implements AreaService &#123;
 <li>service层单元测试</li>
 </ol>
 <ul>
-<li>AreaServiceTest.java 代码<br>```Java<br>package com.imooc.o2o.service;</li>
+<li>AreaServiceTest.java 代码</li>
 </ul>
-<p>import static org.junit.Assert.assertEquals;<br>import java.util.List;<br>import org.junit.Test;<br>import org.springframework.beans.factory.annotation.Autowired;<br>import com.imooc.o2o.BaseTest;<br>import com.imooc.o2o.entity.Area;</p>
-<p>public class AreaServiceTest extends BaseTest {<br>    @Autowired<br>    private AreaService areaService;</p>
-<pre><code>@Test
-public void testGetArealist() &#123;
-    List&lt;Area&gt; areaList = areaService.getAreaList();
-    assertEquals(&quot;西苑&quot;, areaList.get(0).getAreaName());
+<pre><code class="Java">package com.imooc.o2o.service;
+
+import static org.junit.Assert.assertEquals;
+import java.util.List;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import com.imooc.o2o.BaseTest;
+import com.imooc.o2o.entity.Area;
+
+public class AreaServiceTest extends BaseTest &#123;
+    @Autowired
+    private AreaService areaService;
+
+    @Test
+    public void testGetArealist() &#123;
+        List&lt;Area&gt; areaList = areaService.getAreaList();
+        assertEquals(&quot;西苑&quot;, areaList.get(0).getAreaName());
+    &#125;
 &#125;
 </code></pre>
-<p>}</p>
-<pre><code>
-### 4.1.3、 web层
-1. AreaController.java
-```Java
-package com.imooc.o2o.web.superadmin;
+<h3 id="4-1-3、web层"><a href="#4-1-3、web层" class="headerlink" title="4.1.3、web层"></a>4.1.3、web层</h3><ol>
+<li>AreaController.java</li>
+</ol>
+<pre><code class="Java">package com.imooc.o2o.web.superadmin;
 
 import java.util.ArrayList;
 import java.util.HashMap;
