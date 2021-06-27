@@ -14,7 +14,7 @@
 <meta property="og:description" content="第一章 简单的SSM项目搭建1.1、环境配置JDK8, Maven3.3.9, MySQL8.0.12, Tomcat8, Eclipse  1.2、创建 Maven project的步骤 选择 maven-archetype-webapp类型。 输入项目名称。 引入tomcat的一个jar包。选择项目&gt;属性&gt;Java Build Path&gt;Libraries&gt;Add Li">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-06-25T23:58:18.000Z">
-<meta property="article:modified_time" content="2021-06-27T01:37:00.276Z">
+<meta property="article:modified_time" content="2021-06-27T01:45:42.187Z">
 <meta property="article:author" content="hjxstart">
 <meta property="article:tag" content="SSM">
 <meta name="twitter:card" content="summary">
@@ -504,7 +504,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-06-27 09:37:00'>2021-06-26 07:58</time>
+            发布时间 : <time class="date" title='最后更新: 2021-06-27 09:45:42'>2021-06-26 07:58</time>
         
     </div>
     <div class="article-meta">
@@ -661,225 +661,234 @@
 <h3 id="3-4-2、依赖管理"><a href="#3-4-2、依赖管理" class="headerlink" title="3.4.2、依赖管理"></a>3.4.2、依赖管理</h3><ol>
 <li><p>Maven jar <a target="_blank" rel="noopener" href="https://mvnrepository.com/">链接</a></p>
 </li>
-<li><p>pom.xml<br>```xml<br><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"><br><modelVersion>4.0.0</modelVersion><br><groupId>com.imooc</groupId><br><artifactId>o2o</artifactId><br><packaging>war</packaging><br><version>0.0.1-SNAPSHOT</version><br><name>o2o Maven Webapp</name><br><url><a target="_blank" rel="noopener" href="http://maven.apache.org/">http://maven.apache.org</a></url></p>
-<properties>
-   <spring.version>4.3.7.RELEASE</spring.version>
-</properties>
-<dependencies>
-   <!-- 测试相关的jar包 -->
- <dependency>
-   <groupId>junit</groupId>
-   <artifactId>junit</artifactId>
-   <version>4.12</version>
-   <!-- 作用于test环境 -->
-   <scope>test</scope>
- </dependency>
- <!-- 日志相关的jar包 -->
- <dependency>
-     <groupId>ch.qos.logback</groupId>
-     <artifactId>logback-classic</artifactId>
-     <version>1.2.3</version>
- </dependency>
- <!-- Spring -->
- <!-- 1）包含Spring 框架基本的核心工具类。Spring 其他组件都要使用到这个包里的类，是其他组件的基本核心 -->
- <dependency>
-     <groupId>org.springframework</groupId>
-     <artifactId>spring-core</artifactId>
-     <version>4.3.7.RELEASE</version>
-     <!-- <version>${spring.version}</version> -->
- </dependency>
- <!-- 2）这个jar 文件是所有应用都要使用的，它包含访问配置文件，创建和管理bean 以及进行Inversion of Context
-     / Dependency Injection（Ioc/DI）操作相关的所有类。如果应用只需基本的Ioc/DI支持，引入spring-core及spring-beans.jar文件就可以了 -->
- <dependency>
-     <groupId>org.springframework</groupId>
-     <artifactId>spring-beans</artifactId>
-     <version>${spring.version}</version>
- </dependency>
- <!-- 3）这个jar 文件为Spring 核心提供了大量拓展。可以找到使用Spring ApplicationContext 特效时所需的全部
-     所需的全部类，instrumentation 组件以及校验Validation 方面的相关类。 -->
- <dependency>
-     <groupId>org.springframework</groupId>
-     <artifactId>spring-context</artifactId>
-     <version>4.3.7.RELEASE</version>
- </dependency>
- <!-- 4）这个jar 文件包含对SPring 对JDBC 数据访问进行封装的所有类。 -->
- <dependency>
-     <groupId>org.springframework</groupId>
-     <artifactId>spring-jdbc</artifactId>
-     <version>4.3.7.RELEASE</version>
- </dependency>
- <!-- 5）为JDBC、Hibernate、JDO、JPA 等提供的一致性的声明式和编程式事务管理。 -->
- <dependency>
-     <groupId>org.springframework</groupId>
-     <artifactId>spring-tx</artifactId>
-     <version>4.3.7.RELEASE</version>
- </dependency>
- <!-- 6）Spring web 包含Web 应用开发时，用到Spring 框架时所需的核心类，包括自动载入WebApplicationContext
-      文件上传的支持类，filter类，和大量的工作辅助类-->
- <dependency>
-     <groupId>org.springframework</groupId>
-     <artifactId>spring-web</artifactId>
-     <version>4.3.7.RELEASE</version>
- </dependency>
- <!-- 7）包含Spring MVC框架相关的所有类。dispathservlet -->
- <dependency>
-     <groupId>org.springframework</groupId>
-     <artifactId>spring-webmvc</artifactId>
-     <version>4.3.7.RELEASE</version>
- </dependency>
- <!-- 8）Spring test 对Junit 等测试框架的简单封装 -->
- <dependency>
-     <groupId>org.springframework</groupId>
-     <artifactId>spring-test</artifactId>
-     <version>4.3.7.RELEASE</version>
-     <scope>test</scope>
- </dependency>
- <!-- Servlet web -->
- <dependency>
-     <groupId>javax.servlet</groupId>
-     <artifactId>javax.servlet-api</artifactId>
-     <version>3.1.0</version>
- </dependency>
- <!-- json解析 -->
- <dependency>
-     <groupId>com.fasterxml.jackson.core</groupId>
-     <artifactId>jackson-databind</artifactId>
-     <version>2.8.7</version>
- </dependency>    
- <!-- Map工具类 对标准java Collection的扩展 spring-core.jar需commons-collections.jar -->
- <dependency>
-     <groupId>commons-collections</groupId>
-     <artifactId>commons-collections</artifactId>
-     <version>3.2</version>
- </dependency>    
- <!-- DAO:MyBatis -->
- <dependency>
-     <groupId>org.mybatis</groupId>
-     <artifactId>mybatis</artifactId>
-     <version>3.4.2</version>
- </dependency>    
- <dependency>
-     <groupId>org.mybatis</groupId>
-     <artifactId>mybatis-spring</artifactId>
-     <version>1.3.1</version>
- </dependency>    
- <!-- 数据库，支持JDBC -->
-<dependency>
-     <groupId>mysql</groupId>
-     <artifactId>mysql-connector-java</artifactId>
-     <version>8.0.12</version>
- </dependency>    
- <!-- 链接池 -->
- <dependency>
-     <groupId>c3p0</groupId>
-     <artifactId>c3p0</artifactId>
-     <version>0.9.1.2</version>
- </dependency>    
-</dependencies></li>
+<li><p>pom.xml</p>
+</li>
 </ol>
-  <build>
-    <finalName>o2o</finalName>
-    <plugins>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.3</version>
-            <configuration>
-            <encoding>UTF-8</encoding>
-            <source>1.8</source>
-            <target>1.8</target>
-            </configuration>
-        </plugin>
-    </plugins>
-  </build>
-</project>
-```
-
+<pre><code class="xml">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+  xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&quot;&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+  &lt;groupId&gt;com.imooc&lt;/groupId&gt;
+  &lt;artifactId&gt;o2o&lt;/artifactId&gt;
+  &lt;packaging&gt;war&lt;/packaging&gt;
+  &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+  &lt;name&gt;o2o Maven Webapp&lt;/name&gt;
+  &lt;url&gt;http://maven.apache.org&lt;/url&gt;
+  &lt;properties&gt;
+      &lt;spring.version&gt;4.3.7.RELEASE&lt;/spring.version&gt;
+  &lt;/properties&gt;
+  &lt;dependencies&gt;
+      &lt;!-- 测试相关的jar包 --&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;junit&lt;/groupId&gt;
+      &lt;artifactId&gt;junit&lt;/artifactId&gt;
+      &lt;version&gt;4.12&lt;/version&gt;
+      &lt;!-- 作用于test环境 --&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+    &lt;!-- 日志相关的jar包 --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;ch.qos.logback&lt;/groupId&gt;
+        &lt;artifactId&gt;logback-classic&lt;/artifactId&gt;
+        &lt;version&gt;1.2.3&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;!-- Spring --&gt;
+    &lt;!-- 1）包含Spring 框架基本的核心工具类。Spring 其他组件都要使用到这个包里的类，是其他组件的基本核心 --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-core&lt;/artifactId&gt;
+        &lt;version&gt;4.3.7.RELEASE&lt;/version&gt;
+        &lt;!-- &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt; --&gt;
+    &lt;/dependency&gt;
+    &lt;!-- 2）这个jar 文件是所有应用都要使用的，它包含访问配置文件，创建和管理bean 以及进行Inversion of Context
+        / Dependency Injection（Ioc/DI）操作相关的所有类。如果应用只需基本的Ioc/DI支持，引入spring-core及spring-beans.jar文件就可以了 --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-beans&lt;/artifactId&gt;
+        &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;!-- 3）这个jar 文件为Spring 核心提供了大量拓展。可以找到使用Spring ApplicationContext 特效时所需的全部
+        所需的全部类，instrumentation 组件以及校验Validation 方面的相关类。 --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-context&lt;/artifactId&gt;
+        &lt;version&gt;4.3.7.RELEASE&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;!-- 4）这个jar 文件包含对SPring 对JDBC 数据访问进行封装的所有类。 --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt;
+        &lt;version&gt;4.3.7.RELEASE&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;!-- 5）为JDBC、Hibernate、JDO、JPA 等提供的一致性的声明式和编程式事务管理。 --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-tx&lt;/artifactId&gt;
+        &lt;version&gt;4.3.7.RELEASE&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;!-- 6）Spring web 包含Web 应用开发时，用到Spring 框架时所需的核心类，包括自动载入WebApplicationContext
+         文件上传的支持类，filter类，和大量的工作辅助类--&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-web&lt;/artifactId&gt;
+        &lt;version&gt;4.3.7.RELEASE&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;!-- 7）包含Spring MVC框架相关的所有类。dispathservlet --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;
+        &lt;version&gt;4.3.7.RELEASE&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;!-- 8）Spring test 对Junit 等测试框架的简单封装 --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-test&lt;/artifactId&gt;
+        &lt;version&gt;4.3.7.RELEASE&lt;/version&gt;
+        &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+    &lt;!-- Servlet web --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
+        &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt;
+        &lt;version&gt;3.1.0&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;!-- json解析 --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;
+        &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;
+        &lt;version&gt;2.8.7&lt;/version&gt;
+    &lt;/dependency&gt;    
+    &lt;!-- Map工具类 对标准java Collection的扩展 spring-core.jar需commons-collections.jar --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;commons-collections&lt;/groupId&gt;
+        &lt;artifactId&gt;commons-collections&lt;/artifactId&gt;
+        &lt;version&gt;3.2&lt;/version&gt;
+    &lt;/dependency&gt;    
+    &lt;!-- DAO:MyBatis --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
+        &lt;artifactId&gt;mybatis&lt;/artifactId&gt;
+        &lt;version&gt;3.4.2&lt;/version&gt;
+    &lt;/dependency&gt;    
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
+        &lt;artifactId&gt;mybatis-spring&lt;/artifactId&gt;
+        &lt;version&gt;1.3.1&lt;/version&gt;
+    &lt;/dependency&gt;    
+    &lt;!-- 数据库，支持JDBC --&gt;
+   &lt;dependency&gt;
+        &lt;groupId&gt;mysql&lt;/groupId&gt;
+        &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+        &lt;version&gt;8.0.12&lt;/version&gt;
+    &lt;/dependency&gt;    
+    &lt;!-- 链接池 --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;c3p0&lt;/groupId&gt;
+        &lt;artifactId&gt;c3p0&lt;/artifactId&gt;
+        &lt;version&gt;0.9.1.2&lt;/version&gt;
+    &lt;/dependency&gt;    
+  &lt;/dependencies&gt;
+  
+  &lt;build&gt;
+    &lt;finalName&gt;o2o&lt;/finalName&gt;
+    &lt;plugins&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+            &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+            &lt;version&gt;3.3&lt;/version&gt;
+            &lt;configuration&gt;
+            &lt;encoding&gt;UTF-8&lt;/encoding&gt;
+            &lt;source&gt;1.8&lt;/source&gt;
+            &lt;target&gt;1.8&lt;/target&gt;
+            &lt;/configuration&gt;
+        &lt;/plugin&gt;
+    &lt;/plugins&gt;
+  &lt;/build&gt;
+&lt;/project&gt;
+</code></pre>
 <hr>
 <h3 id="3-4-3、-数据库的配置操作"><a href="#3-4-3、-数据库的配置操作" class="headerlink" title="3.4.3、 数据库的配置操作"></a>3.4.3、 数据库的配置操作</h3><ol>
-<li><p>创建src/main/resources/jdbc.properties</p>
+<li>创建src/main/resources/jdbc.properties</li>
+</ol>
 <pre><code class="properties">jdbc.driver=com.mysql.cj.jdbc.Driver
 jdbc.url=jdbc:mysql://localhost:3306/o2o?useUnicode=true&amp;characterEncoding=utf8&amp;verifyServerCertificate=false&amp;useSSL=false&amp;allowPublicKeyRetrieval=true
 jdbc.username=root
 jdbc.password=&quot;密码&quot;
 </code></pre>
-</li>
-<li><p>配置src/main/resources/mybatis-config.xml</p>
+<ol start="2">
+<li>配置src/main/resources/mybatis-config.xml</li>
+</ol>
 <pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
 &lt;!DOCTYPE configuration PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&gt;
 &lt;configuration&gt;
- &lt;!-- 配置全局属性 --&gt;
- &lt;settings&gt;
-     &lt;!-- 使用jdbc多的getGeneratedKeys获取数据库自增主键值 --&gt;
-     &lt;setting name=&quot;useGeneratedKeys&quot; value=&quot;true&quot; /&gt;
-     
-     &lt;!-- 使用列标签替换列别名 默认:true--&gt;
-     &lt;setting name=&quot;useColumnLabel&quot; value=&quot;true&quot;/&gt;
-     
-     &lt;!-- 开启驼峰命名转换：Table&#123;create_time&#125; -&gt; Entity&#123;createTime&#125;  --&gt;
-     &lt;setting name=&quot;mapUnderscoreToCamelCase&quot; value=&quot;true&quot;/&gt;
- &lt;/settings&gt;
+    &lt;!-- 配置全局属性 --&gt;
+    &lt;settings&gt;
+        &lt;!-- 使用jdbc多的getGeneratedKeys获取数据库自增主键值 --&gt;
+        &lt;setting name=&quot;useGeneratedKeys&quot; value=&quot;true&quot; /&gt;
+        
+        &lt;!-- 使用列标签替换列别名 默认:true--&gt;
+        &lt;setting name=&quot;useColumnLabel&quot; value=&quot;true&quot;/&gt;
+        
+        &lt;!-- 开启驼峰命名转换：Table&#123;create_time&#125; -&gt; Entity&#123;createTime&#125;  --&gt;
+        &lt;setting name=&quot;mapUnderscoreToCamelCase&quot; value=&quot;true&quot;/&gt;
+    &lt;/settings&gt;
 &lt;/configuration&gt;
 </code></pre>
-</li>
-</ol>
 <hr>
 <h3 id="3-4-4、-Spring相关配置"><a href="#3-4-4、-Spring相关配置" class="headerlink" title="3.4.4、 Spring相关配置"></a>3.4.4、 Spring相关配置</h3><ol>
-<li><p>Dao层: src/main/resources/spring/spring-dao.xml</p>
+<li>Dao层: src/main/resources/spring/spring-dao.xml</li>
+</ol>
 <pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
- xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
- xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
- http://www.springframework.org/schema/beans/spring-beans.xsd
- http://www.springframework.org/schema/context
- http://www.springframework.org/schema/context/spring-context.xsd&quot;&gt;
- &lt;!-- 配置整合mybatis过程 --&gt;
- &lt;!-- 1.配置数据库相关参数properties的属性：$&#123;url&#125; --&gt;
- &lt;context:property-placeholder location=&quot;classpath:jdbc.properties&quot; /&gt;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+    xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd&quot;&gt;
+    &lt;!-- 配置整合mybatis过程 --&gt;
+    &lt;!-- 1.配置数据库相关参数properties的属性：$&#123;url&#125; --&gt;
+    &lt;context:property-placeholder location=&quot;classpath:jdbc.properties&quot; /&gt;
+    
+    &lt;!-- 2.数据库连接池 --&gt;
+    &lt;bean id=&quot;dataSource&quot; class=&quot;com.mchange.v2.c3p0.ComboPooledDataSource&quot;&gt;
+        &lt;!-- 配置连接池属性 --&gt;
+        &lt;property name=&quot;driverClass&quot; value=&quot;$&#123;jdbc.driver&#125;&quot; /&gt;
+        &lt;property name=&quot;jdbcUrl&quot; value=&quot;$&#123;jdbc.url&#125;&quot; /&gt;
+        &lt;property name=&quot;user&quot; value=&quot;$&#123;jdbc.username&#125;&quot; /&gt;
+        &lt;property name=&quot;password&quot; value=&quot;$&#123;jdbc.password&#125;&quot; /&gt;
+        &lt;!-- c3p0连接池的私有属性 --&gt;
+        &lt;property name=&quot;maxPoolSize&quot; value=&quot;30&quot; /&gt;
+        &lt;property name=&quot;minPoolSize&quot; value=&quot;10&quot; /&gt;
+        &lt;!-- 关闭连接后不自动commit --&gt;
+        &lt;property name=&quot;autoCommitOnClose&quot; value=&quot;false&quot; /&gt;
+        &lt;!-- 获取连接超时时间 --&gt;
+        &lt;property name=&quot;checkoutTimeout&quot; value=&quot;10000&quot; /&gt;
+        &lt;!-- 当获取连接失败重试次数 --&gt;
+        &lt;property name=&quot;acquireRetryAttempts&quot; value=&quot;2&quot; /&gt;
+    &lt;/bean&gt;
+
+    &lt;!-- 3.配置SqlSessionFactory对象,用于创建数据库连接池的对象 --&gt;
+    &lt;bean id=&quot;sqlSessionFactory&quot; class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;
+        &lt;!-- 注入数据库连接池 --&gt;
+        &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot; /&gt;
+        &lt;!-- 配置MyBaties全局配置文件:mybatis-config.xml --&gt;
+        &lt;property name=&quot;configLocation&quot; value=&quot;classpath:mybatis-config.xml&quot; /&gt;
+        &lt;!-- 扫描entity包 使用别名 --&gt;
+        &lt;property name=&quot;typeAliasesPackage&quot; value=&quot;com.imooc.o2o.entity&quot; /&gt;
+        &lt;!-- 扫描sql配置文件:mapper需要的xml文件 --&gt;
+        &lt;property name=&quot;mapperLocations&quot; value=&quot;classpath:mapper/*.xml&quot; /&gt;
+    &lt;/bean&gt;
  
- &lt;!-- 2.数据库连接池 --&gt;
- &lt;bean id=&quot;dataSource&quot; class=&quot;com.mchange.v2.c3p0.ComboPooledDataSource&quot;&gt;
-     &lt;!-- 配置连接池属性 --&gt;
-     &lt;property name=&quot;driverClass&quot; value=&quot;$&#123;jdbc.driver&#125;&quot; /&gt;
-     &lt;property name=&quot;jdbcUrl&quot; value=&quot;$&#123;jdbc.url&#125;&quot; /&gt;
-     &lt;property name=&quot;user&quot; value=&quot;$&#123;jdbc.username&#125;&quot; /&gt;
-     &lt;property name=&quot;password&quot; value=&quot;$&#123;jdbc.password&#125;&quot; /&gt;
-     &lt;!-- c3p0连接池的私有属性 --&gt;
-     &lt;property name=&quot;maxPoolSize&quot; value=&quot;30&quot; /&gt;
-     &lt;property name=&quot;minPoolSize&quot; value=&quot;10&quot; /&gt;
-     &lt;!-- 关闭连接后不自动commit --&gt;
-     &lt;property name=&quot;autoCommitOnClose&quot; value=&quot;false&quot; /&gt;
-     &lt;!-- 获取连接超时时间 --&gt;
-     &lt;property name=&quot;checkoutTimeout&quot; value=&quot;10000&quot; /&gt;
-     &lt;!-- 当获取连接失败重试次数 --&gt;
-     &lt;property name=&quot;acquireRetryAttempts&quot; value=&quot;2&quot; /&gt;
- &lt;/bean&gt;
-
- &lt;!-- 3.配置SqlSessionFactory对象,用于创建数据库连接池的对象 --&gt;
- &lt;bean id=&quot;sqlSessionFactory&quot; class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;
-     &lt;!-- 注入数据库连接池 --&gt;
-     &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot; /&gt;
-     &lt;!-- 配置MyBaties全局配置文件:mybatis-config.xml --&gt;
-     &lt;property name=&quot;configLocation&quot; value=&quot;classpath:mybatis-config.xml&quot; /&gt;
-     &lt;!-- 扫描entity包 使用别名 --&gt;
-     &lt;property name=&quot;typeAliasesPackage&quot; value=&quot;com.imooc.o2o.entity&quot; /&gt;
-     &lt;!-- 扫描sql配置文件:mapper需要的xml文件 --&gt;
-     &lt;property name=&quot;mapperLocations&quot; value=&quot;classpath:mapper/*.xml&quot; /&gt;
- &lt;/bean&gt;
-
- &lt;!-- 4.配置扫描Dao接口包，动态实现Dao接口，注入到spring容器中 --&gt;
- &lt;bean class=&quot;org.mybatis.spring.mapper.MapperScannerConfigurer&quot;&gt;
-     &lt;!-- 注入sqlSessionFactory --&gt;
-     &lt;property name=&quot;sqlSessionFactoryBeanName&quot; value=&quot;sqlSessionFactory&quot; /&gt;
-     &lt;!-- 给出需要扫描Dao接口包 --&gt;
-     &lt;property name=&quot;basePackage&quot; value=&quot;com.imooc.o2o.dao&quot; /&gt;
- &lt;/bean&gt;
+    &lt;!-- 4.配置扫描Dao接口包，动态实现Dao接口，注入到spring容器中 --&gt;
+    &lt;bean class=&quot;org.mybatis.spring.mapper.MapperScannerConfigurer&quot;&gt;
+        &lt;!-- 注入sqlSessionFactory --&gt;
+        &lt;property name=&quot;sqlSessionFactoryBeanName&quot; value=&quot;sqlSessionFactory&quot; /&gt;
+        &lt;!-- 给出需要扫描Dao接口包 --&gt;
+        &lt;property name=&quot;basePackage&quot; value=&quot;com.imooc.o2o.dao&quot; /&gt;
+    &lt;/bean&gt;
 &lt;/beans&gt;
 </code></pre>
-</li>
-<li><p>Service层: src/main/resources/spring/spring-service.xml</p>
-</li>
+<ol start="2">
+<li>Service层: src/main/resources/spring/spring-service.xml</li>
 </ol>
 <pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;  
 &lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;  
@@ -964,12 +973,18 @@ jdbc.password=&quot;密码&quot;
 <hr>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h2 id="SSM框架实现功能的步骤"><a href="#SSM框架实现功能的步骤" class="headerlink" title="SSM框架实现功能的步骤"></a>SSM框架实现功能的步骤</h2><h3 id="1、在-dao-层"><a href="#1、在-dao-层" class="headerlink" title="1、在 dao 层"></a>1、在 dao 层</h3><ol>
 <li>创建出相应的接口</li>
-<li>定义相关的方法<h3 id="2、在-mapper-中"><a href="#2、在-mapper-中" class="headerlink" title="2、在 mapper 中"></a>2、在 mapper 中</h3></li>
+<li>定义相关的方法</li>
+</ol>
+<h3 id="2、在-mapper-中"><a href="#2、在-mapper-中" class="headerlink" title="2、在 mapper 中"></a>2、在 mapper 中</h3><ol>
 <li>在 resources/mapper 下面创建出与 dao层一一对应的xml文件</li>
-<li>在xml文件中定义出方法所需要的SQL<h3 id="3、在-service-层"><a href="#3、在-service-层" class="headerlink" title="3、在 service 层"></a>3、在 service 层</h3></li>
+<li>在xml文件中定义出方法所需要的SQL</li>
+</ol>
+<h3 id="3、在-service-层"><a href="#3、在-service-层" class="headerlink" title="3、在 service 层"></a>3、在 service 层</h3><ol>
 <li>实现类继承接口，包含类注解(@Service)，</li>
 <li>使用注解(@Autowired)将 dao 层接口注入进来</li>
-<li>调用 dao 层的方法，将我们需要的数据返回到 Controller 去<h3 id="4、在-controller-层"><a href="#4、在-controller-层" class="headerlink" title="4、在 controller 层"></a>4、在 controller 层</h3></li>
+<li>调用 dao 层的方法，将我们需要的数据返回到 Controller 去</li>
+</ol>
+<h3 id="4、在-controller-层"><a href="#4、在-controller-层" class="headerlink" title="4、在 controller 层"></a>4、在 controller 层</h3><ol>
 <li>包含有注解(@Controller，@RequestMapping(“/url”))的类 </li>
 <li>使用注解(@Autowired)将 dao 层接口注入进来</li>
 <li>创建包含有注解(@RequestMapping, @ResponseBody)的方法。</li>
@@ -978,14 +993,18 @@ jdbc.password=&quot;密码&quot;
 <hr>
 <h2 id="Junit测试步骤"><a href="#Junit测试步骤" class="headerlink" title="Junit测试步骤"></a>Junit测试步骤</h2><h3 id="1、定义一个基类"><a href="#1、定义一个基类" class="headerlink" title="1、定义一个基类"></a>1、定义一个基类</h3><ol>
 <li>一个包含类注解(@RunWith(SpringJunit4ClassRunner.class))的类,指定使用那个类来单元测试</li>
-<li>一个包含类注解(@ContextConfiguration({“1.xml”,”2.xml”}))的类,指定junit spring配置文件的文件，1.xml为junit的dao层做服务的，2.xml为service单元测试做服务配置的。<h3 id="2、定义一个实现类"><a href="#2、定义一个实现类" class="headerlink" title="2、定义一个实现类"></a>2、定义一个实现类</h3></li>
+<li>一个包含类注解(@ContextConfiguration({“1.xml”,”2.xml”}))的类,指定junit spring配置文件的文件，1.xml为junit的dao层做服务的，2.xml为service单元测试做服务配置的。</li>
+</ol>
+<h3 id="2、定义一个实现类"><a href="#2、定义一个实现类" class="headerlink" title="2、定义一个实现类"></a>2、定义一个实现类</h3><ol>
 <li>定义一个方法，包含注解(@Test)的测试方法。</li>
 </ol>
 <hr>
 <h2 id="SSM重点知识"><a href="#SSM重点知识" class="headerlink" title="SSM重点知识"></a>SSM重点知识</h2><h3 id="1、SpringMVC-DispatcherServlet"><a href="#1、SpringMVC-DispatcherServlet" class="headerlink" title="1、SpringMVC: DispatcherServlet"></a>1、SpringMVC: DispatcherServlet</h3><h3 id="2、Spring-IOC和AOP"><a href="#2、Spring-IOC和AOP" class="headerlink" title="2、Spring: IOC和AOP"></a>2、Spring: IOC和AOP</h3><ol>
 <li>IOC</li>
 <li>Aop<br>例如，增删改查的操作，都需要做权限验证，我们并不希望权限验证的代码杂糅在我们增删改查的方法里，我们可以通过AOP在程序运行时候动态的将我们权限代码植入到我们的增删改查方法的前面，以完成权限的验证。</li>
-<li>AOP的实现方式，就是动态代理。动态代理有JDK和CJL两种方式实现。<h3 id="3、MyBatis-ORM"><a href="#3、MyBatis-ORM" class="headerlink" title="3、MyBatis:ORM"></a>3、MyBatis:ORM</h3></li>
+<li>AOP的实现方式，就是动态代理。动态代理有JDK和CJL两种方式实现。</li>
+</ol>
+<h3 id="3、MyBatis-ORM"><a href="#3、MyBatis-ORM" class="headerlink" title="3、MyBatis:ORM"></a>3、MyBatis:ORM</h3><ol>
 <li>ORM就是通过使用描述对象和数据库之间映射的元数据，将程序中的对象自动持久化到关系数据库中。</li>
 <li>关系映射的实现方式。</li>
 </ol>
