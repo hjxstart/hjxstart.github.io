@@ -14,7 +14,7 @@
 <meta property="og:description" content="第一章 简单的SSM项目搭建1.1、环境配置JDK8, Maven3.3.9, MySQL8.0.12, Tomcat8, Eclipse  1.2、创建 Maven project的步骤 选择 maven-archetype-webapp类型。 输入项目名称。 引入tomcat的一个jar包。选择项目&gt;属性&gt;Java Build Path&gt;Libraries&gt;Add Li">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-06-25T23:58:18.000Z">
-<meta property="article:modified_time" content="2021-06-27T01:31:41.317Z">
+<meta property="article:modified_time" content="2021-06-27T01:37:00.276Z">
 <meta property="article:author" content="hjxstart">
 <meta property="article:tag" content="SSM">
 <meta name="twitter:card" content="summary">
@@ -504,7 +504,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-06-27 09:31:41'>2021-06-26 07:58</time>
+            发布时间 : <time class="date" title='最后更新: 2021-06-27 09:37:00'>2021-06-26 07:58</time>
         
     </div>
     <div class="article-meta">
@@ -526,7 +526,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E7%AE%80%E5%8D%95%E7%9A%84SSM%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA"><span class="toc-text">第一章 简单的SSM项目搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1%E3%80%81%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-text">1.1、环境配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2%E3%80%81%E5%88%9B%E5%BB%BA-Maven-project%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="toc-text">1.2、创建 Maven project的步骤</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97"><span class="toc-text">第二章 系统功能模块</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1%E3%80%81%E6%A8%A1%E5%9D%97%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E"><span class="toc-text">2.1、模块功能说明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1%E3%80%81%E5%89%8D%E7%AB%AF%E5%B1%95%E7%A4%BA%E7%B3%BB%E7%BB%9F"><span class="toc-text">2.1.1、前端展示系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2%E3%80%81%E5%BA%97%E5%AE%B6%E7%B3%BB%E7%BB%9F"><span class="toc-text">2.1.2、店家系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3%E3%80%81%E8%B6%85%E7%BA%A7%E7%AE%A1%E7%90%86%E5%91%98%E7%B3%BB%E7%BB%9F"><span class="toc-text">2.1.3、超级管理员系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2%E3%80%81%E6%A8%A1%E5%9D%97%E5%8A%9F%E8%83%BD%E5%AF%B9%E8%B1%A1"><span class="toc-text">2.2、模块功能对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1%E3%80%81%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%85%B3%E7%B3%BB%E5%9B%BE"><span class="toc-text">2.2.1、实体类关系图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2%E3%80%81%E5%AE%9E%E4%BD%93%E7%B1%BB%E4%BB%A3%E7%A0%81"><span class="toc-text">2.2.2、实体类代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3%E3%80%81%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-text">2.3、代码实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-1%E3%80%81%E5%88%9B%E5%BB%BA%E7%9B%B8%E5%BA%94%E7%9A%84%E7%B1%BB"><span class="toc-text">2.3.1、创建相应的类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-2%E3%80%81%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8"><span class="toc-text">2.3.2、创建数据库表</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE"><span class="toc-text">第三章 项目配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1%E3%80%81-%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E8%AF%B4%E6%98%8E"><span class="toc-text">3.1、 项目目录说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2%E3%80%81%E5%88%9B%E5%BB%BAsources-%E8%B5%84%E6%BA%90%E5%8C%85"><span class="toc-text">3.2、创建sources 资源包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3%E3%80%81%E5%88%9B%E5%BB%BApackage"><span class="toc-text">3.3、创建package</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4%E3%80%81%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE"><span class="toc-text">3.4、项目配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-1%E3%80%81%E9%85%8D%E7%BD%AE%E6%80%9D%E8%B7%AF%EF%BC%9A%E8%87%AA%E4%B8%8B%E8%80%8C%E4%B8%8A%E7%9A%84%E9%85%8D%E7%BD%AE%E3%80%82"><span class="toc-text">3.4.1、配置思路：自下而上的配置。</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-2%E3%80%81%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86"><span class="toc-text">3.4.2、依赖管理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Junit%E6%B5%8B%E8%AF%95%E6%AD%A5%E9%AA%A4"><span class="toc-text">Junit测试步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E5%9F%BA%E7%B1%BB"><span class="toc-text">1、定义一个基类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E5%AE%9E%E7%8E%B0%E7%B1%BB"><span class="toc-text">2、定义一个实现类</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SSM%E9%87%8D%E7%82%B9%E7%9F%A5%E8%AF%86"><span class="toc-text">SSM重点知识</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81SpringMVC-DispatcherServlet"><span class="toc-text">1、SpringMVC: DispatcherServlet</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81Spring-IOC%E5%92%8CAOP"><span class="toc-text">2、Spring: IOC和AOP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E3%80%81MyBatis-ORM"><span class="toc-text">3、MyBatis:ORM</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E7%AE%80%E5%8D%95%E7%9A%84SSM%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA"><span class="toc-text">第一章 简单的SSM项目搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1%E3%80%81%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-text">1.1、环境配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2%E3%80%81%E5%88%9B%E5%BB%BA-Maven-project%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="toc-text">1.2、创建 Maven project的步骤</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97"><span class="toc-text">第二章 系统功能模块</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1%E3%80%81%E6%A8%A1%E5%9D%97%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E"><span class="toc-text">2.1、模块功能说明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1%E3%80%81%E5%89%8D%E7%AB%AF%E5%B1%95%E7%A4%BA%E7%B3%BB%E7%BB%9F"><span class="toc-text">2.1.1、前端展示系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2%E3%80%81%E5%BA%97%E5%AE%B6%E7%B3%BB%E7%BB%9F"><span class="toc-text">2.1.2、店家系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3%E3%80%81%E8%B6%85%E7%BA%A7%E7%AE%A1%E7%90%86%E5%91%98%E7%B3%BB%E7%BB%9F"><span class="toc-text">2.1.3、超级管理员系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2%E3%80%81%E6%A8%A1%E5%9D%97%E5%8A%9F%E8%83%BD%E5%AF%B9%E8%B1%A1"><span class="toc-text">2.2、模块功能对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1%E3%80%81%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%85%B3%E7%B3%BB%E5%9B%BE"><span class="toc-text">2.2.1、实体类关系图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2%E3%80%81%E5%AE%9E%E4%BD%93%E7%B1%BB%E4%BB%A3%E7%A0%81"><span class="toc-text">2.2.2、实体类代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3%E3%80%81%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-text">2.3、代码实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-1%E3%80%81%E5%88%9B%E5%BB%BA%E7%9B%B8%E5%BA%94%E7%9A%84%E7%B1%BB"><span class="toc-text">2.3.1、创建相应的类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-2%E3%80%81%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8"><span class="toc-text">2.3.2、创建数据库表</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE"><span class="toc-text">第三章 项目配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1%E3%80%81-%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E8%AF%B4%E6%98%8E"><span class="toc-text">3.1、 项目目录说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2%E3%80%81%E5%88%9B%E5%BB%BAsources-%E8%B5%84%E6%BA%90%E5%8C%85"><span class="toc-text">3.2、创建sources 资源包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3%E3%80%81%E5%88%9B%E5%BB%BApackage"><span class="toc-text">3.3、创建package</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4%E3%80%81%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE"><span class="toc-text">3.4、项目配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-1%E3%80%81%E9%85%8D%E7%BD%AE%E6%80%9D%E8%B7%AF%EF%BC%9A%E8%87%AA%E4%B8%8B%E8%80%8C%E4%B8%8A%E7%9A%84%E9%85%8D%E7%BD%AE%E3%80%82"><span class="toc-text">3.4.1、配置思路：自下而上的配置。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-2%E3%80%81%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86"><span class="toc-text">3.4.2、依赖管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-3%E3%80%81-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E9%85%8D%E7%BD%AE%E6%93%8D%E4%BD%9C"><span class="toc-text">3.4.3、 数据库的配置操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-4%E3%80%81-Spring%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE"><span class="toc-text">3.4.4、 Spring相关配置</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#SSM%E6%A1%86%E6%9E%B6%E5%AE%9E%E7%8E%B0%E5%8A%9F%E8%83%BD%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="toc-text">SSM框架实现功能的步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E5%9C%A8-dao-%E5%B1%82"><span class="toc-text">1、在 dao 层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E5%9C%A8-mapper-%E4%B8%AD"><span class="toc-text">2、在 mapper 中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E5%9C%A8-service-%E5%B1%82"><span class="toc-text">3、在 service 层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E3%80%81%E5%9C%A8-controller-%E5%B1%82"><span class="toc-text">4、在 controller 层</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Junit%E6%B5%8B%E8%AF%95%E6%AD%A5%E9%AA%A4"><span class="toc-text">Junit测试步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E5%9F%BA%E7%B1%BB"><span class="toc-text">1、定义一个基类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E5%AE%9E%E7%8E%B0%E7%B1%BB"><span class="toc-text">2、定义一个实现类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SSM%E9%87%8D%E7%82%B9%E7%9F%A5%E8%AF%86"><span class="toc-text">SSM重点知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81SpringMVC-DispatcherServlet"><span class="toc-text">1、SpringMVC: DispatcherServlet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81Spring-IOC%E5%92%8CAOP"><span class="toc-text">2、Spring: IOC和AOP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81MyBatis-ORM"><span class="toc-text">3、MyBatis:ORM</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -619,7 +619,7 @@
 </ol>
 <hr>
 <h2 id="2-3、代码实现"><a href="#2-3、代码实现" class="headerlink" title="2.3、代码实现"></a>2.3、代码实现</h2><h3 id="2-3-1、创建相应的类"><a href="#2-3-1、创建相应的类" class="headerlink" title="2.3.1、创建相应的类"></a>2.3.1、创建相应的类</h3><h3 id="2-3-2、创建数据库表"><a href="#2-3-2、创建数据库表" class="headerlink" title="2.3.2、创建数据库表"></a>2.3.2、创建数据库表</h3><hr>
-<h1 id="第三章-项目配置"><a href="#第三章-项目配置" class="headerlink" title="第三章 项目配置"></a>第三章 项目配置</h1><h3 id="3-1、-项目目录说明"><a href="#3-1、-项目目录说明" class="headerlink" title="3.1、 项目目录说明"></a>3.1、 项目目录说明</h3><ol>
+<h1 id="第三章-项目配置"><a href="#第三章-项目配置" class="headerlink" title="第三章 项目配置"></a>第三章 项目配置</h1><h2 id="3-1、-项目目录说明"><a href="#3-1、-项目目录说明" class="headerlink" title="3.1、 项目目录说明"></a>3.1、 项目目录说明</h2><ol>
 <li>src/main/java:业务代码</li>
 <li>src/main/resources:项目资源文件.例如:spring, mapper等。</li>
 <li>src/test/java:单元测试代码</li>
@@ -630,12 +630,14 @@
 <li>src/main/webapp/WEB-INF/web.xml:用于初始化配置信息。例如welcoml page,初始化sevlet,servlet mapper</li>
 <li>target:存放项目构建后的文件和目录，jar,war,编译的class文件等。</li>
 </ol>
-<p>      </p>
-<h3 id="3-2、创建sources-资源包"><a href="#3-2、创建sources-资源包" class="headerlink" title="3.2、创建sources 资源包"></a>3.2、创建sources 资源包</h3><ol>
+<hr>
+<p>    </p>
+<h2 id="3-2、创建sources-资源包"><a href="#3-2、创建sources-资源包" class="headerlink" title="3.2、创建sources 资源包"></a>3.2、创建sources 资源包</h2><ol>
 <li>src/main/resources/spring:存放spring相关的配置信息</li>
 <li>src/main/resources/mapper:存放dao中每个方法对应的service,不需要写dao的实现类,由mybatis自动实现,日志配置文件。</li>
 </ol>
-<h3 id="3-3、创建package"><a href="#3-3、创建package" class="headerlink" title="3.3、创建package"></a>3.3、创建package</h3><ol>
+<hr>
+<h2 id="3-3、创建package"><a href="#3-3、创建package" class="headerlink" title="3.3、创建package"></a>3.3、创建package</h2><ol>
 <li>com.imooc.o2o.entity:实体类包</li>
 <li>com.imooc.o2o.web:controller层，存放controller控制器</li>
 <li>com.imooc.o2o.service:业务逻辑层，</li>
@@ -646,16 +648,22 @@
 <li>com.imooc.o2o.intercaptor:拦截器代码</li>
 <li>com.imooc.o2o.util:通用工具类</li>
 </ol>
-<h3 id="3-4、项目配置"><a href="#3-4、项目配置" class="headerlink" title="3.4、项目配置"></a>3.4、项目配置</h3><h4 id="3-4-1、配置思路：自下而上的配置。"><a href="#3-4-1、配置思路：自下而上的配置。" class="headerlink" title="3.4.1、配置思路：自下而上的配置。"></a>3.4.1、配置思路：自下而上的配置。</h4><ol>
+<hr>
+<h2 id="3-4、项目配置"><a href="#3-4、项目配置" class="headerlink" title="3.4、项目配置"></a>3.4、项目配置</h2><h3 id="3-4-1、配置思路：自下而上的配置。"><a href="#3-4-1、配置思路：自下而上的配置。" class="headerlink" title="3.4.1、配置思路：自下而上的配置。"></a>3.4.1、配置思路：自下而上的配置。</h3><ol>
 <li>在pom.xml指定项目所需要的jar包；</li>
 <li>在jdbc.properties指定数据库的连接方式和创建mybatis-config.xml对mybatis进行配置；</li>
 <li>创建spring-dao.xml将jdbc.proerties和mybatis-config.xml加载进来了并创建连接池同时配置好mybatis和数据库交互的方式；</li>
 <li>创建spring-service.xml做事务管理，将spring在dao层配置好的dataSource连接池给注入到事务管理器中，便于service层做操作；</li>
 <li>创建spring-web.xmlding定义controller的行为；</li>
-<li>在web.xml将spring-dispatcher当做一个servlet注册到里面去来相应请求，同时将spring-*.xml的配置文件注册进来整合在一起。<h3 id="3-4-2、依赖管理"><a href="#3-4-2、依赖管理" class="headerlink" title="3.4.2、依赖管理"></a>3.4.2、依赖管理</h3></li>
-<li>Maven jar <a target="_blank" rel="noopener" href="https://mvnrepository.com/">链接</a></li>
-<li>pom.xml<br>```xml<br><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"><br><modelVersion>4.0.0</modelVersion><br><groupId>com.imooc</groupId><br><artifactId>o2o</artifactId><br><packaging>war</packaging><br><version>0.0.1-SNAPSHOT</version><br><name>o2o Maven Webapp</name><br><url><a target="_blank" rel="noopener" href="http://maven.apache.org/">http://maven.apache.org</a></url><properties>
+<li>在web.xml将spring-dispatcher当做一个servlet注册到里面去来相应请求，同时将spring-*.xml的配置文件注册进来整合在一起。</li>
+</ol>
+<hr>
+<h3 id="3-4-2、依赖管理"><a href="#3-4-2、依赖管理" class="headerlink" title="3.4.2、依赖管理"></a>3.4.2、依赖管理</h3><ol>
+<li><p>Maven jar <a target="_blank" rel="noopener" href="https://mvnrepository.com/">链接</a></p>
+</li>
+<li><p>pom.xml<br>```xml<br><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"><br><modelVersion>4.0.0</modelVersion><br><groupId>com.imooc</groupId><br><artifactId>o2o</artifactId><br><packaging>war</packaging><br><version>0.0.1-SNAPSHOT</version><br><name>o2o Maven Webapp</name><br><url><a target="_blank" rel="noopener" href="http://maven.apache.org/">http://maven.apache.org</a></url></p>
+<properties>
    <spring.version>4.3.7.RELEASE</spring.version>
 </properties>
 <dependencies>
@@ -787,196 +795,197 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
   </build>
 </project>
 ```
-#### 3.4.3、 数据库的配置操作
-1. 创建src/main/resources/jdbc.properties
-```properties
-jdbc.driver=com.mysql.cj.jdbc.Driver
-jdbc.url=jdbc:mysql://localhost:3306/o2o?useUnicode=true&characterEncoding=utf8&verifyServerCertificate=false&useSSL=false&allowPublicKeyRetrieval=true
+
+<hr>
+<h3 id="3-4-3、-数据库的配置操作"><a href="#3-4-3、-数据库的配置操作" class="headerlink" title="3.4.3、 数据库的配置操作"></a>3.4.3、 数据库的配置操作</h3><ol>
+<li><p>创建src/main/resources/jdbc.properties</p>
+<pre><code class="properties">jdbc.driver=com.mysql.cj.jdbc.Driver
+jdbc.url=jdbc:mysql://localhost:3306/o2o?useUnicode=true&amp;characterEncoding=utf8&amp;verifyServerCertificate=false&amp;useSSL=false&amp;allowPublicKeyRetrieval=true
 jdbc.username=root
-jdbc.password="密码"
-```
-2. 配置src/main/resources/mybatis-config.xml
-```xml
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
-<configuration>
-    <!-- 配置全局属性 -->
-    <settings>
-        <!-- 使用jdbc多的getGeneratedKeys获取数据库自增主键值 -->
-        <setting name="useGeneratedKeys" value="true" />
-        
-        <!-- 使用列标签替换列别名 默认:true-->
-        <setting name="useColumnLabel" value="true"/>
-        
-        <!-- 开启驼峰命名转换：Table{create_time} -> Entity{createTime}  -->
-        <setting name="mapUnderscoreToCamelCase" value="true"/>
-    </settings>
-</configuration>
-```
-#### 3.4.3、 Spring相关配置
-1. Dao层: src/main/resources/spring/spring-dao.xml
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
-    xsi:schemaLocation="http://www.springframework.org/schema/beans
-    http://www.springframework.org/schema/beans/spring-beans.xsd
-    http://www.springframework.org/schema/context
-    http://www.springframework.org/schema/context/spring-context.xsd">
-    <!-- 配置整合mybatis过程 -->
-    <!-- 1.配置数据库相关参数properties的属性：${url} -->
-    <context:property-placeholder location="classpath:jdbc.properties" />
-    
-    <!-- 2.数据库连接池 -->
-    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-        <!-- 配置连接池属性 -->
-        <property name="driverClass" value="${jdbc.driver}" />
-        <property name="jdbcUrl" value="${jdbc.url}" />
-        <property name="user" value="${jdbc.username}" />
-        <property name="password" value="${jdbc.password}" />
-        <!-- c3p0连接池的私有属性 -->
-        <property name="maxPoolSize" value="30" />
-        <property name="minPoolSize" value="10" />
-        <!-- 关闭连接后不自动commit -->
-        <property name="autoCommitOnClose" value="false" />
-        <!-- 获取连接超时时间 -->
-        <property name="checkoutTimeout" value="10000" />
-        <!-- 当获取连接失败重试次数 -->
-        <property name="acquireRetryAttempts" value="2" />
-    </bean>
-
-<pre><code>&lt;!-- 3.配置SqlSessionFactory对象,用于创建数据库连接池的对象 --&gt;
-&lt;bean id=&quot;sqlSessionFactory&quot; class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;
-    &lt;!-- 注入数据库连接池 --&gt;
-    &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot; /&gt;
-    &lt;!-- 配置MyBaties全局配置文件:mybatis-config.xml --&gt;
-    &lt;property name=&quot;configLocation&quot; value=&quot;classpath:mybatis-config.xml&quot; /&gt;
-    &lt;!-- 扫描entity包 使用别名 --&gt;
-    &lt;property name=&quot;typeAliasesPackage&quot; value=&quot;com.imooc.o2o.entity&quot; /&gt;
-    &lt;!-- 扫描sql配置文件:mapper需要的xml文件 --&gt;
-    &lt;property name=&quot;mapperLocations&quot; value=&quot;classpath:mapper/*.xml&quot; /&gt;
-&lt;/bean&gt;
-
-&lt;!-- 4.配置扫描Dao接口包，动态实现Dao接口，注入到spring容器中 --&gt;
-&lt;bean class=&quot;org.mybatis.spring.mapper.MapperScannerConfigurer&quot;&gt;
-    &lt;!-- 注入sqlSessionFactory --&gt;
-    &lt;property name=&quot;sqlSessionFactoryBeanName&quot; value=&quot;sqlSessionFactory&quot; /&gt;
-    &lt;!-- 给出需要扫描Dao接口包 --&gt;
-    &lt;property name=&quot;basePackage&quot; value=&quot;com.imooc.o2o.dao&quot; /&gt;
-&lt;/bean&gt;
+jdbc.password=&quot;密码&quot;
 </code></pre>
-</beans>
-```
-2. Service层: src/main/resources/spring/spring-service.xml
-```xml
-<?xml version="1.0" encoding="UTF-8"?>  
-<beans xmlns="http://www.springframework.org/schema/beans"  
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
-    xmlns:context="http://www.springframework.org/schema/context"  
-    xmlns:tx="http://www.springframework.org/schema/tx"  
-    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+</li>
+<li><p>配置src/main/resources/mybatis-config.xml</p>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;!DOCTYPE configuration PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&gt;
+&lt;configuration&gt;
+ &lt;!-- 配置全局属性 --&gt;
+ &lt;settings&gt;
+     &lt;!-- 使用jdbc多的getGeneratedKeys获取数据库自增主键值 --&gt;
+     &lt;setting name=&quot;useGeneratedKeys&quot; value=&quot;true&quot; /&gt;
+     
+     &lt;!-- 使用列标签替换列别名 默认:true--&gt;
+     &lt;setting name=&quot;useColumnLabel&quot; value=&quot;true&quot;/&gt;
+     
+     &lt;!-- 开启驼峰命名转换：Table&#123;create_time&#125; -&gt; Entity&#123;createTime&#125;  --&gt;
+     &lt;setting name=&quot;mapUnderscoreToCamelCase&quot; value=&quot;true&quot;/&gt;
+ &lt;/settings&gt;
+&lt;/configuration&gt;
+</code></pre>
+</li>
+</ol>
+<hr>
+<h3 id="3-4-4、-Spring相关配置"><a href="#3-4-4、-Spring相关配置" class="headerlink" title="3.4.4、 Spring相关配置"></a>3.4.4、 Spring相关配置</h3><ol>
+<li><p>Dao层: src/main/resources/spring/spring-dao.xml</p>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+ xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+ xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd&quot;&gt;
+ &lt;!-- 配置整合mybatis过程 --&gt;
+ &lt;!-- 1.配置数据库相关参数properties的属性：$&#123;url&#125; --&gt;
+ &lt;context:property-placeholder location=&quot;classpath:jdbc.properties&quot; /&gt;
+ 
+ &lt;!-- 2.数据库连接池 --&gt;
+ &lt;bean id=&quot;dataSource&quot; class=&quot;com.mchange.v2.c3p0.ComboPooledDataSource&quot;&gt;
+     &lt;!-- 配置连接池属性 --&gt;
+     &lt;property name=&quot;driverClass&quot; value=&quot;$&#123;jdbc.driver&#125;&quot; /&gt;
+     &lt;property name=&quot;jdbcUrl&quot; value=&quot;$&#123;jdbc.url&#125;&quot; /&gt;
+     &lt;property name=&quot;user&quot; value=&quot;$&#123;jdbc.username&#125;&quot; /&gt;
+     &lt;property name=&quot;password&quot; value=&quot;$&#123;jdbc.password&#125;&quot; /&gt;
+     &lt;!-- c3p0连接池的私有属性 --&gt;
+     &lt;property name=&quot;maxPoolSize&quot; value=&quot;30&quot; /&gt;
+     &lt;property name=&quot;minPoolSize&quot; value=&quot;10&quot; /&gt;
+     &lt;!-- 关闭连接后不自动commit --&gt;
+     &lt;property name=&quot;autoCommitOnClose&quot; value=&quot;false&quot; /&gt;
+     &lt;!-- 获取连接超时时间 --&gt;
+     &lt;property name=&quot;checkoutTimeout&quot; value=&quot;10000&quot; /&gt;
+     &lt;!-- 当获取连接失败重试次数 --&gt;
+     &lt;property name=&quot;acquireRetryAttempts&quot; value=&quot;2&quot; /&gt;
+ &lt;/bean&gt;
+
+ &lt;!-- 3.配置SqlSessionFactory对象,用于创建数据库连接池的对象 --&gt;
+ &lt;bean id=&quot;sqlSessionFactory&quot; class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;
+     &lt;!-- 注入数据库连接池 --&gt;
+     &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot; /&gt;
+     &lt;!-- 配置MyBaties全局配置文件:mybatis-config.xml --&gt;
+     &lt;property name=&quot;configLocation&quot; value=&quot;classpath:mybatis-config.xml&quot; /&gt;
+     &lt;!-- 扫描entity包 使用别名 --&gt;
+     &lt;property name=&quot;typeAliasesPackage&quot; value=&quot;com.imooc.o2o.entity&quot; /&gt;
+     &lt;!-- 扫描sql配置文件:mapper需要的xml文件 --&gt;
+     &lt;property name=&quot;mapperLocations&quot; value=&quot;classpath:mapper/*.xml&quot; /&gt;
+ &lt;/bean&gt;
+
+ &lt;!-- 4.配置扫描Dao接口包，动态实现Dao接口，注入到spring容器中 --&gt;
+ &lt;bean class=&quot;org.mybatis.spring.mapper.MapperScannerConfigurer&quot;&gt;
+     &lt;!-- 注入sqlSessionFactory --&gt;
+     &lt;property name=&quot;sqlSessionFactoryBeanName&quot; value=&quot;sqlSessionFactory&quot; /&gt;
+     &lt;!-- 给出需要扫描Dao接口包 --&gt;
+     &lt;property name=&quot;basePackage&quot; value=&quot;com.imooc.o2o.dao&quot; /&gt;
+ &lt;/bean&gt;
+&lt;/beans&gt;
+</code></pre>
+</li>
+<li><p>Service层: src/main/resources/spring/spring-service.xml</p>
+</li>
+</ol>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;  
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;  
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;   
+    xmlns:context=&quot;http://www.springframework.org/schema/context&quot;  
+    xmlns:tx=&quot;http://www.springframework.org/schema/tx&quot;  
+    xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans  
     http://www.springframework.org/schema/beans/spring-beans.xsd  
     http://www.springframework.org/schema/context  
     http://www.springframework.org/schema/context/spring-context.xsd  
     http://www.springframework.org/schema/tx  
-    http://www.springframework.org/schema/tx/spring-tx.xsd">  
-    <!-- 扫描service包下所有使用注解的类型 -->  
-    <context:component-scan base-package="com.imooc.o2o.service" />  
+    http://www.springframework.org/schema/tx/spring-tx.xsd&quot;&gt;  
+    &lt;!-- 扫描service包下所有使用注解的类型 --&gt;  
+    &lt;context:component-scan base-package=&quot;com.imooc.o2o.service&quot; /&gt;  
   
-    <!-- 配置事务管理器,事务原子性等 -->  
-    <bean id="transactionManager"  
-        class="org.springframework.jdbc.datasource.DataSourceTransactionManager">  
-        <!-- 注入数据库连接池 -->  
-        <property name="dataSource" ref="dataSource" />  
-    </bean>  
+    &lt;!-- 配置事务管理器,事务原子性等 --&gt;  
+    &lt;bean id=&quot;transactionManager&quot;  
+        class=&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;&gt;  
+        &lt;!-- 注入数据库连接池 --&gt;  
+        &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot; /&gt;  
+    &lt;/bean&gt;  
   
-    <!-- 配置基于注解的声明式事务 -->  
-    <tx:annotation-driven transaction-manager="transactionManager" />  
-</beans>
-```
-3. Web层: src/main/resources/spring/spring-web.xml
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-    xmlns:context="http://www.springframework.org/schema/context" 
-    xmlns:mvc="http://www.springframework.org/schema/mvc" 
-    xsi:schemaLocation="http://www.springframework.org/schema/beans 
-    http://www.springframework.org/schema/beans/spring-beans.xsd 
-    http://www.springframework.org/schema/context 
-    http://www.springframework.org/schema/context/spring-context.xsd 
-    http://www.springframework.org/schema/mvc 
-    http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd"> 
-    <!-- HandlerMapping 无需配置，SpringMVC可以默认启动，DefaultAnnotationHandlerMapping annotation-driven HandlerMapping --> 
-    <!-- 配置SpringMVC --> 
-    <!-- 1.开启SpringMVC注解模式 --> 
-    <mvc:annotation-driven/> 
-    
-    <!-- 2.静态资源默认servlet配置 (1)加入对静态资源的处理：js,gif,png (2)允许使用"/"做整体映射 , 不会拦截，当为静态资源。 这两个都是处理静态资源的，区别可以理解成一个是指定一个自定义的serlvet来专门处理相应的静态资源，如果不指定 会默认找default名字的servlet 而<mvc:resources>的好处可以理解成是静态资源可以在我们项目中的任意位置配置，只需要将对应的位置声明即可 --> 
-    <mvc:resources mapping="/resources/**" location="/resources/"/> 
-    <mvc:default-servlet-handler/> 
-    
-    <!-- 3.定义视图解析器 --> 
-    <!-- ViewResolver:视图解析器。可以配置多个 但是一定要将这个ViewResolver(InternalResourceViewResolver) 放到最后 --> 
-    <!-- 解析json格式的传参和封装数据到页面，注意spring的版本和对应的配置方式 --> 
-    <!-- spring-4.2以后 --> 
-    <bean id="viewResolver" 
-        class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
-        <property name="prefix" value="/WEB-INF/html/"></property> 
-        <property name="suffix" value=".html"></property> 
-    </bean> 
-    
-    <!-- 4.扫描web相关的bean --> 
-    <!-- 激活组件扫描功能,扫描aop的相关组件组件 --> 
-    <context:component-scan base-package="com.imooc.o2o.web"/> 
-</beans>
-```
-4. 将sping的配置整合在一起，web.xml
-```xml
- <servlet>
-      <servlet-name>spring-dispatcher</servlet-name>
-      <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-      <init-param>
-          <param-name>contextConfigLocation</param-name>
-          <param-value>classpath:spring/spring-*.xml</param-value>
-      </init-param>
-  </servlet>
-  <servlet-mapping>
-      <servlet-name>spring-dispatcher</servlet-name>
-      <!-- 默认匹配所有的请求 -->
-      <url-pattern>/</url-pattern>
-  </servlet-mapping>
-```
----
-# 总结
-## SSM框架实现功能的步骤
-#### 1、在 dao 层
-1. 创建出相应的接口
-2. 定义相关的方法
-#### 2、在 mapper 中
-1. 在 resources/mapper 下面创建出与 dao层一一对应的xml文件
-2. 在xml文件中定义出方法所需要的SQL
-#### 3、在 service 层
-1. 实现类继承接口，包含类注解(@Service)，
-2. 使用注解(@Autowired)将 dao 层接口注入进来
-3. 调用 dao 层的方法，将我们需要的数据返回到 Controller 去
-#### 4、在 controller 层
-1. 包含有注解(@Controller，@RequestMapping("/url"))的类 
-2. 使用注解(@Autowired)将 dao 层接口注入进来
-3. 创建包含有注解(@RequestMapping, @ResponseBody)的方法。
-3. 调用 dao 层接口的方法获取数据后，直接将数据返回前台。
-
+    &lt;!-- 配置基于注解的声明式事务 --&gt;  
+    &lt;tx:annotation-driven transaction-manager=&quot;transactionManager&quot; /&gt;  
+&lt;/beans&gt;
+</code></pre>
+<ol start="3">
+<li><p>Web层: src/main/resources/spring/spring-web.xml</p>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot; 
+ xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; 
+ xmlns:context=&quot;http://www.springframework.org/schema/context&quot; 
+ xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot; 
+ xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans 
+ http://www.springframework.org/schema/beans/spring-beans.xsd 
+ http://www.springframework.org/schema/context 
+ http://www.springframework.org/schema/context/spring-context.xsd 
+ http://www.springframework.org/schema/mvc 
+ http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd&quot;&gt; 
+ &lt;!-- HandlerMapping 无需配置，SpringMVC可以默认启动，DefaultAnnotationHandlerMapping annotation-driven HandlerMapping --&gt; 
+ &lt;!-- 配置SpringMVC --&gt; 
+ &lt;!-- 1.开启SpringMVC注解模式 --&gt; 
+ &lt;mvc:annotation-driven/&gt; 
+ 
+ &lt;!-- 2.静态资源默认servlet配置 (1)加入对静态资源的处理：js,gif,png (2)允许使用&quot;/&quot;做整体映射 , 不会拦截，当为静态资源。 这两个都是处理静态资源的，区别可以理解成一个是指定一个自定义的serlvet来专门处理相应的静态资源，如果不指定 会默认找default名字的servlet 而&lt;mvc:resources&gt;的好处可以理解成是静态资源可以在我们项目中的任意位置配置，只需要将对应的位置声明即可 --&gt; 
+ &lt;mvc:resources mapping=&quot;/resources/**&quot; location=&quot;/resources/&quot;/&gt; 
+ &lt;mvc:default-servlet-handler/&gt; 
+ 
+ &lt;!-- 3.定义视图解析器 --&gt; 
+ &lt;!-- ViewResolver:视图解析器。可以配置多个 但是一定要将这个ViewResolver(InternalResourceViewResolver) 放到最后 --&gt; 
+ &lt;!-- 解析json格式的传参和封装数据到页面，注意spring的版本和对应的配置方式 --&gt; 
+ &lt;!-- spring-4.2以后 --&gt; 
+ &lt;bean id=&quot;viewResolver&quot; 
+     class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt; 
+     &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/html/&quot;&gt;&lt;/property&gt; 
+     &lt;property name=&quot;suffix&quot; value=&quot;.html&quot;&gt;&lt;/property&gt; 
+ &lt;/bean&gt; 
+ 
+ &lt;!-- 4.扫描web相关的bean --&gt; 
+ &lt;!-- 激活组件扫描功能,扫描aop的相关组件组件 --&gt; 
+ &lt;context:component-scan base-package=&quot;com.imooc.o2o.web&quot;/&gt; 
+&lt;/beans&gt;
+</code></pre>
+</li>
+<li><p>将sping的配置整合在一起，web.xml</p>
+</li>
+</ol>
+<pre><code class="xml"> &lt;servlet&gt;
+      &lt;servlet-name&gt;spring-dispatcher&lt;/servlet-name&gt;
+      &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
+      &lt;init-param&gt;
+          &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+          &lt;param-value&gt;classpath:spring/spring-*.xml&lt;/param-value&gt;
+      &lt;/init-param&gt;
+  &lt;/servlet&gt;
+  &lt;servlet-mapping&gt;
+      &lt;servlet-name&gt;spring-dispatcher&lt;/servlet-name&gt;
+      &lt;!-- 默认匹配所有的请求 --&gt;
+      &lt;url-pattern&gt;/&lt;/url-pattern&gt;
+  &lt;/servlet-mapping&gt;
+</code></pre>
 <hr>
-<h2 id="Junit测试步骤"><a href="#Junit测试步骤" class="headerlink" title="Junit测试步骤"></a>Junit测试步骤</h2><h4 id="1、定义一个基类"><a href="#1、定义一个基类" class="headerlink" title="1、定义一个基类"></a>1、定义一个基类</h4><ol>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h2 id="SSM框架实现功能的步骤"><a href="#SSM框架实现功能的步骤" class="headerlink" title="SSM框架实现功能的步骤"></a>SSM框架实现功能的步骤</h2><h3 id="1、在-dao-层"><a href="#1、在-dao-层" class="headerlink" title="1、在 dao 层"></a>1、在 dao 层</h3><ol>
+<li>创建出相应的接口</li>
+<li>定义相关的方法<h3 id="2、在-mapper-中"><a href="#2、在-mapper-中" class="headerlink" title="2、在 mapper 中"></a>2、在 mapper 中</h3></li>
+<li>在 resources/mapper 下面创建出与 dao层一一对应的xml文件</li>
+<li>在xml文件中定义出方法所需要的SQL<h3 id="3、在-service-层"><a href="#3、在-service-层" class="headerlink" title="3、在 service 层"></a>3、在 service 层</h3></li>
+<li>实现类继承接口，包含类注解(@Service)，</li>
+<li>使用注解(@Autowired)将 dao 层接口注入进来</li>
+<li>调用 dao 层的方法，将我们需要的数据返回到 Controller 去<h3 id="4、在-controller-层"><a href="#4、在-controller-层" class="headerlink" title="4、在 controller 层"></a>4、在 controller 层</h3></li>
+<li>包含有注解(@Controller，@RequestMapping(“/url”))的类 </li>
+<li>使用注解(@Autowired)将 dao 层接口注入进来</li>
+<li>创建包含有注解(@RequestMapping, @ResponseBody)的方法。</li>
+<li>调用 dao 层接口的方法获取数据后，直接将数据返回前台。</li>
+</ol>
+<hr>
+<h2 id="Junit测试步骤"><a href="#Junit测试步骤" class="headerlink" title="Junit测试步骤"></a>Junit测试步骤</h2><h3 id="1、定义一个基类"><a href="#1、定义一个基类" class="headerlink" title="1、定义一个基类"></a>1、定义一个基类</h3><ol>
 <li>一个包含类注解(@RunWith(SpringJunit4ClassRunner.class))的类,指定使用那个类来单元测试</li>
-<li>一个包含类注解(@ContextConfiguration({“1.xml”,”2.xml”}))的类,指定junit spring配置文件的文件，1.xml为junit的dao层做服务的，2.xml为service单元测试做服务配置的。<h4 id="2、定义一个实现类"><a href="#2、定义一个实现类" class="headerlink" title="2、定义一个实现类"></a>2、定义一个实现类</h4></li>
+<li>一个包含类注解(@ContextConfiguration({“1.xml”,”2.xml”}))的类,指定junit spring配置文件的文件，1.xml为junit的dao层做服务的，2.xml为service单元测试做服务配置的。<h3 id="2、定义一个实现类"><a href="#2、定义一个实现类" class="headerlink" title="2、定义一个实现类"></a>2、定义一个实现类</h3></li>
 <li>定义一个方法，包含注解(@Test)的测试方法。</li>
 </ol>
 <hr>
-<h2 id="SSM重点知识"><a href="#SSM重点知识" class="headerlink" title="SSM重点知识"></a>SSM重点知识</h2><h4 id="1、SpringMVC-DispatcherServlet"><a href="#1、SpringMVC-DispatcherServlet" class="headerlink" title="1、SpringMVC: DispatcherServlet"></a>1、SpringMVC: DispatcherServlet</h4><h4 id="2、Spring-IOC和AOP"><a href="#2、Spring-IOC和AOP" class="headerlink" title="2、Spring: IOC和AOP"></a>2、Spring: IOC和AOP</h4><ol>
+<h2 id="SSM重点知识"><a href="#SSM重点知识" class="headerlink" title="SSM重点知识"></a>SSM重点知识</h2><h3 id="1、SpringMVC-DispatcherServlet"><a href="#1、SpringMVC-DispatcherServlet" class="headerlink" title="1、SpringMVC: DispatcherServlet"></a>1、SpringMVC: DispatcherServlet</h3><h3 id="2、Spring-IOC和AOP"><a href="#2、Spring-IOC和AOP" class="headerlink" title="2、Spring: IOC和AOP"></a>2、Spring: IOC和AOP</h3><ol>
 <li>IOC</li>
 <li>Aop<br>例如，增删改查的操作，都需要做权限验证，我们并不希望权限验证的代码杂糅在我们增删改查的方法里，我们可以通过AOP在程序运行时候动态的将我们权限代码植入到我们的增删改查方法的前面，以完成权限的验证。</li>
-<li>AOP的实现方式，就是动态代理。动态代理有JDK和CJL两种方式实现。<h4 id="3、MyBatis-ORM"><a href="#3、MyBatis-ORM" class="headerlink" title="3、MyBatis:ORM"></a>3、MyBatis:ORM</h4></li>
+<li>AOP的实现方式，就是动态代理。动态代理有JDK和CJL两种方式实现。<h3 id="3、MyBatis-ORM"><a href="#3、MyBatis-ORM" class="headerlink" title="3、MyBatis:ORM"></a>3、MyBatis:ORM</h3></li>
 <li>ORM就是通过使用描述对象和数据库之间映射的元数据，将程序中的对象自动持久化到关系数据库中。</li>
 <li>关系映射的实现方式。</li>
 </ol>
