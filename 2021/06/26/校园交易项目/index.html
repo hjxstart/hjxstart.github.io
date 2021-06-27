@@ -14,7 +14,7 @@
 <meta property="og:description" content="第一章 简单的SSM项目搭建1.1、环境配置JDK8, Maven3.3.9, MySQL8.0.12, Tomcat8, Eclipse  1.2、创建 Maven project的步骤 选择 maven-archetype-webapp类型。 输入项目名称。 引入tomcat的一个jar包。选择项目&gt;属性&gt;Java Build Path&gt;Libraries&gt;Add Li">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-06-25T23:58:18.000Z">
-<meta property="article:modified_time" content="2021-06-27T03:22:56.624Z">
+<meta property="article:modified_time" content="2021-06-27T03:25:42.643Z">
 <meta property="article:author" content="hjxstart">
 <meta property="article:tag" content="SSM">
 <meta name="twitter:card" content="summary">
@@ -504,7 +504,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-06-27 11:22:56'>2021-06-26 07:58</time>
+            发布时间 : <time class="date" title='最后更新: 2021-06-27 11:25:42'>2021-06-26 07:58</time>
         
     </div>
     <div class="article-meta">
@@ -972,16 +972,26 @@ jdbc.password=&quot;密码&quot;
 </code></pre>
 <hr>
 <h1 id="第四章-代码实现"><a href="#第四章-代码实现" class="headerlink" title="第四章 代码实现"></a>第四章 代码实现</h1><h2 id="4-1、简单的SSM案例-Area"><a href="#4-1、简单的SSM案例-Area" class="headerlink" title="4.1、简单的SSM案例-Area"></a>4.1、简单的SSM案例-Area</h2><h3 id="4-1-1、dao层"><a href="#4-1-1、dao层" class="headerlink" title="4.1.1、dao层"></a>4.1.1、dao层</h3><ol>
-<li>在dao 层创建一个AreaDao 接口，代码如下<br>```Java<br>package com.imooc.o2o.dao;</li>
+<li>在dao 层创建一个AreaDao 接口，代码如下</li>
 </ol>
-<p>import java.util.List;<br>import com.imooc.o2o.entity.Area;</p>
-<p>public interface AreaDao {<br>    /**<br>     * 列出区域列表<br>     * @return areaList<br>     */<br>    List<Area> queryArea();<br>}</p>
-<pre><code>---
+<pre><code class="Java">package com.imooc.o2o.dao;
 
-2. 在mapper 配置，创建AreaDao.xml, 代码如下
+import java.util.List;
+import com.imooc.o2o.entity.Area;
 
-```xml
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+public interface AreaDao &#123;
+    /**
+     * 列出区域列表
+     * @return areaList
+     */
+    List&lt;Area&gt; queryArea();
+&#125;
+</code></pre>
+<hr>
+<ol start="2">
+<li>在mapper 配置，创建AreaDao.xml, 代码如下</li>
+</ol>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
 &lt;mapper namespace=&quot;com.imooc.o2o.dao.AreaDao&quot;&gt;
     &lt;select id=&quot;queryArea&quot; resultType=&quot;com.imooc.o2o.entity.Area&quot;&gt;
@@ -997,21 +1007,29 @@ jdbc.password=&quot;密码&quot;
 <li>dao层单元测试，com.imooc.o2o.dao</li>
 </ol>
 <ul>
-<li>BaseTest.java 基类，初始化spring的配置<br>```Java<br>package com.imooc.o2o;</li>
+<li>BaseTest.java 基类，初始化spring的配置</li>
 </ul>
-<p>import org.junit.runner.RunWith;<br>import org.springframework.test.context.ContextConfiguration;<br>import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;</p>
-<p>/**</p>
-<ul>
-<li>初始化spring和junit整合，junit启动时加载springIOC容器</li>
-<li>@author jxh</li>
-<li>/<br>@RunWith(SpringJUnit4ClassRunner.class)<br>// 告诉Junit spring配置文件的位置<br>@ContextConfiguration({“classpath:spring/spring-dao.xml”, “classpath:spring/spring-service.xml”})<br>public class BaseTest {</li>
-</ul>
-<p>}</p>
-<pre><code>
-- 测试类
+<pre><code class="Java">package com.imooc.o2o;
 
-```Java
-package com.imooc.o2o.dao;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+/**
+ * 初始化spring和junit整合，junit启动时加载springIOC容器
+ * @author jxh
+ */
+@RunWith(SpringJUnit4ClassRunner.class)
+// 告诉Junit spring配置文件的位置
+@ContextConfiguration(&#123;&quot;classpath:spring/spring-dao.xml&quot;, &quot;classpath:spring/spring-service.xml&quot;&#125;)
+public class BaseTest &#123;
+    
+&#125;
+</code></pre>
+<ul>
+<li>测试类</li>
+</ul>
+<pre><code class="Java">package com.imooc.o2o.dao;
 
 import static org.junit.Assert.assertEquals;
 import java.util.List;
