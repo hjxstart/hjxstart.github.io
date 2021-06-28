@@ -504,7 +504,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-06-27 16:45:41'>2021-06-26 07:58</time>
+            发布时间 : <time class="date" title='最后更新: 2021-06-28 10:51:28'>2021-06-26 07:58</time>
         
     </div>
     <div class="article-meta">
@@ -1397,7 +1397,319 @@ public class ShopDaoTest extends BaseTest &#123;
     &#125;    
 &#125;
 </code></pre>
-<h3 id="5-1-4、service层代码"><a href="#5-1-4、service层代码" class="headerlink" title="5.1.4、service层代码"></a>5.1.4、service层代码</h3><h4 id="5-1-5、controller层代码"><a href="#5-1-5、controller层代码" class="headerlink" title="5.1.5、controller层代码"></a>5.1.5、controller层代码</h4><h4 id="5-1-3-4、Junit-单元测试"><a href="#5-1-3-4、Junit-单元测试" class="headerlink" title="5.1.3.4、Junit 单元测试"></a>5.1.3.4、Junit 单元测试</h4><h3 id="5-1-4、Session，图片处理工具Thumbnailator的使用"><a href="#5-1-4、Session，图片处理工具Thumbnailator的使用" class="headerlink" title="5.1.4、Session，图片处理工具Thumbnailator的使用"></a>5.1.4、Session，图片处理工具Thumbnailator的使用</h3><h3 id="5-1-5、前端设计与开发"><a href="#5-1-5、前端设计与开发" class="headerlink" title="5.1.5、前端设计与开发"></a>5.1.5、前端设计与开发</h3><hr>
+<h3 id="5-1-4、service层代码"><a href="#5-1-4、service层代码" class="headerlink" title="5.1.4、service层代码"></a>5.1.4、service层代码</h3><ol>
+<li>ShopService接口，定义操作方法和返回值</li>
+</ol>
+<pre><code class="Java">package com.imooc.o2o.service;
+
+import java.io.File;
+import com.imooc.o2o.dto.ShopExecution;
+import com.imooc.o2o.entity.Shop;
+
+public interface ShopService &#123;
+    ShopExecution addShop(Shop shop, File shopImg);
+&#125;
+</code></pre>
+<ol start="2">
+<li>dto，对返回值进行二次封装，添加status等参数</li>
+</ol>
+<pre><code class="Java">package com.imooc.o2o.dto;
+
+import java.util.List;
+
+import com.imooc.o2o.entity.Shop;
+import com.imooc.o2o.enums.ShopStateEnum;
+
+/**
+ * 添加店铺的返回类型，对shop进行封装，添加店铺的状态code，和状态信息
+ * @author jxh
+ *
+ */
+public class ShopExecution &#123;
+    private int state; // 结果状态
+    private String stateInfo; // 状态标识,接受 state的说明
+    private int count; // 店铺数量
+    private Shop shop; // 操作的shop (增删改店铺的时候用到)
+    private List&lt;Shop&gt; shopList; // shop列表(查询店铺列表的时候使用)
+    public ShopExecution() &#123;&#125;
+    // 店铺操作失败的时候使用的构造器
+    public ShopExecution(ShopStateEnum stateEnum) &#123;
+        this.state = stateEnum.getState();
+        this.stateInfo = stateEnum.getStateInfo();
+    &#125;
+    // 店铺操作成功时使用的构造器，同时返回单个shop
+    public ShopExecution(ShopStateEnum stateEnum, Shop shop) &#123;
+        this.state = stateEnum.getState();
+        this.stateInfo = stateEnum.getStateInfo();
+        this.shop = shop;
+    &#125;
+    // 店铺操作成功时使用的构造器，同时返回一个shop 列表
+    public ShopExecution(ShopStateEnum stateEnum, List&lt;Shop&gt; shopList) &#123;
+        this.state = stateEnum.getState();
+        this.stateInfo = stateEnum.getStateInfo();
+        this.shopList = shopList;
+    &#125;
+    // Getter &amp; Setter
+&#125;
+</code></pre>
+<ol start="3">
+<li>Service 实现类</li>
+</ol>
+<pre><code class="Java">package com.imooc.o2o.service.impi;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.util.Date;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
+import com.imooc.o2o.dao.ShopDao;
+import com.imooc.o2o.dto.ShopExecution;
+import com.imooc.o2o.entity.Shop;
+import com.imooc.o2o.enums.ShopStateEnum;
+import com.imooc.o2o.exceptions.ShopOperationException;
+import com.imooc.o2o.service.ShopService;
+import com.imooc.o2o.util.ImageUtil;
+import com.imooc.o2o.util.PathUtil;
+
+@Service
+public class ShopServicelmpl implements ShopService&#123;
+    @Autowired
+    private ShopDao shopDao;
+    @Override
+    public ShopExecution addShop(Shop shop, File shopImg) &#123;
+        if(shop == null) &#123;
+            return new ShopExecution(ShopStateEnum.NULL_SHOP);
+        &#125;
+        try &#123;
+            // 给店铺信息赋初始值
+            shop.setEnableStatus(0);
+            shop.setCreateTime(new Date());
+            shop.setLastEditTime(new Date());
+            // 添加店铺信息
+            int effectedNum = shopDao.insertShop(shop);
+            if(effectedNum &lt;= 0) &#123;
+                throw new ShopOperationException(&quot;店铺创建失败&quot;);
+            &#125;else &#123;
+                if(shopImg != null) &#123;
+                    // 存储图片
+                    try &#123;
+                        addShopImg(shop, shopImg);
+                    &#125; catch(Exception e) &#123;
+                        throw new ShopOperationException(&quot;添加店铺图片失败：&quot; + e.getMessage());
+                    &#125;
+                    // 更新店铺的图片地址
+                    effectedNum = shopDao.updateShop(shop);
+                    if(effectedNum &lt;= 0) &#123;
+                        throw new ShopOperationException(&quot;更新图片地址失败&quot;);
+                    &#125;
+                &#125;
+            &#125;    
+        &#125; catch(Exception e) &#123;
+            throw new ShopOperationException(&quot;addShop error:&quot; + e.getMessage());
+        &#125;
+        return new ShopExecution(ShopStateEnum.CHECK, shop);
+    &#125;
+    private void addShopImg(Shop shop, File shopImg) &#123;
+        // TODO Auto-generated method stub
+        String dest = PathUtil.getShopImagePath(shop.getShopId());
+        String shopImgAddr = ImageUtil.generateThumbnail(shopImg, dest);
+        shop.setShopImg(shopImgAddr);
+    &#125;
+&#125;
+</code></pre>
+<ol start="4">
+<li>工具类 ImageUtil.该工具类用于处理预先定义好的图片,该处使用了浓缩图。</li>
+</ol>
+<pre><code class="Java">package com.imooc.o2o.util;
+
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Random;
+import javax.imageio.ImageIO;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
+import net.coobird.thumbnailator.Thumbnails;
+import net.coobird.thumbnailator.geometry.Positions;
+import net.coobird.thumbnailator.name.Rename;
+
+/**
+ * 该工具类用于处理预先定义好的图片
+ * @author jxh
+ */
+public class ImageUtil &#123;
+    // 获取classpath的绝对值路径
+    private static String basePath = Thread.currentThread().getContextClassLoader().getResource(&quot;&quot;).getPath();
+    private static final SimpleDateFormat sDateFormat = new SimpleDateFormat(&quot;yyyMMddHHmmss&quot;);
+    private static final Random r = new Random();
+    // 缩略图
+    public static String generateThumbnail(File thumbnail, String targetAddr) &#123;
+        // 自定义图片名称，由于用户可能有重复的图片名称
+        String realFileName = getRandomFileName();
+        // 获取图片的后缀
+        String extension = getFileExtension(thumbnail);
+        System.out.print(&quot;=================================&quot; + extension);
+        // 用于处理路径不存在的情况
+        makeDirPath(targetAddr);
+        // 图片相对路径
+        String relativeAddr = targetAddr + realFileName + extension;
+        // 文件：相对路径 + 文件组成
+        File dest = new File(PathUtil.getImgBasePath() + relativeAddr);
+        // 创建缩略图
+        try &#123;
+            Thumbnails.of(thumbnail).size(200, 200)
+            .watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + &quot;/watermark.png&quot;)), 0.25f)
+            .outputQuality(0.8f).toFile(dest); // 压缩和输出路径
+        &#125; catch(IOException e) &#123;
+            e.printStackTrace();
+        &#125;
+        return relativeAddr;
+    &#125;
+    /**
+     * 创建目标路径所涉及的目录，即 /home/work/hjxstart/xxx.jpg, 那么 home work hjxstart 这三个文件夹都得自动创建
+     * @param targetAddr
+     */
+    private static void makeDirPath(String targetAddr) &#123;
+        // TODO Auto-generated method stub
+        String realFileParentPath = PathUtil.getImgBasePath() + targetAddr;
+        File dirPath = new File(realFileParentPath);
+        if(!dirPath.exists()) &#123;
+            dirPath.mkdirs();
+        &#125;
+    &#125;
+    /**
+     * 获取输入文件流的拓展名,获取最后一个.的字符
+     * @param thumbnail
+     * @return
+     */
+    private static String getFileExtension(File file) &#123;
+        String name = file.getName();
+        int lastIndexOf = name.lastIndexOf(&quot;.&quot;);
+        if (lastIndexOf == -1) &#123;
+            return &quot;&quot;; // empty extension
+        &#125;
+        return name.substring(lastIndexOf);
+    &#125;
+    /**
+     * 生成随机文件名，当前年月日小时分钟秒钟 + 五位随机数
+     * @return 随机文件名称
+     */
+    private static String getRandomFileName() &#123;
+        // 获取随机的五位数
+        int rannum = r.nextInt(89999) + 10000;
+        String nowTimeStr = sDateFormat.format(new Date());
+        return nowTimeStr + rannum;
+    &#125;
+    public static void main(String[] args) throws IOException &#123;
+        // 获取classpath的绝对值路径，由于这个方法是通过线程去执行的，可以通过线程逆推到类加载器，从而从类加载器得到资源路径
+        String basePath = Thread.currentThread().getContextClassLoader().getResource(&quot;&quot;).getPath();
+        Thumbnails.of(new File(&quot;/Users/jxh/Downloads/src.jpeg&quot;)) // 需要处理的文件
+        .size(200, 200) // 处理后的文件大小
+        .watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + &quot;/hjxstart.png&quot;)), 0.25f) // 添
+        .outputQuality(0.8f).toFile(&quot;/Users/jxh/Downloads/det.jpeg&quot;);
+    &#125;
+&#125;
+</code></pre>
+<ol start="5">
+<li>工具类 PathUtil。用于处理在不同系统下的路径问题。</li>
+</ol>
+<pre><code class="Java">package com.imooc.o2o.util;
+
+public class PathUtil &#123;
+    private static String seperator = System.getProperty(&quot;file.separator&quot;);
+    public static String getImgBasePath() &#123;
+        String os = System.getProperty(&quot;os.name&quot;);
+        String basePath=&quot;&quot;;
+        if(os.toLowerCase().startsWith(&quot;win&quot;)) &#123;
+            basePath = &quot;D:/projectdev/image/&quot;;
+        &#125;else &#123;
+            basePath = &quot;/Users/jxh/Downloads/image/&quot;;
+        &#125;
+        basePath = basePath.replace(&quot;/&quot;, seperator);
+        return basePath;
+    &#125;    
+    public static String getShopImagePath(long shopId) &#123;
+        String imagePath = &quot;upload/item/shop/&quot; + shopId + &quot;/&quot;;
+        return imagePath.replace(&quot;/&quot;, seperator);
+    &#125;
+&#125;
+</code></pre>
+<ol start="6">
+<li>Service层 单元测试</li>
+</ol>
+<pre><code class="Java">package com.imooc.o2o.service;
+
+import static org.junit.Assert.assertEquals;
+import java.io.File;
+import java.util.Date;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.imooc.o2o.BaseTest;
+import com.imooc.o2o.dto.ShopExecution;
+import com.imooc.o2o.entity.Area;
+import com.imooc.o2o.entity.PersonInfo;
+import com.imooc.o2o.entity.Shop;
+import com.imooc.o2o.entity.ShopCategory;
+import com.imooc.o2o.enums.ShopStateEnum;
+
+@Service
+public class ShopServiceTest extends BaseTest &#123;
+    @Autowired
+    private ShopService shopService;
+    @Test
+    public void testAddShop() &#123;
+        Shop shop = new Shop();
+        PersonInfo  owner = new PersonInfo();
+        Area area = new Area();
+        ShopCategory shopCategory = new ShopCategory();
+        // 由于该shop涉及其他表，所以给其他表设置了一些测试值，现在初始化这些值，才可以正常的添加店铺
+        owner.setUserId(1L);
+        area.setAreaId(2);
+        shopCategory.setShopCategoryId(1L);
+        shop.setOwner(owner);
+        shop.setArea(area);
+        shop.setShopCategory(shopCategory);
+        shop.setShopName(&quot;测试的店铺1&quot;);
+        shop.setShopDesc(&quot;test1&quot;);
+        shop.setShopAddr(&quot;test1&quot;);
+        shop.setPhone(&quot;test1&quot;);
+        shop.setCreateTime(new Date());
+        shop.setEnableStatus(ShopStateEnum.CHECK.getState()); // 0
+        shop.setAdvice(&quot;审核中&quot;);
+        File shopImg = new File(&quot;/Users/jxh/Downloads/xiaohuangren.jpeg&quot;);
+        ShopExecution se = shopService.addShop(shop,shopImg);
+        assertEquals(ShopStateEnum.CHECK.getState(), se.getState());
+    &#125;
+&#125;
+</code></pre>
+<hr>
+<h4 id="5-1-5、controller层代码"><a href="#5-1-5、controller层代码" class="headerlink" title="5.1.5、controller层代码"></a>5.1.5、controller层代码</h4><h4 id="5-1-3-4、Junit-单元测试"><a href="#5-1-3-4、Junit-单元测试" class="headerlink" title="5.1.3.4、Junit 单元测试"></a>5.1.3.4、Junit 单元测试</h4><h3 id="5-1-4、Session，图片处理工具Thumbnailator的使用"><a href="#5-1-4、Session，图片处理工具Thumbnailator的使用" class="headerlink" title="5.1.4、Session，图片处理工具Thumbnailator的使用"></a>5.1.4、Session，图片处理工具<a target="_blank" rel="noopener" href="https://github.com/coobird/thumbnailator">Thumbnailator</a>的使用</h3><ol>
+<li>导入依赖</li>
+</ol>
+<pre><code class="xml">    &lt;!-- 图片处理 --&gt;
+    &lt;!-- https://mvnrepository.com/artifact/net.coobird/thumbnailator --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;net.coobird&lt;/groupId&gt;
+        &lt;artifactId&gt;thumbnailator&lt;/artifactId&gt;
+        &lt;version&gt;0.4.8&lt;/version&gt;
+    &lt;/dependency&gt;
+</code></pre>
+<ol start="2">
+<li>简单的例子</li>
+</ol>
+<pre><code class="Java">public static void main(String[] args) throws IOException &#123;
+    // 获取class path的绝对值路径，由于这个方法是通过线程去执行的，可以通过线程逆推到类加载器，从而从类加载器得到资源路径
+    String basePath = Thread.currentThread().getContextClassLoader().getResource(&quot;&quot;).getPath();
+    Thumbnails.of(new File(&quot;/Users/jxh/Downloads/src.jpeg&quot;))
+    .size(200, 200).watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + &quot;/hjxstart.png&quot;)), 0.25f)
+    .outputQuality(0.8f).toFile(&quot;/Users/jxh/Downloads/det.jpeg&quot;);
+&#125;
+</code></pre>
+<h3 id="5-1-5、前端设计与开发"><a href="#5-1-5、前端设计与开发" class="headerlink" title="5.1.5、前端设计与开发"></a>5.1.5、前端设计与开发</h3><hr>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h2 id="SSM框架实现功能的步骤"><a href="#SSM框架实现功能的步骤" class="headerlink" title="SSM框架实现功能的步骤"></a>SSM框架实现功能的步骤</h2><ol>
 <li>在 dao 层</li>
 </ol>
