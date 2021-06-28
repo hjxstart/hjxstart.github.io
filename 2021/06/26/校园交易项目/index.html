@@ -6,17 +6,17 @@
   <meta name="keywords" content=" SSM ">
   <meta name="description" content="校园交易项目 | hjxstart的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="第一章 CDN开发上1.1、开发环境介绍$ node --version v14.15.1 $ npm --version 7.17.0 $ vue --version @vue&#x2F;cli 4.5.13   1.2、CDN方式使用Vue&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;vue@2.6.14&#x2F;dist&#x2F;vue.js&quot;&gt;&amp;">
+<meta name="description" content="第一章 简单的SSM项目搭建1.1、环境配置JDK8, Maven3.3.9, MySQL8.0.12, Tomcat8, Eclipse  1.2、创建 Maven project的步骤 选择 maven-archetype-webapp类型。 输入项目名称。 引入tomcat的一个jar包。选择项目&gt;属性&gt;Java Build Path&gt;Libraries&gt;Add Li">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue基础">
-<meta property="og:url" content="http://example.com/2021/06/23/Vue%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:title" content="校园交易项目">
+<meta property="og:url" content="http://example.com/2021/06/26/%E6%A0%A1%E5%9B%AD%E4%BA%A4%E6%98%93%E9%A1%B9%E7%9B%AE/index.html">
 <meta property="og:site_name" content="hjxstart的博客">
-<meta property="og:description" content="第一章 CDN开发上1.1、开发环境介绍$ node --version v14.15.1 $ npm --version 7.17.0 $ vue --version @vue&#x2F;cli 4.5.13   1.2、CDN方式使用Vue&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;vue@2.6.14&#x2F;dist&#x2F;vue.js&quot;&gt;&amp;">
+<meta property="og:description" content="第一章 简单的SSM项目搭建1.1、环境配置JDK8, Maven3.3.9, MySQL8.0.12, Tomcat8, Eclipse  1.2、创建 Maven project的步骤 选择 maven-archetype-webapp类型。 输入项目名称。 引入tomcat的一个jar包。选择项目&gt;属性&gt;Java Build Path&gt;Libraries&gt;Add Li">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-06-23T02:48:20.000Z">
-<meta property="article:modified_time" content="2021-06-24T03:25:48.523Z">
+<meta property="article:published_time" content="2021-06-25T23:58:18.000Z">
+<meta property="article:modified_time" content="2021-06-28T14:12:55.529Z">
 <meta property="article:author" content="hjxstart">
-<meta property="article:tag" content="Vue">
+<meta property="article:tag" content="SSM">
 <meta name="twitter:card" content="summary">
 
 
@@ -504,7 +504,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-06-28 21:41:15'>2021-06-26 07:58</time>
+            发布时间 : <time class="date" title='最后更新: 2021-06-28 22:12:55'>2021-06-26 07:58</time>
         
     </div>
     <div class="article-meta">
@@ -1286,20 +1286,10 @@ public class AreaController &#123;
 </ol>
 <pre><code class="Java">package com.imooc.o2o.dao;
 
-import com.imooc.o2o.entity.Shop;
-
 public interface ShopDao &#123;
-    /**
-     * 新增店铺
-     * @param shop
-     * @return 0&amp;1
-     */
+    // 新增店铺，return 0 &amp; 1
     int insertShop(Shop shop);
-    /**
-     * 更新店铺信息
-     * @param shop
-     * @return
-     */
+    // 更新店铺信息
     int updateShop(Shop shop);
 &#125;
 </code></pre>
@@ -1342,19 +1332,7 @@ public interface ShopDao &#123;
 </ol>
 <pre><code class="Java">package com.imooc.o2o.dao;
 
-import static org.junit.Assert.assertEquals;
-import java.util.Date;
-import org.junit.Ignore;
-import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import com.imooc.o2o.BaseTest;
-import com.imooc.o2o.entity.Area;
-import com.imooc.o2o.entity.PersonInfo;
-import com.imooc.o2o.entity.Shop;
-import com.imooc.o2o.entity.ShopCategory;
-
 public class ShopDaoTest extends BaseTest &#123;
-    
     @Autowired
     private ShopDao shopDao;
     @Test
@@ -1421,16 +1399,6 @@ public interface ShopService &#123;
 </ol>
 <pre><code class="Java">package com.imooc.o2o.dto;
 
-import java.util.List;
-
-import com.imooc.o2o.entity.Shop;
-import com.imooc.o2o.enums.ShopStateEnum;
-
-/**
- * 添加店铺的返回类型，对shop进行封装，添加店铺的状态code，和状态信息
- * @author jxh
- *
- */
 public class ShopExecution &#123;
     private int state; // 结果状态
     private String stateInfo; // 状态标识,接受 state的说明
@@ -1462,23 +1430,6 @@ public class ShopExecution &#123;
 <li>Service 实现类</li>
 </ol>
 <pre><code class="Java">package com.imooc.o2o.service.impi;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.util.Date;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.commons.CommonsMultipartFile;
-import com.imooc.o2o.dao.ShopDao;
-import com.imooc.o2o.dto.ShopExecution;
-import com.imooc.o2o.entity.Shop;
-import com.imooc.o2o.enums.ShopStateEnum;
-import com.imooc.o2o.exceptions.ShopOperationException;
-import com.imooc.o2o.service.ShopService;
-import com.imooc.o2o.util.ImageUtil;
-import com.imooc.o2o.util.PathUtil;
 
 @Service
 public class ShopServicelmpl implements ShopService&#123;
@@ -1531,20 +1482,6 @@ public class ShopServicelmpl implements ShopService&#123;
 </ol>
 <pre><code class="Java">package com.imooc.o2o.service;
 
-import static org.junit.Assert.assertEquals;
-import java.io.File;
-import java.util.Date;
-import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import com.imooc.o2o.BaseTest;
-import com.imooc.o2o.dto.ShopExecution;
-import com.imooc.o2o.entity.Area;
-import com.imooc.o2o.entity.PersonInfo;
-import com.imooc.o2o.entity.Shop;
-import com.imooc.o2o.entity.ShopCategory;
-import com.imooc.o2o.enums.ShopStateEnum;
-
 @Service
 public class ShopServiceTest extends BaseTest &#123;
     @Autowired
@@ -1576,7 +1513,193 @@ public class ShopServiceTest extends BaseTest &#123;
 &#125;
 </code></pre>
 <hr>
-<h3 id="5-1-3、-Controller层"><a href="#5-1-3、-Controller层" class="headerlink" title="5.1.3、 Controller层"></a>5.1.3、 Controller层</h3><hr>
+<h3 id="5-1-3、-Controller层"><a href="#5-1-3、-Controller层" class="headerlink" title="5.1.3、 Controller层"></a>5.1.3、 Controller层</h3><ol>
+<li>ShopManagementController.java</li>
+</ol>
+<pre><code class="Java">package com.imooc.o2o.web.shopadmin;
+
+@Controller
+@RequestMapping(&quot;/shopadmin&quot;)
+public class ShopManagementController &#123;
+    @Autowired
+    private ShopService shopService;
+    @RequestMapping(value=&quot;/registershop&quot;, method = RequestMethod.POST)
+    @ResponseBody
+    private Map&lt;String, Object&gt; registerShop(HttpServletRequest request) throws ShopOperationException, IOException &#123;
+        Map&lt;String, Object&gt; modelMap = new HashMap&lt;String, Object&gt;();
+            
+        // 验证码
+        if(!CodeUtil.checkVerifyCode(request)) &#123;
+            modelMap.put(&quot;success&quot;, false);
+            modelMap.put(&quot;errMsg&quot;, &quot;输入了错误的验证码&quot;);
+            return modelMap;
+        &#125;
+        // 1.接受并转化相应的参数，思路：获取前端传过来的店铺信息，将数据转换为实体类，同时获取前端传过来的文件流，将图片存放在shopImg里面去。
+        // 使用工具类，将相应的参数转化为字符串
+        String shopStr = HttpServletRequestUtil.getString(request, &quot;shopStr&quot;);
+        // 使用 jackson-databind库 将字符串转化为实体类，JSON to POJO and back
+        ObjectMapper mapper = new ObjectMapper();
+        Shop shop = null;
+        try &#123;
+            shop = mapper.readValue(shopStr, Shop.class);
+        &#125; catch(Exception e) &#123;
+            modelMap.put(&quot;success&quot;, false);
+            modelMap.put(&quot;errMsg&quot;, e.getMessage());
+            return modelMap;
+        &#125;
+        // 获取前端文件流，保存上传图片的文件流
+        CommonsMultipartFile shopImg = null; // 保存上传图片的文件流
+        // 从 request session 的上下文获取相关文件上传的内容
+        CommonsMultipartResolver commmonsMultipartResolver = new CommonsMultipartResolver(
+                request.getSession().getServletContext());
+        if(commmonsMultipartResolver.isMultipart(request)) &#123; // 判断是否有上传的文件流
+            // 如果有上传的文件流，就进行转换 MultipartHttpServletRequest 类型的对象，该对象可以被spring处理文件流对象
+            MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest) request;
+            // 从该上传对象中提取出图片的文件流，（shopImg 是与前端协商的名称）
+            shopImg = (CommonsMultipartFile) multipartHttpServletRequest.getFile(&quot;shopImg&quot;);
+        &#125; else &#123; // 如果没有图片就报错，因为图片是必须的
+            modelMap.put(&quot;success&quot;, false);
+            modelMap.put(&quot;errMsg&quot;, &quot;上传图片不能为空&quot;);
+            return modelMap;
+        &#125;
+        // 2.注册店铺
+        if(shop != null &amp;&amp; shopImg != null) &#123;
+            PersonInfo owner = new PersonInfo();
+            owner.setUserId(1L);
+            shop.setOwner(owner);
+            ShopExecution se = shopService.addShop(shop, shopImg.getInputStream(), shopImg.getOriginalFilename());
+            if(se.getState() == ShopStateEnum.CHECK.getState()) &#123;
+                modelMap.put(&quot;success&quot;, true);
+            &#125;else &#123;
+                modelMap.put(&quot;success&quot;, false);
+                modelMap.put(&quot;errMsg&quot;, se.getStateInfo());
+            &#125;
+            return modelMap;
+        &#125; else &#123;
+            modelMap.put(&quot;success&quot;, false);
+            modelMap.put(&quot;errMsg&quot;, &quot;请输入店铺信息&quot;);
+            return modelMap;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<ol start="4">
+<li>kaptcha 验证码的使用</li>
+</ol>
+<ul>
+<li>引入依赖</li>
+</ul>
+<pre><code class="XML">    &lt;!-- https://mvnrepository.com/artifact/com.github.penggle/kaptcha --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;com.github.penggle&lt;/groupId&gt;
+        &lt;artifactId&gt;kaptcha&lt;/artifactId&gt;
+        &lt;version&gt;2.3.2&lt;/version&gt;
+    &lt;/dependency&gt;
+</code></pre>
+<ul>
+<li>web.xml 配置</li>
+</ul>
+<pre><code class="xml">  &lt;!-- 验证码配置 --&gt;
+  &lt;servlet&gt;
+      &lt;servlet-name&gt;Kaptcha&lt;/servlet-name&gt;
+      &lt;servlet-class&gt;com.google.code.kaptcha.servlet.KaptchaServlet&lt;/servlet-class&gt;
+      &lt;!-- 是否有边框 --&gt;
+      &lt;init-param&gt;
+          &lt;param-name&gt;kaptcha.border&lt;/param-name&gt;
+          &lt;param-value&gt;no&lt;/param-value&gt;
+      &lt;/init-param&gt;
+      &lt;!-- 字体颜色 --&gt;
+      &lt;init-param&gt;
+          &lt;param-name&gt;kaptcha.textproducer.font.color&lt;/param-name&gt;
+          &lt;param-value&gt;red&lt;/param-value&gt;
+      &lt;/init-param&gt;
+      &lt;!-- 字体大小 --&gt;
+      &lt;init-param&gt;
+          &lt;param-name&gt;kaptcha.textproducer.font.size&lt;/param-name&gt;
+          &lt;param-value&gt;43&lt;/param-value&gt;
+      &lt;/init-param&gt;
+       &lt;!-- 字体样式 --&gt;
+      &lt;init-param&gt;
+          &lt;param-name&gt;kaptcha.textproducer.font.names&lt;/param-name&gt;
+          &lt;param-value&gt;Arial&lt;/param-value&gt;
+      &lt;/init-param&gt;
+      &lt;!-- 图片宽度 --&gt;
+      &lt;init-param&gt;
+          &lt;param-name&gt;kaptcha.image.width&lt;/param-name&gt;
+          &lt;param-value&gt;135&lt;/param-value&gt;
+      &lt;/init-param&gt;
+      &lt;!-- 图片高度 --&gt;
+      &lt;init-param&gt;
+          &lt;param-name&gt;kaptcha.image.width&lt;/param-name&gt;
+          &lt;param-value&gt;50&lt;/param-value&gt;
+      &lt;/init-param&gt;
+      &lt;!-- 使用那些字符生产验证码 --&gt;
+      &lt;init-param&gt;
+          &lt;param-name&gt;kaptcha.textproducer.char.string&lt;/param-name&gt;
+          &lt;param-value&gt;ACDEFHKPRSTWX345679&lt;/param-value&gt;
+      &lt;/init-param&gt;
+      &lt;!-- 干扰线的颜色 --&gt;
+      &lt;init-param&gt;
+          &lt;param-name&gt;kaptcha.noise.color&lt;/param-name&gt;
+          &lt;param-value&gt;black&lt;/param-value&gt;
+      &lt;/init-param&gt;
+      &lt;!-- 验证码字符个数 --&gt;
+      &lt;init-param&gt;
+          &lt;param-name&gt;kaptcha.textproducer.char.length&lt;/param-name&gt;
+          &lt;param-value&gt;4&lt;/param-value&gt;
+      &lt;/init-param&gt;
+  &lt;/servlet&gt;
+  
+  &lt;servlet-mapping&gt;
+      &lt;servlet-name&gt;Kaptcha&lt;/servlet-name&gt;
+      &lt;url-pattern&gt;/Kaptcha&lt;/url-pattern&gt;
+  &lt;/servlet-mapping&gt;
+</code></pre>
+<ul>
+<li>判断验证码是否正确</li>
+</ul>
+<pre><code class="JAVA">package com.imooc.o2o.util;
+import javax.servlet.http.HttpServletRequest;
+public class CodeUtil &#123;
+    public static boolean checkVerifyCode(HttpServletRequest request) &#123;
+        String verifyCodeExpected = (String) request.getSession().getAttribute(com.google.code.kaptcha.Constants.KAPTCHA_SESSION_KEY);
+        String verifyCodeActual = HttpServletRequestUtil.getString(request, &quot;verifyCodeActual&quot;);
+        if(verifyCodeActual == null || !verifyCodeActual.equals(verifyCodeExpected)) &#123;
+            return false;
+        &#125;
+        return true;
+    &#125;
+&#125;
+</code></pre>
+<ul>
+<li>举个栗子</li>
+</ul>
+<pre><code class="Java">@RequestMapping(value=&quot;/registershop&quot;, method = RequestMethod.POST)
+@ResponseBody
+private Map&lt;String, Object&gt; registerShop(HttpServletRequest request) throws ShopOperationException, IOException &#123;
+    Map&lt;String, Object&gt; modelMap = new HashMap&lt;String, Object&gt;();
+    // 验证码
+    if(!CodeUtil.checkVerifyCode(request)) &#123;
+        modelMap.put(&quot;success&quot;, false);
+        modelMap.put(&quot;errMsg&quot;, &quot;输入了错误的验证码&quot;);
+        return modelMap;
+    &#125;
+</code></pre>
+<pre><code class="html">&lt;div class=&quot;item-inner&quot;&gt;
+    &lt;label for=&quot;j_captcha&quot; class=&quot;item-title label&quot;&gt;验证码&lt;/label&gt; &lt;input id=&quot;j_captcha&quot;
+        name=&quot;j_captcha&quot; type=&quot;text&quot; class=&quot;form-control in&quot; placeholder=&quot;验证码&quot; /&gt;
+    &lt;div class=&quot;item-input&quot;&gt;
+        &lt;img id=&quot;captcha_img&quot; alt=&quot;点击更换&quot; title=&quot;点击更换&quot; onclick=&quot;changeVerifyCode(this)&quot;
+            src=&quot;../Kaptcha&quot; /&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="js">$(&#39;#submit&#39;).click(function () &#123;
+    var formData = new FormData();
+    var verifyCodeActual = $(&#39;#j_captcha&#39;).val();
+    formData.append(&#39;verifyCodeActual&#39;, verifyCodeActual);
+</code></pre>
+<hr>
 <h3 id="5-1-4、-拓展"><a href="#5-1-4、-拓展" class="headerlink" title="5.1.4、 拓展"></a>5.1.4、 拓展</h3><ol>
 <li>工具类 ImageUtil.该工具类用于处理预先定义好的图片,该处使用了浓缩图。</li>
 </ol>
