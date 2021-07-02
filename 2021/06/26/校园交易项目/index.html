@@ -14,7 +14,7 @@
 <meta property="og:description" content="第一章 简单的SSM项目搭建1.1、环境配置JDK8, Maven3.3.9, MySQL8.0.12, Tomcat8, Eclipse  1.2、创建 Maven project的步骤 选择 maven-archetype-webapp类型。 输入项目名称。 引入tomcat的一个jar包。选择项目&gt;属性&gt;Java Build Path&gt;Libraries&gt;Add Li">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-06-25T23:58:18.000Z">
-<meta property="article:modified_time" content="2021-07-02T02:54:46.209Z">
+<meta property="article:modified_time" content="2021-07-02T15:23:52.995Z">
 <meta property="article:author" content="hjxstart">
 <meta property="article:tag" content="SSM">
 <meta name="twitter:card" content="summary">
@@ -211,7 +211,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="20">
-<input type="hidden" id="yelog_site_word_count" value="40.7k">
+<input type="hidden" id="yelog_site_word_count" value="42.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -508,12 +508,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-07-02 10:54:46'>2021-06-26 07:58</time>
+            发布时间 : <time class="date" title='最后更新: 2021-07-02 23:23:52'>2021-06-26 07:58</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:12.6k</span>
+        <span>字数:14.8k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -532,7 +532,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E7%AE%80%E5%8D%95%E7%9A%84SSM%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA"><span class="toc-text">第一章 简单的SSM项目搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1%E3%80%81%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-text">1.1、环境配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2%E3%80%81%E5%88%9B%E5%BB%BA-Maven-project%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="toc-text">1.2、创建 Maven project的步骤</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97"><span class="toc-text">第二章 系统功能模块</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1%E3%80%81%E6%A8%A1%E5%9D%97%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E"><span class="toc-text">2.1、模块功能说明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1%E3%80%81%E5%89%8D%E7%AB%AF%E5%B1%95%E7%A4%BA%E7%B3%BB%E7%BB%9F"><span class="toc-text">2.1.1、前端展示系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2%E3%80%81%E5%BA%97%E5%AE%B6%E7%B3%BB%E7%BB%9F"><span class="toc-text">2.1.2、店家系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3%E3%80%81%E8%B6%85%E7%BA%A7%E7%AE%A1%E7%90%86%E5%91%98%E7%B3%BB%E7%BB%9F"><span class="toc-text">2.1.3、超级管理员系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2%E3%80%81%E6%A8%A1%E5%9D%97%E5%8A%9F%E8%83%BD%E5%AF%B9%E8%B1%A1"><span class="toc-text">2.2、模块功能对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1%E3%80%81%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%85%B3%E7%B3%BB%E5%9B%BE"><span class="toc-text">2.2.1、实体类关系图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2%E3%80%81%E5%AE%9E%E4%BD%93%E7%B1%BB%E4%BB%A3%E7%A0%81"><span class="toc-text">2.2.2、实体类代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3%E3%80%81%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-text">2.3、代码实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-1%E3%80%81%E5%88%9B%E5%BB%BA%E7%9B%B8%E5%BA%94%E7%9A%84%E7%B1%BB"><span class="toc-text">2.3.1、创建相应的类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-2%E3%80%81%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8"><span class="toc-text">2.3.2、创建数据库表</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE"><span class="toc-text">第三章 项目配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1%E3%80%81-%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E8%AF%B4%E6%98%8E"><span class="toc-text">3.1、 项目目录说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2%E3%80%81%E5%88%9B%E5%BB%BAsources-%E8%B5%84%E6%BA%90%E5%8C%85"><span class="toc-text">3.2、创建sources 资源包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3%E3%80%81%E5%88%9B%E5%BB%BApackage"><span class="toc-text">3.3、创建package</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4%E3%80%81%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE"><span class="toc-text">3.4、项目配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-1%E3%80%81%E9%85%8D%E7%BD%AE%E6%80%9D%E8%B7%AF%EF%BC%9A%E8%87%AA%E4%B8%8B%E8%80%8C%E4%B8%8A%E7%9A%84%E9%85%8D%E7%BD%AE%E3%80%82"><span class="toc-text">3.4.1、配置思路：自下而上的配置。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-2%E3%80%81%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86"><span class="toc-text">3.4.2、依赖管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-3%E3%80%81-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E9%85%8D%E7%BD%AE%E6%93%8D%E4%BD%9C"><span class="toc-text">3.4.3、 数据库的配置操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-4%E3%80%81-Spring%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE"><span class="toc-text">3.4.4、 Spring相关配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-logback%E6%97%A5%E5%BF%97%E9%85%8D%E7%BD%AE"><span class="toc-text">3.5 logback日志配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-text">第四章 代码实现</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1%E3%80%81%E7%AE%80%E5%8D%95%E7%9A%84SSM%E6%A1%88%E4%BE%8B-Area"><span class="toc-text">4.1、简单的SSM案例-Area</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-1%E3%80%81dao%E5%B1%82"><span class="toc-text">4.1.1、dao层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-2%E3%80%81Service%E5%B1%82"><span class="toc-text">4.1.2、Service层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-3%E3%80%81web%E5%B1%82"><span class="toc-text">4.1.3、web层</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BA%97%E9%93%BA%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-text">第五章 店铺系统的实现</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1%E3%80%81%E5%BA%97%E9%93%BA%E7%9A%84%E6%B3%A8%E5%86%8C%E6%A8%A1%E5%9D%97"><span class="toc-text">5.1、店铺的注册模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-1%E3%80%81dao%E5%B1%82%E4%BB%A3%E7%A0%81"><span class="toc-text">5.1.1、dao层代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-2%E3%80%81service%E5%B1%82%E4%BB%A3%E7%A0%81"><span class="toc-text">5.1.2、service层代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-3%E3%80%81-Controller%E5%B1%82"><span class="toc-text">5.1.3、 Controller层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-4%E3%80%81-%E6%8B%93%E5%B1%95"><span class="toc-text">5.1.4、 拓展</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-%E5%BA%97%E9%93%BA%E4%BF%A1%E6%81%AF%E7%BC%96%E8%BE%91%E6%A8%A1%E5%9D%97"><span class="toc-text">5.2 店铺信息编辑模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-1-Dao%E5%B1%82"><span class="toc-text">5.2.1 Dao层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-2-Service%E5%B1%82"><span class="toc-text">5.2.2 Service层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-3-Controller%E5%B1%82"><span class="toc-text">5.2.3 Controller层</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-3-%E5%95%86%E5%93%81%E7%B1%BB%E5%88%AB%E5%88%97%E8%A1%A8%E5%B1%95%E7%A4%BA"><span class="toc-text">5.3 商品类别列表展示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-1-dao-%E5%B1%82"><span class="toc-text">5.3.1 dao 层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-2-service-%E5%B1%82"><span class="toc-text">5.3.2 service 层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-3-controller-%E5%B1%82-ProductCategoryManagementController-java"><span class="toc-text">5.3.3 controller 层 ProductCategoryManagementController.java</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-3-Controller%E5%B1%82"><span class="toc-text">5.3.3 Controller层</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-4-%E6%89%B9%E9%87%8F%E6%B7%BB%E5%8A%A0%E5%95%86%E5%93%81%E5%88%97%E8%A1%A8"><span class="toc-text">5.4 批量添加商品列表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-1-dao%E5%B1%82"><span class="toc-text">5.4.1 dao层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-2-Service%E5%B1%82"><span class="toc-text">5.4.2 Service层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-3-Controller%E5%B1%82"><span class="toc-text">5.4.3 Controller层</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-5-%E5%88%A0%E9%99%A4%E5%95%86%E5%93%81%E7%B1%BB%E5%88%AB"><span class="toc-text">5.5 删除商品类别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-5-1-dao-%E5%B1%82"><span class="toc-text">5.5.1 dao 层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-5-2-Serivce-%E5%B1%82"><span class="toc-text">5.5.2 Serivce 层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-5-3-Controller-%E5%B1%82"><span class="toc-text">5.5.3 Controller 层</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6%E3%80%81%E5%95%86%E5%93%81%E7%AE%A1%E7%90%86"><span class="toc-text">6、商品管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#6-1-%E5%95%86%E5%93%81%E6%B7%BB%E5%8A%A0"><span class="toc-text">6.1 商品添加</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-1"><span class="toc-text">6.1.1</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-2-%E5%95%86%E5%93%81%E7%BC%96%E8%BE%91"><span class="toc-text">6.2 商品编辑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-3-%E5%95%86%E5%93%81%E5%88%97%E8%A1%A8%E5%B1%95%E7%A4%BA"><span class="toc-text">6.3 商品列表展示</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#SSM%E6%A1%86%E6%9E%B6%E5%AE%9E%E7%8E%B0%E5%8A%9F%E8%83%BD%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="toc-text">SSM框架实现功能的步骤</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Junit"><span class="toc-text">Junit</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Junit%E6%B5%8B%E8%AF%95%E6%AD%A5%E9%AA%A4"><span class="toc-text">Junit测试步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E5%9F%BA%E7%B1%BB"><span class="toc-text">1、定义一个基类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E5%AE%9E%E7%8E%B0%E7%B1%BB"><span class="toc-text">2、定义一个实现类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Junit-%E6%8B%93%E5%B1%95"><span class="toc-text">Junit 拓展</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Junit-%E6%B5%8B%E8%AF%95%E5%9B%9E%E7%8E%AF"><span class="toc-text">Junit 测试回环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Junit-%E9%A1%BA%E5%BA%8F%E6%89%A7%E8%A1%8C"><span class="toc-text">Junit 顺序执行</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SSM%E9%87%8D%E7%82%B9%E7%9F%A5%E8%AF%86"><span class="toc-text">SSM重点知识</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E7%AE%80%E5%8D%95%E7%9A%84SSM%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA"><span class="toc-text">第一章 简单的SSM项目搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1%E3%80%81%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-text">1.1、环境配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2%E3%80%81%E5%88%9B%E5%BB%BA-Maven-project%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="toc-text">1.2、创建 Maven project的步骤</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97"><span class="toc-text">第二章 系统功能模块</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1%E3%80%81%E6%A8%A1%E5%9D%97%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E"><span class="toc-text">2.1、模块功能说明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1%E3%80%81%E5%89%8D%E7%AB%AF%E5%B1%95%E7%A4%BA%E7%B3%BB%E7%BB%9F"><span class="toc-text">2.1.1、前端展示系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2%E3%80%81%E5%BA%97%E5%AE%B6%E7%B3%BB%E7%BB%9F"><span class="toc-text">2.1.2、店家系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3%E3%80%81%E8%B6%85%E7%BA%A7%E7%AE%A1%E7%90%86%E5%91%98%E7%B3%BB%E7%BB%9F"><span class="toc-text">2.1.3、超级管理员系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2%E3%80%81%E6%A8%A1%E5%9D%97%E5%8A%9F%E8%83%BD%E5%AF%B9%E8%B1%A1"><span class="toc-text">2.2、模块功能对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1%E3%80%81%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%85%B3%E7%B3%BB%E5%9B%BE"><span class="toc-text">2.2.1、实体类关系图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2%E3%80%81%E5%AE%9E%E4%BD%93%E7%B1%BB%E4%BB%A3%E7%A0%81"><span class="toc-text">2.2.2、实体类代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3%E3%80%81%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-text">2.3、代码实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-1%E3%80%81%E5%88%9B%E5%BB%BA%E7%9B%B8%E5%BA%94%E7%9A%84%E7%B1%BB"><span class="toc-text">2.3.1、创建相应的类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-2%E3%80%81%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8"><span class="toc-text">2.3.2、创建数据库表</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE"><span class="toc-text">第三章 项目配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1%E3%80%81-%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E8%AF%B4%E6%98%8E"><span class="toc-text">3.1、 项目目录说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2%E3%80%81%E5%88%9B%E5%BB%BAsources-%E8%B5%84%E6%BA%90%E5%8C%85"><span class="toc-text">3.2、创建sources 资源包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3%E3%80%81%E5%88%9B%E5%BB%BApackage"><span class="toc-text">3.3、创建package</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4%E3%80%81%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE"><span class="toc-text">3.4、项目配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-1%E3%80%81%E9%85%8D%E7%BD%AE%E6%80%9D%E8%B7%AF%EF%BC%9A%E8%87%AA%E4%B8%8B%E8%80%8C%E4%B8%8A%E7%9A%84%E9%85%8D%E7%BD%AE%E3%80%82"><span class="toc-text">3.4.1、配置思路：自下而上的配置。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-2%E3%80%81%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86"><span class="toc-text">3.4.2、依赖管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-3%E3%80%81-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E9%85%8D%E7%BD%AE%E6%93%8D%E4%BD%9C"><span class="toc-text">3.4.3、 数据库的配置操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-4%E3%80%81-Spring%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE"><span class="toc-text">3.4.4、 Spring相关配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-logback%E6%97%A5%E5%BF%97%E9%85%8D%E7%BD%AE"><span class="toc-text">3.5 logback日志配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-text">第四章 代码实现</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1%E3%80%81%E7%AE%80%E5%8D%95%E7%9A%84SSM%E6%A1%88%E4%BE%8B-Area"><span class="toc-text">4.1、简单的SSM案例-Area</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-1%E3%80%81dao%E5%B1%82"><span class="toc-text">4.1.1、dao层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-2%E3%80%81Service%E5%B1%82"><span class="toc-text">4.1.2、Service层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-3%E3%80%81web%E5%B1%82"><span class="toc-text">4.1.3、web层</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BA%97%E9%93%BA%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-text">第五章 店铺系统的实现</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1%E3%80%81%E5%BA%97%E9%93%BA%E7%9A%84%E6%B3%A8%E5%86%8C%E6%A8%A1%E5%9D%97"><span class="toc-text">5.1、店铺的注册模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-1%E3%80%81dao%E5%B1%82%E4%BB%A3%E7%A0%81"><span class="toc-text">5.1.1、dao层代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-2%E3%80%81service%E5%B1%82%E4%BB%A3%E7%A0%81"><span class="toc-text">5.1.2、service层代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-3%E3%80%81-Controller%E5%B1%82"><span class="toc-text">5.1.3、 Controller层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-4%E3%80%81-%E6%8B%93%E5%B1%95"><span class="toc-text">5.1.4、 拓展</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-%E5%BA%97%E9%93%BA%E4%BF%A1%E6%81%AF%E7%BC%96%E8%BE%91%E6%A8%A1%E5%9D%97"><span class="toc-text">5.2 店铺信息编辑模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-1-Dao%E5%B1%82"><span class="toc-text">5.2.1 Dao层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-2-Service%E5%B1%82"><span class="toc-text">5.2.2 Service层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-3-Controller%E5%B1%82"><span class="toc-text">5.2.3 Controller层</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-3-%E5%95%86%E5%93%81%E7%B1%BB%E5%88%AB%E5%88%97%E8%A1%A8%E5%B1%95%E7%A4%BA"><span class="toc-text">5.3 商品类别列表展示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-1-dao-%E5%B1%82"><span class="toc-text">5.3.1 dao 层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-2-service-%E5%B1%82"><span class="toc-text">5.3.2 service 层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-3-controller-%E5%B1%82-ProductCategoryManagementController-java"><span class="toc-text">5.3.3 controller 层 ProductCategoryManagementController.java</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-3-Controller%E5%B1%82"><span class="toc-text">5.3.3 Controller层</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-4-%E6%89%B9%E9%87%8F%E6%B7%BB%E5%8A%A0%E5%95%86%E5%93%81%E5%88%97%E8%A1%A8"><span class="toc-text">5.4 批量添加商品列表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-1-dao%E5%B1%82"><span class="toc-text">5.4.1 dao层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-2-Service%E5%B1%82"><span class="toc-text">5.4.2 Service层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-3-Controller%E5%B1%82"><span class="toc-text">5.4.3 Controller层</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-5-%E5%88%A0%E9%99%A4%E5%95%86%E5%93%81%E7%B1%BB%E5%88%AB"><span class="toc-text">5.5 删除商品类别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-5-1-dao-%E5%B1%82"><span class="toc-text">5.5.1 dao 层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-5-2-Serivce-%E5%B1%82"><span class="toc-text">5.5.2 Serivce 层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-5-3-Controller-%E5%B1%82"><span class="toc-text">5.5.3 Controller 层</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6%E3%80%81%E5%95%86%E5%93%81%E7%AE%A1%E7%90%86"><span class="toc-text">6、商品管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#6-1-%E5%95%86%E5%93%81%E6%B7%BB%E5%8A%A0%EF%BC%8C-%E5%95%86%E5%93%81%E8%AF%A6%E6%83%85%E5%9B%BE%E6%89%B9%E9%87%8F%E6%B7%BB%E5%8A%A0"><span class="toc-text">6.1 商品添加， 商品详情图批量添加</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-1"><span class="toc-text">6.1.1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-2-service%E5%B1%82"><span class="toc-text">6.1.2 service层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-3-controller-%E5%B1%82"><span class="toc-text">6.1.3 controller 层</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-2-%E5%95%86%E5%93%81%E7%BC%96%E8%BE%91"><span class="toc-text">6.2 商品编辑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-3-%E5%95%86%E5%93%81%E5%88%97%E8%A1%A8%E5%B1%95%E7%A4%BA"><span class="toc-text">6.3 商品列表展示</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#SSM%E6%A1%86%E6%9E%B6%E5%AE%9E%E7%8E%B0%E5%8A%9F%E8%83%BD%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="toc-text">SSM框架实现功能的步骤</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Junit"><span class="toc-text">Junit</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Junit%E6%B5%8B%E8%AF%95%E6%AD%A5%E9%AA%A4"><span class="toc-text">Junit测试步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E5%9F%BA%E7%B1%BB"><span class="toc-text">1、定义一个基类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E5%AE%9E%E7%8E%B0%E7%B1%BB"><span class="toc-text">2、定义一个实现类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Junit-%E6%8B%93%E5%B1%95"><span class="toc-text">Junit 拓展</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Junit-%E6%B5%8B%E8%AF%95%E5%9B%9E%E7%8E%AF"><span class="toc-text">Junit 测试回环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Junit-%E9%A1%BA%E5%BA%8F%E6%89%A7%E8%A1%8C"><span class="toc-text">Junit 顺序执行</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SSM%E9%87%8D%E7%82%B9%E7%9F%A5%E8%AF%86"><span class="toc-text">SSM重点知识</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2373,7 +2373,395 @@ public interface ProductCategoryService &#123;
     &#125;
 </code></pre>
 <hr>
-<h1 id="6、商品管理"><a href="#6、商品管理" class="headerlink" title="6、商品管理"></a>6、商品管理</h1><h2 id="6-1-商品添加"><a href="#6-1-商品添加" class="headerlink" title="6.1 商品添加"></a>6.1 商品添加</h2><h3 id="6-1-1"><a href="#6-1-1" class="headerlink" title="6.1.1"></a>6.1.1</h3><h2 id="6-2-商品编辑"><a href="#6-2-商品编辑" class="headerlink" title="6.2 商品编辑"></a>6.2 商品编辑</h2><h2 id="6-3-商品列表展示"><a href="#6-3-商品列表展示" class="headerlink" title="6.3 商品列表展示"></a>6.3 商品列表展示</h2><hr>
+<h1 id="6、商品管理"><a href="#6、商品管理" class="headerlink" title="6、商品管理"></a>6、商品管理</h1><h2 id="6-1-商品添加，-商品详情图批量添加"><a href="#6-1-商品添加，-商品详情图批量添加" class="headerlink" title="6.1 商品添加， 商品详情图批量添加"></a>6.1 商品添加， 商品详情图批量添加</h2><p>实现商品添加，掌握批量图片添加</p>
+<h3 id="6-1-1"><a href="#6-1-1" class="headerlink" title="6.1.1"></a>6.1.1</h3><ol>
+<li>接口 ProductImgDao.java &amp; ProductDao.java</li>
+</ol>
+<pre><code class="java">public interface ProductImgDao &#123;
+    // 批量添加商品详情图片
+    int batchInsertProductImg(List&lt;ProductImg&gt; productImgList);
+&#125;
+
+public interface ProductDao &#123;
+    // 添加商品
+    int insertProduct(Product product);
+&#125;
+</code></pre>
+<ol start="2">
+<li>mapper ProductImgDao.xml &amp; ProductDao.xml</li>
+</ol>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
+&lt;mapper namespace=&quot;com.imooc.o2o.dao.ProductImgDao&quot;&gt;
+    &lt;!-- 参数类型是List --&gt;
+    &lt;insert id=&quot;batchInsertProductImg&quot;
+        parameterType=&quot;java.util.List&quot;&gt;
+        INSERT INTO
+        tb_product_img(img_addr, img_desc, priority, create_time,
+        product_id)
+        VALUES
+        &lt;foreach collection=&quot;list&quot; item=&quot;productImg&quot; index=&quot;index&quot;
+            separator=&quot;,&quot;&gt;
+            (
+            #&#123;productImg.imgAddr&#125;,
+            #&#123;productImg.imgDesc&#125;,
+            #&#123;productImg.priority&#125;,
+            #&#123;productImg.createTime&#125;,
+            #&#123;productImg.productId&#125;
+            )
+        &lt;/foreach&gt;
+    &lt;/insert&gt;
+&lt;/mapper&gt;
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
+&lt;mapper namespace=&quot;com.imooc.o2o.dao.ProductDao&quot;&gt;
+    &lt;insert id=&quot;insertProduct&quot; parameterType=&quot;com.imooc.o2o.entity.Product&quot; useGeneratedKeys=&quot;true&quot; keyProperty=&quot;productId&quot; keyColumn=&quot;product_id&quot;&gt;
+        INSERT INTO
+        tb_product(product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time,
+        enable_status, product_category_id, shop_id)
+        VALUES
+        (#&#123;productName&#125;, #&#123;productDesc&#125;, #&#123;imgAddr&#125;, #&#123;normalPrice&#125;, #&#123;promotionPrice&#125;, #&#123;priority&#125;, #&#123;createTime&#125;, #&#123;lastEditTime&#125;,
+        #&#123;enableStatus&#125;, #&#123;productCategory.productCategoryId&#125;, #&#123;shop.shopId&#125;)
+    &lt;/insert&gt;
+&lt;/mapper&gt;
+</code></pre>
+<ol start="3">
+<li>单元测试 ProductImgDaoTest.java &amp; ProductDaoTest.java</li>
+</ol>
+<pre><code class="java">@FixMethodOrder(MethodSorters.NAME_ASCENDING) // 按照名字顺序执行测试方法
+public class ProductImgDaoTest extends BaseTest&#123;
+    
+    @Autowired
+    private ProductImgDao productImgDao;
+    
+    @Test
+    public void testABatchInsertProductImgDao() throws Exception &#123;
+        // productId 为1的商品里添加两个详情图记录
+        ProductImg productImg1= new ProductImg();
+        productImg1.setImgAddr(&quot;图片1&quot;);
+        productImg1.setImgDesc(&quot;测试图片1&quot;);
+        productImg1.setPriority(1);
+        productImg1.setCreateTime(new Date());
+        productImg1.setProductId(1L);
+        
+        ProductImg productImg2= new ProductImg();
+        productImg2.setImgAddr(&quot;图片2&quot;);
+        productImg2.setImgDesc(&quot;测试图片2&quot;);
+        productImg2.setPriority(1);
+        productImg2.setCreateTime(new Date());
+        productImg2.setProductId(1L);
+        
+        List&lt;ProductImg&gt; productImgList = new ArrayList&lt;ProductImg&gt;();
+        productImgList.add(productImg1);
+        productImgList.add(productImg2);
+        int effectedNum = productImgDao.batchInsertProductImg(productImgList);
+        assertEquals(2, effectedNum);
+    &#125;
+&#125;
+
+FixMethodOrder(MethodSorters.NAME_ASCENDING) // 按测试方法名字的顺序执行测试
+public class ProductDaoTest extends BaseTest &#123;
+    
+    @Autowired
+    private ProductDao productDao;
+    @Autowired
+    private ProductImgDao productImgDao;
+    
+    @Test
+    public void testAInsertProduct() throws Exception&#123;
+        Shop shop1 = new Shop();
+        shop1.setShopId(1L);
+        ProductCategory pc1 = new ProductCategory();
+        pc1.setProductCategoryId(1L);
+        // 初始化三个商品实例并添加进shopId为1的店铺里，同时商品类别Id也为1
+        Product product1 = new Product();
+        product1.setProductName(&quot;测试1&quot;);
+        product1.setProductDesc(&quot;测试Desc1&quot;);
+        product1.setImgAddr(&quot;test1&quot;);
+        product1.setPriority(1);
+        product1.setEnableStatus(1);
+        product1.setCreateTime(new Date());
+        product1.setLastEditTime(new Date());
+        product1.setShop(shop1);
+        product1.setProductCategory(pc1);
+        
+        Product product2 = new Product();
+        product2.setProductName(&quot;测试2&quot;);
+        product2.setProductDesc(&quot;测试Desc2&quot;);
+        product2.setImgAddr(&quot;test2&quot;);
+        product2.setPriority(2);
+        product2.setEnableStatus(0);
+        product2.setCreateTime(new Date());
+        product2.setLastEditTime(new Date());
+        product2.setShop(shop1);
+        product2.setProductCategory(pc1);
+        
+        Product product3 = new Product();
+        product3.setProductName(&quot;test3&quot;);
+        product3.setProductDesc(&quot;测试Desc3&quot;);
+        product3.setImgAddr(&quot;test3&quot;);
+        product3.setPriority(3);
+        product3.setEnableStatus(1);
+        product3.setCreateTime(new Date());
+        product3.setLastEditTime(new Date());
+        product3.setShop(shop1);
+        product3.setProductCategory(pc1);
+        
+        // 判断添加是否成功
+        int effectedNum = productDao.insertProduct(product1);
+        assertEquals(1, effectedNum);
+        effectedNum = productDao.insertProduct(product2);
+        assertEquals(1, effectedNum);
+        effectedNum = productDao.insertProduct(product3);
+        assertEquals(1, effectedNum);        
+    &#125;
+&#125;
+</code></pre>
+<h3 id="6-1-2-service层"><a href="#6-1-2-service层" class="headerlink" title="6.1.2 service层"></a>6.1.2 service层</h3><ol>
+<li>接口 ProductService.java</li>
+</ol>
+<pre><code class="java">public interface ProductService &#123;
+    // 添加商品信息以及图片处理。思路：1.处理缩略图;2.处理商品详情图片;3.添加商品信息
+    //ProductExecution addProduct(Product product, InputStream thumbnail, String thumbnailName, List&lt;InputStream&gt; productImgList, List&lt;String&gt; productImgNameList) throws ProductOperationException;
+    // 封装 图片和图片名
+    ProductExecution addProduct(Product product, ImageHolder thumbnail, List&lt;ImageHolder&gt; productImgList) throws ProductOperationException;
+&#125;
+</code></pre>
+<ol start="2">
+<li>实现类 </li>
+</ol>
+<pre><code class="java">@Service
+public class ProductServiceImpl implements ProductService&#123;
+    
+    @Autowired
+    private ProductDao productDao;
+    @Autowired
+    private ProductImgDao productImgDao;
+    /**
+     * 添加缩略图(和店铺注册一样)
+     * @param product
+     * @param thumbnail
+     */
+    private void addThumbnail(Product product, ImageHolder thumbnail) &#123;
+        String dest = PathUtil.getShopImagePath(product.getShop().getShopId());
+        String thumbnailAddr = ImageUtil.generateThumbnail(thumbnail, dest);
+        product.setImgAddr(thumbnailAddr);
+    &#125;
+    /**
+     * 批量添加图片
+     * @param product
+     * @param productImgHolder
+     */
+    private void addProductImgList(Product product, List&lt;ImageHolder&gt; productImgHolderList) &#123;
+        // 获取图片存储路径，这里直接存放到相应店铺的文件夹地下
+        String dest = PathUtil.getShopImagePath(product.getShop().getShopId());
+        List&lt;ProductImg&gt; productImgList = new ArrayList&lt;ProductImg&gt;();
+        // 遍历图片一次去处理，并添加进 productImg 实体类里
+        for(ImageHolder productImgHolder: productImgHolderList) &#123;
+            String imgAddr = ImageUtil.generateNormalImg(productImgHolder, dest);
+            ProductImg productImg = new ProductImg();
+            productImg.setImgAddr(imgAddr);
+            productImg.setProductId(product.getProductId());
+            productImg.setCreateTime(new Date());
+            productImgList.add(productImg);
+        &#125;
+        // 如果确实是有图片需要添加的，就执行批量添加操作
+        if(productImgList.size() &gt; 0) &#123;
+            try &#123;
+                int effectedNum = productImgDao.batchInsertProductImg(productImgList);
+                if(effectedNum &lt;= 0) &#123;
+                    throw new ProductOperationException(&quot;创建商品详情图片失败&quot;);
+                &#125;
+            &#125; catch(Exception e) &#123;
+                throw new ProductOperationException(&quot;创建商品详情图片失败:&quot; + e.toString());
+            &#125;
+        &#125;
+    &#125;
+
+    @Override
+    @Transactional // 通过spring的事务管理，去管理以下4个步骤，其中任何一步出错了就会回滚数据
+    /**
+     * 方法步骤：
+     * 1. 处理缩略图，获取缩略图相对路径并赋值给product(和注册店铺差不多)
+     * 2. 往 tb_product 写入商品信息，成功获取 productId(因为在mapper 使用了 useGeneratedKeys=&quot;true&quot;) 
+     * 3. 结合 productId 批量处理商品详情图
+     * 4. 将商品详情列表批量插入 tb_product_img中
+     */
+    public ProductExecution addProduct(Product product, ImageHolder thumbnail, List&lt;ImageHolder&gt; productImgHolderList)
+            throws ProductOperationException &#123;
+        // 空值判断
+        if(product != null &amp;&amp; product.getShop() != null &amp;&amp; product.getShop().getShopId() != null) &#123;
+            // 给商品设置上默认属性
+            product.setCreateTime(new Date());
+            product.setLastEditTime(new Date());
+            // 默认为上架的状态
+            product.setEnableStatus(1);
+            // 若商品缩略图不为空则添加
+            if(thumbnail != null) &#123;
+                addThumbnail(product, thumbnail);
+            &#125;
+            try &#123;
+                // 创建商品信息
+                int effectedNum = productDao.insertProduct(product);
+                if(effectedNum &lt;= 0) &#123;
+                    throw new ProductOperationException(&quot;创建商品失败&quot;);
+                &#125;
+            &#125; catch(Exception e) &#123;
+                throw new ProductOperationException(&quot;创建商品失败:&quot; + e.toString());
+            &#125;
+            // 若商品详情图不为空则添加
+            if(productImgHolderList != null &amp;&amp; productImgHolderList.size() &gt; 0) &#123;
+                addProductImgList(product, productImgHolderList);
+            &#125;
+            return new ProductExecution(ProductStateEnum.SUCCESS, product);
+        &#125; else &#123;
+            // 传参为空则返回空值错误信息
+            return new ProductExecution(ProductStateEnum.EMPTY_LIST);
+        &#125;
+    &#125;
+
+&#125;
+</code></pre>
+<ol start="3">
+<li>单元测试</li>
+</ol>
+<pre><code class="java">public class ProductServiceTest extends BaseTest &#123;
+
+    @Autowired
+    private ProductService productService;
+    
+    @Test
+    public void testAddProduct() throws ShopOperationException, FileNotFoundException&#123;
+        // 创建shopId 为1且productCategoryId为1的商品实例并给其成员变量赋值
+        Product product = new Product();
+        Shop shop = new Shop();
+        shop.setShopId(1L);
+        ProductCategory pc = new ProductCategory();
+        pc.setProductCategoryId(1L);
+        product.setShop(shop);
+        product.setProductCategory(pc);
+        product.setProductName(&quot;测试商品1&quot;);
+        product.setProductDesc(&quot;测试商品1&quot;);
+        product.setPriority(20);
+        product.setCreateTime(new Date());
+        product.setEnableStatus(ProductStateEnum.SUCCESS.getState());
+        // 创建缩略图文件流
+        File thumbnailFile =new File(&quot;/Users/jxh/Downloads/src.jpeg&quot;);
+        InputStream is = new FileInputStream(thumbnailFile);
+        ImageHolder thumbnail = new ImageHolder(thumbnailFile.getName(), is);
+        // 创建两个商品详情图片文件流并将他们添加到详情图列表中
+        File productImg1 = new File(&quot;/Users/jxh/Downloads/src.jpeg&quot;);
+        InputStream is1 = new FileInputStream(productImg1);
+        File productImg2 = new File(&quot;/Users/jxh/Downloads/src2.jpeg&quot;);
+        InputStream is2 = new FileInputStream(productImg1);
+        List&lt;ImageHolder&gt; productImgList = new ArrayList&lt;ImageHolder&gt;();
+        productImgList.add(new ImageHolder(productImg1.getName(),is1));
+        productImgList.add(new ImageHolder(productImg2.getName(),is2));
+        // 添加商品并验证
+        ProductExecution pe = productService.addProduct(product, thumbnail, productImgList);
+        assertEquals(ProductStateEnum.SUCCESS.getState(), pe.getState());
+        
+    &#125;
+&#125;
+</code></pre>
+<h3 id="6-1-3-controller-层"><a href="#6-1-3-controller-层" class="headerlink" title="6.1.3 controller 层"></a>6.1.3 controller 层</h3><pre><code class="java">@Controller
+@RequestMapping(&quot;/shopadmin&quot;)
+public class ProductManagementController &#123;
+    @Autowired
+    private ProductService productService;
+    
+    // 支持上次商品详情图的最大数量
+    private static final int IMAGEMAXCOUNT = 6;
+    
+    @RequestMapping(value = &quot;/addproduct&quot;, method = RequestMethod.POST)
+    @ResponseBody
+    private Map&lt;String, Object&gt; addProduct(HttpServletRequest request) &#123;
+        Map&lt;String, Object&gt; modelMap = new HashMap&lt;String, Object&gt;();
+        // 验证码校验
+        if(!CodeUtil.checkVerifyCode(request)) &#123;
+            modelMap.put(&quot;success&quot;, false);
+            modelMap.put(&quot;errMsg&quot;, &quot;输入了错误的验证码&quot;);
+            return modelMap;
+        &#125;
+        // 接受前端参数的变量的初始化，包括商品，缩略图，详情图列表实体类
+        ObjectMapper mapper = new ObjectMapper();
+        Product product = null;
+        String productStr = HttpServletRequestUtil.getString(request, &quot;productStr&quot;);
+        MultipartHttpServletRequest multipartRequest = null;
+        ImageHolder thumbnail = null;
+        List&lt;ImageHolder&gt; productImgList = new ArrayList&lt;ImageHolder&gt;();
+        CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(request.getSession().getServletContext());
+        try &#123;
+            // 若请求中存在文件流，则取出相关的文件（包括缩略图和详情图）
+            if(multipartResolver.isMultipart(request)) &#123;
+                multipartRequest = (MultipartHttpServletRequest) request;
+                // 取出缩略图并构建 ImageHolder对象
+                CommonsMultipartFile thumbnailFile = (CommonsMultipartFile) multipartRequest.getFile(&quot;thumbnail&quot;);
+                thumbnail = new ImageHolder(thumbnailFile.getOriginalFilename(), thumbnailFile.getInputStream());
+                // 取出详情图列表并构建List&lt;ImageHolder&gt;列表对象，最多支持六张图片上传
+                for(int i = 0; i &lt; IMAGEMAXCOUNT; i++) &#123;
+                    CommonsMultipartFile productImgFile = (CommonsMultipartFile) multipartRequest.getFile(&quot;productImg&quot; + i);
+                    if(productImgFile != null) &#123;
+                        // 若取出的第i个详情图片文件流不为空，则将其加入详情图列表
+                        ImageHolder productImg = new ImageHolder(productImgFile.getOriginalFilename(), productImgFile.getInputStream());
+                        productImgList.add(productImg);
+                    &#125;else &#123;
+                        // 若取出的第i个详情图片文件流为空，则终止循环
+                        break;
+                    &#125;
+                &#125;
+            &#125;else &#123;
+                modelMap.put(&quot;success&quot;, false);
+                modelMap.put(&quot;errMsg&quot;, &quot;上传图片不能为空&quot;);
+                return modelMap;
+            &#125;
+            
+        &#125; catch(Exception e) &#123;
+            modelMap.put(&quot;success&quot;, false);
+            modelMap.put(&quot;errMsg&quot;, e.toString());
+            return modelMap;
+        &#125;
+        
+        try &#123;
+            // 尝试获取前端传过来的表单string流并将其转换成 Product实体类
+            product = mapper.readValue(productStr, Product.class);
+        &#125; catch(Exception e) &#123;
+            modelMap.put(&quot;success&quot;, false);
+            modelMap.put(&quot;errMsg&quot;, e.toString());
+            return modelMap;
+        &#125;
+        // 若Product信息，缩略图以及详情图聊表为空，则开始进行商品添加操作
+        if(product != null &amp;&amp; thumbnail != null &amp;&amp; productImgList.size() &gt; 0) &#123;
+            try &#123;
+                // 从session 中获取当前店铺的Id 并赋值给 product, 减少对前端数据的依赖
+                Shop currentShop = (Shop) request.getSession().getAttribute(&quot;currentShop&quot;);
+                Shop shop = new Shop();
+                shop.setShopId(currentShop.getShopId());
+                product.setShop(shop);
+                // 执行添加操作
+                ProductExecution pe = productService.addProduct(product, thumbnail, productImgList);
+                if(pe.getState() == ProductStateEnum.SUCCESS.getState()) &#123;
+                    modelMap.put(&quot;success&quot;, true);
+                &#125;else &#123;
+                    modelMap.put(&quot;success&quot;, false);
+                    modelMap.put(&quot;errMsg&quot;, pe.getStateInfo());
+                &#125;
+            &#125; catch(ProductOperationException e) &#123;
+                modelMap.put(&quot;success&quot;, false);
+                modelMap.put(&quot;errMsg&quot;, e.toString());
+                return modelMap;
+            &#125;
+        &#125; else &#123;
+            modelMap.put(&quot;success&quot;, false);
+            modelMap.put(&quot;errMsg&quot;, &quot;请输入商品信息&quot;);
+        &#125;
+        
+        return modelMap;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="6-2-商品编辑"><a href="#6-2-商品编辑" class="headerlink" title="6.2 商品编辑"></a>6.2 商品编辑</h2><h2 id="6-3-商品列表展示"><a href="#6-3-商品列表展示" class="headerlink" title="6.3 商品列表展示"></a>6.3 商品列表展示</h2><hr>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h2 id="SSM框架实现功能的步骤"><a href="#SSM框架实现功能的步骤" class="headerlink" title="SSM框架实现功能的步骤"></a>SSM框架实现功能的步骤</h2><ol>
 <li>在 dao 层</li>
 </ol>
