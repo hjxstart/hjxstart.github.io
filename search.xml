@@ -11,6 +11,12 @@
         <content type="html"><![CDATA[<h2 id="一、安装"><a href="#一、安装" class="headerlink" title="一、安装"></a>一、安装</h2><p>直接使用npm安装</p><pre><code class="bash">npm install -g n</code></pre><hr><h2 id="二、查看n的版本"><a href="#二、查看n的版本" class="headerlink" title="二、查看n的版本"></a>二、查看n的版本</h2><pre><code class="bash">n --version</code></pre><hr><h2 id="三、安装Node"><a href="#三、安装Node" class="headerlink" title="三、安装Node"></a>三、安装Node</h2><ol><li>安装最新的lts版本</li></ol><pre><code class="bash">sudo n lts</code></pre><ol start="2"><li>安装最新的版本</li></ol><pre><code class="bash">sudo n latest</code></pre><ol start="3"><li>安装指定版本</li></ol><p>安装指定版本直接在后面加上版本号即可</p><pre><code class="bash">sudo n 12.16.2</code></pre><h2 id="四、切换Node版本"><a href="#四、切换Node版本" class="headerlink" title="四、切换Node版本"></a>四、切换Node版本</h2><pre><code class="bash">sudo n</code></pre><h2 id="五、其他命令"><a href="#五、其他命令" class="headerlink" title="五、其他命令"></a>五、其他命令</h2><pre><code class="bash">n --help</code></pre>]]></content>
       
       
+      <categories>
+          
+          <category> 其他 </category>
+          
+      </categories>
+      
       
         <tags>
             
