@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Spring实战(第五版) | hjxstart的博客</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="Spring实战(第五版) | hjxstart的博客">
+  <title>GitLab私有部署 | hjxstart的博客</title>
+  <meta name="keywords" content=" git ">
+  <meta name="description" content="GitLab私有部署 | hjxstart的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="一、安装直接使用npm安装 npm install -g n   二、查看n的版本n --version   三、安装Node 安装最新的lts版本  sudo n lts   安装最新的版本  sudo n latest   安装指定版本  安装指定版本直接在后面加上版本号即可 sudo n 12.16.2  四、切换Node版本sudo n  五、其他命令n --help">
 <meta property="og:type" content="article">
@@ -505,24 +505,39 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-Spring实战-第五版" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-GitLab私有部署" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Spring实战(第五版)</h1>
+        <h1 class="article-title">GitLab私有部署</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="其他">其他</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color4">git</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-06-23 16:32:44'>2021-06-02 09:42</time>
+            发布时间 : <time class="date" title='最后更新: 2021-07-08 23:14:03'>2021-07-08 17:37</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:293</span>
+        <span>字数:350</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -541,7 +556,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%84%E5%BB%BASpring%E6%AD%A5%E9%AA%A4"><span class="toc-text">构建Spring步骤</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E7%8E%AF%E5%A2%83%E8%AF%B4%E6%98%8E"><span class="toc-text">第一章 环境说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%AE%89%E8%A3%85GitLab"><span class="toc-text">第二章 安装GitLab</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">第三章 常用命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E7%9B%AE%E5%BD%95"><span class="toc-text">第四章 目录</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -557,34 +572,55 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="构建Spring步骤"><a href="#构建Spring步骤" class="headerlink" title="构建Spring步骤"></a>构建Spring步骤</h2><ol>
-<li>使用 Spring Initializr 创建初始的项目结构；</li>
-<li>编写控制器类处理针对主页的请求；<br>```Java<br>package tacos;</li>
+        <h3 id="第一章-环境说明"><a href="#第一章-环境说明" class="headerlink" title="第一章 环境说明"></a>第一章 环境说明</h3><ol>
+<li>Centos7.6 (/boot 需要2G)</li>
+<li>gitlab-ce-12.5.2-ce.0.el7.x86_64.rpm</li>
 </ol>
-<p>import org.springframework.stereotype.Controller;<br>import org.springframework.web.bind.annotation.GetMapping;</p>
-<p>@Controller<br>public class HomeController {<br>    @GetMapping(“/“)<br>    public String home() {<br>        return “home”;<br>    }<br>}</p>
-<pre><code>3. 定义一个视图模版来渲染主页；
-```Java
-&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;Taco Cloud&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;Welcome to...&lt;/h1&gt;
-  &lt;img th:src=&quot;@&#123;/images/TacoCloud.png&#125;&quot; /&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+<hr>
+<h3 id="第二章-安装GitLab"><a href="#第二章-安装GitLab" class="headerlink" title="第二章 安装GitLab"></a>第二章 安装GitLab</h3><pre><code class="bash">yum localinstall gitlab-ce-12.5.2-ce.0.el7.x86_64.rpm
+</code></pre>
+<hr>
+<h3 id="第三章-常用命令"><a href="#第三章-常用命令" class="headerlink" title="第三章 常用命令"></a>第三章 常用命令</h3><ol>
+<li>修改配置文件</li>
+</ol>
+<pre><code class="bash">vim /etc/gitlab/gitlab.rb
+</code></pre>
+<ol start="2">
+<li>重新加载配置内容</li>
+</ol>
+<pre><code class="bash">gitlab-ctl reconfigure
+gitlab-ctl restart
+</code></pre>
+<ol start="3">
+<li>查看日志</li>
+</ol>
+<pre><code class="bash">gitlab-ctl tail
 </code></pre>
 <ol start="4">
-<li>编写了一个简单的测试类来验证工作符合预期。<br>```Java<br>package tacos;</li>
+<li>gitlab-ctl command</li>
 </ol>
-<p>import static org.hamcrest.Matchers.containsString;<br>import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;<br>import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;<br>import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;<br>import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;</p>
-<p>import org.junit.Test;<br>import org.junit.runner.RunWith;<br>import org.springframework.beans.factory.annotation.Autowired;<br>import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;<br>import org.springframework.test.context.junit4.SpringRunner;<br>import org.springframework.test.web.servlet.MockMvc;</p>
-<p>@RunWith(SpringRunner.class)<br>@WebMvcTest(HomeController.class)   // &lt;1&gt;<br>public class HomeControllerTest {<br>    @Autowired<br>    private MockMvc mockMvc;   // &lt;2&gt;<br>    @Test<br>    public void testHomePage() throws Exception {<br>        mockMvc.perform(get(“/“))    // &lt;3&gt;<br>                .andExpect(status().isOk())  // &lt;4&gt;<br>                .andExpect(view().name(“home”))  // &lt;5&gt;<br>                .andExpect(content().string(           // &lt;6&gt;<br>                        containsString(“Welcome to…”)));<br>    }<br>}</p>
-<pre><code>
+<pre><code class="bash">gitlab-ctl start # 启动所有服务
+gitlab-ctl restart # 重启所有服务
+gitlab-ctl stop # 关闭所有服务
+gitlab-ctl status # 查看所有服务状态
+gitlab-ctl tail    # 查看日志信息
+gitlab-ctl service-list # 列举所有启动服务
+gitlab-ctl  graceful-kill # 平稳停止一个服务
+gitlab-ctl reconfigure # 修改配置文件之后，需要重新加载下
+gitlab-ctl show-config # 查看所有服务配置文件信息
+gitlab-ctl uninstall # 卸载这个软件
+gitlab-ctl cleanse # 删除gitlab 数据，重新白手起家
 </code></pre>
+<hr>
+<h3 id="第四章-目录"><a href="#第四章-目录" class="headerlink" title="第四章 目录"></a>第四章 目录</h3><ol>
+<li>库默认存储目录:<br>/var/opt/gitlab/git-data/repositories/rootopt/gitlab</li>
+<li>应用代码和相应的依赖程序: /opt/gitlab</li>
+<li>命令编译后的应用数据和配置文件，不需要人为修改配置后的应用数据和<br>配置文件: /var/opt/gitlab: gitlab-ctl reconfigure:命令编译后的应用数据和<br>配置文件，不需要人为修改配置</li>
+<li>配置文件目录: /etc/gitlab</li>
+<li>此目录下存放了gitlab各个组件产生的日志: /var/log/gitlab</li>
+<li>备份文件生成的目录: /var/opt/gitlab/backups/</li>
+</ol>
+<hr>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1726283687@qq.com </span>
