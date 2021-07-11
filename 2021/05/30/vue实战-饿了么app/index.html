@@ -211,7 +211,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="22">
-<input type="hidden" id="yelog_site_word_count" value="47.5k">
+<input type="hidden" id="yelog_site_word_count" value="47.8k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -517,12 +517,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-06-23 16:31:40'>2021-05-30 08:23</time>
+            发布时间 : <time class="date" title='最后更新: 2021-07-11 23:46:10'>2021-05-30 08:23</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:1.2k</span>
+        <span>字数:1.4k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -541,7 +541,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-text">1.环境搭建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E6%AD%A5%E9%AA%A4"><span class="toc-text">2.项目创建步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0%E8%BF%87%E7%A8%8B"><span class="toc-text">3.功能实现过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1%E5%AE%9E%E7%8E%B0%E7%99%BB%E9%99%86%E6%A8%A1%E5%9D%97"><span class="toc-text">3.1实现登陆模块</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-text">1.环境搭建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E6%AD%A5%E9%AA%A4"><span class="toc-text">2.项目创建步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0%E8%BF%87%E7%A8%8B"><span class="toc-text">3.功能实现过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1%E5%AE%9E%E7%8E%B0%E7%99%BB%E9%99%86%E6%A8%A1%E5%9D%97"><span class="toc-text">3.1实现登陆模块</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%85%B6%E4%BB%96%E8%AF%B4%E6%98%8E"><span class="toc-text">4.其他说明</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E8%B0%83%E6%95%B4%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%91%BD%E5%90%8D%E5%92%8C%E4%BD%8D%E7%BD%AE"><span class="toc-text">4.1 调整项目文件的命名和位置</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -558,50 +558,56 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="1-环境搭建"><a href="#1-环境搭建" class="headerlink" title="1.环境搭建"></a>1.环境搭建</h3><h3 id="2-项目创建步骤"><a href="#2-项目创建步骤" class="headerlink" title="2.项目创建步骤"></a>2.项目创建步骤</h3><ol>
-<li>在当前路径下创建一个项目<pre><code class="bash"># vue create .
+<li>在当前路径下创建一个项目</li>
+</ol>
+<pre><code class="bash"># vue create .
 </code></pre>
-</li>
+<ol start="2">
 <li>同意在当前文件夹下创建项目：y</li>
 <li>选择对应的版本：Manually select features</li>
 <li>空格选择要使用：choose vue version, Babel, Vuex, Router;</li>
 <li>回车选择2.X</li>
-<li>同意选择使用 Use history mode for router </li>
+<li>同意选择使用 Use history mode for router</li>
 <li>选择 package.json</li>
 <li>不保存：n</li>
 <li>调整一下项目文件的命名和位置：参考4.1项目说明</li>
-<li>项目启动命令：<pre><code class="bash">npm run serve
+<li>项目启动命令：</li>
+</ol>
+<pre><code class="bash">npm run serve
 </code></pre>
-</li>
-</ol>
 <h3 id="3-功能实现过程"><a href="#3-功能实现过程" class="headerlink" title="3.功能实现过程"></a>3.功能实现过程</h3><h4 id="3-1实现登陆模块"><a href="#3-1实现登陆模块" class="headerlink" title="3.1实现登陆模块"></a>3.1实现登陆模块</h4><ol>
-<li>创建 src/views/Login.vue, 代码如下所示<br>```Vue<template>
-<div class="login">
- Login
-</div>
-</template></li>
+<li>创建 src/views/Login.vue, 代码如下所示</li>
 </ol>
-<script>
-export default {
-  name: 'login',
-  components: {
-    
-  }
-}
-</script>
+<pre><code class="Vue">&lt;template&gt;
+  &lt;div class=&quot;login&quot;&gt;
+    Login
+  &lt;/div&gt;
+&lt;/template&gt;
 
-<style>
-.login {
+&lt;script&gt;
+export default &#123;
+  name: &#39;login&#39;,
+  components: &#123;
+    
+  &#125;
+&#125;
+&lt;/script&gt;
+
+&lt;style&gt;
+.login &#123;
     width: 100%;
     height: 100%;
     padding: 30px;
     box-sizing: border-box;
     background: #fff;
     text-align: center;
-}
-</style>
-<pre><code>2. 设置当前路由 route.js 和 按需加载
-```Vue
-&#123;
+&#125;
+&lt;/style&gt;
+</code></pre>
+<ol start="2">
+<li>设置当前路由 route.js 和 按需加载</li>
+</ol>
+<pre><code class="Vue">&#123;
     path: &#39;/&#39;,
     name: &#39;Index&#39;,
     // component: Index
@@ -614,13 +620,24 @@ export default {
   &#125;
 </code></pre>
 <ol start="3">
-<li>设置路由守卫，route.js<br>```Vue<br>// 路由守卫<br>router.beforeEach((to, from, next) =&gt; {<br>const isLogin = localStorage.ele_login ? true : false;<br>if (to.path == ‘/login’) {<br> next();<br>} else {<br> // 是否在登陆状态下，如果是就正常跳转，否则返回到 login页面去<br> isLogin ? next() : next(“/login” )</li>
+<li>设置路由守卫，route.js</li>
 </ol>
-<p>  }<br>})</p>
-<p>export default router</p>
-<pre><code>4.导入logo到 assets中，在 login中使用
-```Vue
-&lt;template&gt;
+<pre><code class="Vue">// 路由守卫
+router.beforeEach((to, from, next) =&gt; &#123;
+  const isLogin = localStorage.ele_login ? true : false;
+  if (to.path == &#39;/login&#39;) &#123;
+    next();
+  &#125; else &#123;
+    // 是否在登陆状态下，如果是就正常跳转，否则返回到 login页面去
+    isLogin ? next() : next(&quot;/login&quot; )
+
+  &#125;
+&#125;)
+
+export default router
+</code></pre>
+<p>4.导入logo到 assets中，在 login中使用</p>
+<pre><code class="Vue">&lt;template&gt;
   &lt;div class=&quot;login&quot;&gt;
     &lt;div class=&quot;logo&quot;&gt;
         &lt;img src=&quot;../assets/logo.jpeg&quot; alt=&quot;my logo image&quot;&gt;
@@ -720,73 +737,75 @@ export default &#123;
 &lt;/style&gt;
 </code></pre>
 <ol start="6">
-<li>使用组件，在login.vue 的 script引用组件,在components{}注册组件，创建组件需要的data<br>```vue<template>
-<div class="login">
- <div class="logo">
-     <img src="../assets/logo.jpeg" alt="my logo image">
- </div>
- <!-- 手机号 -->
- <InputGroup type="number" v-model="phone" placeholder="手机号"
- :btnTitle="btnTitle" :disabled="disabled" :error="errors.phone"/>
- <!-- 验证码 -->
- <InputGroup type="number" v-model="verifyCode" placeholder="验证码"
- :error="errors.code"/>
- <!-- 用户服务协议 -->
- <div class="login_des">
-   <p>
-     新用户登陆即自动注册，表示已同意
-     <span>《用户服务协议》</span>
-   </p>
- </div>
- <!-- 登陆按钮 -->
- <div class="login_btn">
-   <button>登录</button>
- </div>
-</div>
-</template></li>
+<li>使用组件，在login.vue 的 script引用组件,在components{}注册组件，创建组件需要的data</li>
 </ol>
-<script>
-import InputGroup from "../components/InputGroup"
-export default {
-  name: 'login',
-  data() {
-    return {
-      phone: "",
-      verifyCode: "",
-      errors: {}, // 有手机错误或者验证码错误
-      btnTitle: "获取验证码",
-      disabled: false
-    }
-  },
-  components: {
-    InputGroup
-  }
-}
-</script>
+<pre><code class="vue">&lt;template&gt;
+  &lt;div class=&quot;login&quot;&gt;
+    &lt;div class=&quot;logo&quot;&gt;
+        &lt;img src=&quot;../assets/logo.jpeg&quot; alt=&quot;my logo image&quot;&gt;
+    &lt;/div&gt;
+    &lt;!-- 手机号 --&gt;
+    &lt;InputGroup type=&quot;number&quot; v-model=&quot;phone&quot; placeholder=&quot;手机号&quot;
+    :btnTitle=&quot;btnTitle&quot; :disabled=&quot;disabled&quot; :error=&quot;errors.phone&quot;/&gt;
+    &lt;!-- 验证码 --&gt;
+    &lt;InputGroup type=&quot;number&quot; v-model=&quot;verifyCode&quot; placeholder=&quot;验证码&quot;
+    :error=&quot;errors.code&quot;/&gt;
+    &lt;!-- 用户服务协议 --&gt;
+    &lt;div class=&quot;login_des&quot;&gt;
+      &lt;p&gt;
+        新用户登陆即自动注册，表示已同意
+        &lt;span&gt;《用户服务协议》&lt;/span&gt;
+      &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;!-- 登陆按钮 --&gt;
+    &lt;div class=&quot;login_btn&quot;&gt;
+      &lt;button&gt;登录&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
 
-<style>
-.login {
+&lt;script&gt;
+import InputGroup from &quot;../components/InputGroup&quot;
+export default &#123;
+  name: &#39;login&#39;,
+  data() &#123;
+    return &#123;
+      phone: &quot;&quot;,
+      verifyCode: &quot;&quot;,
+      errors: &#123;&#125;, // 有手机错误或者验证码错误
+      btnTitle: &quot;获取验证码&quot;,
+      disabled: false
+    &#125;
+  &#125;,
+  components: &#123;
+    InputGroup
+  &#125;
+&#125;
+&lt;/script&gt;
+
+&lt;style&gt;
+.login &#123;
     width: 100%;
     height: 100%;
     padding: 30px;
     box-sizing: border-box;
     background: #fff;
-}
-.logo {
+&#125;
+.logo &#123;
     text-align: center;
-}
-.login img {
+&#125;
+.login img &#123;
     width: 150px;
-}
+&#125;
 
-.login_des {
+.login_des &#123;
   color: #aaa;
   line-height: 22px;
-}
-.login_des span {
+&#125;
+.login_des span &#123;
   color: #4d90fe;
-}
-.login_btn button {
+&#125;
+.login_btn button &#123;
   width: 100%;
   height: 40px;
   background-color: #48ca38;
@@ -795,30 +814,18 @@ export default {
   font-size: 14px;
   border: none;
   outline: none;
-}
-</style>
-<pre><code>
-7. 
-
-
-
-
-
-
-
-
-
-
-### 4.其他说明
-#### 4.1 调整项目文件的命名和位置
-1. 删除 src/components/HelloWorld.Vue,
-2. 删除 src/views/About.vue 
-3. 重命名并移动 src/store/index.js 为 src/store.js， 删除 src/store;
-4. 重命名并移动 src/router/index.js 为 src/router.js， 删除 src/router;
-5. 新建 public/css/reset.css, 拷贝 reset.css的代码过来，可以上网拷贝。
-6. 修改 src/main.js 内容为
-```Vue
-import Vue from &#39;vue&#39;
+&#125;
+&lt;/style&gt;
+</code></pre>
+<h3 id="4-其他说明"><a href="#4-其他说明" class="headerlink" title="4.其他说明"></a>4.其他说明</h3><h4 id="4-1-调整项目文件的命名和位置"><a href="#4-1-调整项目文件的命名和位置" class="headerlink" title="4.1 调整项目文件的命名和位置"></a>4.1 调整项目文件的命名和位置</h4><ol>
+<li>删除 src/components/HelloWorld.Vue,</li>
+<li>删除 src/views/About.vue</li>
+<li>重命名并移动 src/store/index.js 为 src/store.js， 删除 src/store;</li>
+<li>重命名并移动 src/router/index.js 为 src/router.js， 删除 src/router;</li>
+<li>新建 public/css/reset.css, 拷贝 reset.css的代码过来，可以上网拷贝。</li>
+<li>修改 src/main.js 内容为</li>
+</ol>
+<pre><code class="Vue">import Vue from &#39;vue&#39;
 import App from &#39;./App.vue&#39;
 import router from &#39;./router.js&#39;
 import store from &#39;./store.js&#39;
@@ -832,16 +839,34 @@ new Vue(&#123;
 &#125;).$mount(&#39;#app&#39;)
 </code></pre>
 <ol start="7">
-<li>修改 router.js 的内容为<br>```Vue<br>import Vue from ‘vue’<br>import VueRouter from ‘vue-router’<br>import Index from ‘./views/Index.vue’</li>
+<li>修改 router.js 的内容为</li>
 </ol>
-<p>Vue.use(VueRouter)</p>
-<p>const routes = [<br>  {<br>    path: ‘/‘,<br>    name: ‘Index’,<br>    component: Index<br>  }<br>]</p>
-<p>const router = new VueRouter({<br>  mode: ‘history’,<br>  base: process.env.BASE_URL,<br>  routes<br>})</p>
-<p>export default router</p>
-<pre><code>
-8. src/App.vue里面全部内容。
-```Vue
-&lt;template&gt;
+<pre><code class="Vue">import Vue from &#39;vue&#39;
+import VueRouter from &#39;vue-router&#39;
+import Index from &#39;./views/Index.vue&#39;
+
+Vue.use(VueRouter)
+
+const routes = [
+  &#123;
+    path: &#39;/&#39;,
+    name: &#39;Index&#39;,
+    component: Index
+  &#125;
+]
+
+const router = new VueRouter(&#123;
+  mode: &#39;history&#39;,
+  base: process.env.BASE_URL,
+  routes
+&#125;)
+
+export default router
+</code></pre>
+<ol start="8">
+<li>src/App.vue里面全部内容。</li>
+</ol>
+<pre><code class="Vue">&lt;template&gt;
   &lt;div id=&quot;app&quot;&gt;
     &lt;router-view/&gt;
   &lt;/div&gt;
@@ -863,29 +888,31 @@ export default &#123;
 &lt;/style&gt;
 </code></pre>
 <ol start="9">
-<li>重命名 src/views/Home.vue为Index.vue,修改其内容为<pre><code class="Vue">&lt;template&gt;
-&lt;div class=&quot;index&quot;&gt;
- 主页
-&lt;/div&gt;
+<li>重命名 src/views/Home.vue为Index.vue,修改其内容为</li>
+</ol>
+<pre><code class="Vue">&lt;template&gt;
+  &lt;div class=&quot;index&quot;&gt;
+    主页
+  &lt;/div&gt;
 &lt;/template&gt;
 &lt;script&gt;
 export default &#123;
-name: &#39;Index&#39;,
-components: &#123;  
-&#125;
+  name: &#39;Index&#39;,
+  components: &#123;  
+  &#125;
 &#125;
 &lt;/script&gt;
 </code></pre>
-</li>
-<li>在 public/index.html 引用 ./css/reset.css和修改部分内容<br>```html<link rel="stylesheet" href="./css/reset.css">
-<style>
-  html,body {
-    width: 100%;
-    height: 100%;
-  }
-</style></li>
+<ol start="10">
+<li>在 public/index.html 引用 ./css/reset.css和修改部分内容</li>
 </ol>
-<pre><code>
+<pre><code class="html">&lt;link rel=&quot;stylesheet&quot; href=&quot;./css/reset.css&quot;&gt;
+    &lt;style&gt;
+      html,body &#123;
+        width: 100%;
+        height: 100%;
+      &#125;
+    &lt;/style&gt;
 </code></pre>
 
       
