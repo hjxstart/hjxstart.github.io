@@ -517,7 +517,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-07-11 23:46:10'>2021-05-30 08:23</time>
+            发布时间 : <time class="date" title='最后更新: 2021-07-11 23:50:07'>2021-05-30 08:23</time>
         
     </div>
     <div class="article-meta">
@@ -578,7 +578,7 @@
 <h3 id="3-功能实现过程"><a href="#3-功能实现过程" class="headerlink" title="3.功能实现过程"></a>3.功能实现过程</h3><h4 id="3-1实现登陆模块"><a href="#3-1实现登陆模块" class="headerlink" title="3.1实现登陆模块"></a>3.1实现登陆模块</h4><ol>
 <li>创建 src/views/Login.vue, 代码如下所示</li>
 </ol>
-<pre><code class="Vue">&lt;template&gt;
+<pre><code class="vue">&lt;template&gt;
   &lt;div class=&quot;login&quot;&gt;
     Login
   &lt;/div&gt;
@@ -607,7 +607,7 @@ export default &#123;
 <ol start="2">
 <li>设置当前路由 route.js 和 按需加载</li>
 </ol>
-<pre><code class="Vue">&#123;
+<pre><code class="vue">&#123;
     path: &#39;/&#39;,
     name: &#39;Index&#39;,
     // component: Index
@@ -622,7 +622,7 @@ export default &#123;
 <ol start="3">
 <li>设置路由守卫，route.js</li>
 </ol>
-<pre><code class="Vue">// 路由守卫
+<pre><code class="vue">// 路由守卫
 router.beforeEach((to, from, next) =&gt; &#123;
   const isLogin = localStorage.ele_login ? true : false;
   if (to.path == &#39;/login&#39;) &#123;
