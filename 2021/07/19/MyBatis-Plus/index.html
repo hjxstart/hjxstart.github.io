@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>SpringBoot2学习 | hjxstart的博客</title>
+  <title>MyBatis-Plus | hjxstart的博客</title>
   <meta name="keywords" content="">
-  <meta name="description" content="SpringBoot2学习 | hjxstart的博客">
+  <meta name="description" content="MyBatis-Plus | hjxstart的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="1. pom.xml    &lt;!--MyBatis Plus--&gt;         &lt;dependency&gt;             &lt;groupId&gt;com.baomidou&lt;&#x2F;groupId&gt;             &lt;artifactId&gt;mybatis-plus-boot-starter&lt;&#x2F;artifactId&gt;">
 <meta property="og:type" content="article">
@@ -525,32 +525,24 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-SpringBoot2学习" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-MyBatis-Plus" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">SpringBoot2学习</h1>
+        <h1 class="article-title">MyBatis-Plus</h1>
     
     <div class="article-meta">
         
         
-        
-        <span class="book">
-            <i class="iconfont icon-category"></i>
-            
-            
-            <a  data-rel="后端">后端</a>
-            
-        </span>
         
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-07-11 23:59:44'>2021-06-08 16:51</time>
+            发布时间 : <time class="date" title='最后更新: 2021-07-19 12:56:12'>2021-07-19 12:40</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:1.4k</span>
+        <span>字数:672</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -569,7 +561,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SpringBoot2%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF-%E6%A0%B8%E5%BF%83%E5%8A%9F%E8%83%BD"><span class="toc-text">SpringBoot2核心技术-核心功能</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-text">1、配置文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1%E3%80%81yaml"><span class="toc-text">1.1、yaml</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-1%E3%80%81%E7%AE%80%E4%BB%8B"><span class="toc-text">1.1.1、简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-2%E3%80%81%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="toc-text">1.1.2、基本语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-3%E3%80%81%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">1.1.3、数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-4%E3%80%81%E7%A4%BA%E4%BE%8B"><span class="toc-text">1.1.4、示例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81web%E5%BC%80%E5%8F%91"><span class="toc-text">2、web开发</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E7%AE%80%E5%8D%95%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%90"><span class="toc-text">2.1 简单功能分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-1%E3%80%81%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E8%AE%BF%E9%97%AE"><span class="toc-text">2.1.1、静态资源访问</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-2%E3%80%81%E6%AC%A2%E8%BF%8E%E9%A1%B5%E6%94%AF%E6%8C%81"><span class="toc-text">2.1.2、欢迎页支持</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-3%E3%80%81%E8%87%AA%E5%AE%9A%E4%B9%89favicon"><span class="toc-text">2.1.3、自定义favicon</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-4%E3%80%81%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E9%85%8D%E7%BD%AE%E5%8E%9F%E7%90%86"><span class="toc-text">2.1.4、静态资源配置原理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0%E5%A4%84%E7%90%86"><span class="toc-text">2.2 请求参数处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1%E3%80%81%E8%AF%B7%E6%B1%82%E6%98%A0%E5%B0%84"><span class="toc-text">2.2.1、请求映射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2%E3%80%81%E6%99%AE%E9%80%9A%E5%8F%82%E6%95%B0%E4%B8%8E%E5%9F%BA%E6%9C%AC%E6%B3%A8%E8%A7%A3"><span class="toc-text">2.2.2、普通参数与基本注解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE"><span class="toc-text">3、数据访问</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%81%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95"><span class="toc-text">4、单元测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5%E3%80%81%E6%8C%87%E6%A0%87%E7%9B%91%E6%8E%A7"><span class="toc-text">5、指标监控</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6%E3%80%81%E5%8E%9F%E6%9D%A5%E8%A7%A3%E6%9E%90"><span class="toc-text">6、原来解析</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-pom-xml"><span class="toc-text">1. pom.xml</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%87%AA%E5%8A%A8%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E7%B1%BB"><span class="toc-text">2. 自动代码生成类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Application"><span class="toc-text">3. Application</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-application-yaml"><span class="toc-text">4. application.yaml</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%88%9B%E5%BB%BA%E5%A5%BD%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%B3%E5%8F%AF"><span class="toc-text">5. 创建好数据库即可</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-Controller%E6%B5%8B%E8%AF%95"><span class="toc-text">6. Controller测试</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -585,264 +577,122 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="SpringBoot2核心技术-核心功能"><a href="#SpringBoot2核心技术-核心功能" class="headerlink" title="SpringBoot2核心技术-核心功能"></a>SpringBoot2核心技术-核心功能</h1><h2 id="1、配置文件"><a href="#1、配置文件" class="headerlink" title="1、配置文件"></a>1、配置文件</h2><h3 id="1-1、yaml"><a href="#1-1、yaml" class="headerlink" title="1.1、yaml"></a>1.1、yaml</h3><h4 id="1-1-1、简介"><a href="#1-1-1、简介" class="headerlink" title="1.1.1、简介"></a>1.1.1、简介</h4><p>YAML 是一种采用递归缩进表示层级关系的标记语言，非常适合用来以数据为中心的配置文件.<br>可以使用</p>
-<h4 id="1-1-2、基本语法"><a href="#1-1-2、基本语法" class="headerlink" title="1.1.2、基本语法"></a>1.1.2、基本语法</h4><ul>
-<li>key: value; kv之间有空格</li>
-<li>大小写敏感</li>
-<li>使用缩进表示层次关系</li>
-<li>缩进不允许使用tab，只允许空格</li>
-<li>缩进的空格数不重要，只要相同层级的元素左对齐即可</li>
-<li>‘#’表示注释</li>
-<li>“与”表示字符串内容会被 转义/不转义</li>
-</ul>
-<h4 id="1-1-3、数据类型"><a href="#1-1-3、数据类型" class="headerlink" title="1.1.3、数据类型"></a>1.1.3、数据类型</h4><ul>
-<li>字面量：单个的，不可再分的值。date、boolean、string、number、null</li>
-</ul>
-<pre><code class="yaml">k: v
-</code></pre>
-<ul>
-<li>对象：键值对的集合。map、hash、set、object</li>
-</ul>
-<pre><code class="yaml">行内写法：k: &#123;k1:v1,k2:v2,k3:v3&#125;
-#或
-k:
-  k1: v1
-  k2: v2
-  k3: v3
-  K4: v4
-</code></pre>
-<ul>
-<li>数组：一组按次序排列的值。array、list、queue</li>
-</ul>
-<pre><code class="yaml">行内写法：k: [v1,v2,v3]
-#或者
-k:
- - v1
- - v2
- - v3
+        <h3 id="1-pom-xml"><a href="#1-pom-xml" class="headerlink" title="1. pom.xml"></a>1. pom.xml</h3><pre><code class="xml">    &lt;!--MyBatis Plus--&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;com.baomidou&lt;/groupId&gt;
+            &lt;artifactId&gt;mybatis-plus-boot-starter&lt;/artifactId&gt;
+            &lt;version&gt;3.4.1&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;!--代码生成器依赖--&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;com.baomidou&lt;/groupId&gt;
+            &lt;artifactId&gt;mybatis-plus-generator&lt;/artifactId&gt;
+            &lt;version&gt;3.4.1&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;!--模版引擎--&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.apache.velocity&lt;/groupId&gt;
+            &lt;artifactId&gt;velocity-engine-core&lt;/artifactId&gt;
+            &lt;version&gt;2.0&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;!--MySql--&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;mysql&lt;/groupId&gt;
+            &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+            &lt;version&gt;8.0.12&lt;/version&gt;
+            &lt;scope&gt;runtime&lt;/scope&gt;
+        &lt;/dependency&gt;
 </code></pre>
 <hr>
-<h4 id="1-1-4、示例"><a href="#1-1-4、示例" class="headerlink" title="1.1.4、示例"></a>1.1.4、示例</h4><ul>
-<li>Person.java &amp; Pet.java</li>
-</ul>
-<pre><code class="java">@ConfigurationProperties(prefix = &quot;data.person&quot;)
-@Component
-@ToString
-@Data
-public class Person &#123;
-    
-    private String userName;
-    private Boolean boss;
-    private Date birth;
-    private Integer age;
-    private Pet pet;
-    private String[] interests;
-    private List&lt;String&gt; animal;
-    private Map&lt;String, Object&gt; score;
-    private Set&lt;Double&gt; salarys;
-    private Map&lt;String, List&lt;Pet&gt;&gt; allPets;
-&#125;
+<h3 id="2-自动代码生成类"><a href="#2-自动代码生成类" class="headerlink" title="2. 自动代码生成类"></a>2. 自动代码生成类</h3><pre><code class="java">package com.fh.oateat;
 
-@ToString
-@Data
-public class Pet &#123;
-    private String name;
-    private Double weight;
+
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.generator.AutoGenerator;
+import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
+import com.baomidou.mybatisplus.generator.config.GlobalConfig;
+import com.baomidou.mybatisplus.generator.config.PackageConfig;
+import com.baomidou.mybatisplus.generator.config.StrategyConfig;
+import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
+
+public class AutoMapper &#123;
+    public static void main(String[] args) &#123;
+        // 创建 AutoGenerator, MP中对象
+        AutoGenerator ag = new AutoGenerator();
+
+        // 设置全局配置
+        GlobalConfig gc = new GlobalConfig();
+        // 设置代码的生成位置，磁盘的目录
+        String path = System.getProperty(&quot;user.dir&quot;);
+        gc.setOutputDir(path + &quot;/src/main/java&quot;);
+        // 设置生成的类的名称 （命名规则）所有的Dao类都是Mapper结尾的，例如UserMapp;
+        gc.setMapperName(&quot;%sMapper&quot;);
+        gc.setServiceName(&quot;%sService&quot;);
+        gc.setServiceImplName(&quot;%sServiceImple&quot;);
+        gc.setControllerName(&quot;%sController&quot;);
+        // 设置作者
+        gc.setAuthor(&quot;hjxstart&quot;);
+        // 设置主键id 的设置，可能需要安装数据情况进行更改
+        gc.setIdType(IdType.AUTO);
+        // 把GlobalConfig 复制给 AutoGenerator
+        ag.setGlobalConfig(gc);
+
+        // 设置数据源 DataSource
+        DataSourceConfig ds = new DataSourceConfig();
+        // 设置驱动
+        ds.setDriverName(&quot;com.mysql.cj.jdbc.Driver&quot;);
+        // 设置url
+        ds.setUrl(&quot;jdbc:mysql://localhost:3306/oa?serverTimezone=UTC&amp;characterEncoding=utf8&amp;useUnicode=true&amp;useSSL=false&amp;allowPublicKeyRetrieval=true&quot;);
+        // 设置数据库的用户名
+        ds.setUsername(&quot;root&quot;);
+        // 设置密码
+        ds.setPassword(&quot;hadoop&quot;);
+        // 把 DataSourceConfig 赋值给 AutoGenerator
+        ag.setDataSource(ds);
+
+        // 设置Package信息
+        PackageConfig pc = new PackageConfig();
+        // 设置模块名称，相当于包名，在这个包的下面有 mapper, service, controller
+        pc.setModuleName(&quot;v1&quot;);
+        // 设置夫包名,order 就在父包的下面生成
+        pc.setParent(&quot;com.fh.oateat&quot;);
+        ag.setPackageInfo(pc);
+
+        // 设置策略
+        StrategyConfig sc = new StrategyConfig();
+        // 设置支持驼峰的命名规则
+        sc.setNaming(NamingStrategy.underline_to_camel);
+        sc.setColumnNaming(NamingStrategy.underline_to_camel);
+        ag.setStrategy(sc);
+
+        // 执行代码的生成
+        ag.execute();
+    &#125;
 &#125;
-</code></pre>
-<ul>
-<li>application.yaml</li>
-</ul>
-<pre><code class="yaml">data:
-  person:
-    userName: hjxstart
-    boss: true
-    birth: 1998/5/11
-    age: 23
-    interests: [跑步,游泳]
-    animal: [猫,狗]
-    socre:
-      java: 80
-      mysql: 90
-      linux: 100
-    salarys:
-      - 9999.98
-      - 9999.99
-    pet:
-      name: 猫
-      weight: 99.99
-    allPets:
-      sick:
-        - &#123;name: 阿狗,weight: 99.99&#125;
-        - name: 阿猫
-          weight: 88.88
-        - name: 小鱼
-          weight: 77.77
-      health: [&#123;name: 阿花, weight: 19.99&#125;,&#123;name: 阿明, weight: 9.99&#125;]
 </code></pre>
 <hr>
-<h2 id="2、web开发"><a href="#2、web开发" class="headerlink" title="2、web开发"></a>2、web开发</h2><p><a target="_blank" rel="noopener" href="https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/reference/html/spring-boot-features.html#boot-features-developing-web-applications">参考文档</a></p>
-<h3 id="2-1-简单功能分析"><a href="#2-1-简单功能分析" class="headerlink" title="2.1 简单功能分析"></a>2.1 简单功能分析</h3><h4 id="2-1-1、静态资源访问"><a href="#2-1-1、静态资源访问" class="headerlink" title="2.1.1、静态资源访问"></a>2.1.1、静态资源访问</h4><ul>
-<li>默认支持的静态资源的目录<br>/static(or /public or /resources or /META-INF/resources)</li>
-<li>可以自定义静态资源访问前缀(默认为”/**”)和静态资源目录<br><strong>注意</strong>：自定义静态资源访问前缀会导致对欢迎页和Favicon的支持失效</li>
-</ul>
-<pre><code class="yaml">spring:
-  mvc:
-    static-path-pattern: /res/** #自定义静态资源访问前缀
-  resources:
-    static-locations: [classpath:/staticfile] # 自定义静态资源目录
+<h3 id="3-Application"><a href="#3-Application" class="headerlink" title="3. Application"></a>3. Application</h3><pre><code class="java">
+@MapperScan(&quot;com.fh.oateat.v1.mapper&quot;) // 该注解可以省略在每个mapper接口的注解
+@SpringBootApplication
 </code></pre>
-<h4 id="2-1-2、欢迎页支持"><a href="#2-1-2、欢迎页支持" class="headerlink" title="2.1.2、欢迎页支持"></a>2.1.2、欢迎页支持</h4><ul>
-<li>把欢迎页(index.html)放在 /static or /template 目录下即可。</li>
-<li>如果在上面两个文件目录下找不到就处理 / 的Controller。</li>
-</ul>
-<h4 id="2-1-3、自定义favicon"><a href="#2-1-3、自定义favicon" class="headerlink" title="2.1.3、自定义favicon"></a>2.1.3、自定义favicon</h4><ul>
-<li>把 favicon 放在静态资源目录下即可，默认放在(/static)</li>
-</ul>
-<h4 id="2-1-4、静态资源配置原理"><a href="#2-1-4、静态资源配置原理" class="headerlink" title="2.1.4、静态资源配置原理"></a>2.1.4、静态资源配置原理</h4><ol>
-<li>补充：配置类只有一个有参构造器的情况</li>
-</ol>
-<ul>
-<li>示例</li>
-</ul>
-<pre><code class="java">// 有参构造器所有参数的值都会从容器中确定
-//ResourceProperties resourceProperties；获取和spring.resources绑定的所有的值的对象
-//WebMvcProperties mvcProperties 获取和spring.mvc绑定的所有的值的对象
-//ListableBeanFactory beanFactory Spring的beanFactory
-//HttpMessageConverters 找到所有的HttpMessageConverters
-//ResourceHandlerRegistrationCustomizer 找到 资源处理器的自定义器。=========
-//DispatcherServletPath  
-//ServletRegistrationBean   给应用注册Servlet、Filter....
-    public WebMvcAutoConfigurationAdapter(ResourceProperties resourceProperties, WebMvcProperties mvcProperties,
-                ListableBeanFactory beanFactory, ObjectProvider&lt;HttpMessageConverters&gt; messageConvertersProvider,
-                ObjectProvider&lt;ResourceHandlerRegistrationCustomizer&gt; resourceHandlerRegistrationCustomizerProvider,
-                ObjectProvider&lt;DispatcherServletPath&gt; dispatcherServletPath,
-                ObjectProvider&lt;ServletRegistrationBean&lt;?&gt;&gt; servletRegistrations) &#123;
-            this.resourceProperties = resourceProperties;
-            this.mvcProperties = mvcProperties;
-            this.beanFactory = beanFactory;
-            this.messageConvertersProvider = messageConvertersProvider;
-            this.resourceHandlerRegistrationCustomizer = resourceHandlerRegistrationCustomizerProvider.getIfAvailable();
-            this.dispatcherServletPath = dispatcherServletPath;
-            this.servletRegistrations = servletRegistrations;
-        &#125;
+<hr>
+<h3 id="4-application-yaml"><a href="#4-application-yaml" class="headerlink" title="4. application.yaml"></a>4. application.yaml</h3><pre><code class="yaml">spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/oa?serverTimezone=UTC&amp;characterEncoding=utf8&amp;useUnicode=true&amp;useSSL=false&amp;allowPublicKeyRetrieval=true
+    username: root
+    password: hadoop # hadoop service
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis-plus:
+  configuration:
+    // 控制台输出对数据库的操作
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 </code></pre>
-<ol start="2">
-<li><p>资源处理的默认规则</p>
-</li>
-<li><p>欢迎页的处理规则</p>
-</li>
-<li><p>faivcon</p>
-</li>
-</ol>
-<h3 id="2-2-请求参数处理"><a href="#2-2-请求参数处理" class="headerlink" title="2.2 请求参数处理"></a>2.2 请求参数处理</h3><h3 id="2-2-1、请求映射"><a href="#2-2-1、请求映射" class="headerlink" title="2.2.1、请求映射"></a>2.2.1、请求映射</h3><h3 id="2-2-2、普通参数与基本注解"><a href="#2-2-2、普通参数与基本注解" class="headerlink" title="2.2.2、普通参数与基本注解"></a>2.2.2、普通参数与基本注解</h3><ol>
-<li>常用注解<br>@PathVariable, @RequestHeader, @RequestParam, @CookieValue, @ModelAttribute, @MatriVariable, @RequestBody</li>
-</ol>
-<pre><code class="java">@PathVariable // 获取 url 路径变量(id, username)的值
-@RequestHeader // 获取请求的Header的值
-@RequestParam // 获取 url 的参数(age, inters)的值
-@CookieValue // 获取 Cookie 的值
-@ModelAttribute // 获取request域属性的值
-    // /car/3/owner/lisi?age=18&amp;inters=basketball&amp;inters=game
-    @GetMapping(&quot;/car/&#123;id&#125;/owner/&#123;username&#125;&quot;)
-    public Map&lt;String, Object&gt; getCar(@PathVariable(&quot;id&quot;) Integer id,
-                                      @PathVariable(&quot;username&quot;) String name, //
-                                      @PathVariable Map&lt;String, String&gt; pv,
-                                      @RequestHeader(&quot;User-Agent&quot;) String userAgent,
-                                      @RequestHeader Map&lt;String, String&gt; rh,
-                                      @RequestParam(&quot;age&quot;) Integer age,
-                                      @RequestParam(&quot;inters&quot;) List&lt;String&gt; inters,
-                                      @RequestParam Map&lt;String,String&gt; rp,
-                                      @CookieValue(&quot;Idea-b83d5636&quot;) String idea,
-                                      @CookieValue(&quot;testcookie&quot;) Cookie cookie) &#123;
-        Map&lt;String,Object&gt; map = new HashMap&lt;&gt;();
-        map.put(&quot;PV_Id&quot;, id);
-        map.put(&quot;PV_Username&quot;, name);
-        map.put(&quot;PV_Map&quot;, pv);
-        map.put(&quot;RH_UserAgent&quot;, userAgent);
-        map.put(&quot;RH_Map&quot;, rh);
-        map.put(&quot;RP_age&quot;, age);
-        map.put(&quot;RP_inters&quot;, inters);
-        map.put(&quot;RP_Map&quot;, rp);
-        map.put(&quot;CV_idea&quot;, idea);
-        map.put(&quot;Cookie&quot;, cookie);
-        return map;
-    &#125;
-
-// 1.需要开启矩阵变量的配置（在Configuration类中配置）
-    @Bean
-    public WebMvcConfigurer webMvcConfigurer() &#123;
-        return new WebMvcConfigurer() &#123;
-            @Override
-            public void configurePathMatch(PathMatchConfigurer configurer) &#123;
-                UrlPathHelper urlPathHelper = new UrlPathHelper();
-                urlPathHelper.setRemoveSemicolonContent(false);
-                configurer.setUrlPathHelper(urlPathHelper);
-            &#125;
-        &#125;;
-    &#125;
-@MatriVariable // 2.获取矩阵变量的值。(面试题：禁用cookie后如何传输sessionId)
-    // /boss/1;age=20/2;age=10
-    @GetMapping(&quot;/boss/&#123;bossId&#125;/&#123;empId&#125;&quot;)
-    public Map boss(@MatrixVariable(value = &quot;age&quot;, pathVar = &quot;bossId&quot;) Integer bossAge,
-                    @MatrixVariable(value = &quot;age&quot;, pathVar = &quot;empId&quot;) Integer empAge) &#123;
-        Map&lt;String, Object&gt; map = new HashMap&lt;&gt;();
-        map.put(&quot;bossAge&quot;, bossAge);
-        map.put(&quot;empAge&quot;, empAge);
-        return map;
-    &#125;
-
-@RequestBody // 获取请求体（只有POST请求才有）的值
-    @PostMapping(&quot;/save&quot;)
-    public Map postMethod(@RequestBody String content) &#123;
-        Map&lt;String, Object&gt; map = new HashMap&lt;&gt;();
-        map.put(&quot;RequestBody&quot;, content);
-        return map;
-    &#125;
-</code></pre>
-<ul>
-<li>原理：</li>
-</ul>
-<ol start="2">
-<li>Servlet API:<br>WebRequest, ServletRequest, MultipartRequest, HttpSession、javax.servlet.http.PushBuilder, Principal, InputStream, Reader, HttpMethod, Locale, TimeZone, Zoneld</li>
-</ol>
-<ul>
-<li>ServletRequestMethodArgumentResolver 可以处理以上的部分参数</li>
-</ul>
-<pre><code class="java">@Override
-public boolean supportsParameter(MethodParameter parameter) &#123;
-    Class&lt;?&gt; paramType = parameter.getParameterType();
-    return (WebRequest.class.isAssignableFrom(paramType) ||
-        ServletRequest.class.isAssignableFrom(paramType) ||
-        MultipartRequest.class.isAssignableFrom(paramType) ||
-        HttpSession.class.isAssignableFrom(paramType) ||
-        (pushBuilder != null &amp;&amp; pushBuilder.isAssignableFrom(paramType)) ||
-        Principal.class.isAssignableFrom(paramType) ||
-        InputStream.class.isAssignableFrom(paramType) ||
-        Reader.class.isAssignableFrom(paramType) ||
-        HttpMethod.class == paramType ||
-        Locale.class == paramType ||
-        TimeZone.class == paramType ||
-        ZoneId.class == paramType);
-&#125;
-</code></pre>
-<ol start="3">
-<li>复杂参数<br><strong>Map</strong>, <strong>Model</strong>, Errors/BindingResult, <strong>RedirectAttributes</strong>, <strong>ServletResponse</strong>, SessionStatus, UriComponentsBuilder, ServletUriComponentsBuilder</li>
-</ol>
-<ul>
-<li>map, model里面的数据会被放在 request 的请求域 request.setAttribute</li>
-<li>RedirectAttributes 是重定向携带数据</li>
-<li>ServletResponse 拿到原生的Response能干什么</li>
-</ul>
-<ol start="4">
-<li>自定义对象参数<br>可以自动类型与格式化，可以级联封装。</li>
+<hr>
+<h3 id="5-创建好数据库即可"><a href="#5-创建好数据库即可" class="headerlink" title="5. 创建好数据库即可"></a>5. 创建好数据库即可</h3><ol>
+<li>会根据数据库的表自动生成entity,mapper,service,controller</li>
 </ol>
 <hr>
-<h2 id="3、数据访问"><a href="#3、数据访问" class="headerlink" title="3、数据访问"></a>3、数据访问</h2><hr>
-<h2 id="4、单元测试"><a href="#4、单元测试" class="headerlink" title="4、单元测试"></a>4、单元测试</h2><hr>
-<h2 id="5、指标监控"><a href="#5、指标监控" class="headerlink" title="5、指标监控"></a>5、指标监控</h2><hr>
-<h2 id="6、原来解析"><a href="#6、原来解析" class="headerlink" title="6、原来解析"></a>6、原来解析</h2><hr>
-
+<h3 id="6-Controller测试"><a href="#6-Controller测试" class="headerlink" title="6. Controller测试"></a>6. Controller测试</h3>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1726283687@qq.com </span>
     </div>

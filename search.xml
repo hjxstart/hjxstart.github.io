@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>MyBatis-Plus</title>
+      <link href="/2021/07/19/MyBatis-Plus/"/>
+      <url>/2021/07/19/MyBatis-Plus/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-pom-xml"><a href="#1-pom-xml" class="headerlink" title="1. pom.xml"></a>1. pom.xml</h3><pre><code class="xml">    &lt;!--MyBatis Plus--&gt;        &lt;dependency&gt;            &lt;groupId&gt;com.baomidou&lt;/groupId&gt;            &lt;artifactId&gt;mybatis-plus-boot-starter&lt;/artifactId&gt;            &lt;version&gt;3.4.1&lt;/version&gt;        &lt;/dependency&gt;        &lt;!--代码生成器依赖--&gt;        &lt;dependency&gt;            &lt;groupId&gt;com.baomidou&lt;/groupId&gt;            &lt;artifactId&gt;mybatis-plus-generator&lt;/artifactId&gt;            &lt;version&gt;3.4.1&lt;/version&gt;        &lt;/dependency&gt;        &lt;!--模版引擎--&gt;        &lt;dependency&gt;            &lt;groupId&gt;org.apache.velocity&lt;/groupId&gt;            &lt;artifactId&gt;velocity-engine-core&lt;/artifactId&gt;            &lt;version&gt;2.0&lt;/version&gt;        &lt;/dependency&gt;        &lt;!--MySql--&gt;        &lt;dependency&gt;            &lt;groupId&gt;mysql&lt;/groupId&gt;            &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;            &lt;version&gt;8.0.12&lt;/version&gt;            &lt;scope&gt;runtime&lt;/scope&gt;        &lt;/dependency&gt;</code></pre><hr><h3 id="2-自动代码生成类"><a href="#2-自动代码生成类" class="headerlink" title="2. 自动代码生成类"></a>2. 自动代码生成类</h3><pre><code class="java">package com.fh.oateat;import com.baomidou.mybatisplus.annotation.IdType;import com.baomidou.mybatisplus.generator.AutoGenerator;import com.baomidou.mybatisplus.generator.config.DataSourceConfig;import com.baomidou.mybatisplus.generator.config.GlobalConfig;import com.baomidou.mybatisplus.generator.config.PackageConfig;import com.baomidou.mybatisplus.generator.config.StrategyConfig;import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;public class AutoMapper &#123;    public static void main(String[] args) &#123;        // 创建 AutoGenerator, MP中对象        AutoGenerator ag = new AutoGenerator();        // 设置全局配置        GlobalConfig gc = new GlobalConfig();        // 设置代码的生成位置，磁盘的目录        String path = System.getProperty(&quot;user.dir&quot;);        gc.setOutputDir(path + &quot;/src/main/java&quot;);        // 设置生成的类的名称 （命名规则）所有的Dao类都是Mapper结尾的，例如UserMapp;        gc.setMapperName(&quot;%sMapper&quot;);        gc.setServiceName(&quot;%sService&quot;);        gc.setServiceImplName(&quot;%sServiceImple&quot;);        gc.setControllerName(&quot;%sController&quot;);        // 设置作者        gc.setAuthor(&quot;hjxstart&quot;);        // 设置主键id 的设置，可能需要安装数据情况进行更改        gc.setIdType(IdType.AUTO);        // 把GlobalConfig 复制给 AutoGenerator        ag.setGlobalConfig(gc);        // 设置数据源 DataSource        DataSourceConfig ds = new DataSourceConfig();        // 设置驱动        ds.setDriverName(&quot;com.mysql.cj.jdbc.Driver&quot;);        // 设置url        ds.setUrl(&quot;jdbc:mysql://localhost:3306/oa?serverTimezone=UTC&amp;characterEncoding=utf8&amp;useUnicode=true&amp;useSSL=false&amp;allowPublicKeyRetrieval=true&quot;);        // 设置数据库的用户名        ds.setUsername(&quot;root&quot;);        // 设置密码        ds.setPassword(&quot;hadoop&quot;);        // 把 DataSourceConfig 赋值给 AutoGenerator        ag.setDataSource(ds);        // 设置Package信息        PackageConfig pc = new PackageConfig();        // 设置模块名称，相当于包名，在这个包的下面有 mapper, service, controller        pc.setModuleName(&quot;v1&quot;);        // 设置夫包名,order 就在父包的下面生成        pc.setParent(&quot;com.fh.oateat&quot;);        ag.setPackageInfo(pc);        // 设置策略        StrategyConfig sc = new StrategyConfig();        // 设置支持驼峰的命名规则        sc.setNaming(NamingStrategy.underline_to_camel);        sc.setColumnNaming(NamingStrategy.underline_to_camel);        ag.setStrategy(sc);        // 执行代码的生成        ag.execute();    &#125;&#125;</code></pre><hr><h3 id="3-Application"><a href="#3-Application" class="headerlink" title="3. Application"></a>3. Application</h3><pre><code class="java">@MapperScan(&quot;com.fh.oateat.v1.mapper&quot;) // 该注解可以省略在每个mapper接口的注解@SpringBootApplication</code></pre><hr><h3 id="4-application-yaml"><a href="#4-application-yaml" class="headerlink" title="4. application.yaml"></a>4. application.yaml</h3><pre><code class="yaml">spring:  datasource:    url: jdbc:mysql://localhost:3306/oa?serverTimezone=UTC&amp;characterEncoding=utf8&amp;useUnicode=true&amp;useSSL=false&amp;allowPublicKeyRetrieval=true    username: root    password: hadoop # hadoop service    driver-class-name: com.mysql.cj.jdbc.Drivermybatis-plus:  configuration:    // 控制台输出对数据库的操作    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl</code></pre><hr><h3 id="5-创建好数据库即可"><a href="#5-创建好数据库即可" class="headerlink" title="5. 创建好数据库即可"></a>5. 创建好数据库即可</h3><ol><li>会根据数据库的表自动生成entity,mapper,service,controller</li></ol><hr><h3 id="6-Controller测试"><a href="#6-Controller测试" class="headerlink" title="6. Controller测试"></a>6. Controller测试</h3>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Mybatis入门</title>
+      <link href="/2021/07/13/Mybatis%E5%85%A5%E9%97%A8/"/>
+      <url>/2021/07/13/Mybatis%E5%85%A5%E9%97%A8/</url>
+      
+        <content type="html"><![CDATA[<h2 id="第一章-配置模式"><a href="#第一章-配置模式" class="headerlink" title="第一章 配置模式"></a>第一章 配置模式</h2><h3 id="1-1-配置"><a href="#1-1-配置" class="headerlink" title="1.1 配置"></a>1.1 配置</h3><ol><li>application.yaml</li></ol><ol start="2"><li>全局配置文件</li></ol><pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;&lt;!DOCTYPE configuration        PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;        &quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&gt;&lt;configuration&gt;&lt;/configuration&gt;</code></pre><ol start="3"><li>mapper 映射文件</li></ol><pre><code class="xml"></code></pre><h3 id="1-2-使用"><a href="#1-2-使用" class="headerlink" title="1.2 使用"></a>1.2 使用</h3><ol><li>定义实体类</li></ol><pre><code class="java">package com.fh.oa.entity;import lombok.Data;@Datapublic class Account &#123;    private Long id;    private String userId;    private Integer money;&#125;</code></pre><ol start="2"><li>定义接口</li></ol><pre><code class="java">package com.fh.oa.dao;import com.fh.oa.entity.Account;public interface AccountDao &#123;    // 根据 id 获取用户    public Account getAcct(Long id);&#125;</code></pre><ol start="3"><li>mapper</li></ol><pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;&lt;!DOCTYPE mapper        PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;        &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;&lt;mapper namespace=&quot;com/fh/oa/dao/AccountDao&quot;&gt;&lt;!--  查询账号，根据ID  --&gt;    &lt;select id=&quot;getAcct&quot; resultType=&quot;com/fh/oa/entity/Account&quot;&gt;        select * from account_tab where id=#&#123;id&#125;    &lt;/select&gt;&lt;/mapper&gt;</code></pre><hr><h2 id="第二章-注解模式"><a href="#第二章-注解模式" class="headerlink" title="第二章 注解模式"></a>第二章 注解模式</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 后端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>GitLab私有部署</title>
       <link href="/2021/07/08/GitLab%E7%A7%81%E6%9C%89%E9%83%A8%E7%BD%B2/"/>
       <url>/2021/07/08/GitLab%E7%A7%81%E6%9C%89%E9%83%A8%E7%BD%B2/</url>
