@@ -6,15 +6,15 @@
   <meta name="keywords" content=" 思科网络实验 , Cisco ">
   <meta name="description" content="思科NA网络实验 | 黄金贤的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="打开并登录 https:&#x2F;&#x2F;openwrt.ai;  构建 OpenwWrt 的固件. 勾选 luci-app-ttyd;默认主题: Argon;后台地址: 192.168.44.1&#x2F;24;后台密码: H;Web 服务器: NginxEFI 镜像: 勾选主机名: OpenWrt根目录: 1004自定义签名: HuangFamily去除作者外链: 勾选文件系统: SquashFSWMDK">
+<meta name="description" content="打开并登录 https:&#x2F;&#x2F;openwrt.ai;  构建 OpenwWrt 的固件. 勾选 luci-app-ttyd, luci-app-ipsec-server默认主题: Argon;后台地址: 192.168.44.1&#x2F;24;后台密码: H;Web 服务器: NginxEFI 镜像: 勾选主机名: OpenWrt根目录: 1004自定义签名: HuangFamily去除作者外链">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OpenWrt">
 <meta property="og:url" content="https://hjxstart.github.io/2023/11/18/OpenWrt/index.html">
 <meta property="og:site_name" content="黄金贤的博客">
-<meta property="og:description" content="打开并登录 https:&#x2F;&#x2F;openwrt.ai;  构建 OpenwWrt 的固件. 勾选 luci-app-ttyd;默认主题: Argon;后台地址: 192.168.44.1&#x2F;24;后台密码: H;Web 服务器: NginxEFI 镜像: 勾选主机名: OpenWrt根目录: 1004自定义签名: HuangFamily去除作者外链: 勾选文件系统: SquashFSWMDK">
+<meta property="og:description" content="打开并登录 https:&#x2F;&#x2F;openwrt.ai;  构建 OpenwWrt 的固件. 勾选 luci-app-ttyd, luci-app-ipsec-server默认主题: Argon;后台地址: 192.168.44.1&#x2F;24;后台密码: H;Web 服务器: NginxEFI 镜像: 勾选主机名: OpenWrt根目录: 1004自定义签名: HuangFamily去除作者外链">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-11-18T09:03:16.000Z">
-<meta property="article:modified_time" content="2023-11-18T09:13:10.885Z">
+<meta property="article:modified_time" content="2023-11-21T12:57:34.340Z">
 <meta property="article:author" content="黄金贤">
 <meta property="article:tag" content="计算机网络 数据库 操作系统 数据结构 算法 Java Nodejs">
 <meta name="twitter:card" content="summary">
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="53">
-<input type="hidden" id="yelog_site_word_count" value="77.4k">
+<input type="hidden" id="yelog_site_word_count" value="77.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -933,7 +933,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2023-08-26 20:18:20'>2023-04-07 20:13</time>
+            发布时间 : <time class="date" title='最后更新: 2023-11-21 21:23:00'>2023-04-07 20:13</time>
         
     </div>
     <div class="article-meta">
@@ -957,7 +957,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%80%E5%8D%95%E7%9A%84VLAN%E5%AE%9E%E9%AA%8C"><span class="toc-text">一、简单的VLAN实验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%AE%80%E5%8D%95%E7%9A%84%E9%9D%99%E6%80%81%E8%B7%AF%E7%94%B1%E5%AE%9E%E9%AA%8C"><span class="toc-text">二、简单的静态路由实验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%AE%80%E5%8D%95%E7%9A%84OSPF%E5%AE%9E%E9%AA%8C"><span class="toc-text">三、简单的OSPF实验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E7%AE%80%E5%8D%95%E7%9A%84FHRP%E5%AE%9E%E9%AA%8C"><span class="toc-text">四、简单的FHRP实验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E7%AE%80%E5%8D%95%E7%9A%84EIGRP%E5%AE%9E%E9%AA%8C"><span class="toc-text">五、简单的EIGRP实验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%A8%A1%E6%9D%BF"><span class="toc-text">实验模板</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%80%E5%8D%95%E7%9A%84-VLAN-%E5%AE%9E%E9%AA%8C"><span class="toc-text">一、简单的 VLAN 实验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%AE%80%E5%8D%95%E7%9A%84%E9%9D%99%E6%80%81%E8%B7%AF%E7%94%B1%E5%AE%9E%E9%AA%8C"><span class="toc-text">二、简单的静态路由实验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%AE%80%E5%8D%95%E7%9A%84-OSPF-%E5%AE%9E%E9%AA%8C"><span class="toc-text">三、简单的 OSPF 实验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E7%AE%80%E5%8D%95%E7%9A%84-FHRP-%E5%AE%9E%E9%AA%8C"><span class="toc-text">四、简单的 FHRP 实验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E7%AE%80%E5%8D%95%E7%9A%84-EIGRP-%E5%AE%9E%E9%AA%8C"><span class="toc-text">五、简单的 EIGRP 实验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%A8%A1%E6%9D%BF"><span class="toc-text">实验模板</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -973,7 +973,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、简单的VLAN实验"><a href="#一、简单的VLAN实验" class="headerlink" title="一、简单的VLAN实验"></a>一、简单的VLAN实验</h2><p>设PC1和PC3都是VLAN13，PC2和PC4属于VLAN24，实现同一个VLAN的设备可以互通。</p>
+        <h2 id="一、简单的-VLAN-实验"><a href="#一、简单的-VLAN-实验" class="headerlink" title="一、简单的 VLAN 实验"></a>一、简单的 VLAN 实验</h2><p>设 PC1 和 PC3 都是 VLAN13，PC2 和 PC4 属于 VLAN24，实现同一个 VLAN 的设备可以互通。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20230408101203.png" alt="实验拓扑"></p>
 <details>
   <summary>配置概述</summary>
@@ -988,14 +988,15 @@
 <details>
   <summary>SW1</summary>
 
-<pre><code class="bash"># 
+<pre><code class="bash">#
 enable
 configure terminal
 vlan 10
+exit
 vlan 20
 end
 show vlan brief
-# 
+#
 configure terminal
 interface range ethernet 0/0 - 1
 shutdown
@@ -1004,29 +1005,31 @@ switchport mode trunk
 no shutdown
 end
 show interface trunk
+write
 </code></pre>
 </details>
 
 <details>
   <summary>SW2</summary>
 
-<pre><code class="bash"># 
+<pre><code class="bash">#
 enable
 configure terminal
 vlan 10
+exit
 vlan 20
 end
 show vlan brief
-# 
+#
 configure terminal
-interface range ethernet 0/0 - 1
+interface ethernet 0/0
 shutdown
 switchport trunk encapsulation dot1q
 switchport mode trunk
 no shutdown
 end
 show interface trunk
-# 
+#
 configure terminal
 interface ethernet 0/1
 switchport mode access
@@ -1039,29 +1042,31 @@ switchport access vlan 20
 spanning-tree portfast disable
 end
 show vlan brief
+write
 </code></pre>
 </details>
 
 <details>
   <summary>SW3</summary>
 
-<pre><code class="bash"># 
+<pre><code class="bash">#
 enable
 configure terminal
 vlan 10
+exit
 vlan 20
 end
 show vlan brief
-# 
+#
 configure terminal
-interface range ethernet 0/0 - 1
+interface ethernet 0/0
 shutdown
 switchport trunk encapsulation dot1q
 switchport mode trunk
 no shutdown
 end
 show interface trunk
-# 
+#
 configure terminal
 interface ethernet 0/1
 switchport mode access
@@ -1074,6 +1079,7 @@ switchport access vlan 20
 spanning-tree portfast disable
 end
 show vlan brief
+write
 </code></pre>
 </details>
 
@@ -1102,7 +1108,7 @@ ping 24.1.1.4
 </details>
 
 <hr>
-<h2 id="二、简单的静态路由实验"><a href="#二、简单的静态路由实验" class="headerlink" title="二、简单的静态路由实验"></a>二、简单的静态路由实验</h2><p>配置静态路由，是Loopback 0之间可以Ping通。</p>
+<h2 id="二、简单的静态路由实验"><a href="#二、简单的静态路由实验" class="headerlink" title="二、简单的静态路由实验"></a>二、简单的静态路由实验</h2><p>配置静态路由，是 Loopback 0 之间可以 Ping 通。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202304082233671.png" alt="实验拓扑"></p>
 <details>
   <summary>配置概述</summary>
@@ -1117,11 +1123,11 @@ ping 24.1.1.4
 <details>
   <summary>R1</summary>
 
-<pre><code class="bash"># 
+<pre><code class="bash">#
 enable
 configure terminal
 hostname R1
-# 
+#
 interface ethernet 0/0
 no shutdown
 ip address 12.1.1.1 255.255.255.0
@@ -1133,7 +1139,7 @@ exit
 interface loopback 0
 ip address 1.1.1.1 255.255.255.255
 end
-# 
+#
 show ip interface brief
 #
 configure terminal
@@ -1145,11 +1151,11 @@ ip route 3.3.3.3 255.255.255.255 ethernet 0/1 13.1.1.3
 <details>
   <summary>R2</summary>
 
-<pre><code class="bash"># 
+<pre><code class="bash">#
 enable
 configure terminal
 hostname R2
-# 
+#
 interface ethernet 0/1
 no shutdown
 ip address 12.1.1.2 255.255.255.0
@@ -1157,7 +1163,7 @@ exit
 interface loopback 0
 ip address 2.2.2.2 255.255.255.255
 end
-# 
+#
 show ip interface brief
 #
 configure terminal
@@ -1169,11 +1175,11 @@ ip route 3.3.3.3 255.255.255.255 ethernet 0/1 12.1.1.1
 <details>
   <summary>R3</summary>
 
-<pre><code class="bash"># 
+<pre><code class="bash">#
 enable
 configure terminal
 hostname R2
-# 
+#
 interface ethernet 0/0
 no shutdown
 ip address 13.1.1.3 255.255.255.0
@@ -1181,7 +1187,7 @@ exit
 interface loopback 0
 ip address 3.3.3.3 255.255.255.255
 end
-# 
+#
 show ip interface brief
 #
 configure terminal
@@ -1189,7 +1195,6 @@ ip route 1.1.1.1 255.255.255.255 ethernet 0/0 13.1.1.1
 ip route 2.2.2.2 255.255.255.255 ethernet 0/0 13.1.1.1
 </code></pre>
 </details>
-
 
 <details>
   <summary>查看路由信息</summary>
@@ -1199,11 +1204,11 @@ ip route 2.2.2.2 255.255.255.255 ethernet 0/0 13.1.1.1
 <p>  <img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202304082303379.png" alt="R1直连路由"><br>  <img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202304082314508.png" alt="R2直连路由"><br>  <img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202304082315384.png" alt="R3直连路由"></p>
   <p>配置动态路由之后的路由信息</p>
 
-<p>  <img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202304082326950.png" alt="R1直连和静态路由"><br>  <img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202304082328942.png" alt="R2直连和静态路由"><br>  <img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202304082329117.png" alt="R3直连和惊天路由"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202304082326950.png" alt="R1直连和静态路由"><br><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202304082328942.png" alt="R2直连和静态路由"><br><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202304082329117.png" alt="R3直连和惊天路由"></p>
 </details>
 
 <hr>
-<h2 id="三、简单的OSPF实验"><a href="#三、简单的OSPF实验" class="headerlink" title="三、简单的OSPF实验"></a>三、简单的OSPF实验</h2><p>使用OSPF协议使PC1和PC2互通。</p>
+<h2 id="三、简单的-OSPF-实验"><a href="#三、简单的-OSPF-实验" class="headerlink" title="三、简单的 OSPF 实验"></a>三、简单的 OSPF 实验</h2><p>使用 OSPF 协议使 PC1 和 PC2 互通。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202304091126038.png" alt="实验拓扑"></p>
 <details>
   <summary>配置概述</summary>
@@ -1218,103 +1223,102 @@ ip route 2.2.2.2 255.255.255.255 ethernet 0/0 13.1.1.1
 <details>
   <summary>R1</summary>
 
-<pre><code class="bash"># 
+<pre><code class="bash">#
 enable
 configure terminal
 hostname R1
-# 
+#
 interface ethernet 0/0
 no shutdown
 ip address 12.1.1.1 255.255.255.0
 exit
-# 
+#
 interface ethernet 0/1
 no shutdown
 ip address 13.1.1.1 255.255.255.0
 exit
-# 
+#
 router ospf 110
 router-id 1.1.1.1
 network 12.1.1.1 0.0.0.0 area 0
 network 13.1.1.1 0.0.0.0 area 0
 exit
-# 
+#
 end
 show ip ospf neighbor
 show ip ospf database
 show ip route ospf
-# 
+#
 </code></pre>
 </details>
-
 
 <details>
   <summary>R2</summary>
 
-<pre><code class="bash"># 
+<pre><code class="bash">#
 enable
 configure terminal
 hostname R2
-# 
+#
 interface ethernet 0/0
 no shutdown
 ip address 12.1.1.2 255.255.255.0
 exit
-# 
+#
 interface ethernet 0/1
 no shutdown
 ip address 2.2.2.254 255.255.255.0
 exit
-# 
+#
 router ospf 110
 router-id 2.2.2.2
 network 12.1.1.2 0.0.0.0 area 0
 exit
-# 
+#
 interface ethernet 0/1
 ip ospf 110 area 0
 exit
-# 
+#
 end
 show ip ospf neighbor
 show ip ospf database
 show ip route ospf
-# 
+#
 </code></pre>
 </details>
 
 <details>
   <summary>R3</summary>
 
-<pre><code class="bash"># 
+<pre><code class="bash">#
 enable
 configure terminal
 hostname R3
-# 
+#
 interface ethernet 0/0
 no shutdown
 ip address 13.1.1.3 255.255.255.0
 exit
-# 
+#
 interface ethernet 0/1
 no shutdown
 ip address 3.3.3.254 255.255.255.0
 exit
-# 
+#
 router ospf 110
 router-id 3.3.3.3
 network 13.1.1.3 0.0.0.0 area 0
 exit
-# 
+#
 interface ethernet 0/1
 ip ospf 110 area 0
 exit
-# 
+#
 end
 show ip ospf neighbor
 show ip ospf database
 show ip route ospf
-# 
+#
 </code></pre>
 </details>
 
@@ -1330,7 +1334,6 @@ ip 3.3.3.2 255.255.255.0 3.3.3.254
 </code></pre>
 </details>
 
-
 <details>
   <summary>测试验证</summary>
 
@@ -1338,7 +1341,7 @@ ip 3.3.3.2 255.255.255.0 3.3.3.254
 </details>
 
 <hr>
-<h2 id="四、简单的FHRP实验"><a href="#四、简单的FHRP实验" class="headerlink" title="四、简单的FHRP实验"></a>四、简单的FHRP实验</h2><p>在R2和R3的ethernet0&#x2F;1口使用FHRP使PC的网关冗余。</p>
+<h2 id="四、简单的-FHRP-实验"><a href="#四、简单的-FHRP-实验" class="headerlink" title="四、简单的 FHRP 实验"></a>四、简单的 FHRP 实验</h2><p>在 R2 和 R3 的 ethernet0&#x2F;1 口使用 FHRP 使 PC 的网关冗余。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202304091447043.png" alt="实验拓扑"></p>
 <details>
   <summary>配置概述</summary>
@@ -1351,21 +1354,21 @@ ip 3.3.3.2 255.255.255.0 3.3.3.254
 <details>
   <summary>R1</summary>
 
-<pre><code class="bash"># 
+<pre><code class="bash">#
 enable
 configure terminal
 hostname R1
-# 
+#
 interface ethernet 0/0
 no shutdown
 ip address 12.1.1.1 255.255.255.0
 exit
-# 
+#
 interface ethernet 0/1
 no shutdown
 ip address 13.1.1.1 255.255.255.0
 exit
-# 
+#
 interface loopback 0
 ip address 1.1.1.1 255.255.255.255
 exit
@@ -1377,7 +1380,7 @@ network 13.1.1.1 0.0.0.0
 network 1.1.1.1 0.0.0.0
 exit
 #
-end 
+end
 show ip route eigrp
 #
 </code></pre>
@@ -1386,77 +1389,77 @@ show ip route eigrp
 <details>
   <summary>R2</summary>
 
-<pre><code class="bash"># 
+<pre><code class="bash">#
 enable
 configure terminal
 hostname R2
-# 
+#
 interface ethernet 0/0
 no shutdown
 ip address 12.1.1.2 255.255.255.0
 exit
-# 
+#
 interface ethernet 0/1
 no shutdown
 ip address 100.1.1.252 255.255.255.0
 exit
-# 
+#
 router eigrp 90
 eigrp router-id 2.2.2.2
 network 12.1.1.2 0.0.0.0
 network 100.1.1.252 0.0.0.0
 exit
-# 
+#
 end
 show ip route eigrp
-# 
+#
 configure terminal
 interface ethernet 0/1
 standby 100 ip 100.1.1.254
 standby 100 priority 105
 exit
-# 
+#
 end
 show standby brief
-# 
+#
 </code></pre>
 </details>
 
 <details>
   <summary>R3</summary>
 
-<pre><code class="bash"># 
+<pre><code class="bash">#
 enable
 configure terminal
 hostname R3
-# 
+#
 interface ethernet 0/0
 no shutdown
 ip address 13.1.1.3 255.255.255.0
 exit
-# 
+#
 interface ethernet 0/1
 no shutdown
 ip address 100.1.1.253 255.255.255.0
 exit
-# 
+#
 router eigrp 90
 eigrp router-id 3.3.3.3
 network 13.1.1.3 0.0.0.0
 network 100.1.1.253 0.0.0.0
 exit
-# 
+#
 end
 show ip route eigrp
-# 
+#
 configure terminal
 interface ethernet 0/1
 standby 100 ip 100.1.1.254
 exit
-# 
+#
 end
 show standby brief
-# 
+#
 </code></pre>
 </details>
 
@@ -1464,32 +1467,32 @@ show standby brief
   <summary>测试验证</summary>
 
 <ol>
-<li>PC1 一直ping R1的Loopback</li>
-<li>将R2的ethernet 0&#x2F;1 shutdown</li>
-<li>查看PC1的ping状态、交换机的mac address-table是否有变化</li>
-<li>查看路由器的standby</li>
+<li>PC1 一直 ping R1 的 Loopback</li>
+<li>将 R2 的 ethernet 0&#x2F;1 shutdown</li>
+<li>查看 PC1 的 ping 状态、交换机的 mac address-table 是否有变化</li>
+<li>查看路由器的 standby</li>
 </ol>
-<p>  <img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202304091502939.png" alt="PC1 ping R1 Loopback0"><br>  <img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202304091502847.png" alt="SW1"><br>  <img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202304091505387.png" alt="R1"><br>  <img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202304091508725.png" alt="R2"><br>  <img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202304091509854.png" alt="R3"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202304091502939.png" alt="PC1 ping R1 Loopback0"><br><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202304091502847.png" alt="SW1"><br><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202304091505387.png" alt="R1"><br><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202304091508725.png" alt="R2"><br><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202304091509854.png" alt="R3"></p>
 </details>
 
 <hr>
-<h2 id="五、简单的EIGRP实验"><a href="#五、简单的EIGRP实验" class="headerlink" title="五、简单的EIGRP实验"></a>五、简单的EIGRP实验</h2><p>配置EIGRP使路由器的Loopback0口都可以互通。</p>
+<h2 id="五、简单的-EIGRP-实验"><a href="#五、简单的-EIGRP-实验" class="headerlink" title="五、简单的 EIGRP 实验"></a>五、简单的 EIGRP 实验</h2><p>配置 EIGRP 使路由器的 Loopback0 口都可以互通。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202304100751654.png" alt="实验拓扑"></p>
 <details>
   <summary>配置概述</summary>
 
-<pre><code class="bash">1. 
+<pre><code class="bash">1.
 </code></pre>
 </details>
 
 <details>
   <summary>R1</summary>
 
-<pre><code class="bash"># 
+<pre><code class="bash">#
 enable
 configure terminal
 hostname R1
-# 
+#
 interface ethernet 0/0
 no shutdown
 ip address 12.1.1.1 255.255.255.0
@@ -1501,34 +1504,34 @@ exit
 interface loopback 0
 ip address 1.1.1.1 255.255.255.255
 end
-# 
+#
 show ip interface brief
-# 
+#
 configure terminal
 router eigrp 90
 no auto-summary
 eigrp router-id 1.1.1.1
-network 1.1.1.1 0.0.0.0 
+network 1.1.1.1 0.0.0.0
 network 12.1.1.1 0.0.0.0
 network 13.1.1.1 0.0.0.0
 exit
-# 
+#
 end
 show ip eigrp interfaces
 show ip eigrp neighbors
 show ip route eigrp
-# 
+#
 </code></pre>
 </details>
 
 <details>
   <summary>R2</summary>
 
-<pre><code class="bash"># 
+<pre><code class="bash">#
 enable
 configure terminal
 hostname R2
-# 
+#
 interface ethernet 0/0
 no shutdown
 ip address 12.1.1.2 255.255.255.0
@@ -1536,33 +1539,33 @@ exit
 interface loopback 0
 ip address 2.2.2.2 255.255.255.255
 end
-# 
+#
 show ip interface brief
-# 
+#
 configure terminal
 router eigrp 90
 no auto-summary
 eigrp router-id 2.2.2.2
-network 2.2.2.2 0.0.0.0 
+network 2.2.2.2 0.0.0.0
 network 12.1.1.2 0.0.0.0
 exit
-# 
+#
 end
 show ip eigrp interfaces
 show ip eigrp neighbors
 show ip route eigrp
-# 
+#
 </code></pre>
 </details>
 
 <details>
   <summary>R3</summary>
 
-<pre><code class="bash"># 
+<pre><code class="bash">#
 enable
 configure terminal
 hostname R3
-# 
+#
 interface ethernet 0/0
 no shutdown
 ip address 13.1.1.3 255.255.255.0
@@ -1570,29 +1573,29 @@ exit
 interface loopback 0
 ip address 3.3.3.3 255.255.255.255
 end
-# 
+#
 show ip interface brief
-# 
+#
 configure terminal
 router eigrp 90
 no auto-summary
 eigrp router-id 3.3.3.3
-network 3.3.3.3 0.0.0.0 
+network 3.3.3.3 0.0.0.0
 network 13.1.1.3 0.0.0.0
 exit
-# 
+#
 end
 show ip eigrp interfaces
 show ip eigrp neighbors
 show ip route eigrp
-# 
+#
 </code></pre>
 </details>
 
 <details>
   <summary>测试验证</summary>
 
-<p>  <img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202304100755226.png" alt="R1"><br>  <img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202304100758230.png" alt="R2"><br>  <img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202304100802550.png" alt="R3"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202304100755226.png" alt="R1"><br><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202304100758230.png" alt="R2"><br><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202304100802550.png" alt="R3"></p>
 </details>
 
 <hr>
@@ -1601,14 +1604,14 @@ show ip route eigrp
 <details>
   <summary>配置概述</summary>
 
-<pre><code class="bash">1. 
+<pre><code class="bash">1.
 </code></pre>
 </details>
 
 <details>
   <summary>R1</summary>
 
-<pre><code class="bash"># 
+<pre><code class="bash">#
 enable
 configure terminal
 hostname R1
@@ -1619,6 +1622,7 @@ hostname R1
   <summary>测试验证</summary>
 
 </details>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 hjxstart@126.com </span>
     </div>
