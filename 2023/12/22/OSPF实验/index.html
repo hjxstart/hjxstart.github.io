@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>OpenWrt | 黄金贤的博客</title>
+  <title>OSPF实验 | 黄金贤的博客</title>
   <meta name="keywords" content="">
-  <meta name="description" content="OpenWrt | 黄金贤的博客">
+  <meta name="description" content="OSPF实验 | 黄金贤的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="OSPF 综合基础实验OSPF 特殊区域&amp;认证">
 <meta property="og:type" content="article">
@@ -968,32 +968,24 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-OpenWrt" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-OSPF实验" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">OpenWrt</h1>
+        <h1 class="article-title">OSPF实验</h1>
     
     <div class="article-meta">
         
         
-        
-        <span class="book">
-            <i class="iconfont icon-category"></i>
-            
-            
-            <a  data-rel="网络">网络</a>
-            
-        </span>
         
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2023-12-22 07:39:57'>2023-11-18 17:03</time>
+            发布时间 : <time class="date" title='最后更新: 2023-12-22 20:27:14'>2023-12-22 08:05</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:425</span>
+        <span>字数:15</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1012,7 +1004,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#OSPF-%E7%BB%BC%E5%90%88%E5%9F%BA%E7%A1%80%E5%AE%9E%E9%AA%8C"><span class="toc-text">OSPF 综合基础实验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OSPF-%E7%89%B9%E6%AE%8A%E5%8C%BA%E5%9F%9F-amp-%E8%AE%A4%E8%AF%81"><span class="toc-text">OSPF 特殊区域&amp;认证</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1028,62 +1020,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
-<li><p>打开并登录 <a target="_blank" rel="noopener" href="https://openwrt.ai/">https://openwrt.ai</a>;</p>
-</li>
-<li><p>构建 OpenwWrt 的固件. 勾选 luci-app-ttyd, luci-app-ipsec-server<br>默认主题: Argon;<br>后台地址: 192.168.44.1&#x2F;24;<br>后台密码: H;<br>Web 服务器: Nginx<br>EFI 镜像: 勾选<br>主机名: OpenWrt<br>根目录: 1004<br>自定义签名: HuangFamily<br>去除作者外链: 勾选<br>文件系统: SquashFS<br>WMDK 镜像(ESXI 专用): 勾选</p>
-</li>
-<li><p>下载镜像: ESXI 专用, 解压后使用.</p>
-</li>
-<li><p>打开并登录 ESXI 8.0。<a target="_blank" rel="noopener" href="https://192.168.44.3/">https://192.168.44.3</a></p>
-</li>
-<li><p>新建虚拟机。 名称:OpenWrt;<br>兼容性: ESXI 8.0 虚拟机;<br>客户机操作系统系列: Linux<br>操作机操作系统版本: 其他 Linux 64 位</p>
-</li>
-<li><p>自定义虚拟机的配置: CPU:2; 内存: 1G;<br>删除硬盘、USB 控制器 1、CD&#x2F;DVD 驱动器 1<br>添加 3 个 PCI 设备;<br>添加硬盘 &gt; 现有磁盘 &gt; 上传 VMDK 文件。<br>保持并打开虚拟机</p>
-</li>
-<li><p>修改网络 IP 地址： vi &#x2F;etc&#x2F;config&#x2F;network<br>service network restart</p>
-</li>
-<li><p>登录<a target="_blank" rel="noopener" href="https://192.168.44.1/">https://192.168.44.1</a></p>
-</li>
-<li><p>添加腾讯云的 DDNS，luci-app-tencentddns_0.1.0-1_all.ipk</p>
-</li>
-<li><p>配置腾讯云 DDNS: 密钥 ID: 4; 密钥 Token: 9;</p>
-</li>
-<li><p>OpenWrt &gt; 系统 &gt; 高级设置 &gt; NGINX &gt; 将 80 端口修改为 14480 和 443 端口修改为 14443</p>
-</li>
-<li><p>创建 &#x2F;etc&#x2F;nginx&#x2F;conf.d&#x2F;crt 目录，并上传正式</p>
-</li>
-<li><p>Nginx 设置，并打开防火墙的入站数据</p>
-</li>
-</ol>
-<pre><code class="conf">server &#123;
-        listen 443 ssl;
-        server_name huangfamily.cn;
-        ssl_certificate /etc/nginx/conf.d/crt/huangfamily.cn_bundle.crt;
-        ssl_certificate_key /etc/nginx/conf.d/crt/huangfamily.cn.key;
-        ssl_session_timeout 5m;
-        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;
-        ssl_prefer_server_ciphers on;
-        location / &#123;
-            proxy_pass https://192.168.44.1:14443;
-            proxy_redirect off;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_set_header Host $http_host;
-            proxy_set_header X-NginX-Proxy true;
-
-            proxy_http_version 1.1;
-            proxy_set_header Upgrade $http_upgrade;
-            proxy_set_header Connection &quot;upgrade&quot;;
-        &#125;
-&#125;
-server &#123;
-    listen 80;
-    server_name huangfamily.cn;
-    return 301 https://$host$request_uri;
-&#125;
-</code></pre>
+        <h2 id="OSPF-综合基础实验"><a href="#OSPF-综合基础实验" class="headerlink" title="OSPF 综合基础实验"></a>OSPF 综合基础实验</h2><h2 id="OSPF-特殊区域-amp-认证"><a href="#OSPF-特殊区域-amp-认证" class="headerlink" title="OSPF 特殊区域&amp;认证"></a>OSPF 特殊区域&amp;认证</h2><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222114708.png"></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 hjxstart@126.com </span>
