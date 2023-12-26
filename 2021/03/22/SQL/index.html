@@ -1,0 +1,2326 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SQL | 黄金贤的博客</title>
+  <meta name="keywords" content=" MySQL ">
+  <meta name="description" content="SQL | 黄金贤的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="OSPF 综合基础实验OSPF 特殊区域&amp;认证">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OSPF实验">
+<meta property="og:url" content="https://hjxstart.github.io/2023/12/22/OSPF%E5%AE%9E%E9%AA%8C/index.html">
+<meta property="og:site_name" content="黄金贤的博客">
+<meta property="og:description" content="OSPF 综合基础实验OSPF 特殊区域&amp;认证">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222114708.png">
+<meta property="article:published_time" content="2023-12-22T00:05:50.000Z">
+<meta property="article:modified_time" content="2023-12-26T10:30:54.202Z">
+<meta property="article:author" content="黄金贤">
+<meta property="article:tag" content="计算机网络 数据库 操作系统 数据结构 算法 Java Nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222114708.png">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-dark.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 6.0.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>黄金贤</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="github"
+               href="https://github.com/hjxstart"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="email"
+               href="mailto:hjxstart@126.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=1726283687&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(61)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="读书">
+                        
+                        读书
+                        <small>(6)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="后端">
+                        
+                        后端
+                        <small>(8)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据库">
+                        
+                        数据库
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(13)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="前端">
+                        
+                        前端
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="网络">
+                        
+                        网络
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="61">
+<input type="hidden" id="yelog_site_word_count" value="78.2k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://github.com/hjxstart">hjxstart</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>笔记</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>编程思想</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>编程语言</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>动态路由协议</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>海明码</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>环境</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>静态路由</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>路由协议</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>设计模式</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>数据库</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>思科网络实验</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>网络常用命令</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>网络专业术语</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CentOS7</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CICD</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Cisco</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Docker</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>EIGRP</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>FHPR</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>frp</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ftp</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Git</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>GO</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Harbor</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>IGP</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>InfluxDB</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Java</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>K8s</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>MongoDB</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Mybatis</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>MySQL</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Nginx</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Nodejs</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>OSPF</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Spring</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>SpringBoot</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>VLAN</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>VRRP</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Vue</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Windows</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="全部文章 网络 "
+           href="/2023/06/01/%E6%80%9D%E7%A7%91NP%E7%BD%91%E7%BB%9C%E5%AE%9E%E9%AA%8C/"
+           data-tag="思科网络实验,Cisco"
+           data-author="" >
+            <span class="post-title" title="思科NP网络实验">思科NP网络实验</span>
+            <span class="post-date" title="2023-06-01 10:46:26">2023/06/01</span>
+        </a>
+        
+        <a id="top" class="全部文章 网络 "
+           href="/2023/04/07/%E6%80%9D%E7%A7%91NA%E7%BD%91%E7%BB%9C%E5%AE%9E%E9%AA%8C/"
+           data-tag="思科网络实验,Cisco"
+           data-author="" >
+            <span class="post-title" title="思科NA网络实验">思科NA网络实验</span>
+            <span class="post-date" title="2023-04-07 20:13:29">2023/04/07</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2021/06/07/CentOS7/"
+           data-tag="Linux,CentOS7"
+           data-author="" >
+            <span class="post-title" title="CentOS7">CentOS7</span>
+            <span class="post-date" title="2021-06-07 23:16:42">2021/06/07</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2021/12/19/Gitea/"
+           data-tag="Git,CICD"
+           data-author="" >
+            <span class="post-title" title="Gitea">Gitea</span>
+            <span class="post-date" title="2021-12-19 21:53:48">2021/12/19</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2021/12/19/frp/"
+           data-tag="Nginx,frp"
+           data-author="" >
+            <span class="post-title" title="frp">frp</span>
+            <span class="post-date" title="2021-12-19 20:34:09">2021/12/19</span>
+        </a>
+        
+        <a id="top" class="全部文章 后端 "
+           href="/2021/06/26/%E6%A0%A1%E5%9B%AD%E4%BA%A4%E6%98%93%E9%A1%B9%E7%9B%AE/"
+           data-tag="Java,Spring"
+           data-author="" >
+            <span class="post-title" title="校园交易项目">校园交易项目</span>
+            <span class="post-date" title="2021-06-26 07:58:18">2021/06/26</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2023/12/22/OSPF%E5%AE%9E%E9%AA%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OSPF实验">OSPF实验</span>
+            <span class="post-date" title="2023-12-22 08:05:50">2023/12/22</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2023/12/22/WireGuard/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="WireGuard">WireGuard</span>
+            <span class="post-date" title="2023-12-22 07:40:46">2023/12/22</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2023/12/21/%E5%A0%86%E5%8F%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="堆叠">堆叠</span>
+            <span class="post-date" title="2023-12-21 19:31:45">2023/12/21</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2023/12/18/%E7%B3%BB%E7%BB%9F%E5%B0%81%E8%A3%85/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="系统封装">系统封装</span>
+            <span class="post-date" title="2023-12-18 17:06:02">2023/12/18</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2023/12/18/RouterOS/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="RouterOS">RouterOS</span>
+            <span class="post-date" title="2023-12-18 17:05:19">2023/12/18</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2023/12/18/ESXI/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="ESXI">ESXI</span>
+            <span class="post-date" title="2023-12-18 17:05:10">2023/12/18</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2023/12/18/Git/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Git">Git</span>
+            <span class="post-date" title="2023-12-18 17:00:20">2023/12/18</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2023/11/30/IT-HelpDesk/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="IT HelpDesk">IT HelpDesk</span>
+            <span class="post-date" title="2023-11-30 21:21:59">2023/11/30</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/11/18/OpenWrt/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OpenWrt">OpenWrt</span>
+            <span class="post-date" title="2023-11-18 17:03:16">2023/11/18</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2023/06/16/OSPF-1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OSPF">OSPF</span>
+            <span class="post-date" title="2023-06-16 21:38:59">2023/06/16</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2023/06/11/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="课程学习笔记">课程学习笔记</span>
+            <span class="post-date" title="2023-06-11 10:46:38">2023/06/11</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/06/01/%E5%8D%8E%E4%B8%BANP%E7%BD%91%E7%BB%9C%E5%AE%9E%E9%AA%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="华为NP网络实验">华为NP网络实验</span>
+            <span class="post-date" title="2023-06-01 10:46:04">2023/06/01</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/09/EIGRP/"
+           data-tag="EIGRP,路由协议"
+           data-author="" >
+            <span class="post-title" title="EIGRP">EIGRP</span>
+            <span class="post-date" title="2023-04-09 15:14:50">2023/04/09</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/09/FHPR/"
+           data-tag="FHPR,VRRP"
+           data-author="" >
+            <span class="post-title" title="FHPR">FHPR</span>
+            <span class="post-date" title="2023-04-09 11:25:26">2023/04/09</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/09/%E5%9B%AD%E5%8C%BA%E7%BD%91%E6%9E%B6%E6%9E%84/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="园区网架构">园区网架构</span>
+            <span class="post-date" title="2023-04-09 09:01:09">2023/04/09</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/09/%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE%E6%A6%82%E8%BF%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="动态路由协议概述">动态路由协议概述</span>
+            <span class="post-date" title="2023-04-09 08:57:30">2023/04/09</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/08/%E7%BD%91%E7%BB%9C%E4%B8%93%E4%B8%9A%E6%9C%AF%E8%AF%AD/"
+           data-tag="网络专业术语"
+           data-author="" >
+            <span class="post-title" title="网络专业术语">网络专业术语</span>
+            <span class="post-date" title="2023-04-08 19:58:50">2023/04/08</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/08/%E5%8D%8E%E4%B8%BANA%E7%BD%91%E7%BB%9C%E5%AE%9E%E9%AA%8C/"
+           data-tag="OSPF,VLAN"
+           data-author="" >
+            <span class="post-title" title="华为NA网络实验">华为NA网络实验</span>
+            <span class="post-date" title="2023-04-08 11:46:05">2023/04/08</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/07/OSPF/"
+           data-tag="路由协议,OSPF,动态路由协议,IGP"
+           data-author="" >
+            <span class="post-title" title="OSPF">OSPF</span>
+            <span class="post-date" title="2023-04-07 19:19:35">2023/04/07</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/07/%E9%9D%99%E6%80%81%E8%B7%AF%E7%94%B1/"
+           data-tag="静态路由"
+           data-author="" >
+            <span class="post-title" title="静态路由">静态路由</span>
+            <span class="post-date" title="2023-04-07 19:10:50">2023/04/07</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/06/%E7%BD%91%E7%BB%9C%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"
+           data-tag="网络常用命令"
+           data-author="" >
+            <span class="post-title" title="网络常用命令">网络常用命令</span>
+            <span class="post-date" title="2023-04-06 10:10:12">2023/04/06</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2022/08/22/XCIE%E5%AD%A6%E4%B9%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="XCIE学习">XCIE学习</span>
+            <span class="post-date" title="2022-08-22 22:52:22">2022/08/22</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2022/03/19/MySQL/"
+           data-tag="MySQL"
+           data-author="" >
+            <span class="post-title" title="MySQL">MySQL</span>
+            <span class="post-date" title="2022-03-19 21:51:35">2022/03/19</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2022/03/07/Windows/"
+           data-tag="Windows"
+           data-author="" >
+            <span class="post-title" title="Windows">Windows</span>
+            <span class="post-date" title="2022-03-07 15:58:15">2022/03/07</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2022/03/06/MongoDB/"
+           data-tag="MongoDB,数据库"
+           data-author="" >
+            <span class="post-title" title="MongoDB">MongoDB</span>
+            <span class="post-date" title="2022-03-06 17:38:45">2022/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2022/03/06/influxDB/"
+           data-tag="数据库,InfluxDB"
+           data-author="" >
+            <span class="post-title" title="InfluxDB">InfluxDB</span>
+            <span class="post-date" title="2022-03-06 12:47:36">2022/03/06</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/12/27/Vim/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Vim">Vim</span>
+            <span class="post-date" title="2021-12-27 09:15:01">2021/12/27</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/12/16/vsftpd/"
+           data-tag="ftp"
+           data-author="" >
+            <span class="post-title" title="vsftpd">vsftpd</span>
+            <span class="post-date" title="2021-12-16 08:49:01">2021/12/16</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2021/10/06/Redis/"
+           data-tag="Docker,数据库"
+           data-author="" >
+            <span class="post-title" title="Redis">Redis</span>
+            <span class="post-date" title="2021-10-06 17:19:30">2021/10/06</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/20/k8s%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/"
+           data-tag="K8s"
+           data-author="" >
+            <span class="post-title" title="k8s实验笔记">k8s实验笔记</span>
+            <span class="post-date" title="2021-09-20 08:04:10">2021/09/20</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/15/K8s/"
+           data-tag="Docker,K8s"
+           data-author="" >
+            <span class="post-title" title="k8s">k8s</span>
+            <span class="post-date" title="2021-09-15 20:48:34">2021/09/15</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/09/09/VMware/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="VMware">VMware</span>
+            <span class="post-date" title="2021-09-09 15:38:41">2021/09/09</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/08/Ingress/"
+           data-tag="K8s"
+           data-author="" >
+            <span class="post-title" title="Ingress">Ingress</span>
+            <span class="post-date" title="2021-09-08 23:56:01">2021/09/08</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/08/Harbor/"
+           data-tag="Harbor,K8s"
+           data-author="" >
+            <span class="post-title" title="Harbor">Harbor</span>
+            <span class="post-date" title="2021-09-08 18:04:32">2021/09/08</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/08/28/Swarm/"
+           data-tag="Docker"
+           data-author="" >
+            <span class="post-title" title="Swarm">Swarm</span>
+            <span class="post-date" title="2021-08-28 20:46:10">2021/08/28</span>
+        </a>
+        
+        <a  class="全部文章 后端 "
+           href="/2021/08/26/GO/"
+           data-tag="GO,编程语言"
+           data-author="" >
+            <span class="post-title" title="GO">GO</span>
+            <span class="post-date" title="2021-08-26 11:50:00">2021/08/26</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/08/23/%E6%B5%B7%E6%98%8E%E7%A0%81-%E6%A0%A1%E9%AA%8C%E7%A0%81/"
+           data-tag="海明码"
+           data-author="" >
+            <span class="post-title" title="海明码">海明码</span>
+            <span class="post-date" title="2021-08-23 14:33:26">2021/08/23</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/08/22/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/"
+           data-tag="Java,编程思想"
+           data-author="" >
+            <span class="post-title" title="Java编程思想">Java编程思想</span>
+            <span class="post-date" title="2021-08-22 23:15:19">2021/08/22</span>
+        </a>
+        
+        <a  class="全部文章 后端 "
+           href="/2021/08/15/Java/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="Java多线程">Java多线程</span>
+            <span class="post-date" title="2021-08-15 14:36:42">2021/08/15</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/08/11/Nginx/"
+           data-tag="Nginx"
+           data-author="" >
+            <span class="post-title" title="Nginx">Nginx</span>
+            <span class="post-date" title="2021-08-11 23:28:55">2021/08/11</span>
+        </a>
+        
+        <a  class="全部文章 后端 "
+           href="/2021/08/06/Maven/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="Maven">Maven</span>
+            <span class="post-date" title="2021-08-06 09:38:42">2021/08/06</span>
+        </a>
+        
+        <a  class="全部文章 后端 "
+           href="/2021/07/31/Springboot%E9%A1%B9%E7%9B%AE/"
+           data-tag="Docker,Java,SpringBoot"
+           data-author="" >
+            <span class="post-title" title="Springboot项目">Springboot项目</span>
+            <span class="post-date" title="2021-07-31 19:34:21">2021/07/31</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/07/22/GitLab/"
+           data-tag="Git,CICD"
+           data-author="" >
+            <span class="post-title" title="GitLab">GitLab</span>
+            <span class="post-date" title="2021-07-22 21:41:24">2021/07/22</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/07/22/Docker/"
+           data-tag="Docker,环境"
+           data-author="" >
+            <span class="post-title" title="Docker">Docker</span>
+            <span class="post-date" title="2021-07-22 14:53:59">2021/07/22</span>
+        </a>
+        
+        <a  class="全部文章 后端 "
+           href="/2021/07/19/SpringSecurity/"
+           data-tag="Java,Spring"
+           data-author="" >
+            <span class="post-title" title="SpringSecurity">SpringSecurity</span>
+            <span class="post-date" title="2021-07-19 20:58:25">2021/07/19</span>
+        </a>
+        
+        <a  class="全部文章 后端 "
+           href="/2021/07/13/Mybatis/"
+           data-tag="Java,Mybatis"
+           data-author="" >
+            <span class="post-title" title="Mybatis">Mybatis</span>
+            <span class="post-date" title="2021-07-13 10:38:01">2021/07/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/07/05/NVM/"
+           data-tag="Nodejs"
+           data-author="" >
+            <span class="post-title" title="NVM">NVM</span>
+            <span class="post-date" title="2021-07-05 08:15:33">2021/07/05</span>
+        </a>
+        
+        <a  class="全部文章 前端 "
+           href="/2021/06/23/Vue/"
+           data-tag="Vue"
+           data-author="" >
+            <span class="post-title" title="Vue">Vue</span>
+            <span class="post-date" title="2021-06-23 10:48:20">2021/06/23</span>
+        </a>
+        
+        <a  class="全部文章 后端 "
+           href="/2021/06/08/SpringBoot2/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="SpringBoot2学习">SpringBoot2学习</span>
+            <span class="post-date" title="2021-06-08 16:51:25">2021/06/08</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/06/02/Spring%E5%AE%9E%E6%88%98V5/"
+           data-tag="Java,Spring"
+           data-author="" >
+            <span class="post-title" title="Spring实战(第五版)">Spring实战(第五版)</span>
+            <span class="post-date" title="2021-06-02 09:42:37">2021/06/02</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/04/25/Spring%E5%AE%9E%E6%88%98V4/"
+           data-tag="Java,Spring"
+           data-author="" >
+            <span class="post-title" title="Spring实战(第四版)">Spring实战(第四版)</span>
+            <span class="post-date" title="2021-04-25 18:38:03">2021/04/25</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/04/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"
+           data-tag="Java,设计模式"
+           data-author="" >
+            <span class="post-title" title="设计模式">设计模式</span>
+            <span class="post-date" title="2021-04-18 22:19:45">2021/04/18</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2021/03/22/SQL/"
+           data-tag="MySQL"
+           data-author="" >
+            <span class="post-title" title="SQL">SQL</span>
+            <span class="post-date" title="2021-03-22 18:33:13">2021/03/22</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/03/14/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/"
+           data-tag="笔记"
+           data-author="" >
+            <span class="post-title" title="时间管理">时间管理</span>
+            <span class="post-date" title="2021-03-14 21:49:15">2021/03/14</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/03/14/Hexo/"
+           data-tag="Hexo"
+           data-author="" >
+            <span class="post-title" title="Hexo">Hexo</span>
+            <span class="post-date" title="2021-03-14 08:31:47">2021/03/14</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-SQL" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">SQL</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="数据库">数据库</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color1">MySQL</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2023-12-26 18:30:54'>2021-03-22 18:33</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:4.4k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SQL-style-guide-SQL-%E6%A0%B7%E5%BC%8F%E6%8C%87%E5%8D%97"><span class="toc-text">SQL style guide SQL 样式指南</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Overview-%E7%BB%BC%E8%BF%B0"><span class="toc-text">Overview 综述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#General-%E4%B8%80%E8%88%AC%E5%8E%9F%E5%88%99"><span class="toc-text">General 一般原则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Do-%E5%BA%94%E8%AF%A5%E5%81%9A%E7%9A%84%E4%BA%8B%E6%83%85"><span class="toc-text">Do 应该做的事情</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Avoid-%E5%BA%94%E9%81%BF%E5%85%8D%E7%9A%84%E4%BA%8B%E6%83%85"><span class="toc-text">Avoid 应避免的事情</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Naming-conventions-%E5%91%BD%E5%90%8D%E6%83%AF%E4%BE%8B"><span class="toc-text">Naming conventions 命名惯例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#General-%E4%B8%80%E8%88%AC%E5%8E%9F%E5%88%99-1"><span class="toc-text">General 一般原则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tables-%E8%A1%A8%E5%90%8D"><span class="toc-text">Tables 表名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Columns-%E5%88%97%E5%90%8D"><span class="toc-text">Columns 列名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Aliasing-or-correlations-%E5%88%AB%E5%90%8D%E4%B8%8E%E5%85%B3%E8%81%94%E5%90%8D"><span class="toc-text">Aliasing or correlations 别名与关联名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Stored-procedures-%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E5%90%8D"><span class="toc-text">Stored procedures 存储过程名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Uniform-suffix-%E7%BB%9F%E4%B8%80%E7%9A%84%E5%90%8E%E7%BC%80"><span class="toc-text">Uniform suffix 统一的后缀</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Query-syntax-%E6%9F%A5%E8%AF%A2%E8%AF%AD%E5%8F%A5"><span class="toc-text">Query syntax 查询语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Reserved-words-%E4%BF%9D%E7%95%99%E5%AD%97"><span class="toc-text">Reserved words 保留字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#White-space-%E7%A9%BA%E7%99%BD%E5%AD%97%E7%AC%A6"><span class="toc-text">White space 空白字符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Spaces-%E7%A9%BA%E6%A0%BC"><span class="toc-text">Spaces 空格</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Line-spacing-%E6%8D%A2%E8%A1%8C"><span class="toc-text">Line spacing 换行</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Indentation-%E7%BC%A9%E8%BF%9B"><span class="toc-text">Indentation 缩进</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Joins-Join-%E8%AF%AD%E5%8F%A5"><span class="toc-text">Joins Join 语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Subqueries-%E5%AD%90%E6%9F%A5%E8%AF%A2"><span class="toc-text">Subqueries 子查询</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Preferred-formalisms-%E6%8E%A8%E8%8D%90%E7%9A%84%E5%BD%A2%E5%BC%8F"><span class="toc-text">Preferred formalisms 推荐的形式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-syntax-%E5%88%9B%E5%BB%BA%E8%AF%AD%E5%8F%A5"><span class="toc-text">Create syntax 创建语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Choosing-data-types-%E9%80%89%E6%8B%A9%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">Choosing data types 选择数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Specifying-default-values-%E6%8C%87%E5%AE%9A%E9%BB%98%E8%AE%A4%E7%B1%BB%E5%9E%8B"><span class="toc-text">Specifying default values 指定默认类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Constraints-and-keys-%E7%BA%A6%E6%9D%9F%E5%92%8C%E9%94%AE"><span class="toc-text">Constraints and keys 约束和键</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Choosing-keys-%E9%80%89%E6%8B%A9%E9%94%AE"><span class="toc-text">Choosing keys 选择键</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Defining-constraints-%E5%AE%9A%E4%B9%89%E7%BA%A6%E6%9D%9F"><span class="toc-text">Defining constraints 定义约束</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#General-%E6%A6%82%E8%BF%B0"><span class="toc-text">General 概述</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Layout-and-order-%E5%B8%83%E5%B1%80%E5%92%8C%E9%A1%BA%E5%BA%8F"><span class="toc-text">Layout and order 布局和顺序</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Validation-%E6%A0%A1%E9%AA%8C"><span class="toc-text">Validation 校验</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Example"><span class="toc-text">Example</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Design-to-avoid-%E5%BA%94%E8%AF%A5%E9%81%BF%E5%85%8D%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="toc-text">Design to avoid 应该避免的设计</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%84%E5%BD%95"><span class="toc-text">附录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%9D%E7%95%99%E5%AD%97%E5%8F%82%E8%80%83"><span class="toc-text">保留字参考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Column-data-types-%E5%88%97%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">Column data types 列的数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Character-types-%E5%AD%97%E7%AC%A6%E5%9E%8B"><span class="toc-text">Character types 字符型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Numeric-types-%E6%95%B0%E5%80%BC%E5%9E%8B"><span class="toc-text">Numeric types 数值型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Datetime-types-%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4%E7%B1%BB%E5%9E%8B"><span class="toc-text">Datetime types 日期时间类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Binary-types-%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%B1%BB%E5%9E%8B"><span class="toc-text">Binary types 二进制类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Additional-types-%E5%85%B6%E4%BB%96%E7%B1%BB%E5%9E%8B"><span class="toc-text">Additional types 其他类型</span></a></li></ol></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="SQL-style-guide-SQL-样式指南"><a href="#SQL-style-guide-SQL-样式指南" class="headerlink" title="SQL style guide SQL 样式指南"></a>SQL style guide SQL 样式指南</h1><p>这篇文档翻译自以<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" title="署名-相同方式共享 4.0 国际">署名-相同方式共享 4.0 国际协议</a>发布的 <a target="_blank" rel="noopener" href="http://www.sqlstyle.guide/" title="SQL style guide by Simon Holywell">http://www.sqlstyle.guide</a>，译文以与原文同样的协议发布。</p>
+<h2 id="Overview-综述"><a href="#Overview-综述" class="headerlink" title="Overview 综述"></a>Overview 综述</h2><p>你可以直接使用这些指导方针，或者 <a target="_blank" rel="noopener" href="https://github.com/treffynnon/sqlstyle.guide/fork" title="Fork SQL style guide on GitHub">fork</a> 后创建自己的版本 —— 最重要的是选择一套方针并严格遵守它。欢迎通过在 GitHub 上提交 <a target="_blank" rel="noopener" href="https://github.com/treffynnon/sqlstyle.guide/issues" title="SQL style guide issues on GitHub">issue</a> 或 <a target="_blank" rel="noopener" href="https://github.com/treffynnon/sqlstyle.guide/pulls/" title="SQL style guide pull requests on GitHub">pull request</a> 来提交建议或修复 bug。</p>
+<p>为了让阅读了 Joe Celko 的《<a target="_blank" rel="noopener" href="https://www.amazon.com/gp/product/0120887975/ref=as_li_ss_tl?ie=UTF8&linkCode=ll1&tag=treffynnon-20&linkId=9c88eac8cd420e979675c815771313d5" title="Joe Celko&#39;s SQL Programming Style (The Morgan Kaufmann Series in Data Management Systems)">SQL ProgrammingStyle</a>》的团队能更容易采用这套规则，这套原则被设计成与该书兼容的形式。本指南在某些领域严一些，在另一些领域松一些。当然本指南比 Celko 的书更简洁一些 —— 因为 Celko 的书包含了一些趣闻和每一条原则后的理由。</p>
+<span id="more"></span>
+<p>将该文档的 <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/treffynnon/sqlstyle.guide/gh-pages/_includes/sqlstyle.guide.zh.md" title="Download the guide in Markdown format">Markdown 格式</a> 添加到项目代码库中或将该页面的链接发送给项目的所有参与者要比传阅实体书容易得多。</p>
+<p><a target="_blank" rel="noopener" href="https://www.simonholywell.com/?utm_source=sqlstyle.guide&utm_medium=link&utm_campaign=md-document" title="SimonHolywell.com">Simon Holywell</a> 所著的《SQL 样式指南》以<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" title="署名-相同方式共享 4.0 国际">署名-相同方式共享 4.0 国际协议</a>发布，改编自 <a target="_blank" rel="noopener" href="http://www.sqlstyle.guide/" title="SQL style guide by Simon Holywell">http://www.sqlstyle.guide</a>。</p>
+<h2 id="General-一般原则"><a href="#General-一般原则" class="headerlink" title="General 一般原则"></a>General 一般原则</h2><h3 id="Do-应该做的事情"><a href="#Do-应该做的事情" class="headerlink" title="Do 应该做的事情"></a>Do 应该做的事情</h3><ul>
+<li>使用一致的、描述性的名称。</li>
+<li>合理地使用空格和缩进来增强可读性。</li>
+<li>存储符合 <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/ISO_8601" title="Wikipedia: ISO 8601">ISO-8601</a> 标准的日期格式（<code>YYYY-MM-DD HH:MM:SS.SSSSS</code>）。</li>
+<li>为了提高可移植性，最好仅使用标准 SQL 函数而不是特定供应商的函数。</li>
+<li>保证代码简洁明了、没有多余的 SQL —— 比如非必要的引号或括号，或者可以推导出的 <code>WHERE</code> 子句。</li>
+<li>必要时在 SQL 代码中加入注释。优先使用 C 语言式的以 <code>/*</code> 开始以 <code>*/</code> 结束的块注释，或使用以 <code>--</code> 开始的行注释，并在末尾换行。</li>
+</ul>
+<pre><code class="sql">SELECT file_hash  -- stored ssdeep hash
+  FROM file_system
+ WHERE file_name = &#39;.vimrc&#39;;
+</code></pre>
+<pre><code class="sql">/* Updating the file record after writing to the file */
+UPDATE file_system
+   SET file_modified_date = &#39;1980-02-22 13:19:01.00000&#39;,
+       file_size = 209732
+ WHERE file_name = &#39;.vimrc&#39;;
+</code></pre>
+<h3 id="Avoid-应避免的事情"><a href="#Avoid-应避免的事情" class="headerlink" title="Avoid 应避免的事情"></a>Avoid 应避免的事情</h3><ul>
+<li>驼峰命名法 —— 它不适合快速扫读。</li>
+<li>描述性的前缀或匈牙利命名法比如 <code>sp_</code> 或 <code>tbl</code>。</li>
+<li>复数形式 —— 尽量使用更自然的集合术语。比如，用“staff”替代“employees”，或用“people”替代“individuals”。</li>
+<li>被引号包裹的标识符（quoted identifier）—— 如果你必须使用这样的标识符，最好坚持用 SQL92 的双引号来提高可移植性（你可能需要配置你的 SQL 服务器以支持此特性，具体取决于供应商）。</li>
+<li>面向对象编程的原则不该应用到 SQL 或数据库结构上。</li>
+</ul>
+<h2 id="Naming-conventions-命名惯例"><a href="#Naming-conventions-命名惯例" class="headerlink" title="Naming conventions 命名惯例"></a>Naming conventions 命名惯例</h2><h3 id="General-一般原则-1"><a href="#General-一般原则-1" class="headerlink" title="General 一般原则"></a>General 一般原则</h3><ul>
+<li>保证名字独一无二且不是<a href="#%E4%BF%9D%E7%95%99%E5%AD%97%E5%8F%82%E8%80%83" title="Reserved keyword reference">保留字</a>。</li>
+<li>保证名字长度不超过 30 个字节 —— 实际上，如果你不使用多字节字符集，就是 30 个字符。</li>
+<li>名字要以字母开头，不能以下划线结尾。</li>
+<li>只在名字中使用字母、数字和下划线。</li>
+<li>不要在名字中出现连续下划线 —— 这样很难辨认。</li>
+<li>在名字中需要空格的地方用下划线代替（<code>first name</code> 变为 <code>first_name</code>）。</li>
+<li>尽量避免使用缩写词。使用时一定确定这个缩写简明易懂。</li>
+</ul>
+<pre><code class="sql">SELECT first_name
+  FROM staff;
+</code></pre>
+<h3 id="Tables-表名"><a href="#Tables-表名" class="headerlink" title="Tables 表名"></a>Tables 表名</h3><ul>
+<li>使用集合名称，或在不那么理想的情况下使用复数形式。如 <code>staff</code>（建议使用）和 <code>employees</code>。</li>
+<li>不要使用类似 <code>tbl</code> 或其他的描述性的前缀或匈牙利命名法。</li>
+<li>表不应该同它的列同名，反之亦然。</li>
+<li>尽量避免连接两个表的名字作为关系表（relationship table）的名字。与其使用 <code>cars_mechanics</code> 做表名不如使用 <code>services</code>。</li>
+</ul>
+<h3 id="Columns-列名"><a href="#Columns-列名" class="headerlink" title="Columns 列名"></a>Columns 列名</h3><ul>
+<li>总是使用单数形式。</li>
+<li>避免直接使用 <code>id</code> 做表的主标识符。</li>
+<li>避免列名和表名同名，反之亦然。</li>
+<li>总是使用小写字母，除非是特殊情况，如专有名词。</li>
+</ul>
+<h3 id="Aliasing-or-correlations-别名与关联名"><a href="#Aliasing-or-correlations-别名与关联名" class="headerlink" title="Aliasing or correlations 别名与关联名"></a>Aliasing or correlations 别名与关联名</h3><ul>
+<li>别名应该与它们所指的对象或表达式相关联。</li>
+<li>一般来说，关联名应该由对象名中每一个单词的首字母组成。</li>
+<li>如果已经有相同的关联名了，那么在关联名后加一个数字。</li>
+<li>总是加上 <code>AS</code> 关键字，因为这样的明确声明易于阅读。</li>
+<li>为计算出的数据（<code>SUM()</code> 或 <code>AVG()</code>）命名时，用一个将这条数据存在表中时会使用的列名。</li>
+</ul>
+<pre><code class="sql">SELECT first_name AS fn
+  FROM staff AS s1
+  JOIN students AS s2
+    ON s2.mentor_id = s1.staff_num;
+</code></pre>
+<pre><code class="sql">SELECT SUM(s.monitor_tally) AS monitor_total
+  FROM staff AS s;
+</code></pre>
+<h3 id="Stored-procedures-存储过程名"><a href="#Stored-procedures-存储过程名" class="headerlink" title="Stored procedures 存储过程名"></a>Stored procedures 存储过程名</h3><ul>
+<li>名字一定要包含动词。</li>
+<li>不要附加 <code>sp_</code> 或任何其他这样的描述性的前缀或使用匈牙利表示法。</li>
+</ul>
+<h3 id="Uniform-suffix-统一的后缀"><a href="#Uniform-suffix-统一的后缀" class="headerlink" title="Uniform suffix 统一的后缀"></a>Uniform suffix 统一的后缀</h3><p>下列后缀有统一的意义，能保证 SQL 代码更容易理解。在合适的时候使用正确的后缀。</p>
+<ul>
+<li><code>_id</code> —— 独一无二的标识符，如主键。</li>
+<li><code>_status</code> —— 标志值或任何表示状态的值，比如 <code>publication_status</code>。</li>
+<li><code>_total</code> —— 总和或某些值的和。</li>
+<li><code>_num</code> —— 表示该字段包含数值。</li>
+<li><code>_name</code> —— 表示名字，例如 <code>first_name</code>。</li>
+<li><code>_seq</code> —— 包含一系列值。</li>
+<li><code>_date</code> —— 表示该列包含日期。</li>
+<li><code>_tally</code> —— 计数值。</li>
+<li><code>_size</code> —— 大小，如文件大小或服装大小。</li>
+<li><code>_addr</code> —— 地址，有形的或无形的，如 <code>ip_addr</code></li>
+</ul>
+<h2 id="Query-syntax-查询语句"><a href="#Query-syntax-查询语句" class="headerlink" title="Query syntax 查询语句"></a>Query syntax 查询语句</h2><h3 id="Reserved-words-保留字"><a href="#Reserved-words-保留字" class="headerlink" title="Reserved words 保留字"></a>Reserved words 保留字</h3><p>关键字总是大写，如 <code>SELECT</code> 和 <code>WHERE</code>。</p>
+<p>最好使用关键字的全称而不是简写，用 <code>ABSOLUTE</code> 而不用 <code>ABS</code>。</p>
+<p>当标准 ANSI SQL 关键字能完成相同的事情时，不要使用数据库服务器特定的关键字，这样能增强可移植性。</p>
+<pre><code class="sql">SELECT model_num
+  FROM phones AS p
+ WHERE p.release_date &gt; &#39;2014-09-30&#39;;
+</code></pre>
+<h3 id="White-space-空白字符"><a href="#White-space-空白字符" class="headerlink" title="White space 空白字符"></a>White space 空白字符</h3><p>正确地使用空白字符对清晰的代码十分重要。不要把代码堆在一起或移除自然语言中的空格。</p>
+<h4 id="Spaces-空格"><a href="#Spaces-空格" class="headerlink" title="Spaces 空格"></a>Spaces 空格</h4><p>用空格使根关键字都结束在同一列上。在代码中间形成一个从上到下的“川流”，这样帮助读者快速扫视代码并将关键字和实现细节分开。川流在排版时应该避免，但是对阅读 SQL 语句是有帮助的。</p>
+<pre><code class="sql">(SELECT f.species_name,
+        AVG(f.height) AS average_height, AVG(f.diameter) AS average_diameter
+   FROM flora AS f
+  WHERE f.species_name = &#39;Banksia&#39;
+     OR f.species_name = &#39;Sheoak&#39;
+     OR f.species_name = &#39;Wattle&#39;
+  GROUP BY f.species_name, f.observation_date)
+
+  UNION ALL
+
+(SELECT b.species_name,
+        AVG(b.height) AS average_height, AVG(b.diameter) AS average_diameter
+   FROM botanic_garden_flora AS b
+  WHERE b.species_name = &#39;Banksia&#39;
+     OR b.species_name = &#39;Sheoak&#39;
+     OR b.species_name = &#39;Wattle&#39;
+  GROUP BY b.species_name, b.observation_date);
+</code></pre>
+<p>注意 <code>SELECT</code> 和 <code>FROM</code> 等关键字，都右对齐，而实际的列名和实现细节都左对齐。</p>
+<p>注意下列情况总是加入空格：</p>
+<ul>
+<li>在等号（<code>=</code>）前后</li>
+<li>在逗号（<code>,</code>）后</li>
+<li>成对的单引号（<code>&#39;</code>）前后，除非在括号中或后面是逗号 &#x2F; 分号</li>
+</ul>
+<pre><code class="sql">SELECT a.title, a.release_date, a.recording_date
+  FROM albums AS a
+ WHERE a.title = &#39;Charcoal Lane&#39;
+    OR a.title = &#39;The New Danger&#39;;
+</code></pre>
+<h4 id="Line-spacing-换行"><a href="#Line-spacing-换行" class="headerlink" title="Line spacing 换行"></a>Line spacing 换行</h4><p>总是换行的情况：</p>
+<ul>
+<li>在 <code>AND</code> 或 <code>OR</code> 前</li>
+<li>在分号后（分隔语句以提高可读性）</li>
+<li>在每个关键字定义之后</li>
+<li>将多个列组成一个逻辑组时的逗号后</li>
+<li>将代码分隔成相关联的多个部分，帮助提高大段代码的可读性</li>
+</ul>
+<p>让所有的关键字右对齐、所有的值左对齐，这样就能在查询语句中间留出一个空隙，有助于快速扫读整个查询的定义。</p>
+<pre><code class="sql">INSERT INTO albums (title, release_date, recording_date)
+VALUES (&#39;Charcoal Lane&#39;, &#39;1990-01-01 01:01:01.00000&#39;, &#39;1990-01-01 01:01:01.00000&#39;),
+       (&#39;The New Danger&#39;, &#39;2008-01-01 01:01:01.00000&#39;, &#39;1990-01-01 01:01:01.00000&#39;);
+</code></pre>
+<pre><code class="sql">UPDATE albums
+   SET release_date = &#39;1990-01-01 01:01:01.00000&#39;
+ WHERE title = &#39;The New Danger&#39;;
+</code></pre>
+<pre><code class="sql">SELECT a.title,
+       a.release_date, a.recording_date, a.production_date -- 将所有的日期放在一起
+  FROM albums AS a
+ WHERE a.title = &#39;Charcoal Lane&#39;
+    OR a.title = &#39;The New Danger&#39;;
+</code></pre>
+<h3 id="Indentation-缩进"><a href="#Indentation-缩进" class="headerlink" title="Indentation 缩进"></a>Indentation 缩进</h3><p>为确保 SQL 的可读性，一定要遵守下列规则。</p>
+<h4 id="Joins-Join-语句"><a href="#Joins-Join-语句" class="headerlink" title="Joins Join 语句"></a>Joins Join 语句</h4><p>Join 语句应该缩进到川流的另一侧并在必要的时候添加一个换行。</p>
+<pre><code class="sql">SELECT r.last_name
+  FROM riders AS r
+       INNER JOIN bikes AS b
+       ON r.bike_vin_num = b.vin_num
+          AND b.engine_tally &gt; 2
+
+       INNER JOIN crew AS c
+       ON r.crew_chief_last_name = c.last_name
+          AND c.chief = &#39;Y&#39;;
+</code></pre>
+<h4 id="Subqueries-子查询"><a href="#Subqueries-子查询" class="headerlink" title="Subqueries 子查询"></a>Subqueries 子查询</h4><p>子查询应该在川流的右侧对齐并使用其他查询相同的样式。有时候将右括号单独置于一行并同与它配对的左括号对齐是有意义的 —— 尤其是当存在嵌套子查询的时候。</p>
+<pre><code class="sql">SELECT r.last_name,
+       (SELECT MAX(YEAR(championship_date))
+          FROM champions AS c
+         WHERE c.last_name = r.last_name
+           AND c.confirmed = &#39;Y&#39;) AS last_championship_year
+  FROM riders AS r
+ WHERE r.last_name IN
+       (SELECT c.last_name
+          FROM champions AS c
+         WHERE YEAR(championship_date) &gt; &#39;2008&#39;
+           AND c.confirmed = &#39;Y&#39;);
+</code></pre>
+<h3 id="Preferred-formalisms-推荐的形式"><a href="#Preferred-formalisms-推荐的形式" class="headerlink" title="Preferred formalisms 推荐的形式"></a>Preferred formalisms 推荐的形式</h3><ul>
+<li>尽量使用 <code>BETWEEN</code> 而不是多个 <code>AND</code> 语句。</li>
+<li>同样地，使用 <code>IN()</code> 而不是多个 <code>OR</code> 语句。</li>
+<li>当数据输出数据库时需要处理时，使用 <code>CASE</code> 表达式。<code>CASE</code> 语句能嵌套形成更复杂的逻辑结构。</li>
+<li>尽量避免 <code>UNION</code> 语句和临时表。如果数据库架构能够不靠这些语句运行，那么多数情况下它就不应该依靠这些语句。</li>
+</ul>
+<pre><code class="sql">SELECT CASE postcode
+       WHEN &#39;BN1&#39; THEN &#39;Brighton&#39;
+       WHEN &#39;EH1&#39; THEN &#39;Edinburgh&#39;
+       END AS city
+  FROM office_locations
+ WHERE country = &#39;United Kingdom&#39;
+   AND opening_time BETWEEN 8 AND 9
+   AND postcode IN (&#39;EH1&#39;, &#39;BN1&#39;, &#39;NN1&#39;, &#39;KW1&#39;);
+</code></pre>
+<h2 id="Create-syntax-创建语句"><a href="#Create-syntax-创建语句" class="headerlink" title="Create syntax 创建语句"></a>Create syntax 创建语句</h2><p>声明模式信息时维护可读代码也很重要。所以列定义的顺序和分组一定要有意义。</p>
+<p>在 <code>CREATE</code> 定义中，每个列定义要缩进 4 个空格。</p>
+<h3 id="Choosing-data-types-选择数据类型"><a href="#Choosing-data-types-选择数据类型" class="headerlink" title="Choosing data types 选择数据类型"></a>Choosing data types 选择数据类型</h3><ul>
+<li>尽量不使用供应商相关的数据类型 —— 这些类型不可移植甚至有可能不能在相同供应商的旧版本系统上使用。</li>
+<li>只在真的需要浮点数运算的时候才使用 <code>REAL</code> 和 <code>FLOAT</code> 类型，否则使用 <code>NUMERIC</code> 和 <code>DECIMAL</code> 类型。浮点数舍入误差是个麻烦。</li>
+</ul>
+<h3 id="Specifying-default-values-指定默认类型"><a href="#Specifying-default-values-指定默认类型" class="headerlink" title="Specifying default values 指定默认类型"></a>Specifying default values 指定默认类型</h3><ul>
+<li>默认值一定与列的类型相同 —— 如果一个列的类型是 <code>DECIMAL</code> 那么就不要使用 <code>INTEGER</code> 类型的值作为默认值。</li>
+<li>默认值要紧跟类型声明并在 <code>NOT NULL</code> 声明前。</li>
+</ul>
+<h3 id="Constraints-and-keys-约束和键"><a href="#Constraints-and-keys-约束和键" class="headerlink" title="Constraints and keys 约束和键"></a>Constraints and keys 约束和键</h3><p>约束和键是构成数据库系统的重要组成部分。它们能很快地变得难以阅读和理解，所以遵从指导方针是很重要的。</p>
+<h4 id="Choosing-keys-选择键"><a href="#Choosing-keys-选择键" class="headerlink" title="Choosing keys 选择键"></a>Choosing keys 选择键</h4><p>设计时应该谨慎选择构成键的列，因为键会影响性能和数据完整性。</p>
+<ol>
+<li>键在某种程度上应该是独一无二的。</li>
+<li>该值在不同表中的类型应该相同并且尽量不会更改。</li>
+<li>该值能否通过某种标准格式（如 ISO 发布的标准）？鼓励与前面第二点一致。</li>
+<li>尽量让键保持简单，但在适当情况下不要害怕使用复合键。</li>
+</ol>
+<p>以上是定义数据库时合乎逻辑的平衡做法。当需求变更时，键也应该根据情况更新。</p>
+<h4 id="Defining-constraints-定义约束"><a href="#Defining-constraints-定义约束" class="headerlink" title="Defining constraints 定义约束"></a>Defining constraints 定义约束</h4><p>确定键后，就可以用约束和字值段验证来定义它们。</p>
+<h5 id="General-概述"><a href="#General-概述" class="headerlink" title="General 概述"></a>General 概述</h5><ul>
+<li>表至少需要一个键来保证其完整性和可用性。</li>
+<li>除了 <code>UNIQUE</code> 、<code>PRIMARY KEY</code> 和 <code>FOREIGN KEY</code> 之外（数据库供应商会提供相应的检查），约束应该有名字。</li>
+</ul>
+<h5 id="Layout-and-order-布局和顺序"><a href="#Layout-and-order-布局和顺序" class="headerlink" title="Layout and order 布局和顺序"></a>Layout and order 布局和顺序</h5><ul>
+<li>在 <code>CREATE TABLE</code> 语句后先定义主键。</li>
+<li>约束的定义应该紧跟它相应的列的定义后。</li>
+<li>如果该约束与多个列相关，那么让它离相关的列越近越好。实在不行就将它放在表定义的最后。</li>
+<li>如果是应用于整个表的表级别的约束，那么就将它放在表定义的最后。</li>
+<li>按照字母顺序安排定义，<code>ON DELETE</code> 排在 <code>ON UPDATE</code> 前。</li>
+<li>有道理的话，把所有相关的语句对齐。比如，把所有 <code>NOT NULL</code> 定义对齐到同一列。这样做并不难，但是能提高可读性。</li>
+</ul>
+<h5 id="Validation-校验"><a href="#Validation-校验" class="headerlink" title="Validation 校验"></a>Validation 校验</h5><ul>
+<li>当字符串的格式已知时，用 <code>LIKE</code> 和 <code>SIMILAR TO</code> 约束来保证它们的完整性。</li>
+<li>当数值的范围可以确定时，用范围 <code>CHECK()</code> 来防止错误的值进入数据库或在没有提示的情况下截断。大部分情况下至少要确认数值大于零。</li>
+<li><code>CHECK()</code> 约束应该在单独的子句中以便 debug。</li>
+</ul>
+<h5 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h5><pre><code class="sql">CREATE TABLE staff (
+    PRIMARY KEY (staff_num),
+    staff_num      INT(5)       NOT NULL,
+    first_name     VARCHAR(100) NOT NULL,
+    pens_in_drawer INT(2)       NOT NULL,
+                   CONSTRAINT pens_in_drawer_range
+                   CHECK(pens_in_drawer BETWEEN 1 AND 99)
+);
+</code></pre>
+<h3 id="Design-to-avoid-应该避免的设计"><a href="#Design-to-avoid-应该避免的设计" class="headerlink" title="Design to avoid 应该避免的设计"></a>Design to avoid 应该避免的设计</h3><ul>
+<li>在关系型数据库的设计中应用面向对象设计思想（原则）—— 面向对象设计思想（原则）并不能很好地适用于关系型数据库的设计，避免这个陷阱。</li>
+<li>将值存入一列并将其单位存在另一列 —— 列的定义应该让自己的单位不言自明以避免在应用内进行合并。使用 <code>CHECK()</code> 来保证插入的数据是合法的。</li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Entity%E2%80%93attribute%E2%80%93value_model" title="Wikipedia: Entity–attribute–value model">EAV (Entity Attribute Value)</a> 表 —— 应该用专门的产品来处理这样的无模式数据。</li>
+<li>因为某些原因（如为了根据时间归档、为了划分跨国组织的区域）将本应该放在一个表中的数据分到多个表中 —— 这样的设计导致以后必须使用 <code>UNION</code> 操作而不能直接查询一个表。</li>
+</ul>
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><h3 id="保留字参考"><a href="#保留字参考" class="headerlink" title="保留字参考"></a>保留字参考</h3><p>下表包含了 ANSI SQL（92，99 和 2003)、MySQL 3 到 5.x、PostgreSQL 8.1、MS SQL Server 2000、MS ODBC 和 Oracle 10.2 中的关键字。</p>
+<pre><code class="sql">A
+ABORT
+ABS
+ABSOLUTE
+ACCESS
+ACTION
+ADA
+ADD
+ADMIN
+AFTER
+AGGREGATE
+ALIAS
+ALL
+ALLOCATE
+ALSO
+ALTER
+ALWAYS
+ANALYSE
+ANALYZE
+AND
+ANY
+ARE
+ARRAY
+AS
+ASC
+ASENSITIVE
+ASSERTION
+ASSIGNMENT
+ASYMMETRIC
+AT
+ATOMIC
+ATTRIBUTE
+ATTRIBUTES
+AUDIT
+AUTHORIZATION
+AUTO_INCREMENT
+AVG
+AVG_ROW_LENGTH
+BACKUP
+BACKWARD
+BEFORE
+BEGIN
+BERNOULLI
+BETWEEN
+BIGINT
+BINARY
+BIT
+BIT_LENGTH
+BITVAR
+BLOB
+BOOL
+BOOLEAN
+BOTH
+BREADTH
+BREAK
+BROWSE
+BULK
+BY
+C
+CACHE
+CALL
+CALLED
+CARDINALITY
+CASCADE
+CASCADED
+CASE
+CAST
+CATALOG
+CATALOG_NAME
+CEIL
+CEILING
+CHAIN
+CHANGE
+CHAR
+CHAR_LENGTH
+CHARACTER
+CHARACTER_LENGTH
+CHARACTER_SET_CATALOG
+CHARACTER_SET_NAME
+CHARACTER_SET_SCHEMA
+CHARACTERISTICS
+CHARACTERS
+CHECK
+CHECKED
+CHECKPOINT
+CHECKSUM
+CLASS
+CLASS_ORIGIN
+CLOB
+CLOSE
+CLUSTER
+CLUSTERED
+COALESCE
+COBOL
+COLLATE
+COLLATION
+COLLATION_CATALOG
+COLLATION_NAME
+COLLATION_SCHEMA
+COLLECT
+COLUMN
+COLUMN_NAME
+COLUMNS
+COMMAND_FUNCTION
+COMMAND_FUNCTION_CODE
+COMMENT
+COMMIT
+COMMITTED
+COMPLETION
+COMPRESS
+COMPUTE
+CONDITION
+CONDITION_NUMBER
+CONNECT
+CONNECTION
+CONNECTION_NAME
+CONSTRAINT
+CONSTRAINT_CATALOG
+CONSTRAINT_NAME
+CONSTRAINT_SCHEMA
+CONSTRAINTS
+CONSTRUCTOR
+CONTAINS
+CONTAINSTABLE
+CONTINUE
+CONVERSION
+CONVERT
+COPY
+CORR
+CORRESPONDING
+COUNT
+COVAR_POP
+COVAR_SAMP
+CREATE
+CREATEDB
+CREATEROLE
+CREATEUSER
+CROSS
+CSV
+CUBE
+CUME_DIST
+CURRENT
+CURRENT_DATE
+CURRENT_DEFAULT_TRANSFORM_GROUP
+CURRENT_PATH
+CURRENT_ROLE
+CURRENT_TIME
+CURRENT_TIMESTAMP
+CURRENT_TRANSFORM_GROUP_FOR_TYPE
+CURRENT_USER
+CURSOR
+CURSOR_NAME
+CYCLE
+DATA
+DATABASE
+DATABASES
+DATE
+DATETIME
+DATETIME_INTERVAL_CODE
+DATETIME_INTERVAL_PRECISION
+DAY
+DAY_HOUR
+DAY_MICROSECOND
+DAY_MINUTE
+DAY_SECOND
+DAYOFMONTH
+DAYOFWEEK
+DAYOFYEAR
+DBCC
+DEALLOCATE
+DEC
+DECIMAL
+DECLARE
+DEFAULT
+DEFAULTS
+DEFERRABLE
+DEFERRED
+DEFINED
+DEFINER
+DEGREE
+DELAY_KEY_WRITE
+DELAYED
+DELETE
+DELIMITER
+DELIMITERS
+DENSE_RANK
+DENY
+DEPTH
+DEREF
+DERIVED
+DESC
+DESCRIBE
+DESCRIPTOR
+DESTROY
+DESTRUCTOR
+DETERMINISTIC
+DIAGNOSTICS
+DICTIONARY
+DISABLE
+DISCONNECT
+DISK
+DISPATCH
+DISTINCT
+DISTINCTROW
+DISTRIBUTED
+DIV
+DO
+DOMAIN
+DOUBLE
+DROP
+DUAL
+DUMMY
+DUMP
+DYNAMIC
+DYNAMIC_FUNCTION
+DYNAMIC_FUNCTION_CODE
+EACH
+ELEMENT
+ELSE
+ELSEIF
+ENABLE
+ENCLOSED
+ENCODING
+ENCRYPTED
+END
+END-EXEC
+ENUM
+EQUALS
+ERRLVL
+ESCAPE
+ESCAPED
+EVERY
+EXCEPT
+EXCEPTION
+EXCLUDE
+EXCLUDING
+EXCLUSIVE
+EXEC
+EXECUTE
+EXISTING
+EXISTS
+EXIT
+EXP
+EXPLAIN
+EXTERNAL
+EXTRACT
+FALSE
+FETCH
+FIELDS
+FILE
+FILLFACTOR
+FILTER
+FINAL
+FIRST
+FLOAT
+FLOAT4
+FLOAT8
+FLOOR
+FLUSH
+FOLLOWING
+FOR
+FORCE
+FOREIGN
+FORTRAN
+FORWARD
+FOUND
+FREE
+FREETEXT
+FREETEXTTABLE
+FREEZE
+FROM
+FULL
+FULLTEXT
+FUNCTION
+FUSION
+G
+GENERAL
+GENERATED
+GET
+GLOBAL
+GO
+GOTO
+GRANT
+GRANTED
+GRANTS
+GREATEST
+GROUP
+GROUPING
+HANDLER
+HAVING
+HEADER
+HEAP
+HIERARCHY
+HIGH_PRIORITY
+HOLD
+HOLDLOCK
+HOST
+HOSTS
+HOUR
+HOUR_MICROSECOND
+HOUR_MINUTE
+HOUR_SECOND
+IDENTIFIED
+IDENTITY
+IDENTITY_INSERT
+IDENTITYCOL
+IF
+IGNORE
+ILIKE
+IMMEDIATE
+IMMUTABLE
+IMPLEMENTATION
+IMPLICIT
+IN
+INCLUDE
+INCLUDING
+INCREMENT
+INDEX
+INDICATOR
+INFILE
+INFIX
+INHERIT
+INHERITS
+INITIAL
+INITIALIZE
+INITIALLY
+INNER
+INOUT
+INPUT
+INSENSITIVE
+INSERT
+INSERT_ID
+INSTANCE
+INSTANTIABLE
+INSTEAD
+INT
+INT1
+INT2
+INT3
+INT4
+INT8
+INTEGER
+INTERSECT
+INTERSECTION
+INTERVAL
+INTO
+INVOKER
+IS
+ISAM
+ISNULL
+ISOLATION
+ITERATE
+JOIN
+K
+KEY
+KEY_MEMBER
+KEY_TYPE
+KEYS
+KILL
+LANCOMPILER
+LANGUAGE
+LARGE
+LAST
+LAST_INSERT_ID
+LATERAL
+LEADING
+LEAST
+LEAVE
+LEFT
+LENGTH
+LESS
+LEVEL
+LIKE
+LIMIT
+LINENO
+LINES
+LISTEN
+LN
+LOAD
+LOCAL
+LOCALTIME
+LOCALTIMESTAMP
+LOCATION
+LOCATOR
+LOCK
+LOGIN
+LOGS
+LONG
+LONGBLOB
+LONGTEXT
+LOOP
+LOW_PRIORITY
+LOWER
+M
+MAP
+MATCH
+MATCHED
+MAX
+MAX_ROWS
+MAXEXTENTS
+MAXVALUE
+MEDIUMBLOB
+MEDIUMINT
+MEDIUMTEXT
+MEMBER
+MERGE
+MESSAGE_LENGTH
+MESSAGE_OCTET_LENGTH
+MESSAGE_TEXT
+METHOD
+MIDDLEINT
+MIN
+MIN_ROWS
+MINUS
+MINUTE
+MINUTE_MICROSECOND
+MINUTE_SECOND
+MINVALUE
+MLSLABEL
+MOD
+MODE
+MODIFIES
+MODIFY
+MODULE
+MONTH
+MONTHNAME
+MORE
+MOVE
+MULTISET
+MUMPS
+MYISAM
+NAME
+NAMES
+NATIONAL
+NATURAL
+NCHAR
+NCLOB
+NESTING
+NEW
+NEXT
+NO
+NO_WRITE_TO_BINLOG
+NOAUDIT
+NOCHECK
+NOCOMPRESS
+NOCREATEDB
+NOCREATEROLE
+NOCREATEUSER
+NOINHERIT
+NOLOGIN
+NONCLUSTERED
+NONE
+NORMALIZE
+NORMALIZED
+NOSUPERUSER
+NOT
+NOTHING
+NOTIFY
+NOTNULL
+NOWAIT
+NULL
+NULLABLE
+NULLIF
+NULLS
+NUMBER
+NUMERIC
+OBJECT
+OCTET_LENGTH
+OCTETS
+OF
+OFF
+OFFLINE
+OFFSET
+OFFSETS
+OIDS
+OLD
+ON
+ONLINE
+ONLY
+OPEN
+OPENDATASOURCE
+OPENQUERY
+OPENROWSET
+OPENXML
+OPERATION
+OPERATOR
+OPTIMIZE
+OPTION
+OPTIONALLY
+OPTIONS
+OR
+ORDER
+ORDERING
+ORDINALITY
+OTHERS
+OUT
+OUTER
+OUTFILE
+OUTPUT
+OVER
+OVERLAPS
+OVERLAY
+OVERRIDING
+OWNER
+PACK_KEYS
+PAD
+PARAMETER
+PARAMETER_MODE
+PARAMETER_NAME
+PARAMETER_ORDINAL_POSITION
+PARAMETER_SPECIFIC_CATALOG
+PARAMETER_SPECIFIC_NAME
+PARAMETER_SPECIFIC_SCHEMA
+PARAMETERS
+PARTIAL
+PARTITION
+PASCAL
+PASSWORD
+PATH
+PCTFREE
+PERCENT
+PERCENT_RANK
+PERCENTILE_CONT
+PERCENTILE_DISC
+PLACING
+PLAN
+PLI
+POSITION
+POSTFIX
+POWER
+PRECEDING
+PRECISION
+PREFIX
+PREORDER
+PREPARE
+PREPARED
+PRESERVE
+PRIMARY
+PRINT
+PRIOR
+PRIVILEGES
+PROC
+PROCEDURAL
+PROCEDURE
+PROCESS
+PROCESSLIST
+PUBLIC
+PURGE
+QUOTE
+RAID0
+RAISERROR
+RANGE
+RANK
+RAW
+READ
+READS
+READTEXT
+REAL
+RECHECK
+RECONFIGURE
+RECURSIVE
+REF
+REFERENCES
+REFERENCING
+REGEXP
+REGR_AVGX
+REGR_AVGY
+REGR_COUNT
+REGR_INTERCEPT
+REGR_R2
+REGR_SLOPE
+REGR_SXX
+REGR_SXY
+REGR_SYY
+REINDEX
+RELATIVE
+RELEASE
+RELOAD
+RENAME
+REPEAT
+REPEATABLE
+REPLACE
+REPLICATION
+REQUIRE
+RESET
+RESIGNAL
+RESOURCE
+RESTART
+RESTORE
+RESTRICT
+RESULT
+RETURN
+RETURNED_CARDINALITY
+RETURNED_LENGTH
+RETURNED_OCTET_LENGTH
+RETURNED_SQLSTATE
+RETURNS
+REVOKE
+RIGHT
+RLIKE
+ROLE
+ROLLBACK
+ROLLUP
+ROUTINE
+ROUTINE_CATALOG
+ROUTINE_NAME
+ROUTINE_SCHEMA
+ROW
+ROW_COUNT
+ROW_NUMBER
+ROWCOUNT
+ROWGUIDCOL
+ROWID
+ROWNUM
+ROWS
+RULE
+SAVE
+SAVEPOINT
+SCALE
+SCHEMA
+SCHEMA_NAME
+SCHEMAS
+SCOPE
+SCOPE_CATALOG
+SCOPE_NAME
+SCOPE_SCHEMA
+SCROLL
+SEARCH
+SECOND
+SECOND_MICROSECOND
+SECTION
+SECURITY
+SELECT
+SELF
+SENSITIVE
+SEPARATOR
+SEQUENCE
+SERIALIZABLE
+SERVER_NAME
+SESSION
+SESSION_USER
+SET
+SETOF
+SETS
+SETUSER
+SHARE
+SHOW
+SHUTDOWN
+SIGNAL
+SIMILAR
+SIMPLE
+SIZE
+SMALLINT
+SOME
+SONAME
+SOURCE
+SPACE
+SPATIAL
+SPECIFIC
+SPECIFIC_NAME
+SPECIFICTYPE
+SQL
+SQL_BIG_RESULT
+SQL_BIG_SELECTS
+SQL_BIG_TABLES
+SQL_CALC_FOUND_ROWS
+SQL_LOG_OFF
+SQL_LOG_UPDATE
+SQL_LOW_PRIORITY_UPDATES
+SQL_SELECT_LIMIT
+SQL_SMALL_RESULT
+SQL_WARNINGS
+SQLCA
+SQLCODE
+SQLERROR
+SQLEXCEPTION
+SQLSTATE
+SQLWARNING
+SQRT
+SSL
+STABLE
+START
+STARTING
+STATE
+STATEMENT
+STATIC
+STATISTICS
+STATUS
+STDDEV_POP
+STDDEV_SAMP
+STDIN
+STDOUT
+STORAGE
+STRAIGHT_JOIN
+STRICT
+STRING
+STRUCTURE
+STYLE
+SUBCLASS_ORIGIN
+SUBLIST
+SUBMULTISET
+SUBSTRING
+SUCCESSFUL
+SUM
+SUPERUSER
+SYMMETRIC
+SYNONYM
+SYSDATE
+SYSID
+SYSTEM
+SYSTEM_USER
+TABLE
+TABLE_NAME
+TABLES
+TABLESAMPLE
+TABLESPACE
+TEMP
+TEMPLATE
+TEMPORARY
+TERMINATE
+TERMINATED
+TEXT
+TEXTSIZE
+THAN
+THEN
+TIES
+TIME
+TIMESTAMP
+TIMEZONE_HOUR
+TIMEZONE_MINUTE
+TINYBLOB
+TINYINT
+TINYTEXT
+TO
+TOAST
+TOP
+TOP_LEVEL_COUNT
+TRAILING
+TRAN
+TRANSACTION
+TRANSACTION_ACTIVE
+TRANSACTIONS_COMMITTED
+TRANSACTIONS_ROLLED_BACK
+TRANSFORM
+TRANSFORMS
+TRANSLATE
+TRANSLATION
+TREAT
+TRIGGER
+TRIGGER_CATALOG
+TRIGGER_NAME
+TRIGGER_SCHEMA
+TRIM
+TRUE
+TRUNCATE
+TRUSTED
+TSEQUAL
+TYPE
+UESCAPE
+UID
+UNBOUNDED
+UNCOMMITTED
+UNDER
+UNDO
+UNENCRYPTED
+UNION
+UNIQUE
+UNKNOWN
+UNLISTEN
+UNLOCK
+UNNAMED
+UNNEST
+UNSIGNED
+UNTIL
+UPDATE
+UPDATETEXT
+UPPER
+USAGE
+USE
+USER
+USER_DEFINED_TYPE_CATALOG
+USER_DEFINED_TYPE_CODE
+USER_DEFINED_TYPE_NAME
+USER_DEFINED_TYPE_SCHEMA
+USING
+UTC_DATE
+UTC_TIME
+UTC_TIMESTAMP
+VACUUM
+VALID
+VALIDATE
+VALIDATOR
+VALUE
+VALUES
+VAR_POP
+VAR_SAMP
+VARBINARY
+VARCHAR
+VARCHAR2
+VARCHARACTER
+VARIABLE
+VARIABLES
+VARYING
+VERBOSE
+VIEW
+VOLATILE
+WAITFOR
+WHEN
+WHENEVER
+WHERE
+WHILE
+WIDTH_BUCKET
+WINDOW
+WITH
+WITHIN
+WITHOUT
+WORK
+WRITE
+WRITETEXT
+X509
+XOR
+YEAR
+YEAR_MONTH
+ZEROFILL
+ZONE
+</code></pre>
+<h3 id="Column-data-types-列的数据类型"><a href="#Column-data-types-列的数据类型" class="headerlink" title="Column data types 列的数据类型"></a>Column data types 列的数据类型</h3><p>出于在数据库引擎之间达到最大程度兼容的目的，下面是一些建议使用的列数据类型。</p>
+<h4 id="Character-types-字符型"><a href="#Character-types-字符型" class="headerlink" title="Character types 字符型"></a>Character types 字符型</h4><ul>
+<li>CHAR</li>
+<li>CLOB</li>
+<li>VARCHAR</li>
+</ul>
+<h4 id="Numeric-types-数值型"><a href="#Numeric-types-数值型" class="headerlink" title="Numeric types 数值型"></a>Numeric types 数值型</h4><ul>
+<li><p>精确数值类型</p>
+<ul>
+<li>BIGINT</li>
+<li>DECIMAL</li>
+<li>DECFLOAT</li>
+<li>INTEGER</li>
+<li>NUMERIC</li>
+<li>SMALLINT</li>
+</ul>
+</li>
+<li><p>近似数值类型</p>
+<ul>
+<li>DOUBLE PRECISION</li>
+<li>FLOAT</li>
+<li>REAL</li>
+</ul>
+</li>
+</ul>
+<h4 id="Datetime-types-日期时间类型"><a href="#Datetime-types-日期时间类型" class="headerlink" title="Datetime types 日期时间类型"></a>Datetime types 日期时间类型</h4><ul>
+<li>DATE</li>
+<li>TIME</li>
+<li>TIMESTAMP</li>
+</ul>
+<h4 id="Binary-types-二进制类型"><a href="#Binary-types-二进制类型" class="headerlink" title="Binary types 二进制类型"></a>Binary types 二进制类型</h4><ul>
+<li>BINARY</li>
+<li>BLOB</li>
+<li>VARBINARY</li>
+</ul>
+<h4 id="Additional-types-其他类型"><a href="#Additional-types-其他类型" class="headerlink" title="Additional types 其他类型"></a>Additional types 其他类型</h4><ul>
+<li>Boolean</li>
+<li>INTERVAL</li>
+<li>XML</li>
+</ul>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 hjxstart@126.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry"><span class="miit">
+                <img src="/img/gov.png" title="中华人民共和国工业和信息化部">
+                <a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">粤ICP备2021170625号-1</a>
+        </span>
+    
+    ©2019-2022 hjxstart
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("/img/article-list-bg-img.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
