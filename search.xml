@@ -4,11 +4,30 @@
   
     
     <entry>
-      <title>001_Telnet</title>
+      <title>001-Telnet</title>
       <link href="/2024/01/27/001-Telnet/"/>
       <url>/2024/01/27/001-Telnet/</url>
       
-        <content type="html"><![CDATA[<h3 id="Telnet"><a href="#Telnet" class="headerlink" title="Telnet"></a>Telnet</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/NetworkLab_001_Telnet.png" alt="Telnet"></p><h4 id="1-路由器互联接口配置同网段-IP-地址"><a href="#1-路由器互联接口配置同网段-IP-地址" class="headerlink" title="1. 路由器互联接口配置同网段 IP 地址"></a>1. 路由器互联接口配置同网段 IP 地址</h4><pre><code class="shell">[R1] int g0/0/0[R1-g0/0/0] ip add 12.1.1.1 24[R2] int g0/0/0[R2-g0/0/0] ip add 12.1.1.2 24</code></pre><h4 id="2-在被登录设备上，"><a href="#2-在被登录设备上，" class="headerlink" title="2. 在被登录设备上，"></a>2. 在被登录设备上，</h4><pre><code class="shell"># 配置 AAA 认证试图下，配置本地 Telnet 登录用户 hjxstart 和密码 HCIE[R2] aaa[R2-aaa] local-user hjxstart privilege level 3 password cipher HCIE[R2-aaa] local-user Tiger service-type telnet# 在被登录设备上，开启 Telnet 服务器[R2] telnet server enable# 在被登录设备上，配置同一时间运行接入的虚拟终端数为 5[R2] user-interface vty 0 4[R2-ui-vty0-4] authentication-mode aaa</code></pre><h4 id="3-在发起登录设备-AR1-上-telent-登录被登录设备-AR2"><a href="#3-在发起登录设备-AR1-上-telent-登录被登录设备-AR2" class="headerlink" title="3. 在发起登录设备 AR1 上 telent 登录被登录设备 AR2"></a>3. 在发起登录设备 AR1 上 telent 登录被登录设备 AR2</h4><pre><code class="shell">&lt;R1&gt; telnet 12.1.1.2</code></pre>]]></content>
+        <content type="html"><![CDATA[<h3 id="Telnet"><a href="#Telnet" class="headerlink" title="Telnet"></a>Telnet</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/NetworkLab_001_Telnet.png" alt="Telnet"></p><h4 id="1-路由器互联接口配置同网段-IP-地址"><a href="#1-路由器互联接口配置同网段-IP-地址" class="headerlink" title="1. 路由器互联接口配置同网段 IP 地址"></a>1. 路由器互联接口配置同网段 IP 地址</h4><pre><code class="shell">[R1] int g0/0/0[R1-g0/0/0] ip add 12.1.1.1 24[R2] int g0/0/0[R2-g0/0/0] ip add 12.1.1.2 24</code></pre><h4 id="2-在被登录设备上配置-Telnet"><a href="#2-在被登录设备上配置-Telnet" class="headerlink" title="2. 在被登录设备上配置 Telnet"></a>2. 在被登录设备上配置 Telnet</h4><pre><code class="shell"># 配置 AAA 认证试图下，配置本地 Telnet 登录用户 hjxstart 和密码 HCIE[R2] aaa[R2-aaa] local-user `hjxstart` privilege level `3` password cipher `HCIE`[R2-aaa] local-user `hjxstart` service-type `telnet`# 在被登录设备上，开启 Telnet 服务器[R2] `telnet` server enable# 在被登录设备上，配置同一时间运行接入的虚拟终端数为 5[R2] user-interface vty 0 4[R2-ui-vty0-4] authentication-mode aaa</code></pre><h4 id="3-在发起登录设备-AR1-上-telent-登录被登录设备-AR2"><a href="#3-在发起登录设备-AR1-上-telent-登录被登录设备-AR2" class="headerlink" title="3. 在发起登录设备 AR1 上 telent 登录被登录设备 AR2"></a>3. 在发起登录设备 AR1 上 telent 登录被登录设备 AR2</h4><pre><code class="shell">&lt;R1&gt; telnet 12.1.1.2</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>002_SSH</title>
+      <link href="/2024/01/27/002-SSH/"/>
+      <url>/2024/01/27/002-SSH/</url>
+      
+        <content type="html"><![CDATA[<h3 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/NetworkLab_002_SSH.png" alt="SSH"></p><h4 id="1-路由器互联接口配置同网段-IP-地址"><a href="#1-路由器互联接口配置同网段-IP-地址" class="headerlink" title="1. 路由器互联接口配置同网段 IP 地址"></a>1. 路由器互联接口配置同网段 IP 地址</h4><pre><code class="shell">[R1] int g0/0/0[R1-g0/0/0] ip add 12.1.1.1 24[R2] int g0/0/0[R2-g0/0/0] ip add 12.1.1.2 24</code></pre><h4 id="2-在被登录设备上配置-SSH"><a href="#2-在被登录设备上配置-SSH" class="headerlink" title="2. 在被登录设备上配置 SSH"></a>2. 在被登录设备上配置 SSH</h4><pre><code class="shell"># 配置 AAA 认证试图下，配置本地 SSH 登录用户 hjxstart 和密码 HCIE[R2] aaa[R2-aaa] local-user `hjxstart` privilege level `15` password cipher `HCIE`[R2-aaa] local-user `hjxstart` service-type `ssh`# 在被登录设备上，开启 SSH 服务器[R2] `stelnet` server enable# 创建本地公钥对， 输入: 1024[R2] rsa local-key-pair create# 在被登录设备上，配置同一时间运行接入的虚拟终端数为 5[R2] user-interface vty 0 4[R2-ui-vty0-4] authentication-mode aaa# 允许虚拟终端使用SSH协议protocol inbound ssh</code></pre><h4 id="3-在发起登录设备-AR1-上-SSH-登录被登录设备-AR2"><a href="#3-在发起登录设备-AR1-上-SSH-登录被登录设备-AR2" class="headerlink" title="3. 在发起登录设备 AR1 上 SSH 登录被登录设备 AR2"></a>3. 在发起登录设备 AR1 上 SSH 登录被登录设备 AR2</h4><pre><code class="shell"># 让R1第一时间成为SSH客户端[R1] ssh client first-time enable# 使用SSH登录R2，接受SSH公钥，和输入密码[R1] stelnet 12.1.1.2</code></pre>]]></content>
       
       
       <categories>
