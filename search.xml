@@ -4,6 +4,76 @@
   
     
     <entry>
+      <title>001_Telnet</title>
+      <link href="/2024/01/27/001-Telnet/"/>
+      <url>/2024/01/27/001-Telnet/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Telnet"><a href="#Telnet" class="headerlink" title="Telnet"></a>Telnet</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/NetworkLab_001_Telnet.png" alt="Telnet"></p><h4 id="1-路由器互联接口配置同网段-IP-地址"><a href="#1-路由器互联接口配置同网段-IP-地址" class="headerlink" title="1. 路由器互联接口配置同网段 IP 地址"></a>1. 路由器互联接口配置同网段 IP 地址</h4><pre><code class="shell">[R1] int g0/0/0[R1-g0/0/0] ip add 12.1.1.1 24[R2] int g0/0/0[R2-g0/0/0] ip add 12.1.1.2 24</code></pre><h4 id="2-在被登录设备上，"><a href="#2-在被登录设备上，" class="headerlink" title="2. 在被登录设备上，"></a>2. 在被登录设备上，</h4><pre><code class="shell"># 配置 AAA 认证试图下，配置本地 Telnet 登录用户 hjxstart 和密码 HCIE[R2] aaa[R2-aaa] local-user hjxstart privilege level 3 password cipher HCIE[R2-aaa] local-user Tiger service-type telnet# 在被登录设备上，开启 Telnet 服务器[R2] telnet server enable# 在被登录设备上，配置同一时间运行接入的虚拟终端数为 5[R2] user-interface vty 0 4[R2-ui-vty0-4] authentication-mode aaa</code></pre><h4 id="3-在发起登录设备-AR1-上-telent-登录被登录设备-AR2"><a href="#3-在发起登录设备-AR1-上-telent-登录被登录设备-AR2" class="headerlink" title="3. 在发起登录设备 AR1 上 telent 登录被登录设备 AR2"></a>3. 在发起登录设备 AR1 上 telent 登录被登录设备 AR2</h4><pre><code class="shell">&lt;R1&gt; telnet 12.1.1.2</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>华为常用命令</title>
+      <link href="/2024/01/27/%E5%8D%8E%E4%B8%BA%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+      <url>/2024/01/27/%E5%8D%8E%E4%B8%BA%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+      
+        <content type="html"><![CDATA[<h1 id="一、全局视图"><a href="#一、全局视图" class="headerlink" title="一、全局视图"></a>一、全局视图</h1><h1 id="二、用户视图"><a href="#二、用户视图" class="headerlink" title="二、用户视图"></a>二、用户视图</h1><pre><code class="shell"># 进入系统视图system-view# 查看当前设备上存储的文件列表dir# 查看保存的配置文件display saved-configuration# 保存当前配置文件save# 查看当前/下次启动的配置文件display startup# 删除闪存中的配置文件reset saved-configuration# 重启设备reboot</code></pre><h1 id="三、系统视图"><a href="#三、系统视图" class="headerlink" title="三、系统视图"></a>三、系统视图</h1><h2 id="3-1-增"><a href="#3-1-增" class="headerlink" title="3.1 增"></a>3.1 增</h2><pre><code class="shell"># 配置登录信息, quit 后可验证header shell information &quot;Welcom to the Tiger Lab.&quot;# 配置Console口参数，display this查看user-interface console 0# 设置密码HCIEset authentication password cipher HCIE</code></pre><h2 id="3-2-删"><a href="#3-2-删" class="headerlink" title="3.2 删"></a>3.2 删</h2><h2 id="3-3-改"><a href="#3-3-改" class="headerlink" title="3.3 改"></a>3.3 改</h2><pre><code class="shell"># 修改设备名称sysname R1</code></pre><h2 id="3-4-查"><a href="#3-4-查" class="headerlink" title="3.4 查"></a>3.4 查</h2><pre><code class="shell"># 查看接口信息display interface GigabitEthernet 0/0/1# Ping命令Ping 192.168.1.1#</code></pre><h1 id="四、接口视图"><a href="#四、接口视图" class="headerlink" title="四、接口视图"></a>四、接口视图</h1><pre><code class="shell"># 配置IP地址ip address 192.168.1.1 24# 配置接口IP地址和描述信息description to R1-G0/0/1</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>VRRP</title>
+      <link href="/2024/01/20/VRRP/"/>
+      <url>/2024/01/20/VRRP/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>STP</title>
+      <link href="/2024/01/20/STP/"/>
+      <url>/2024/01/20/STP/</url>
+      
+        <content type="html"><![CDATA[<h1 id="STP"><a href="#STP" class="headerlink" title="STP"></a>STP</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>Spanning-Tree Protocol 生成树协议</p><h2 id="交换机的控制层面的缺陷，以及该缺陷导致的问题"><a href="#交换机的控制层面的缺陷，以及该缺陷导致的问题" class="headerlink" title="交换机的控制层面的缺陷，以及该缺陷导致的问题"></a>交换机的控制层面的缺陷，以及该缺陷导致的问题</h2><p>交换机总会人员</p><h2 id="STP-的两大用途介绍"><a href="#STP-的两大用途介绍" class="headerlink" title="STP 的两大用途介绍"></a>STP 的两大用途介绍</h2><h2 id="STP-中的各种参数术语介绍"><a href="#STP-中的各种参数术语介绍" class="headerlink" title="STP 中的各种参数术语介绍"></a>STP 中的各种参数术语介绍</h2><h2 id="STP-的选举以及端口角色对应的接口状态"><a href="#STP-的选举以及端口角色对应的接口状态" class="headerlink" title="STP 的选举以及端口角色对应的接口状态"></a>STP 的选举以及端口角色对应的接口状态</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ISIS</title>
       <link href="/2023/12/29/ISIS/"/>
       <url>/2023/12/29/ISIS/</url>
