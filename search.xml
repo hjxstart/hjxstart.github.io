@@ -4,6 +4,101 @@
   
     
     <entry>
+      <title>HomeLab</title>
+      <link href="/2024/02/03/HomeLab/"/>
+      <url>/2024/02/03/HomeLab/</url>
+      
+        <content type="html"><![CDATA[<h2 id="ESXI-8-0-1-安装"><a href="#ESXI-8-0-1-安装" class="headerlink" title="ESXI 8.0.1 安装"></a>ESXI 8.0.1 安装</h2><h3 id="准备-USB-和-ESXI-资源包"><a href="#准备-USB-和-ESXI-资源包" class="headerlink" title="准备 USB 和 ESXI 资源包"></a>准备 USB 和 ESXI 资源包</h3><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><h2 id="Routeros-7-13-3"><a href="#Routeros-7-13-3" class="headerlink" title="Routeros 7.13.3"></a>Routeros 7.13.3</h2><h2 id="WindowsServer2022"><a href="#WindowsServer2022" class="headerlink" title="WindowsServer2022"></a>WindowsServer2022</h2><h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> HomeLab </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>BGP</title>
+      <link href="/2024/01/28/BGP/"/>
+      <url>/2024/01/28/BGP/</url>
+      
+        <content type="html"><![CDATA[<pre><code class="shell"># BGP进程AS号bgp 4# 路由器IDrouter-id 4.4.4.4# 关闭自动汇总, 默认关闭undo summary automatic# 关闭自动同步undo synchronization# 关闭IPv4, BPGv4+, 支持地址簇undo default ipv4-unicast# 建立邻居peer 24.1.1.2 as-number 10# 使用ipv4 单波地址簇ipv4-family unicast# 激活peerpeer 24.1.1.2 enable## Group# 创建命名internalGP的 IBGP Peer Groupgroup internalGP internal# 使用环回口0与IBGP建立邻居peer internalGP connect-interface LoopBack 0# 将这个3.3.3.3 Peer添加到组中peer 3.3.3.3 group interna# 进入ipv4-familyipv4-family unicast# 激活这个IBGP Peer Group，不用每个Peer都激活peer internalGP enable# 发送路由时，修改路由的下一跳, 由于bug原因，不生效，需要单独为peer指定next-hop-localpeer internal next-hop-localpeer 3.3.3.3 next-hop-localbgp 10 router-id 3.3.3.3 undo default ipv4-unicast peer 2.2.2.2 as-number 10 peer 2.2.2.2 connect-interface LoopBack0 # ipv4-family unicast  undo synchronization  peer 2.2.2.2 enable  peer 2.2.2.2 next-hop-localbgp 10 router-id 3.3.3.3 undo default ipv4-unicast peer 2.2.2.2 as-number 10 peer 2.2.2.2 connect-interface LoopBack0 # ipv4-family unicast  undo synchronization  peer 2.2.2.2 enable  peer 2.2.2.2 next-hop-local</code></pre><h3 id="路由的说明"><a href="#路由的说明" class="headerlink" title="路由的说明"></a>路由的说明</h3><pre><code class="shell">*&gt;: *改路由经过的防环审核,&gt;最优符号; r&gt;: r由于管理距离的原因无法加入路由表,可以传递给邻居,&gt;最优; s:抑制路由,不会加入路由表和传递路由.Ogn: i: IGBP路由, e: EGBP路由, ?: 其他路由.Path: AS Path (IGBP水平分割, EGBP水平分割)MED</code></pre><h3 id="MPLS"><a href="#MPLS" class="headerlink" title="MPLS"></a>MPLS</h3><pre><code class="shell">mpls lsr-id 1.1.1.1mplsmpls ldquitint g0/0/0mplsmpls ldpint g0/0/1mplsmpls ldp# R2 &amp; R3, 让MPLS和BGP联动，让BGP通过MPLS 转发报文的时候，如果是BGP路由，可以递归到BGP的下一跳地址，查找对于的标签来封装报文route recursive-lookup  tunnel</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>005-STP</title>
+      <link href="/2024/01/27/005-STP/"/>
+      <url>/2024/01/27/005-STP/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>004-VLAN</title>
+      <link href="/2024/01/27/004-VLAN/"/>
+      <url>/2024/01/27/004-VLAN/</url>
+      
+        <content type="html"><![CDATA[<h3 id="VLAN"><a href="#VLAN" class="headerlink" title="VLAN"></a>VLAN</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/NetworkLab_004_VLAN.png"></p><h4 id="1-SW1-和-SW2-的互联接口类型设置为-Trunk"><a href="#1-SW1-和-SW2-的互联接口类型设置为-Trunk" class="headerlink" title="1. SW1 和 SW2 的互联接口类型设置为 Trunk"></a>1. SW1 和 SW2 的互联接口类型设置为 Trunk</h4><pre><code class="shell">[SW1] vlan batch 10 20[SW1] display vlan summary[SW1] int g0/0/0[SW1-g0/0/0] port link-type trunk[SW1-g0/0/0] port trunk allow-pass vlan 10 20</code></pre><h4 id="2-交换机接入-PC-终端的接口类型改为-access-并划分到相应-VLAN"><a href="#2-交换机接入-PC-终端的接口类型改为-access-并划分到相应-VLAN" class="headerlink" title="2. 交换机接入 PC 终端的接口类型改为 access 并划分到相应 VLAN"></a>2. 交换机接入 PC 终端的接口类型改为 access 并划分到相应 VLAN</h4><pre><code class="shell">[SW1] int g0/0/1[SW1-g0/0/1] port link-type access[SW1-g0/0/1] port default vlan 10[SW1-g0/0/1] dis vlan</code></pre><h4 id="3-相同-VLAN-的主机通信"><a href="#3-相同-VLAN-的主机通信" class="headerlink" title="3. 相同 VLAN 的主机通信"></a>3. 相同 VLAN 的主机通信</h4><pre><code class="shell">ip 192.168.10.1 24ping 192.168.10.3</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>003-LLDP</title>
+      <link href="/2024/01/27/003-LLDP/"/>
+      <url>/2024/01/27/003-LLDP/</url>
+      
+        <content type="html"><![CDATA[<h3 id="LLDP"><a href="#LLDP" class="headerlink" title="LLDP"></a>LLDP</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/NetworkLab_003_LLDP.png" alt="LLDP"></p><h4 id="1-路由器互联接口配置同网段-IP-地址"><a href="#1-路由器互联接口配置同网段-IP-地址" class="headerlink" title="1. 路由器互联接口配置同网段 IP 地址"></a>1. 路由器互联接口配置同网段 IP 地址</h4><pre><code class="shell">[R1] int g0/0/0[R1-g0/0/0] ip add 12.1.1.1 24[R2] int g0/0/0[R2-g0/0/0] ip add 12.1.1.2 24</code></pre><h4 id="2-在系统视图下开启-LLDP"><a href="#2-在系统视图下开启-LLDP" class="headerlink" title="2. 在系统视图下开启 LLDP"></a>2. 在系统视图下开启 LLDP</h4><pre><code class="shell">[R1] lldp enable[R2] lldp enable</code></pre><h4 id="3-查看-LLDP-邻居信息"><a href="#3-查看-LLDP-邻居信息" class="headerlink" title="3. 查看 LLDP 邻居信息"></a>3. 查看 LLDP 邻居信息</h4><pre><code class="shell">display lldp neighbor</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>001-Telnet</title>
       <link href="/2024/01/27/001-Telnet/"/>
       <url>/2024/01/27/001-Telnet/</url>
@@ -180,7 +275,7 @@
       <link href="/2023/12/18/RouterOS/"/>
       <url>/2023/12/18/RouterOS/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h3 id="创建-ROS-虚拟机"><a href="#创建-ROS-虚拟机" class="headerlink" title="创建 ROS 虚拟机"></a>创建 ROS 虚拟机</h3><ol><li>创建虚拟机名字和选择 Linux 类型</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/Ros_create_1.png"></p><ol start="2"><li>修改虚拟机的配置，锁定内存和添加直通网卡</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS_Create_2.png"></p><ol start="3"><li>修改为 BIOS 引导启动</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS_Create_3.png"></p><ol start="4"><li>添加一块现有的 ROS 的 VMDK 硬盘</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20240203140802.png"></p><ol start="5"><li>修改硬盘大小和类型</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20240203140955.png"></p><ol start="6"><li>使用 WinBox 工具的 Neighbors 选择，以 admin 空密码的方式连接到 ROS，首次登录建议修改密码</li></ol><h3 id="配置-ROS"><a href="#配置-ROS" class="headerlink" title="配置 ROS"></a>配置 ROS</h3><ol><li>修改接口名字。通过插拔网线的方式，双击网卡重命名实际网卡的名称</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20240203141929.png"></p><ol start="2"><li>创建网桥。将多个 LAN 口连接起来。</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20240203142157.png"></p><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20240203142344.png"></p><ol start="3"><li>添加 ROS 的 IP 地址。</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20240203142721.png"></p><ol start="4"><li>WAN 口获取地址. 添加 DNS 客户端</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20240203143132.png"></p><ol start="5"><li>添加 DNS</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20240203143527.png"></p><ol start="6"><li>设置 NAT。打开防火墙</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20240203143946.png"></p><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20240203144044.png"></p><ol start="7"><li><p>激活 License</p></li><li><p>设置开机自启动</p></li></ol>]]></content>
       
       
       
@@ -193,7 +288,7 @@
       <link href="/2023/12/18/ESXI/"/>
       <url>/2023/12/18/ESXI/</url>
       
-        <content type="html"><![CDATA[<h1 id="概述-ESXI"><a href="#概述-ESXI" class="headerlink" title="概述 ESXI"></a>概述 ESXI</h1><h2 id="硬件环境概述"><a href="#硬件环境概述" class="headerlink" title="硬件环境概述"></a>硬件环境概述</h2><pre><code class="shell">1.</code></pre><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224148.png"><br><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224320.png"><br><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224521.png"></p><h3 id="按-Enter-继续安装"><a href="#按-Enter-继续安装" class="headerlink" title="按 Enter 继续安装"></a>按 Enter 继续安装</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224705.png"></p><h3 id="按-F11-接受许可"><a href="#按-F11-接受许可" class="headerlink" title="按 F11 接受许可"></a>按 F11 接受许可</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225551.png"></p><h3 id="按-Enter-选择硬盘"><a href="#按-Enter-选择硬盘" class="headerlink" title="按 Enter 选择硬盘"></a>按 Enter 选择硬盘</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225341.png"></p><h3 id="按-Enter-重启"><a href="#按-Enter-重启" class="headerlink" title="按 Enter 重启"></a>按 Enter 重启</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225745.png"></p><h3 id="选择-OS"><a href="#选择-OS" class="headerlink" title="选择 OS"></a>选择 OS</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225912.png"></p><h3 id="输入管理员密码"><a href="#输入管理员密码" class="headerlink" title="输入管理员密码"></a>输入管理员密码</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230033.png"></p><h3 id="选择-F11-Install"><a href="#选择-F11-Install" class="headerlink" title="选择 F11 Install"></a>选择 F11 Install</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230241.png"></p><h3 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230445.png"></p><h3 id="管理员登录"><a href="#管理员登录" class="headerlink" title="管理员登录"></a>管理员登录</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230753.png"></p><h3 id="选择修改管理网络"><a href="#选择修改管理网络" class="headerlink" title="选择修改管理网络"></a>选择修改管理网络</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230951.png"></p><h3 id="打开网络设备"><a href="#打开网络设备" class="headerlink" title="打开网络设备"></a>打开网络设备</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222231317.png"></p><h3 id="选择管理口"><a href="#选择管理口" class="headerlink" title="选择管理口"></a>选择管理口</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222231628.png"></p><h3 id="选择-IPv4"><a href="#选择-IPv4" class="headerlink" title="选择 IPv4"></a>选择 IPv4</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222231733.png"></p><h3 id="设置静态-IP"><a href="#设置静态-IP" class="headerlink" title="设置静态 IP"></a>设置静态 IP</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222232011.png"></p><h2 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h2>]]></content>
+        <content type="html"><![CDATA[<h1 id="概述-ESXI"><a href="#概述-ESXI" class="headerlink" title="概述 ESXI"></a>概述 ESXI</h1><h2 id="硬件环境概述"><a href="#硬件环境概述" class="headerlink" title="硬件环境概述"></a>硬件环境概述</h2><pre><code class="shell">1.</code></pre><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224148.png"><br><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224320.png"><br><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224521.png"></p><h3 id="按-Enter-继续安装"><a href="#按-Enter-继续安装" class="headerlink" title="按 Enter 继续安装"></a>按 Enter 继续安装</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224705.png"></p><h3 id="按-F11-接受许可"><a href="#按-F11-接受许可" class="headerlink" title="按 F11 接受许可"></a>按 F11 接受许可</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225551.png"></p><h3 id="按-Enter-选择硬盘"><a href="#按-Enter-选择硬盘" class="headerlink" title="按 Enter 选择硬盘"></a>按 Enter 选择硬盘</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225341.png"></p><h3 id="按-Enter-重启"><a href="#按-Enter-重启" class="headerlink" title="按 Enter 重启"></a>按 Enter 重启</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225745.png"></p><h3 id="选择-OS"><a href="#选择-OS" class="headerlink" title="选择 OS"></a>选择 OS</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225912.png"></p><h3 id="输入管理员密码"><a href="#输入管理员密码" class="headerlink" title="输入管理员密码"></a>输入管理员密码</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230033.png"></p><h3 id="选择-F11-Install"><a href="#选择-F11-Install" class="headerlink" title="选择 F11 Install"></a>选择 F11 Install</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230241.png"></p><h3 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230445.png"></p><h3 id="管理员登录"><a href="#管理员登录" class="headerlink" title="管理员登录"></a>管理员登录</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230753.png"></p><h3 id="选择修改管理网络"><a href="#选择修改管理网络" class="headerlink" title="选择修改管理网络"></a>选择修改管理网络</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230951.png"></p><h3 id="打开网络设备"><a href="#打开网络设备" class="headerlink" title="打开网络设备"></a>打开网络设备</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222231317.png"></p><h3 id="选择管理口"><a href="#选择管理口" class="headerlink" title="选择管理口"></a>选择管理口</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222231628.png"></p><h3 id="选择-IPv4"><a href="#选择-IPv4" class="headerlink" title="选择 IPv4"></a>选择 IPv4</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222231733.png"></p><h3 id="设置静态-IP"><a href="#设置静态-IP" class="headerlink" title="设置静态 IP"></a>设置静态 IP</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222232011.png"></p><h2 id="ESC-退出和保存配置，就可以使用浏览器通过-IP-地址访问-ESXI-了"><a href="#ESC-退出和保存配置，就可以使用浏览器通过-IP-地址访问-ESXI-了" class="headerlink" title="ESC 退出和保存配置，就可以使用浏览器通过 IP 地址访问 ESXI 了"></a>ESC 退出和保存配置，就可以使用浏览器通过 IP 地址访问 ESXI 了</h2><h2 id="网卡直通"><a href="#网卡直通" class="headerlink" title="网卡直通"></a>网卡直通</h2><p>过滤出可直通的设备，选择除管理网卡外的网络直通</p>]]></content>
       
       
       
