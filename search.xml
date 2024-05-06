@@ -8,7 +8,7 @@
       <link href="/2024/05/06/HCIE%20Lab/"/>
       <url>/2024/05/06/HCIE%20Lab/</url>
       
-        <content type="html"><![CDATA[<h1 id="HCIE-LAB"><a href="#HCIE-LAB" class="headerlink" title="HCIE LAB"></a>HCIE LAB</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><pre><code class="bash"># 保持ssh会话sysuser-interface console 0idle-timeout 0 0# 关闭日志undo info-center enable</code></pre><h2 id="X园区"><a href="#X园区" class="headerlink" title="X园区"></a>X园区</h2>]]></content>
+        <content type="html"><![CDATA[<h1 id="HCIE-LAB（有价值的项目）"><a href="#HCIE-LAB（有价值的项目）" class="headerlink" title="HCIE LAB（有价值的项目）"></a>HCIE LAB（有价值的项目）</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote><ol><li>X园区：传统网改造及升级</li><li>Y园区：iMaster NCE-Campus SD-WAN 部署</li><li>Z园区：广域网承载及设计</li><li>Python网络自动化</li><li>网络八股文</li></ol></blockquote><h3 id="环境信息"><a href="#环境信息" class="headerlink" title="环境信息"></a>环境信息</h3><pre><code class="bash"># 通用的密码admin/Admin@123# 防火墙 X_T1_FW1admin/Huawei@123</code></pre><h3 id="通用命令"><a href="#通用命令" class="headerlink" title="通用命令"></a>通用命令</h3><pre><code class="bash"># 保持ssh会话sysuser-interface console 0idle-timeout 0 0# 关闭日志undo info-center enable</code></pre><h2 id="X园区：传统网改造及升级"><a href="#X园区：传统网改造及升级" class="headerlink" title="X园区：传统网改造及升级"></a>X园区：传统网改造及升级</h2><h2 id="Y园区：iMaster-NCE-Campus-SD-WAN-部署"><a href="#Y园区：iMaster-NCE-Campus-SD-WAN-部署" class="headerlink" title="Y园区：iMaster NCE-Campus SD-WAN 部署"></a>Y园区：iMaster NCE-Campus SD-WAN 部署</h2><h2 id="Z园区：广域网承载及设计"><a href="#Z园区：广域网承载及设计" class="headerlink" title="Z园区：广域网承载及设计"></a>Z园区：广域网承载及设计</h2><h2 id="Python网络自动化"><a href="#Python网络自动化" class="headerlink" title="Python网络自动化"></a>Python网络自动化</h2><h2 id="网络八股文"><a href="#网络八股文" class="headerlink" title="网络八股文"></a>网络八股文</h2>]]></content>
       
       
       <categories>
@@ -17,6 +17,12 @@
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> 项目 </tag>
+            
+        </tags>
       
     </entry>
     
