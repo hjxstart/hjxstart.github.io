@@ -4,6 +4,234 @@
   
     
     <entry>
+      <title>HCIE Lab</title>
+      <link href="/2024/05/06/HCIE%20Lab/"/>
+      <url>/2024/05/06/HCIE%20Lab/</url>
+      
+        <content type="html"><![CDATA[<h1 id="HCIE-LAB"><a href="#HCIE-LAB" class="headerlink" title="HCIE LAB"></a>HCIE LAB</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><pre><code class="bash"># 保持ssh会话sysuser-interface console 0idle-timeout 0 0# 关闭日志undo info-center enable</code></pre><h2 id="X园区"><a href="#X园区" class="headerlink" title="X园区"></a>X园区</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ENSP</title>
+      <link href="/2024/02/24/ENSP/"/>
+      <url>/2024/02/24/ENSP/</url>
+      
+        <content type="html"><![CDATA[<h3 id="用户视图"><a href="#用户视图" class="headerlink" title="用户视图"></a>用户视图</h3><pre><code class="shell">system-view</code></pre><h3 id="系统视图"><a href="#系统视图" class="headerlink" title="系统视图"></a>系统视图</h3><pre><code class="shell"># 返回上一级quit</code></pre><h3 id="接口视图"><a href="#接口视图" class="headerlink" title="接口视图"></a>接口视图</h3><pre><code class="shell">interface GigabitEthernet0/0/0</code></pre>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>BGP</title>
+      <link href="/2024/01/28/BGP/"/>
+      <url>/2024/01/28/BGP/</url>
+      
+        <content type="html"><![CDATA[<pre><code class="shell"># BGP进程AS号bgp 4# 路由器IDrouter-id 4.4.4.4# 关闭自动汇总, 默认关闭undo summary automatic# 关闭自动同步undo synchronization# 关闭IPv4, BPGv4+, 支持地址簇undo default ipv4-unicast# 建立邻居peer 24.1.1.2 as-number 10# 使用ipv4 单波地址簇ipv4-family unicast# 激活peerpeer 24.1.1.2 enable## Group# 创建命名internalGP的 IBGP Peer Groupgroup internalGP internal# 使用环回口0与IBGP建立邻居peer internalGP connect-interface LoopBack 0# 将这个3.3.3.3 Peer添加到组中peer 3.3.3.3 group interna# 进入ipv4-familyipv4-family unicast# 激活这个IBGP Peer Group，不用每个Peer都激活peer internalGP enable# 发送路由时，修改路由的下一跳, 由于bug原因，不生效，需要单独为peer指定next-hop-localpeer internal next-hop-localpeer 3.3.3.3 next-hop-localbgp 10 router-id 3.3.3.3 undo default ipv4-unicast peer 2.2.2.2 as-number 10 peer 2.2.2.2 connect-interface LoopBack0 # ipv4-family unicast  undo synchronization  peer 2.2.2.2 enable  peer 2.2.2.2 next-hop-localbgp 10 router-id 3.3.3.3 undo default ipv4-unicast peer 2.2.2.2 as-number 10 peer 2.2.2.2 connect-interface LoopBack0 # ipv4-family unicast  undo synchronization  peer 2.2.2.2 enable  peer 2.2.2.2 next-hop-local</code></pre><h3 id="路由的说明"><a href="#路由的说明" class="headerlink" title="路由的说明"></a>路由的说明</h3><pre><code class="shell">*&gt;: *改路由经过的防环审核,&gt;最优符号; r&gt;: r由于管理距离的原因无法加入路由表,可以传递给邻居,&gt;最优; s:抑制路由,不会加入路由表和传递路由.Ogn: i: IGBP路由, e: EGBP路由, ?: 其他路由.Path: AS Path (IGBP水平分割, EGBP水平分割)MED</code></pre><h3 id="MPLS"><a href="#MPLS" class="headerlink" title="MPLS"></a>MPLS</h3><pre><code class="shell">mpls lsr-id 1.1.1.1mplsmpls ldquitint g0/0/0mplsmpls ldpint g0/0/1mplsmpls ldp# R2 &amp; R3, 让MPLS和BGP联动，让BGP通过MPLS 转发报文的时候，如果是BGP路由，可以递归到BGP的下一跳地址，查找对于的标签来封装报文route recursive-lookup  tunnel</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>005-STP</title>
+      <link href="/2024/01/27/005-STP/"/>
+      <url>/2024/01/27/005-STP/</url>
+      
+        <content type="html"><![CDATA[<h1 id="NA复习"><a href="#NA复习" class="headerlink" title="NA复习"></a>NA复习</h1><ol><li>IP规划. IP地址的作用是寻址；</li><li>路由技术. 高速路上的路标；路由形成的3种方式，直连路由&#x2F;静态路由&#x2F;动态路由.</li><li>静态路由</li><li>OSPF协议</li><li>VLAN技术</li><li>VLAN间通信</li><li>ACL技术</li><li>NAT技术</li></ol><pre><code class="shell"># 关闭系统日志undo info-center enable# 修改系统语言&gt; language-mode Chinese</code></pre><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20240225140752.png" alt="NA实验"></p><h4 id="NA实验"><a href="#NA实验" class="headerlink" title="NA实验"></a>NA实验</h4><pre><code class="shell"># accessport link-type accessport default vlan 10# trunkport link-type trunkport trunk allow-pass vlan all# vlanifint vlanif 10ip add 10.1.10.254 24# 单臂路由子接口int g0/0/1.30dot1q termination vid 30arp broadcast enableip address 10.1.30.254 24# OSPFospf router-id 2.2.2.2area 0interface g0/0/1ospf enable area 0interface vlanif 10ospf enable area 0interface g0/0/1.30ospf enable area 0# 静态路由ip route-static 0.0.0.0 0 100.1.1.1# 默认路由下放ospfdefault-route-advertise# NATacl 2000rule permit source anyquitint g0/0/0nat outbound 2000</code></pre><h1 id="生成树-Spanning-tree-protocal"><a href="#生成树-Spanning-tree-protocal" class="headerlink" title="生成树 Spanning tree protocal"></a>生成树 Spanning tree protocal</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><ol><li>现网环境一般不会使用，一般默认设备会启动MSTP.</li><li>解决二层环路，MAC地址漂移。二层环路的原因是交换机尽力而为的</li></ol><h2 id="二层环路"><a href="#二层环路" class="headerlink" title="二层环路"></a>二层环路</h2><h2 id="STP的作用"><a href="#STP的作用" class="headerlink" title="STP的作用"></a>STP的作用</h2><h2 id="STP的运行原理"><a href="#STP的运行原理" class="headerlink" title="STP的运行原理"></a>STP的运行原理</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>004-VLAN</title>
+      <link href="/2024/01/27/004-VLAN/"/>
+      <url>/2024/01/27/004-VLAN/</url>
+      
+        <content type="html"><![CDATA[<h3 id="VLAN"><a href="#VLAN" class="headerlink" title="VLAN"></a>VLAN</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/NetworkLab_004_VLAN.png"></p><h4 id="1-SW1-和-SW2-的互联接口类型设置为-Trunk"><a href="#1-SW1-和-SW2-的互联接口类型设置为-Trunk" class="headerlink" title="1. SW1 和 SW2 的互联接口类型设置为 Trunk"></a>1. SW1 和 SW2 的互联接口类型设置为 Trunk</h4><pre><code class="shell">[SW1] vlan batch 10 20[SW1] display vlan summary[SW1] int g0/0/0[SW1-g0/0/0] port link-type trunk[SW1-g0/0/0] port trunk allow-pass vlan 10 20</code></pre><h4 id="2-交换机接入-PC-终端的接口类型改为-access-并划分到相应-VLAN"><a href="#2-交换机接入-PC-终端的接口类型改为-access-并划分到相应-VLAN" class="headerlink" title="2. 交换机接入 PC 终端的接口类型改为 access 并划分到相应 VLAN"></a>2. 交换机接入 PC 终端的接口类型改为 access 并划分到相应 VLAN</h4><pre><code class="shell">[SW1] int g0/0/1[SW1-g0/0/1] port link-type access[SW1-g0/0/1] port default vlan 10[SW1-g0/0/1] dis vlan</code></pre><h4 id="3-相同-VLAN-的主机通信"><a href="#3-相同-VLAN-的主机通信" class="headerlink" title="3. 相同 VLAN 的主机通信"></a>3. 相同 VLAN 的主机通信</h4><pre><code class="shell">ip 192.168.10.1 24ping 192.168.10.3</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>003-LLDP</title>
+      <link href="/2024/01/27/003-LLDP/"/>
+      <url>/2024/01/27/003-LLDP/</url>
+      
+        <content type="html"><![CDATA[<h3 id="LLDP"><a href="#LLDP" class="headerlink" title="LLDP"></a>LLDP</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/NetworkLab_003_LLDP.png" alt="LLDP"></p><h4 id="1-路由器互联接口配置同网段-IP-地址"><a href="#1-路由器互联接口配置同网段-IP-地址" class="headerlink" title="1. 路由器互联接口配置同网段 IP 地址"></a>1. 路由器互联接口配置同网段 IP 地址</h4><pre><code class="shell">[R1] int g0/0/0[R1-g0/0/0] ip add 12.1.1.1 24[R2] int g0/0/0[R2-g0/0/0] ip add 12.1.1.2 24</code></pre><h4 id="2-在系统视图下开启-LLDP"><a href="#2-在系统视图下开启-LLDP" class="headerlink" title="2. 在系统视图下开启 LLDP"></a>2. 在系统视图下开启 LLDP</h4><pre><code class="shell">[R1] lldp enable[R2] lldp enable</code></pre><h4 id="3-查看-LLDP-邻居信息"><a href="#3-查看-LLDP-邻居信息" class="headerlink" title="3. 查看 LLDP 邻居信息"></a>3. 查看 LLDP 邻居信息</h4><pre><code class="shell">display lldp neighbor</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>001-Telnet</title>
+      <link href="/2024/01/27/001-Telnet/"/>
+      <url>/2024/01/27/001-Telnet/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Telnet"><a href="#Telnet" class="headerlink" title="Telnet"></a>Telnet</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/NetworkLab_001_Telnet.png" alt="Telnet"></p><h4 id="1-路由器互联接口配置同网段-IP-地址"><a href="#1-路由器互联接口配置同网段-IP-地址" class="headerlink" title="1. 路由器互联接口配置同网段 IP 地址"></a>1. 路由器互联接口配置同网段 IP 地址</h4><pre><code class="shell">[R1] int g0/0/0[R1-g0/0/0] ip add 12.1.1.1 24[R2] int g0/0/0[R2-g0/0/0] ip add 12.1.1.2 24</code></pre><h4 id="2-在被登录设备上配置-Telnet"><a href="#2-在被登录设备上配置-Telnet" class="headerlink" title="2. 在被登录设备上配置 Telnet"></a>2. 在被登录设备上配置 Telnet</h4><pre><code class="shell"># 配置 AAA 认证试图下，配置本地 Telnet 登录用户 hjxstart 和密码 HCIE[R2] aaa[R2-aaa] local-user `hjxstart` privilege level `3` password cipher `HCIE`[R2-aaa] local-user `hjxstart` service-type `telnet`# 在被登录设备上，开启 Telnet 服务器[R2] `telnet` server enable# 在被登录设备上，配置同一时间运行接入的虚拟终端数为 5[R2] user-interface vty 0 4[R2-ui-vty0-4] authentication-mode aaa</code></pre><h4 id="3-在发起登录设备-AR1-上-telent-登录被登录设备-AR2"><a href="#3-在发起登录设备-AR1-上-telent-登录被登录设备-AR2" class="headerlink" title="3. 在发起登录设备 AR1 上 telent 登录被登录设备 AR2"></a>3. 在发起登录设备 AR1 上 telent 登录被登录设备 AR2</h4><pre><code class="shell">&lt;R1&gt; telnet 12.1.1.2</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>002_SSH</title>
+      <link href="/2024/01/27/002-SSH/"/>
+      <url>/2024/01/27/002-SSH/</url>
+      
+        <content type="html"><![CDATA[<h3 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/NetworkLab_002_SSH.png" alt="SSH"></p><h4 id="1-路由器互联接口配置同网段-IP-地址"><a href="#1-路由器互联接口配置同网段-IP-地址" class="headerlink" title="1. 路由器互联接口配置同网段 IP 地址"></a>1. 路由器互联接口配置同网段 IP 地址</h4><pre><code class="shell">[R1] int g0/0/0[R1-g0/0/0] ip add 12.1.1.1 24[R2] int g0/0/0[R2-g0/0/0] ip add 12.1.1.2 24</code></pre><h4 id="2-在被登录设备上配置-SSH"><a href="#2-在被登录设备上配置-SSH" class="headerlink" title="2. 在被登录设备上配置 SSH"></a>2. 在被登录设备上配置 SSH</h4><pre><code class="shell"># 配置 AAA 认证试图下，配置本地 SSH 登录用户 hjxstart 和密码 HCIE[R2] aaa[R2-aaa] local-user `hjxstart` privilege level `15` password cipher `HCIE`[R2-aaa] local-user `hjxstart` service-type `ssh`# 在被登录设备上，开启 SSH 服务器[R2] `stelnet` server enable# 创建本地公钥对， 输入: 1024[R2] rsa local-key-pair create# 在被登录设备上，配置同一时间运行接入的虚拟终端数为 5[R2] user-interface vty 0 4[R2-ui-vty0-4] authentication-mode aaa# 允许虚拟终端使用SSH协议protocol inbound ssh</code></pre><h4 id="3-在发起登录设备-AR1-上-SSH-登录被登录设备-AR2"><a href="#3-在发起登录设备-AR1-上-SSH-登录被登录设备-AR2" class="headerlink" title="3. 在发起登录设备 AR1 上 SSH 登录被登录设备 AR2"></a>3. 在发起登录设备 AR1 上 SSH 登录被登录设备 AR2</h4><pre><code class="shell"># 让R1第一时间成为SSH客户端[R1] ssh client first-time enable# 使用SSH登录R2，接受SSH公钥，和输入密码[R1] stelnet 12.1.1.2</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>华为常用命令</title>
+      <link href="/2024/01/27/%E5%8D%8E%E4%B8%BA%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+      <url>/2024/01/27/%E5%8D%8E%E4%B8%BA%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+      
+        <content type="html"><![CDATA[<h1 id="一、全局视图"><a href="#一、全局视图" class="headerlink" title="一、全局视图"></a>一、全局视图</h1><h1 id="二、用户视图"><a href="#二、用户视图" class="headerlink" title="二、用户视图"></a>二、用户视图</h1><pre><code class="shell"># 进入系统视图system-view# 查看当前设备上存储的文件列表dir# 查看保存的配置文件display saved-configuration# 保存当前配置文件save# 查看当前/下次启动的配置文件display startup# 删除闪存中的配置文件reset saved-configuration# 重启设备reboot</code></pre><h1 id="三、系统视图"><a href="#三、系统视图" class="headerlink" title="三、系统视图"></a>三、系统视图</h1><h2 id="3-1-增"><a href="#3-1-增" class="headerlink" title="3.1 增"></a>3.1 增</h2><pre><code class="shell"># 配置登录信息, quit 后可验证header shell information &quot;Welcom to the Tiger Lab.&quot;# 配置Console口参数，display this查看user-interface console 0# 设置密码HCIEset authentication password cipher HCIE</code></pre><h2 id="3-2-删"><a href="#3-2-删" class="headerlink" title="3.2 删"></a>3.2 删</h2><h2 id="3-3-改"><a href="#3-3-改" class="headerlink" title="3.3 改"></a>3.3 改</h2><pre><code class="shell"># 修改设备名称sysname R1</code></pre><h2 id="3-4-查"><a href="#3-4-查" class="headerlink" title="3.4 查"></a>3.4 查</h2><pre><code class="shell"># 查看接口信息display interface GigabitEthernet 0/0/1# Ping命令Ping 192.168.1.1#</code></pre><h1 id="四、接口视图"><a href="#四、接口视图" class="headerlink" title="四、接口视图"></a>四、接口视图</h1><pre><code class="shell"># 配置IP地址ip address 192.168.1.1 24# 配置接口IP地址和描述信息description to R1-G0/0/1</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>VRRP</title>
+      <link href="/2024/01/20/VRRP/"/>
+      <url>/2024/01/20/VRRP/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>STP</title>
+      <link href="/2024/01/20/STP/"/>
+      <url>/2024/01/20/STP/</url>
+      
+        <content type="html"><![CDATA[<h1 id="STP"><a href="#STP" class="headerlink" title="STP"></a>STP</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>Spanning-Tree Protocol 生成树协议</p><h2 id="交换机的控制层面的缺陷，以及该缺陷导致的问题"><a href="#交换机的控制层面的缺陷，以及该缺陷导致的问题" class="headerlink" title="交换机的控制层面的缺陷，以及该缺陷导致的问题"></a>交换机的控制层面的缺陷，以及该缺陷导致的问题</h2><p>交换机总会人员</p><h2 id="STP-的两大用途介绍"><a href="#STP-的两大用途介绍" class="headerlink" title="STP 的两大用途介绍"></a>STP 的两大用途介绍</h2><h2 id="STP-中的各种参数术语介绍"><a href="#STP-中的各种参数术语介绍" class="headerlink" title="STP 中的各种参数术语介绍"></a>STP 中的各种参数术语介绍</h2><h2 id="STP-的选举以及端口角色对应的接口状态"><a href="#STP-的选举以及端口角色对应的接口状态" class="headerlink" title="STP 的选举以及端口角色对应的接口状态"></a>STP 的选举以及端口角色对应的接口状态</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ISIS</title>
+      <link href="/2023/12/29/ISIS/"/>
+      <url>/2023/12/29/ISIS/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 路由协议 </tag>
+            
+            <tag> ISIS </tag>
+            
+            <tag> 动态路由协议 </tag>
+            
+            <tag> IGP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>OSPF实验</title>
       <link href="/2023/12/22/OSPF%E5%AE%9E%E9%AA%8C/"/>
       <url>/2023/12/22/OSPF%E5%AE%9E%E9%AA%8C/</url>
@@ -60,7 +288,7 @@
       <link href="/2023/12/18/RouterOS/"/>
       <url>/2023/12/18/RouterOS/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h3 id="创建-ROS-虚拟机"><a href="#创建-ROS-虚拟机" class="headerlink" title="创建 ROS 虚拟机"></a>创建 ROS 虚拟机</h3><ol><li>创建虚拟机名字和选择 Linux 类型</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/Ros_create_1.png"></p><ol start="2"><li>修改虚拟机的配置，锁定内存和添加直通网卡</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS_Create_2.png"></p><ol start="3"><li>修改为 BIOS 引导启动</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS_Create_3.png"></p><ol start="4"><li>添加一块现有的 ROS 的 VMDK 硬盘</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20240203140802.png"></p><ol start="5"><li>修改硬盘大小和类型</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20240203140955.png"></p><ol start="6"><li>使用 WinBox 工具的 Neighbors 选择，以 admin 空密码的方式连接到 ROS，首次登录建议修改密码</li></ol><h3 id="配置-ROS"><a href="#配置-ROS" class="headerlink" title="配置 ROS"></a>配置 ROS</h3><ol><li>修改接口名字。通过插拔网线的方式，双击网卡重命名实际网卡的名称</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20240203141929.png"></p><ol start="2"><li>创建网桥。将多个 LAN 口连接起来。</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20240203142157.png"></p><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20240203142344.png"></p><ol start="3"><li>添加 ROS 的 IP 地址。</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20240203142721.png"></p><ol start="4"><li>WAN 口获取地址. 添加 DNS 客户端</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20240203143132.png"></p><ol start="5"><li>添加 DNS</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20240203143527.png"></p><ol start="6"><li>设置 NAT。打开防火墙</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20240203143946.png"></p><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20240203144044.png"></p><ol start="7"><li><p>激活 License</p></li><li><p>设置开机自启动</p></li></ol>]]></content>
       
       
       
@@ -73,7 +301,7 @@
       <link href="/2023/12/18/ESXI/"/>
       <url>/2023/12/18/ESXI/</url>
       
-        <content type="html"><![CDATA[<h1 id="概述-ESXI"><a href="#概述-ESXI" class="headerlink" title="概述 ESXI"></a>概述 ESXI</h1><h2 id="硬件环境概述"><a href="#硬件环境概述" class="headerlink" title="硬件环境概述"></a>硬件环境概述</h2><pre><code class="shell">1.</code></pre><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224148.png"><br><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224320.png"><br><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224521.png"></p><h3 id="按-Enter-继续安装"><a href="#按-Enter-继续安装" class="headerlink" title="按 Enter 继续安装"></a>按 Enter 继续安装</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224705.png"></p><h3 id="按-F11-接受许可"><a href="#按-F11-接受许可" class="headerlink" title="按 F11 接受许可"></a>按 F11 接受许可</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225551.png"></p><h3 id="按-Enter-选择硬盘"><a href="#按-Enter-选择硬盘" class="headerlink" title="按 Enter 选择硬盘"></a>按 Enter 选择硬盘</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225341.png"></p><h3 id="按-Enter-重启"><a href="#按-Enter-重启" class="headerlink" title="按 Enter 重启"></a>按 Enter 重启</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225745.png"></p><h3 id="选择-OS"><a href="#选择-OS" class="headerlink" title="选择 OS"></a>选择 OS</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225912.png"></p><h3 id="输入管理员密码"><a href="#输入管理员密码" class="headerlink" title="输入管理员密码"></a>输入管理员密码</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230033.png"></p><h3 id="选择-F11-Install"><a href="#选择-F11-Install" class="headerlink" title="选择 F11 Install"></a>选择 F11 Install</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230241.png"></p><h3 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230445.png"></p><h3 id="管理员登录"><a href="#管理员登录" class="headerlink" title="管理员登录"></a>管理员登录</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230753.png"></p><h3 id="选择修改管理网络"><a href="#选择修改管理网络" class="headerlink" title="选择修改管理网络"></a>选择修改管理网络</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230951.png"></p><h3 id="打开网络设备"><a href="#打开网络设备" class="headerlink" title="打开网络设备"></a>打开网络设备</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222231317.png"></p><h3 id="选择管理口"><a href="#选择管理口" class="headerlink" title="选择管理口"></a>选择管理口</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222231628.png"></p><h3 id="选择-IPv4"><a href="#选择-IPv4" class="headerlink" title="选择 IPv4"></a>选择 IPv4</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222231733.png"></p><h3 id="设置静态-IP"><a href="#设置静态-IP" class="headerlink" title="设置静态 IP"></a>设置静态 IP</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222232011.png"></p><h2 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h2>]]></content>
+        <content type="html"><![CDATA[<h1 id="概述-ESXI"><a href="#概述-ESXI" class="headerlink" title="概述 ESXI"></a>概述 ESXI</h1><h2 id="硬件环境概述"><a href="#硬件环境概述" class="headerlink" title="硬件环境概述"></a>硬件环境概述</h2><pre><code class="shell">1.</code></pre><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224148.png"><br><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224320.png"><br><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224521.png"></p><h3 id="按-Enter-继续安装"><a href="#按-Enter-继续安装" class="headerlink" title="按 Enter 继续安装"></a>按 Enter 继续安装</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224705.png"></p><h3 id="按-F11-接受许可"><a href="#按-F11-接受许可" class="headerlink" title="按 F11 接受许可"></a>按 F11 接受许可</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225551.png"></p><h3 id="按-Enter-选择硬盘"><a href="#按-Enter-选择硬盘" class="headerlink" title="按 Enter 选择硬盘"></a>按 Enter 选择硬盘</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225341.png"></p><h3 id="按-Enter-重启"><a href="#按-Enter-重启" class="headerlink" title="按 Enter 重启"></a>按 Enter 重启</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225745.png"></p><h3 id="选择-OS"><a href="#选择-OS" class="headerlink" title="选择 OS"></a>选择 OS</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225912.png"></p><h3 id="输入管理员密码"><a href="#输入管理员密码" class="headerlink" title="输入管理员密码"></a>输入管理员密码</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230033.png"></p><h3 id="选择-F11-Install"><a href="#选择-F11-Install" class="headerlink" title="选择 F11 Install"></a>选择 F11 Install</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230241.png"></p><h3 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230445.png"></p><h3 id="管理员登录"><a href="#管理员登录" class="headerlink" title="管理员登录"></a>管理员登录</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230753.png"></p><h3 id="选择修改管理网络"><a href="#选择修改管理网络" class="headerlink" title="选择修改管理网络"></a>选择修改管理网络</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230951.png"></p><h3 id="打开网络设备"><a href="#打开网络设备" class="headerlink" title="打开网络设备"></a>打开网络设备</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222231317.png"></p><h3 id="选择管理口"><a href="#选择管理口" class="headerlink" title="选择管理口"></a>选择管理口</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222231628.png"></p><h3 id="选择-IPv4"><a href="#选择-IPv4" class="headerlink" title="选择 IPv4"></a>选择 IPv4</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222231733.png"></p><h3 id="设置静态-IP"><a href="#设置静态-IP" class="headerlink" title="设置静态 IP"></a>设置静态 IP</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222232011.png"></p><h2 id="ESC-退出和保存配置，就可以使用浏览器通过-IP-地址访问-ESXI-了"><a href="#ESC-退出和保存配置，就可以使用浏览器通过-IP-地址访问-ESXI-了" class="headerlink" title="ESC 退出和保存配置，就可以使用浏览器通过 IP 地址访问 ESXI 了"></a>ESC 退出和保存配置，就可以使用浏览器通过 IP 地址访问 ESXI 了</h2><h2 id="网卡直通"><a href="#网卡直通" class="headerlink" title="网卡直通"></a>网卡直通</h2><p>过滤出可直通的设备，选择除管理网卡外的网络直通</p>]]></content>
       
       
       
@@ -120,19 +348,6 @@
           <category> 网络 </category>
           
       </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>OSPF</title>
-      <link href="/2023/06/16/OSPF-1/"/>
-      <url>/2023/06/16/OSPF-1/</url>
-      
-        <content type="html"><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><pre><code class="shell">LSA: Link-State Advertisements骨干路由器: 有一个接口属于Area0的路由器内部路由器: 全部接口都只属于非Area0区域的路由器ABR路由器: 有接口属于Area0，其他区域，Area0有full的邻居ASBR路由器: 自治系统路由器，任何一台路由器都可以成为ASBR，具有其他方式学习的路由引入OSPF，路由重分发，产生了外部路由进入OSPF</code></pre><h1 id="OSPF报文"><a href="#OSPF报文" class="headerlink" title="OSPF报文"></a>OSPF报文</h1><h2 id="Hello"><a href="#Hello" class="headerlink" title="Hello"></a>Hello</h2><p>周期性发送，用于维护邻居状态。</p><h2 id="Database-Description"><a href="#Database-Description" class="headerlink" title="Database Description"></a>Database Description</h2><p>用于优化邻接建立的流程，确认双方需要的LSA(除开公共部分)，通过序列号实现隐式确认回复功能</p><h2 id="Link-State-Request"><a href="#Link-State-Request" class="headerlink" title="Link-State Request"></a>Link-State Request</h2><p>请求包含需要的LSA报头，</p><h2 id="Link-State-Update"><a href="#Link-State-Update" class="headerlink" title="Link-State Update"></a>Link-State Update</h2><p>对方需要的LAS报头</p><h2 id="Link-State-Acknowledgment"><a href="#Link-State-Acknowledgment" class="headerlink" title="Link-State Acknowledgment"></a>Link-State Acknowledgment</h2><p>确认LSA报头收到</p><h1 id="OSPF邻接关系建立流程"><a href="#OSPF邻接关系建立流程" class="headerlink" title="OSPF邻接关系建立流程"></a>OSPF邻接关系建立流程</h1><p>Down # 没有收到过任何报文<br>Attempt # 不常见 NBMA &#x2F; P2MP NBMA网络，不会主动发Hello, 需要指定neighbor地址才可以发送。(可以发出单播报文，但是没有收到回应的状态)<br>Initial # 通过邻居收到hello，但是neighbor字段没有包含我的路由器ID。(本路由器可以确认收到对方的hello报文，但是本路由器的报文不确定对方是否可收到)<br>Two-way # 通过邻居收到hello，neighbor字段有包含我的路由器ID。（双向邻居关系）<br>Exstart # 选主从路由器(DBD), I:M:M&#x2F;S &#x3D; 111 &#x3D; 0x07<br>Exchange # 主路由器会带动备路由器发起DBD的交互过程，有主路由器发起序列号，备路由器做隐式确认。知道双方的LSA<br>Loading # 开始彼此交换对方需要的LSA内容，发送LSR、LSU、LSACK<br>Full adjacency # 交换玩LSA，邻接状态建立完毕</p><h1 id="SLA学习"><a href="#SLA学习" class="headerlink" title="SLA学习"></a>SLA学习</h1><h2 id="学习方向"><a href="#学习方向" class="headerlink" title="学习方向"></a>学习方向</h2><ol><li>LSA产生: 那些路由器可以产生该LSA? </li><li>LSA范围: 产生的LSA谁可以接受到</li><li>LSA内容: 产生的LSA包含什么内容</li></ol><h2 id="一类LSA-路由器描述"><a href="#一类LSA-路由器描述" class="headerlink" title="一类LSA (路由器描述)"></a>一类LSA (路由器描述)</h2><ol><li>LSA产生: 任何路由器都可以产生一类LSA。每台路由器针对它所属的每一个区域会产生一条一类LSA。</li><li>LSA范围: 区域内。Area1内的路由器产生的一类LSA，只有Area1内的其他路由器可以收到。</li><li>LSA内容: 可分为2类内容。一类是用于介绍该路由器是什么路由器，比如路由器的<strong>类型</strong>&#x2F;<strong>RID</strong>; 第二类信息是该路由器宣告了那些<strong>接口</strong>进OSPF，和接口连接的链路类型。(P2P网络中，包含邻居的RID，本地接口IP地址；MA网络中，包含<strong>DR</strong>接口的IP地址，本地接口IP地址）</li></ol><h2 id="二类LSA-MA网络描述"><a href="#二类LSA-MA网络描述" class="headerlink" title="二类LSA (MA网络描述)"></a>二类LSA (MA网络描述)</h2><ol><li>LSA产生: 由DR(DR是伪节点,DR代表的就是一个完整的MA网络)产生</li><li>LSA范围: 区域内。泛洪发给区域内的所有路由器</li><li>LSA内容: 包含2类内容。第一类内容是一个列表中包含了MA网络中的<strong>每个路由器的RID</strong>；第二类是描述了MA网络中所有接口的掩码。</li></ol><h2 id="三类LSA-区域级路由共享"><a href="#三类LSA-区域级路由共享" class="headerlink" title="三类LSA (区域级路由共享)"></a>三类LSA (区域级路由共享)</h2><ol><li>LSA产生: 由ABR产生，LSA数量 &#x3D; 要转换的区域内路由的数量。</li><li>LSA范围: 整个自治系统。</li><li>LSA内容: 就是路由信息(前缀&#x2F;掩码&#x2F;度量值&#x2F;下一跳)</li></ol><h2 id="四类LSA"><a href="#四类LSA" class="headerlink" title="四类LSA"></a>四类LSA</h2><h2 id="五类LSA"><a href="#五类LSA" class="headerlink" title="五类LSA"></a>五类LSA</h2><h2 id="六类LSA"><a href="#六类LSA" class="headerlink" title="六类LSA"></a>六类LSA</h2><h2 id="七类LSA"><a href="#七类LSA" class="headerlink" title="七类LSA"></a>七类LSA</h2><h2 id="八类LSA"><a href="#八类LSA" class="headerlink" title="八类LSA"></a>八类LSA</h2>]]></content>
-      
       
       
     </entry>
@@ -374,7 +589,7 @@
       <link href="/2023/04/07/OSPF/"/>
       <url>/2023/04/07/OSPF/</url>
       
-        <content type="html"><![CDATA[<h2 id="2-1-概述"><a href="#2-1-概述" class="headerlink" title="2.1 概述"></a>2.1 概述</h2><blockquote><p>开放式最短路径优先协议<br>IGP协议<br>LS链路状态协议 (距离矢量协议)。<br>组播地址：224.0.0.5(都监听)&#x2F;224.0.0.6(DR和BDR监听)。DROthers通过.6发送LSA给DR，BDR；DR通过.5发送LSA给DRothers。<br>Layer2|IPV4|OSPF|FCS (协议号89); OSPFv2 IPv4; OPSFv3 IPv6<br>运营商都是使用双栈(Dual Stack)的，即同时支持IPv4和IPv6。<br>iSPF增量型SPF（骨干和树枝变更，路由器节点互联是树干，路由器互联网络的接口是树枝）；PRC部分路由计算（路由变更，即树叶）</p></blockquote><ol start="2"><li>LSA</li></ol><blockquote><p>1类LSA中包含RID(路由器ID，应域内唯一)：在区域内的路由器都可以收到，通过LSA泛洪扩散。<br>3类LSA包含区域间路由条目，由ABR产生，可以进行汇总(域间汇总)后再传递。</p></blockquote><h2 id="2-2-OSPF基本运行方式与三张表"><a href="#2-2-OSPF基本运行方式与三张表" class="headerlink" title="2.2 OSPF基本运行方式与三张表"></a>2.2 OSPF基本运行方式与三张表</h2><ol><li><p>OPSF邻居表（邻接关系数据库）：存放着建立邻居路由器的RID，直连的接口地址相关信息。hello周期10S或者30S，dead时间等于四倍hello时间。</p></li><li><p><strong>LSDB</strong>拓扑表（链路状态数据库）：存放各类LSA</p></li><li><p>路由表：使用SPF（最短路径优先算法），根据LSA，将自身做树根，计算出一棵cost(开销，带宽)最小的树。（100Mbit&#x2F;s,1000M,10000M的const都是1）</p></li></ol><h2 id="2-3-OSPF的区域划分与优势"><a href="#2-3-OSPF的区域划分与优势" class="headerlink" title="2.3 OSPF的区域划分与优势"></a>2.3 OSPF的区域划分与优势</h2><p>骨干区域，传输区域（Area0，有且只有一个）<br>常规区域|Stub区域|NSSA区域（1~43亿）<br>ABR(区域边界路由器)：一台路由器宣告到多个Area，其中包含Area0。就会有多个LSDB<br>ASBR(自主系统边界路由器)：一台路由器运行OSPF和其他路由获悉方式的协议。比较RIP，静态等。（路由重分发，将其他协议学到的路由，通过OSPF来宣告）</p><h2 id="2-4-OSPF邻居与邻接，MA网络P2P网络建邻居的区别"><a href="#2-4-OSPF邻居与邻接，MA网络P2P网络建邻居的区别" class="headerlink" title="2.4 OSPF邻居与邻接，MA网络P2P网络建邻居的区别"></a>2.4 OSPF邻居与邻接，MA网络P2P网络建邻居的区别</h2><p>Hello。3级Two-way邻居状态Neighbor<br>DBD,LSR,LSU,LSAck。8级Full邻接Adjacency</p><p>P2P点到点网络Serial HDLC&#x2F;PPP（建立邻居，邻接关系一气呵成）<br>MA多路访问网络Ethernet Frame Relay（先hell建立邻居，再选举，再所有路由器都会和DP和BDR建立到Full邻接，DROthers之间只会到Two-way邻居关系）</p><ol start="2"><li>MA网络<br>选举：先比较接口的OSPF的优先级(0~255，默认1)，再比较RID，都是大优先；DP指定路由器(一台)，BDR备份指定路由器(一台)，DROthers<br>选举时间：是hello时间的4倍。在网络中建立 Two-way后就开始了，选举之后就不变了，是不可以抢占的。后面的优先级大也没有用。<br>DR和BDR是接口的概念，不是路由器的概念。<br>优先级为0视为弃权选举的资格<br>一个MA网络可以没有BDR，但是必须有DR.<br>DR&#x2F;BDR必须能访问该网络中的所有其他节点(Hub&amp;Spoke Spoke之间的互访需要通过Hub中转)</li></ol><h2 id="2-5-OSPF-RID与DR-BDR"><a href="#2-5-OSPF-RID与DR-BDR" class="headerlink" title="2.5 OSPF RID与DR BDR"></a>2.5 OSPF RID与DR BDR</h2><h2 id="2-6-OSPF的1-5类LSA"><a href="#2-6-OSPF的1-5类LSA" class="headerlink" title="2.6 OSPF的1-5类LSA"></a>2.6 OSPF的1-5类LSA</h2><ol><li>Hello(initial，Two-wait)：建立邻居和维护邻接关系状态</li><li>Database Description：LSA的包头，做数据库的同步。DBD(LSA报头，展示数据库里面有那些LSA)；隐式DBD确认（根据RouteID选取主从关系，Master&#x2F;Slave;通过相同的序列号来既做确认也做回应）; MTU一致性检测,exstarts</li><li>Link-State Request(LSA报头，期待你给我请求的完整内容)；等DBD发完之后才开始的。</li><li>Link-State Update（完整的LSA）</li><li>Link-State Acknowledgment（收到LSU后，会针对LSU中我所收到的LSA来做确认，回复那些LSA我收到了）</li></ol><p>OSPF网络类型：广播类型(需要选举DR和BDR)；点到点类型(不用选举)</p><p>Hello报文要一样才可以建立邻居关系: 报头(版本一致；路由器IP不冲突；直连路由器的Area要一致；认证方式要相同；认证的密钥要一样)，载荷(非点到点网络，掩码需要一样；hello时间要一样；deal时间也要一样；Option的N位和E位的值，常规区域N0和E1, Stub区域N0和E0, NASS区域N1和E0)。</p><h2 id="2-7-邻接关系8级"><a href="#2-7-邻接关系8级" class="headerlink" title="2.7 邻接关系8级"></a>2.7 邻接关系8级</h2><p>down：路由器接口刚被宣告到区域，没有收到报文。<br>attempt：(NBMA:非广播多路访问，不支持发送组播报文；P2P NBMA网络)不支持发送组播的接口才会有这个状态。<br>init<br>tow-way<br>exstate：发送Frist DBD。Flag&#x3D;7，第一个DBD，后面还有DBD，我想成为Master &#x3D;&gt; i&#x3D;1,m&#x3D;1,M&#x2F;S&#x3D;1<br>exchange：Master发送带有LSA报头的DBD，序列号是Frist DBD的序列号+1，收到之后做一个相同序列号相同的确认。完成全部DBD报文的交互。<br>loading：LSR，LSU，LSACK<br>full：LSR为空时，LSDB完全同步了。</p><h2 id="2-8-LSA类型"><a href="#2-8-LSA类型" class="headerlink" title="2.8 LSA类型"></a>2.8 LSA类型</h2><p>1: Router LSAs：每台路由器都发送一条LSA；区域内路由器传输；(路由器名称，类型，宣告接口的信息link(骨干Link[TransNet,Point-to-Point,Virtual]，stub链路) | )<br>2: Network LSAs: DR发送一条LSA；区域内的所有路由器都可以收到；该MA网络中的所有路由器ID，该MA网络的接口掩码。<br>3or4: Summary LSAs：ABR发送；跨区域传递；一条3类LSA包含的就是一条完整的区域间路由；<br>4：与ASBR同区域的ABR产生发送；跨区域传递；包含该ABR去往ASBR的路径度量值<br>5: Autonomous system external LSAs：ADBR发送；跨区域传递；一条外部路由就是一条5类LSA<br>6: Multicast OSPF LSA(不重要)<br>7: Defined for not-so-stubby areas<br>8: External attributes LSA for Border Gateway Protocol(BGP)<br>9,10,11: Opaque LSAS(不透明LSA)</p><p>LSA的路由器<br>LSA的传输范围<br>LSA的包含内容</p><p>Link State ID：该LSA的名字<br>ADV(Advertisement)：Router 始发者路由器的路由RID<br>命名规则：<br>1类LSA：2个字段都是发者路由器的路由RID<br>2类LSA：LSID是接口的IP地址；ADV　Router是DR的RID<br>3类LSA：LSID是路由的前缀；ADV　Router是ABR的RID（会改变）<br>4类LSA：LSID是ASBR的RID；ADV　Router是与ASBR同区域的ABR RID（会改变）<br>5类LSA：LSID是路由的前缀；ADV Router是ASBR的RID（不会改变）</p><h2 id="2-9-OSPF邻居关系"><a href="#2-9-OSPF邻居关系" class="headerlink" title="2.9 OSPF邻居关系"></a>2.9 OSPF邻居关系</h2><h3 id="2-9-1-邻居关系建立过程"><a href="#2-9-1-邻居关系建立过程" class="headerlink" title="2.9.1 邻居关系建立过程"></a>2.9.1 邻居关系建立过程</h3><p><strong>理论描述</strong></p><p><strong>实验验证</strong></p><ol><li>down: 关闭状态。只是起了OSPF，但是没有任何接口参与协议计算</li><li>init：初始化状态。我给邻居发送了hello，但是还没有收到对方的hello，或者收到了对方发送的hello，但是hello neighbor字段没有我的router ID</li><li>attempt: 尝试。这个是只有NBMA环境下才会有的一个状态。(non-broadcast   Specify OSPF NBMA network; 非广播，在这个环境下只能发送单薄数据，不能发送组播和广播，这个环节下可以发送给多个成员，比如DMVPN场景下)所有这个环节下需要手工指定，思考使用neighbor命令，华为使用peer。</li><li>two-way：双边邻居关系。收到了邻居的hello，并且从hello的neighbor字段看到了我自己的router ID,这是双边的邻居关系(三次握手，类似issi中的three ways，防止出现单通)。</li><li>exstart：这里做三件事情：1.选举主从；2.确认隐式确认使用的序列号；3.比较MTU(华为默认开启MTU检测，思科默认开启MTU检测)。<strong>I&#x3D;1</strong></li><li>exchanage：用来交互DBD。<strong>I&#x3D;0</strong>的DBD。Master提供序列号，Slave使用该序列号携带载荷开始隐式确认；数量不够时就恢复M&#x3D;0的DBD，序列号正常计算，载荷为空。</li><li>loading：交互LSA</li><li>full：</li></ol><p><strong>DR&#x2F;BDR</strong>：用来同步LSA使用的；<br><strong>LSA</strong>：描述链路状态信息；<br><strong>Master&#x2F;Slave(主从)<strong>：用来做隐式确认使用的，用来交互DBD，仅用于同步LSA之间发送DBD使用。<br><strong>DBD</strong>: first DBD, 载荷为空，</strong>I(Init)&#x3D;1</strong>，M(More)&#x3D;1,MS(Master Yes)&#x3D;1。根据Master的序列号进行回复(隐式确认，序列号+1)。<br>Slave回复DBD后，Slave进入exchange状态；Master收到DBD后，进入Exchange。<br>DP&#x2F;BDR是接口概念，是一个接口的角色，不是设备的角色；是一个链路内一个DR，一个BDR；一个区域会有多个DR，不确定。</p><h3 id="2-9-2-邻居关系建立的条件"><a href="#2-9-2-邻居关系建立的条件" class="headerlink" title="2.9.2 邻居关系建立的条件"></a>2.9.2 邻居关系建立的条件</h3><ol><li><p>理论描述</p></li><li><p>实验论证</p></li></ol>]]></content>
+        <content type="html"><![CDATA[<h1 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h1><p>Open Shortest Path First (OSPF) 是一种 Link-State Routing Protocol, OSPF 中的 <strong>Router</strong> 都会向 <strong>Neighbor</strong> 交换自己的 <strong>Link-State</strong>, 当 Router 收到这些 Link-State 之后，就会使用 Dijkstra Algorithm (狄杰斯特拉算法) 计算出最短的路径 (Shortest Path).</p><h2 id="1-1-AreaArea"><a href="#1-1-AreaArea" class="headerlink" title="1.1 AreaArea"></a>1.1 AreaArea</h2><p>Area 是 OSPF 在中大型网络中为了解决管理上的问题，设置的一种分层系统, Area 一般使用一个 16 Bits (0~65535)的数字表示, 其中 Area 0 是一个特别的 Area, 我们一般称之为 Backbone Area (骨干区域), 其他所有的 Area 必须与 Area 0 连接。从设计层面降低环路出现的风险。</p><h2 id="1-2-Router"><a href="#1-2-Router" class="headerlink" title="1.2 Router"></a>1.2 Router</h2><ol><li>Internal Router: 参与 OSPF 的所有 Interface 都连接在同一个 Area 的 Router.</li><li>Backbone Router: 最少一个参与 OSPF 的 Interface 连接在 Backbone Area 的 Router.</li><li>Area Border Router (<strong>ABR</strong>): 连接两个 Area (必须包含一个 <strong>Area0</strong>) 或以上的 Router.</li><li>Autonomous System Border Routers (<strong>ASBR</strong>): 有 Interface 连接到其他 AS，并且引入了外部路由 的 Router.</li></ol><h2 id="1-3-Neighbor-与-Adjacency-的建立"><a href="#1-3-Neighbor-与-Adjacency-的建立" class="headerlink" title="1.3 Neighbor 与 Adjacency 的建立"></a>1.3 Neighbor 与 Adjacency 的建立</h2><ol><li>Down: 没有发送 Hello Message.</li><li>Init: 刚刚向对方发送 Hello Message.</li><li>2-Way: 两个 Router 以成为 Neighbor. 他们开始沟通了! 在这个时候，他们会选出 DR 和 BDR. 如果未能成为 DR 和 BDR, 则成为 DROTHER, DROTHER 会停在 2-Way 的状态.</li><li>ExStart: 准备交换 Link 的信息.</li><li>Exchange: 他们开始交换 DBD (Database Descriptors).</li><li>Loading: 正在交换 LSA.</li><li>Full: 两个 Router 成为 Adjacency。LSA 交换完成, 此时同一个 Area 的 Router 里面的 Topology Table 应该是完成相同的.</li></ol><h2 id="1-4-成为-Neigbhor-的条件"><a href="#1-4-成为-Neigbhor-的条件" class="headerlink" title="1.4 成为 Neigbhor 的条件:"></a>1.4 成为 Neigbhor 的条件:</h2><blockquote><p>Router-id: 按照优先级可以是指定的 Router-id; Loopback Interface 的最大 IP Address; 参与 OSPF 的 Interface IP Address.<br>Priority: 用于选举 DR&#x2F;BDR&#x2F;DROTHER,越大越优先; 如果优先级一样就比较 Router-id.<br>Dead Time: 默认由 40 秒开始倒数，如果一直倒数到 0 秒没有还收到 Hello, 就判断 Neighbor 离线了.<br>State: 可以表示 Neighbor 的状态和 DR&#x2F;BDR&#x2F;DROTHER 的角色.</p></blockquote><ol><li>Area ID 相同.</li><li>Area Type 相同. Backbone Area (Area 0), Standard Area, Stub Area, Totally Stubby Area, Not-so-stubby Area 和 Totally Not-so-stubby Area.</li><li>Prefix 与 Subnet Mask 必须相同.</li><li>Interval Timer 时间相同. Hello Interval 和 Dead Interval 时间必须相同.</li><li>Authentication 认证相同. 认证方式有无密码认证, 明文认证和密文认证.</li></ol><h1 id="四、Designated-Router"><a href="#四、Designated-Router" class="headerlink" title="四、Designated Router"></a>四、Designated Router</h1><ol><li>在 Broadcast Multi-Access 的网络中, 例如我们常用的 Ethernet,</li><li>同一个网络中可能会连接着 3 个或以上的 Router, 即每个 Router 需要建立 n-1 的 connection,</li><li>Full Mesh 的 connection 数量为 n(n-1)&#x2F;2;</li><li>如果在网络中选一位 DR(Designated Router), 其他的 Router 只需与 DR 建立 connection,</li><li>每次有 Routing Update, Router 只需把 Update 传给 DR, 再由 DR 统一发给其他 Router;</li><li>这样网络中每个 Router 只需处理一条 Connection;</li><li>还要选一位 BDR(Backup Designated Router), 是在 DR 离线时由 BDR 顶上变成 DR.</li></ol><h1 id="五、Network-Type"><a href="#五、Network-Type" class="headerlink" title="五、Network Type"></a>五、Network Type</h1><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231229162056.png" alt="Network Type"></p><h1 id="六、Link-state-Advertisement-LAS"><a href="#六、Link-state-Advertisement-LAS" class="headerlink" title="六、Link-state Advertisement (LAS)"></a>六、Link-state Advertisement (LAS)</h1><ol><li>Router LSA (Type 1): 描述 Router 连接的 Router 信息. Area 内的 Router 都会产生一条, Area 内传递.</li><li>Network LSA (Type 2): 描述 DR 连接的 Router 信息. Area 内的 DR 产生一条, Area 内传递.</li><li>Network Summary LSA (Type 3): 描述 Area 内的 Router 去往 Area 间的路由信息. ABR 产生, 一条 Area 间路由产生一条 LSA, Area 间传递.</li><li>ASBR Summary (Type 4): 描述 Area 内的 Router 去往 ASBR 的路由信息. ABR 产生, 一台 ASBR 产生一条 LSA, Area 间传递.</li><li>External LSA (Type 5): 描述 Area 外的 External Network 路由信息. ASBR 产生, 一条外部路由产生一条 LSA, Area 传递.(除了 Stub Area)</li><li>(Type 7)</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231229162242.png" alt="LSA"></p><h1 id="七、特殊区域"><a href="#七、特殊区域" class="headerlink" title="七、特殊区域"></a>七、特殊区域</h1><blockquote><p>减少 LSA 的发送, 简化 Route Table.<br>Stub Area 和 Totally Stubby Area 适用于没有连接 External Network 的 Area</p></blockquote><ol><li>Stud Area: 禁止 Type4 和 Type5 的 LSA 进入, ABR 会下发一条 Default Rtoue 的 Type3 LSA.</li><li>Totally Stubby Area: 除了 ABR 下发的 Default Route，所有的 Type3 LSA 也禁止了.</li><li>NSSA: 禁止 Type4 和 Type5 的 LAS 进入, ASBR 改用 Type7 传递 External Network 的路由信息.</li><li>Not So Stubby Area (NSSA): 除了 ASBR 下发的 Default Route, 所有的 Type3 LSA 也禁止了.</li></ol><h1 id="八、Route"><a href="#八、Route" class="headerlink" title="八、Route"></a>八、Route</h1><ol><li>Metric</li><li>Cost</li><li>Route Type</li><li>路由选择</li><li>路由汇总</li></ol><h1 id="九、区域合并"><a href="#九、区域合并" class="headerlink" title="九、区域合并"></a>九、区域合并</h1><ol><li>Virtual Link</li><li>Tunnle</li></ol><h1 id="10-OSPF-优化"><a href="#10-OSPF-优化" class="headerlink" title="10. OSPF 优化"></a>10. OSPF 优化</h1><ol><li>Pacing Timer</li><li>SPF Throttle Timer</li><li>LSA Throttle Timer</li></ol>]]></content>
       
       
       <categories>
@@ -388,11 +603,11 @@
             
             <tag> 路由协议 </tag>
             
-            <tag> OSPF </tag>
-            
             <tag> 动态路由协议 </tag>
             
             <tag> IGP </tag>
+            
+            <tag> OSPF </tag>
             
         </tags>
       
@@ -811,7 +1026,7 @@
       <link href="/2021/09/08/Harbor/"/>
       <url>/2021/09/08/Harbor/</url>
       
-        <content type="html"><![CDATA[<h1 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h1><p>harbor 是一个可以部署在本地的Docker仓库</p><h1 id="2-部署步骤"><a href="#2-部署步骤" class="headerlink" title="2. 部署步骤"></a>2. 部署步骤</h1><ol><li>下载harbor的tar包<a href="https://github.com/goharbor/harbor/releases">github链接</a></li><li>上传到Linux系统</li><li>解压 <code>tar -zxvf harbor-xxx.tar</code></li><li>移动harbor <code>mv harbor /usr/local</code></li><li>生成openssl证书: <code>openssl genrsa -des3 -out server.key 2048</code>(密码123456)</li><li>创建证书请求：<code>openssl req -new -key server.key -out server.csr</code>(密码:123456, 国家：CN, 省会:GD, 市:ZJ, 机构:XJ, 单位：XJ，域名 hub.xj.com, 邮箱: <a href="mailto:&#104;&#x6a;&#120;&#x73;&#x74;&#x61;&#x72;&#116;&#64;&#49;&#50;&#54;&#x2e;&#x63;&#111;&#109;">&#104;&#x6a;&#120;&#x73;&#x74;&#x61;&#x72;&#116;&#64;&#49;&#50;&#54;&#x2e;&#x63;&#111;&#109;</a>, 密码：123456,公司名字:XJ).中途输入错误可以<code>Ctr+C</code>退出.</li><li>复制文件：cp server.key server.key.org</li><li>取消密码认证：<code>openssl rsa -in server.key.org -out server.key</code>(密码123456)</li><li>创建证书（类型:x509,有效期：365天）：<code>openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt</code></li><li>创建相应文件:<code>mkdir -p /data/cert</code></li><li>移动证书相关文件:<code>mv server.* /data/cert</code></li><li>修改<code>barbor配置文件</code>的<code>hostname(hub.xj.com) 和 https(certificate: server.crt; private_key: server.key)</code></li><li>运行prepare文件:<code>./prepare</code></li><li>安装harbor: <code>./install.sh</code></li><li>修改镜像仓库地址: <code>vi /etc/docker/daemon.json</code> <code>hub.xj.com</code></li><li>重启docker: <code>systemctl restart docker</code></li><li>harbor的使用</li></ol><pre><code class="bash">docker tag nginx:latest hub.xj.com/harborProject/nginx:v1</code></pre><pre><code class="bash">docker push </code></pre><h2 id="Harbor部署"><a href="#Harbor部署" class="headerlink" title="Harbor部署"></a>Harbor部署</h2><h3 id="1-环境说明"><a href="#1-环境说明" class="headerlink" title="1. 环境说明"></a>1. 环境说明</h3><ol><li>系统版本Centos7.9最小安装</li><li>使用二进制安装k8s<a href="https://www.toutiao.com/a6935437095985054219/?log_from=7099e5155a92b_1631092889404">链接</a></li></ol><h3 id="2-安装步骤"><a href="#2-安装步骤" class="headerlink" title="2. 安装步骤"></a>2. 安装步骤</h3><ol><li>创建目录及下载harbor离线包</li></ol><pre><code># 创建并进入相应目录mkdir /data &amp;&amp; cd /data# 下载离线包，也可以直接通过连接下载wget https://github.com/goharbor/harbor/releases/download/v2.2.0/harbor-offline-installer-v2.2.0.tgz# 解压并删除离线包tar xf harbor-offline-installer-v2.2.0.tgz &amp;&amp; rm harbor-offline-installer-v2.2.0.tgz</code></pre><ol start="2"><li>修改harbro配置</li></ol><pre><code># 进入harbor目录cd harbor# 负责harbor配置文件cp harbor.yml.tmpl harbor.yml# 修改harbor配置vi harbor.yml    5 hostname: harbor.xj.com    17   certificate: /data/harbor/ssl/tls.cert    18   private_key: /data/harbor/ssl/tls.key    34 harbor_admin_password: boge666</code></pre><ol start="3"><li>创建harbor访问域名证书</li></ol><pre><code>mkdir /data/harbor/ssl &amp;&amp; cd /data/harbor/sslopenssl genrsa -out tls.key 2048openssl req -new -x509 -key tls.key -out tls.cert -days 360 -subj /CN=*.xj.com</code></pre><ol start="4"><li>准备好单机编排工具<code>docker-compose</code></li></ol><pre><code>&gt; 从二进制安装k8s项目的bin目录拷贝过来scp /etc/kubeasz/bin/docker-compose 192.168.18.200:/usr/bin/&gt; 也可以在docker官方进行下载https://docs.docker.com/compose/install/</code></pre><ol start="5"><li>开始安装</li></ol><pre><code># 回到harbor目录cd /data/harbor# 安装harbor./install.sh# 安装成功后可以配置hosts文件进行域名访问了</code></pre><ol start="6"><li>推送镜像到harbor</li></ol><pre><code># 添加hosts文件echo &#39;192.168.18.200 harbor.xj.com&#39; &gt;&gt; /etc/hosts# 登录docker login harbor.xj.com# 打标签docker tag nginx:latest  harbor.xj.com/library/nginx:latest# 推送镜像到harbordocker push harbor.boge.com/library/nginx:1.18.0-alpine# 登出docker logout harbor.xj.com# 查看登录信息，不退出会存在隐患cat ~/.docker/config.json</code></pre><ol start="7"><li>在其他节点上面拉取harbor镜像</li></ol><pre><code>&gt; 在集群每个 node 节点进行如下配置&gt; ssh to 192.168.18.199(centos7)mkdir -p /etc/docker/certs.d/harbor.xj.comscp 192.168.18.200:/data/harbor/ssl/tls.cert /etc/docker/certs.d/harbor.xj.com/ca.crt</code></pre>]]></content>
+        <content type="html"><![CDATA[<h1 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h1><p>harbor 是一个可以部署在本地的Docker仓库</p><h1 id="2-部署步骤"><a href="#2-部署步骤" class="headerlink" title="2. 部署步骤"></a>2. 部署步骤</h1><ol><li>下载harbor的tar包<a href="https://github.com/goharbor/harbor/releases">github链接</a></li><li>上传到Linux系统</li><li>解压 <code>tar -zxvf harbor-xxx.tar</code></li><li>移动harbor <code>mv harbor /usr/local</code></li><li>生成openssl证书: <code>openssl genrsa -des3 -out server.key 2048</code>(密码123456)</li><li>创建证书请求：<code>openssl req -new -key server.key -out server.csr</code>(密码:123456, 国家：CN, 省会:GD, 市:ZJ, 机构:XJ, 单位：XJ，域名 hub.xj.com, 邮箱: <a href="mailto:&#104;&#x6a;&#x78;&#115;&#x74;&#97;&#x72;&#x74;&#64;&#49;&#x32;&#54;&#x2e;&#x63;&#x6f;&#x6d;">&#104;&#x6a;&#x78;&#115;&#x74;&#97;&#x72;&#x74;&#64;&#49;&#x32;&#54;&#x2e;&#x63;&#x6f;&#x6d;</a>, 密码：123456,公司名字:XJ).中途输入错误可以<code>Ctr+C</code>退出.</li><li>复制文件：cp server.key server.key.org</li><li>取消密码认证：<code>openssl rsa -in server.key.org -out server.key</code>(密码123456)</li><li>创建证书（类型:x509,有效期：365天）：<code>openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt</code></li><li>创建相应文件:<code>mkdir -p /data/cert</code></li><li>移动证书相关文件:<code>mv server.* /data/cert</code></li><li>修改<code>barbor配置文件</code>的<code>hostname(hub.xj.com) 和 https(certificate: server.crt; private_key: server.key)</code></li><li>运行prepare文件:<code>./prepare</code></li><li>安装harbor: <code>./install.sh</code></li><li>修改镜像仓库地址: <code>vi /etc/docker/daemon.json</code> <code>hub.xj.com</code></li><li>重启docker: <code>systemctl restart docker</code></li><li>harbor的使用</li></ol><pre><code class="bash">docker tag nginx:latest hub.xj.com/harborProject/nginx:v1</code></pre><pre><code class="bash">docker push </code></pre><h2 id="Harbor部署"><a href="#Harbor部署" class="headerlink" title="Harbor部署"></a>Harbor部署</h2><h3 id="1-环境说明"><a href="#1-环境说明" class="headerlink" title="1. 环境说明"></a>1. 环境说明</h3><ol><li>系统版本Centos7.9最小安装</li><li>使用二进制安装k8s<a href="https://www.toutiao.com/a6935437095985054219/?log_from=7099e5155a92b_1631092889404">链接</a></li></ol><h3 id="2-安装步骤"><a href="#2-安装步骤" class="headerlink" title="2. 安装步骤"></a>2. 安装步骤</h3><ol><li>创建目录及下载harbor离线包</li></ol><pre><code># 创建并进入相应目录mkdir /data &amp;&amp; cd /data# 下载离线包，也可以直接通过连接下载wget https://github.com/goharbor/harbor/releases/download/v2.2.0/harbor-offline-installer-v2.2.0.tgz# 解压并删除离线包tar xf harbor-offline-installer-v2.2.0.tgz &amp;&amp; rm harbor-offline-installer-v2.2.0.tgz</code></pre><ol start="2"><li>修改harbro配置</li></ol><pre><code># 进入harbor目录cd harbor# 负责harbor配置文件cp harbor.yml.tmpl harbor.yml# 修改harbor配置vi harbor.yml    5 hostname: harbor.xj.com    17   certificate: /data/harbor/ssl/tls.cert    18   private_key: /data/harbor/ssl/tls.key    34 harbor_admin_password: boge666</code></pre><ol start="3"><li>创建harbor访问域名证书</li></ol><pre><code>mkdir /data/harbor/ssl &amp;&amp; cd /data/harbor/sslopenssl genrsa -out tls.key 2048openssl req -new -x509 -key tls.key -out tls.cert -days 360 -subj /CN=*.xj.com</code></pre><ol start="4"><li>准备好单机编排工具<code>docker-compose</code></li></ol><pre><code>&gt; 从二进制安装k8s项目的bin目录拷贝过来scp /etc/kubeasz/bin/docker-compose 192.168.18.200:/usr/bin/&gt; 也可以在docker官方进行下载https://docs.docker.com/compose/install/</code></pre><ol start="5"><li>开始安装</li></ol><pre><code># 回到harbor目录cd /data/harbor# 安装harbor./install.sh# 安装成功后可以配置hosts文件进行域名访问了</code></pre><ol start="6"><li>推送镜像到harbor</li></ol><pre><code># 添加hosts文件echo &#39;192.168.18.200 harbor.xj.com&#39; &gt;&gt; /etc/hosts# 登录docker login harbor.xj.com# 打标签docker tag nginx:latest  harbor.xj.com/library/nginx:latest# 推送镜像到harbordocker push harbor.boge.com/library/nginx:1.18.0-alpine# 登出docker logout harbor.xj.com# 查看登录信息，不退出会存在隐患cat ~/.docker/config.json</code></pre><ol start="7"><li>在其他节点上面拉取harbor镜像</li></ol><pre><code>&gt; 在集群每个 node 节点进行如下配置&gt; ssh to 192.168.18.199(centos7)mkdir -p /etc/docker/certs.d/harbor.xj.comscp 192.168.18.200:/data/harbor/ssl/tls.cert /etc/docker/certs.d/harbor.xj.com/ca.crt</code></pre>]]></content>
       
       
       <categories>
