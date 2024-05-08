@@ -14,7 +14,7 @@
 <meta property="og:description" content="HCIE LAB（有价值的项目）概述  X园区：传统网改造及升级 Y园区：iMaster NCE-Campus SD-WAN 部署 Z园区：广域网承载及设计 Python网络自动化 网络八股文   环境信息 账号密码  # 通用的密码 admin&#x2F;Admin@123 # 防火墙 X_T1_FW1 admin&#x2F;Huawei@123   IP规划  ## 公网 网段:10.255.X.0&#x2F;24 8根线">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-05-06T11:42:49.000Z">
-<meta property="article:modified_time" content="2024-05-07T23:21:34.928Z">
+<meta property="article:modified_time" content="2024-05-08T08:33:19.124Z">
 <meta property="article:author" content="黄金贤">
 <meta property="article:tag" content="项目">
 <meta name="twitter:card" content="summary">
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="72">
-<input type="hidden" id="yelog_site_word_count" value="87.2k">
+<input type="hidden" id="yelog_site_word_count" value="87.8k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1091,12 +1091,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-05-08 07:21:34'>2024-05-06 19:42</time>
+            发布时间 : <time class="date" title='最后更新: 2024-05-08 16:33:19'>2024-05-06 19:42</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:9k</span>
+        <span>字数:9.6k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1252,7 +1252,6 @@ undo port trunk allow-pass vlan 1
 portswitch
 # FW真机要关闭STP
 undo stp mode
-
 ## 创建hybrid口; AGG-ACC
 </code></pre>
 <h3 id="基本业务-2’"><a href="#基本业务-2’" class="headerlink" title="基本业务 2’"></a>基本业务 2’</h3><ol>
@@ -1263,7 +1262,15 @@ undo stp mode
 <ol start="2">
 <li>配置Core和其他设备直连</li>
 </ol>
-<pre><code class="bash"># 配置vlanif&#123;60,206,208,209,lo1&#125;的IP和vpn-instance Employee
+<pre><code class="bash">## 配置有线VPN-instance和IP地址
+# Core
+ip vpn-instance Employee
+  route-distinguisher 65001:1
+    quit
+ip vpn-instance Guest
+  route-distinguisher 65001:2
+    quit
+# 配置vlanif&#123;60,206,208,209,lo1&#125;的IP和vpn-instance Employee
 interface Vlanif60
 ip binding vpn-instance Employee
 ip address 10.1.60.254 24
@@ -1271,6 +1278,58 @@ ip address 10.1.60.254 24
 interface Vlanif207
 ip binding vpn-instance Guest
 ip address 10.1.200.25 30
+
+## 配置无线VPN-instance和IP地址
+# Core
+dhcp enable
+# 
+int vlan51
+ip binding vpn-instance Employee
+ip add 10.1.51.254 24
+dhcp select global
+int vlan52
+ip binding vpn-instance Employee
+ip add 10.1.52.254 24
+dhcp select global
+int vlan53
+ip binding vpn-instance Employee
+ip add 10.1.53.254 24
+dhcp select global
+int vlan54
+ip binding vpn-instance Employee
+ip add 10.1.54.254 24
+dhcp select global
+int vlan55
+ip binding vpn-instance Employee
+ip add 10.1.55.254 24
+dhcp select global
+#
+int vlan 101
+ip binding vpn-instance Guest
+ip add 10.1.101.254 24
+dhcp select global
+#
+int vlan 102
+ip binding vpn-instance Guest
+ip add 10.1.102.254 24
+dhcp select global
+#
+int vlan 103
+ip binding vpn-instance Guest
+ip add 10.1.103.254 24
+dhcp select global
+#
+int vlan 104
+ip binding vpn-instance Guest
+ip add 10.1.104.254 24
+dhcp select global
+#
+int vlan 105
+ip binding vpn-instance Guest
+ip add 10.1.105.254 24
+dhcp select global
+#
+
 </code></pre>
 <ol start="3">
 <li>配置业务网关和DHCP</li>
@@ -1280,16 +1339,20 @@ ip address 10.1.200.25 30
 dhcp enable
 interface Vlanif208
 dhcp select global
-# 
+#
 
 
 ## DHCP relay
 # X_T1_AGG1 (11-15,21-25)
+dhcp enable
+#
 interface Vlanif11
 ip address 10.1.11.254 24
 dhcp select relay
 dhcp relay server-ip 10.1.200.29
 ## X_T2_AGG2 T2(31-35,41-45)
+dhcp enable
+#
 interface Vlanif31
 ip address 10.1.31.254 255.255.255.0
 dhcp select relay
@@ -1306,6 +1369,7 @@ ospf 1 router-id 10.1.0.1
     network 10.1.200.1 0.0.0.0
 ip route-static 0.0.0.0 0 10.255.1.254
 ip route-static 0.0.0.0 0 10.255.2.254
+
 # X_T_Export2
 ospf 1 router-id 10.1.0.2
   default-route-advertise
@@ -1334,6 +1398,13 @@ vpn-instance Employee
 #
 ip pool wireless_guest1
 vpn-instance Guest
+
+## 业务隔离。dis cur 添加 vpn-instance Employee
+#
+ip pool wired_finance1
+vpn-instance Employee
+ gateway-list 10.1.31.254
+ network 10.1.31.0 mask 255.255.255.0
 </code></pre>
 <ol start="3">
 <li>X_T_CORE配置无线网关绑定VPN实例</li>
@@ -1343,7 +1414,44 @@ vpn-instance Guest
 <ol start="4">
 <li>内部配置OSPF和网络隔离</li>
 </ol>
-<pre><code class="bash">ospf 1 router-id 10.1.0.3
+<pre><code class="bash">## Core
+# 101-105, +默认
+ip ip-prefix Guest deny 10.1.101.0 24
+ip ip-prefix Guest deny 10.1.102.0 24
+ip ip-prefix Guest deny 10.1.103.0 24
+ip ip-prefix Guest deny 10.1.104.0 24
+ip ip-prefix Guest deny 10.1.105.0 24
+ip ip-prefix Guest deny 0.0.0.0 0 less-eq 32
+# 11-15, 21-25, 31-35, 41-45, 51-55, 60
+ip ip-prefix Employee deny 10.1.60.0 24
+ip ip-prefix Employee deny 10.1.11.0 24
+ip ip-prefix Employee deny 10.1.12.0 24
+ip ip-prefix Employee deny 10.1.13.0 24
+ip ip-prefix Employee deny 10.1.14.0 24
+ip ip-prefix Employee deny 10.1.15.0 24
+ip ip-prefix Employee deny 10.1.21.0 24
+ip ip-prefix Employee deny 10.1.22.0 24
+ip ip-prefix Employee deny 10.1.23.0 24
+ip ip-prefix Employee deny 10.1.24.0 24
+ip ip-prefix Employee deny 10.1.25.0 24
+ip ip-prefix Employee deny 10.1.31.0 24
+ip ip-prefix Employee deny 10.1.32.0 24
+ip ip-prefix Employee deny 10.1.33.0 24
+ip ip-prefix Employee deny 10.1.34.0 24
+ip ip-prefix Employee deny 10.1.35.0 24
+ip ip-prefix Employee deny 10.1.41.0 24
+ip ip-prefix Employee deny 10.1.42.0 24
+ip ip-prefix Employee deny 10.1.43.0 24
+ip ip-prefix Employee deny 10.1.44.0 24
+ip ip-prefix Employee deny 10.1.45.0 24
+ip ip-prefix Employee deny 10.1.51.0 24
+ip ip-prefix Employee deny 10.1.52.0 24
+ip ip-prefix Employee deny 10.1.53.0 24
+ip ip-prefix Employee deny 10.1.54.0 24
+ip ip-prefix Employee deny 10.1.55.0 24
+ip ip-prefix Employee deny 0.0.0.0 0 less-eq 32
+#
+ospf 1 router-id 10.1.0.3
 area 0.0.0.0
 network 10.1.0.3 0.0.0.0
 network 10.1.200.2 0.0.0.0
@@ -1356,7 +1464,7 @@ area 2
 filter ip-prefix Employee import
 network 10.1.200.17 0.0.0.0
 ospf 65001 router-id 10.1.0.4 vpn-instance Employee
-vpn-instance-capability simple // 关闭防环机制
+vpn-instance-capability simple
 silent-interface Vlanif51
 silent-interface Vlanif52
 silent-interface Vlanif53
@@ -1704,13 +1812,15 @@ if __name__ == &#39;__main__&#39;:
 </code></pre>
 <hr>
 <h2 id="网络八股文"><a href="#网络八股文" class="headerlink" title="网络八股文"></a>网络八股文</h2><h3 id="问题1-5’"><a href="#问题1-5’" class="headerlink" title="问题1 5’"></a>问题1 5’</h3><blockquote>
-<p>来自于外网的流量DDos 攻击等，可以通过FW 进行防御。来自于内部的流量，会有哪些?举出5 种内网攻击场景，并提供解决方案。(1 个场景1 分，5 个场景以上满分)</p>
+<p>来自于外网的流量DDos攻击等，可以通过FW进行防御。来自于内部的流量，会有哪些?举出5 种内网攻击场景，并提供解决方案。(1 个场景1 分，5 个场景以上满分)</p>
 </blockquote>
 <pre><code class="bash">答:
 DDoS 攻击是指攻击者通过控制大量的僵尸主机，向被攻击目标发送大量精心构造的攻击报文， 造成被攻击者所在网络的链路拥塞、系统资源耗尽，从而使被攻击者产生拒绝向正常用户的请求提供服务的效果。来自外网流量的DDoS 攻击等，可以使用防火墙进行防御，而来自内部的流量也往往存在很多攻击行为，以下是关于内网流量攻击以及相应解决方案:
 
 # 1、LAND 攻击
-LAND 攻击是攻击者利用TCP 连接三次握手机制中的缺陷，向目标主机发送一个源地址和目的地址均为目标主机、源端口和目的端口相同的SYN 报文，目标主机接收到该报文后，将创建一个源地址和目的地址均为自己的TCP 空连接，直至连接超时。在这种攻击方式下，目标主机将会创建大量无用的TCP空连接，耗费大量资源，直至设备瘫痪。攻击者利用这个攻击原理攻击重要节点的网络设备， 例如服务器的网关设备，这样会导致设备资源使用率过高，影响网络服务。解决方式:可以在网关设备上启用畸形报文攻击防范，启用该防范后，设备采用检测TCP SYN 报文的源地址和目的地址的方法来避免LAND 攻击。如果TCP SYN 报文中的源地址和目的地址一致，则认为是畸形报文攻击，丢弃该报文。
+LAND 攻击是攻击者利用TCP 连接三次握手机制中的缺陷，向目标主机发送一个源地址和目的地址均为目标主机、源端口和目的端口相同的SYN 报文，目标主机接收到该报文后，将创建一个源地址和目的地址均为自己的TCP 空连接，直至连接超时。在这种攻击方式下，目标主机将会创建大量无用的TCP空连接，耗费大量资源，直至设备瘫痪。攻击者利用这个攻击原理攻击重要节点的网络设备， 例如服务器的网关设备，这样会导致设备资源使用率过高，影响网络服务。
+# 解决方式:
+可以在网关设备上启用畸形报文攻击防范，启用该防范后，设备采用检测TCP SYN 报文的源地址和目的地址的方法来避免LAND 攻击。如果TCP SYN 报文中的源地址和目的地址一致，则认为是畸形报文攻击，丢弃该报文。
 
 # 2、TC-BPDU 攻击
 交换设备在接收到TC BPDU 报文后，会执行MAC 地址表项和ARP 表项的删除操作。攻击者利用该原理伪造TC BPDU 报文恶意攻击交换设备，短时间内产生大量的TC BPDU 报文，导致交换设备会收到很多TC BPDU 报文，频繁的删除操作会给设备造成很大的负担，导致设备资源使用率过高，影响网络质量，也给网络的稳定带来很大隐患。解决方式:在交换设备上启用防TC-BPDU 报文攻击，启用该功能后，在单位时间内，交换设备处理TC BPDU 报文的次数可配置。如果在单位时间内，交换设备在收到TC BPDU 报文数量大于配置的阈值，那么设备只会处理阈值指定的次数。对于其他超出阈值的TC BPDU 报文，定时器到期后设备只对其统一处理一次。这样可以避免频繁的删除MAC 地址表项和ARP 表项，从而达到保护设备的目的。
