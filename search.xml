@@ -4,6 +4,45 @@
   
     
     <entry>
+      <title>ESXI+ROS+WDS+MDT</title>
+      <link href="/2024/07/28/ESXI-ROS-WDS-MDT/"/>
+      <url>/2024/07/28/ESXI-ROS-WDS-MDT/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Windows10系统封装</title>
+      <link href="/2024/07/28/Windows10%E7%B3%BB%E7%BB%9F%E5%B0%81%E8%A3%85/"/>
+      <url>/2024/07/28/Windows10%E7%B3%BB%E7%BB%9F%E5%B0%81%E8%A3%85/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>RHCE9</title>
+      <link href="/2024/03/31/RHCE9/"/>
+      <url>/2024/03/31/RHCE9/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>HomeLab</title>
       <link href="/2024/02/03/HomeLab/"/>
       <url>/2024/02/03/HomeLab/</url>
@@ -206,11 +245,11 @@
             
             <tag> 路由协议 </tag>
             
+            <tag> ISIS </tag>
+            
             <tag> 动态路由协议 </tag>
             
             <tag> IGP </tag>
-            
-            <tag> ISIS </tag>
             
         </tags>
       
@@ -590,11 +629,11 @@
             
             <tag> 路由协议 </tag>
             
-            <tag> OSPF </tag>
-            
             <tag> 动态路由协议 </tag>
             
             <tag> IGP </tag>
+            
+            <tag> OSPF </tag>
             
         </tags>
       
@@ -1013,7 +1052,7 @@
       <link href="/2021/09/08/Harbor/"/>
       <url>/2021/09/08/Harbor/</url>
       
-        <content type="html"><![CDATA[<h1 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h1><p>harbor 是一个可以部署在本地的Docker仓库</p><h1 id="2-部署步骤"><a href="#2-部署步骤" class="headerlink" title="2. 部署步骤"></a>2. 部署步骤</h1><ol><li>下载harbor的tar包<a href="https://github.com/goharbor/harbor/releases">github链接</a></li><li>上传到Linux系统</li><li>解压 <code>tar -zxvf harbor-xxx.tar</code></li><li>移动harbor <code>mv harbor /usr/local</code></li><li>生成openssl证书: <code>openssl genrsa -des3 -out server.key 2048</code>(密码123456)</li><li>创建证书请求：<code>openssl req -new -key server.key -out server.csr</code>(密码:123456, 国家：CN, 省会:GD, 市:ZJ, 机构:XJ, 单位：XJ，域名 hub.xj.com, 邮箱: <a href="mailto:&#104;&#x6a;&#120;&#x73;&#116;&#97;&#114;&#116;&#x40;&#x31;&#x32;&#x36;&#46;&#x63;&#111;&#109;">&#104;&#x6a;&#120;&#x73;&#116;&#97;&#114;&#116;&#x40;&#x31;&#x32;&#x36;&#46;&#x63;&#111;&#109;</a>, 密码：123456,公司名字:XJ).中途输入错误可以<code>Ctr+C</code>退出.</li><li>复制文件：cp server.key server.key.org</li><li>取消密码认证：<code>openssl rsa -in server.key.org -out server.key</code>(密码123456)</li><li>创建证书（类型:x509,有效期：365天）：<code>openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt</code></li><li>创建相应文件:<code>mkdir -p /data/cert</code></li><li>移动证书相关文件:<code>mv server.* /data/cert</code></li><li>修改<code>barbor配置文件</code>的<code>hostname(hub.xj.com) 和 https(certificate: server.crt; private_key: server.key)</code></li><li>运行prepare文件:<code>./prepare</code></li><li>安装harbor: <code>./install.sh</code></li><li>修改镜像仓库地址: <code>vi /etc/docker/daemon.json</code> <code>hub.xj.com</code></li><li>重启docker: <code>systemctl restart docker</code></li><li>harbor的使用</li></ol><pre><code class="bash">docker tag nginx:latest hub.xj.com/harborProject/nginx:v1</code></pre><pre><code class="bash">docker push </code></pre><h2 id="Harbor部署"><a href="#Harbor部署" class="headerlink" title="Harbor部署"></a>Harbor部署</h2><h3 id="1-环境说明"><a href="#1-环境说明" class="headerlink" title="1. 环境说明"></a>1. 环境说明</h3><ol><li>系统版本Centos7.9最小安装</li><li>使用二进制安装k8s<a href="https://www.toutiao.com/a6935437095985054219/?log_from=7099e5155a92b_1631092889404">链接</a></li></ol><h3 id="2-安装步骤"><a href="#2-安装步骤" class="headerlink" title="2. 安装步骤"></a>2. 安装步骤</h3><ol><li>创建目录及下载harbor离线包</li></ol><pre><code># 创建并进入相应目录mkdir /data &amp;&amp; cd /data# 下载离线包，也可以直接通过连接下载wget https://github.com/goharbor/harbor/releases/download/v2.2.0/harbor-offline-installer-v2.2.0.tgz# 解压并删除离线包tar xf harbor-offline-installer-v2.2.0.tgz &amp;&amp; rm harbor-offline-installer-v2.2.0.tgz</code></pre><ol start="2"><li>修改harbro配置</li></ol><pre><code># 进入harbor目录cd harbor# 负责harbor配置文件cp harbor.yml.tmpl harbor.yml# 修改harbor配置vi harbor.yml    5 hostname: harbor.xj.com    17   certificate: /data/harbor/ssl/tls.cert    18   private_key: /data/harbor/ssl/tls.key    34 harbor_admin_password: boge666</code></pre><ol start="3"><li>创建harbor访问域名证书</li></ol><pre><code>mkdir /data/harbor/ssl &amp;&amp; cd /data/harbor/sslopenssl genrsa -out tls.key 2048openssl req -new -x509 -key tls.key -out tls.cert -days 360 -subj /CN=*.xj.com</code></pre><ol start="4"><li>准备好单机编排工具<code>docker-compose</code></li></ol><pre><code>&gt; 从二进制安装k8s项目的bin目录拷贝过来scp /etc/kubeasz/bin/docker-compose 192.168.18.200:/usr/bin/&gt; 也可以在docker官方进行下载https://docs.docker.com/compose/install/</code></pre><ol start="5"><li>开始安装</li></ol><pre><code># 回到harbor目录cd /data/harbor# 安装harbor./install.sh# 安装成功后可以配置hosts文件进行域名访问了</code></pre><ol start="6"><li>推送镜像到harbor</li></ol><pre><code># 添加hosts文件echo &#39;192.168.18.200 harbor.xj.com&#39; &gt;&gt; /etc/hosts# 登录docker login harbor.xj.com# 打标签docker tag nginx:latest  harbor.xj.com/library/nginx:latest# 推送镜像到harbordocker push harbor.boge.com/library/nginx:1.18.0-alpine# 登出docker logout harbor.xj.com# 查看登录信息，不退出会存在隐患cat ~/.docker/config.json</code></pre><ol start="7"><li>在其他节点上面拉取harbor镜像</li></ol><pre><code>&gt; 在集群每个 node 节点进行如下配置&gt; ssh to 192.168.18.199(centos7)mkdir -p /etc/docker/certs.d/harbor.xj.comscp 192.168.18.200:/data/harbor/ssl/tls.cert /etc/docker/certs.d/harbor.xj.com/ca.crt</code></pre>]]></content>
+        <content type="html"><![CDATA[<h1 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h1><p>harbor 是一个可以部署在本地的Docker仓库</p><h1 id="2-部署步骤"><a href="#2-部署步骤" class="headerlink" title="2. 部署步骤"></a>2. 部署步骤</h1><ol><li>下载harbor的tar包<a href="https://github.com/goharbor/harbor/releases">github链接</a></li><li>上传到Linux系统</li><li>解压 <code>tar -zxvf harbor-xxx.tar</code></li><li>移动harbor <code>mv harbor /usr/local</code></li><li>生成openssl证书: <code>openssl genrsa -des3 -out server.key 2048</code>(密码123456)</li><li>创建证书请求：<code>openssl req -new -key server.key -out server.csr</code>(密码:123456, 国家：CN, 省会:GD, 市:ZJ, 机构:XJ, 单位：XJ，域名 hub.xj.com, 邮箱: <a href="mailto:&#x68;&#x6a;&#x78;&#x73;&#x74;&#97;&#114;&#116;&#x40;&#49;&#x32;&#54;&#46;&#x63;&#x6f;&#109;">&#x68;&#x6a;&#x78;&#x73;&#x74;&#97;&#114;&#116;&#x40;&#49;&#x32;&#54;&#46;&#x63;&#x6f;&#109;</a>, 密码：123456,公司名字:XJ).中途输入错误可以<code>Ctr+C</code>退出.</li><li>复制文件：cp server.key server.key.org</li><li>取消密码认证：<code>openssl rsa -in server.key.org -out server.key</code>(密码123456)</li><li>创建证书（类型:x509,有效期：365天）：<code>openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt</code></li><li>创建相应文件:<code>mkdir -p /data/cert</code></li><li>移动证书相关文件:<code>mv server.* /data/cert</code></li><li>修改<code>barbor配置文件</code>的<code>hostname(hub.xj.com) 和 https(certificate: server.crt; private_key: server.key)</code></li><li>运行prepare文件:<code>./prepare</code></li><li>安装harbor: <code>./install.sh</code></li><li>修改镜像仓库地址: <code>vi /etc/docker/daemon.json</code> <code>hub.xj.com</code></li><li>重启docker: <code>systemctl restart docker</code></li><li>harbor的使用</li></ol><pre><code class="bash">docker tag nginx:latest hub.xj.com/harborProject/nginx:v1</code></pre><pre><code class="bash">docker push </code></pre><h2 id="Harbor部署"><a href="#Harbor部署" class="headerlink" title="Harbor部署"></a>Harbor部署</h2><h3 id="1-环境说明"><a href="#1-环境说明" class="headerlink" title="1. 环境说明"></a>1. 环境说明</h3><ol><li>系统版本Centos7.9最小安装</li><li>使用二进制安装k8s<a href="https://www.toutiao.com/a6935437095985054219/?log_from=7099e5155a92b_1631092889404">链接</a></li></ol><h3 id="2-安装步骤"><a href="#2-安装步骤" class="headerlink" title="2. 安装步骤"></a>2. 安装步骤</h3><ol><li>创建目录及下载harbor离线包</li></ol><pre><code># 创建并进入相应目录mkdir /data &amp;&amp; cd /data# 下载离线包，也可以直接通过连接下载wget https://github.com/goharbor/harbor/releases/download/v2.2.0/harbor-offline-installer-v2.2.0.tgz# 解压并删除离线包tar xf harbor-offline-installer-v2.2.0.tgz &amp;&amp; rm harbor-offline-installer-v2.2.0.tgz</code></pre><ol start="2"><li>修改harbro配置</li></ol><pre><code># 进入harbor目录cd harbor# 负责harbor配置文件cp harbor.yml.tmpl harbor.yml# 修改harbor配置vi harbor.yml    5 hostname: harbor.xj.com    17   certificate: /data/harbor/ssl/tls.cert    18   private_key: /data/harbor/ssl/tls.key    34 harbor_admin_password: boge666</code></pre><ol start="3"><li>创建harbor访问域名证书</li></ol><pre><code>mkdir /data/harbor/ssl &amp;&amp; cd /data/harbor/sslopenssl genrsa -out tls.key 2048openssl req -new -x509 -key tls.key -out tls.cert -days 360 -subj /CN=*.xj.com</code></pre><ol start="4"><li>准备好单机编排工具<code>docker-compose</code></li></ol><pre><code>&gt; 从二进制安装k8s项目的bin目录拷贝过来scp /etc/kubeasz/bin/docker-compose 192.168.18.200:/usr/bin/&gt; 也可以在docker官方进行下载https://docs.docker.com/compose/install/</code></pre><ol start="5"><li>开始安装</li></ol><pre><code># 回到harbor目录cd /data/harbor# 安装harbor./install.sh# 安装成功后可以配置hosts文件进行域名访问了</code></pre><ol start="6"><li>推送镜像到harbor</li></ol><pre><code># 添加hosts文件echo &#39;192.168.18.200 harbor.xj.com&#39; &gt;&gt; /etc/hosts# 登录docker login harbor.xj.com# 打标签docker tag nginx:latest  harbor.xj.com/library/nginx:latest# 推送镜像到harbordocker push harbor.boge.com/library/nginx:1.18.0-alpine# 登出docker logout harbor.xj.com# 查看登录信息，不退出会存在隐患cat ~/.docker/config.json</code></pre><ol start="7"><li>在其他节点上面拉取harbor镜像</li></ol><pre><code>&gt; 在集群每个 node 节点进行如下配置&gt; ssh to 192.168.18.199(centos7)mkdir -p /etc/docker/certs.d/harbor.xj.comscp 192.168.18.200:/data/harbor/ssl/tls.cert /etc/docker/certs.d/harbor.xj.com/ca.crt</code></pre>]]></content>
       
       
       <categories>
