@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>思科NP网络实验 | 黄金贤的博客</title>
-  <meta name="keywords" content=" 思科网络实验 , Cisco ">
-  <meta name="description" content="思科NP网络实验 | 黄金贤的博客">
+  <title>HCIE-Datacom实验 | 黄金贤的博客</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="HCIE-Datacom实验 | 黄金贤的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="LAB 备考过程与考试内容分析联系阶段和安排 【150 分钟】ENSP X 园区 与 Z 骨干网 MPLS 备考阶段 150 分钟达标 【90 分钟】Python 和 论述开始背诵 【80 分钟】模拟 Y 部分备考阶段 【90、90、60 分钟】分段练习，四阶段后每位同学练习，必须进入腾讯会员，并分享桌面 【6 小时】MPLS 全套模拟阶段 【90 分钟】SRv6 单独备考阶段  安装环境 ENS">
 <meta property="og:type" content="article">
@@ -1100,41 +1100,24 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-思科NP网络实验" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-HCIE-Datacom实验" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">思科NP网络实验</h1>
+        <h1 class="article-title">HCIE-Datacom实验</h1>
     
     <div class="article-meta">
         
         
         
-        <span class="book">
-            <i class="iconfont icon-category"></i>
-            
-            
-            <a  data-rel="网络">网络</a>
-            
-        </span>
-        
-        
-        <span class="tag">
-            <i class="iconfont icon-tag"></i>
-            
-            <a class="color2">思科网络实验</a>
-            
-            <a class="color1">Cisco</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-07-28 22:02:48'>2023-06-01 10:46</time>
+            发布时间 : <time class="date" title='最后更新: 2024-08-01 21:39:47'>2024-07-29 21:21</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:1.2k</span>
+        <span>字数:1.9k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1153,7 +1136,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E7%9A%84-SLA-%E5%AE%9E%E9%AA%8C"><span class="toc-text">简单的 SLA 实验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SLA-%E5%92%8C%E8%B7%AF%E7%94%B1%E9%80%92%E5%BD%92%E6%9F%A5%E8%AF%A2"><span class="toc-text">SLA 和路由递归查询</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE"><span class="toc-text">动态路由协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%A8%A1%E6%9D%BF"><span class="toc-text">实验模板</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#LAB-%E5%A4%87%E8%80%83%E8%BF%87%E7%A8%8B%E4%B8%8E%E8%80%83%E8%AF%95%E5%86%85%E5%AE%B9%E5%88%86%E6%9E%90"><span class="toc-text">LAB 备考过程与考试内容分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%81%94%E7%B3%BB%E9%98%B6%E6%AE%B5%E5%92%8C%E5%AE%89%E6%8E%92"><span class="toc-text">联系阶段和安排</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83"><span class="toc-text">安装环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#X-Y"><span class="toc-text">X + Y</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1169,326 +1152,328 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="简单的-SLA-实验"><a href="#简单的-SLA-实验" class="headerlink" title="简单的 SLA 实验"></a>简单的 SLA 实验</h2><p>使用 SLA 检测主链路的连接状态，实现主备链路的动态切换功能。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202306111953555.png" alt="实验拓扑"></p>
-<details>
-  <summary>配置概述</summary>
+        <h1 id="LAB-备考过程与考试内容分析"><a href="#LAB-备考过程与考试内容分析" class="headerlink" title="LAB 备考过程与考试内容分析"></a>LAB 备考过程与考试内容分析</h1><h2 id="联系阶段和安排"><a href="#联系阶段和安排" class="headerlink" title="联系阶段和安排"></a>联系阶段和安排</h2><ol>
+<li>【150 分钟】ENSP X 园区 与 Z 骨干网 MPLS 备考阶段 150 分钟达标</li>
+<li>【90 分钟】Python 和 论述开始背诵</li>
+<li>【80 分钟】模拟 Y 部分备考阶段</li>
+<li>【90、90、60 分钟】分段练习，四阶段后每位同学练习，必须进入腾讯会员，并分享桌面</li>
+<li>【6 小时】MPLS 全套模拟阶段</li>
+<li>【90 分钟】SRv6 单独备考阶段</li>
+</ol>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><ol>
+<li><p>ENSP</p>
+</li>
+<li><p>MobaXterm</p>
+</li>
+<li><p>FC</p>
+</li>
+</ol>
+<h2 id="X-Y"><a href="#X-Y" class="headerlink" title="X + Y"></a>X + Y</h2><pre><code class="shell"># AC
+user-interface console 0
+idle 0 0
+set authentication-mode password cipher Huawei@123
+return
+quit
+# Core
+dhcp enable
+vlan batch 51 to 55 100 to 105 201 to 209
+int eth2
+mode lacp
+trunkport g 0/0/9 to 0/0/10
+port link-type trunk
+port trunk allow-pass vlan 100 209
+# X_T2_AGG1
+dhcp enable
+vlan batch 31 to 35 41 to 45 100
+int eth1
+mode lacp
+trunkport g 0/0/5 to 0/0/6
+port link-type trunk
+port trunk allow-pass vlan 100 209
+int eth2
+mode lacp
+trunkport g 0/0/1 to 0/0/2
+port hybrid tagged vlan 31 to 35 41 to 45 100
+int eth3
+mode lacp
+trunkport g 0/0/3 to 0/0/4
+port hybrid tagged vlan 31 to 35 41 to 45 100
+int vlanif 209
+ip add 10.1.200.34 20
+int vlanif 31
+ip add 10.1.31.254 24
+dhcp select relay
+dhcp relay server-ip 10.1.200.33
+int vlanif 32
+ip add 10.1.32.254 24
+dhcp select relay
+dhcp relay server-ip 10.1.200.33
+int vlanif 33
+ip add 10.1.33.254 24
+dhcp select relay
+dhcp relay server-ip 10.1.200.33
+int vlanif 34
+ip add 10.1.34.254 24
+dhcp select relay
+dhcp relay server-ip 10.1.200.33
+int vlanif 35
+ip add 10.1.35.254 24
+dhcp select relay
+dhcp relay server-ip 10.1.200.33
+int vlanif 41
+ip add 10.1.41.254 24
+dhcp select relay
+dhcp relay server-ip 10.1.200.33
+int vlanif 42
+ip add 10.1.42.254 24
+dhcp select relay
+dhcp relay server-ip 10.1.200.33
+int vlanif 43
+ip add 10.1.43.254 24
+dhcp select relay
+dhcp relay server-ip 10.1.200.33
+int vlanif 44
+ip add 10.1.44.254 24
+dhcp select relay
+dhcp relay server-ip 10.1.200.33
+int vlanif 45
+ip add 10.1.45.254 24
+dhcp select relay
+dhcp relay server-ip 10.1.200.33
+# X_T2_ACC1
+vlan batch 31 to 35 41 to 45 100
+int eth1
+mode lacp
+trunkport g 0/0/23 to 0/0/24
+port link-type trunk
+port trunk allow-pass vlan 31 to 35 41 to 45 100
+# X_T2_ACC2
+vlan batch g 0/0/23 to 0/0/24
+int eth1
+mode lacp
+trunkport g 0/0/23 to 0/0/24
+port link-type trunk
+port trunk allow-pass vlan 31 to 35 41 to 45 100
+int g0/0/22
+port link-type access
+port default vlan 100
+# X_T1_CORE
+ip vpn-instance Employee
+route-distinguisher 65001:1
+quit
+ip vpn-instance Guest
+route-distinguisher 65001:2
+quit
+int g0/0/2
+port link-type access
+port default vlan 202
+int g0/0/3
+port trunk allow-pass vlan 51 to 55 101 to 105
+int g0/0/4
+port link-type trunk
+port trunk allow-pass vlan 204 205
+undo port trunk allow-pass vlan 1
+int g0/0/5
+port link-type trunk
+port trunk allow-pass vlan 206 207
+undo port trunk allow-pass vlan 1
+int g0/0/6
+port link-type access
+port default vlan 60
+int vlanif 202
+ip add 10.1.200.6 30
+int vlanif 204
+ip add 10.1.200.13 30
+int vlanif 205
+ip add 10.1.200.17 30
+int vlanif 206
+ip binding vpn-instance Employee
+ip add 10.1.200.21 30
+int vlanif 207
+ip binding vpn-instance Guest
+ip add 10.1.200.25 30
+int vlanif 208
+ip binding vpn-instance Employee
+ip add 10.1.200.29 30
+dhcp select global
+int vlanif 209
+ip binding vpn-instance Employee
+ip add 10.1.200.33 30
+dhcp select global
+int vlanif 60
+ip binding vpn-instance Employee
+ip add 10.1.60.254 24
+int vlanif 51
+ip binding vpn-instance Employee
+ip add 10.1.51.254 24
+dhcp select global
+int vlanif 52
+ip binding vpn-instance Employee
+ip add 10.1.52.254 24
+dhcp select global
+int vlanif 53
+ip binding vpn-instance Employee
+ip add 10.1.53.254 24
+dhcp select global
+int vlanif 54
+ip binding vpn-instance Employee
+ip add 10.1.54.254 24
+dhcp select global
+int vlanif 55
+ip binding vpn-instance Employee
+ip add 10.1.55.254 24
+dhcp select global
+int vlanif 101
+ip binding vpn-instance Guest
+ip add 10.1.101.254 24
+dhcp select global
+int vlanif 102
+ip binding vpn-instance Guest
+ip add 10.1.102.254 24
+dhcp select global
+int vlanif 103
+ip binding vpn-instance Guest
+ip add 10.1.103.254 24
+dhcp select global
+int vlanif 104
+ip binding vpn-instance Guest
+ip add 10.1.104.254 24
+dhcp select global
+int vlanif 105
+ip binding vpn-instance Guest
+ip add 10.1.105.254 24
+dhcp select global
+quit
+dis cur config ip-pool
+vpn-instance Employee XXX Guest
+ip ip-prefix Guest deny 10.1.101.0 24
+ip ip-prefix Guest deny 10.1.102.0 24
+ip ip-prefix Guest deny 10.1.103.0 24
+ip ip-prefix Guest deny 10.1.104.0 24
+ip ip-prefix Guest deny 10.1.105.0 24
+ip ip-prefix Guest permit 0.0.0.0 0 less-equal 32
+ip ip-prefix Employee deny 10.1.11.0 24
+ip ip-prefix Employee deny 10.1.12.0 24
+ip ip-prefix Employee deny 10.1.13.0 24
+ip ip-prefix Employee deny 10.1.14.0 24
+ip ip-prefix Employee deny 10.1.15.0 24
+ip ip-prefix Employee deny 10.1.21.0 24
+ip ip-prefix Employee deny 10.1.22.0 24
+ip ip-prefix Employee deny 10.1.23.0 24
+ip ip-prefix Employee deny 10.1.24.0 24
+ip ip-prefix Employee deny 10.1.25.0 24
+ip ip-prefix Employee deny 10.1.31.0 24
+ip ip-prefix Employee deny 10.1.32.0 24
+ip ip-prefix Employee deny 10.1.33.0 24
+ip ip-prefix Employee deny 10.1.34.0 24
+ip ip-prefix Employee deny 10.1.35.0 24
+ip ip-prefix Employee deny 10.1.41.0 24
+ip ip-prefix Employee deny 10.1.42.0 24
+ip ip-prefix Employee deny 10.1.43.0 24
+ip ip-prefix Employee deny 10.1.44.0 24
+ip ip-prefix Employee deny 10.1.45.0 24
+ip ip-prefix Employee deny 10.1.51.0 24
+ip ip-prefix Employee deny 10.1.52.0 24
+ip ip-prefix Employee deny 10.1.53.0 24
+ip ip-prefix Employee deny 10.1.54.0 24
+ip ip-prefix Employee deny 10.1.55.0 24
+ip ip-prefix Employee deny 10.1.60.0 24
+ip ip-prefix Employee permit 0.0.0.0 0 less-equal 32
+dis cur | include prefix
+# X_T1_AGG1
+dhcp enable
+vlan batch 11 to 15 21 to 25 100
+int eth2
+undo port trunk allow-pass vlan 100
+undo port link-type
+port hybrid tagged vlan 11 to 15 21 to 25 100
+itn eth3
+undo port link-type
+port hybrid tagged vlan 11 to 15 21 to 25 100
+int vlanif 11
+ip add 10.1.11.254 24
+dhcp select relay
+dhcp relay server-ip 10.1.200.29
+int vlanif 12
+ip add 10.1.12.254 24
+dhcp select relay
+dhcp relay server-ip 10.1.200.29
+int vlanif 13
+ip add 10.1.13.254 24
+dhcp select relay
+dhcp relay server-ip 10.1.200.29
+int vlanif 14
+ip add 10.1.14.254 24
+dhcp select relay
+dhcp relay server-ip 10.1.200.29
+int vlanif 15
+ip add 10.1.15.254 24
+dhcp select relay
+dhcp relay server-ip 10.1.200.29
+int vlanif 21
+ip add 10.1.21.254 24
+dhcp select relay
+dhcp relay server-ip 10.1.200.29
+int vlanif 22
+ip add 10.1.22.254 24
+dhcp select relay
+dhcp relay server-ip 10.1.200.29
+int vlanif 23
+ip add 10.1.23.254 24
+dhcp select relay
+dhcp relay server-ip 10.1.200.29
+int vlanif 24
+ip add 10.1.24.254 24
+dhcp select relay
+dhcp relay server-ip 10.1.200.29
+int vlanif 25
+ip add 10.1.25.254 24
+dhcp select relay
+dhcp relay server-ip 10.1.200.29
+# X_T1_ACC1
+vlan batch 11 to 15 21 to 25 100
+int eth1
+port trunk allow-pass vlan 11 to 15 21 to 25 100
+# X_T1_ACC2
+vlan batch 11 to 15 21 to 25 100
+int eth1
+port trunk allow-pass vlan 11 to 15 21 to 25 100
+# X_T1_Export1
+ip route-static 0.0.0.0 0 g0/0/0 10.255.1.254
+ip route-static 0.0.0.0 0 g0/0/0 10.255.2.254
+acl 2000
+undo rule 5
+rule permit source 10.1.11.0 0.0.0.255
+rule permit source 10.1.12.0 0.0.0.255
+rule permit source 10.1.13.0 0.0.0.255
+rule permit source 10.1.14.0 0.0.0.255
+rule permit source 10.1.15.0 0.0.0.255
+rule permit source 10.1.21.0 0.0.0.255
+rule permit source 10.1.22.0 0.0.0.255
+rule permit source 10.1.23.0 0.0.0.255
+rule permit source 10.1.24.0 0.0.0.255
+rule permit source 10.1.25.0 0.0.0.255
+rule permit source 10.1.51.0 0.0.0.255
+rule permit source 10.1.52.0 0.0.0.255
+rule permit source 10.1.53.0 0.0.0.255
+rule permit source 10.1.54.0 0.0.0.255
+rule permit source 10.1.55.0 0.0.0.255
+rule permit source 10.1.101.0 0.0.0.255
+rule permit source 10.1.102.0 0.0.0.255
+rule permit source 10.1.103.0 0.0.0.255
+rule permit source 10.1.104.0 0.0.0.255
+rule permit source 10.1.105.0 0.0.0.255
+quit
+ospf 1 router-id 10.1.0.1
+default-route-advertise
+area 0
+network 10.1.0.1 0.0.0.0
+network 10.1.200.1 0.0.0.0
+quit
+# X_T2_Export2
 
-<pre><code class="bash">1. 配置接口IP
-2. 配置除目标网络的主备路由的其他路由信息
-3. 配置SLA
-4. 配置Track 23 ip sla 23
-5. 配置主静态路由tarck 23
-6. 配置备份静态路由 permanent
+
 </code></pre>
-</details>
-
-<details>
-  <summary>R1</summary>
-
-<pre><code class="bash">&gt;
-enable
-#
-configure terminal
-hostname R1
-##
-interface ethernet 0/0
-ip address 12.1.1.1 255.255.255.0
-no shutdown
-exit
-#
-interface ethernet 0/1
-ip address 13.1.1.1 255.255.255.0
-no shutdown
-exit
-#
-ip route 2.2.2.2 255.255.255.255 ethernet 0/0 12.1.1.2
-ip route 3.3.3.3 255.255.255.255 ethernet 0/1 13.1.1.3
-</code></pre>
-</details>
-
-<details>
-  <summary>R2</summary>
-
-<pre><code class="bash">&gt;
-enable
-#
-configure terminal
-hostname R2
-#
-interface ethernet 0/0
-ip address 12.1.1.2 255.255.255.0
-no shutdown
-exit
-#
-interface ethernet 0/1
-ip address 23.1.1.2 255.255.255.0
-no shutdown
-exit
-#
-interface loopback 0
-ip address 2.2.2.2 255.255.255.255
-exit
-#
-ip route 13.1.1.0 255.255.255.0 ethernet 0/0 12.1.1.1
-ip route 3.3.3.0 255.255.255.0 etheret 0/1 23.1.1.3 permanent
-#
-ip sla 23
-icmp-echo 13.1.1.3 source 12.1.1.2
-frequency 5
-threshold 1000
-timeout 2000
-exit
-#
-ip sla schedule 23 start-time now life forever
-track 23 ip sla 23 reachability
-exit
-#
-ip route 3.3.3.3 255.255.255.255 ethernet 0/0 12.1.1.1 track 23
-</code></pre>
-</details>
-
-<details>
-  <summary>R3</summary>
-
-<pre><code class="bash">&gt;
-enable
-#
-configure terminal
-hostname R3
-#
-interface ethernet 0/0
-ip address 13.1.1.3 255.255.255.0
-no shutdown
-exit
-#
-interface ethernet 0/1
-ip address 23.1.1.3 255.255.255.0
-no shutdown
-exit
-#
-interface loopback 0
-ip address 3.3.3.3 255.255.255.255
-exit
-#
-ip route 12.1.1.2 255.255.255.255 ethernet 0/0 13.1.1.1
-ip route 2.2..2.0 255.255.255.0 ethernet 0/1 23.1.1.2 permanent
-#
-ip sla 23
-icmp-echo 12.1.1.2 source-ip 13.1.1.3
-frequency 5
-threshold 1000
-timeout 2000
-exit
-#
-ip sla schedule 23 start-time now life forever
-track 23 ip sla 23 reachability
-exit
-#
-ip route 2.2.2.2 255.255.255.255 ethernet 0/0 13.1.1.1 track 23
-</code></pre>
-</details>
-
-<details>
-  <summary>测试验证</summary>
-
-<pre><code class="shell"># tarcert
-traceroute 3.3.3.3 source 2.2.2.2 numeric
-# ping
-ping 3.3.3.3 source 2.2.2.2 repeat 10000
-# show
-show ip sla statistics
-show run | section track
-</code></pre>
-</details>
-
-<hr>
-<h2 id="SLA-和路由递归查询"><a href="#SLA-和路由递归查询" class="headerlink" title="SLA 和路由递归查询"></a>SLA 和路由递归查询</h2><p>路由递归查询的场景；静态路由联动 SLA 检测工具实现自动化切换；路由非直连下一跳与递归的应用。<br>若 R2 去往 R3 背后的 100 个网络，有 R1(主)和 R4(备)的 2 条路径，可使用递归查询的方式，只需要在 R2 上面写 100 条路由下一跳为 R3 e0&#x2F;1 的递归路由和 2 条主备路由即可，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202306112037348.png" alt="实验拓扑"></p>
-<details>
-  <summary>配置概述</summary>
-
-<pre><code class="bash">1. 配置接口IP和环回地址
-2. 配置去往R3背后网络的静态路由(不可以配置出接口)
-3. 配置备份路径的静态路由，修改管理距离为10
-4. 配置SLA,SLA的检查路径1= R2 0/0 到 R1 e0/1, 路径2= R3 0/1 到 R1 e0/0
-5. 配置track 23 ip sla 23
-6. 配置主路径的静态路由 track
-# 配置非直连下一跳的静态路由的时候不要携带出接口信息
-</code></pre>
-</details>
-
-<details>
-  <summary>R1</summary>
-
-<pre><code class="bash">&gt;
-enable
-#
-configure terminal
-hostname R1
-#
-interface ethernet 0/0
-ip address 124.1.1.1 255.255.255.0
-no shutdown
-#
-interface ethernet 0/1
-ip address 134.1.1.1 255.255.255.0
-no shutdown
-exit
-#
-ip route 2.2.2.2 255.255.255.255 ethernet 0/0 124.1.1.2
-ip route 3.3.3.3 255.255.255.255 ethernet 0/1 134.1.1.3
-#
-</code></pre>
-</details>
-
-<details>
-  <summary>R2</summary>
-
-<pre><code class="bash">&gt;
-enable
-#
-configure terminal
-hostname R2
-#
-interface ethernet 0/0
-ip address 124.1.1.2 255.255.255.0
-no shutdown
-#
-interface loopback 0
-ip address 2.2.2.2 255.255.255.255
-exit
-#
-ip route 3.3.3.3 255.255.255.255 134.1.1.3
-ip route 134.1.1.0 255.255.255.0 ethernet 0/0 124.1.1.4
-#
-ip sla 2011
-icmp-echo 134.1.1.1 source-ip 124.1.1.2
-frequency 5
-threshold 1000
-timeout 2000
-exit
-ip sla schedule 2011 start-time now life forever
-track 21 ip sla 2011 reachability
-exit
-ip route 134.1.1.3 255.255.255.255 ethernet 0/0 124.1.1.1 track 21
-#
-</code></pre>
-</details>
-
-<details>
-  <summary>R3</summary>
-
-<pre><code class="bash">&gt;
-enable
-#
-configure terminal
-hostname R3
-#
-interface ethernet 0/0
-ip address 124.1.1.4 255.255.255.0
-no shutdown
-#
-interface ehternet 0/1
-ip address 134.1.1.4 255.255.255.0
-no shutdown
-#
-ip route 2.2.2.2 255.255.255.255 ethernet 0/0 124.1.1.2
-ip route 3.3.3.3 255.255.255.255 ethernet 0/1 134.1.1.3
-#
-ip sla 3010
-icmp-echo 124.1.1.1 source-ip 134.1.1.3
-frequency 5
-threshold 1000
-timeout 2000
-exit
-ip sla schedule 3010 start-time now life forever
-track 31 ip sla 3010 reachability
-exit
-ip route 124.1.1.2 255.255.255.255 ethernet 0/0 134.1.1.1 track 31
-</code></pre>
-</details>
-
-<details>
-  <summary>R4</summary>
-
-<pre><code class="bash">&gt;
-enable
-#
-configure terminal
-hostname R4
-#
-interface ethernet 0/0
-ip address 134.1.1.3 255.255.255.255
-no shutdown
-#
-interface loopback 0
-ip address 3.3.3.3.3 255.255.255.255
-exit
-#
-ip route 2.2.2.2 255.255.255.255 124.1.1.2
-ip route 124.1.1.0 255.255.255.0 ethernet 0/0 134.1.1.4
-#
-</code></pre>
-</details>
-
-<details>
-  <summary>测试验证</summary>
-
-<pre><code class="shell">show ip sla sta
-show ip sla sum
-</code></pre>
-</details>
-
-<hr>
-<h2 id="动态路由协议"><a href="#动态路由协议" class="headerlink" title="动态路由协议"></a>动态路由协议</h2><p>实验概述。</p>
-<p><img src="/" alt="实验拓扑"></p>
-<details>
-  <summary>配置概述</summary>
-
-<pre><code class="bash">1.
-</code></pre>
-</details>
-
-<details>
-  <summary>R1</summary>
-
-<pre><code class="bash">#
-enable
-configure terminal
-hostname R1
-</code></pre>
-</details>
-
-<details>
-  <summary>测试验证</summary>
-
-</details>
-
-<hr>
-<h2 id="实验模板"><a href="#实验模板" class="headerlink" title="实验模板"></a>实验模板</h2><p>实验概述。</p>
-<p><img src="/" alt="实验拓扑"></p>
-<details>
-  <summary>配置概述</summary>
-
-<pre><code class="bash">1.
-</code></pre>
-</details>
-
-<details>
-  <summary>R1</summary>
-
-<pre><code class="bash">#
-enable
-configure terminal
-hostname R1
-</code></pre>
-</details>
-
-<details>
-  <summary>测试验证</summary>
-
-</details>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 hjxstart@126.com </span>
