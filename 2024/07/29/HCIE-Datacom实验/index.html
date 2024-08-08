@@ -14,7 +14,7 @@
 <meta property="og:description" content="LAB 备考过程与考试内容分析联系阶段和安排 【150 分钟】ENSP X 园区 与 Z 骨干网 MPLS 备考阶段 150 分钟达标 【90 分钟】Python 和 论述开始背诵 【80 分钟】模拟 Y 部分备考阶段 【90、90、60 分钟】分段练习，四阶段后每位同学练习，必须进入腾讯会员，并分享桌面 【6 小时】MPLS 全套模拟阶段 【90 分钟】SRv6 单独备考阶段  安装环境 ENS">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-07-29T13:21:11.000Z">
-<meta property="article:modified_time" content="2024-08-07T14:13:46.648Z">
+<meta property="article:modified_time" content="2024-08-08T14:01:18.627Z">
 <meta property="article:author" content="黄金贤">
 <meta property="article:tag" content="计算机网络 数据库 操作系统 数据结构 算法 Java Nodejs">
 <meta name="twitter:card" content="summary">
@@ -250,7 +250,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="75">
-<input type="hidden" id="yelog_site_word_count" value="82.9k">
+<input type="hidden" id="yelog_site_word_count" value="83k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1112,12 +1112,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-08-07 22:13:46'>2024-07-29 21:21</time>
+            发布时间 : <time class="date" title='最后更新: 2024-08-08 22:01:18'>2024-07-29 21:21</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:4k</span>
+        <span>字数:4.1k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1202,7 +1202,7 @@ quit
 
 ## 1.7.4 配置内部 WEB 服务器流量重定向
 acl 3001
- rule permit ip source 10.1.60.101 source-port eq 80 destination any
+ rule permit ip source 10.1.60.101 0 source-port eq 80 destination any # TODO source-port eq 80
  quit
 #
 </code></pre>
@@ -1254,7 +1254,7 @@ nat server protocol tcp global current-interface 8081 inside 10.1.60.101 www
 
 ## 1.7.4 配置内部 WEB 服务器流量重定向
 acl 3001
- rule permit ip source 10.1.60.101 source-port eq 80 destination any
+ rule permit ip source 10.1.60.101 0 source-port eq 80 destination any
  quit
 traffic classifier web operator or
  if-match acl 3001
@@ -1895,7 +1895,40 @@ display ip routing-table vpn-instance Guest
 display ip routing-table
 </code></pre>
 <hr>
-<h2 id="无线和防火墙-X园区测试-58‘"><a href="#无线和防火墙-X园区测试-58‘" class="headerlink" title="无线和防火墙(X园区测试) 58‘"></a>无线和防火墙(X园区测试) 58‘</h2><pre><code class="shell">
+<h2 id="无线和防火墙-X园区测试-58‘"><a href="#无线和防火墙-X园区测试-58‘" class="headerlink" title="无线和防火墙(X园区测试) 58‘"></a>无线和防火墙(X园区测试) 58‘</h2><pre><code class="shell"># X_T1_ACC1
+interface g0/0/1
+ port hybrid untagged vlan 24
+ port hybrid pvid vlan 24
+# X_T2_ACC1
+interface g0/0/1
+ port hybrid untagged vlan 33
+ port hybrid pvid vlan 33
+
+# X_T1_ACC1_PC 
+ping 10.255.1.254
+ping 10.1.60.100
+ping 10.1.60.99
+# X_T1_ACC1_WIFI_Client
+ping 10.255.1.254
+ping 10.1.60.99 # 不通
+# X_T2_ACC2_WIFI_Client
+ping 10.255.1.254
+ping 10.1.60.100
+# X_T2_ACC1_PC
+ping 10.255.1.254 # 不通
+# X_T1_AC
+interface g0/0/2
+ port hybrid untagged vlan 103
+ port hybrid pvid vlan 103
+ quit
+# 60.99
+system-view
+telnet server enable
+telnet server port 3389
+# X_T2_ACC1_PC
+ping 10.1.60.100
+# 模拟Guest
+telnet 10.1.60.99 3389
 </code></pre>
 <hr>
 <h2 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h2><hr>
