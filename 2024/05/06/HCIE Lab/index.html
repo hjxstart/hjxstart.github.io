@@ -1,0 +1,3069 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>HCIE Lab | 黄金贤的博客</title>
+  <meta name="keywords" content=" 项目 ">
+  <meta name="description" content="HCIE Lab | 黄金贤的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="概述 搭建一套自动化批量安装 Windows 电脑的服务  ESXI 安装与配置硬件环境概述 畅网 N305 多网口迷你小主机一台32G DDR5 4800MHZ 内存条一根长城 1TB M.2 PCIE 3.0 固态硬盘一根网线 2 根, PEU 盘一个, 鼠标键盘一套  安装  按 Enter 继续安装    按 F11 接受许可    按 Enter 选择硬盘    按 Enter 重启">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ESXI+ROS+WDS+MDT">
+<meta property="og:url" content="https://hjxstart.github.io/2024/07/28/ESXI-ROS-WDS-MDT/index.html">
+<meta property="og:site_name" content="黄金贤的博客">
+<meta property="og:description" content="概述 搭建一套自动化批量安装 Windows 电脑的服务  ESXI 安装与配置硬件环境概述 畅网 N305 多网口迷你小主机一台32G DDR5 4800MHZ 内存条一根长城 1TB M.2 PCIE 3.0 固态硬盘一根网线 2 根, PEU 盘一个, 鼠标键盘一套  安装  按 Enter 继续安装    按 F11 接受许可    按 Enter 选择硬盘    按 Enter 重启">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224148.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224320.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224521.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224705.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225551.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225341.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225745.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225912.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230033.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230241.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230445.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230753.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230951.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222231317.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222231628.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222231733.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222232011.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA1.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA2.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA3.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA4.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA5.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA5.2.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA6.png">
+<meta property="article:published_time" content="2024-07-28T13:33:05.000Z">
+<meta property="article:modified_time" content="2024-09-27T15:54:46.468Z">
+<meta property="article:author" content="黄金贤">
+<meta property="article:tag" content="IT Helpdesk">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224148.png">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-dark.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 6.0.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>黄金贤</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="github"
+               href="https://github.com/hjxstart"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="email"
+               href="mailto:hjxstart@126.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=1726283687&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(76)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="读书">
+                        
+                        读书
+                        <small>(6)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="后端">
+                        
+                        后端
+                        <small>(8)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据库">
+                        
+                        数据库
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(13)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="前端">
+                        
+                        前端
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="网络">
+                        
+                        网络
+                        <small>(24)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="76">
+<input type="hidden" id="yelog_site_word_count" value="99.2k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://github.com/hjxstart">hjxstart</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>笔记</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>编程思想</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>编程语言</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>动态路由协议</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>海明码</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>环境</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>静态路由</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>路由协议</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>设计模式</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>数据库</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>思科网络实验</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>网络常用命令</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>网络专业术语</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>项目</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CentOS7</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CICD</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Cisco</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Docker</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>EIGRP</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>FHPR</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>frp</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ftp</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Git</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>GO</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Harbor</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>IGP</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>InfluxDB</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ISIS</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>IT Helpdesk</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Java</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>K8s</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>MongoDB</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Mybatis</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>MySQL</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Nginx</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Nodejs</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>OSPF</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Spring</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>SpringBoot</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>VLAN</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>VRRP</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Vue</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Windows</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="全部文章 网络 "
+           href="/2024/05/06/HCIE%20Lab/"
+           data-tag="项目"
+           data-author="" >
+            <span class="post-title" title="HCIE Lab">HCIE Lab</span>
+            <span class="post-date" title="2024-05-06 19:42:49">2024/05/06</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2024/07/29/HCIE-Datacom%E5%AE%9E%E9%AA%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HCIE-Datacom实验">HCIE-Datacom实验</span>
+            <span class="post-date" title="2024-07-29 21:21:11">2024/07/29</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2024/07/28/ESXI-ROS-WDS-MDT/"
+           data-tag="IT Helpdesk"
+           data-author="" >
+            <span class="post-title" title="ESXI+ROS+WDS+MDT">ESXI+ROS+WDS+MDT</span>
+            <span class="post-date" title="2024-07-28 21:33:05">2024/07/28</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2024/07/28/Windows10%E7%B3%BB%E7%BB%9F%E5%B0%81%E8%A3%85/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Windows10系统封装">Windows10系统封装</span>
+            <span class="post-date" title="2024-07-28 21:32:18">2024/07/28</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2024/03/31/RHCE9/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="RHCE9">RHCE9</span>
+            <span class="post-date" title="2024-03-31 15:33:32">2024/03/31</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2024/02/24/ENSP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="ENSP">ENSP</span>
+            <span class="post-date" title="2024-02-24 13:05:31">2024/02/24</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/28/BGP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="BGP">BGP</span>
+            <span class="post-date" title="2024-01-28 11:20:29">2024/01/28</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/005-STP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="005-STP">005-STP</span>
+            <span class="post-date" title="2024-01-27 14:01:47">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/004-VLAN/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="004-VLAN">004-VLAN</span>
+            <span class="post-date" title="2024-01-27 11:42:02">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/003-LLDP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="003-LLDP">003-LLDP</span>
+            <span class="post-date" title="2024-01-27 11:31:16">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/001-Telnet/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="001-Telnet">001-Telnet</span>
+            <span class="post-date" title="2024-01-27 10:45:39">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/002-SSH/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="002_SSH">002_SSH</span>
+            <span class="post-date" title="2024-01-27 10:44:10">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/%E5%8D%8E%E4%B8%BA%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="华为常用命令">华为常用命令</span>
+            <span class="post-date" title="2024-01-27 09:28:44">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2024/01/20/VRRP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="VRRP">VRRP</span>
+            <span class="post-date" title="2024-01-20 10:27:07">2024/01/20</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/20/STP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="STP">STP</span>
+            <span class="post-date" title="2024-01-20 10:26:37">2024/01/20</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/12/29/ISIS/"
+           data-tag="路由协议,ISIS,动态路由协议,IGP"
+           data-author="" >
+            <span class="post-title" title="ISIS">ISIS</span>
+            <span class="post-date" title="2023-12-29 16:15:17">2023/12/29</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2023/12/22/OSPF%E5%AE%9E%E9%AA%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OSPF实验">OSPF实验</span>
+            <span class="post-date" title="2023-12-22 08:05:50">2023/12/22</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2023/12/22/WireGuard/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="WireGuard">WireGuard</span>
+            <span class="post-date" title="2023-12-22 07:40:46">2023/12/22</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2023/12/21/%E5%A0%86%E5%8F%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="堆叠">堆叠</span>
+            <span class="post-date" title="2023-12-21 19:31:45">2023/12/21</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2023/12/18/%E7%B3%BB%E7%BB%9F%E5%B0%81%E8%A3%85/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="系统封装">系统封装</span>
+            <span class="post-date" title="2023-12-18 17:06:02">2023/12/18</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2023/12/18/RouterOS/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="RouterOS">RouterOS</span>
+            <span class="post-date" title="2023-12-18 17:05:19">2023/12/18</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2023/12/18/ESXI/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="ESXI">ESXI</span>
+            <span class="post-date" title="2023-12-18 17:05:10">2023/12/18</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2023/12/18/Git/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Git">Git</span>
+            <span class="post-date" title="2023-12-18 17:00:20">2023/12/18</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2023/11/30/IT-HelpDesk/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="IT HelpDesk">IT HelpDesk</span>
+            <span class="post-date" title="2023-11-30 21:21:59">2023/11/30</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/11/18/OpenWrt/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OpenWrt">OpenWrt</span>
+            <span class="post-date" title="2023-11-18 17:03:16">2023/11/18</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2023/06/11/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="课程学习笔记">课程学习笔记</span>
+            <span class="post-date" title="2023-06-11 10:46:38">2023/06/11</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/06/01/%E6%80%9D%E7%A7%91NP%E7%BD%91%E7%BB%9C%E5%AE%9E%E9%AA%8C/"
+           data-tag="思科网络实验,Cisco"
+           data-author="" >
+            <span class="post-title" title="思科NP网络实验">思科NP网络实验</span>
+            <span class="post-date" title="2023-06-01 10:46:26">2023/06/01</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/06/01/%E5%8D%8E%E4%B8%BANP%E7%BD%91%E7%BB%9C%E5%AE%9E%E9%AA%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="华为NP网络实验">华为NP网络实验</span>
+            <span class="post-date" title="2023-06-01 10:46:04">2023/06/01</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/09/EIGRP/"
+           data-tag="EIGRP,路由协议"
+           data-author="" >
+            <span class="post-title" title="EIGRP">EIGRP</span>
+            <span class="post-date" title="2023-04-09 15:14:50">2023/04/09</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/09/FHPR/"
+           data-tag="FHPR,VRRP"
+           data-author="" >
+            <span class="post-title" title="FHPR">FHPR</span>
+            <span class="post-date" title="2023-04-09 11:25:26">2023/04/09</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/09/%E5%9B%AD%E5%8C%BA%E7%BD%91%E6%9E%B6%E6%9E%84/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="园区网架构">园区网架构</span>
+            <span class="post-date" title="2023-04-09 09:01:09">2023/04/09</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/09/%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE%E6%A6%82%E8%BF%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="动态路由协议概述">动态路由协议概述</span>
+            <span class="post-date" title="2023-04-09 08:57:30">2023/04/09</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/08/%E7%BD%91%E7%BB%9C%E4%B8%93%E4%B8%9A%E6%9C%AF%E8%AF%AD/"
+           data-tag="网络专业术语"
+           data-author="" >
+            <span class="post-title" title="网络专业术语">网络专业术语</span>
+            <span class="post-date" title="2023-04-08 19:58:50">2023/04/08</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/08/%E5%8D%8E%E4%B8%BANA%E7%BD%91%E7%BB%9C%E5%AE%9E%E9%AA%8C/"
+           data-tag="OSPF,VLAN"
+           data-author="" >
+            <span class="post-title" title="华为NA网络实验">华为NA网络实验</span>
+            <span class="post-date" title="2023-04-08 11:46:05">2023/04/08</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/07/%E6%80%9D%E7%A7%91NA%E7%BD%91%E7%BB%9C%E5%AE%9E%E9%AA%8C/"
+           data-tag="思科网络实验,Cisco"
+           data-author="" >
+            <span class="post-title" title="思科NA网络实验">思科NA网络实验</span>
+            <span class="post-date" title="2023-04-07 20:13:29">2023/04/07</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/07/OSPF/"
+           data-tag="路由协议,动态路由协议,IGP,OSPF"
+           data-author="" >
+            <span class="post-title" title="OSPF">OSPF</span>
+            <span class="post-date" title="2023-04-07 19:19:35">2023/04/07</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/07/%E9%9D%99%E6%80%81%E8%B7%AF%E7%94%B1/"
+           data-tag="静态路由"
+           data-author="" >
+            <span class="post-title" title="静态路由">静态路由</span>
+            <span class="post-date" title="2023-04-07 19:10:50">2023/04/07</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/06/%E7%BD%91%E7%BB%9C%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"
+           data-tag="网络常用命令"
+           data-author="" >
+            <span class="post-title" title="网络常用命令">网络常用命令</span>
+            <span class="post-date" title="2023-04-06 10:10:12">2023/04/06</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2022/08/22/XCIE%E5%AD%A6%E4%B9%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="XCIE学习">XCIE学习</span>
+            <span class="post-date" title="2022-08-22 22:52:22">2022/08/22</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2022/03/19/MySQL/"
+           data-tag="MySQL"
+           data-author="" >
+            <span class="post-title" title="MySQL">MySQL</span>
+            <span class="post-date" title="2022-03-19 21:51:35">2022/03/19</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2022/03/07/Windows/"
+           data-tag="Windows"
+           data-author="" >
+            <span class="post-title" title="Windows">Windows</span>
+            <span class="post-date" title="2022-03-07 15:58:15">2022/03/07</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2022/03/06/MongoDB/"
+           data-tag="MongoDB,数据库"
+           data-author="" >
+            <span class="post-title" title="MongoDB">MongoDB</span>
+            <span class="post-date" title="2022-03-06 17:38:45">2022/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2022/03/06/influxDB/"
+           data-tag="数据库,InfluxDB"
+           data-author="" >
+            <span class="post-title" title="InfluxDB">InfluxDB</span>
+            <span class="post-date" title="2022-03-06 12:47:36">2022/03/06</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/12/27/Vim/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Vim">Vim</span>
+            <span class="post-date" title="2021-12-27 09:15:01">2021/12/27</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/12/19/Gitea/"
+           data-tag="Git,CICD"
+           data-author="" >
+            <span class="post-title" title="Gitea">Gitea</span>
+            <span class="post-date" title="2021-12-19 21:53:48">2021/12/19</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/12/19/frp/"
+           data-tag="Nginx,frp"
+           data-author="" >
+            <span class="post-title" title="frp">frp</span>
+            <span class="post-date" title="2021-12-19 20:34:09">2021/12/19</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/12/16/vsftpd/"
+           data-tag="ftp"
+           data-author="" >
+            <span class="post-title" title="vsftpd">vsftpd</span>
+            <span class="post-date" title="2021-12-16 08:49:01">2021/12/16</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2021/10/06/Redis/"
+           data-tag="Docker,数据库"
+           data-author="" >
+            <span class="post-title" title="Redis">Redis</span>
+            <span class="post-date" title="2021-10-06 17:19:30">2021/10/06</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/20/k8s%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/"
+           data-tag="K8s"
+           data-author="" >
+            <span class="post-title" title="k8s实验笔记">k8s实验笔记</span>
+            <span class="post-date" title="2021-09-20 08:04:10">2021/09/20</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/15/K8s/"
+           data-tag="Docker,K8s"
+           data-author="" >
+            <span class="post-title" title="k8s">k8s</span>
+            <span class="post-date" title="2021-09-15 20:48:34">2021/09/15</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/09/09/VMware/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="VMware">VMware</span>
+            <span class="post-date" title="2021-09-09 15:38:41">2021/09/09</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/08/Ingress/"
+           data-tag="K8s"
+           data-author="" >
+            <span class="post-title" title="Ingress">Ingress</span>
+            <span class="post-date" title="2021-09-08 23:56:01">2021/09/08</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/08/Harbor/"
+           data-tag="Harbor,K8s"
+           data-author="" >
+            <span class="post-title" title="Harbor">Harbor</span>
+            <span class="post-date" title="2021-09-08 18:04:32">2021/09/08</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/08/28/Swarm/"
+           data-tag="Docker"
+           data-author="" >
+            <span class="post-title" title="Swarm">Swarm</span>
+            <span class="post-date" title="2021-08-28 20:46:10">2021/08/28</span>
+        </a>
+        
+        <a  class="全部文章 后端 "
+           href="/2021/08/26/GO/"
+           data-tag="GO,编程语言"
+           data-author="" >
+            <span class="post-title" title="GO">GO</span>
+            <span class="post-date" title="2021-08-26 11:50:00">2021/08/26</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/08/23/%E6%B5%B7%E6%98%8E%E7%A0%81-%E6%A0%A1%E9%AA%8C%E7%A0%81/"
+           data-tag="海明码"
+           data-author="" >
+            <span class="post-title" title="海明码">海明码</span>
+            <span class="post-date" title="2021-08-23 14:33:26">2021/08/23</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/08/22/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/"
+           data-tag="Java,编程思想"
+           data-author="" >
+            <span class="post-title" title="Java编程思想">Java编程思想</span>
+            <span class="post-date" title="2021-08-22 23:15:19">2021/08/22</span>
+        </a>
+        
+        <a  class="全部文章 后端 "
+           href="/2021/08/15/Java/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="Java多线程">Java多线程</span>
+            <span class="post-date" title="2021-08-15 14:36:42">2021/08/15</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/08/11/Nginx/"
+           data-tag="Nginx"
+           data-author="" >
+            <span class="post-title" title="Nginx">Nginx</span>
+            <span class="post-date" title="2021-08-11 23:28:55">2021/08/11</span>
+        </a>
+        
+        <a  class="全部文章 后端 "
+           href="/2021/08/06/Maven/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="Maven">Maven</span>
+            <span class="post-date" title="2021-08-06 09:38:42">2021/08/06</span>
+        </a>
+        
+        <a  class="全部文章 后端 "
+           href="/2021/07/31/Springboot%E9%A1%B9%E7%9B%AE/"
+           data-tag="Docker,Java,SpringBoot"
+           data-author="" >
+            <span class="post-title" title="Springboot项目">Springboot项目</span>
+            <span class="post-date" title="2021-07-31 19:34:21">2021/07/31</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/07/22/GitLab/"
+           data-tag="Git,CICD"
+           data-author="" >
+            <span class="post-title" title="GitLab">GitLab</span>
+            <span class="post-date" title="2021-07-22 21:41:24">2021/07/22</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/07/22/Docker/"
+           data-tag="Docker,环境"
+           data-author="" >
+            <span class="post-title" title="Docker">Docker</span>
+            <span class="post-date" title="2021-07-22 14:53:59">2021/07/22</span>
+        </a>
+        
+        <a  class="全部文章 后端 "
+           href="/2021/07/19/SpringSecurity/"
+           data-tag="Java,Spring"
+           data-author="" >
+            <span class="post-title" title="SpringSecurity">SpringSecurity</span>
+            <span class="post-date" title="2021-07-19 20:58:25">2021/07/19</span>
+        </a>
+        
+        <a  class="全部文章 后端 "
+           href="/2021/07/13/Mybatis/"
+           data-tag="Java,Mybatis"
+           data-author="" >
+            <span class="post-title" title="Mybatis">Mybatis</span>
+            <span class="post-date" title="2021-07-13 10:38:01">2021/07/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/07/05/NVM/"
+           data-tag="Nodejs"
+           data-author="" >
+            <span class="post-title" title="NVM">NVM</span>
+            <span class="post-date" title="2021-07-05 08:15:33">2021/07/05</span>
+        </a>
+        
+        <a  class="全部文章 后端 "
+           href="/2021/06/26/%E6%A0%A1%E5%9B%AD%E4%BA%A4%E6%98%93%E9%A1%B9%E7%9B%AE/"
+           data-tag="Java,Spring"
+           data-author="" >
+            <span class="post-title" title="校园交易项目">校园交易项目</span>
+            <span class="post-date" title="2021-06-26 07:58:18">2021/06/26</span>
+        </a>
+        
+        <a  class="全部文章 前端 "
+           href="/2021/06/23/Vue/"
+           data-tag="Vue"
+           data-author="" >
+            <span class="post-title" title="Vue">Vue</span>
+            <span class="post-date" title="2021-06-23 10:48:20">2021/06/23</span>
+        </a>
+        
+        <a  class="全部文章 后端 "
+           href="/2021/06/08/SpringBoot2/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="SpringBoot2学习">SpringBoot2学习</span>
+            <span class="post-date" title="2021-06-08 16:51:25">2021/06/08</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/06/07/CentOS7/"
+           data-tag="Linux,CentOS7"
+           data-author="" >
+            <span class="post-title" title="CentOS7">CentOS7</span>
+            <span class="post-date" title="2021-06-07 23:16:42">2021/06/07</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/06/02/Spring%E5%AE%9E%E6%88%98V5/"
+           data-tag="Java,Spring"
+           data-author="" >
+            <span class="post-title" title="Spring实战(第五版)">Spring实战(第五版)</span>
+            <span class="post-date" title="2021-06-02 09:42:37">2021/06/02</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/04/25/Spring%E5%AE%9E%E6%88%98V4/"
+           data-tag="Java,Spring"
+           data-author="" >
+            <span class="post-title" title="Spring实战(第四版)">Spring实战(第四版)</span>
+            <span class="post-date" title="2021-04-25 18:38:03">2021/04/25</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/04/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"
+           data-tag="Java,设计模式"
+           data-author="" >
+            <span class="post-title" title="设计模式">设计模式</span>
+            <span class="post-date" title="2021-04-18 22:19:45">2021/04/18</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2021/03/22/SQL/"
+           data-tag="MySQL"
+           data-author="" >
+            <span class="post-title" title="SQL">SQL</span>
+            <span class="post-date" title="2021-03-22 18:33:13">2021/03/22</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/03/14/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/"
+           data-tag="笔记"
+           data-author="" >
+            <span class="post-title" title="时间管理">时间管理</span>
+            <span class="post-date" title="2021-03-14 21:49:15">2021/03/14</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/03/14/Hexo/"
+           data-tag="Hexo"
+           data-author="" >
+            <span class="post-title" title="Hexo">Hexo</span>
+            <span class="post-date" title="2021-03-14 08:31:47">2021/03/14</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-HCIE Lab" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">HCIE Lab</h1>
+    
+    <div class="article-meta">
+        
+        <span class="top"><a>置顶</a></span>
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="网络">网络</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color3">项目</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2024-09-27 23:54:46'>2024-05-06 19:42</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:15.7k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HCIE-LAB%EF%BC%88%E6%9C%89%E4%BB%B7%E5%80%BC%E7%9A%84%E9%A1%B9%E7%9B%AE%EF%BC%89"><span class="toc-text">HCIE LAB（有价值的项目）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E4%BF%A1%E6%81%AF"><span class="toc-text">环境信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">通用命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#X%E5%9B%AD%E5%8C%BA%EF%BC%9A%E4%BC%A0%E7%BB%9F%E7%BD%91%E6%94%B9%E9%80%A0%E5%8F%8A%E5%8D%87%E7%BA%A7"><span class="toc-text">X园区：传统网改造及升级</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E9%9D%A0%E6%80%A7-3%E2%80%99"><span class="toc-text">可靠性 3’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E4%B8%9A%E5%8A%A1-2%E2%80%99"><span class="toc-text">基本业务 2’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E9%9A%94%E7%A6%BB-12%E2%80%99"><span class="toc-text">网络隔离 12’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WLAN%E6%89%A9%E5%AE%B9-3%E2%80%99"><span class="toc-text">WLAN扩容 3’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BA%E5%8F%A3%E8%AE%BE%E5%A4%87%E9%83%A8%E7%BD%B2-1%E2%80%99"><span class="toc-text">出口设备部署 1’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%86%E5%85%A5%E6%8E%A7%E5%88%B6-8%E2%80%99"><span class="toc-text">准入控制 8’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8E%A7%E5%88%B6-6%E2%80%99"><span class="toc-text">网络安全控制 6’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E9%83%A8%E9%85%8D%E7%BD%AE"><span class="toc-text">全部配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#X-T-Export1"><span class="toc-text">X_T_Export1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#X-T-Export2"><span class="toc-text">X_T_Export2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Core"><span class="toc-text">Core</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#X-T1-AC"><span class="toc-text">X_T1_AC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FW"><span class="toc-text">FW</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#X-T1-AGG1"><span class="toc-text">X_T1_AGG1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#X-T1-ACC1"><span class="toc-text">X_T1_ACC1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#X-T1-ACC2"><span class="toc-text">X_T1_ACC2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#X-T2-AGG1"><span class="toc-text">X_T2_AGG1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#X-T2-ACC1"><span class="toc-text">X_T2_ACC1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#X-T2-ACC2"><span class="toc-text">X_T2_ACC2</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Y%E5%9B%AD%E5%8C%BA%EF%BC%9AiMaster-NCE-Campus-SD-WAN-%E9%83%A8%E7%BD%B2"><span class="toc-text">Y园区：iMaster NCE-Campus SD-WAN 部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Z%E5%9B%AD%E5%8C%BA%EF%BC%9A%E5%B9%BF%E5%9F%9F%E7%BD%91%E6%89%BF%E8%BD%BD%E5%8F%8A%E8%AE%BE%E8%AE%A1"><span class="toc-text">Z园区：广域网承载及设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python%E7%BD%91%E7%BB%9C%E8%87%AA%E5%8A%A8%E5%8C%96"><span class="toc-text">Python网络自动化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%85%AB%E8%82%A1%E6%96%87"><span class="toc-text">网络八股文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%981-5%E2%80%99"><span class="toc-text">问题1 5’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%982-3%E2%80%99"><span class="toc-text">问题2 3’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%983-5%E2%80%99"><span class="toc-text">问题3 5’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%983-%E5%8F%98%E7%A7%8D"><span class="toc-text">问题3 变种</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0"><span class="toc-text">学习</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="HCIE-LAB（有价值的项目）"><a href="#HCIE-LAB（有价值的项目）" class="headerlink" title="HCIE LAB（有价值的项目）"></a>HCIE LAB（有价值的项目）</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<ol>
+<li>X园区：传统网改造及升级</li>
+<li>Y园区：iMaster NCE-Campus SD-WAN 部署</li>
+<li>Z园区：广域网承载及设计</li>
+<li>Python网络自动化</li>
+<li>网络八股文</li>
+</ol>
+</blockquote>
+<h3 id="环境信息"><a href="#环境信息" class="headerlink" title="环境信息"></a>环境信息</h3><ol>
+<li>账号密码</li>
+</ol>
+<pre><code class="bash"># 通用的密码
+admin/Admin@123
+# 防火墙 X_T1_FW1
+admin/Huawei@123
+</code></pre>
+<ol start="2">
+<li>IP规划</li>
+</ol>
+<pre><code class="bash">## 公网 网段:10.255.X.0/24 8根线, x取值1-8, 本段.1, 对端的地址都是.254
+# X_Export1 X_Export2   Y_Export    Store_Export
+10.255.1.1  10.255.3.1  10.255.5.1  10.255.7.1
+10.255.2.1  10.255.4.1  10.255.6.1  10.255.8.1
+
+## X园区内部 网段:10.1.X.X/X
+# loopback接口  10.1.0.X/32
+# X_Export1 X_Export2   X_Core&#123;P,E,G&#125;   X_T1_AGG1   X_T1_AGG2   X_FW&#123;E,G&#125;       X_AC
+10.1.0.1    10.1.0.2    10.1.0.&#123;3,4,5&#125;  10.1.0.6    10.1.0.7    10.1.0.&#123;8.9&#125;    10.1.0.11
+
+# 设备互联地址  10.1.200.X/30 从上到下 从左到右 网段0,4,8,12,16,20,24,28,32
+# E1_C=1_2  E2_C=5_6    C_AC=9_10   C_FW=&#123;13_14,17_18,21_22,25_26&#125;  C_T1AGG1=29_30      C_T2AGG1=33_34
+# vlan201   vlan202     vlan203     vlan&#123;204,205,206,207&#125;           vlan208             vlan209   
+服务器 10.1.60.0/24   vlan60
+
+## Y园区内部 网段:10.2.X.X/X
+
+
+## Z园区内部 网段:10.10.X.X/X
+</code></pre>
+<h3 id="通用命令"><a href="#通用命令" class="headerlink" title="通用命令"></a>通用命令</h3><pre><code class="bash"># 保持ssh会话
+sys
+user-interface console 0
+idle-timeout 0 0
+# 关闭日志
+undo info-center enable
+# lldp
+system-view
+lldp enable
+display lldp neighbor brief
+</code></pre>
+<h2 id="X园区：传统网改造及升级"><a href="#X园区：传统网改造及升级" class="headerlink" title="X园区：传统网改造及升级"></a>X园区：传统网改造及升级</h2><h3 id="可靠性-3’"><a href="#可靠性-3’" class="headerlink" title="可靠性 3’"></a>可靠性 3’</h3><ol>
+<li>命名设备</li>
+</ol>
+<pre><code class="bash">system-view
+system-name X_T2_ACC01
+</code></pre>
+<ol start="2">
+<li>配置堆叠</li>
+</ol>
+<pre><code class="bash">## step2_1 重启AGG2 保证AGG1 设备为主用设备。默认是设备运行时间最长的设备为主设备
+# X_T2_AGG02
+reboot
+
+## step2_2 环形堆叠。将物理接口加入堆叠口和 shutdown，修改优先级
+# X_T2_AGG01
+interface stack-port 0/1
+port interface g0/0/1 enable
+shutdown interface g0/0/1
+quit
+#
+interface stack-port 0/2
+port interface g0/0/2 enable
+shutdown interface g0/0/2
+quit
+#
+stack slot 0 priority 150
+
+## X_T2_AGG01
+interface stack-port 0/2
+port interface g0/0/1 enable
+quit
+#
+interface stack-port 0/1
+port interface g0/0/2 enable
+quit
+#
+stack slot 0 renumber 1
+
+## step2_3 进入堆叠口启动物理接口
+# X_T2_AGG01
+interface stack-port 0/1
+undo shutdown int g0/0/1
+interface stack-port 0/2
+undo shutdown int g0/0/2
+
+## step2_4 修改主机名
+sysname X_T2_AGG1
+
+## step2_0 清除堆叠
+reset stack config
+</code></pre>
+<ol start="3">
+<li>配置链路聚合</li>
+</ol>
+<pre><code class="bash">## 创建Access口; C_E1=vlan201, C_E2=vlan202, C_S=vlan60
+intface g0/0/1
+port link-type access
+port default vlan 201
+
+## 创建Trunk口；
+# C_AC=vlan&#123;100,203&#125;, C_FW=valn&#123;204&amp;205,206&amp;207&#125;, C_T1AGG1=vlan208, C_T2AGG2=vlan209
+interface Eth-Trunk 2
+port link-type trunk
+port trunk allow-pass vlan 209
+# 与防火墙的2条链路两端要禁止 vlan1
+undo port trunk allow-pass vlan 1 
+# FW的接口要打开二层接口 
+portswitch
+# FW真机要关闭STP
+undo stp enable
+## 创建hybrid口; AGG-ACC
+</code></pre>
+<h3 id="基本业务-2’"><a href="#基本业务-2’" class="headerlink" title="基本业务 2’"></a>基本业务 2’</h3><ol>
+<li>配置T2大楼链路聚合</li>
+</ol>
+<pre><code class="bash">
+</code></pre>
+<ol start="2">
+<li>配置Core和其他设备直连</li>
+</ol>
+<pre><code class="bash">## 配置有线VPN-instance和IP地址
+# Core
+ip vpn-instance Employee
+  route-distinguisher 65001:1
+    quit
+ip vpn-instance Guest
+  route-distinguisher 65001:2
+    quit
+# 配置vlanif&#123;60,206,208,209,lo1&#125;的IP和vpn-instance Employee
+interface Vlanif60
+ip binding vpn-instance Employee
+ip address 10.1.60.254 24
+# 配置vlanif&#123;207,lo2&#125;的IP和vpn-instance Guest
+interface Vlanif207
+ip binding vpn-instance Guest
+ip address 10.1.200.25 30
+
+## 配置无线VPN-instance和IP地址
+# Core
+dhcp enable
+# 
+int vlan51
+ip binding vpn-instance Employee
+ip add 10.1.51.254 24
+dhcp select global
+int vlan52
+ip binding vpn-instance Employee
+ip add 10.1.52.254 24
+dhcp select global
+int vlan53
+ip binding vpn-instance Employee
+ip add 10.1.53.254 24
+dhcp select global
+int vlan54
+ip binding vpn-instance Employee
+ip add 10.1.54.254 24
+dhcp select global
+int vlan55
+ip binding vpn-instance Employee
+ip add 10.1.55.254 24
+dhcp select global
+#
+int vlan 101
+ip binding vpn-instance Guest
+ip add 10.1.101.254 24
+dhcp select global
+#
+int vlan 102
+ip binding vpn-instance Guest
+ip add 10.1.102.254 24
+dhcp select global
+#
+int vlan 103
+ip binding vpn-instance Guest
+ip add 10.1.103.254 24
+dhcp select global
+#
+int vlan 104
+ip binding vpn-instance Guest
+ip add 10.1.104.254 24
+dhcp select global
+#
+int vlan 105
+ip binding vpn-instance Guest
+ip add 10.1.105.254 24
+dhcp select global
+#
+
+</code></pre>
+<ol start="3">
+<li>配置业务网关和DHCP</li>
+</ol>
+<pre><code class="bash">## DHCP global, 
+# Core 51-55, 101-105, 208, 209
+dhcp enable
+interface Vlanif208
+dhcp select global
+#
+
+
+## DHCP relay
+# X_T1_AGG1 (11-15,21-25)
+dhcp enable
+#
+interface Vlanif11
+ip address 10.1.11.254 24
+dhcp select relay
+dhcp relay server-ip 10.1.200.29
+## X_T2_AGG2 T2(31-35,41-45)
+dhcp enable
+#
+interface Vlanif31
+ip address 10.1.31.254 255.255.255.0
+dhcp select relay
+dhcp relay server-ip 10.1.200.33
+</code></pre>
+<h3 id="网络隔离-12’"><a href="#网络隔离-12’" class="headerlink" title="网络隔离 12’"></a>网络隔离 12’</h3><ol>
+<li>配置出口路由器OSPF</li>
+</ol>
+<pre><code class="bash"># X_T_Export1
+ospf 1 router-id 10.1.0.1
+  default-route-advertise
+  area 0.0.0.0
+    network 10.1.0.1 0.0.0.0
+    network 10.1.200.1 0.0.0.0
+ip route-static 0.0.0.0 0 10.255.1.254
+ip route-static 0.0.0.0 0 10.255.2.254
+
+# X_T_Export2
+ospf 1 router-id 10.1.0.2
+  default-route-advertise
+  area 0.0.0.0
+    network 10.1.0.2 0.0.0.0
+    network 10.1.200.5 0.0.0.0
+ip route-static 0.0.0.0 0 10.255.3.254
+ip route-static 0.0.0.0 0 10.255.4.254
+</code></pre>
+<ol start="2">
+<li>配置地址池绑定VPN实例</li>
+</ol>
+<pre><code class="bash"># X_T_CORE
+ip pool wired_finance1/2/3/4/5
+ip pool wired_hr1/2/3/4/5
+ip pool wired_market1/2/3/4/5
+ip pool wired_sales1/2/3/4/5
+ip pool wireless_employee1/2/3/4/5
+以上地址池下敲vpn-instance Employee
+ip pool wireless_guest1/2/3/4/5
+以上地址下敲vpn-instance Guest
+编辑好脚本如下：
+#
+ip pool wired_finance1
+vpn-instance Employee
+#
+ip pool wireless_guest1
+vpn-instance Guest
+
+## 业务隔离。dis cur 添加 vpn-instance Employee
+#
+ip pool wired_finance1
+vpn-instance Employee
+ gateway-list 10.1.31.254
+ network 10.1.31.0 mask 255.255.255.0
+</code></pre>
+<ol start="3">
+<li>X_T_CORE配置无线网关绑定VPN实例</li>
+</ol>
+<pre><code class="bash">
+</code></pre>
+<ol start="4">
+<li>内部配置OSPF和网络隔离</li>
+</ol>
+<pre><code class="bash">## Core
+# 101-105, +默认
+ip ip-prefix Guest deny 10.1.101.0 24
+ip ip-prefix Guest deny 10.1.102.0 24
+ip ip-prefix Guest deny 10.1.103.0 24
+ip ip-prefix Guest deny 10.1.104.0 24
+ip ip-prefix Guest deny 10.1.105.0 24
+ip ip-prefix Guest deny 0.0.0.0 0 less-eq 32
+# 11-15, 21-25, 31-35, 41-45, 51-55, 60
+ip ip-prefix Employee deny 10.1.60.0 24
+ip ip-prefix Employee deny 10.1.11.0 24
+ip ip-prefix Employee deny 10.1.12.0 24
+ip ip-prefix Employee deny 10.1.13.0 24
+ip ip-prefix Employee deny 10.1.14.0 24
+ip ip-prefix Employee deny 10.1.15.0 24
+ip ip-prefix Employee deny 10.1.21.0 24
+ip ip-prefix Employee deny 10.1.22.0 24
+ip ip-prefix Employee deny 10.1.23.0 24
+ip ip-prefix Employee deny 10.1.24.0 24
+ip ip-prefix Employee deny 10.1.25.0 24
+ip ip-prefix Employee deny 10.1.31.0 24
+ip ip-prefix Employee deny 10.1.32.0 24
+ip ip-prefix Employee deny 10.1.33.0 24
+ip ip-prefix Employee deny 10.1.34.0 24
+ip ip-prefix Employee deny 10.1.35.0 24
+ip ip-prefix Employee deny 10.1.41.0 24
+ip ip-prefix Employee deny 10.1.42.0 24
+ip ip-prefix Employee deny 10.1.43.0 24
+ip ip-prefix Employee deny 10.1.44.0 24
+ip ip-prefix Employee deny 10.1.45.0 24
+ip ip-prefix Employee deny 10.1.51.0 24
+ip ip-prefix Employee deny 10.1.52.0 24
+ip ip-prefix Employee deny 10.1.53.0 24
+ip ip-prefix Employee deny 10.1.54.0 24
+ip ip-prefix Employee deny 10.1.55.0 24
+ip ip-prefix Employee deny 0.0.0.0 0 less-eq 32
+#
+ospf 1 router-id 10.1.0.3
+area 0.0.0.0
+network 10.1.0.3 0.0.0.0
+network 10.1.200.2 0.0.0.0
+network 10.1.200.6 0.0.0.0
+network 10.1.200.9 0.0.0.0
+area 1
+filter ip-prefix Guest import
+network 10.1.200.13 0.0.0.0
+area 2
+filter ip-prefix Employee import
+network 10.1.200.17 0.0.0.0
+ospf 65001 router-id 10.1.0.4 vpn-instance Employee
+vpn-instance-capability simple
+silent-interface Vlanif51
+silent-interface Vlanif52
+silent-interface Vlanif53
+silent-interface Vlanif54
+silent-interface Vlanif55
+silent-interface Vlanif60
+area 1
+network 10.1.0.0 0.0.255.255
+#
+ospf 65002 router-id 10.1.0.5 vpn-instance Guest
+vpn-instance-capability simple
+silent-interface Vlanif101
+silent-interface Vlanif102
+silent-interface Vlanif103
+silent-interface Vlanif104
+silent-interface Vlanif105
+area 2
+network 10.1.0.0 0.0.255.255
+
+
+# X_T1_FW
+sysname X_T1_FW
+vlan batch 204 to 207
+interface GigabitEthernet1/0/1
+portswitch
+undo shutdown
+undo stp enable
+port link-type trunk
+undo port trunk allow-pass vlan 1
+port trunk allow-pass vlan 204 to 205
+#
+interface GigabitEthernet1/0/2
+portswitch
+undo shutdown
+undo stp enable
+port link-type trunk
+undo port trunk allow-pass vlan 1
+port trunk allow-pass vlan 206 to 207
+interface Vlanif204
+#
+interface Vlanif205
+#
+interface Vlanif206
+#
+interface Vlanif207
+interface LoopBack 1
+interface LoopBack 2
+vsys enable
+vsys name Employee
+assign interface LoopBack1
+assign vlan 204
+assign vlan 206
+vsys name Guest
+assign interface LoopBack2
+assign vlan 205
+assign vlan 207
+switch vsys Employee
+system-view
+interface Vlanif204
+ip address 10.1.200.14 30
+interface Vlanif206
+ip address 10.1.200.22 30
+interface LoopBack1
+ip address 10.1.0.8 32
+firewall zone trust
+add interface Vlanif206
+firewall zone untrust
+add interface Vlanif204
+security-policy
+rule name ospf
+source-zone local
+source-zone trust
+source-zone untrust
+destination-zone local
+destination-zone trust
+destination-zone untrust
+service ospf
+action permit
+return
+system-view
+switch vsys Guest
+system-view
+interface Vlanif205
+ip address 10.1.200.18 30
+interface Vlanif207
+ip address 10.1.200.26 30
+interface LoopBack2
+ip address 10.1.0.9 32
+firewall zone trust
+add interface Vlanif207
+firewall zone untrust
+add interface Vlanif205
+security-policy
+rule name ospf
+source-zone local
+source-zone trust
+source-zone untrust
+destination-zone local
+destination-zone trust
+destination-zone untrust
+service ospf
+action permit
+return
+sys
+ospf 65001 router-id 10.1.0.8 vpn-instance Employee
+vpn-instance-capability simple
+area 1
+network 10.1.0.8 0.0.0.0
+network 10.1.200.14 0.0.0.0
+network 10.1.200.22 0.0.0.0
+ospf 65002 router-id 10.1.0.9 vpn-instance Guest
+vpn-instance-capability simple
+area 2
+network 10.1.0.9 0.0.0.0
+network 10.1.200.18 0.0.0.0
+network 10.1.200.26 0.0.0.0
+</code></pre>
+<ol start="5">
+<li>验证OSPF</li>
+</ol>
+<pre><code class="bash">
+</code></pre>
+<h3 id="WLAN扩容-3’"><a href="#WLAN扩容-3’" class="headerlink" title="WLAN扩容 3’"></a>WLAN扩容 3’</h3><ol>
+<li>部署二层互通</li>
+</ol>
+<pre><code class="bash">
+</code></pre>
+<ol start="2">
+<li>AC配置三层互通，并配置VLAN池</li>
+</ol>
+<pre><code class="bash">
+</code></pre>
+<ol start="3">
+<li>配置AP上线</li>
+</ol>
+<pre><code class="bash">
+</code></pre>
+<ol start="4">
+<li>修改原有的SSID魔板内SSID名字</li>
+</ol>
+<pre><code class="bash">
+</code></pre>
+<ol start="5">
+<li>配置服务vlan扩容为vlan-pool</li>
+</ol>
+<pre><code class="bash">
+</code></pre>
+<ol start="6">
+<li>验证结果</li>
+</ol>
+<pre><code class="bash">
+</code></pre>
+<h3 id="出口设备部署-1’"><a href="#出口设备部署-1’" class="headerlink" title="出口设备部署 1’"></a>出口设备部署 1’</h3><ol>
+<li>配置Easy NAT与内外网映射</li>
+</ol>
+<pre><code class="bash">
+</code></pre>
+<ol start="2">
+<li>验证结果</li>
+</ol>
+<pre><code class="bash">
+</code></pre>
+<h3 id="准入控制-8’"><a href="#准入控制-8’" class="headerlink" title="准入控制 8’"></a>准入控制 8’</h3><ol>
+<li>配置接入设备二层透传EAP报文</li>
+</ol>
+<pre><code class="bash">
+</code></pre>
+<ol start="2">
+<li>配置汇聚设备 Raduis 服务器</li>
+</ol>
+<pre><code class="bash">
+</code></pre>
+<ol start="3">
+<li>配置汇聚设备AAA认证授权计费使用方式</li>
+</ol>
+<pre><code class="bash">
+</code></pre>
+<ol start="4">
+<li>配置汇聚设备VLAN池并放通下行接口让VLANIF UP</li>
+</ol>
+<pre><code class="bash">
+</code></pre>
+<ol start="5">
+<li>验证结果</li>
+</ol>
+<pre><code class="bash">
+</code></pre>
+<h3 id="网络安全控制-6’"><a href="#网络安全控制-6’" class="headerlink" title="网络安全控制 6’"></a>网络安全控制 6’</h3><ol>
+<li>配置针对虚拟系统Guest的策略</li>
+</ol>
+<pre><code class="bash">
+</code></pre>
+<ol start="2">
+<li>配置针对虚拟系统Employee的策略</li>
+</ol>
+<pre><code class="bash">
+</code></pre>
+<ol start="3">
+<li>配置内部无线用户流量重定向（几家环境不支持）</li>
+</ol>
+<pre><code class="bash">
+</code></pre>
+<ol start="4">
+<li>配置内部WEB服务器流量重定向</li>
+</ol>
+<pre><code class="bash">
+</code></pre>
+<ol start="5">
+<li>验证结果</li>
+</ol>
+<pre><code class="bash">
+</code></pre>
+<hr>
+<h3 id="全部配置"><a href="#全部配置" class="headerlink" title="全部配置"></a>全部配置</h3><h3 id="X-T-Export1"><a href="#X-T-Export1" class="headerlink" title="X_T_Export1"></a>X_T_Export1</h3><pre><code class="bash"># OSPF
+ospf 1 router-id 10.1.0.1
+  default-route-advertise
+  area 0
+    network 10.1.0.1 0.0.0.0
+    network 10.1.200.1 0.0.0.0
+ip route-static 0.0.0.0 0 10.255.1.254
+ip route-static 0.0.0.0 0 10.255.2.254
+#
+acl number 2000
+undo rule 5
+rule permit source 10.1.11.0 0.0.0.255
+rule permit source 10.1.12.0 0.0.0.255
+rule permit source 10.1.13.0 0.0.0.255
+rule permit source 10.1.14.0 0.0.0.255
+rule permit source 10.1.15.0 0.0.0.255
+rule permit source 10.1.21.0 0.0.0.255
+rule permit source 10.1.22.0 0.0.0.255
+rule permit source 10.1.23.0 0.0.0.255
+rule permit source 10.1.24.0 0.0.0.255
+rule permit source 10.1.25.0 0.0.0.255
+rule permit source 10.1.51.0 0.0.0.255
+rule permit source 10.1.52.0 0.0.0.255
+rule permit source 10.1.53.0 0.0.0.255
+rule permit source 10.1.54.0 0.0.0.255
+rule permit source 10.1.55.0 0.0.0.255
+rule permit source 10.1.101.0 0.0.0.255
+rule permit source 10.1.102.0 0.0.0.255
+rule permit source 10.1.103.0 0.0.0.255
+rule permit source 10.1.104.0 0.0.0.255
+rule permit source 10.1.105.0 0.0.0.255
+</code></pre>
+<hr>
+<h3 id="X-T-Export2"><a href="#X-T-Export2" class="headerlink" title="X_T_Export2"></a>X_T_Export2</h3><pre><code class="bash">## IP
+#
+int loop 0
+ip add 10.1.0.2 32
+#
+int g0/0/0
+ip add 10.255.3.1 24
+#
+int g0/0/2
+ip add 10.255.4.1 24
+#
+int g0/0/1
+ip add 10.1.200.5 30
+## OSPF //
+#
+ospf 1 router-id 10.1.0.2
+  default-route-advertise
+  area 0.0.0.0
+    network 10.1.0.2 0.0.0.0
+    network 10.1.200.5 0.0.0.0
+ip route-static 0.0.0.0 0 10.255.3.254
+ip route-static 0.0.0.0 0 10.255.4.254
+#
+#
+acl number 2000
+rule permit source 10.1.11.0 0.0.0.255
+rule permit source 10.1.12.0 0.0.0.255
+rule permit source 10.1.13.0 0.0.0.255
+rule permit source 10.1.14.0 0.0.0.255
+rule permit source 10.1.15.0 0.0.0.255
+rule permit source 10.1.21.0 0.0.0.255
+rule permit source 10.1.22.0 0.0.0.255
+rule permit source 10.1.23.0 0.0.0.255
+rule permit source 10.1.24.0 0.0.0.255
+rule permit source 10.1.25.0 0.0.0.255
+rule permit source 10.1.51.0 0.0.0.255
+rule permit source 10.1.52.0 0.0.0.255
+rule permit source 10.1.53.0 0.0.0.255
+rule permit source 10.1.54.0 0.0.0.255
+rule permit source 10.1.55.0 0.0.0.255
+rule permit source 10.1.101.0 0.0.0.255
+rule permit source 10.1.102.0 0.0.0.255
+rule permit source 10.1.103.0 0.0.0.255
+rule permit source 10.1.104.0 0.0.0.255
+rule permit source 10.1.105.0 0.0.0.255
+## 当前接口IP做NAT
+interface GigabitEthernet0/0/0
+nat outbound 2000
+# 地址池IP做NAT
+nat address-group 1 10.255.4.2 10.255.4.100
+interface g0/0/2
+nat outbound 2000 address-group 1
+## 内网映射，将接口8081端口的IP地址映射为101的80端口
+nat server protocol tcp global current-interface 8081 inside 10.1.60.101 80
+# 1.7.4 配置内部WEB 服务器流量重定向
+# X_T1_Export2-重定向内部WEB 服务的流量:
+#
+acl number 3001
+rule permit tcp source 10.1.60.101 0 source-port eq 80 destination any
+#
+traffic classifier web operator or
+  if-match acl 3001
+#
+traffic behavior web
+redirect ip-nexthop 10.255.4.254
+#
+traffic policy web
+classifier web behavior web
+#
+interface GiqabitEthernet0/0/1 //考场出口路由器可能使用VLANIF 和Core 对接，根据考场
+情况选择接口，可能是vlanif202 接口
+traffic-policy web inbound
+</code></pre>
+<h3 id="Core"><a href="#Core" class="headerlink" title="Core"></a>Core</h3><pre><code class="bash">## 开启DHCP
+dhcp enable
+#
+#
+ip vpn-instance Employee
+  route-distinguisher 65001:1
+     quit
+ip vpn-instance Guest
+  route-distinguisher 65001:2
+     quit
+#
+dis cu // 添加VPN实例
+#
+int loop 0
+ip address 10.1.0.3 32
+#
+int loop 1
+ip binding vpn-instance Employee
+ip address 10.1.0.4 32
+#
+int loop 2
+ip binding vpn-instance Guest
+ip address 10.1.0.5 32
+#
+vlan batch 51 to 55 60 101 to 105 201 to 209
+int vlan 51
+ip binding vpn-instance Employee
+ip address 10.1.51.254 24
+dhcp select global
+#
+int vlan 52
+ip binding vpn-instance Employee
+ip address 10.1.52.254 24
+dhcp select global
+#
+int vlan 53
+ip binding vpn-instance Employee
+ip address 10.1.53.254 24
+dhcp select global
+#
+int vlan 54
+ip binding vpn-instance Employee
+ip address 10.1.54.254 24
+dhcp select global
+#
+int vlan 55
+ip binding vpn-instance Employee
+ip address 10.1.55.254 24
+dhcp select global
+#
+int vlan 60
+ip binding vpn-instance Employee
+ip address 10.1.60.254 24
+dhcp select global
+#
+int vlan 201
+ip address 10.1.200.2 30
+#
+int vlan 202
+ip address 10.1.200.6 30
+#
+int vlan 203
+ip address 10.1.200.9 30
+#
+int vlan 204
+ip address 10.1.200.13 30
+#
+int vlan 205
+ip address 10.1.200.17 30
+#
+int vlan 206
+ip binding vpn-instance Employee
+ip address 10.1.200.21 30
+#
+int vlan 207
+ip binding vpn-instance Guest
+ip address 10.1.200.25 30
+#
+int vlan 208
+ip binding vpn-instance Employee
+ip address 10.1.200.29 30
+#
+int vlan 209
+ip binding vpn-instance Employee
+ip address 10.1.200.33 30
+#
+int vlan 101
+ip binding vpn-instance Guest
+ip address 10.1.101.254 24
+dhcp select global
+#
+int vlan 102
+ip binding vpn-instance Guest
+ip address 10.1.102.254 24
+dhcp select global
+#
+int vlan 103
+ip binding vpn-instance Guest
+ip address 10.1.103.254 24
+dhcp select global
+#
+int vlan 104
+ip binding vpn-instance Guest
+ip address 10.1.104.254 24
+dhcp select global
+#
+int vlan 105
+ip binding vpn-instance Guest
+ip address 10.1.105.254 24
+dhcp select global
+#
+int g0/0/1
+port link-type access
+port default vlan 201
+#
+int g0/0/2
+port link-type access
+port default vlan 202
+#
+int g0/0/3
+port link-type trunk
+port trunk allow-pass vlan 100 203 51 to 55 101 to 105
+#
+int g0/0/4
+port link-type trunk
+port trunk allow-pass vlan 204 to 205
+undo port trunk allow-pass vlan 1
+undo stp enable
+#
+int g0/0/5
+port link-type trunk
+port trunk allow-pass vlan 206 to 207
+undo port trunk allow-pass vlan 1
+undo stp enable
+#
+int g0/0/6
+port link-type access
+port default vlan 60
+#
+int eth 1
+mode lacp
+port link-type trunk
+port trunk allow-pass vlan 208 100
+#
+int eth 2
+mode lacp
+trunkport g0/0/9
+trunkport g0/0/10
+port link-type trunk
+port trunk allow-pass vlan 209 100
+#
+
+## dis cu 添加 VPN Employee
+
+# 101-105, +默认
+ip ip-prefix Guest deny 10.1.101.0 24
+ip ip-prefix Guest deny 10.1.102.0 24
+ip ip-prefix Guest deny 10.1.103.0 24
+ip ip-prefix Guest deny 10.1.104.0 24
+ip ip-prefix Guest deny 10.1.105.0 24
+ip ip-prefix Guest permit 0.0.0.0 0 less-eq 32
+# 
+ip ip-prefix Employee deny 10.1.60.0 24
+ip ip-prefix Employee deny 10.1.11.0 24
+ip ip-prefix Employee deny 10.1.12.0 24
+ip ip-prefix Employee deny 10.1.13.0 24
+ip ip-prefix Employee deny 10.1.14.0 24
+ip ip-prefix Employee deny 10.1.15.0 24
+ip ip-prefix Employee deny 10.1.21.0 24
+ip ip-prefix Employee deny 10.1.22.0 24
+ip ip-prefix Employee deny 10.1.23.0 24
+ip ip-prefix Employee deny 10.1.24.0 24
+ip ip-prefix Employee deny 10.1.25.0 24
+ip ip-prefix Employee deny 10.1.31.0 24
+ip ip-prefix Employee deny 10.1.32.0 24
+ip ip-prefix Employee deny 10.1.33.0 24
+ip ip-prefix Employee deny 10.1.34.0 24
+ip ip-prefix Employee deny 10.1.35.0 24
+ip ip-prefix Employee deny 10.1.41.0 24
+ip ip-prefix Employee deny 10.1.42.0 24
+ip ip-prefix Employee deny 10.1.43.0 24
+ip ip-prefix Employee deny 10.1.44.0 24
+ip ip-prefix Employee deny 10.1.45.0 24
+ip ip-prefix Employee deny 10.1.51.0 24
+ip ip-prefix Employee deny 10.1.52.0 24
+ip ip-prefix Employee deny 10.1.53.0 24
+ip ip-prefix Employee deny 10.1.54.0 24
+ip ip-prefix Employee deny 10.1.55.0 24
+ip ip-prefix Employee permit 0.0.0.0 0 less-eq 32
+#
+ospf 1 router-id 10.1.0.3
+area 0.0.0.0
+network 10.1.0.3 0.0.0.0
+network 10.1.200.2 0.0.0.0
+network 10.1.200.6 0.0.0.0
+network 10.1.200.9 0.0.0.0
+area 1
+filter ip-prefix Guest import
+network 10.1.200.13 0.0.0.0
+area 2
+filter ip-prefix Employee import
+network 10.1.200.17 0.0.0.0
+#
+ospf 65001 router-id 10.1.0.4 vpn-instance Employee
+vpn-instance-capability simple
+silent-interface Vlanif51
+silent-interface Vlanif52
+silent-interface Vlanif53
+silent-interface Vlanif54
+silent-interface Vlanif55
+silent-interface Vlanif60
+area 1
+network 10.1.0.0 0.0.255.255
+#
+ospf 65002 router-id 10.1.0.5 vpn-instance Guest
+vpn-instance-capability simple
+silent-interface Vlanif101
+silent-interface Vlanif102
+silent-interface Vlanif103
+silent-interface Vlanif104
+silent-interface Vlanif105
+area 2
+network 10.1.0.0 0.0.255.255
+
+# 配置内部无线用户流量重定向
+acl 3000
+rule permit ip source 10.1.51.0 0.0.0.255 destination 10.1.60.0 0.0.0.255
+rule permit ip source 10.1.52.0 0.0.0.255 destination 10.1.60.0 0.0.0.255
+rule permit ip source 10.1.53.0 0.0.0.255 destination 10.1.60.0 0.0.0.255
+rule permit ip source 10.1.54.0 0.0.0.255 destination 10.1.60.0 0.0.0.255
+rule permit ip source 10.1.55.0 0.0.0.255 destination 10.1.60.0 0.0.0.255
+#
+interface g0/0/3 连接AC 的物理口,记住即可，无法配置
+traffic-redirect inbound acl 3000 vpn-instance Employee ip-nexthop 10.1.200.22
+
+# 1.7.4 配置内部WEB 服务器流量重定向
+acl number 3001
+rule 10 permit tcp source 10.1.60.101 0 source-port eq 80 destination any
+#
+interface vlanif 204
+traffic-redirect inbound ac1 3001 ip-nexthop 10.1.200.5
+由于练习机架不支持VLANIF 重定向，所以练习在G0/0/4 敲即可
+interface g0/0/4
+traffic-redirect inbound acl 3001 ip-nexthop 10.1.200.5
+</code></pre>
+<h3 id="X-T1-AC"><a href="#X-T1-AC" class="headerlink" title="X_T1_AC"></a>X_T1_AC</h3><pre><code class="bash">#
+ospf 1 router-id 10.1.0.11
+ area 0.0.0.0
+  network 10.1.0.11 0.0.0.0
+  network 10.1.100.254 0.0.0.0
+  network 10.1.200.10 0.0.0.0
+#
+vlan pool wireless_employee
+vlan 51 to 55
+vlan pool wireless_guest
+vlan 101 to 105
+#
+wlan
+ap-id 2 ap-mac 00e0-fca9-6ac0
+ap-name X_T2_AP
+ap-group X
+#
+vap-profile name guest
+service-vlan vlan-pool wireless_guest
+# \\
+vap-profile name employee
+service-vlan vlan-pool wireless_employee
+# \\
+</code></pre>
+<h3 id="FW"><a href="#FW" class="headerlink" title="FW"></a>FW</h3><pre><code class="bash">#
+sysname X_T1_FW
+vlan batch 204 to 207
+interface GigabitEthernet1/0/1
+portswitch
+undo shutdown
+undo stp enable
+port link-type trunk
+undo port trunk allow-pass vlan 1
+port trunk allow-pass vlan 204 to 205
+#
+interface GigabitEthernet1/0/2
+portswitch
+undo shutdown
+undo stp enable
+port link-type trunk
+undo port trunk allow-pass vlan 1
+port trunk allow-pass vlan 206 to 207
+interface Vlanif204
+#
+interface Vlanif205
+#
+interface Vlanif206
+#
+interface Vlanif207
+interface LoopBack 1
+interface LoopBack 2
+vsys enable
+vsys name Employee
+assign interface LoopBack1
+assign vlan 204
+assign vlan 206
+vsys name Guest
+assign interface LoopBack2
+assign vlan 205
+assign vlan 207
+switch vsys Employee
+system-view
+interface Vlanif204
+ip address 10.1.200.14 30
+interface Vlanif206
+ip address 10.1.200.22 30
+interface LoopBack1
+ip address 10.1.0.8 32
+interface virtual-if1
+ip address 10.1.200.253 32
+firewall zone trust
+add interface Vlanif206
+firewall zone untrust
+add interface Vlanif204
+add int virtual-if1
+security-policy
+rule name ospf
+source-zone local
+source-zone trust
+source-zone untrust
+destination-zone local
+destination-zone trust
+destination-zone untrust
+service ospf
+action permit
+return
+system-view
+switch vsys Guest
+system-view
+interface Vlanif205
+ip address 10.1.200.18 30
+interface Vlanif207
+ip address 10.1.200.26 30
+interface LoopBack2
+ip address 10.1.0.9 32
+interface virtual-if2
+ip address 10.1.200.254 32
+firewall zone trust
+add interface Vlanif207
+firewall zone untrust
+add int virtual-if2
+add interface Vlanif205
+security-policy
+rule name ospf
+source-zone local
+source-zone trust
+source-zone untrust
+destination-zone local
+destination-zone trust
+destination-zone untrust
+service ospf
+action permit
+#
+## OSPF
+#
+return
+sys
+ospf 65001 router-id 10.1.0.8 vpn-instance Employee
+vpn-instance-capability simple
+area 1
+network 10.1.0.8 0.0.0.0
+network 10.1.200.14 0.0.0.0
+network 10.1.200.22 0.0.0.0
+ospf 65002 router-id 10.1.0.9 vpn-instance Guest
+vpn-instance-capability simple
+area 2
+network 10.1.0.9 0.0.0.0
+network 10.1.200.18 0.0.0.0
+network 10.1.200.26 0.0.0.0
+#
+## 配置针对虚拟系统Guest 的策略
+#
+ip service-set Guest_Service type object
+service 0 protocol tcp source-port 0 to 65535 destination-port 3389
+# 外部无线用户访问HTTP 服务3389
+security-policy
+rule name Guest_to_Service
+source-zone trust
+destination-zone untrust
+source-address range 10.1.101.0 10.1.105.255
+destination-address 10.1.60.99 0.0.0.0
+service Guest_Service
+action permit
+#
+rule name Deny_other_Server
+source-zone trust
+destination-zone untrust
+source-address range 10.1.101.0 10.1.105.255
+destination-address 10.1.60.0 0.0.0.255
+action deny
+# 访问Internet 的策略最后配置
+rule name Guest_to_Internet
+source-zone trust
+destination-zone untrust
+source-address range 10.1.101.0 10.1.105.255
+action permit
+return
+
+#
+## 配置针对虚拟系统Employee 的策略
+#
+ip service-set Guest_Service type object
+service 0 protocol tcp source-port 0 to 65535 destination-port 3389
+# 内部无线访问服务器
+security-policy
+rule name Wireless_to_Server
+source-zone trust
+destination-zone trust
+source-address range 10.1.51.0 10.1.55.255
+destination-address 10.1.60.100 0.0.0.0
+action permit
+# 内部无线去往其他服务器Deny
+rule name Deny_to_Server
+source-zone trust
+destination-zone trust
+source-address range 10.1.51.0 10.1.55.255
+destination-address 10.1.60.0 0.0.0.255
+action deny
+# 放行Guest 到服务器区域的流量
+rule name Guest_to_Service
+source-zone untrust
+destination-zone trust
+source-address range 10.1.101.0 10.1.105.255
+destination-address 10.1.60.99 0.0.0.0
+service Guest_Service
+action permit
+# 放行NAT_Server 流量
+rule name Server_http_10.1.60.101
+source-zone untrust
+destination-zone trust
+destination-address 10.1.60.101 mask 255.255.255.255
+service http
+action permit
+# 访问Internet 的策略最后配置
+rule name Employee_to_internet
+source-zone trust
+destination-zone untrust
+source-address range 10.1.11.0 10.1.15.255
+source-address range 10.1.21.0 10.1.25.255
+source-address range 10.1.51.0 10.1.55.255
+action permit
+#
+</code></pre>
+<h3 id="X-T1-AGG1"><a href="#X-T1-AGG1" class="headerlink" title="X_T1_AGG1"></a>X_T1_AGG1</h3><pre><code class="bash">dhcp enable
+vlan batch 11 to 15 21 to 25
+#
+interface Vlanif11
+ip address 10.1.11.254 24
+dhcp select relay
+dhcp relay server-ip 10.1.200.29
+#
+interface Vlanif12
+ip address 10.1.12.254 24
+dhcp select relay
+dhcp relay server-ip 10.1.200.29
+#
+interface Vlanif13
+ip address 10.1.13.254 24
+dhcp select relay
+dhcp relay server-ip 10.1.200.29
+#
+interface Vlanif14
+ip address 10.1.14.254 24
+dhcp select relay
+dhcp relay server-ip 10.1.200.29
+#
+interface Vlanif15
+ip address 10.1.15.254 24
+dhcp select relay
+dhcp relay server-ip 10.1.200.29
+#
+interface Vlanif 21
+ip address 10.1.21.254 24
+dhcp select relay
+dhcp relay server-ip 10.1.200.29
+#
+interface Vlanif22
+ip address 10.1.22.254 24
+dhcp select relay
+dhcp relay server-ip 10.1.200.29
+#
+interface Vlanif23
+ip address 10.1.23.254 24
+dhcp select relay
+dhcp relay server-ip 10.1.200.29
+#
+interface Vlanif24
+ip address 10.1.24.254 24
+dhcp select relay
+dhcp relay server-ip 10.1.200.29
+#
+interface Vlanif25
+ip address 10.1.25.254 24
+dhcp select relay
+dhcp relay server-ip 10.1.200.29
+#
+ospf 1 router-id 10.1.0.6
+silent-interface all
+undo silent-interface Vlanif208
+area 1
+network 10.1.0.0 0.0.255.255
+#
+interface Eth-Trunk1
+ mode lacp-static
+ trunkport g0/0/5
+ trunkport g0/0/6
+ port link-type trunk
+ port trunk allow-pass vlan 100 208
+#
+interface Eth-Trunk2
+ mode lacp-static
+ trunkport g0/0/1
+ trunkport g0/0/2
+ port hybrid tagged vlan 11 to 15 21 to 25 100
+#
+interface Eth-Trunk3
+ mode lacp-static
+ trunkport g0/0/3
+ trunkport g0/0/4
+ port hybrid tagged vlan 11 to 15 21 to 25 100
+
+# 配置汇聚设备Raduis 服务器
+radius-server template Employee
+radius-server shared-key cipher Huawei@123
+radius-server authentication 10.1.60.2 1812
+radius-serve accounting 10.1.60.2 1813
+quit
+radius-server authorization 10.1.60.2 shared-key cipher Huawei@123
+# 配置汇聚设备AAA 认证授权计费使用方式
+aaa
+authentication-scheme Employee
+authentication-mode radius
+quit
+authentication-scheme ap_noauthen
+authentication-mode none
+quit
+accounting-scheme Employee
+accounting-mode radius
+quit
+domain Employee
+authentication-scheme Employee
+accounting-scheme Employee
+radius-server Employee
+quit
+domain ap_noauthen
+authentication-scheme ap_noauthen
+quit
+quit
+#
+domain Employee
+</code></pre>
+<h3 id="X-T1-ACC1"><a href="#X-T1-ACC1" class="headerlink" title="X_T1_ACC1"></a>X_T1_ACC1</h3><pre><code class="bash">vlan batch 100
+interface Eth-Trunk1
+ mode lacp
+ trunkport g0/0/23
+ trunkport g0/0/24
+ port trunk allow-pass vlan 100
+#
+interface GigabitEthernet0/0/22
+ port link-type access
+ port default vlan 100
+#
+# 配置接入设备二层透传EAP 报文
+l2protocol-tunnel user-defined-protocol 802.1X protocol-mac 0180-c200-0003 group-mac 0100-0000-0002
+#
+port-group group-member GigabitEthernet 0/0/1 to g0/0/20
+port link-type hybrid
+l2protocol-tunnel user-defined-protocol 802.1X enable
+quit
+#
+interface Eth-Trunk1
+port link-type trunk
+l2protocol-tunnel user-defined-protocol 802.1X enable
+</code></pre>
+<h3 id="X-T1-ACC2"><a href="#X-T1-ACC2" class="headerlink" title="X_T1_ACC2"></a>X_T1_ACC2</h3><pre><code class="bash">vlan batch 100
+interface Eth-Trunk1
+ mode lacp
+ trunkport g0/0/23
+ trunkport g0/0/24
+ port trunk allow-pass vlan 100
+#
+# 配置接入设备二层透传EAP 报文
+l2protocol-tunnel user-defined-protocol 802.1X protocol-mac 0180-c200-0003 group-mac 0100-0000-0002
+#
+port-group group-member GigabitEthernet 0/0/1 to g0/0/20
+port link-type hybrid
+l2protocol-tunnel user-defined-protocol 802.1X enable
+quit
+#
+interface Eth-Trunk1
+port link-type trunk
+l2protocol-tunnel user-defined-protocol 802.1X enable
+</code></pre>
+<h3 id="X-T2-AGG1"><a href="#X-T2-AGG1" class="headerlink" title="X_T2_AGG1"></a>X_T2_AGG1</h3><pre><code class="bash">## Trunk
+#
+dhcp enable
+vlan batch 31 to 35 41 to 45 100 209
+#
+interface Eth-Trunk1
+ mode lacp
+ trunkport g0/0/5
+ trunkport g0/0/6
+ port link-type trunk
+ port trunk allow-pass vlan 209 100
+#
+interface Eth-Trunk2
+ mode lacp-static
+ trunkport g0/0/1
+ trunkport g0/0/2
+ port link-type hybrid
+ port hybrid tagged vlan 31 to 35 41 to 45 100
+#
+interface Eth-Trunk3
+ mode lacp-static
+ trunkport g0/0/3
+ trunkport g0/0/4
+ port link-type hybrid
+ port hybrid tagged vlan 31 to 35 41 to 45 100
+#
+interface Vlanif209
+ip address 10.1.200.34 30
+#
+interface LoopBack0
+ip address 10.1.0.7 32
+quit
+#
+interface Vlanif31
+ip address 10.1.31.254 255.255.255.0
+dhcp select relay
+dhcp relay server-ip 10.1.200.33
+#
+interface Vlanif32
+ip address 10.1.32.254 255.255.255.0
+dhcp select relay
+dhcp relay server-ip 10.1.200.33
+#
+interface Vlanif33
+ip address 10.1.33.254 255.255.255.0
+dhcp select relay
+dhcp relay server-ip 10.1.200.33
+#
+interface Vlanif34
+ip address 10.1.34.254 255.255.255.0
+dhcp select relay
+dhcp relay server-ip 10.1.200.33
+#
+interface Vlanif35
+ip address 10.1.35.254 255.255.255.0
+dhcp select relay
+dhcp relay server-ip 10.1.200.33
+#
+interface Vlanif41
+ip address 10.1.41.254 255.255.255.0
+dhcp select relay
+dhcp relay server-ip 10.1.200.33
+#
+interface Vlanif42
+ip address 10.1.42.254 255.255.255.0
+dhcp select relay
+dhcp relay server-ip 10.1.200.33
+#
+interface Vlanif43
+ip address 10.1.43.254 255.255.255.0
+dhcp select relay
+dhcp relay server-ip 10.1.200.33
+#
+interface Vlanif44
+ip address 10.1.44.254 255.255.255.0
+dhcp select relay
+dhcp relay server-ip 10.1.200.33
+#
+interface Vlanif45
+ip address 10.1.45.254 255.255.255.0
+dhcp select relay
+dhcp relay server-ip 10.1.200.33
+#
+ospf 1 router-id 10.1.0.7
+silent-interface all
+undo silent-interface Vlanif209
+area 1
+network 10.1.0.0 0.0.255.255
+
+# 配置汇聚设备Raduis 服务器
+radius-server template Employee
+radius-server shared-key cipher Huawei@123
+radius-server authentication 10.1.60.2 1812
+radius-serve accounting 10.1.60.2 1813
+quit
+radius-server authorization 10.1.60.2 shared-key cipher Huawei@123
+# 配置汇聚设备AAA 认证授权计费使用方式
+aaa
+authentication-scheme Employee
+authentication-mode radius
+quit
+authentication-scheme ap_noauthen
+authentication-mode none
+quit
+accounting-scheme Employee
+accounting-mode radius
+quit
+domain Employee
+authentication-scheme Employee
+accounting-scheme Employee
+radius-server Employee
+quit
+domain ap_noauthen
+authentication-scheme ap_noauthen
+quit
+quit
+#
+domain Employee
+</code></pre>
+<h3 id="X-T2-ACC1"><a href="#X-T2-ACC1" class="headerlink" title="X_T2_ACC1"></a>X_T2_ACC1</h3><pre><code class="bash">#
+int eth1
+ mode lacp
+ trunkport g0/0/23
+ trunkport g0/0/24
+ port link-type trunk
+ port trunk allow-pass vlan 100
+# 配置接入设备二层透传EAP 报文
+l2protocol-tunnel user-defined-protocol 802.1X protocol-mac 0180-c200-0003 group-mac 0100-0000-0002
+# 
+port-group group-member GigabitEthernet 0/0/1 to g0/0/20
+port link-type hybrid
+l2protocol-tunnel user-defined-protocol 802.1X enable
+quit
+#
+interface Eth-Trunk1
+port link-type trunk
+l2protocol-tunnel user-defined-protocol 802.1X enable
+</code></pre>
+<h3 id="X-T2-ACC2"><a href="#X-T2-ACC2" class="headerlink" title="X_T2_ACC2"></a>X_T2_ACC2</h3><pre><code class="bash">#
+int eth1
+ mode lacp
+ trunkport g0/0/23
+ trunkport g0/0/24
+ port link-type trunk
+ port trunk allow-pass vlan 100
+#
+interface GigabitEthernet0/0/22
+ port link-type access
+ port default vlan 100
+# 配置接入设备二层透传EAP 报文
+l2protocol-tunnel user-defined-protocol 802.1X protocol-mac 0180-c200-0003 group-mac 0100-0000-0002
+#
+port-group group-member GigabitEthernet 0/0/1 to g0/0/20
+port link-type hybrid
+l2protocol-tunnel user-defined-protocol 802.1X enable
+quit
+#
+interface Eth-Trunk1
+port link-type trunk
+l2protocol-tunnel user-defined-protocol 802.1X enable
+</code></pre>
+<h2 id="Y园区：iMaster-NCE-Campus-SD-WAN-部署"><a href="#Y园区：iMaster-NCE-Campus-SD-WAN-部署" class="headerlink" title="Y园区：iMaster NCE-Campus SD-WAN 部署"></a>Y园区：iMaster NCE-Campus SD-WAN 部署</h2><hr>
+<h2 id="Z园区：广域网承载及设计"><a href="#Z园区：广域网承载及设计" class="headerlink" title="Z园区：广域网承载及设计"></a>Z园区：广域网承载及设计</h2><hr>
+<h2 id="Python网络自动化"><a href="#Python网络自动化" class="headerlink" title="Python网络自动化"></a>Python网络自动化</h2><pre><code class="py">from paramiko import SSHClient,AutoAddPolicy
+from ncclient import manager
+from ncclient.xml_ import to_ele
+from time import sleep
+from datetime import datetime,timedelta
+
+
+class Datacom:
+
+    def __init__(self,server,username,password):
+
+        self.server=server
+        self.username=username
+        self.password=password
+        self.client=self._get_client()
+        self.cli=self.client.invoke_shell()
+        self.cli.send(&#39;screen-length 0 temporary\n&#39;)
+        sleep(6)
+        self.cli.recv(9999)
+
+    def _get_client(self):
+        client=SSHClient()
+        client.load_system_host_keys()
+        client.set_missing_host_key_policy(AutoAddPolicy)
+        client.connect(self.server,username=self.username,password=self.password)
+        return client
+
+
+    def command(self,cmd):
+        self.cli.send(&#39;&#123;&#125;\n&#39;.format(cmd))
+        sleep(6)
+        return self.cli.recv(9999).decode()
+
+
+    def fan_info(self):
+        fan_info=self.command(&#39;display fan&#39;)
+        return fan_info.find(&#39;Normal&#39;)==-1
+
+
+    def download(self,target,path=&#39;/vrpcfg.zip&#39;):
+        print(&#39;download staring...&#39;)
+        client=self._get_client()
+        sftp=client.open_sftp()
+        sftp.get(path,target)
+        self.client.close()
+        print(&#39;download finish.&#39;)
+
+    def close(self):
+        self.client.close()
+
+
+def Netconf_by_rpc(ip,username,password,rpc_netconf):
+    with manager.connect_ssh(host=ip,
+                             username=username,
+                             password=password,
+                             hostkey_verify=False,
+                             device_params=&#123;&#39;name&#39;:&quot;huaweiyang&quot;&#125;)  as  m:
+        command=to_ele(rpc_netconf)
+        rpc=m.__getattr__(&quot;rpc&quot;)
+        print(&#39;get manager inner function rpc &#123;&#125;&#39;.format(rpc))
+        rpc(command)
+        print(&#39;netconf setting success!&#39;)
+
+def Netconf_syslog_host(ip,username,password,syslog):
+    rpc_netconf=&#39;&#39;&#39;&lt;edit-config&gt;
+    &lt;target&gt;
+      &lt;running/&gt;
+    &lt;/target&gt;
+    &lt;config&gt;
+      &lt;syslog:syslog xmlns:syslog=&quot;urn:ietf:params:xml:ns:yang:ietf-syslog&quot;&gt;
+        &lt;syslog:log-actions&gt;
+          &lt;syslog:remote&gt;
+            &lt;syslog:destination&gt;
+              &lt;syslog:name&gt;syslog-host&lt;/syslog:name&gt;
+              &lt;syslog:udp&gt;
+                &lt;syslog:address&gt;&#123;&#125;&lt;/syslog:address&gt;
+                &lt;syslog:port&gt;43&lt;/syslog:port&gt;
+              &lt;/syslog:udp&gt;
+              &lt;syslog:destination-facility xmlns:ietf-syslog-types=&quot;urn:ietf:params:xml:ns:yang:ietf-syslog-types&quot;&gt;ietf-syslog-types:local0&lt;/syslog:destination-facility&gt;
+            &lt;/syslog:destination&gt;
+          &lt;/syslog:remote&gt;
+        &lt;/syslog:log-actions&gt;
+      &lt;/syslog:syslog&gt;
+    &lt;/config&gt;
+  &lt;/edit-config&gt;
+  &#39;&#39;&#39;.format(syslog)
+    print(&#39;Using netconf configure syslog...&#39;)
+    Netconf_by_rpc(ip,username,password,rpc_netconf)
+
+
+
+def datacom_loop(ip,username,password,name):
+    try:
+        while True:
+            datacom=Datacom(ip,username,password)
+            with open(&#39;command.txt&#39;)  as f:
+             for command in f:
+                print(datacom.command(command))
+            if datacom.fan_info():
+                print(&#39;ALL fans are faultly&#39;)
+            try:
+                than_one_day= datetime.now() - last_downloadtime&gt;=timedelta(days=1)
+            except NameError:
+                than_one_day=True
+            if than_one_day:
+                downloadtime=datetime.now()
+                downloadtime_date=downloadtime.strftime(&#39;%Y_%m_%d&#39;)
+                config_filename=&#39;&#123;&#125;_&#123;&#125;.zip&#39;.format(downloadtime_date,name)
+                backup_filename=&#39;&#123;&#125;_&#123;&#125;.bak&#39;.format(downloadtime_date,name)
+                datacom.command(&#39;save force &#123;&#125;&#39;.format(config_filename))
+                datacom.download(backup_filename,config_filename)
+                last_downloadtime=downloadtime
+                datacom.close()
+                sleep(5*60)
+    except Exception as e:
+        print(&#39;stopped by &#123;&#125;&#39;.format(e))
+
+
+ip = &#39;10.1.0.6&#39;
+name = &#39;X_T1_AGG1&#39;
+syslog = &#39;10.1.60.2&#39;
+username = &#39;python&#39;
+password = &#39;Huawei@123&#39;
+nc_username = &#39;netconf&#39;
+nc_password = &#39;Huawei@123&#39;
+
+
+if __name__==&#39;__main__&#39;:
+    try:
+        Netconf_syslog_host(ip,nc_username,nc_password,syslog)
+        datacom_loop(ip,username,password,name)
+    except KeyboardInterrupt:
+        print(&#39;end of process!&#39;)
+</code></pre>
+<hr>
+<h2 id="网络八股文"><a href="#网络八股文" class="headerlink" title="网络八股文"></a>网络八股文</h2><h3 id="问题1-5’"><a href="#问题1-5’" class="headerlink" title="问题1 5’"></a>问题1 5’</h3><blockquote>
+<p>来自于外网的流量DDos攻击等，可以通过FW进行防御。来自于内部的流量，会有哪些?举出5 种内网攻击场景，并提供解决方案。(1 个场景1 分，5 个场景以上满分)</p>
+</blockquote>
+<pre><code class="bash">答:
+DDoS 攻击是指攻击者通过控制大量的僵尸主机，向被攻击目标发送大量精心构造的攻击报文， 造成被攻击者所在网络的链路拥塞、系统资源耗尽，从而使被攻击者产生拒绝向正常用户的请求提供服务的效果。来自外网流量的DDoS 攻击等，可以使用防火墙进行防御，而来自内部的流量也往往存在很多攻击行为，以下是关于内网流量攻击以及相应解决方案:
+
+# 1、LAND 攻击
+LAND 攻击是攻击者利用TCP 连接三次握手机制中的缺陷，向目标主机发送一个源地址和目的地址均为目标主机、源端口和目的端口相同的SYN 报文，目标主机接收到该报文后，将创建一个源地址和目的地址均为自己的TCP 空连接，直至连接超时。在这种攻击方式下，目标主机将会创建大量无用的TCP空连接，耗费大量资源，直至设备瘫痪。攻击者利用这个攻击原理攻击重要节点的网络设备， 例如服务器的网关设备，这样会导致设备资源使用率过高，影响网络服务。
+# 解决方式:
+可以在网关设备上启用畸形报文攻击防范，启用该防范后，设备采用检测TCP SYN 报文的源地址和目的地址的方法来避免LAND 攻击。如果TCP SYN 报文中的源地址和目的地址一致，则认为是畸形报文攻击，丢弃该报文。
+
+# 2、TC-BPDU 攻击
+交换设备在接收到TC BPDU 报文后，会执行MAC 地址表项和ARP 表项的删除操作。攻击者利用该原理伪造TC BPDU 报文恶意攻击交换设备，短时间内产生大量的TC BPDU 报文，导致交换设备会收到很多TC BPDU 报文，频繁的删除操作会给设备造成很大的负担，导致设备资源使用率过高，影响网络质量，也给网络的稳定带来很大隐患。解决方式:在交换设备上启用防TC-BPDU 报文攻击，启用该功能后，在单位时间内，交换设备处理TC BPDU 报文的次数可配置。如果在单位时间内，交换设备在收到TC BPDU 报文数量大于配置的阈值，那么设备只会处理阈值指定的次数。对于其他超出阈值的TC BPDU 报文，定时器到期后设备只对其统一处理一次。这样可以避免频繁的删除MAC 地址表项和ARP 表项，从而达到保护设备的目的。
+
+# 3、DHCP Server 仿冒攻击
+由于DHCP Server 和DHCP Client 之间没有认证机制，所以如果在网络上随意添加一台DHCP 服务器，它就可以为客户端分配IP 地址以及其他网络参数。如果该DHCP 服务器为用户分配错误的IP 地址和其他网络参数，导致用户上网异常等现象。解决方案:为了防止DHCP Server 仿冒者攻击，可配置设备接口的“信任(Trusted)/非信任(Untrusted)”工作模式，启用后接口默认为非信任模式，将与合法DHCP 服务器直接或间接连接的接口设置为信任接口。此后，从“非信任(Untrusted)”接口上收到的DHCP 回应报文将被直接丢弃，这样可以有效防止DHCP Server 仿冒者的攻击。
+
+# 4、IP 欺骗攻击
+随着网络规模越来越大，通过伪造源IP 地址实施的网络攻击(简称IP 地址欺骗攻击)也逐渐增多。攻击者通过伪造合法用户的IP 地址获取网络访问权限，非法访问网络，甚至造成合法用户无法访问网络，或者信息泄露。解决方案:可以在接入设备上启用IPSG，IPSG 利用绑定表(源IP 地址、源MAC 地址、所属VLAN、入接口的绑定关系)去匹配检查二层接口上收到的IP报文，只有匹配绑定表的报文才允许通过，其他报文将被丢弃。绑定表包括静态和动态两种。静态绑定表使用user-bind 命令手工配置。DHCP Snooping 动态绑定表在配置DHCP Snooping 功能后，DHCP 主机动态获取IP 地址时，设备根据DHCP 服务器发送的DHCP 回复报文动态生成。配置IPSG 技术结合DHCP Snooping 功能进行抵御。可以在交换机上接口或者VLAN 上配置IPSG功能，对入方向的IP 报文进行绑定表匹配检查，当设备在转发IP 报文时， 将此IP 报文中的源IP、源MAC、端口、VLAN 信息和绑定表的信息进行比较，如果信息匹配，说明是合法用户，则允许此用户正常转发，否则认为是攻击者，丢弃该用户发送的IP 报文。从而避免了IP 欺骗攻击。
+
+# 5、ARP 欺骗攻击
+ARP 欺骗是针对ARP 的一种攻击技术，通过使用错误的ARP 载荷信息欺骗局域网内访问者PC 的网关MAC 地址，使访问者PC 错以为攻击者更改后的MAC 地址是网关的MAC，
+</code></pre>
+<h3 id="问题2-3’"><a href="#问题2-3’" class="headerlink" title="问题2 3’"></a>问题2 3’</h3><blockquote>
+<p>解释CloudCampus 解决方案的业务随行原理，如果有两个认证点(同时也是策略执行点)，用户分散在两个认证点，采用什么方案实现全网业务随行。给出两个方案。(3 分)</p>
+</blockquote>
+<pre><code class="bash">答：
+# 业务随行的原理如下：
+传统园区网络主要通过ACL 对用户的策略进行控制。基于ACL 的策略配置依赖组网、IP 和VLAN 的规划，网络的拓扑改变、VLAN 规划改变、IP 地址规划改变以及用户的位置变化都会导致ACL 规则的变更，因此用户策略的配置无法与物理网络解耦，缺乏灵活性，可维护性差。
+为了解决这个问题，使得用户不管身处何地、使用哪个IP 地址，都可以保证该用户在园区网络中获得一致性的访问策略，华为推出了基于用户身份进行策略控制的业务随行方案。
+首先管理员在控制器中创建用户账号、定义UCL 组，同时将用户账号加入其所属的UCL 组，所有用户必须在认证通过后才可接入网络。然后为用户统一定义基于UCL 组的网络访问策略（即组策略）。
+策略组配置完成后控制器将管理员配置的UCL 组下发给所有关联的交换机（执行点和认证点设备），从而实现交换机对用户所属UCL 组的识别。同时执行点设备向控制器发起建立IP-GROUP 通道。
+当用户启动认证，在认证过程中，控制器根据用户的登录信息，将其与UCL组关联。认证成功后，控制器收集所有上线用户的IP 地址。
+控制器通过IP-GROUP 通道向执行点设备推送UCL 组表项信息（该用户所属安全组作为授权结果），记录源/目的IP 与UCL 组的映射关系。
+通过安全组完成了对网络对象的分类，通过安全组策略来定义该安全组能享受的网络服务。在iMaster NCE-Campus 中，管理员在二维矩阵上统一规划安全组所能享受的网络服务，包括访问权限、应用控制等。
+业务随行方案：
+# （1） 场景1：虚拟化园区场景
+可以把汇聚设备部署为认证点和策略执行点，在虚拟化园区网场景下，同时把汇聚设备部署为Edge 节点,Edge 节点之间会部署VXLAN 隧道。当终端设备通过认证后，汇聚设备会拥有UCL 组信息，同时会拥有该汇聚节点下终端的IP-Group信息。
+如果互访的终端都在同一个汇聚设备下，那么可以直接根据数据报文的源目的IP信息和IP-Group 表现来查找对应的源目安全组信息，之后再根据源目安全组执行组间策略，允许访问则转发，不允许则丢弃处理。
+如果互访的目的终端不在该汇聚节点下，汇聚设备只有源终端的IP-Group 表项信息，没有目的终端的IP-Group 表项信息，所以不能直接执行组间策略。而此时汇聚节点同时是Edge 节点，会进行Vxlan 报文的封装，同时会将源安全组ID信息封装在VXLAN 报文中传递到对端的Edge 设备，对端设备再根据目的IP 查找目的的安全组。最后根据找到的目的安全组和VXLAN 报文中的源组ID 执行组间策略，如果禁止就丢弃，如果允许就通过。
+# （2） 场景2：非虚拟化园区网场景
+可以把汇聚设备部署为认证点和策略执行点。当终端设备通过认证后，汇聚设备会拥有UCL 组信息，同时会拥有该汇聚节点下终端的IP-Group 信息。
+如果互访的终端都在通一个汇聚设备下，那么可以直接根据数据报文的源目IP信息和IP-Group 表项来查找对应的源目安全组信息，之后再根据源目安全组执行组间策略，允许访问则转发，不允许则进行丢弃处理。
+如果互访的终端不在同一个汇聚设备下，汇聚设备只有源终端的IP-Group 表项信息，没有目的终端的IP-Group 表项信息，所以不能够直接执行组间策略。而普通的IP 报文无法携带安全组ID 信息，所以此时需要在控制器上配置IP-Group订阅，控制器需要把目的终端的IP-Group 表项信息推送到该汇聚设备上，拥有源目终端的IP-Group 信息，则可以根据数据报文的源目的IP 和IP-Group 表项来查找对应的源目阿全组信息，然后再执行策略，如果禁止就丢弃，允许就通过即可。
+</code></pre>
+<h3 id="问题3-5’"><a href="#问题3-5’" class="headerlink" title="问题3 5’"></a>问题3 5’</h3><blockquote>
+<p>FRR 技术可以分为LFA、R-LFA、TI-LFA，FRR 的环路风险有哪些?(为什么会有环路)</p>
+</blockquote>
+<pre><code class="bash">答：
+1、LFA （Loop-Free Alternates）算法以可提供备份链路的邻居为根节点，利用SPF （Shortest Path First〉算法计算出到目的节点的最短距离。然后，按照以下不等式计算出一组开销最小且无环的备份链路。
+LFA 不等式1：Distance_opt(N, D)＜ Distance_opt(N, S) + Distance_opt(S, D)。其中，Distance_opt(X,Y)是指节点X 到Y 之间的最短路径，N 是备份链路的节点，D 是流量转发的目的节点，S 是转发流量的源节点。
+LFA 不等式2：Distance_opt(N, D)＜ Distance_opt(N, E) + Distance_opt(E，D)。其中，S 是转发流量的源节点，E 是发生故障的节点，N 是备份链路的节点，D是流量转发的目的节点。
+满足以上两个公式，就避免了计算的备用路径产生环路的风险。但是并不意味部署1P FRR 的网络环境中就一定没有环路，可能会因为收敛不一致导致微环。
+当主路径故障，流量切换到备份路径后，而后期原主路径恢复后，转发流量的源节点还未收敛完成，收到流量依旧向备份路径转发。此时备份链路的节点已经收敛完成，且该节点去往目的节点会经过源节点，则产生微环。
+2、LFA FRR 对于某些大型组网，特别是环形组网，无法计算出备份路径，不能满足可靠性要求。在这种情况下，实现了Remote LFA FRR。Remote LFA 算法根据保护路径计算PQ 节点，并在源节点与PQ 节点之间建立tunnel 隧道形成备份下一跳保护。当保护链路发生故障时，流量自动切换到隧道备份路径，继续转发，从而提高网络可靠性。R-LFA 虽然提高了计算备用路径的覆盖率，但是同样会存在路由器拓扑变化的IGP 收敛先后不一致导致的微环。
+3、LFA FRR 和Remote LFA 对于葉些场景中，扩展P 空间和Q 空间既没有交集，也没有直连的邻居，无法计算出备份路径，不能满足可靠性要求。在这种情况下，实现了T-LFA。TI-LFA 算法根据保护路径计算扩展P 空间，Q 空间，Post convergence 最短路径树，以及根据不同场景计算Repair List，并从源节点到。节点，再到Q 节点建立SegmentRouting 隧道形成备份下一跳保护。当保护链路发生故障时，流量自动切换到隧道备份路径，继续转发，从而提高网络可靠性。虽然T-LFA 拓扑无关，但是同样存在路由器收敛不一致导致的微环问题，T-LFA 可以通过算法来避免微环，主要的微环保护以下三个方面：
+# （1） SR-MPLS 本地正切防微环
+本地正切微环指的是紧邻故障节点的节点收敛后引发的环路。全网节点都部署TI-LFA，当主路径故障的时候，节点针对目的地址的收敛过程如下：源节点感知到故障，进入TI-LFA 的快速重路由切换流程，向报文插入Repair List，将报文转向TI-LFA 计算的PQ 节点。因此报文会先转发到下一跳备份节点。当源节点完成到目的地址的路由收敛，则直接查找目的节点的路由，将报文转发到下一跳备份节点，此时不再携带Repair List，而是直按转发。如果此时备份节点还未完成收敛，当源节点向备份节点转发报文时，备份节点的转发表中到目的节点的路由下一跳还是源节点，这样就在源节点和备份节点之间形成了环路。
+解决方式：
+在源节点部署正切防微环，部署正切防微环后的收敛流程如下：源节点感知到故障，进入T-LFA 流程，报文沿着备份路径转发，下一跳为备份节点，并封装Repair List，源节点启动一个定时器T1。在T_期间，源节点不响应拓扑变化，转发表不变，报文依旧按照TI-LFA 策略转发。网络中其他节点正常收敛。源节点的定时器T1 超时，这时网络中其他节点都己经完成收敛，源节点也正常收敛，退出TI-LFA 流程，按照正常收敛后的路径转发报文。
+# （2）本地回切防微环
+微环不但可能在路径正切时产生，也可能在故障恢复后路径回切时出现。下面介绍回切时产生环路：
+主链路发生故障之后，报文按照重新收敛之后的备份路径发送到目的节点。
+主链路故障恢复后，假设备份节点率先完成收敛。源节点收到报文，由于源节点未完成收敛，依然按照故障恢复前路径转发，转发给备份节点。备份节点已经完成收敛，所以备份节点按照故障恢复后的路径转发到源节点，这样就在源节点和备份节点之间形成了环路。
+解决方式：
+在备份节点部署回切防微环，部署回切防微环后的收敛流程如下：
+主链路故障后恢复，备份节点率先完成收敛。备份节点启动定时器T1，在T1 超时前，备份节点针对访问目的节点的报文计算出防微环Segment List。源节点收到报文，由于源节点未完成收敛，依然按照故障恢复前路径转发，转发给备份节点。备份节点在报文中插入防微环Segment List，并转发到源节点。源节点根据Node SID 和Adjacency SID 指令执行转发动作，沿着Adjacency SiID 指定的出接口转发出去，最终转发至目的节点。
+# （3） 远端防微环
+前面介绍了本地正切防微环，实际上正切时不仅会导致本地微环，也可能引起远端节点之间形成环路，即沿着报文转发路径，如果离故障点更近的节点先于离故障点远的节点收敛，就可能会导致环路。下面描述远端微环产生过程：计算节点的非直连链路或节点故障，假设计算节点率先完成收敛，备份节点未完成收敛。备份节点沿着故障前路径将报文转发到计算节点，由于计算节点已经完成收敛，根据路由下一跳转发到备份节点。这样报文就在备份节点和计算节点之间形成了环路。
+解决方式：
+在计算节点使能远端防微环，使能远端防微环后的收敛流程如下：
+计算节点的非直连链路或节点故障，假设计算节点率先完成收敛。计算节点启动定时器T1，在T1 超时前，算节点针对访问目的节点的报文计算出防微环Segment List。备份节点收到报文，由于备份节点未完成收敛，依然按照故障发生之前的路径将报文转发给计算节点。计算节点在报文中插入防微环Segment List，并转发到备份节点。备份节点根据Node SID 的指令执行转发动作，将报文转发给最远P 节点。最远P 节点根据AdjacencysD 的指令执行转发动作，沿着Adjacency SID 出接口转发出去，最后转发到目的节点。
+</code></pre>
+<h3 id="问题3-变种"><a href="#问题3-变种" class="headerlink" title="问题3 变种"></a>问题3 变种</h3><blockquote>
+<p>在部署FRR 时，开启TI-LFA 功能规避环路的风险,那么FRR 是否存在环路的风险？</p>
+</blockquote>
+<pre><code class="bash">答：
+LFA FRR 和Remote LFA 对于某些场景中，扩展P 空间和Q 空间既没有交集，也没有直连的邻居，无法计算出备份路径，不能满足可靠性要求。在这种情况下，实现了TI-LFA。TI-LFA 算法根据保护路径计算扩展P 空间，Q 空间，Post-convergence 最短路径树，以及根据不同场景计算Repair List，并从源节点到P 节点，再到Q 节点建立SegmentRouting 隧道形成备份下一跳保护。当保护链路发生故障时，流量自动切换到隧道备份路径，继续转发，从而提高网络可靠性。虽然TI-LFA 拓扑无关，但是同样存在路由器收敛不一致导致的微环问题，TI-LFA 可以通过算法来避免微环，主要的微环保护以下三个方面：
+# （1） SR-MPLS 本地正切防微环
+本地正切微环指的是紧邻故障节点的节点收敛后引发的环路。全网节点都部署TIHLFA，当主路径故障的时候，源节点针对目的地址的收敛过程如下：
+源节点感知到故障，进入T-LFA 的快速重路由切换流程，向报文插入Repair List，将报文转向TH-LFA 计算的PQ 节点。因此报文会先转发到下一跳备份节点。当源节点完成到目的地址的路由收敛，则直接查找目的节点的路由，报文转发到下一跳备份节点，此时不再携带Repair List，而是直接转发。如果此时备份节点还未完成收敛，当源节点向备份节点转发报文时，备份节点的转发表中到目的节点的路由下一跳还是源节点，这样就在源节点和备份节点之间形成了环路。
+解决方式：
+在源节点部署正切防微环，部署正切防微环后的收敛流程如下：源节点感知到故障，进入T-LFA 流程，报文沿着备份路径转发，下一跳为备份节点，并封装RepairList。源节点启动一个定时器T1。在T1 期间，源节点不响应拓扑变化，转发表不变，报文依旧按照TI-LFA 策略转发。网络中其他节点正常收敛。源节点的定时器T1 超时，这时网络中其他节点都己经完成收敛，源节点也正常收敛，退出TI-LFA 流程，按照正常收敛后的路径转发报文。
+# （2）本地回切防微环
+微环不但可能在路径正切时产生，也可能在放障恢复后路径回切时出现。下面介绍回切时产生环路：
+主链路发生故障之后，报文按照重新收敛之后的备份路径发送到目的节点。主链路故障恢复后，假设备份节点率先完成收敛。源节点收到报文，由于源节点未完成收敛，依然按照故障恢复前路径转发，转发给备份节点。备份节点已经完成收敛，所以备份节点按照故障恢复后的路径转发到源节点，这样就在源节点和备份节点之间形成了环路。
+解决方式：
+在备份节点部署回切防微环，部署回切防微环后的收敛流程如下：
+主链路故障后恢复，备份节点率先完成收敛。备份节点启动定时器T1，在T1超时前，备份节点针对访问目的节点的报文计算出防微环Segment List。源节点收到报文，由于源节点未完成收敛，依然按照故障恢复前路径转发，转发给备份节点。备份节点在报文中插入防微环Segment List，并转发到源节点。源节点根据Node SID 和Adjacency SID 指令执行转发动作，沿着Adjacency SID 指定的出接口转发出去，最终转发至目的节点。
+# （3）远端防微环
+前面介绍了本地正切防微环，实际上正切时不仅会导致本地微环，也可能引起远端节点之间形成环路，即沿着报文转发路径，如果离放障点更近的节点先于离放障点远的节点收敛，就可能会导致环路。下面描述远端微环产生过程：
+计算节点的非直连链路或节点故障，假设计算节点率先完成收敛，备份节点未完成收敛。备份节点沿着故障前路径将报文转发到计算节点，由于计算节点己经完成收敛，根据路由下一跳转发到备份节点。这样报文就在备份节点和计算节点之间闻形成了环路。
+解决方式：
+在计算节点使能远端防微环，使能远端防微环后的收敛流程如下：
+计算节点的非直连链路或节点故障，假设计算节点率先完成收敛。计算节点启动定时器T1，在T1 超时前，计算节点针对访问目的节点的报文计算出防微环Segment List。备份节点收到报文，由于备份节点末完成收敛，依然按照故障发生之前的路径将报文转发给计算节点。计算节点在报文中插入防微环Segment List，并转发到备份节点。备份节点根据Node SID 的指令执行转发动作，将报文转发给最远P 节点。最远P 节点根据Adjacency SID 的指令执行转发动作，沿着Adjacency SID 出接口转发出去，最后转发到目的节点。
+</code></pre>
+<p>问题4：</p>
+<blockquote>
+<p>LDP、RSVP-TE 跟SR 比，不好在哪里。(MPLS LDP 和RSVP-TE 与SR 相比较有不足之处，那么部署MPLS LDP 和RSVP-TE 有什么问题?)</p>
+</blockquote>
+<pre><code class="bash">答:
+MPLS LDP 和SR 相比MPLS LDP 建立LSP 需要同时使用IGP 和LDP 协议，IGP 用来通告路由和拓扑信息，形成路由表。LDP 用来分发标签，形成标签转发表。LDP 的LSP 需要依赖IGP 生成的路由表才能形成LSP。MPLS LDP 的两个主要缺点:
+    (1)存在IGP 和LDP 同步的问题，某些场景，IGP 如果先收敛，LDP 后收敛会导致数据传递的路由黑洞问题。
+    (2)LDP 不支持计算路径。SR 的路由信息的通告和计算全部使用IGP 协议单独完成，OSPF 通过LSA10 中的type7 来携带PrefixSID，ISIS 通过TLV235携带PrefixSID，那么就不存在MPLS LDP 中的IGP 和LDP 问题。
+    (3)LDP 是为每条路由分配标签，而SR 只为节点和IGP 的邻居分配标签，在标签空间的使用上，SR 比LDP 少很多，SR 更适合大规模组网。
+RSVP-TE 和SR 相比
+    (1)控制平面:SR 信令控制也是IGP 的扩展，无需专门的MPLS 的控制协议，减少了协议的数量，而RSVP- TE 需要RSVP 作为控制协议，控制平面比较复杂。
+    (2)可扩展性:SR 是源路由技术，通过控制器可以计算路径，隧道的信息有标签栈进行携带，也就是状态在数据包中。而RSVPTE 每台设备都需要维护隧道的状态信息，可扩展性差。
+    (3)负载分担能力:RSVP 的隧道不支持负载分担，如果需要做负载必须创建多个隧道，而SR 的隧道很容易支持负载分担。
+</code></pre>
+<p>论述题1.5 来自外网的流量攻击 DDos攻击等，可以通过FW进行防御。来自于内网的流量，会有哪些？举出5种内网攻击场景，并提供解决方案。（1个场景1分，5个场景以上满分）</p>
+<p>答：DDos攻击是指攻击者通过控制大量的僵尸主机，向被攻击目标发送大量精心构造的攻击报文，造成被攻击者所在网络的链路拥塞、系统资源耗尽，从而使被攻击者产生拒绝向正常用户的请求提供服务的效果。来自外网流量的DDos攻击等，可以使用防火墙进行防御，而来自内部的流量也往往存在很多攻击行为，以下是关于内网流量攻击以及相应的解决方案：</p>
+<ol>
+<li>LAND 攻击<br>LAND攻击是攻击者利用 TCP 连接三次握手机制中的缺陷，向目标主机发送一个源地址和目的地址均为目标主机、源端口和目的端口相同的 SYN 报文，目标主机接受到该报文后，将创建一个源地址和目的地址均为自己的 TCP 空连接，直至连接超时。在这种攻击方式下，目标主机将会创建大量无用的 TCP 空连接，耗费大量资源，直至设备瘫痪。攻击者利用这个攻击原理攻击重要节点的网络设备，例如服务器的网关设备，这样会导致设备资源使用率过高，影响网络服务。</li>
+</ol>
+<p>解决方式：</p>
+<p>可以在网关设备上启用畸形报文攻击防范，启用该防范后，设备采用监测 TCP SYN 报文的源地址和目的地址的方式来避免LAND攻击。如果 TCP SYN 报文中的源地址和目的地址一致，则认为是畸形攻击，丢弃该报文。</p>
+<ol start="2">
+<li>TC-BPDU攻击</li>
+</ol>
+<p>交换设备在接受到TC BPDU 报文后，会执行 MAC 地址表项和 ARP 表项的删除操作。攻击者利用该原理伪造TC BPDU 报文而已攻击交换设备，短时间内产生大量的 TC BPDU 报文，<br>导致交换设备会收到很多 TC BPDU 报文，频繁的删除操作会给设备造成很大的负担，导致设备资源使用率过高，影响网络质量，也给网络的稳定带来很大隐患。</p>
+<p>解决方式：</p>
+<p>在交换设备上启用防 TC-BPDU 报文攻击，启用该功能后，在单位时间内，交换设备处理 TC BPDU 报文的次数可配置。如果在单位时间内，交换设备在收到 TC BPDU 报文数量大于配置的阈值，那么设备只会处理阈值指定的次数。对于其他超出阈值的 TC BPDU 报文，定时器到期后设备只对其统一处理一次。这样可以避免频繁的删 MAC 地址表象和 ARP 表项，从而达到保护设备的目的。</p>
+<ol start="3">
+<li>DHCP Server 仿冒攻击</li>
+</ol>
+<p>由于 DHCP Server 和 DHCP Client 之间没有认知机制，所以如果在网络上随意添加一台 DHCP 服务器，他就可以为客户端分配 IP 地址以及其他网络参数。如果该 DHCP 服务器为用户分配错误的 IP 地址和其他的网络参数，导致用户上网异常等现象。</p>
+<p>解决方案：</p>
+<p>为了防止 DHCP Server 放冒者攻击，可配置设备接口的“信任(Trusted)&#x2F;非信任(Untrusted)”工作模式，启用后接口默认为非信任模式，将与合法 DHCP 服务器直接或间接的连接的接口设置为信任接口。此后，从“非信任(Untrusted)”接口上收到的 DHCP 回应报文将被直接丢弃，这样可以有效防止 DHCP Server 放冒者的攻击。</p>
+<ol start="4">
+<li>IP 欺骗攻击</li>
+</ol>
+<p>随着网络规模越来越大，通过伪造源 IP 地址实施的网络攻击（简称 IP 地址欺骗攻击）也逐渐增多。攻击者通过伪造合法用户的 IP 地址获取网络访问权限，非法访问网络，甚至造成合法用户无法访问网络，或者信息渗漏。</p>
+<p>解决方案：</p>
+<p>可以在接入设备上启用 IPSG，IPSG 利用绑定表（源 IP 地址、源 MAC 地址、所属 VLAN、入接口的绑定关系）去匹配检查二层接口上收到的IP报文，只有匹配绑定表的报文才允许通过，其他报文将被丢弃。绑定表包括静态和动态两种。静态绑定表使用 user-bind 命令手动配置。 DHCP Snooping 动态绑定表在配置 DHCP Snooping 功能后， DHCP 主机动态获取IP地址时，设备根据 DHCP 服务器发送的 DHCP 回复报文动态生成。配置 IPSG 技术结合 DHCP Snooping 功能进行抵御。可以在交换机上接口或者 VLAN 上配置 IPSG 功能，对入方向的IP报文进行绑定表匹配检查，当设备在转发IP报文时，将此IP报文中的源IP、源MAC、端口、VLAN信息和绑定表的信息进行比较， 如果信息匹配，说明是合法用户，则允许此用户正常转发，否则认为是攻击者，丢弃该用户发送的IP报文。从而避免了IP欺骗报文。</p>
+<ol start="5">
+<li>ARP欺骗攻击</li>
+</ol>
+<p>ARP欺骗是针对ARP的一种攻击技术，通过使用错误的ARP 载荷信息欺骗局域网内访问者PC的网关MAC地址，使访问者PC错以为攻击者更改后的MAC地址是网关的MAC，导致网关不通。此种攻击可让攻击者获取局域网上的数据包甚至可以篡改数据包，且可让网络上特定计算机或所有计算机无法正常连通。</p>
+<p>解决方案：</p>
+<p>为了防御 ARP 欺骗攻击，可以在 Switch 上部署动态 ARP 监测 DAI(Dynamic ARP Inspection)功能。动态ARP监测是利用DHCP snooping绑定表来防御中间人攻击的。当设备收到ARP报文时，将此ARP报文对应的源IP、源MAC、VLAN以及接口信息和绑定表的信息进行比较，如果信息匹配，说明发送该ARP报文的用户是合法用户，允许此用户的ARP报文通过，否则就认为是攻击，丢弃该ARP报文。</p>
+<p>论述题2.5 解释 CloudCampus 解决方案的业务随行原理，如果有两个认证点（同时也是策略执行点），用户分散在两个认证点，采用什么方案实现全网业务随行。给出两个方案。</p>
+<p>答：业务随行的原理如下：</p>
+<p>传统园区网络主要通过 ACL 对用户的策略进行控制。基于 ACL 的策略配置依赖组网、IP和VLAN 的规划，网络的拓扑改变、VLAN规划改变、IP地址改变以及用户的位置变化都会导致ACL规则的变更，因此用户策略的配置无法与物理网络解耦，缺乏灵活性，可维护性差。</p>
+<p>为了解决这个问题，使得用户不管身处何处、使用哪个IP地址，都可以保证该用户在园区网络中忽的一致性的访问策略</p>
+<h1 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h1>
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 hjxstart@126.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry"><span class="miit">
+                <img src="/img/gov.png" title="中华人民共和国工业和信息化部">
+                <a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">粤ICP备2021170625号-1</a>
+        </span>
+    
+    ©2019-2022 hjxstart
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("/img/article-list-bg-img.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
