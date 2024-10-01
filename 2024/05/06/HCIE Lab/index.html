@@ -6,18 +6,43 @@
   <meta name="keywords" content=" 项目 ">
   <meta name="description" content="HCIE Lab | 黄金贤的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="LAB 备考过程与考试内容分析联系阶段和安排 【150 分钟】ENSP X 园区 与 Z 骨干网 MPLS 备考阶段 150 分钟达标 【90 分钟】Python 和 论述开始背诵 【80 分钟】模拟 Y 部分备考阶段 【90、90、60 分钟】分段练习，四阶段后每位同学练习，必须进入腾讯会员，并分享桌面 【6 小时】MPLS 全套模拟阶段 【90 分钟】SRv6 单独备考阶段  安装环境 ENS">
+<meta name="description" content="概述 搭建一套自动化批量安装 Windows 电脑的服务  ESXI 安装与配置硬件环境概述 畅网 N305 多网口迷你小主机一台32G DDR5 4800MHZ 内存条一根长城 1TB M.2 PCIE 3.0 固态硬盘一根网线 2 根, PEU 盘一个, 鼠标键盘一套  安装  按 Enter 继续安装    按 F11 接受许可    按 Enter 选择硬盘    按 Enter 重启">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HCIE-Datacom实验">
-<meta property="og:url" content="https://hjxstart.github.io/2024/07/29/HCIE-Datacom%E5%AE%9E%E9%AA%8C/index.html">
+<meta property="og:title" content="ESXI+ROS+WDS+MDT">
+<meta property="og:url" content="https://hjxstart.github.io/2024/07/28/ESXI-ROS-WDS-MDT/index.html">
 <meta property="og:site_name" content="黄金贤的博客">
-<meta property="og:description" content="LAB 备考过程与考试内容分析联系阶段和安排 【150 分钟】ENSP X 园区 与 Z 骨干网 MPLS 备考阶段 150 分钟达标 【90 分钟】Python 和 论述开始背诵 【80 分钟】模拟 Y 部分备考阶段 【90、90、60 分钟】分段练习，四阶段后每位同学练习，必须进入腾讯会员，并分享桌面 【6 小时】MPLS 全套模拟阶段 【90 分钟】SRv6 单独备考阶段  安装环境 ENS">
+<meta property="og:description" content="概述 搭建一套自动化批量安装 Windows 电脑的服务  ESXI 安装与配置硬件环境概述 畅网 N305 多网口迷你小主机一台32G DDR5 4800MHZ 内存条一根长城 1TB M.2 PCIE 3.0 固态硬盘一根网线 2 根, PEU 盘一个, 鼠标键盘一套  安装  按 Enter 继续安装    按 F11 接受许可    按 Enter 选择硬盘    按 Enter 重启">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-07-29T13:21:11.000Z">
-<meta property="article:modified_time" content="2024-09-27T15:54:46.469Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224148.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224320.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224521.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224705.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225551.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225341.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225745.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225912.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230033.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230241.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230445.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230753.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230951.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222231317.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222231628.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222231733.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222232011.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA1.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA2.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA3.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA4.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA5.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA5.2.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA6.png">
+<meta property="article:published_time" content="2024-07-28T13:33:05.000Z">
+<meta property="article:modified_time" content="2024-09-27T15:54:46.468Z">
 <meta property="article:author" content="黄金贤">
-<meta property="article:tag" content="计算机网络 数据库 操作系统 数据结构 算法 Java Nodejs">
+<meta property="article:tag" content="IT Helpdesk">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224148.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -236,7 +261,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="76">
-<input type="hidden" id="yelog_site_word_count" value="99.6k">
+<input type="hidden" id="yelog_site_word_count" value="103k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1127,12 +1152,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-09-29 09:01:55'>2024-05-06 19:42</time>
+            发布时间 : <time class="date" title='最后更新: 2024-10-01 20:28:35'>2024-05-06 19:42</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:16.2k</span>
+        <span>字数:19.5k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1151,7 +1176,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HCIE-LAB%EF%BC%88%E6%9C%89%E4%BB%B7%E5%80%BC%E7%9A%84%E9%A1%B9%E7%9B%AE%EF%BC%89"><span class="toc-text">HCIE LAB（有价值的项目）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E4%BF%A1%E6%81%AF"><span class="toc-text">环境信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">通用命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#X%E5%9B%AD%E5%8C%BA%EF%BC%9A%E4%BC%A0%E7%BB%9F%E7%BD%91%E6%94%B9%E9%80%A0%E5%8F%8A%E5%8D%87%E7%BA%A7"><span class="toc-text">X园区：传统网改造及升级</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E9%9D%A0%E6%80%A7-3%E2%80%99"><span class="toc-text">可靠性 3’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E4%B8%9A%E5%8A%A1-2%E2%80%99"><span class="toc-text">基本业务 2’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E9%9A%94%E7%A6%BB-12%E2%80%99"><span class="toc-text">网络隔离 12’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WLAN%E6%89%A9%E5%AE%B9-3%E2%80%99"><span class="toc-text">WLAN扩容 3’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BA%E5%8F%A3%E8%AE%BE%E5%A4%87%E9%83%A8%E7%BD%B2-1%E2%80%99"><span class="toc-text">出口设备部署 1’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%86%E5%85%A5%E6%8E%A7%E5%88%B6-8%E2%80%99"><span class="toc-text">准入控制 8’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8E%A7%E5%88%B6-6%E2%80%99"><span class="toc-text">网络安全控制 6’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E9%83%A8%E9%85%8D%E7%BD%AE"><span class="toc-text">全部配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#X-T-Export1"><span class="toc-text">X_T_Export1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#X-T-Export2"><span class="toc-text">X_T_Export2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Core"><span class="toc-text">Core</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#X-T1-AC"><span class="toc-text">X_T1_AC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FW"><span class="toc-text">FW</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#X-T1-AGG1"><span class="toc-text">X_T1_AGG1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#X-T1-ACC1"><span class="toc-text">X_T1_ACC1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#X-T1-ACC2"><span class="toc-text">X_T1_ACC2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#X-T2-AGG1"><span class="toc-text">X_T2_AGG1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#X-T2-ACC1"><span class="toc-text">X_T2_ACC1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#X-T2-ACC2"><span class="toc-text">X_T2_ACC2</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Y%E5%9B%AD%E5%8C%BA%EF%BC%9AiMaster-NCE-Campus-SD-WAN-%E9%83%A8%E7%BD%B2"><span class="toc-text">Y园区：iMaster NCE-Campus SD-WAN 部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Z%E5%9B%AD%E5%8C%BA%EF%BC%9A%E5%B9%BF%E5%9F%9F%E7%BD%91%E6%89%BF%E8%BD%BD%E5%8F%8A%E8%AE%BE%E8%AE%A1"><span class="toc-text">Z园区：广域网承载及设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python%E7%BD%91%E7%BB%9C%E8%87%AA%E5%8A%A8%E5%8C%96"><span class="toc-text">Python网络自动化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%85%AB%E8%82%A1%E6%96%87"><span class="toc-text">网络八股文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%981-5%E2%80%99"><span class="toc-text">问题1 5’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%982-3%E2%80%99"><span class="toc-text">问题2 3’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%983-5%E2%80%99"><span class="toc-text">问题3 5’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%983-%E5%8F%98%E7%A7%8D"><span class="toc-text">问题3 变种</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0%E4%B8%B4%E6%97%B6%E7%AC%94%E8%AE%B0"><span class="toc-text">学习临时笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%84%9A%E6%AD%A5"><span class="toc-text">脚步</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%AE%BE%E7%BD%AE%E5%AF%86%E7%A0%81%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-text">1. 设置密码和初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%88%9B%E5%BB%BAEth-Trunk"><span class="toc-text">2. 创建Eth-Trunk</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%85%8D%E7%BD%AETrunk%E5%92%8CAccess%E6%8E%A5%E5%8F%A3Vlan"><span class="toc-text">3. 配置Trunk和Access接口Vlan</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E9%85%8D%E7%BD%AEVlanif-IP"><span class="toc-text">4. 配置Vlanif IP</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HCIE-LAB%EF%BC%88%E6%9C%89%E4%BB%B7%E5%80%BC%E7%9A%84%E9%A1%B9%E7%9B%AE%EF%BC%89"><span class="toc-text">HCIE LAB（有价值的项目）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E4%BF%A1%E6%81%AF"><span class="toc-text">环境信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">通用命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#X%E5%9B%AD%E5%8C%BA%EF%BC%9A%E4%BC%A0%E7%BB%9F%E7%BD%91%E6%94%B9%E9%80%A0%E5%8F%8A%E5%8D%87%E7%BA%A7"><span class="toc-text">X园区：传统网改造及升级</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E9%9D%A0%E6%80%A7-3%E2%80%99"><span class="toc-text">可靠性 3’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E4%B8%9A%E5%8A%A1-2%E2%80%99"><span class="toc-text">基本业务 2’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E9%9A%94%E7%A6%BB-12%E2%80%99"><span class="toc-text">网络隔离 12’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WLAN%E6%89%A9%E5%AE%B9-3%E2%80%99"><span class="toc-text">WLAN扩容 3’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BA%E5%8F%A3%E8%AE%BE%E5%A4%87%E9%83%A8%E7%BD%B2-1%E2%80%99"><span class="toc-text">出口设备部署 1’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%86%E5%85%A5%E6%8E%A7%E5%88%B6-8%E2%80%99"><span class="toc-text">准入控制 8’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8E%A7%E5%88%B6-6%E2%80%99"><span class="toc-text">网络安全控制 6’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E9%83%A8%E9%85%8D%E7%BD%AE"><span class="toc-text">全部配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#X-T-Export1"><span class="toc-text">X_T_Export1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#X-T-Export2"><span class="toc-text">X_T_Export2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Core"><span class="toc-text">Core</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#X-T1-AC"><span class="toc-text">X_T1_AC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FW"><span class="toc-text">FW</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#X-T1-AGG1"><span class="toc-text">X_T1_AGG1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#X-T1-ACC1"><span class="toc-text">X_T1_ACC1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#X-T1-ACC2"><span class="toc-text">X_T1_ACC2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#X-T2-AGG1"><span class="toc-text">X_T2_AGG1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#X-T2-ACC1"><span class="toc-text">X_T2_ACC1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#X-T2-ACC2"><span class="toc-text">X_T2_ACC2</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Y%E5%9B%AD%E5%8C%BA%EF%BC%9AiMaster-NCE-Campus-SD-WAN-%E9%83%A8%E7%BD%B2"><span class="toc-text">Y园区：iMaster NCE-Campus SD-WAN 部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Z%E5%9B%AD%E5%8C%BA%EF%BC%9A%E5%B9%BF%E5%9F%9F%E7%BD%91%E6%89%BF%E8%BD%BD%E5%8F%8A%E8%AE%BE%E8%AE%A1"><span class="toc-text">Z园区：广域网承载及设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python%E7%BD%91%E7%BB%9C%E8%87%AA%E5%8A%A8%E5%8C%96"><span class="toc-text">Python网络自动化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%85%AB%E8%82%A1%E6%96%87"><span class="toc-text">网络八股文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%981-5%E2%80%99"><span class="toc-text">问题1 5’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%982-3%E2%80%99"><span class="toc-text">问题2 3’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%983-5%E2%80%99"><span class="toc-text">问题3 5’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%983-%E5%8F%98%E7%A7%8D"><span class="toc-text">问题3 变种</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0%E4%B8%B4%E6%97%B6%E7%AC%94%E8%AE%B0"><span class="toc-text">学习临时笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%84%9A%E6%AD%A5"><span class="toc-text">脚步</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#0-%E6%A3%80%E6%9F%A5%E5%91%BD%E4%BB%A4"><span class="toc-text">0. 检查命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%AE%BE%E7%BD%AE%E5%AF%86%E7%A0%81%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-text">1. 设置密码和初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%88%9B%E5%BB%BAEth-Trunk"><span class="toc-text">2. 创建Eth-Trunk</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%85%8D%E7%BD%AETrunk%E5%92%8CAccess%E6%8E%A5%E5%8F%A3Vlan"><span class="toc-text">3. 配置Trunk和Access接口Vlan</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E9%85%8D%E7%BD%AEVlanif-IP-x2F-DHCP-x2F-vpn-instance"><span class="toc-text">4. 配置Vlanif IP &#x2F; DHCP &#x2F; vpn-instance</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%9C%B0%E5%9D%80%E6%B1%A0%E7%BB%91%E5%AE%9A-VPN-instance"><span class="toc-text">5. 地址池绑定 VPN-instance</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E9%85%8D%E7%BD%AE-ip-prefix"><span class="toc-text">6. 配置 ip-prefix</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E4%BF%AE%E6%94%B9-hybrid-%E9%93%BE%E8%B7%AF%E7%B1%BB%E5%9E%8B-x2F-%E9%85%8D%E7%BD%AE-DHCP-%E4%B8%AD%E7%BB%A7"><span class="toc-text">7. 修改 hybrid 链路类型 &#x2F; 配置 DHCP 中继</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E9%85%8D%E7%BD%AE%E5%87%BA%E5%8F%A3%E8%B7%AF%E7%94%B1%E5%99%A8-%E9%BB%98%E8%AE%A4%E8%B7%AF%E7%94%B1-x2F-ACL-x2F-OSPF-x2F-NAT"><span class="toc-text">8. 配置出口路由器 默认路由 &#x2F; ACL &#x2F; OSPF &#x2F; NAT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E9%85%8D%E7%BD%AECORE-OSPF"><span class="toc-text">9. 配置CORE OSPF</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E9%85%8D%E7%BD%AEFW-Trunk-x2F-vsys-x2F-Virtual-if-x2F-OSPF"><span class="toc-text">10. 配置FW Trunk &#x2F; vsys &#x2F; Virtual-if &#x2F; OSPF</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E9%85%8D%E7%BD%AEAC-x2F-AGG1-OSPF"><span class="toc-text">11. 配置AC&#x2F;AGG1 OSPF</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-%E9%85%8D%E7%BD%AEAC-WIFI"><span class="toc-text">12. 配置AC WIFI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-%E9%85%8D%E7%BD%AE-X-T-ACC1-x2F-ACC2-802-1X"><span class="toc-text">13. 配置 X_T_ACC1&#x2F;ACC2 802.1X</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-%E9%85%8D%E7%BD%AE-X-T-AGG1-802-1X-%E8%AE%A4%E8%AF%81"><span class="toc-text">14. 配置 X_T_AGG1 802.1X 认证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-%E9%85%8D%E7%BD%AE-AP-%E5%BC%BA%E5%88%B6%E4%B8%8D%E8%AE%A4%E8%AF%81"><span class="toc-text">15. 配置 AP 强制不认证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-%E5%88%9B%E5%BB%BA-802-1X-%E6%8E%A5%E5%85%A5%E6%A8%A1%E7%89%88%EF%BC%8CMAC-%E6%8E%A5%E5%85%A5%E6%A8%A1%E7%89%88%EF%BC%8C%E5%B9%B6%E7%BB%91%E5%AE%9A%E5%88%B0%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81%E6%A8%A1%E7%89%88%E4%B8%AD%EF%BC%8C%E5%9C%A8%E6%B1%87%E8%81%9A%E8%AE%BE%E5%A4%87%E7%9A%84%E7%9B%B8%E5%BA%94%E7%AB%AF%E5%8F%A3%E4%B8%8A%E5%BC%80%E5%90%AF%E8%AE%A4%E8%AF%81%E6%A8%A1%E7%89%88"><span class="toc-text">16. 创建 802.1X 接入模版，MAC 接入模版，并绑定到身份认证模版中，在汇聚设备的相应端口上开启认证模版</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17-%E5%88%9B%E5%BB%BA-VLAN-%E6%B1%A0%EF%BC%8C%E6%8E%A5%E5%8F%A3%E6%94%BE%E8%A1%8C-VLAN"><span class="toc-text">17. 创建 VLAN 池，接口放行 VLAN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18-%E9%85%8D%E7%BD%AE-FW"><span class="toc-text">18. 配置 FW</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#19-%E9%85%8D%E7%BD%AE-ACL"><span class="toc-text">19. 配置 ACL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#20-%E6%B5%8B%E8%AF%95WIFI"><span class="toc-text">20. 测试WIFI</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2861,7 +2886,13 @@ RSVP-TE 和SR 相比
 <p>答：业务随行的原理如下：</p>
 <p>传统园区网络主要通过 ACL 对用户的策略进行控制。基于 ACL 的策略配置依赖组网、IP和VLAN 的规划，网络的拓扑改变、VLAN规划改变、IP地址改变以及用户的位置变化都会导致ACL规则的变更，因此用户策略的配置无法与物理网络解耦，缺乏灵活性，可维护性差。</p>
 <p>为了解决这个问题，使得用户不管身处何处、使用哪个IP地址，都可以保证该用户在园区网络中忽的一致性的访问策略</p>
-<h1 id="学习临时笔记"><a href="#学习临时笔记" class="headerlink" title="学习临时笔记"></a>学习临时笔记</h1><h2 id="脚步"><a href="#脚步" class="headerlink" title="脚步"></a>脚步</h2><h3 id="1-设置密码和初始化"><a href="#1-设置密码和初始化" class="headerlink" title="1. 设置密码和初始化"></a>1. 设置密码和初始化</h3><pre><code class="bash"># X_T1_AC
+<h1 id="学习临时笔记"><a href="#学习临时笔记" class="headerlink" title="学习临时笔记"></a>学习临时笔记</h1><h2 id="脚步"><a href="#脚步" class="headerlink" title="脚步"></a>脚步</h2><h3 id="0-检查命令"><a href="#0-检查命令" class="headerlink" title="0. 检查命令"></a>0. 检查命令</h3><pre><code class="shell"># 查看 IP 地址池
+display current-configuration configuration ip-pool
+# 
+display ip interface brief
+
+</code></pre>
+<h3 id="1-设置密码和初始化"><a href="#1-设置密码和初始化" class="headerlink" title="1. 设置密码和初始化"></a>1. 设置密码和初始化</h3><pre><code class="bash"># X_T1_AC
 system-view
 user-interface console 0
   idle-time 0 0
@@ -2948,11 +2979,601 @@ interface GigabitEthernet 0/0/6
 interface GigabitEthernet 0/0/3
   port trunk allow-pass vlan 51 to 55 101 to 105
 </code></pre>
-<h3 id="4-配置Vlanif-IP"><a href="#4-配置Vlanif-IP" class="headerlink" title="4. 配置Vlanif IP"></a>4. 配置Vlanif IP</h3><pre><code class="bash"># X_T1_CORE
+<h3 id="4-配置Vlanif-IP-x2F-DHCP-x2F-vpn-instance"><a href="#4-配置Vlanif-IP-x2F-DHCP-x2F-vpn-instance" class="headerlink" title="4. 配置Vlanif IP &#x2F; DHCP &#x2F; vpn-instance"></a>4. 配置Vlanif IP &#x2F; DHCP &#x2F; vpn-instance</h3><pre><code class="bash"># X_T1_CORE
+dhcp enable
 interface vlanif 202
   ip add 10.1.200.6 30
+interface vlanif 204
+  ip add 10.1.200.13 30
+interface vlanif 205
+  ip add 10.1.200.17 30
+interface vlanif 206
+  ip binding vpn-instance Employee
+  ip add 10.1.200.21 30
+interface vlanif 207
+  ip binding vpn-instance Guest
+  ip add 10.1.200.25 30
+interface vlanif 208
+  ip binding vpn-instance Employee
+  ip add 10.1.200.29 30
+  dhcp select global
+interface vlanif 209
+  ip binding vpn-instance Employee
+  ip add 10.1.200.33 30
+  dhcp select global
+interface vlanif 60
+  ip binding vpn-instance Employee
+  ip add 10.1.60.254 24
+interface vlanif 51
+  ip binding vpn-instance Employee
+  ip add 10.1.51.254 24
+  dhcp select global
+interface vlanif 52
+  ip binding vpn-instance Employee
+  ip add 10.1.52.254 24
+  dhcp select global
+interface vlanif 53
+  ip binding vpn-instance Employee
+  ip add 10.1.53.254 24
+  dhcp select global
+interface vlanif 54
+  ip binding vpn-instance Employee
+  ip add 10.1.54.254 24
+  dhcp select global
+interface vlanif 55
+  ip binding vpn-instance Employee
+  ip add 10.1.55.254 24
+  dhcp select global
+interface vlanif 101
+  ip binding vpn-instance Guest
+  ip add 10.1.101.254 24
+  dhcp select global
+interface vlanif 102
+  ip binding vpn-instance Guest
+  ip add 10.1.102.254 24
+  dhcp select global
+interface vlanif 103
+  ip binding vpn-instance Guest
+  ip add 10.1.103.254 24
+  dhcp select global
+interface vlanif 104
+  ip binding vpn-instance Guest
+  ip add 10.1.104.254 24
+  dhcp select global
+interface vlanif 105
+  ip binding vpn-instance Guest
+  ip add 10.1.105.254 24
+  dhcp select global
 </code></pre>
-
+<h3 id="5-地址池绑定-VPN-instance"><a href="#5-地址池绑定-VPN-instance" class="headerlink" title="5. 地址池绑定 VPN-instance"></a>5. 地址池绑定 VPN-instance</h3><pre><code class="bash"># X_T1_CORE
+display current-configuration configuration ip-pool
+...
+ip pool wired_finance1
+  vpn-instance Employee
+  ...
+</code></pre>
+<h3 id="6-配置-ip-prefix"><a href="#6-配置-ip-prefix" class="headerlink" title="6. 配置 ip-prefix"></a>6. 配置 ip-prefix</h3><pre><code class="bash"># X_T1_CORE
+ip ip-prefix Guest deny 10.1.101.0 24
+ip ip-prefix Guest deny 10.1.102.0 24
+ip ip-prefix Guest deny 10.1.103.0 24
+ip ip-prefix Guest deny 10.1.104.0 24
+ip ip-prefix Guest deny 10.1.105.0 24
+ip ip-prefix Guest permit 0.0.0.0 0 less-equal 32
+ip ip-prefix Employee deny 10.1.11.0 24
+ip ip-prefix Employee deny 10.1.12.0 24
+ip ip-prefix Employee deny 10.1.13.0 24
+ip ip-prefix Employee deny 10.1.14.0 24
+ip ip-prefix Employee deny 10.1.15.0 24
+ip ip-prefix Employee deny 10.1.21.0 24
+ip ip-prefix Employee deny 10.1.22.0 24
+ip ip-prefix Employee deny 10.1.23.0 24
+ip ip-prefix Employee deny 10.1.24.0 24
+ip ip-prefix Employee deny 10.1.25.0 24
+ip ip-prefix Employee deny 10.1.31.0 24
+ip ip-prefix Employee deny 10.1.32.0 24
+ip ip-prefix Employee deny 10.1.33.0 24
+ip ip-prefix Employee deny 10.1.34.0 24
+ip ip-prefix Employee deny 10.1.35.0 24
+ip ip-prefix Employee deny 10.1.41.0 24
+ip ip-prefix Employee deny 10.1.42.0 24
+ip ip-prefix Employee deny 10.1.43.0 24
+ip ip-prefix Employee deny 10.1.44.0 24
+ip ip-prefix Employee deny 10.1.45.0 24
+ip ip-prefix Employee deny 10.1.51.0 24
+ip ip-prefix Employee deny 10.1.52.0 24
+ip ip-prefix Employee deny 10.1.53.0 24
+ip ip-prefix Employee deny 10.1.54.0 24
+ip ip-prefix Employee deny 10.1.55.0 24
+ip ip-prefix Employee permit 0.0.0.0 0 less-equal 32
+dis cur | incluede prefix
+</code></pre>
+<h3 id="7-修改-hybrid-链路类型-x2F-配置-DHCP-中继"><a href="#7-修改-hybrid-链路类型-x2F-配置-DHCP-中继" class="headerlink" title="7. 修改 hybrid 链路类型 &#x2F; 配置 DHCP 中继"></a>7. 修改 hybrid 链路类型 &#x2F; 配置 DHCP 中继</h3><pre><code class="bash"># X_T1_AGG1 
+vlan batch 11 to 15 21 to 25
+interface Eth-trunk 2
+  port hybrid tagged vlan 11 to 15 21 to 25 100
+interface Eth-trunk 3
+  port hybrid tagged vlan 11 to 15 21 to 25 100
+dhcp enable
+interface vlanif 11
+  ip add 10.1.11.254 24
+  dhcp select relay
+  dhcp relay server-ip 10.1.200.29
+interface vlanif 12
+  ip add 10.1.12.254 24
+  dhcp select relay
+  dhcp relay server-ip 10.1.200.29
+interface vlanif 13
+  ip add 10.1.13.254 24
+  dhcp select relay
+  dhcp relay server-ip 10.1.200.29
+interface vlanif 14
+  ip add 10.1.14.254 24
+  dhcp select relay
+  dhcp relay server-ip 10.1.200.29
+interface vlanif 15
+  ip add 10.1.15.254 24
+  dhcp select relay
+  dhcp relay server-ip 10.1.200.29
+interface vlanif 21
+  ip add 10.1.21.254 24
+  dhcp select relay
+  dhcp relay server-ip 10.1.200.29
+interface vlanif 22
+  ip add 10.1.22.254 24
+  dhcp select relay
+  dhcp relay server-ip 10.1.200.29
+interface vlanif 23
+  ip add 10.1.23.254 24
+  dhcp select relay
+  dhcp relay server-ip 10.1.200.29
+interface vlanif 24
+  ip add 10.1.24.254 24
+  dhcp select relay
+  dhcp relay server-ip 10.1.200.29
+interface vlanif 25
+  ip add 10.1.25.254 24
+  dhcp select relay
+  dhcp relay server-ip 10.1.200.29
+# X_T1_ACC1 / X_T1_ACC2
+vlan batch 11 to 15 21 to 25 100
+interface Eth-trunk 1
+  port trunk allow-pass vlan 11 to 15 21 to 25 100 
+# X_T2_AGG1
+dhcp enable
+interface vlanif 209
+  ip add 10.1.200.34 30
+interface vlanif 31
+  ip add 10.1.31.254 24
+  dhcp select realy
+  dhcp realy server-ip 10.1.200.33
+interface vlanif 32
+  ip add 10.1.32.254 24
+  dhcp select realy
+  dhcp realy server-ip 10.1.200.33
+interface vlanif 33
+  ip add 10.1.33.254 24
+  dhcp select realy
+  dhcp realy server-ip 10.1.200.33
+interface vlanif 34
+  ip add 10.1.34.254 24
+  dhcp select realy
+  dhcp realy server-ip 10.1.200.33
+interface vlanif 35
+  ip add 10.1.35.254 24
+  dhcp select realy
+  dhcp realy server-ip 10.1.200.33
+interface vlanif 41
+  ip add 10.1.41.254 24
+  dhcp select realy
+  dhcp realy server-ip 10.1.200.33
+interface vlanif 42
+  ip add 10.1.42.254 24
+  dhcp select realy
+  dhcp realy server-ip 10.1.200.33
+interface vlanif 43
+  ip add 10.1.43.254 24
+  dhcp select realy
+  dhcp realy server-ip 10.1.200.33
+interface vlanif 44
+  ip add 10.1.44.254 24
+  dhcp select realy
+  dhcp realy server-ip 10.1.200.33
+interface vlanif 45
+  ip add 10.1.45.254 24
+  dhcp select realy
+  dhcp realy server-ip 10.1.200.33
+</code></pre>
+<h3 id="8-配置出口路由器-默认路由-x2F-ACL-x2F-OSPF-x2F-NAT"><a href="#8-配置出口路由器-默认路由-x2F-ACL-x2F-OSPF-x2F-NAT" class="headerlink" title="8. 配置出口路由器 默认路由 &#x2F; ACL &#x2F; OSPF &#x2F; NAT"></a>8. 配置出口路由器 默认路由 &#x2F; ACL &#x2F; OSPF &#x2F; NAT</h3><pre><code class="bash"># X_T_Export1
+ip route-static 0.0.0.0 0 GigabitEthernet 0/0/0 10.255.1.254
+ip route-static 0.0.0.0 0 GigabitEthernet 0/0/2 10.255.2.254
+acl 2000
+  udno rule 5
+  rule permit source 10.1.11.0 0.0.0.255
+  rule permit source 10.1.12.0 0.0.0.255
+  rule permit source 10.1.13.0 0.0.0.255
+  rule permit source 10.1.14.0 0.0.0.255
+  rule permit source 10.1.15.0 0.0.0.255
+  rule permit source 10.1.21.0 0.0.0.255
+  rule permit source 10.1.22.0 0.0.0.255
+  rule permit source 10.1.23.0 0.0.0.255
+  rule permit source 10.1.24.0 0.0.0.255
+  rule permit source 10.1.25.0 0.0.0.255
+  rule permit source 10.1.51.0 0.0.0.255
+  rule permit source 10.1.52.0 0.0.0.255
+  rule permit source 10.1.53.0 0.0.0.255
+  rule permit source 10.1.54.0 0.0.0.255
+  rule permit source 10.1.55.0 0.0.0.255
+  rule permit source 10.1.101.0 0.0.0.255
+  rule permit source 10.1.102.0 0.0.0.255
+  rule permit source 10.1.103.0 0.0.0.255
+  rule permit source 10.1.104.0 0.0.0.255
+  rule permit source 10.1.105.0 0.0.0.255
+ospf 1 router-id 10.1.0.1
+  default-route-advertise
+  area 0
+    network 10.1.0.1 0.0.0.0
+    network 10.1.200.1 0.0.0.0
+# X_T_Export2
+interface GigabitEthernet 0/0/1
+  ip add 10.200.5 30
+interface GigabitEthernet 0/0/0
+  ip add 10.255.3.1 24
+interface GigabitEthernet 0/0/2
+  ip add 10.255.4.1 24
+interface LoopBack 0
+  ip add 10.1.0.2 32
+ip route-static 0.0.0.0 0 GigabitEthernet 0/0/0 10.255.3.254
+ip route-static 0.0.0.0 0 GigabitEthernet 0/0/2 10.255.4.254
+ospf 1 router-id 10.1.0.2
+  default-route-advertise
+  area 0
+    network 10.1.0.2 0.0.0.0
+    network 10.1.200.5 0.0.0.0
+acl 2000 
+  rule permit source 10.1.11.0 0.0.0.255
+  rule permit source 10.1.12.0 0.0.0.255
+  rule permit source 10.1.13.0 0.0.0.255
+  rule permit source 10.1.14.0 0.0.0.255
+  rule permit source 10.1.15.0 0.0.0.255
+  rule permit source 10.1.21.0 0.0.0.255
+  rule permit source 10.1.22.0 0.0.0.255
+  rule permit source 10.1.23.0 0.0.0.255
+  rule permit source 10.1.24.0 0.0.0.255
+  rule permit source 10.1.25.0 0.0.0.255
+  rule permit source 10.1.51.0 0.0.0.255
+  rule permit source 10.1.52.0 0.0.0.255
+  rule permit source 10.1.53.0 0.0.0.255
+  rule permit source 10.1.54.0 0.0.0.255
+  rule permit source 10.1.55.0 0.0.0.255
+  rule permit source 10.1.101.0 0.0.0.255
+  rule permit source 10.1.102.0 0.0.0.255
+  rule permit source 10.1.103.0 0.0.0.255
+  rule permit source 10.1.104.0 0.0.0.255
+  rule permit source 10.1.105.0 0.0.0.255
+nat address-group 1 10.255.4.2 10.255.4.100 
+interface GigabitEthernet 0/0/0
+  nat outbound 2000
+interface GigabitEthernet 0/0/2
+  nat outbound 2000 address-group 1
+  nat server protocol tcp global current-interface 8081 inside 10.1.60.101 wwww
+</code></pre>
+<h3 id="9-配置CORE-OSPF"><a href="#9-配置CORE-OSPF" class="headerlink" title="9. 配置CORE OSPF"></a>9. 配置CORE OSPF</h3><pre><code class="bash"># X_T1_CORE
+interface lo1
+  ip binding vpn-instance Employee
+  ip add 10.1.0.4 32
+interface lo2
+  ip binding vpn-instance Guest
+  ip add 10.1.0.5 32
+ospf 1 router-id 10.1.0.3
+  area 0
+    network 10.1.0.3 0.0.0.0
+    network 10.1.200.2 0.0.0.0
+    network 10.1.200.6 0.0.0.0
+    network 10.1.200.9 0.0.0.0
+  area 1
+    network 10.1.200.13 0.0.0.0
+    filter ip-prefix Guest import
+  area 2
+    network 10.1.200.17 0.0.0.0
+    filter ip-prefix Employee import
+ospf 65001 vpn-instance Employee router-id 10.1.0.4
+  vpn-instance-capability simple
+  area 1
+    network 10.1.0.0 0.0.255.255
+  silent-interface vlanif 51
+  silent-interface vlanif 52
+  silent-interface vlanif 53
+  silent-interface vlanif 54
+  silent-interface vlanif 55
+  silent-interface vlanif 60
+ospf 65002 vpn-instance Guest router-id 10.1.0.5
+  vpn-instance-capability simple
+  area 2
+    network 10.1.0.0 0.0.255.255
+  silent-interface vlanif 101
+  silent-interface vlanif 102
+  silent-interface vlanif 103
+  silent-interface vlanif 104
+  silent-interface vlanif 105
+</code></pre>
+<h3 id="10-配置FW-Trunk-x2F-vsys-x2F-Virtual-if-x2F-OSPF"><a href="#10-配置FW-Trunk-x2F-vsys-x2F-Virtual-if-x2F-OSPF" class="headerlink" title="10. 配置FW Trunk &#x2F; vsys &#x2F; Virtual-if &#x2F; OSPF"></a>10. 配置FW Trunk &#x2F; vsys &#x2F; Virtual-if &#x2F; OSPF</h3><pre><code class="bash">sys X_T1_FW
+vlan batch 204 to 207
+interface GigabitEthernet 1/0/1
+  portswitch
+  port link-type trunk
+  port trunk allow-pass vlan 204 205
+  undo port trunk allow-pass vlan 1
+interface GigabitEthernet 1/0/2
+  portswitch
+  port link-type trunk
+  port trunk allow-pass vlan 206 207
+  undo port trunk allow-pass valn 1
+interface lo1
+interface lo2
+vsys enable
+vsys name Employee
+  assign vlan 204
+  assign vlan 206
+  assign interface LoopBack 1
+vsys name Guest
+  assign vlan 205
+  assign vlan 207
+  assingn interface LoopBack 2
+interface lo1
+  ip add 10.1.0.8 32
+interface lo2
+  ip add 10.1.0.9 32
+interface vlanif 204
+  ip add 10.1.200.14 30
+interface vlanif 205
+  ip add 10.1.200.18 30
+interface vlanif 206
+  ip add 10.1.200.22 30
+interface vlanif 207
+  ip add 10.1.200.26 30
+interface Virtual-if 1
+  ip add 10.1.200.254 32
+interface Virtual-if 2
+  ip add 10.1.200.253 32
+switch vsys Guest
+  sys
+    firewall zone trust
+      add interface vlanif 207
+    firewall zone untrust
+      add interface vlanif 205
+      add interface virtual-if 2
+    security-policy
+      rule name ospf
+        source-zone trust
+        source-zone untrust
+        source-zone local
+        destination-zone local
+        destination-zone untrust
+        destination-zone trust
+        service ospf
+        action permit
+switch vsys Employee
+  sys
+    firewall zone trust
+      add interface vlanif 206 
+    firewall zone untrust
+      add interface vlanif 204 
+      add interface virtual-if 1
+    security-policy
+      rule name ospf
+        source-zone trust
+        source-zone untrust
+        source-zone local
+        destination-zone local
+        destination-zone untrust
+        destination-zone trust
+        service ospf
+        action permit 
+ospf 65001 vpn-instance Employee router-id 10.1.0.8
+  vpn-instance-capability simple
+  area 1
+    network 10.1.0.8 0.0.0.0
+    network 10.1.200.14 0.0.0.0
+    network 10.1.200.22 0.0.0.0
+ospf 65002 vpn-instance Guest router-id 10.1.0.9
+  vpn-instance-capability simple
+  area 2
+    network 10.1.0.9 0.0.0.0
+    network 10.1.200.18 0.0.0.0
+    network 10.1.200.26 0.0.0.0
+</code></pre>
+<h3 id="11-配置AC-x2F-AGG1-OSPF"><a href="#11-配置AC-x2F-AGG1-OSPF" class="headerlink" title="11. 配置AC&#x2F;AGG1 OSPF"></a>11. 配置AC&#x2F;AGG1 OSPF</h3><pre><code class="bash"># X_T1_AC
+ospf 1 router-id 10.1.0.11
+  area 0 
+    network 10.1.0.11 0.0.0.0
+    network 10.1.100.254 0.0.0.0
+    network 10.1.200.10 0.0.0.0
+# X_T1_AGG1
+interface LoopBack 0
+  ip add 10.1.0.6 32
+ospf 1 router-id 10.1.0.6
+  silent-interface all
+  udno silent-interface vlanif 208
+  area 1
+    network 10.1.0.0 0.0.255.255
+# X_T2_AGG1
+interface LoopBack 0
+  ip add 10.1.0.7 32
+ospf 1 router-id 10.1.0.7
+  silent-interface all
+  udno silent-interface vlanif 209
+  area 1
+    network 10.1.0.0 0.0.255.255
+</code></pre>
+<h3 id="12-配置AC-WIFI"><a href="#12-配置AC-WIFI" class="headerlink" title="12. 配置AC WIFI"></a>12. 配置AC WIFI</h3><pre><code class="bash"># X_T1_AC
+vlan pool wireless_Employee
+  vlan 51 to 55
+  assignment hash
+vlan pool wireless_Guest
+  vlan 101 to 105
+  assignment hash
+wlan
+  ssid-profile name Guest
+    ssid X_Guest010
+    y
+  ssid-profile name Employee
+    ssid X_Employee010
+    y
+  vap-profile name Employee
+    service-vlan vlan-pool wireless_Employee
+    y
+  vap-profile name Guest
+    service-vlan vlan-pool wireless_Guest
+    y
+  ap-id 1 ap-mac 00e0-fca9-6ac0
+    ap-name X_T2_AP
+    ap-group X
+    y
+</code></pre>
+<h3 id="13-配置-X-T-ACC1-x2F-ACC2-802-1X"><a href="#13-配置-X-T-ACC1-x2F-ACC2-802-1X" class="headerlink" title="13. 配置 X_T_ACC1&#x2F;ACC2 802.1X"></a>13. 配置 X_T_ACC1&#x2F;ACC2 802.1X</h3><pre><code class="bash">l2protocol-tunnel user-defined-protocol 802.1X protocol-mac 0180-c200-0003 group-mac  0100-0000-0002
+port-group group-number GigabitEthernet 0/0/1 to GigabitEthernet 0/0/22
+l2protocol-tunnel user-defined-protocol 802.1X enable
+interface Eth-trunk 1
+  l2protocol-tunnel user-defined-protocol 802.1X enable
+</code></pre>
+<h3 id="14-配置-X-T-AGG1-802-1X-认证"><a href="#14-配置-X-T-AGG1-802-1X-认证" class="headerlink" title="14. 配置 X_T_AGG1 802.1X 认证"></a>14. 配置 X_T_AGG1 802.1X 认证</h3><pre><code class="bash">radius-server template Employee
+  radius-server authentication 10.1.60.2 1812
+  radius-server accounting 10.1.60.2 1813
+  radius-server shared-key cipher Huawei@123
+radius authorization 10.1.60.2 shared-key cipher Huawei@123
+aaa
+  authentication-scheme Employee
+    authentication-mode radius
+  authentication-mode ap_noauthen
+    authentication-mode none
+  accounting-scheme Employee
+    accounting-mode radius
+  domain Employee
+    authentication-scheme Employee
+    accounting-scheme Employee
+    radius-server Employee
+  domain ap_noauthen
+    authenticaton-scheme ap_noauthen
+domain Employee
+</code></pre>
+<h3 id="15-配置-AP-强制不认证"><a href="#15-配置-AP-强制不认证" class="headerlink" title="15. 配置 AP 强制不认证"></a>15. 配置 AP 强制不认证</h3><pre><code class="bash"># X_T1_AGG1
+domain ap_noauthen mac-authentication force mac-address 00e0-fcb7-2890 mask ffff-ffff-ffff
+# X_T2_AGG1
+domain ap_noauthen mac-authentication force mac-address 00e0-fca9-6ac0 mask ffff-ffff-ffff
+</code></pre>
+<h3 id="16-创建-802-1X-接入模版，MAC-接入模版，并绑定到身份认证模版中，在汇聚设备的相应端口上开启认证模版"><a href="#16-创建-802-1X-接入模版，MAC-接入模版，并绑定到身份认证模版中，在汇聚设备的相应端口上开启认证模版" class="headerlink" title="16. 创建 802.1X 接入模版，MAC 接入模版，并绑定到身份认证模版中，在汇聚设备的相应端口上开启认证模版"></a>16. 创建 802.1X 接入模版，MAC 接入模版，并绑定到身份认证模版中，在汇聚设备的相应端口上开启认证模版</h3><pre><code class="bash"># X_T1/2_AGG1
+do1x-access-profile name Employee
+mac-access-profile name Employee
+authentication-profile name Employee
+  do1x-access-profile Employee
+  mac-access-profile Employee
+interface Eth-trunk 2
+  authentication-profile Employee
+interface Eth-trunk 3
+  authentication-profile Employee
+</code></pre>
+<h3 id="17-创建-VLAN-池，接口放行-VLAN"><a href="#17-创建-VLAN-池，接口放行-VLAN" class="headerlink" title="17. 创建 VLAN 池，接口放行 VLAN"></a>17. 创建 VLAN 池，接口放行 VLAN</h3><pre><code class="bash"># X_T1_AGG1
+vlan pool market
+  vlan 11 to 15
+vlan pool product
+  vlan 21 to 25
+# X_T2_AGG1
+vlan pool finance
+  vlan 31 to 35
+vlan pool hr
+  vlan 41 to 45
+</code></pre>
+<h3 id="18-配置-FW"><a href="#18-配置-FW" class="headerlink" title="18. 配置 FW"></a>18. 配置 FW</h3><pre><code class="bash"># X_T1_FW
+ip route-static vpn-instance Guest 10.1.60.99 32 vpn-instance Employee
+switch vsys Guest
+  sys
+    ip service-set Guest_to_Server type object
+      service protocol tcp source-port 0 to 65535 destination-port 3389
+    security-policy
+      rule name Guest_to_Server
+        source-zone trust
+        destination-zone untrust
+        source-address range 10.1.101.0 10.1.105.255
+        destination-address 10.1.60.99 mask 255.255.255.255
+        service Guest_to_Server
+        action permit
+      rule name Deny_otherServer
+        source-zone trust
+        destination-zone untrust
+        source-address range 10.1.101.0 10.1.105.255
+        destination-address 10.1.60.0 mask 255.255.255.0
+        action deny
+      rule name Guest_to_Internet
+        source-zone trust
+        destination-zone untrust
+        source-address range 10.1.101.0 10.1.105.255
+        destination-address any
+        action permit
+switch vsys Employee
+  sys
+    ip service-set Guest_to_Server type object
+      service protocol tcp source-port 0 to 65535 destination-port 3389
+    security-policy
+      rule name Internet_to_Web
+        source-zone untrust
+        destination-zone trust
+        source-address any
+        destination-address 10.1.60.101 mask 255.255.255.255
+        service http
+        action permit
+      rule name Guest_to_Server
+        source-zone untrust
+        destination-zone trust
+        source-address range 10.1.101.0 10.1.105.255
+        destination-address 10.1.60.101 mask 255.255.255.255
+        service Guest_to_Server
+        action permit
+      rule name Employee_to_Server
+        source-zone trust
+        destination-zone trust
+        source-address 10.1.51.0 10.1.55.255
+        destination-address 10.1.60.100 mask 255.255.255.255
+        action permit
+      rule name Deny_otherServer
+        source-zone trust
+        destination-zone trust
+        source-address range 10.1.51.0 10.1.55.255
+        destination-address 10.1.60.0 mask 255.255.255.0
+        action deny
+      rule name Employee_to_Internet
+        source-zone trust
+        destination-zone untrust
+        source-address range 10.1.11.0 10.1.15.255
+        source-address range 10.1.21.0 10.1.25.255
+        source-address range 10.1.51.0 10.1.55.255
+        action permit
+</code></pre>
+<h3 id="19-配置-ACL"><a href="#19-配置-ACL" class="headerlink" title="19. 配置 ACL"></a>19. 配置 ACL</h3><pre><code class="bash"># X_T1_CORE
+acl number 3001
+  rule permit tcp source 10.1.60.101 0.0.0.0 source-port eq 80 destination any
+interface GigabitEthernet 0/0/4
+  traffic-redirect inbound acl 3001 ip-nexthop 10.1.200.5
+# X_T_Export2
+acl number 3001
+  rule permit tcp source 10.1.60.101 0.0.0.0 source-port eq 80 destination any
+traffic classifier web
+  if-match acl 3001
+traffic behavior web
+  redirect ip-nexthop 10.255.4.254
+traffic policy web
+  classifier web behavior web
+interface GigabitEthernet 0/0/1
+  traffic-policy web inbound
+# X_T1_ACC2
+interface GigabitEthernet 0/0/1
+  port hybrid untagged vlan 24
+  port hybrid pvid vlan 24
+# X_T2_ACC1
+interface GigabitEthernet 0/0/1
+  port hybrid untagged vlan 33
+  port hybrid pvid vlan 33
+</code></pre>
+<h3 id="20-测试WIFI"><a href="#20-测试WIFI" class="headerlink" title="20. 测试WIFI"></a>20. 测试WIFI</h3>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 hjxstart@126.com </span>
     </div>
