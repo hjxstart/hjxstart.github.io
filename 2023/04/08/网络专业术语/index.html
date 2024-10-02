@@ -6,43 +6,18 @@
   <meta name="keywords" content=" 网络专业术语 ">
   <meta name="description" content="网络专业术语 | 黄金贤的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="概述 搭建一套自动化批量安装 Windows 电脑的服务  ESXI 安装与配置硬件环境概述 畅网 N305 多网口迷你小主机一台32G DDR5 4800MHZ 内存条一根长城 1TB M.2 PCIE 3.0 固态硬盘一根网线 2 根, PEU 盘一个, 鼠标键盘一套  安装  按 Enter 继续安装    按 F11 接受许可    按 Enter 选择硬盘    按 Enter 重启">
+<meta name="description" content="LAB 备考过程与考试内容分析联系阶段和安排 【150 分钟】ENSP X 园区 与 Z 骨干网 MPLS 备考阶段 150 分钟达标 【90 分钟】Python 和 论述开始背诵 【80 分钟】模拟 Y 部分备考阶段 【90、90、60 分钟】分段练习，四阶段后每位同学练习，必须进入腾讯会员，并分享桌面 【6 小时】MPLS 全套模拟阶段 【90 分钟】SRv6 单独备考阶段  安装环境 ENS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ESXI+ROS+WDS+MDT">
-<meta property="og:url" content="https://hjxstart.github.io/2024/07/28/ESXI-ROS-WDS-MDT/index.html">
+<meta property="og:title" content="HCIE-Datacom实验">
+<meta property="og:url" content="https://hjxstart.github.io/2024/07/29/HCIE-Datacom%E5%AE%9E%E9%AA%8C/index.html">
 <meta property="og:site_name" content="黄金贤的博客">
-<meta property="og:description" content="概述 搭建一套自动化批量安装 Windows 电脑的服务  ESXI 安装与配置硬件环境概述 畅网 N305 多网口迷你小主机一台32G DDR5 4800MHZ 内存条一根长城 1TB M.2 PCIE 3.0 固态硬盘一根网线 2 根, PEU 盘一个, 鼠标键盘一套  安装  按 Enter 继续安装    按 F11 接受许可    按 Enter 选择硬盘    按 Enter 重启">
+<meta property="og:description" content="LAB 备考过程与考试内容分析联系阶段和安排 【150 分钟】ENSP X 园区 与 Z 骨干网 MPLS 备考阶段 150 分钟达标 【90 分钟】Python 和 论述开始背诵 【80 分钟】模拟 Y 部分备考阶段 【90、90、60 分钟】分段练习，四阶段后每位同学练习，必须进入腾讯会员，并分享桌面 【6 小时】MPLS 全套模拟阶段 【90 分钟】SRv6 单独备考阶段  安装环境 ENS">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224148.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224320.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224521.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224705.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225551.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225341.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225745.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225912.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230033.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230241.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230445.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230753.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230951.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222231317.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222231628.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222231733.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222232011.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA1.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA2.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA3.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA4.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA5.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA5.2.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA6.png">
-<meta property="article:published_time" content="2024-07-28T13:33:05.000Z">
-<meta property="article:modified_time" content="2024-09-27T15:54:46.468Z">
+<meta property="article:published_time" content="2024-07-29T13:21:11.000Z">
+<meta property="article:modified_time" content="2024-09-27T15:54:46.469Z">
 <meta property="article:author" content="黄金贤">
-<meta property="article:tag" content="IT Helpdesk">
+<meta property="article:tag" content="计算机网络 数据库 操作系统 数据结构 算法 Java Nodejs">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224148.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -261,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="76">
-<input type="hidden" id="yelog_site_word_count" value="103k">
+<input type="hidden" id="yelog_site_word_count" value="103.1k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
