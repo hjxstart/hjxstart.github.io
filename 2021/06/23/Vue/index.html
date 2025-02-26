@@ -1,0 +1,1995 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Vue | 黄金贤的博客</title>
+  <meta name="keywords" content=" Vue ">
+  <meta name="description" content="Vue | 黄金贤的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="概述背景概述待补充 通用常用命令常用激活命令# 命令行激活,扫描二维码回车输入激活码 kylin-system-verify # 查看当前系统激活状态 kylin_activation_check # ukey激活命令 kylin_activate_ukey   21038046 桌面常见问题数据# 用户的回收站 cd ~&#x2F;.local&#x2F;share&#x2F;Trash&#x2F;files&#x2F;  修改密码# 进入单用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="KylinOS">
+<meta property="og:url" content="https://hjxstart.github.io/2025/02/12/KylinOS/index.html">
+<meta property="og:site_name" content="黄金贤的博客">
+<meta property="og:description" content="概述背景概述待补充 通用常用命令常用激活命令# 命令行激活,扫描二维码回车输入激活码 kylin-system-verify # 查看当前系统激活状态 kylin_activation_check # ukey激活命令 kylin_activate_ukey   21038046 桌面常见问题数据# 用户的回收站 cd ~&#x2F;.local&#x2F;share&#x2F;Trash&#x2F;files&#x2F;  修改密码# 进入单用">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-02-12T08:47:23.000Z">
+<meta property="article:modified_time" content="2025-02-26T10:13:49.342Z">
+<meta property="article:author" content="黄金贤">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-dark.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 6.0.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>黄金贤</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="github"
+               href="https://github.com/hjxstart"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="email"
+               href="mailto:hjxstart@126.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=1726283687&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(69)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="读书">
+                        
+                        读书
+                        <small>(6)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="后端">
+                        
+                        后端
+                        <small>(8)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据库">
+                        
+                        数据库
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(13)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="前端">
+                        
+                        前端
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="网络">
+                        
+                        网络
+                        <small>(21)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="系统">
+                        
+                        系统
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="69">
+<input type="hidden" id="yelog_site_word_count" value="102.6k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://github.com/hjxstart">hjxstart</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>笔记</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>编程思想</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>编程语言</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>动态路由协议</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>海明码</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>环境</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>静态路由</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>路由协议</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>设计模式</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>数据库</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>思科网络实验</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>网络常用命令</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>项目</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CentOS7</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CICD</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Cisco</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Docker</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>EIGRP</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>FHPR</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>frp</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ftp</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Git</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>GO</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Harbor</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>IGP</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>InfluxDB</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>IT Helpdesk</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Java</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>K8s</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>MongoDB</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Mybatis</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>MySQL</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Nginx</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Nodejs</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>OSPF</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Spring</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>SpringBoot</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>VLAN</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>VRRP</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Vue</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="全部文章 网络 "
+           href="/2024/05/06/HCIE%20Lab/"
+           data-tag="项目"
+           data-author="" >
+            <span class="post-title" title="HCIE Lab">HCIE Lab</span>
+            <span class="post-date" title="2024-05-06 19:42:49">2024/05/06</span>
+        </a>
+        
+        <a id="top" class="全部文章 数据库 "
+           href="/2022/03/06/influxDB/"
+           data-tag="数据库,InfluxDB"
+           data-author="" >
+            <span class="post-title" title="InfluxDB">InfluxDB</span>
+            <span class="post-date" title="2022-03-06 12:47:36">2022/03/06</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2021/09/08/Harbor/"
+           data-tag="Harbor,K8s"
+           data-author="" >
+            <span class="post-title" title="Harbor">Harbor</span>
+            <span class="post-date" title="2021-09-08 18:04:32">2021/09/08</span>
+        </a>
+        
+        <a id="top" class="全部文章 后端 "
+           href="/2021/08/26/GO/"
+           data-tag="GO,编程语言"
+           data-author="" >
+            <span class="post-title" title="GO">GO</span>
+            <span class="post-date" title="2021-08-26 11:50:00">2021/08/26</span>
+        </a>
+        
+        <a id="top" class="全部文章 "
+           href="/2024/07/28/ESXI-ROS-WDS-MDT/"
+           data-tag="IT Helpdesk"
+           data-author="" >
+            <span class="post-title" title="ESXI+ROS+WDS+MDT">ESXI+ROS+WDS+MDT</span>
+            <span class="post-date" title="2024-07-28 21:33:05">2024/07/28</span>
+        </a>
+        
+        <a id="top" class="全部文章 "
+           href="/2023/12/18/ESXI/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="ESXI">ESXI</span>
+            <span class="post-date" title="2023-12-18 17:05:10">2023/12/18</span>
+        </a>
+        
+        <a id="top" class="全部文章 工具 "
+           href="/2021/03/14/Hexo/"
+           data-tag="Hexo"
+           data-author="" >
+            <span class="post-title" title="Hexo">Hexo</span>
+            <span class="post-date" title="2021-03-14 08:31:47">2021/03/14</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2021/09/20/k8s%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/"
+           data-tag="K8s"
+           data-author="" >
+            <span class="post-title" title="k8s实验笔记">k8s实验笔记</span>
+            <span class="post-date" title="2021-09-20 08:04:10">2021/09/20</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2021/09/15/K8s/"
+           data-tag="Docker,K8s"
+           data-author="" >
+            <span class="post-title" title="k8s">k8s</span>
+            <span class="post-date" title="2021-09-15 20:48:34">2021/09/15</span>
+        </a>
+        
+        <a id="top" class="全部文章 后端 "
+           href="/2021/06/26/%E6%A0%A1%E5%9B%AD%E4%BA%A4%E6%98%93%E9%A1%B9%E7%9B%AE/"
+           data-tag="Java,Spring"
+           data-author="" >
+            <span class="post-title" title="校园交易项目">校园交易项目</span>
+            <span class="post-date" title="2021-06-26 07:58:18">2021/06/26</span>
+        </a>
+        
+        <a id="top" class="全部文章 读书 "
+           href="/2021/04/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"
+           data-tag="Java,设计模式"
+           data-author="" >
+            <span class="post-title" title="设计模式">设计模式</span>
+            <span class="post-date" title="2021-04-18 22:19:45">2021/04/18</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2021/12/19/Gitea/"
+           data-tag="Git,CICD"
+           data-author="" >
+            <span class="post-title" title="Gitea">Gitea</span>
+            <span class="post-date" title="2021-12-19 21:53:48">2021/12/19</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2021/08/11/Nginx/"
+           data-tag="Nginx"
+           data-author="" >
+            <span class="post-title" title="Nginx">Nginx</span>
+            <span class="post-date" title="2021-08-11 23:28:55">2021/08/11</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2021/07/22/Docker/"
+           data-tag="Docker,环境"
+           data-author="" >
+            <span class="post-title" title="Docker">Docker</span>
+            <span class="post-date" title="2021-07-22 14:53:59">2021/07/22</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2021/06/07/CentOS7/"
+           data-tag="Linux,CentOS7"
+           data-author="" >
+            <span class="post-title" title="CentOS7">CentOS7</span>
+            <span class="post-date" title="2021-06-07 23:16:42">2021/06/07</span>
+        </a>
+        
+        <a id="top" class="全部文章 系统 "
+           href="/2024/03/31/RHCE9/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="RHCE9">RHCE9</span>
+            <span class="post-date" title="2024-03-31 15:33:32">2024/03/31</span>
+        </a>
+        
+        <a id="top" class="全部文章 "
+           href="/2024/07/28/Windows10%E7%B3%BB%E7%BB%9F%E5%B0%81%E8%A3%85/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Windows10系统封装">Windows10系统封装</span>
+            <span class="post-date" title="2024-07-28 21:32:18">2024/07/28</span>
+        </a>
+        
+        <a id="top" class="全部文章 读书 "
+           href="/2021/03/14/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/"
+           data-tag="笔记"
+           data-author="" >
+            <span class="post-title" title="时间管理">时间管理</span>
+            <span class="post-date" title="2021-03-14 21:49:15">2021/03/14</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2025/02/12/KylinOS/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="KylinOS">KylinOS</span>
+            <span class="post-date" title="2025-02-12 16:47:23">2025/02/12</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2024/11/04/%E7%A2%8E%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="碎学习记录">碎学习记录</span>
+            <span class="post-date" title="2024-11-04 10:47:24">2024/11/04</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/28/BGP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="BGP">BGP</span>
+            <span class="post-date" title="2024-01-28 11:20:29">2024/01/28</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/005-STP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="005-STP">005-STP</span>
+            <span class="post-date" title="2024-01-27 14:01:47">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/004-VLAN/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="004-VLAN">004-VLAN</span>
+            <span class="post-date" title="2024-01-27 11:42:02">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/003-LLDP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="003-LLDP">003-LLDP</span>
+            <span class="post-date" title="2024-01-27 11:31:16">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/001-Telnet/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="001-Telnet">001-Telnet</span>
+            <span class="post-date" title="2024-01-27 10:45:39">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/002-SSH/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="002_SSH">002_SSH</span>
+            <span class="post-date" title="2024-01-27 10:44:10">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/%E5%8D%8E%E4%B8%BA%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="华为常用命令">华为常用命令</span>
+            <span class="post-date" title="2024-01-27 09:28:44">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/20/STP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="STP">STP</span>
+            <span class="post-date" title="2024-01-20 10:26:37">2024/01/20</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2023/12/22/WireGuard/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="WireGuard">WireGuard</span>
+            <span class="post-date" title="2023-12-22 07:40:46">2023/12/22</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2023/12/21/%E5%A0%86%E5%8F%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="堆叠">堆叠</span>
+            <span class="post-date" title="2023-12-21 19:31:45">2023/12/21</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2023/12/18/RouterOS/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="RouterOS">RouterOS</span>
+            <span class="post-date" title="2023-12-18 17:05:19">2023/12/18</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2023/12/18/Git/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Git">Git</span>
+            <span class="post-date" title="2023-12-18 17:00:20">2023/12/18</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2023/11/30/IT-HelpDesk/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="IT HelpDesk">IT HelpDesk</span>
+            <span class="post-date" title="2023-11-30 21:21:59">2023/11/30</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/11/18/OpenWrt/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OpenWrt">OpenWrt</span>
+            <span class="post-date" title="2023-11-18 17:03:16">2023/11/18</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2023/06/11/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="课程学习笔记">课程学习笔记</span>
+            <span class="post-date" title="2023-06-11 10:46:38">2023/06/11</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/06/01/%E6%80%9D%E7%A7%91NP%E7%BD%91%E7%BB%9C%E5%AE%9E%E9%AA%8C/"
+           data-tag="思科网络实验,Cisco"
+           data-author="" >
+            <span class="post-title" title="思科NP网络实验">思科NP网络实验</span>
+            <span class="post-date" title="2023-06-01 10:46:26">2023/06/01</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/06/01/%E5%8D%8E%E4%B8%BANP%E7%BD%91%E7%BB%9C%E5%AE%9E%E9%AA%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="华为NP网络实验">华为NP网络实验</span>
+            <span class="post-date" title="2023-06-01 10:46:04">2023/06/01</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/09/EIGRP/"
+           data-tag="EIGRP,路由协议"
+           data-author="" >
+            <span class="post-title" title="EIGRP">EIGRP</span>
+            <span class="post-date" title="2023-04-09 15:14:50">2023/04/09</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/09/FHPR/"
+           data-tag="FHPR,VRRP"
+           data-author="" >
+            <span class="post-title" title="FHPR">FHPR</span>
+            <span class="post-date" title="2023-04-09 11:25:26">2023/04/09</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/09/%E5%9B%AD%E5%8C%BA%E7%BD%91%E6%9E%B6%E6%9E%84/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="园区网架构">园区网架构</span>
+            <span class="post-date" title="2023-04-09 09:01:09">2023/04/09</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/09/%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE%E6%A6%82%E8%BF%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="动态路由协议概述">动态路由协议概述</span>
+            <span class="post-date" title="2023-04-09 08:57:30">2023/04/09</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/08/%E5%8D%8E%E4%B8%BANA%E7%BD%91%E7%BB%9C%E5%AE%9E%E9%AA%8C/"
+           data-tag="OSPF,VLAN"
+           data-author="" >
+            <span class="post-title" title="华为NA网络实验">华为NA网络实验</span>
+            <span class="post-date" title="2023-04-08 11:46:05">2023/04/08</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/07/%E6%80%9D%E7%A7%91NA%E7%BD%91%E7%BB%9C%E5%AE%9E%E9%AA%8C/"
+           data-tag="思科网络实验,Cisco"
+           data-author="" >
+            <span class="post-title" title="思科NA网络实验">思科NA网络实验</span>
+            <span class="post-date" title="2023-04-07 20:13:29">2023/04/07</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/07/OSPF/"
+           data-tag="路由协议,动态路由协议,IGP,OSPF"
+           data-author="" >
+            <span class="post-title" title="OSPF">OSPF</span>
+            <span class="post-date" title="2023-04-07 19:19:35">2023/04/07</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/07/%E9%9D%99%E6%80%81%E8%B7%AF%E7%94%B1/"
+           data-tag="静态路由"
+           data-author="" >
+            <span class="post-title" title="静态路由">静态路由</span>
+            <span class="post-date" title="2023-04-07 19:10:50">2023/04/07</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/06/%E7%BD%91%E7%BB%9C%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"
+           data-tag="网络常用命令"
+           data-author="" >
+            <span class="post-title" title="网络常用命令">网络常用命令</span>
+            <span class="post-date" title="2023-04-06 10:10:12">2023/04/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2022/03/19/MySQL/"
+           data-tag="MySQL"
+           data-author="" >
+            <span class="post-title" title="MySQL">MySQL</span>
+            <span class="post-date" title="2022-03-19 21:51:35">2022/03/19</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2022/03/06/MongoDB/"
+           data-tag="MongoDB,数据库"
+           data-author="" >
+            <span class="post-title" title="MongoDB">MongoDB</span>
+            <span class="post-date" title="2022-03-06 17:38:45">2022/03/06</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/12/27/Vim/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Vim">Vim</span>
+            <span class="post-date" title="2021-12-27 09:15:01">2021/12/27</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/12/19/frp/"
+           data-tag="Nginx,frp"
+           data-author="" >
+            <span class="post-title" title="frp">frp</span>
+            <span class="post-date" title="2021-12-19 20:34:09">2021/12/19</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/12/16/vsftpd/"
+           data-tag="ftp"
+           data-author="" >
+            <span class="post-title" title="vsftpd">vsftpd</span>
+            <span class="post-date" title="2021-12-16 08:49:01">2021/12/16</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2021/10/06/Redis/"
+           data-tag="Docker,数据库"
+           data-author="" >
+            <span class="post-title" title="Redis">Redis</span>
+            <span class="post-date" title="2021-10-06 17:19:30">2021/10/06</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/09/09/VMware/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="VMware">VMware</span>
+            <span class="post-date" title="2021-09-09 15:38:41">2021/09/09</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/08/Ingress/"
+           data-tag="K8s"
+           data-author="" >
+            <span class="post-title" title="Ingress">Ingress</span>
+            <span class="post-date" title="2021-09-08 23:56:01">2021/09/08</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/08/28/Swarm/"
+           data-tag="Docker"
+           data-author="" >
+            <span class="post-title" title="Swarm">Swarm</span>
+            <span class="post-date" title="2021-08-28 20:46:10">2021/08/28</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/08/23/%E6%B5%B7%E6%98%8E%E7%A0%81-%E6%A0%A1%E9%AA%8C%E7%A0%81/"
+           data-tag="海明码"
+           data-author="" >
+            <span class="post-title" title="海明码">海明码</span>
+            <span class="post-date" title="2021-08-23 14:33:26">2021/08/23</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/08/22/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/"
+           data-tag="Java,编程思想"
+           data-author="" >
+            <span class="post-title" title="Java编程思想">Java编程思想</span>
+            <span class="post-date" title="2021-08-22 23:15:19">2021/08/22</span>
+        </a>
+        
+        <a  class="全部文章 后端 "
+           href="/2021/08/15/Java/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="Java多线程">Java多线程</span>
+            <span class="post-date" title="2021-08-15 14:36:42">2021/08/15</span>
+        </a>
+        
+        <a  class="全部文章 后端 "
+           href="/2021/08/06/Maven/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="Maven">Maven</span>
+            <span class="post-date" title="2021-08-06 09:38:42">2021/08/06</span>
+        </a>
+        
+        <a  class="全部文章 后端 "
+           href="/2021/07/31/Springboot%E9%A1%B9%E7%9B%AE/"
+           data-tag="Docker,Java,SpringBoot"
+           data-author="" >
+            <span class="post-title" title="Springboot项目">Springboot项目</span>
+            <span class="post-date" title="2021-07-31 19:34:21">2021/07/31</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/07/22/GitLab/"
+           data-tag="Git,CICD"
+           data-author="" >
+            <span class="post-title" title="GitLab">GitLab</span>
+            <span class="post-date" title="2021-07-22 21:41:24">2021/07/22</span>
+        </a>
+        
+        <a  class="全部文章 后端 "
+           href="/2021/07/19/SpringSecurity/"
+           data-tag="Java,Spring"
+           data-author="" >
+            <span class="post-title" title="SpringSecurity">SpringSecurity</span>
+            <span class="post-date" title="2021-07-19 20:58:25">2021/07/19</span>
+        </a>
+        
+        <a  class="全部文章 后端 "
+           href="/2021/07/13/Mybatis/"
+           data-tag="Java,Mybatis"
+           data-author="" >
+            <span class="post-title" title="Mybatis">Mybatis</span>
+            <span class="post-date" title="2021-07-13 10:38:01">2021/07/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/07/05/NVM/"
+           data-tag="Nodejs"
+           data-author="" >
+            <span class="post-title" title="NVM">NVM</span>
+            <span class="post-date" title="2021-07-05 08:15:33">2021/07/05</span>
+        </a>
+        
+        <a  class="全部文章 前端 "
+           href="/2021/06/23/Vue/"
+           data-tag="Vue"
+           data-author="" >
+            <span class="post-title" title="Vue">Vue</span>
+            <span class="post-date" title="2021-06-23 10:48:20">2021/06/23</span>
+        </a>
+        
+        <a  class="全部文章 后端 "
+           href="/2021/06/08/SpringBoot2/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="SpringBoot2学习">SpringBoot2学习</span>
+            <span class="post-date" title="2021-06-08 16:51:25">2021/06/08</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/06/02/Spring%E5%AE%9E%E6%88%98V5/"
+           data-tag="Java,Spring"
+           data-author="" >
+            <span class="post-title" title="Spring实战(第五版)">Spring实战(第五版)</span>
+            <span class="post-date" title="2021-06-02 09:42:37">2021/06/02</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/04/25/Spring%E5%AE%9E%E6%88%98V4/"
+           data-tag="Java,Spring"
+           data-author="" >
+            <span class="post-title" title="Spring实战(第四版)">Spring实战(第四版)</span>
+            <span class="post-date" title="2021-04-25 18:38:03">2021/04/25</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2021/03/22/SQL/"
+           data-tag="MySQL"
+           data-author="" >
+            <span class="post-title" title="SQL">SQL</span>
+            <span class="post-date" title="2021-03-22 18:33:13">2021/03/22</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-Vue" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Vue</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="前端">前端</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color4">Vue</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2025-02-24 10:53:18'>2021-06-23 10:48</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:3.5k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-CDN%E5%BC%80%E5%8F%91%E4%B8%8A"><span class="toc-text">第一章 CDN开发上</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1%E3%80%81%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%BB%8B%E7%BB%8D"><span class="toc-text">1.1、开发环境介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2%E3%80%81CDN%E6%96%B9%E5%BC%8F%E4%BD%BF%E7%94%A8Vue"><span class="toc-text">1.2、CDN方式使用Vue</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3%E3%80%81vue-app%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84"><span class="toc-text">1.3、vue-app的基本结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-1%E3%80%81HTML%E4%BB%A3%E7%A0%81"><span class="toc-text">1.3.1、HTML代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-2%E3%80%81JS%E4%BB%A3%E7%A0%81"><span class="toc-text">1.3.2、JS代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4%E3%80%81%E5%A5%BD%E7%8E%A9%E7%9A%84Vue%E8%AF%AD%E6%B3%95"><span class="toc-text">1.4、好玩的Vue语法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-1%E3%80%81HTML%E4%BB%A3%E7%A0%81"><span class="toc-text">1.4.1、HTML代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-2%E3%80%81JS%E4%BB%A3%E7%A0%81"><span class="toc-text">1.4.2、JS代码</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-CDN%E5%BC%80%E5%8F%91%E4%B8%8B"><span class="toc-text">第二章 CDN开发下</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1%E3%80%81watch"><span class="toc-text">2.1、watch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2%E3%80%81computed"><span class="toc-text">2.2、computed</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3%E3%80%81%E5%8A%A8%E6%80%81%E7%BB%91%E5%AE%9ACss"><span class="toc-text">2.3、动态绑定Css</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4%E3%80%81if%E5%92%8Cshow%E6%8C%87%E4%BB%A4"><span class="toc-text">2.4、if和show指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5%E3%80%81v-for%E6%8C%87%E4%BB%A4"><span class="toc-text">2.5、v-for指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-6%E3%80%81%E6%B3%A8%E5%86%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6"><span class="toc-text">2.6、注册全局组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-7%E3%80%81fetch%E8%AF%B7%E6%B1%82"><span class="toc-text">2.7、fetch请求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-8%E3%80%81Axios%E8%AF%B7%E6%B1%82"><span class="toc-text">2.8、Axios请求</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-CLI%E8%84%9A%E6%89%8B%E6%9E%B6"><span class="toc-text">第三章 CLI脚手架</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1%E3%80%81%E5%AE%89%E8%A3%85%E8%84%9A%E6%89%8B%E6%9E%B6"><span class="toc-text">3.1、安装脚手架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2%E3%80%81%E7%BB%84%E4%BB%B6%E5%B1%9E%E6%80%A7%E4%BC%A0%E5%80%BC%E5%92%8C%E4%BC%A0%E5%BC%95%E7%94%A8"><span class="toc-text">3.2、组件属性传值和传引用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3%E3%80%81%E6%B3%A8%E5%86%8C%E4%BA%8B%E4%BB%B6"><span class="toc-text">3.3、注册事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4%E3%80%81%E7%94%9F%E5%91%BD%E5%87%BD%E6%95%B0%E9%92%A9%E5%AD%90"><span class="toc-text">3.4、生命函数钩子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5%E3%80%81slot%E6%8F%92%E6%A7%BD%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">3.5、slot插槽的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-6%E3%80%81%E5%8A%A8%E6%80%81%E7%BB%84%E4%BB%B6%E5%92%8C%E7%BC%93%E5%AD%98"><span class="toc-text">3.6、动态组件和缓存</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E8%B7%AF%E7%94%B1-axios"><span class="toc-text">第四章 路由+axios</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A5%BF%E4%BA%86%E4%B9%88app"><span class="toc-text">饿了么app</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-text">1.环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E6%AD%A5%E9%AA%A4"><span class="toc-text">2.项目创建步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0%E8%BF%87%E7%A8%8B"><span class="toc-text">3.功能实现过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1%E5%AE%9E%E7%8E%B0%E7%99%BB%E9%99%86%E6%A8%A1%E5%9D%97"><span class="toc-text">3.1实现登陆模块</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%85%B6%E4%BB%96%E8%AF%B4%E6%98%8E"><span class="toc-text">4.其他说明</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E8%B0%83%E6%95%B4%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%91%BD%E5%90%8D%E5%92%8C%E4%BD%8D%E7%BD%AE"><span class="toc-text">4.1 调整项目文件的命名和位置</span></a></li></ol></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="第一章-CDN开发上"><a href="#第一章-CDN开发上" class="headerlink" title="第一章 CDN开发上"></a>第一章 CDN开发上</h1><h2 id="1-1、开发环境介绍"><a href="#1-1、开发环境介绍" class="headerlink" title="1.1、开发环境介绍"></a>1.1、开发环境介绍</h2><pre><code class="bash">$ node --version
+v14.15.1
+$ npm --version
+7.17.0
+$ vue --version
+@vue/cli 4.5.13
+</code></pre>
+<hr>
+<h2 id="1-2、CDN方式使用Vue"><a href="#1-2、CDN方式使用Vue" class="headerlink" title="1.2、CDN方式使用Vue"></a>1.2、CDN方式使用Vue</h2><pre><code class="html">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<hr>
+<h2 id="1-3、vue-app的基本结构"><a href="#1-3、vue-app的基本结构" class="headerlink" title="1.3、vue-app的基本结构"></a>1.3、vue-app的基本结构</h2><h3 id="1-3-1、HTML代码"><a href="#1-3-1、HTML代码" class="headerlink" title="1.3.1、HTML代码"></a>1.3.1、HTML代码</h3><pre><code class="html">&lt;div id=&quot;app&quot;&gt;
+  &#123;&#123; message &#125;&#125;
+&lt;/div&gt;
+</code></pre>
+<h3 id="1-3-2、JS代码"><a href="#1-3-2、JS代码" class="headerlink" title="1.3.2、JS代码"></a>1.3.2、JS代码</h3><pre><code class="js">var app = new Vue(&#123;
+  el: &#39;#app&#39;, // 将 Vue 应用会将其挂载到一个 DOM 元素上（#app）
+  data: &#123;
+    message: &#39;Hello Vue!&#39;
+  &#125;
+&#125;)
+</code></pre>
+<hr>
+<h3 id="1-4、好玩的Vue语法"><a href="#1-4、好玩的Vue语法" class="headerlink" title="1.4、好玩的Vue语法"></a>1.4、好玩的Vue语法</h3><h4 id="1-4-1、HTML代码"><a href="#1-4-1、HTML代码" class="headerlink" title="1.4.1、HTML代码"></a>1.4.1、HTML代码</h4><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;./styles.css&quot; /&gt;
+    &lt;title&gt;Vue CND&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;vue-bind&quot;&gt;
+        &lt;p&gt;hello &#123;&#123; name &#125;&#125;&lt;/p&gt; &lt;!-- 绑定data中的数据 --&gt;
+        &lt;p&gt;&#123;&#123; greet('night') &#125;&#125;&lt;/p&gt; &lt;!-- 绑定方法中返回的数据 --&gt;
+        &lt;p v-html=&quot;websiteTag&quot;&gt;&lt;/p&gt; &lt;!-- 绑定一个html标签 --&gt;
+        &lt;p&gt;&lt;input type=&quot;text&quot; :value=&quot;name&quot; /&gt;&lt;/p&gt; &lt;!-- 省略的绑定方式 --&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;vue-events&quot;&gt;
+    &lt;!-- click event --&gt;
+        &lt;button @click=&quot;age++&quot;&gt;add a year&lt;/button&gt;
+        &lt;button v-on:click=&quot;age--&quot;&gt;subtract a year&lt;/button&gt;
+        &lt;button @dblclick=&quot;add(10)&quot;&gt;add 10 year&lt;/button&gt; &lt;!-- 点击两次 --&gt;
+        &lt;button v-on:dblclick=&quot;subtract(10)&quot;&gt;subtract 10 year&lt;/button&gt; &lt;!-- 点击两次 --&gt;
+        &lt;p&gt;我的年龄是: &#123;&#123; age &#125;&#125;&lt;/p&gt;
+        &lt;!-- mousemove event --&gt;
+        &lt;div id=&quot;canvas&quot; @click=&quot;updateXY&quot;&gt;&#123;&#123;x&#125;&#125;, &#123;&#123;y&#125;&#125;&lt;/div&gt;
+        &lt;!-- 事件修饰符 --&gt;
+        &lt;a @click.prevent=&quot;handleClick()&quot; href=&quot;www.baidu.com&quot;&gt;百度&lt;/a&gt; &lt;!-- 阻止默认事件 --&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;vue-key&quot;&gt;
+        &lt;label&gt;姓名&lt;/label&gt;
+        &lt;input type=&quot;text&quot; v-on:keyup=&quot;logName&quot; /&gt;
+        &lt;input type=&quot;text&quot; v-on:keydown.enter=&quot;logName&quot; /&gt; &lt;!-- 键盘按enter 触发--&gt;
+        &lt;label&gt;年龄&lt;/label&gt;
+        &lt;input type=&quot;text&quot; v-on:keyup=&quot;logAge&quot; /&gt;
+        &lt;input type=&quot;text&quot; v-on:keyup.alt.enter=&quot;logAge&quot; /&gt; &lt;!-- 键盘同时按 alt 和 enter 触发 --&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;vue-model&quot;&gt;
+        &lt;!-- 双向数据绑定支持的标签 input, select, textarea。因为需要有输入输出才是双向数据绑定 --&gt;
+        &lt;label&gt;姓名&lt;/label&gt;
+        &lt;input type=&quot;text&quot; v-model.lazy=&quot;name&quot; /&gt;&lt;br/&gt; &lt;!-- .lazy懒加载 --&gt;
+        &lt;span&gt;输入的内容是: &#123;&#123; name &#125;&#125;&lt;/span&gt;&lt;br /&gt;
+        &lt;label&gt;年龄&lt;/label&gt;
+        &lt;input type=&quot;text&quot; v-model=&quot;age&quot; &gt;&lt;br/&gt;
+        &lt;span&gt;输入的年龄是: &#123;&#123; age &#125;&#125;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;vue-ref&quot;&gt;
+        &lt;!--  ref=&quot;name&quot;绑定在元素中，在js中使用$refs.name可以访问该绑定的元素--&gt;
+        &lt;label&gt;姓名&lt;/label&gt;
+        &lt;input type=&quot;text&quot; ref=&quot;name&quot; @keyup=&quot;getName&quot; /&gt;
+        &lt;span&gt;&#123;&#123;name&#125;&#125;&lt;/span&gt;
+        &lt;label&gt;年龄&lt;/label&gt;
+        &lt;input type=&quot;text&quot; ref=&quot;age&quot; @keyup=&quot;getAge&quot; /&gt;
+        &lt;span&gt;&#123;&#123;age&#125;&#125;&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;script src=&quot;./app.js&quot;&gt;&lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<h4 id="1-4-2、JS代码"><a href="#1-4-2、JS代码" class="headerlink" title="1.4.2、JS代码"></a>1.4.2、JS代码</h4><pre><code class="js">// 实例化 vue 对象
+new Vue(&#123;
+    el: &quot;#vue-app&quot;, // element
+    data() &#123;
+        return &#123;
+            name: &quot;hjxstart&quot;,
+            wechat: 27732357,
+            websiteTag: &#39;&lt;a href=&quot;https://www.taobao.com&quot;&gt;taobao&lt;/a&gt;&#39;
+        &#125;
+    &#125;,
+    methods: &#123;
+        greet(time) &#123;
+            return `Good $&#123;time&#125; $&#123;this.name&#125;`;
+        &#125;
+    &#125;,
+&#125;)
+
+new Vue(&#123;
+    el: &quot;#vue-events&quot;,
+    data() &#123;
+        return &#123;
+            age: 30,
+            x: 0,
+            y: 0,
+        &#125;;
+    &#125;,
+    methods: &#123;
+        add(inc) &#123;
+            this.age += inc;
+        &#125;,
+        subtract(dec) &#123;
+            this.age -= dec;
+        &#125;,
+        updateXY(event) &#123;
+            console.log(event);
+            this.x = event.offsetX;
+            this.y = event.offsetY;
+        &#125;,
+        handleClick() &#123;
+            alert(&quot;hello&quot;);
+        &#125;
+    &#125;
+&#125;)
+
+new Vue(&#123;
+    el: &quot;#vue-key&quot;,
+    data() &#123;
+        return &#123;
+            
+        &#125;
+    &#125;,
+    methods: &#123;
+        logName() &#123;
+            console.log(&quot;正在输入名字&quot;);
+        &#125;,
+        logAge() &#123;
+            console.log(&quot;正在输入年龄&quot;);
+        &#125;
+    &#125;
+&#125;)
+
+new Vue(&#123;
+    el: &quot;#vue-model&quot;,
+    data() &#123;
+        return &#123;
+            name: &#39; &#39;,
+            age: 32
+        &#125;
+    &#125;,
+    methods: &#123;
+        
+    &#125;,
+&#125;)
+
+new Vue(&#123;
+    el: &quot;#vue-ref&quot;,
+    data() &#123;
+        return &#123;
+            name: &#39;&#39;,
+            age: 32
+        &#125;
+    &#125;,
+    methods: &#123;
+        getName() &#123;
+            this.name = this.$refs.name.value;
+        &#125;,
+        getAge() &#123;
+            this.age = this.$refs.age.value;
+        &#125;
+    &#125;,
+&#125;)
+</code></pre>
+<p>1.4.3、Css代码</p>
+<pre><code class="css">#canvas &#123;
+  width: 600px;
+  padding: 200px 20px;
+  text-align: center;
+  border: 1px solid #333;
+&#125;
+</code></pre>
+<hr>
+<h1 id="第二章-CDN开发下"><a href="#第二章-CDN开发下" class="headerlink" title="第二章 CDN开发下"></a>第二章 CDN开发下</h1><h2 id="2-1、watch"><a href="#2-1、watch" class="headerlink" title="2.1、watch"></a>2.1、watch</h2><p><strong>不建议生产环境使用，开发调试可以</strong>。watch的用法如下</p>
+<pre><code class="js">new Vue(&#123;
+    data() &#123;
+        return &#123;
+            name: &#39;&#39;, // 1.需要在data中有声明
+        &#125;
+    &#125;,
+    watch: &#123;
+        name(val, ordVal) &#123; // 2.在watch中的方法名为key_name;（新值，旧值）
+        &#125;
+    &#125;
+&#125;)
+</code></pre>
+<hr>
+<h2 id="2-2、computed"><a href="#2-2、computed" class="headerlink" title="2.2、computed"></a>2.2、computed</h2><p><strong>用途：优化性能，用于计算频率高的场景，例如样式、搜索等</strong></p>
+<ol>
+<li>和watch、method的性能区别，computed只有在值发生变化的时候才触发。</li>
+<li>computed的里面的每一个方法一定要有<strong>return</strong>。</li>
+<li>computed的用法如下<pre><code class="html">  &lt;div id=&quot;vue-computed&quot;&gt;
+     &lt;button @click=&quot;a++&quot;&gt;Add to A &lt;/button&gt;
+     &lt;button @click=&quot;b++&quot;&gt;Add to B &lt;/button&gt;
+     &lt;p&gt;A - &#123;&#123;a&#125;&#125;&lt;/p&gt;
+     &lt;p&gt;B - &#123;&#123;b&#125;&#125;&lt;/p&gt;
+     &lt;!-- methods --&gt;
+     &lt;p&gt;Age + A = &#123;&#123;addToA1()&#125;&#125;&lt;/p&gt;
+     &lt;p&gt;Age + B = &#123;&#123;addToB1()&#125;&#125;&lt;/p&gt;
+     &lt;!-- computed, 因为是属性不可以加括号 --&gt;
+     &lt;p&gt;Age + A = &#123;&#123; addToA2 &#125;&#125;&lt;/p&gt;
+     &lt;p&gt;Age + B = &#123;&#123; addToB2 &#125;&#125;&lt;/p&gt;
+ &lt;/div&gt;
+</code></pre>
+</li>
+</ol>
+<pre><code class="js">new Vue(&#123;
+    el: &quot;#vue-computed&quot;,
+    data() &#123;
+        return &#123;
+            a: 0,
+            b: 0,
+            age: 18,
+        &#125;
+    &#125;,
+    methods: &#123;
+        addToA1() &#123;
+            console.log(&quot;addToA1&quot;);
+            return this.age + this.a;
+        &#125;,
+        addToB1() &#123;
+            console.log(&quot;addToB1&quot;);
+            return this.age + this.b;
+        &#125;,
+    &#125;,
+    computed: &#123;
+        addToA2() &#123;
+            console.log(&quot;addToA2&quot;);
+            return this.age + this.a;
+        &#125;,
+        addToB2() &#123;
+            console.log(&quot;addToB2&quot;);
+            return this.age + this.b;
+        &#125;,
+    &#125;
+&#125;)
+</code></pre>
+<hr>
+<h2 id="2-3、动态绑定Css"><a href="#2-3、动态绑定Css" class="headerlink" title="2.3、动态绑定Css"></a>2.3、动态绑定Css</h2><p><strong>使用computed动态绑定Css</strong></p>
+<ol>
+<li>html代码<pre><code class="html"> &lt;div id=&quot;vue-css&quot;&gt;
+     &lt;h1&gt;动态绑定样式 两种方式&lt;/h1&gt;
+     &lt;h2&gt;示例1 属性绑定&lt;/h2&gt;
+     &lt;div @click=&quot;mrChangeColor = !mrChangeColor&quot; v-bind:class=&quot;&#123;changeColor:mrChangeColor&#125;&quot;&gt;
+         &lt;span&gt;Hello&lt;/span&gt;
+     &lt;/div&gt;
+     &lt;h2&gt;示例2 计算属性绑定&lt;/h2&gt;
+     &lt;button @click=&quot;mrChangeColor = !mrChangeColor&quot;&gt;ChangeColor&lt;/button&gt;
+     &lt;button @click=&quot;changeLength = !changeLength&quot;&gt;changeLength&lt;/button&gt;
+     &lt;div  v-bind:class=&quot;compClasses&quot;&gt;
+         &lt;span&gt;Hello&lt;/span&gt;
+     &lt;/div&gt;
+ &lt;/div&gt;
+</code></pre>
+</li>
+<li>js代码<pre><code class="js">new Vue(&#123;
+ el: &quot;#vue-css&quot;,
+ data() &#123;
+     return &#123;
+         mrChangeColor: false,
+         changeLength: false,
+     &#125;
+ &#125;,
+ computed: &#123;
+     compClasses() &#123;
+         return &#123; changeColor: this.mrChangeColor, changeLength: this.changeLength &#125;
+     &#125;
+ &#125;
+&#125;)
+</code></pre>
+</li>
+<li>css代码<pre><code class="css">#vue-css span &#123;
+  background: red;
+  display: inline-block;
+  padding: 10px;
+  color: #fff;
+  margin: 10px 0;
+&#125;
+#vue-css .changeColor span &#123;
+  background: green;
+&#125;
+#vue-css .changeLength span:after &#123;
+  content: &quot;hjxstart&quot;;
+  margin-left: 10px;
+&#125;
+</code></pre>
+</li>
+</ol>
+<hr>
+<h2 id="2-4、if和show指令"><a href="#2-4、if和show指令" class="headerlink" title="2.4、if和show指令"></a>2.4、if和show指令</h2><p><strong>if调试内容是一行注释，show调试内容是标签并且有属性display: none</strong></p>
+<ol>
+<li>示例<pre><code class="html">&lt;div id=&quot;vue-if&quot;&gt;
+ &lt;h1&gt;v-if指令&lt;/h1&gt;
+     &lt;button @click=&quot;error = !error&quot;&gt;toggle&lt;/button&gt;
+     &lt;button @click=&quot;success = !success&quot;&gt;success&lt;/button&gt;
+     &lt;p v-if=&quot;error&quot;&gt;error:如果error=true，那么显示&lt;/p&gt;&lt;!-- 调试不显示标签内容，只是一行注释 --&gt;
+     &lt;p v-else-if=&quot;success&quot;&gt;success: 如果error=false,success=true则显示&lt;/p&gt;
+     &lt;p v-else&gt;如果error和success都为假，那么显示&lt;/p&gt;
+     &lt;h1&gt;v-show指令&lt;/h1&gt;
+     &lt;p v-show=&quot;error&quot;&gt;网络连接错误 404&lt;/p&gt;&lt;!-- 调试显示标签内容：display: none--&gt;
+     &lt;p v-show=&quot;success&quot;&gt;网络连接成功 200&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+</li>
+</ol>
+<hr>
+<h2 id="2-5、v-for指令"><a href="#2-5、v-for指令" class="headerlink" title="2.5、v-for指令"></a>2.5、v-for指令</h2><p><strong>遍历时，如果不需要外出容器，可以使用template标签作为遍历对象</strong></p>
+<ol>
+<li>html代码<pre><code class="html">&lt;div id=&quot;vue-for&quot;
+ &lt;template v-for=&quot;(character,index) in characters&quot;&gt;
+     &lt;h6&gt;index&lt;/h6&gt;
+     &lt;p&gt;character&lt;/p&gt;
+ &lt;/template&gt;
+&lt;/div&gt;
+</code></pre>
+</li>
+<li>js代码<pre><code class="js">new Vue(&#123;
+ el: &quot;#vue-for&quot;,
+ data() &#123;
+     return &#123;
+         characters: [&quot;Vue&quot;, &quot;Java&quot;, &quot;MySQL&quot;, &quot;Linux&quot;],
+     &#125;
+ &#125;,
+&#125;)
+</code></pre>
+</li>
+</ol>
+<hr>
+<h2 id="2-6、注册全局组件"><a href="#2-6、注册全局组件" class="headerlink" title="2.6、注册全局组件"></a>2.6、注册全局组件</h2><hr>
+<h2 id="2-7、fetch请求"><a href="#2-7、fetch请求" class="headerlink" title="2.7、fetch请求"></a>2.7、fetch请求</h2><hr>
+<h2 id="2-8、Axios请求"><a href="#2-8、Axios请求" class="headerlink" title="2.8、Axios请求"></a>2.8、Axios请求</h2><hr>
+<h1 id="第三章-CLI脚手架"><a href="#第三章-CLI脚手架" class="headerlink" title="第三章 CLI脚手架"></a>第三章 CLI脚手架</h1><h2 id="3-1、安装脚手架"><a href="#3-1、安装脚手架" class="headerlink" title="3.1、安装脚手架"></a>3.1、安装脚手架</h2><hr>
+<h2 id="3-2、组件属性传值和传引用"><a href="#3-2、组件属性传值和传引用" class="headerlink" title="3.2、组件属性传值和传引用"></a>3.2、组件属性传值和传引用</h2><hr>
+<h2 id="3-3、注册事件"><a href="#3-3、注册事件" class="headerlink" title="3.3、注册事件"></a>3.3、注册事件</h2><hr>
+<h2 id="3-4、生命函数钩子"><a href="#3-4、生命函数钩子" class="headerlink" title="3.4、生命函数钩子"></a>3.4、生命函数钩子</h2><hr>
+<h2 id="3-5、slot插槽的使用"><a href="#3-5、slot插槽的使用" class="headerlink" title="3.5、slot插槽的使用"></a>3.5、slot插槽的使用</h2><hr>
+<h2 id="3-6、动态组件和缓存"><a href="#3-6、动态组件和缓存" class="headerlink" title="3.6、动态组件和缓存"></a>3.6、动态组件和缓存</h2><hr>
+<h1 id="第四章-路由-axios"><a href="#第四章-路由-axios" class="headerlink" title="第四章 路由+axios"></a>第四章 路由+axios</h1><h1 id="饿了么app"><a href="#饿了么app" class="headerlink" title="饿了么app"></a>饿了么app</h1><h2 id="1-环境搭建"><a href="#1-环境搭建" class="headerlink" title="1.环境搭建"></a>1.环境搭建</h2><h3 id="2-项目创建步骤"><a href="#2-项目创建步骤" class="headerlink" title="2.项目创建步骤"></a>2.项目创建步骤</h3><ol>
+<li>在当前路径下创建一个项目</li>
+</ol>
+<pre><code class="bash"># vue create .
+</code></pre>
+<ol start="2">
+<li>同意在当前文件夹下创建项目：y</li>
+<li>选择对应的版本：Manually select features</li>
+<li>空格选择要使用：choose vue version, Babel, Vuex, Router;</li>
+<li>回车选择2.X</li>
+<li>同意选择使用 Use history mode for router</li>
+<li>选择 package.json</li>
+<li>不保存：n</li>
+<li>调整一下项目文件的命名和位置：参考4.1项目说明</li>
+<li>项目启动命令：</li>
+</ol>
+<pre><code class="bash">npm run serve
+</code></pre>
+<h3 id="3-功能实现过程"><a href="#3-功能实现过程" class="headerlink" title="3.功能实现过程"></a>3.功能实现过程</h3><h4 id="3-1实现登陆模块"><a href="#3-1实现登陆模块" class="headerlink" title="3.1实现登陆模块"></a>3.1实现登陆模块</h4><ol>
+<li>创建 src&#x2F;views&#x2F;Login.vue, 代码如下所示</li>
+</ol>
+<pre><code class="vue">&lt;template&gt;
+  &lt;div class=&quot;login&quot;&gt;
+    Login
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default &#123;
+  name: &#39;login&#39;,
+  components: &#123;
+    
+  &#125;
+&#125;
+&lt;/script&gt;
+
+&lt;style&gt;
+.login &#123;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+    background: #fff;
+    text-align: center;
+&#125;
+&lt;/style&gt;
+</code></pre>
+<ol start="2">
+<li>设置当前路由 route.js 和 按需加载</li>
+</ol>
+<pre><code class="vue">&#123;
+    path: &#39;/&#39;,
+    name: &#39;Index&#39;,
+    // component: Index
+    component: () =&gt; import(&quot;./views/Index.vue&quot;)
+  &#125;,
+  &#123;
+    path: &#39;/login&#39;,
+    name: &#39;login&#39;,
+    component: () =&gt; import(&quot;./views/Login.vue&quot;) // 按需加载
+  &#125;
+</code></pre>
+<ol start="3">
+<li>设置路由守卫，route.js</li>
+</ol>
+<pre><code class="vue">// 路由守卫
+router.beforeEach((to, from, next) =&gt; &#123;
+  const isLogin = localStorage.ele_login ? true : false;
+  if (to.path == &#39;/login&#39;) &#123;
+    next();
+  &#125; else &#123;
+    // 是否在登陆状态下，如果是就正常跳转，否则返回到 login页面去
+    isLogin ? next() : next(&quot;/login&quot; )
+
+  &#125;
+&#125;)
+
+export default router
+</code></pre>
+<p>4.导入logo到 assets中，在 login中使用</p>
+<pre><code class="Vue">&lt;template&gt;
+  &lt;div class=&quot;login&quot;&gt;
+    &lt;div class=&quot;logo&quot;&gt;
+        &lt;img src=&quot;../assets/logo.jpeg&quot; alt=&quot;my logo image&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;style&gt;
+.login &#123;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+    background: #fff;
+&#125;
+.logo &#123;
+    text-align: center;
+&#125;
+.login img &#123;
+    width: 150px;
+&#125;
+&lt;/style&gt;
+</code></pre>
+<p>5.input组件封装，创建 components&#x2F;InputGroup.vue</p>
+<pre><code class="vue">&lt;template&gt;
+  &lt;div class=&quot;text_group&quot;&gt;
+    &lt;!-- 组件结构 --&gt;
+
+    &lt;!-- 组件容器 --&gt;
+    &lt;div class=&quot;input_group&quot;&gt;
+        &lt;!-- 输入框， 获取输入框的值 --&gt;
+        &lt;input 
+          :type=&quot;type&quot; 
+          :name=&quot;name&quot; 
+          :placeholder=&quot;placeholder&quot; 
+          @input=&quot;$emit(&#39;input&#39;, $event.target.value)&quot; 
+        &gt;
+        &lt;!-- 输入框后面的按钮， 绑定一个点击时间--&gt;
+        &lt;button v-if=&quot;btnTitle&quot; :disabled=&quot;disabled&quot; @click=&quot;$emit(&#39;btnClick&#39;)&quot;&gt;&#123;&#123;btnTitle&#125;&#125;&lt;/button&gt;
+        &lt;!-- 错误提醒, error有值就显示错误信息 --&gt;
+        &lt;div v-if=&quot;error&quot; class=&quot;invalid-feedback&quot;&gt;&#123;&#123;error&#125;&#125;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+
+export default &#123;
+  name: &#39;inputGroup&#39;,
+  props: &#123; // 通过传入参数实现组件复用
+      type: &#123;
+          type: String,
+          default: &quot;text&quot;
+      &#125;,
+      value: String,
+      placeholder: String, // 提示
+      name: String,
+      btnTitle: String, // 是否显示获取验证码按钮
+      disabled: Boolean, // 判断是否可用状态
+      error: String, // 错误提醒 
+  &#125;,
+  components: &#123;
+    
+  &#125;
+&#125;
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+.input_group &#123;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+&#125;
+.input_group input &#123;
+  height: 100%;
+  width: 60%;
+  outline: none;
+&#125;
+.input_group button &#123;
+  border: none;
+  outline: none;
+  background: #fff;
+&#125;
+.input_group button[disabled] &#123;
+  color: #aaa;
+&#125;
+.is-invalid &#123;
+  border: 1px solid red;
+&#125;
+.invalid-feedback &#123;
+  color: red;
+  padding-top: 5px;
+&#125;
+&lt;/style&gt;
+</code></pre>
+<ol start="6">
+<li>使用组件，在login.vue 的 script引用组件,在components{}注册组件，创建组件需要的data</li>
+</ol>
+<pre><code class="vue">&lt;template&gt;
+  &lt;div class=&quot;login&quot;&gt;
+    &lt;div class=&quot;logo&quot;&gt;
+        &lt;img src=&quot;../assets/logo.jpeg&quot; alt=&quot;my logo image&quot;&gt;
+    &lt;/div&gt;
+    &lt;!-- 手机号 --&gt;
+    &lt;InputGroup type=&quot;number&quot; v-model=&quot;phone&quot; placeholder=&quot;手机号&quot;
+    :btnTitle=&quot;btnTitle&quot; :disabled=&quot;disabled&quot; :error=&quot;errors.phone&quot;/&gt;
+    &lt;!-- 验证码 --&gt;
+    &lt;InputGroup type=&quot;number&quot; v-model=&quot;verifyCode&quot; placeholder=&quot;验证码&quot;
+    :error=&quot;errors.code&quot;/&gt;
+    &lt;!-- 用户服务协议 --&gt;
+    &lt;div class=&quot;login_des&quot;&gt;
+      &lt;p&gt;
+        新用户登陆即自动注册，表示已同意
+        &lt;span&gt;《用户服务协议》&lt;/span&gt;
+      &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;!-- 登陆按钮 --&gt;
+    &lt;div class=&quot;login_btn&quot;&gt;
+      &lt;button&gt;登录&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import InputGroup from &quot;../components/InputGroup&quot;
+export default &#123;
+  name: &#39;login&#39;,
+  data() &#123;
+    return &#123;
+      phone: &quot;&quot;,
+      verifyCode: &quot;&quot;,
+      errors: &#123;&#125;, // 有手机错误或者验证码错误
+      btnTitle: &quot;获取验证码&quot;,
+      disabled: false
+    &#125;
+  &#125;,
+  components: &#123;
+    InputGroup
+  &#125;
+&#125;
+&lt;/script&gt;
+
+&lt;style&gt;
+.login &#123;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+    background: #fff;
+&#125;
+.logo &#123;
+    text-align: center;
+&#125;
+.login img &#123;
+    width: 150px;
+&#125;
+
+.login_des &#123;
+  color: #aaa;
+  line-height: 22px;
+&#125;
+.login_des span &#123;
+  color: #4d90fe;
+&#125;
+.login_btn button &#123;
+  width: 100%;
+  height: 40px;
+  background-color: #48ca38;
+  border-radius: 4px;
+  color: white;
+  font-size: 14px;
+  border: none;
+  outline: none;
+&#125;
+&lt;/style&gt;
+</code></pre>
+<h3 id="4-其他说明"><a href="#4-其他说明" class="headerlink" title="4.其他说明"></a>4.其他说明</h3><h4 id="4-1-调整项目文件的命名和位置"><a href="#4-1-调整项目文件的命名和位置" class="headerlink" title="4.1 调整项目文件的命名和位置"></a>4.1 调整项目文件的命名和位置</h4><ol>
+<li>删除 src&#x2F;components&#x2F;HelloWorld.Vue,</li>
+<li>删除 src&#x2F;views&#x2F;About.vue</li>
+<li>重命名并移动 src&#x2F;store&#x2F;index.js 为 src&#x2F;store.js， 删除 src&#x2F;store;</li>
+<li>重命名并移动 src&#x2F;router&#x2F;index.js 为 src&#x2F;router.js， 删除 src&#x2F;router;</li>
+<li>新建 public&#x2F;css&#x2F;reset.css, 拷贝 reset.css的代码过来，可以上网拷贝。</li>
+<li>修改 src&#x2F;main.js 内容为</li>
+</ol>
+<pre><code class="Vue">import Vue from &#39;vue&#39;
+import App from &#39;./App.vue&#39;
+import router from &#39;./router.js&#39;
+import store from &#39;./store.js&#39;
+
+Vue.config.productionTip = false
+
+new Vue(&#123;
+  router,
+  store,
+  render: h =&gt; h(App)
+&#125;).$mount(&#39;#app&#39;)
+</code></pre>
+<ol start="7">
+<li>修改 router.js 的内容为</li>
+</ol>
+<pre><code class="Vue">import Vue from &#39;vue&#39;
+import VueRouter from &#39;vue-router&#39;
+import Index from &#39;./views/Index.vue&#39;
+
+Vue.use(VueRouter)
+
+const routes = [
+  &#123;
+    path: &#39;/&#39;,
+    name: &#39;Index&#39;,
+    component: Index
+  &#125;
+]
+
+const router = new VueRouter(&#123;
+  mode: &#39;history&#39;,
+  base: process.env.BASE_URL,
+  routes
+&#125;)
+
+export default router
+</code></pre>
+<ol start="8">
+<li>src&#x2F;App.vue里面全部内容。</li>
+</ol>
+<pre><code class="Vue">&lt;template&gt;
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;router-view/&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+export default &#123;
+  name: &#39;App&#39;,
+  components: &#123; 
+  &#125;
+&#125;
+&lt;/script&gt; 
+&lt;style&gt;
+#app &#123;
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  background: #f1f1f1;
+&#125;
+&lt;/style&gt;
+</code></pre>
+<ol start="9">
+<li>重命名 src&#x2F;views&#x2F;Home.vue为Index.vue,修改其内容为</li>
+</ol>
+<pre><code class="Vue">&lt;template&gt;
+  &lt;div class=&quot;index&quot;&gt;
+    主页
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+export default &#123;
+  name: &#39;Index&#39;,
+  components: &#123;  
+  &#125;
+&#125;
+&lt;/script&gt;
+</code></pre>
+<ol start="10">
+<li>在 public&#x2F;index.html 引用 .&#x2F;css&#x2F;reset.css和修改部分内容</li>
+</ol>
+<pre><code class="html">&lt;link rel=&quot;stylesheet&quot; href=&quot;./css/reset.css&quot;&gt;
+    &lt;style&gt;
+      html,body &#123;
+        width: 100%;
+        height: 100%;
+      &#125;
+    &lt;/style&gt;
+</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 hjxstart@126.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry"><span class="miit">
+                <img src="/img/gov.png" title="中华人民共和国工业和信息化部">
+                <a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">粤ICP备2021170625号-1</a>
+        </span>
+    
+    ©2019-2022 hjxstart
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("/img/article-list-bg-img.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
