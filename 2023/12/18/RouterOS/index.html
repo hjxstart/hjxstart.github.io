@@ -14,7 +14,7 @@
 <meta property="og:description" content="概述背景概述待补充 通用常用命令常用激活命令# 命令行激活,扫描二维码回车输入激活码 kylin-system-verify # 查看当前系统激活状态 kylin_activation_check # ukey激活命令 kylin_activate_ukey   21038046 桌面常见问题数据# 用户的回收站 cd ~&#x2F;.local&#x2F;share&#x2F;Trash&#x2F;files&#x2F;  修改密码# 进入单用">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-02-12T08:47:23.000Z">
-<meta property="article:modified_time" content="2025-02-26T10:13:49.342Z">
+<meta property="article:modified_time" content="2025-03-08T08:00:20.094Z">
 <meta property="article:author" content="黄金贤">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
@@ -250,7 +250,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="69">
-<input type="hidden" id="yelog_site_word_count" value="102.6k">
+<input type="hidden" id="yelog_site_word_count" value="103k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1056,12 +1056,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-02-24 10:53:18'>2023-12-18 17:05</time>
+            发布时间 : <time class="date" title='最后更新: 2025-03-09 15:44:30'>2023-12-18 17:05</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:251</span>
+        <span>字数:496</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1080,7 +1080,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ubuntu18-04%E5%AE%89%E8%A3%85ROS"><span class="toc-text">Ubuntu18.04安装ROS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ESXI-%E5%88%9B%E5%BB%BAROS"><span class="toc-text">ESXI 创建ROS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA-ROS-%E8%99%9A%E6%8B%9F%E6%9C%BA"><span class="toc-text">创建 ROS 虚拟机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE-ROS"><span class="toc-text">配置 ROS</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ubuntu18-04%E5%AE%89%E8%A3%85ROS"><span class="toc-text">Ubuntu18.04安装ROS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E6%9D%A1%E4%BB%B6"><span class="toc-text">前置条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDMikroTik%E7%9A%84CHR%E7%89%88%E6%9C%AC%E9%95%9C%E5%83%8F"><span class="toc-text">下载MikroTik的CHR版本镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%82%E8%BD%BD%E9%95%9C%E5%83%8F"><span class="toc-text">挂载镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%B8%E8%BD%BD%E9%95%9C%E5%83%8F"><span class="toc-text">卸载镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8BUbuntu%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%9B%98%E7%AC%A6%E6%A0%87%E8%AF%86"><span class="toc-text">查看Ubuntu系统的盘符标识</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ESXI-%E5%88%9B%E5%BB%BAROS"><span class="toc-text">ESXI 创建ROS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA-ROS-%E8%99%9A%E6%8B%9F%E6%9C%BA"><span class="toc-text">创建 ROS 虚拟机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE-ROS"><span class="toc-text">配置 ROS</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1096,7 +1096,36 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Ubuntu18-04安装ROS"><a href="#Ubuntu18-04安装ROS" class="headerlink" title="Ubuntu18.04安装ROS"></a>Ubuntu18.04安装ROS</h2><h2 id="ESXI-创建ROS"><a href="#ESXI-创建ROS" class="headerlink" title="ESXI 创建ROS"></a>ESXI 创建ROS</h2><h3 id="创建-ROS-虚拟机"><a href="#创建-ROS-虚拟机" class="headerlink" title="创建 ROS 虚拟机"></a>创建 ROS 虚拟机</h3><ol>
+        <h2 id="Ubuntu18-04安装ROS"><a href="#Ubuntu18-04安装ROS" class="headerlink" title="Ubuntu18.04安装ROS"></a>Ubuntu18.04安装ROS</h2><h3 id="前置条件"><a href="#前置条件" class="headerlink" title="前置条件"></a>前置条件</h3><blockquote>
+<p>此文档使用的Ubuntu系统版本是16.04或者18.04<br>Ubuntu系统只挂载了一个磁盘, 磁盘20G以上空间即可，多了浪费<br>此文档使用的Ubuntu系统的网卡是自动获取IP地址</p>
+</blockquote>
+<h3 id="下载MikroTik的CHR版本镜像"><a href="#下载MikroTik的CHR版本镜像" class="headerlink" title="下载MikroTik的CHR版本镜像"></a>下载MikroTik的CHR版本镜像</h3><pre><code class="bash"># 更新存储库，并下载wget和unzip程序
+apt update  &amp;&amp; apt install -y wget unzip
+# 下载CHR镜像
+wget https://download.mikrotik.com/routeros/7.18.1/chr-7.18.1.img.zip
+# 解压CHR镜像
+gunzip -c chr-7.18.1.img.zip &gt; chr.img
+</code></pre>
+<h3 id="挂载镜像"><a href="#挂载镜像" class="headerlink" title="挂载镜像"></a>挂载镜像</h3><pre><code class="bash"># 安装kpartx
+apt-get install kpartx
+# 挂载镜像
+kpartx -av chr.img
+mount -o loop /dev/mapper/loop0p1 /mnt
+</code></pre>
+<h3 id="卸载镜像"><a href="#卸载镜像" class="headerlink" title="卸载镜像"></a>卸载镜像</h3><pre><code class="bash">umount /mnt
+kpartx -dv /dev/loop0
+losetup -d /dev/loop0
+</code></pre>
+<h3 id="查看Ubuntu系统的盘符标识"><a href="#查看Ubuntu系统的盘符标识" class="headerlink" title="查看Ubuntu系统的盘符标识"></a>查看Ubuntu系统的盘符标识</h3><pre><code class="bash"># Ubuntu系统挂载为只读
+echo u &gt; /proc/sysrq-trigger
+# 替换Ubuntu系统为MikroTik系统 lsblk
+# 注意替换vda为实际的盘符标识
+dd if=chr.img bs=1024 of=/dev/vda
+# 重启系统
+echo s &gt; /proc/sysrq-trigger &amp;&amp; sleep 5 &amp;&amp; echo b &gt; /proc/sysrq-trigger
+</code></pre>
+<hr>
+<h2 id="ESXI-创建ROS"><a href="#ESXI-创建ROS" class="headerlink" title="ESXI 创建ROS"></a>ESXI 创建ROS</h2><h3 id="创建-ROS-虚拟机"><a href="#创建-ROS-虚拟机" class="headerlink" title="创建 ROS 虚拟机"></a>创建 ROS 虚拟机</h3><ol>
 <li>创建虚拟机名字和选择 Linux 类型</li>
 </ol>
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/Ros_create_1.png"></p>
