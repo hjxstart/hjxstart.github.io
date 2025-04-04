@@ -14,7 +14,7 @@
 <meta property="og:description" content="1 环境配置1.1 PXE服务器端初始化 Centos7.9最小安装后初始化  关闭防火墙&#x2F;SELinux&#x2F;配置yum源&#x2F;安装常用软件&#x2F;关闭sshd服务器的DNS systemctl disable --now firewalld systemctl disable --now postfix sed -i.bak &#39;&#x2F;^SELINUX&#x3D;&#x2F;c SEL">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-04-04T02:45:08.000Z">
-<meta property="article:modified_time" content="2025-04-04T03:21:27.624Z">
+<meta property="article:modified_time" content="2025-04-04T03:43:31.048Z">
 <meta property="article:author" content="黄金贤">
 <meta property="article:tag" content="计算机网络 数据库 操作系统 数据结构 算法 Java Nodejs">
 <meta name="twitter:card" content="summary">
@@ -250,7 +250,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="70">
-<input type="hidden" id="yelog_site_word_count" value="106.8k">
+<input type="hidden" id="yelog_site_word_count" value="107.1k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1064,12 +1064,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-04-04 11:21:27'>2025-04-04 10:45</time>
+            发布时间 : <time class="date" title='最后更新: 2025-04-04 11:43:31'>2025-04-04 10:45</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:3.3k</span>
+        <span>字数:3.6k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1088,7 +1088,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-text">1 环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-PXE%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-text">1.1 PXE服务器端初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AETFTP%E6%9C%8D%E5%8A%A1"><span class="toc-text">1.2 安装和配置TFTP服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AEDHCP%E6%9C%8D%E5%8A%A1"><span class="toc-text">1.3 安装和配置DHCP服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AEHTTP%E6%9C%8D%E5%8A%A1"><span class="toc-text">1.4 安装和配置HTTP服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-Client%E9%9C%80%E8%A6%81%E5%90%AF%E5%8A%A8%E7%9A%84%E6%96%87%E4%BB%B6-Ubuntu22-04"><span class="toc-text">1.5 Client需要启动的文件(Ubuntu22.04)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-1-grub%E5%90%AF%E5%8A%A8%E8%8F%9C%E5%8D%95%E7%9A%84%E7%BE%8E%E5%8C%96"><span class="toc-text">1.5.1 grub启动菜单的美化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-2-grub%E8%8F%9C%E5%8D%95%E7%9A%84-menuentry"><span class="toc-text">1.5.2  grub菜单的 menuentry</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-ks%E8%87%AA%E5%8A%A8%E5%BA%94%E7%AD%94%E6%96%87%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="toc-text">6. ks自动应答文件配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-Kylin-Server"><span class="toc-text">6.1 Kylin Server</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-Kylin-Desktop"><span class="toc-text">6.2 Kylin Desktop</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E6%A0%87%E5%87%86%E5%88%86%E5%8C%BA"><span class="toc-text">7. 标准分区</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-text">1 环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-PXE%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-text">1.1 PXE服务器端初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AETFTP%E6%9C%8D%E5%8A%A1"><span class="toc-text">1.2 安装和配置TFTP服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AEDHCP%E6%9C%8D%E5%8A%A1"><span class="toc-text">1.3 安装和配置DHCP服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AEHTTP%E6%9C%8D%E5%8A%A1"><span class="toc-text">1.4 安装和配置HTTP服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-Client%E9%9C%80%E8%A6%81%E5%90%AF%E5%8A%A8%E7%9A%84%E6%96%87%E4%BB%B6-Ubuntu22-04"><span class="toc-text">1.5 Client需要启动的文件(Ubuntu22.04)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-1-grub%E5%90%AF%E5%8A%A8%E8%8F%9C%E5%8D%95%E7%9A%84%E7%BE%8E%E5%8C%96"><span class="toc-text">1.5.1 grub启动菜单的美化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-2-grub%E8%8F%9C%E5%8D%95%E7%9A%84-menuentry"><span class="toc-text">1.5.2  grub菜单的 menuentry</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-ks%E8%87%AA%E5%8A%A8%E5%BA%94%E7%AD%94%E6%96%87%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="toc-text">6. ks自动应答文件配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-Kylin-Server"><span class="toc-text">6.1 Kylin Server</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-Kylin-Desktop"><span class="toc-text">6.2 Kylin Desktop</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E6%A0%87%E5%87%86%E5%88%86%E5%8C%BA"><span class="toc-text">7. 标准分区</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Other"><span class="toc-text">Other</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1522,6 +1522,83 @@ else
         echo &#39;part /boot/efi --fstype=&quot;efi&quot; --ondisk=sda --size=512 --fsoptions=&quot;umask=0077,shortname=winnt&quot;&#39; &gt;&gt; /tmp/sda-nvme.txt
         echo &#39;part swap --fstype=&quot;swap&quot; --ondisk=sda --size=2048&#39; &gt;&gt; /tmp/sda-nvme.txt
 fi
+</code></pre>
+<h2 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h2><blockquote>
+<p>bond.sh</p>
+</blockquote>
+<pre><code class="bash">#!/bin/bash
+
+echo &quot;请输入bond接口名称&quot;
+read bond_name
+
+echo &quot;请输入bond ip（如192.168.1.1/24）&quot;
+read bond_ip
+
+echo &quot;请输入bond 网关（如192.168.1.254）&quot;
+read bond_gateway
+
+echo &quot;请输入物理网卡名称（如 eth0,eth1）&quot;
+read physical_interfaces
+
+#将物理网卡列表转为数组
+IFS=&#39;,&#39; read -ra physical_interfaces_array &lt;&lt;&lt; &quot;$physical_interfaces&quot;
+
+bond_create() &#123;
+    #创建bond 接口
+    nmcli connection add type bond con-name $bond_name ifname $bond_name mode $bond_mode
+    if [ $? -ne 0 ]; then
+        echo &quot;bond 接口 $bond_name 创建失败&quot;
+        exit 1
+    fi
+    #将物理网卡添加到bond接口
+    for interface in &quot;$&#123;physical_interfaces_array[@]&#125;&quot;; do
+        nmcli connection add type ethernet slave-type bond con-name &quot;$&#123;interface&#125;-slave&quot; ifname $interface master $bond_name
+        if [ $? -ne 0 ]; then
+            echo &quot;将网卡$interface 添加到bond接口失败&quot;
+            exit 1
+        fi
+    done
+    #配置bond接口的ip
+    nmcli connection modify $bond_name ipv4.addresses $bond_ip  ipv4.gateway $bond_gateway  ipv4.method manual
+    if [ $? -ne 0 ]; then
+        echo &quot;修改 $bond_name 网络参数失败&quot;
+        exit 1
+    fi
+
+    #激活bond 接口
+    nmcli connection up $bond_name
+    if [ $? -ne 0 ]; then
+        echo &quot;$bond_name 激活失败&quot;
+        exit 1
+    fi
+    echo &quot;$bond_name 成功配置及激活&quot;
+
+&#125;
+
+echo &quot;bond配置菜单如下：&quot;
+echo &quot;1.配置bond0（balance-rr）轮询&quot;
+echo &quot;2.配置bond1（active-backup）主备&quot;
+echo &quot;3.配置bond4（802.3ad）动态聚合链路&quot;
+
+read Bond
+
+case $Bond in
+    1)
+        bond_mode=&quot;balance-rr&quot;
+        bond_create
+        ;;
+    2)
+        bond_mode=&quot;active-backup&quot;
+        bond_create
+        ;;
+    3)
+        bond_mode=&quot;802.3ad&quot;
+        bond_create
+        ;;
+    *)
+        echo &quot;请输入1-3数字&quot;
+        ;;
+esac
 </code></pre>
 
       
