@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>网络工程师</title>
+      <link href="/2025/04/16/%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/"/>
+      <url>/2025/04/16/%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/</url>
+      
+        <content type="html"><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="考试用到的工具"><a href="#考试用到的工具" class="headerlink" title="考试用到的工具"></a>考试用到的工具</h2><pre><code class="bash">1. 第五版的内容+第六版的内容2. 历年真题：最少要做10套历年真题3. 华为ENSP模拟器4. VM虚拟机+统信UOS操作系统（以Linux为基础）+Windows Server5. 一定要做笔记（可以是电子版）6. 作为考试，改丢弃的内容就丢弃该重点学习的内容就重点学习</code></pre><h2 id="路由器和交换机的常见命令"><a href="#路由器和交换机的常见命令" class="headerlink" title="路由器和交换机的常见命令"></a>路由器和交换机的常见命令</h2><pre><code class="bash"></code></pre><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><pre><code class="bash"># OSI和TCP/IP应用层          表示层          会话层          应用层传输层网络层数据链路层物理层# MAC地址，全球唯一，48bit二进制，十六进制表示前24bit由国际组织分配给厂商，后24bit由厂商自定义# 数据联络层1. CSMA/CD的具体作用：用于总线型网络（或者HUB网络）中检测网络中的冲突和碰撞。2. 帧校验序列（FCS）帧通常是一个循环冗余校验（CRC）值，用于在数据链路层检测帧在传输过程中是否发生错误，从而确保数据的完整性和准确性。[检测快递是否完整]# VLAN1. 交换机可以隔离冲突域，但是带来广播的问题（设备性能和延时）。2. VLAN可以隔离广播问题。好处：控制网络流量，提高网络的安全性，灵活的网络管理。3. 划分VLAN的方式：静态的方式（基于端口），动态的方式（基于MAC地址，基于IP地址，基于协议，基于策略）# 生成树（网桥就是路由器）</code></pre>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>PXE+Kickstart安装Linux</title>
       <link href="/2025/04/04/PXE-Kickstart%E5%AE%89%E8%A3%85Linux/"/>
       <url>/2025/04/04/PXE-Kickstart%E5%AE%89%E8%A3%85Linux/</url>
