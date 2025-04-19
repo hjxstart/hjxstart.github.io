@@ -6,18 +6,21 @@
   <meta name="keywords" content="">
   <meta name="description" content="网络工程师 | 黄金贤的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="概述背景概述待补充 通用常用命令常用激活命令# 命令行激活,扫描二维码回车输入激活码 kylin-system-verify # 查看当前系统激活状态 kylin_activation_check # ukey激活命令 kylin_activate_ukey   21038046 桌面常见问题数据# 用户的回收站 cd ~&#x2F;.local&#x2F;share&#x2F;Trash&#x2F;files&#x2F;  修改密码# 进入单用">
+<meta name="description" content="概述了解产品线+解决问题 考试用到的工具1. 第五版的内容+第六版的内容 2. 历年真题：最少要做10套历年真题 3. 华为ENSP模拟器 4. VM虚拟机+统信UOS操作系统（以Linux为基础）+Windows Server 5. 一定要做笔记（可以是电子版） 6. 作为考试，改丢弃的内容就丢弃该重点学习的内容就重点学习  路由器和交换机的常见命令  TCP&#x2F;IP （数据）   ##">
 <meta property="og:type" content="article">
-<meta property="og:title" content="KylinOS">
-<meta property="og:url" content="https://hjxstart.github.io/2025/02/12/KylinOS/index.html">
+<meta property="og:title" content="网络工程师">
+<meta property="og:url" content="https://hjxstart.github.io/2025/04/16/%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/index.html">
 <meta property="og:site_name" content="黄金贤的博客">
-<meta property="og:description" content="概述背景概述待补充 通用常用命令常用激活命令# 命令行激活,扫描二维码回车输入激活码 kylin-system-verify # 查看当前系统激活状态 kylin_activation_check # ukey激活命令 kylin_activate_ukey   21038046 桌面常见问题数据# 用户的回收站 cd ~&#x2F;.local&#x2F;share&#x2F;Trash&#x2F;files&#x2F;  修改密码# 进入单用">
+<meta property="og:description" content="概述了解产品线+解决问题 考试用到的工具1. 第五版的内容+第六版的内容 2. 历年真题：最少要做10套历年真题 3. 华为ENSP模拟器 4. VM虚拟机+统信UOS操作系统（以Linux为基础）+Windows Server 5. 一定要做笔记（可以是电子版） 6. 作为考试，改丢弃的内容就丢弃该重点学习的内容就重点学习  路由器和交换机的常见命令  TCP&#x2F;IP （数据）   ##">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-02-12T08:47:23.000Z">
-<meta property="article:modified_time" content="2025-03-12T06:11:28.440Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250419202148410.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250419204017631.png">
+<meta property="article:published_time" content="2025-04-16T14:14:39.000Z">
+<meta property="article:modified_time" content="2025-04-19T14:35:26.970Z">
 <meta property="article:author" content="黄金贤">
-<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="计算机网络 数据库 操作系统 数据结构 算法 Java Nodejs">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250419202148410.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -250,7 +253,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="71">
-<input type="hidden" id="yelog_site_word_count" value="108.8k">
+<input type="hidden" id="yelog_site_word_count" value="109.2k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1072,12 +1075,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-04-19 21:38:32'>2025-04-16 22:14</time>
+            发布时间 : <time class="date" title='最后更新: 2025-04-19 22:35:26'>2025-04-16 22:14</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:1.6k</span>
+        <span>字数:1.9k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1096,7 +1099,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%80%83%E8%AF%95%E7%94%A8%E5%88%B0%E7%9A%84%E5%B7%A5%E5%85%B7"><span class="toc-text">考试用到的工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E5%99%A8%E5%92%8C%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%9A%84%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4"><span class="toc-text">路由器和交换机的常见命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP-x2F-IP"><span class="toc-text">TCP&#x2F;IP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C"><span class="toc-text">实验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Telnet-23"><span class="toc-text">Telnet 23</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%9C%AC%E6%9C%BA%E5%92%8Ctelenet"><span class="toc-text">配置本机和telenet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FTP"><span class="toc-text">FTP</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%80%83%E8%AF%95%E7%94%A8%E5%88%B0%E7%9A%84%E5%B7%A5%E5%85%B7"><span class="toc-text">考试用到的工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E5%99%A8%E5%92%8C%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%9A%84%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4"><span class="toc-text">路由器和交换机的常见命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP-x2F-IP"><span class="toc-text">TCP&#x2F;IP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C"><span class="toc-text">实验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Telnet-23"><span class="toc-text">Telnet 23</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%9C%AC%E6%9C%BA%E5%92%8Ctelenet"><span class="toc-text">配置本机和telenet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FTP"><span class="toc-text">FTP</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Console"><span class="toc-text">Console</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SSH"><span class="toc-text">SSH</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1258,6 +1261,45 @@ aaa
     local-user admin-02 privilege level 15
     local-user admin-02 service-type ftp
     local-user admin-02 ftp-directory flash:
+</code></pre>
+<h2 id="Console"><a href="#Console" class="headerlink" title="Console"></a>Console</h2><pre><code class="bash"># 设备默认出厂都有一个管理地址Managemnent/MGMT（华为Web界面的出厂的默认IP管理地址是192.168.1.1/24）
+# 配置一台全新的设备（路由器、交换机和防火墙（admin/Admin@123s）等）（ENSP使用CTL线可以模拟）
+本地配置方式：console http
+cli命令行：GUI和WEB配置方式
+
+# 设备设置console口方式1
+user-interface console 0
+    speed 9600 # 配置传输速率
+    authentication-mode password
+    set authentication password cipher 123456a
+# 设备设置console口方式1
+user-interface console 0
+    speed 9600 # 配置传输速率
+    authentication-mode aaa
+aaa
+    local-user admin-03 password cipher 123456a
+    local-user admin-03 privilege level 15
+    local-user admin-03 service-type terminal
+
+# 防火墙开启WEB服务
+int g 0/0/0
+    ip add 172.16.10.254 24
+    service-manage ping permit
+    service-manage http permit
+    service-manage https permit
+
+</code></pre>
+<h2 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h2><pre><code class="bash">## 当所有配置配置完成后，投入使用后：关闭WEB管理功能，给Console加密，远程管理不适用telnet使用SSH
+# ssh加密的远程管理，使用的是22端口号
+# 认证方式：密码认证(password)【中小型网络】；RSA(基于客户端私钥的认证方式，非对称加密)【安全性要求比较高】；ECC【】;Passwrod-RSA；Password-ECC；
+ssh server enable
+aaa
+    local-user admin-04 passwrod cipher 123456a
+    local-user admin-04 privilege level 15
+    local-user admin-04 service-type ssh
+user-interface vty 0 4
+    authentication-mode aaa
+    protocol inbound ssh
 </code></pre>
 
       
