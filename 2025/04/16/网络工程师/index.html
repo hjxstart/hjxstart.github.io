@@ -6,17 +6,17 @@
   <meta name="keywords" content="">
   <meta name="description" content="网络工程师 | 黄金贤的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="概述考试用到的工具1. 第五版的内容+第六版的内容 2. 历年真题：最少要做10套历年真题 3. 华为ENSP模拟器 4. VM虚拟机+统信UOS操作系统（以Linux为基础）+Windows Server 5. 一定要做笔记（可以是电子版） 6. 作为考试，改丢弃的内容就丢弃该重点学习的内容就重点学习  路由器和交换机的常见命令  其他# OSI和TCP&#x2F;IP 应用层           表示层">
+<meta name="description" content="概述背景概述待补充 通用常用命令常用激活命令# 命令行激活,扫描二维码回车输入激活码 kylin-system-verify # 查看当前系统激活状态 kylin_activation_check # ukey激活命令 kylin_activate_ukey   21038046 桌面常见问题数据# 用户的回收站 cd ~&#x2F;.local&#x2F;share&#x2F;Trash&#x2F;files&#x2F;  修改密码# 进入单用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="网络工程师">
-<meta property="og:url" content="https://hjxstart.github.io/2025/04/16/%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/index.html">
+<meta property="og:title" content="KylinOS">
+<meta property="og:url" content="https://hjxstart.github.io/2025/02/12/KylinOS/index.html">
 <meta property="og:site_name" content="黄金贤的博客">
-<meta property="og:description" content="概述考试用到的工具1. 第五版的内容+第六版的内容 2. 历年真题：最少要做10套历年真题 3. 华为ENSP模拟器 4. VM虚拟机+统信UOS操作系统（以Linux为基础）+Windows Server 5. 一定要做笔记（可以是电子版） 6. 作为考试，改丢弃的内容就丢弃该重点学习的内容就重点学习  路由器和交换机的常见命令  其他# OSI和TCP&#x2F;IP 应用层           表示层">
+<meta property="og:description" content="概述背景概述待补充 通用常用命令常用激活命令# 命令行激活,扫描二维码回车输入激活码 kylin-system-verify # 查看当前系统激活状态 kylin_activation_check # ukey激活命令 kylin_activate_ukey   21038046 桌面常见问题数据# 用户的回收站 cd ~&#x2F;.local&#x2F;share&#x2F;Trash&#x2F;files&#x2F;  修改密码# 进入单用">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-04-16T14:14:39.000Z">
-<meta property="article:modified_time" content="2025-04-17T15:17:49.495Z">
+<meta property="article:published_time" content="2025-02-12T08:47:23.000Z">
+<meta property="article:modified_time" content="2025-03-12T06:11:28.440Z">
 <meta property="article:author" content="黄金贤">
-<meta property="article:tag" content="计算机网络 数据库 操作系统 数据结构 算法 Java Nodejs">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
 
 
@@ -250,7 +250,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="71">
-<input type="hidden" id="yelog_site_word_count" value="107.6k">
+<input type="hidden" id="yelog_site_word_count" value="108.8k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1072,12 +1072,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-04-17 23:17:49'>2025-04-16 22:14</time>
+            发布时间 : <time class="date" title='最后更新: 2025-04-19 21:38:32'>2025-04-16 22:14</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:396</span>
+        <span>字数:1.6k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1096,7 +1096,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%80%83%E8%AF%95%E7%94%A8%E5%88%B0%E7%9A%84%E5%B7%A5%E5%85%B7"><span class="toc-text">考试用到的工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E5%99%A8%E5%92%8C%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%9A%84%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4"><span class="toc-text">路由器和交换机的常见命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-text">其他</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%80%83%E8%AF%95%E7%94%A8%E5%88%B0%E7%9A%84%E5%B7%A5%E5%85%B7"><span class="toc-text">考试用到的工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E5%99%A8%E5%92%8C%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%9A%84%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4"><span class="toc-text">路由器和交换机的常见命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP-x2F-IP"><span class="toc-text">TCP&#x2F;IP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C"><span class="toc-text">实验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Telnet-23"><span class="toc-text">Telnet 23</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%9C%AC%E6%9C%BA%E5%92%8Ctelenet"><span class="toc-text">配置本机和telenet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FTP"><span class="toc-text">FTP</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1112,7 +1112,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="考试用到的工具"><a href="#考试用到的工具" class="headerlink" title="考试用到的工具"></a>考试用到的工具</h2><pre><code class="bash">1. 第五版的内容+第六版的内容
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>了解产品线+解决问题</p>
+<h2 id="考试用到的工具"><a href="#考试用到的工具" class="headerlink" title="考试用到的工具"></a>考试用到的工具</h2><pre><code class="bash">1. 第五版的内容+第六版的内容
 2. 历年真题：最少要做10套历年真题
 3. 华为ENSP模拟器
 4. VM虚拟机+统信UOS操作系统（以Linux为基础）+Windows Server
@@ -1121,30 +1122,142 @@
 </code></pre>
 <h2 id="路由器和交换机的常见命令"><a href="#路由器和交换机的常见命令" class="headerlink" title="路由器和交换机的常见命令"></a>路由器和交换机的常见命令</h2><pre><code class="bash">
 </code></pre>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><pre><code class="bash"># OSI和TCP/IP
-应用层          
-表示层          
-会话层          应用层
-传输层
-网络层
-数据链路层
-物理层
+<h2 id="TCP-x2F-IP"><a href="#TCP-x2F-IP" class="headerlink" title="TCP&#x2F;IP"></a>TCP&#x2F;IP</h2><pre><code class="bash">
+（数据）
 
-# MAC地址，全球唯一，48bit二进制，十六进制表示
-前24bit由国际组织分配给厂商，后24bit由厂商自定义
 
-# 数据联络层
+## 传输层（数据段）
+## TCP(6,传输控制协议)；任何基于TCP的应用，在发送数据之前，都需要由TCP进行“三次握手”建立连接。“四次挥手”
+# TCP使用序列号和确认序列号字段实现数据的可靠和有序传输
+源端口|目的端口(上层协议端口号)|发送顺序号|接受顺序号|偏置值|保留|URG|ACK|ACP|PSH|RST|SYN|FIN|窗口|
+
+## UDP(17,用户数据报协议)
+源端口|目的端口|长度|Checksum
+
+
+
+
+## 网络层（数据包）
+# IPv4
+版本号(4/6)|IHL(头部长度)|服务类型(优先级)|总长度(整个IP包长度)|标识符(数据包序号)|DM标志位|片偏移(MTU分片)|生存期(TTL防环)|协议(上层协议TCP/UDP)|头校验和|源地址|目的地址|任选数据/补丁/用户数据|
+IP地址整个范围：0.0.0.0~255.255.255.255
+A: 0.0.0.0 ~ 127.255.255.255
+B: 128.0.0.0 ~ 191.255.255.255
+C: 192.0.0.0 ~ 223.255.255.255
+D: 224.0.0.0 ~ 239.255.255.255 组播
+E: 240.0.0.0 ~ 255.255.255.255 保留
+可用：1.0.0.0 ~ 223.255.255.255
+不可用:
+    环回口测试: 127.0.0.0 127.255.255.255
+    任意主机: 0.0.0.0
+    广播地址: 255.255.255.255
+    vlsm CIDR: 网络地址不能用，广播地址不能用
+    Windows操作系统定义一个地址：当网络中有DHCP服务器的时候，客户端获取不到IP地址的时候，Windows操作系统会给客户端一个地址，这个地址范围是169.254.0.0~169.254.255.255，不能连接互联网
+VLSM可变长子网掩码(从大往小变  )
+CIDR聚合
+主机数:2^n; 可用主机数：2^n-2
+# IPv4过度到IPv6的技术：隧道技术、协议翻译技术和双协议栈技术。
+# ICMP报文(tracert 路由跟踪)
+Type|Code|Checksum|Message Body|
+type: 3目的不可达
+type: 5路由重定向
+type: 11超时
+ 
+
+## 数据链路层（帧）
+# MAC地址，全球唯一，48bit二进制，十六进制表示 前24bit由国际组织分配给厂商，后24bit由厂商自定义
 1. CSMA/CD的具体作用：用于总线型网络（或者HUB网络）中检测网络中的冲突和碰撞。
 2. 帧校验序列（FCS）帧通常是一个循环冗余校验（CRC）值，用于在数据链路层检测帧在传输过程中是否发生错误，从而确保数据的完整性和准确性。[检测快递是否完整]
-
+#EEE 802.1q帧格式
+DA(6)|SA(6)|Tag(4)|type(2)|Data|FCS(4)
 # VLAN
 1. 交换机可以隔离冲突域，但是带来广播的问题（设备性能和延时）。
 2. VLAN可以隔离广播问题。好处：控制网络流量，提高网络的安全性，灵活的网络管理。
 3. 划分VLAN的方式：静态的方式（基于端口），动态的方式（基于MAC地址，基于IP地址，基于协议，基于策略）
-
-
 # 生成树（网桥就是路由器）
+1. 生成树解决二层环路
+2. 桥ID,BID（优先级，MAC）：
+3. PID（优先级，端口号）：所在网桥内生效
+4. 生成树算法的步骤：1.确认一个根桥(RB)；2.确认其他网桥的根端口(RP)；3.对每一个LAN确定一个唯一的指定桥(DB)和指定端口(DP)，如果有两个以上网桥的根通路费用(RPC)相同，则选择优先级最高级的网桥作为指定桥；如果指定桥有多个端口连接LAN，则选取标识符值最小的端口为指定端口。
 
+
+## 物理层（比特流）
+# 1. 物理层规定通信设备机械、电气、功能和过程的特性，建立、维持和释放数据链路实体间的连接
+# 2. 传输介质与以太网 
+
+</code></pre>
+<h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><h3 id="Telnet-23"><a href="#Telnet-23" class="headerlink" title="Telnet 23"></a>Telnet 23</h3><p>明文传输</p>
+<pre><code class="bash"># Client
+sysname client
+int g 0/0/0
+    ip add 192.168.10.10 24
+&gt;
+telnet 192.168.10.254
+
+# Server
+sysname server
+int g 0/0/0
+    ip add 192.168.10.254
+telnet server enable
+user-interface vty 0 4
+    protocol inbound telnet
+    set authentication password cipher 123456
+    ## 方式2
+    authentication password
+        123456a
+        set authentication password cipher 123456a
+        protocol inbound telnet
+        idle-timeout 5
+        history-command max-size 20
+        user privilege level 0
+    
+    ## 方式3
+    authentication aaa
+        quit
+    aaa # level:0参观级，1监控级，2配置级，3~15管理级
+        local-user admin-01 password cipher 123456a
+        local-user admin-01 privilege level 0
+        local-user admin-01 service-type telnet
+
+        local-user admin-02 password cipher 123456a
+        local-user admin-02 privilege level 2
+        local-user admin-02 service-type telnet
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250419202148410.png" alt="Win10添加环回网络适配器"><br>win + R 运行 ncpa.cpl; 修改环回口地址 192.168.10.10&#x2F;24</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250419204017631.png" alt="Cloud添加环回口地址"></p>
+<h3 id="配置本机和telenet"><a href="#配置本机和telenet" class="headerlink" title="配置本机和telenet"></a>配置本机和telenet</h3><pre><code class="bash">user-interface vty 0 4
+ authentication-mode aaa
+ history-command max-size 20
+aaa # 本地验证
+    local-user admin-01 password cipher 123456a idle-timeout 10 0
+    local-user admin-01 privilege level 15
+    local-user admin-01 service-type telnet
+</code></pre>
+<h3 id="FTP"><a href="#FTP" class="headerlink" title="FTP"></a>FTP</h3><blockquote>
+<p>备份网络设备上的配置文件 网络设备的操作系统文件 许可文件<br>外包公司：要求每个月都要备份网络主要设备的配置文件</p>
+</blockquote>
+<pre><code class="bash">&gt; dis
+vrpcfg.zip  # 网络配置文件
+sd1: 主控板上的SD卡存储根目录
+flash: 主控板上的falsh存储器根目录
+slave#sd1: 备用主控板上的SD卡存储根目录
+slave#flash: 备用主控板上的falsh存储器根目录
+# 当前运行配置文件（最近的上一次保存的运行配置文件+后加的未保存配置命令）
+# 保存的配置文件
+&gt; display factory-configuration # 查看出厂的配置文件
+&gt; display startup # 查看设备本次已经下次启动的配置文件
+&gt; display curent-configuration # 查看当前配置
+&gt; display saved-configuration # 查看保存的配置文件
+# 修改当前设备的下次启动的配置文件为vrpcfg20250419.zip
+startup saved-configuration flash:/vrpcfg20250419.zip
+
+# 通过FTP管理设备的配置文件
+ftp server enable
+aaa
+    local-user admin-02 password cipher 123456a
+    local-user admin-02 privilege level 15
+    local-user admin-02 service-type ftp
+    local-user admin-02 ftp-directory flash:
 </code></pre>
 
       
