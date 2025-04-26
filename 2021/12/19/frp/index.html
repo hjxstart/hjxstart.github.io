@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>frp | 黄金贤的博客</title>
+  <meta name="keywords" content=" Nginx , frp ">
+  <meta name="description" content="frp | 黄金贤的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="1Panel概述网站   FrpFrpc# proxies serverAddr &#x3D; &quot;154.222.24.218&quot; serverPort &#x3D; 7000 auth.method &#x3D; &quot;token&quot; auth.token &#x3D; &quot;FRPS&quot;  [[proxies]] name &#x3D; &quot;7735h-rdp&quot; type &#x3D; &amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1Panel">
+<meta property="og:url" content="https://hjxstart.github.io/2025/04/26/1Panel/index.html">
+<meta property="og:site_name" content="黄金贤的博客">
+<meta property="og:description" content="1Panel概述网站   FrpFrpc# proxies serverAddr &#x3D; &quot;154.222.24.218&quot; serverPort &#x3D; 7000 auth.method &#x3D; &quot;token&quot; auth.token &#x3D; &quot;FRPS&quot;  [[proxies]] name &#x3D; &quot;7735h-rdp&quot; type &#x3D; &amp;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-04-26T06:09:16.000Z">
+<meta property="article:modified_time" content="2025-04-26T09:34:10.870Z">
+<meta property="article:author" content="黄金贤">
+<meta property="article:tag" content="计算机网络 数据库 操作系统 数据结构 算法 Java Nodejs">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-dark.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 6.0.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>黄金贤</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="github"
+               href="https://github.com/hjxstart"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="email"
+               href="mailto:hjxstart@126.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=1726283687&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(73)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="读书">
+                        
+                        读书
+                        <small>(6)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="后端">
+                        
+                        后端
+                        <small>(8)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据库">
+                        
+                        数据库
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(13)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="前端">
+                        
+                        前端
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="网络">
+                        
+                        网络
+                        <small>(21)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="系统">
+                        
+                        系统
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="73">
+<input type="hidden" id="yelog_site_word_count" value="111.5k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://github.com/hjxstart">hjxstart</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>笔记</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>编程思想</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>编程语言</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>动态路由协议</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>海明码</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>环境</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>静态路由</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>路由协议</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>设计模式</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>数据库</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>思科网络实验</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>网络常用命令</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>项目</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CentOS7</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CICD</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Cisco</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Docker</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>EIGRP</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>FHPR</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>frp</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ftp</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Git</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>GO</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Harbor</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>IGP</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>InfluxDB</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>IT Helpdesk</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Java</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>K8s</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>MongoDB</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Mybatis</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>MySQL</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Nginx</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Nodejs</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>OSPF</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Spring</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>SpringBoot</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>VLAN</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>VRRP</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Vue</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="全部文章 网络 "
+           href="/2024/05/06/HCIE%20Lab/"
+           data-tag="项目"
+           data-author="" >
+            <span class="post-title" title="HCIE Lab">HCIE Lab</span>
+            <span class="post-date" title="2024-05-06 19:42:49">2024/05/06</span>
+        </a>
+        
+        <a id="top" class="全部文章 数据库 "
+           href="/2022/03/06/influxDB/"
+           data-tag="数据库,InfluxDB"
+           data-author="" >
+            <span class="post-title" title="InfluxDB">InfluxDB</span>
+            <span class="post-date" title="2022-03-06 12:47:36">2022/03/06</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2021/09/08/Harbor/"
+           data-tag="Harbor,K8s"
+           data-author="" >
+            <span class="post-title" title="Harbor">Harbor</span>
+            <span class="post-date" title="2021-09-08 18:04:32">2021/09/08</span>
+        </a>
+        
+        <a id="top" class="全部文章 后端 "
+           href="/2021/08/26/GO/"
+           data-tag="GO,编程语言"
+           data-author="" >
+            <span class="post-title" title="GO">GO</span>
+            <span class="post-date" title="2021-08-26 11:50:00">2021/08/26</span>
+        </a>
+        
+        <a id="top" class="全部文章 "
+           href="/2024/07/28/ESXI-ROS-WDS-MDT/"
+           data-tag="IT Helpdesk"
+           data-author="" >
+            <span class="post-title" title="ESXI+ROS+WDS+MDT">ESXI+ROS+WDS+MDT</span>
+            <span class="post-date" title="2024-07-28 21:33:05">2024/07/28</span>
+        </a>
+        
+        <a id="top" class="全部文章 "
+           href="/2023/12/18/ESXI/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="ESXI">ESXI</span>
+            <span class="post-date" title="2023-12-18 17:05:10">2023/12/18</span>
+        </a>
+        
+        <a id="top" class="全部文章 工具 "
+           href="/2021/03/14/Hexo/"
+           data-tag="Hexo"
+           data-author="" >
+            <span class="post-title" title="Hexo">Hexo</span>
+            <span class="post-date" title="2021-03-14 08:31:47">2021/03/14</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2021/09/20/k8s%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/"
+           data-tag="K8s"
+           data-author="" >
+            <span class="post-title" title="k8s实验笔记">k8s实验笔记</span>
+            <span class="post-date" title="2021-09-20 08:04:10">2021/09/20</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2021/09/15/K8s/"
+           data-tag="Docker,K8s"
+           data-author="" >
+            <span class="post-title" title="k8s">k8s</span>
+            <span class="post-date" title="2021-09-15 20:48:34">2021/09/15</span>
+        </a>
+        
+        <a id="top" class="全部文章 后端 "
+           href="/2021/06/26/%E6%A0%A1%E5%9B%AD%E4%BA%A4%E6%98%93%E9%A1%B9%E7%9B%AE/"
+           data-tag="Java,Spring"
+           data-author="" >
+            <span class="post-title" title="校园交易项目">校园交易项目</span>
+            <span class="post-date" title="2021-06-26 07:58:18">2021/06/26</span>
+        </a>
+        
+        <a id="top" class="全部文章 读书 "
+           href="/2021/04/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"
+           data-tag="Java,设计模式"
+           data-author="" >
+            <span class="post-title" title="设计模式">设计模式</span>
+            <span class="post-date" title="2021-04-18 22:19:45">2021/04/18</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2021/12/19/Gitea/"
+           data-tag="Git,CICD"
+           data-author="" >
+            <span class="post-title" title="Gitea">Gitea</span>
+            <span class="post-date" title="2021-12-19 21:53:48">2021/12/19</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2021/08/11/Nginx/"
+           data-tag="Nginx"
+           data-author="" >
+            <span class="post-title" title="Nginx">Nginx</span>
+            <span class="post-date" title="2021-08-11 23:28:55">2021/08/11</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2021/07/22/Docker/"
+           data-tag="Docker,环境"
+           data-author="" >
+            <span class="post-title" title="Docker">Docker</span>
+            <span class="post-date" title="2021-07-22 14:53:59">2021/07/22</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2021/06/07/CentOS7/"
+           data-tag="Linux,CentOS7"
+           data-author="" >
+            <span class="post-title" title="CentOS7">CentOS7</span>
+            <span class="post-date" title="2021-06-07 23:16:42">2021/06/07</span>
+        </a>
+        
+        <a id="top" class="全部文章 系统 "
+           href="/2024/03/31/RHCE9/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="RHCE9">RHCE9</span>
+            <span class="post-date" title="2024-03-31 15:33:32">2024/03/31</span>
+        </a>
+        
+        <a id="top" class="全部文章 "
+           href="/2024/07/28/Windows10%E7%B3%BB%E7%BB%9F%E5%B0%81%E8%A3%85/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Windows10系统封装">Windows10系统封装</span>
+            <span class="post-date" title="2024-07-28 21:32:18">2024/07/28</span>
+        </a>
+        
+        <a id="top" class="全部文章 读书 "
+           href="/2021/03/14/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/"
+           data-tag="笔记"
+           data-author="" >
+            <span class="post-title" title="时间管理">时间管理</span>
+            <span class="post-date" title="2021-03-14 21:49:15">2021/03/14</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2025/02/12/KylinOS/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="KylinOS">KylinOS</span>
+            <span class="post-date" title="2025-02-12 16:47:23">2025/02/12</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2025/04/26/1Panel/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1Panel">1Panel</span>
+            <span class="post-date" title="2025-04-26 14:09:16">2025/04/26</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2025/04/24/Openstack/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Openstack">Openstack</span>
+            <span class="post-date" title="2025-04-24 09:04:36">2025/04/24</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2025/04/16/%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="网络工程师">网络工程师</span>
+            <span class="post-date" title="2025-04-16 22:14:39">2025/04/16</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2025/04/04/PXE-Kickstart%E5%AE%89%E8%A3%85Linux/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PXE+Kickstart安装Linux">PXE+Kickstart安装Linux</span>
+            <span class="post-date" title="2025-04-04 10:45:08">2025/04/04</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2024/11/04/%E7%A2%8E%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="碎学习记录">碎学习记录</span>
+            <span class="post-date" title="2024-11-04 10:47:24">2024/11/04</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/28/BGP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="BGP">BGP</span>
+            <span class="post-date" title="2024-01-28 11:20:29">2024/01/28</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/005-STP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="005-STP">005-STP</span>
+            <span class="post-date" title="2024-01-27 14:01:47">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/004-VLAN/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="004-VLAN">004-VLAN</span>
+            <span class="post-date" title="2024-01-27 11:42:02">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/003-LLDP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="003-LLDP">003-LLDP</span>
+            <span class="post-date" title="2024-01-27 11:31:16">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/001-Telnet/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="001-Telnet">001-Telnet</span>
+            <span class="post-date" title="2024-01-27 10:45:39">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/002-SSH/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="002_SSH">002_SSH</span>
+            <span class="post-date" title="2024-01-27 10:44:10">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/%E5%8D%8E%E4%B8%BA%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="华为常用命令">华为常用命令</span>
+            <span class="post-date" title="2024-01-27 09:28:44">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/20/STP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="STP">STP</span>
+            <span class="post-date" title="2024-01-20 10:26:37">2024/01/20</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2023/12/22/WireGuard/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="WireGuard">WireGuard</span>
+            <span class="post-date" title="2023-12-22 07:40:46">2023/12/22</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2023/12/21/%E5%A0%86%E5%8F%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="堆叠">堆叠</span>
+            <span class="post-date" title="2023-12-21 19:31:45">2023/12/21</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2023/12/18/RouterOS/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="RouterOS">RouterOS</span>
+            <span class="post-date" title="2023-12-18 17:05:19">2023/12/18</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2023/12/18/Git/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Git">Git</span>
+            <span class="post-date" title="2023-12-18 17:00:20">2023/12/18</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2023/11/30/IT-HelpDesk/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="IT HelpDesk">IT HelpDesk</span>
+            <span class="post-date" title="2023-11-30 21:21:59">2023/11/30</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/11/18/OpenWrt/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OpenWrt">OpenWrt</span>
+            <span class="post-date" title="2023-11-18 17:03:16">2023/11/18</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2023/06/11/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="课程学习笔记">课程学习笔记</span>
+            <span class="post-date" title="2023-06-11 10:46:38">2023/06/11</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/06/01/%E6%80%9D%E7%A7%91NP%E7%BD%91%E7%BB%9C%E5%AE%9E%E9%AA%8C/"
+           data-tag="思科网络实验,Cisco"
+           data-author="" >
+            <span class="post-title" title="思科NP网络实验">思科NP网络实验</span>
+            <span class="post-date" title="2023-06-01 10:46:26">2023/06/01</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/06/01/%E5%8D%8E%E4%B8%BANP%E7%BD%91%E7%BB%9C%E5%AE%9E%E9%AA%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="华为NP网络实验">华为NP网络实验</span>
+            <span class="post-date" title="2023-06-01 10:46:04">2023/06/01</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/09/EIGRP/"
+           data-tag="EIGRP,路由协议"
+           data-author="" >
+            <span class="post-title" title="EIGRP">EIGRP</span>
+            <span class="post-date" title="2023-04-09 15:14:50">2023/04/09</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/09/FHPR/"
+           data-tag="FHPR,VRRP"
+           data-author="" >
+            <span class="post-title" title="FHPR">FHPR</span>
+            <span class="post-date" title="2023-04-09 11:25:26">2023/04/09</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/09/%E5%9B%AD%E5%8C%BA%E7%BD%91%E6%9E%B6%E6%9E%84/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="园区网架构">园区网架构</span>
+            <span class="post-date" title="2023-04-09 09:01:09">2023/04/09</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/09/%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE%E6%A6%82%E8%BF%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="动态路由协议概述">动态路由协议概述</span>
+            <span class="post-date" title="2023-04-09 08:57:30">2023/04/09</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/08/%E5%8D%8E%E4%B8%BANA%E7%BD%91%E7%BB%9C%E5%AE%9E%E9%AA%8C/"
+           data-tag="OSPF,VLAN"
+           data-author="" >
+            <span class="post-title" title="华为NA网络实验">华为NA网络实验</span>
+            <span class="post-date" title="2023-04-08 11:46:05">2023/04/08</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/07/%E6%80%9D%E7%A7%91NA%E7%BD%91%E7%BB%9C%E5%AE%9E%E9%AA%8C/"
+           data-tag="思科网络实验,Cisco"
+           data-author="" >
+            <span class="post-title" title="思科NA网络实验">思科NA网络实验</span>
+            <span class="post-date" title="2023-04-07 20:13:29">2023/04/07</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/07/OSPF/"
+           data-tag="路由协议,动态路由协议,IGP,OSPF"
+           data-author="" >
+            <span class="post-title" title="OSPF">OSPF</span>
+            <span class="post-date" title="2023-04-07 19:19:35">2023/04/07</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/07/%E9%9D%99%E6%80%81%E8%B7%AF%E7%94%B1/"
+           data-tag="静态路由"
+           data-author="" >
+            <span class="post-title" title="静态路由">静态路由</span>
+            <span class="post-date" title="2023-04-07 19:10:50">2023/04/07</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/06/%E7%BD%91%E7%BB%9C%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"
+           data-tag="网络常用命令"
+           data-author="" >
+            <span class="post-title" title="网络常用命令">网络常用命令</span>
+            <span class="post-date" title="2023-04-06 10:10:12">2023/04/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2022/03/19/MySQL/"
+           data-tag="MySQL"
+           data-author="" >
+            <span class="post-title" title="MySQL">MySQL</span>
+            <span class="post-date" title="2022-03-19 21:51:35">2022/03/19</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2022/03/06/MongoDB/"
+           data-tag="MongoDB,数据库"
+           data-author="" >
+            <span class="post-title" title="MongoDB">MongoDB</span>
+            <span class="post-date" title="2022-03-06 17:38:45">2022/03/06</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/12/27/Vim/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Vim">Vim</span>
+            <span class="post-date" title="2021-12-27 09:15:01">2021/12/27</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/12/19/frp/"
+           data-tag="Nginx,frp"
+           data-author="" >
+            <span class="post-title" title="frp">frp</span>
+            <span class="post-date" title="2021-12-19 20:34:09">2021/12/19</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/12/16/vsftpd/"
+           data-tag="ftp"
+           data-author="" >
+            <span class="post-title" title="vsftpd">vsftpd</span>
+            <span class="post-date" title="2021-12-16 08:49:01">2021/12/16</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2021/10/06/Redis/"
+           data-tag="Docker,数据库"
+           data-author="" >
+            <span class="post-title" title="Redis">Redis</span>
+            <span class="post-date" title="2021-10-06 17:19:30">2021/10/06</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/09/09/VMware/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="VMware">VMware</span>
+            <span class="post-date" title="2021-09-09 15:38:41">2021/09/09</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/08/Ingress/"
+           data-tag="K8s"
+           data-author="" >
+            <span class="post-title" title="Ingress">Ingress</span>
+            <span class="post-date" title="2021-09-08 23:56:01">2021/09/08</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/08/28/Swarm/"
+           data-tag="Docker"
+           data-author="" >
+            <span class="post-title" title="Swarm">Swarm</span>
+            <span class="post-date" title="2021-08-28 20:46:10">2021/08/28</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/08/23/%E6%B5%B7%E6%98%8E%E7%A0%81-%E6%A0%A1%E9%AA%8C%E7%A0%81/"
+           data-tag="海明码"
+           data-author="" >
+            <span class="post-title" title="海明码">海明码</span>
+            <span class="post-date" title="2021-08-23 14:33:26">2021/08/23</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/08/22/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/"
+           data-tag="Java,编程思想"
+           data-author="" >
+            <span class="post-title" title="Java编程思想">Java编程思想</span>
+            <span class="post-date" title="2021-08-22 23:15:19">2021/08/22</span>
+        </a>
+        
+        <a  class="全部文章 后端 "
+           href="/2021/08/15/Java/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="Java多线程">Java多线程</span>
+            <span class="post-date" title="2021-08-15 14:36:42">2021/08/15</span>
+        </a>
+        
+        <a  class="全部文章 后端 "
+           href="/2021/08/06/Maven/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="Maven">Maven</span>
+            <span class="post-date" title="2021-08-06 09:38:42">2021/08/06</span>
+        </a>
+        
+        <a  class="全部文章 后端 "
+           href="/2021/07/31/Springboot%E9%A1%B9%E7%9B%AE/"
+           data-tag="Docker,Java,SpringBoot"
+           data-author="" >
+            <span class="post-title" title="Springboot项目">Springboot项目</span>
+            <span class="post-date" title="2021-07-31 19:34:21">2021/07/31</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/07/22/GitLab/"
+           data-tag="Git,CICD"
+           data-author="" >
+            <span class="post-title" title="GitLab">GitLab</span>
+            <span class="post-date" title="2021-07-22 21:41:24">2021/07/22</span>
+        </a>
+        
+        <a  class="全部文章 后端 "
+           href="/2021/07/19/SpringSecurity/"
+           data-tag="Java,Spring"
+           data-author="" >
+            <span class="post-title" title="SpringSecurity">SpringSecurity</span>
+            <span class="post-date" title="2021-07-19 20:58:25">2021/07/19</span>
+        </a>
+        
+        <a  class="全部文章 后端 "
+           href="/2021/07/13/Mybatis/"
+           data-tag="Java,Mybatis"
+           data-author="" >
+            <span class="post-title" title="Mybatis">Mybatis</span>
+            <span class="post-date" title="2021-07-13 10:38:01">2021/07/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/07/05/NVM/"
+           data-tag="Nodejs"
+           data-author="" >
+            <span class="post-title" title="NVM">NVM</span>
+            <span class="post-date" title="2021-07-05 08:15:33">2021/07/05</span>
+        </a>
+        
+        <a  class="全部文章 前端 "
+           href="/2021/06/23/Vue/"
+           data-tag="Vue"
+           data-author="" >
+            <span class="post-title" title="Vue">Vue</span>
+            <span class="post-date" title="2021-06-23 10:48:20">2021/06/23</span>
+        </a>
+        
+        <a  class="全部文章 后端 "
+           href="/2021/06/08/SpringBoot2/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="SpringBoot2学习">SpringBoot2学习</span>
+            <span class="post-date" title="2021-06-08 16:51:25">2021/06/08</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/06/02/Spring%E5%AE%9E%E6%88%98V5/"
+           data-tag="Java,Spring"
+           data-author="" >
+            <span class="post-title" title="Spring实战(第五版)">Spring实战(第五版)</span>
+            <span class="post-date" title="2021-06-02 09:42:37">2021/06/02</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/04/25/Spring%E5%AE%9E%E6%88%98V4/"
+           data-tag="Java,Spring"
+           data-author="" >
+            <span class="post-title" title="Spring实战(第四版)">Spring实战(第四版)</span>
+            <span class="post-date" title="2021-04-25 18:38:03">2021/04/25</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2021/03/22/SQL/"
+           data-tag="MySQL"
+           data-author="" >
+            <span class="post-title" title="SQL">SQL</span>
+            <span class="post-date" title="2021-03-22 18:33:13">2021/03/22</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-frp" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">frp</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="运维">运维</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color1">Nginx</a>
+            
+            <a class="color4">frp</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2025-02-24 10:53:18'>2021-12-19 20:34</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:915</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%A6%82%E8%BF%B0"><span class="toc-text">一、概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%85%BE%E8%AE%AF%E4%BA%91%E8%AE%BE%E7%BD%AE"><span class="toc-text">二、腾讯云设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%85%AC%E7%BD%91%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">三、公网服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-frps-%E9%85%8D%E7%BD%AE"><span class="toc-text">3.1 frps 配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-nginx-%E9%85%8D%E7%BD%AE"><span class="toc-text">3.2 nginx 配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81frp-%E4%BD%BF%E7%94%A8"><span class="toc-text">四、frp 使用</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h1><blockquote>
+<ol>
+<li>环境：一个域名、一台腾讯云的 centos7.6 服务器和一台内网 centos7.6 服务器</li>
+<li>场景：实现可以域名通过公网的 IP 地址访问内网的访问</li>
+</ol>
+</blockquote>
+<h2 id="二、腾讯云设置"><a href="#二、腾讯云设置" class="headerlink" title="二、腾讯云设置"></a>二、腾讯云设置</h2><ol>
+<li>域名申请</li>
+</ol>
+<pre><code class="shell">本次使用的域名是 huangfamily.cn
+</code></pre>
+<ol start="2">
+<li>SSL 证书申请</li>
+</ol>
+<pre><code class="shell">腾讯云[申请链接](https://console.cloud.tencent.com/ssl)
+</code></pre>
+<ol start="3">
+<li>DNS 解析</li>
+</ol>
+<pre><code class="shell">腾讯云[DNSPod](https://console.cloud.tencent.com/cns/detail/huangfamily.cn/records/0)
+</code></pre>
+<h2 id="三、公网服务器"><a href="#三、公网服务器" class="headerlink" title="三、公网服务器"></a>三、公网服务器</h2><h3 id="3-1-frps-配置"><a href="#3-1-frps-配置" class="headerlink" title="3.1 frps 配置"></a>3.1 frps 配置</h3><ol>
+<li>启动命令</li>
+</ol>
+<pre><code class="shell">nohup ./frps -c frps.ini &amp;
+</code></pre>
+<ol start="2">
+<li>frps.ini 配置文件</li>
+</ol>
+<pre><code class="shell">[common]
+# frp监听的端口，用作服务端和客户端通信
+bind_port = 4000
+token = XXX
+
+# 服务端通过此端口接监听和接收公网用户的https请求
+vhost_https_port = 4499
+# 服务端通过此端口接监听和接收公网用户的http请求
+vhost_http_port = 4498
+
+# frp提供了一个控制台，可以通过这个端口访问到控制台。可查看frp当前有多少代理连接以及对应的状态
+dashboard_port = 4500
+dashboard_user = username
+dashboard_pwd = password
+
+# 服务端的subdomain_host需要和客户端配置文件中的subdomain、local_port配合使用，
+# 可通过&#123;subdomain&#125;.&#123;subdomain_host&#125; 的域名格式来访问自己本地的 web 服务。
+# 假如服务端的subdomain_host为dev.msh.com，客户端某个配置组中的
+# subdomain为a,local_port为8585，
+# 则：
+# 访问 a.dev.msh.com ，等同于访问本地的localhost:8585
+
+subdomain_host = huangfamily.cn
+</code></pre>
+<h3 id="3-2-nginx-配置"><a href="#3-2-nginx-配置" class="headerlink" title="3.2 nginx 配置"></a>3.2 nginx 配置</h3><ol>
+<li>frp.conf</li>
+</ol>
+<pre><code class="shell">server &#123;
+    listen 80;
+    server_name huangfamily.cn home.huangfamily.cn dev.huangfamily.cn staging.huangfamily.cn git.huangfamily.cn;
+
+    location / &#123;
+        # 7071端口即为frp监听的http端口
+        proxy_pass http://127.0.0.1:4498;
+        proxy_set_header Host $host:80;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection &quot;upgrade&quot;;
+
+        proxy_connect_timeout 7d;
+        proxy_send_timeout 7d;
+        proxy_read_timeout 7d;
+
+        &#125;
+    # 防止爬虫抓取
+    if ($http_user_agent ~* &quot;360Spider|JikeSpider|Spider|spider|bot|Bot|2345Explorer|curl|wget|webZIP|qihoobot|Baiduspider|Googlebot|Googlebot-Mobile|Googlebot-Image|Mediapartners-Google|Adsbot-Google|Feedfetcher-Google|Yahoo! Slurp|Yahoo! Slurp China|YoudaoBot|Sosospider|Sogou spider|Sogou web spider|MSNBot|ia_archiver|Tomato Bot|NSPlayer|bingbot&quot;)
+        &#123;
+            return 403;
+        &#125;
+&#125;
+</code></pre>
+<ol start="2">
+<li>ssl.conf</li>
+</ol>
+<pre><code class="shell">server &#123;
+        #SSL 访问端口号为 443
+        listen 443 ssl;
+        #填写绑定证书的域名
+        server_name huangfamily.cn;
+        #证书文件名称
+        ssl_certificate huangfamily.cn_bundle.crt;
+        #私钥文件名称
+        ssl_certificate_key huangfamily.cn.key;
+        ssl_session_timeout 5m;
+        #请按照以下协议配置
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+        #请按照以下套件配置，配置加密套件，写法遵循 openssl 标准。
+        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;
+        ssl_prefer_server_ciphers on;
+        location / &#123;
+           #网站主页路径。此路径仅供参考，具体请您按照实际目录操作。
+           #例如，您的网站运行目录在/etc/www下，则填写/etc/www。
+           proxy_pass http://huangfamily.cn;
+        &#125;
+&#125;
+#server &#123;
+#    listen 80;
+#    #填写绑定证书的域名
+#    server_name huangfamily.cn;
+#    #把http的域名请求转成https
+#    return 301 https://$host$request_uri;
+#&#125;
+</code></pre>
+<h2 id="四、frp-使用"><a href="#四、frp-使用" class="headerlink" title="四、frp 使用"></a>四、frp 使用</h2><ol>
+<li>内网客户端配置</li>
+</ol>
+<pre><code class="shell">[common]
+# 部署frp服务端的公网服务器的ip
+server_addr = 106.55.104.24
+# 和服务端的bind_port保持一致
+server_port = 4000
+token = XXX
+
+[huangfamily]
+type = https
+local_port = 80
+custom_domains = huangfamily.com
+plugin = https2http
+plugin_local_addr = 127.0.0.1:80
+
+# HTTPS 证书相关的配置
+plugin_crt_path = ./huangfamily.cn_bundle.crt
+plugin_key_path = ./huangfamily.cn.key
+plugin_host_header_rewrite = 127.0.0.1
+plugin_header_X-From-Where = frp
+
+[http]
+type = http
+local_port = 80
+custom_domains = huangfamily.cn
+
+[http-home]
+type = http
+# local_port代表你想要暴露给外网的本地web服务端口
+local_port = 3000
+# subdomain 在全局范围内要确保唯一，每个代理服务的subdomain不能重名，否则会影响正常使用。
+# 客户端的subdomain需和服务端的subdomain_host配合使用
+subdomain = home
+
+[http-staging]
+type = http
+local_port = 3001
+subdomain = staging
+
+
+[http-dev]
+type = http
+local_port = 3002
+subdomain = dev
+
+[http-gitee]
+type = http
+local_port = 4001
+subdomain = git
+</code></pre>
+<ol start="2">
+<li>配置开机自启动</li>
+</ol>
+<blockquote>
+<p>vim &#x2F;lib&#x2F;systemd&#x2F;system&#x2F;frps.service</p>
+</blockquote>
+<pre><code class="shell">[Unit]
+Description=frps service
+After=network.target syslog.target
+Wants=network.target
+
+[Service]
+Type=simple
+#启动服务的命令（此处写你的frps的实际安装目录）
+ExecStart=/root/frp38/frps -c /root/frp38/frps.ini
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 hjxstart@126.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry"><span class="miit">
+                <img src="/img/gov.png" title="中华人民共和国工业和信息化部">
+                <a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">粤ICP备2021170625号-1</a>
+        </span>
+    
+    ©2019-2022 hjxstart
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("/img/article-list-bg-img.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
