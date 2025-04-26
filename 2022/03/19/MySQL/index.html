@@ -250,7 +250,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="73">
-<input type="hidden" id="yelog_site_word_count" value="114.1k">
+<input type="hidden" id="yelog_site_word_count" value="114.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1143,7 +1143,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="Docker-安装-MySQL5-7"><a href="#Docker-安装-MySQL5-7" class="headerlink" title="Docker 安装 MySQL5.7"></a>Docker 安装 MySQL5.7</h2><h3 id="1-安装命令"><a href="#1-安装命令" class="headerlink" title="1.安装命令"></a>1.安装命令</h3><pre><code class="shell">docker run -d -p 3306:3306 --privileged=true \
+        <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="Docker-安装-MySQL5-7"><a href="#Docker-安装-MySQL5-7" class="headerlink" title="Docker 安装 MySQL5.7"></a>Docker 安装 MySQL5.7</h2><h3 id="1-安装命令"><a href="#1-安装命令" class="headerlink" title="1.安装命令"></a>1.安装命令</h3><pre><code class="language-shell">docker run -d -p 3306:3306 --privileged=true \
 -v /home/hjx/docker/mysql/conf/my.cnf:/etc/my.cnf \
 -v /home/hjx/docker/mysql/data:/var/lib/mysql \
 -e MYSQL_ROOT_PASSWORD=hadoop \
@@ -1154,7 +1154,7 @@
 <blockquote>
 <p>创建用户</p>
 </blockquote>
-<pre><code class="shell"># 先进入容器
+<pre><code class="language-shell"># 先进入容器
 docker exec -it mysql bash
 
 # 执行MySQL命令, 输入root密码, 连接MySQL
@@ -1164,14 +1164,14 @@ mysql -uroot -p
 GRANT ALL PRIVILEGES ON *.* TO &#39;test&#39;@&#39;%&#39; IDENTIFIED BY &#39;test123&#39; WITH GRANT OPTION;
 </code></pre>
 <h3 id="1-Docker-安装-MySQL8"><a href="#1-Docker-安装-MySQL8" class="headerlink" title="1. Docker 安装 MySQL8"></a>1. Docker 安装 MySQL8</h3><ol>
-<li><p>拉起镜像</p>
-<pre><code class="shell">docker pull mysql:8.0.12
-</code></pre>
-</li>
-<li><p>创建数据目录和配置文件</p>
-</li>
+<li>拉起镜像</li>
 </ol>
-<pre><code class="shell">mkdir -p /usr/mysql/conf /usr/mysql/data
+<pre><code class="language-shell">docker pull mysql:8.0.12
+</code></pre>
+<ol start="2">
+<li>创建数据目录和配置文件</li>
+</ol>
+<pre><code class="language-shell">mkdir -p /usr/mysql/conf /usr/mysql/data
 chmod -R 755 /usr/mysql/
 </code></pre>
 <ol start="3">
@@ -1180,7 +1180,7 @@ chmod -R 755 /usr/mysql/
 <blockquote>
 <p>vim &#x2F;usr&#x2F;mysql&#x2F;conf&#x2F;my.cnf</p>
 </blockquote>
-<pre><code class="bash">[client]
+<pre><code class="language-bash">[client]
 #socket = /usr/mysql/mysqld.sock
 default-character-set = utf8mb4
 
@@ -1201,7 +1201,7 @@ symbolic-links=0
 <ol start="4">
 <li>创建容器</li>
 </ol>
-<pre><code class="shell">docker run --restart=unless-stopped -d --name mysql8 \
+<pre><code class="language-shell">docker run --restart=unless-stopped -d --name mysql8 \
 -v /usr/mysql/conf/my.cnf:/etc/mysql/my.cnf \
 -v /usr/mysql/data:/var/lib/mysql \
 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=hadoop mysql
@@ -1209,7 +1209,7 @@ symbolic-links=0
 <ol start="5">
 <li>修改mysql密码以及可访问主机</li>
 </ol>
-<pre><code class="shell">use mysql
+<pre><code class="language-shell">use mysql
 # 修改访问主机以及密码等，设置为所有主机可访问
 ALTER USER &#39;root&#39;@&#39;%&#39; IDENTIFIED WITH mysql_native_password BY &#39;新密码&#39;;
 # 刷新
@@ -1218,42 +1218,42 @@ flush privileges;
 <h1 id="高效学习-MySQL-干活知识"><a href="#高效学习-MySQL-干活知识" class="headerlink" title="高效学习 MySQL 干活知识"></a>高效学习 MySQL 干活知识</h1><h2 id="MySQL-快速上手"><a href="#MySQL-快速上手" class="headerlink" title="MySQL 快速上手"></a>MySQL 快速上手</h2><h3 id="1-MySQL-基本命令"><a href="#1-MySQL-基本命令" class="headerlink" title="1.MySQL 基本命令"></a>1.MySQL 基本命令</h3><ol>
 <li>查看库</li>
 </ol>
-<pre><code class="bash">show databases;
+<pre><code class="language-bash">show databases;
 </code></pre>
 <ol start="2">
 <li>创建库</li>
 </ol>
-<pre><code class="bash">create database db_name
+<pre><code class="language-bash">create database db_name
 </code></pre>
 <ol start="3">
 <li>删除库</li>
 </ol>
-<pre><code class="bash">drop database db_name;
+<pre><code class="language-bash">drop database db_name;
 </code></pre>
 <ol start="4">
 <li>选择库</li>
 </ol>
-<pre><code class="bash">use db_name;
+<pre><code class="language-bash">use db_name;
 </code></pre>
 <ol start="5">
 <li>查看表</li>
 </ol>
-<pre><code class="bash">show tables;
+<pre><code class="language-bash">show tables;
 </code></pre>
 <ol start="6">
 <li>查看创建库创建语句</li>
 </ol>
-<pre><code class="bash">show create database db_name;
+<pre><code class="language-bash">show create database db_name;
 </code></pre>
 <ol start="7">
 <li>查看选中的数据库</li>
 </ol>
-<pre><code class="bash">select database();
+<pre><code class="language-bash">select database();
 </code></pre>
 <ol start="8">
 <li>修改数据库字符集</li>
 </ol>
-<pre><code class="bash">alter database db_name default charset=utf8;
+<pre><code class="language-bash">alter database db_name default charset=utf8;
 </code></pre>
 <h2 id="2-数据库概念和使用"><a href="#2-数据库概念和使用" class="headerlink" title="2.数据库概念和使用"></a>2.数据库概念和使用</h2><h3 id="数据库和主键的概念"><a href="#数据库和主键的概念" class="headerlink" title="数据库和主键的概念"></a>数据库和主键的概念</h3><h2 id="3-数据操作"><a href="#3-数据操作" class="headerlink" title="3.数据操作"></a>3.数据操作</h2><h2 id="3-用户管理"><a href="#3-用户管理" class="headerlink" title="3.用户管理"></a>3.用户管理</h2><h2 id="4-数据库表操作"><a href="#4-数据库表操作" class="headerlink" title="4.数据库表操作"></a>4.数据库表操作</h2><h2 id="5-MySQL-函数"><a href="#5-MySQL-函数" class="headerlink" title="5.MySQL 函数"></a>5.MySQL 函数</h2><h2 id="6-MySQL-子查询"><a href="#6-MySQL-子查询" class="headerlink" title="6.MySQL 子查询"></a>6.MySQL 子查询</h2><h2 id="7-MySQL-连表查询"><a href="#7-MySQL-连表查询" class="headerlink" title="7.MySQL 连表查询"></a>7.MySQL 连表查询</h2><h2 id="8-MySQL-触发器"><a href="#8-MySQL-触发器" class="headerlink" title="8.MySQL 触发器"></a>8.MySQL 触发器</h2><h2 id="9-MySQL-数据库引擎"><a href="#9-MySQL-数据库引擎" class="headerlink" title="9.MySQL 数据库引擎"></a>9.MySQL 数据库引擎</h2><h2 id="10-MySQL-事务"><a href="#10-MySQL-事务" class="headerlink" title="10.MySQL 事务"></a>10.MySQL 事务</h2><h2 id="11-MySQL-分区分表"><a href="#11-MySQL-分区分表" class="headerlink" title="11.MySQL 分区分表"></a>11.MySQL 分区分表</h2><h2 id="12-MySQL-视图"><a href="#12-MySQL-视图" class="headerlink" title="12.MySQL 视图"></a>12.MySQL 视图</h2><h2 id="13-MySQL-数据库设计及SQL优化"><a href="#13-MySQL-数据库设计及SQL优化" class="headerlink" title="13.MySQL 数据库设计及SQL优化"></a>13.MySQL 数据库设计及SQL优化</h2><h2 id="14-MySQL-数据备份还原"><a href="#14-MySQL-数据备份还原" class="headerlink" title="14.MySQL 数据备份还原"></a>14.MySQL 数据备份还原</h2>
       

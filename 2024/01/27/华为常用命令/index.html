@@ -250,7 +250,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="73">
-<input type="hidden" id="yelog_site_word_count" value="114.1k">
+<input type="hidden" id="yelog_site_word_count" value="114.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1136,7 +1136,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、全局视图"><a href="#一、全局视图" class="headerlink" title="一、全局视图"></a>一、全局视图</h1><h1 id="二、用户视图"><a href="#二、用户视图" class="headerlink" title="二、用户视图"></a>二、用户视图</h1><pre><code class="shell"># 进入系统视图
+        <h1 id="一、全局视图"><a href="#一、全局视图" class="headerlink" title="一、全局视图"></a>一、全局视图</h1><h1 id="二、用户视图"><a href="#二、用户视图" class="headerlink" title="二、用户视图"></a>二、用户视图</h1><pre><code class="language-shell"># 进入系统视图
 system-view
 # 查看当前设备上存储的文件列表
 dir
@@ -1151,23 +1151,23 @@ reset saved-configuration
 # 重启设备
 reboot
 </code></pre>
-<h1 id="三、系统视图"><a href="#三、系统视图" class="headerlink" title="三、系统视图"></a>三、系统视图</h1><h2 id="3-1-增"><a href="#3-1-增" class="headerlink" title="3.1 增"></a>3.1 增</h2><pre><code class="shell"># 配置登录信息, quit 后可验证
+<h1 id="三、系统视图"><a href="#三、系统视图" class="headerlink" title="三、系统视图"></a>三、系统视图</h1><h2 id="3-1-增"><a href="#3-1-增" class="headerlink" title="3.1 增"></a>3.1 增</h2><pre><code class="language-shell"># 配置登录信息, quit 后可验证
 header shell information &quot;Welcom to the Tiger Lab.&quot;
 # 配置Console口参数，display this查看
 user-interface console 0
 # 设置密码HCIE
 set authentication password cipher HCIE
 </code></pre>
-<h2 id="3-2-删"><a href="#3-2-删" class="headerlink" title="3.2 删"></a>3.2 删</h2><h2 id="3-3-改"><a href="#3-3-改" class="headerlink" title="3.3 改"></a>3.3 改</h2><pre><code class="shell"># 修改设备名称
+<h2 id="3-2-删"><a href="#3-2-删" class="headerlink" title="3.2 删"></a>3.2 删</h2><h2 id="3-3-改"><a href="#3-3-改" class="headerlink" title="3.3 改"></a>3.3 改</h2><pre><code class="language-shell"># 修改设备名称
 sysname R1
 </code></pre>
-<h2 id="3-4-查"><a href="#3-4-查" class="headerlink" title="3.4 查"></a>3.4 查</h2><pre><code class="shell"># 查看接口信息
+<h2 id="3-4-查"><a href="#3-4-查" class="headerlink" title="3.4 查"></a>3.4 查</h2><pre><code class="language-shell"># 查看接口信息
 display interface GigabitEthernet 0/0/1
 # Ping命令
 Ping 192.168.1.1
 #
 </code></pre>
-<h1 id="四、接口视图"><a href="#四、接口视图" class="headerlink" title="四、接口视图"></a>四、接口视图</h1><pre><code class="shell"># 配置IP地址
+<h1 id="四、接口视图"><a href="#四、接口视图" class="headerlink" title="四、接口视图"></a>四、接口视图</h1><pre><code class="language-shell"># 配置IP地址
 ip address 192.168.1.1 24
 # 配置接口IP地址和描述信息
 description to R1-G0/0/1

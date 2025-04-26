@@ -250,7 +250,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="73">
-<input type="hidden" id="yelog_site_word_count" value="114.1k">
+<input type="hidden" id="yelog_site_word_count" value="114.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1137,18 +1137,18 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="VLAN"><a href="#VLAN" class="headerlink" title="VLAN"></a>VLAN</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/NetworkLab_004_VLAN.png"></p>
-<h4 id="1-SW1-和-SW2-的互联接口类型设置为-Trunk"><a href="#1-SW1-和-SW2-的互联接口类型设置为-Trunk" class="headerlink" title="1. SW1 和 SW2 的互联接口类型设置为 Trunk"></a>1. SW1 和 SW2 的互联接口类型设置为 Trunk</h4><pre><code class="shell">[SW1] vlan batch 10 20
+<h4 id="1-SW1-和-SW2-的互联接口类型设置为-Trunk"><a href="#1-SW1-和-SW2-的互联接口类型设置为-Trunk" class="headerlink" title="1. SW1 和 SW2 的互联接口类型设置为 Trunk"></a>1. SW1 和 SW2 的互联接口类型设置为 Trunk</h4><pre><code class="language-shell">[SW1] vlan batch 10 20
 [SW1] display vlan summary
 [SW1] int g0/0/0
 [SW1-g0/0/0] port link-type trunk
 [SW1-g0/0/0] port trunk allow-pass vlan 10 20
 </code></pre>
-<h4 id="2-交换机接入-PC-终端的接口类型改为-access-并划分到相应-VLAN"><a href="#2-交换机接入-PC-终端的接口类型改为-access-并划分到相应-VLAN" class="headerlink" title="2. 交换机接入 PC 终端的接口类型改为 access 并划分到相应 VLAN"></a>2. 交换机接入 PC 终端的接口类型改为 access 并划分到相应 VLAN</h4><pre><code class="shell">[SW1] int g0/0/1
+<h4 id="2-交换机接入-PC-终端的接口类型改为-access-并划分到相应-VLAN"><a href="#2-交换机接入-PC-终端的接口类型改为-access-并划分到相应-VLAN" class="headerlink" title="2. 交换机接入 PC 终端的接口类型改为 access 并划分到相应 VLAN"></a>2. 交换机接入 PC 终端的接口类型改为 access 并划分到相应 VLAN</h4><pre><code class="language-shell">[SW1] int g0/0/1
 [SW1-g0/0/1] port link-type access
 [SW1-g0/0/1] port default vlan 10
 [SW1-g0/0/1] dis vlan
 </code></pre>
-<h4 id="3-相同-VLAN-的主机通信"><a href="#3-相同-VLAN-的主机通信" class="headerlink" title="3. 相同 VLAN 的主机通信"></a>3. 相同 VLAN 的主机通信</h4><pre><code class="shell">ip 192.168.10.1 24
+<h4 id="3-相同-VLAN-的主机通信"><a href="#3-相同-VLAN-的主机通信" class="headerlink" title="3. 相同 VLAN 的主机通信"></a>3. 相同 VLAN 的主机通信</h4><pre><code class="language-shell">ip 192.168.10.1 24
 ping 192.168.10.3
 </code></pre>
 

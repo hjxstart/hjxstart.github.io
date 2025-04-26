@@ -250,7 +250,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="73">
-<input type="hidden" id="yelog_site_word_count" value="114.1k">
+<input type="hidden" id="yelog_site_word_count" value="114.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1150,40 +1150,40 @@
         <h2 id="Docker部署Springboot项目"><a href="#Docker部署Springboot项目" class="headerlink" title="Docker部署Springboot项目"></a>Docker部署Springboot项目</h2><h3 id="1-docker-开启远程连接"><a href="#1-docker-开启远程连接" class="headerlink" title="1. docker 开启远程连接"></a>1. docker 开启远程连接</h3><ol>
 <li>编辑docker.service文件</li>
 </ol>
-<pre><code class="shell">vi /usr/lib/systemd/system/docker.service
+<pre><code class="language-shell">vi /usr/lib/systemd/system/docker.service
 </code></pre>
 <ol start="2">
 <li>修改 ExecStart 属性</li>
 </ol>
-<pre><code class="shell">ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock -H tcp://0.0.0.0:2375
+<pre><code class="language-shell">ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock -H tcp://0.0.0.0:2375
 </code></pre>
 <ol start="3">
 <li>重新加载Docker配置生效</li>
 </ol>
-<pre><code class="shell">systemctl daemon-reload 
+<pre><code class="language-shell">systemctl daemon-reload 
 systemctl restart docker
 </code></pre>
 <hr>
 <h3 id="2-IDEA-配置"><a href="#2-IDEA-配置" class="headerlink" title="2. IDEA 配置"></a>2. IDEA 配置</h3><ol>
 <li>连接docker</li>
 </ol>
-<pre><code class="shell">tcp://ip:2375
+<pre><code class="language-shell">tcp://ip:2375
 </code></pre>
 <ol start="2">
 <li>配置镜像加速器</li>
 </ol>
-<pre><code class="shell">https://xsxk9861.mirror.aliyuncs.com
+<pre><code class="language-shell">https://xsxk9861.mirror.aliyuncs.com
 </code></pre>
 <ol start="3">
 <li>集成mavn插件 pom.xml</li>
 </ol>
-<pre><code class="xml">    &lt;properties&gt;
+<pre><code class="language-xml">    &lt;properties&gt;
         &lt;java.version&gt;1.8&lt;/java.version&gt;
         &lt;!--docker镜像前缀名称--&gt;
         &lt;docker.image.prefix&gt;java&lt;/docker.image.prefix&gt;
     &lt;/properties&gt;
 </code></pre>
-<pre><code class="xml">          &lt;plugin&gt;
+<pre><code class="language-xml">          &lt;plugin&gt;
                 &lt;groupId&gt;com.spotify&lt;/groupId&gt;
                 &lt;artifactId&gt;docker-maven-plugin&lt;/artifactId&gt;
                 &lt;version&gt;1.0.0&lt;/version&gt;
@@ -1208,7 +1208,7 @@ systemctl restart docker
 <ol start="4">
 <li>创建src&#x2F;main&#x2F;docker&#x2F;Dockerfile</li>
 </ol>
-<pre><code class="dockerfile">#依赖jdk8
+<pre><code class="language-dockerfile">#依赖jdk8
 FROM java:8
 # 维护者信息
 MAINTAINER hjxstart hjxstart@126.com

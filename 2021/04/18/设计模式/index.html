@@ -250,7 +250,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="73">
-<input type="hidden" id="yelog_site_word_count" value="114.1k">
+<input type="hidden" id="yelog_site_word_count" value="114.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1158,7 +1158,7 @@
 </ol>
 <hr>
 <h3 id="1-2-上🦆UML"><a href="#1-2-上🦆UML" class="headerlink" title="1.2 上🦆UML"></a>1.2 上🦆UML</h3><h2 id=""><a href="#" class="headerlink" title=""></a><img src="/images/2021/04/18/7291c4c4-aec5-4d0c-8883-bdd2e4a4f5fe.png" alt="DuckUML.png"></h2><h3 id="1-3-上🦆代码"><a href="#1-3-上🦆代码" class="headerlink" title="1.3 上🦆代码"></a>1.3 上🦆代码</h3><p><strong>封装飞行行为</strong></p>
-<pre><code class="Java">interface FlyBehavior &#123;
+<pre><code class="language-Java">interface FlyBehavior &#123;
     void fly();
 &#125;
 
@@ -1175,7 +1175,7 @@ public class FlyNoWay implements FlyBehavior &#123;
 &#125;
 </code></pre>
 <p><strong>封装呱呱叫行为</strong></p>
-<pre><code class="Java">interface QuackBehavior &#123;
+<pre><code class="language-Java">interface QuackBehavior &#123;
     void quack();
 &#125;
 
@@ -1198,7 +1198,7 @@ public class MuteQuack implements QuackBehavior &#123;
 &#125;
 </code></pre>
 <p><strong>客户使用封装好的飞行和呱呱叫算法族</strong></p>
-<pre><code class="Java">public abstract class Duck&#123;
+<pre><code class="language-Java">public abstract class Duck&#123;
     private FlyBehavior flyBehavior;
     private QuackBehavior quackBehavior;
 
@@ -1232,7 +1232,7 @@ public class MallardDuck extends Duck &#123;
 &#125;
 </code></pre>
 <p><strong>Test类</strong></p>
-<pre><code class="Java">public class StrategymodeTest &#123;
+<pre><code class="language-Java">public class StrategymodeTest &#123;
     public static void main(String [] args) &#123;
         Duck d1 = new MallardDuck();
         d1.setFlyBehavior(new FlyWithWings());
@@ -1243,7 +1243,7 @@ public class MallardDuck extends Duck &#123;
 &#125;
 </code></pre>
 <p>输入结果</p>
-<pre><code class="bash">$ java StrategymodeTest
+<pre><code class="language-bash">$ java StrategymodeTest
 鸭子的飞行了
 鸭子呱呱叫
 </code></pre>
@@ -1258,54 +1258,63 @@ public class MallardDuck extends Duck &#123;
 <h3 id="2-2-上UML图"><a href="#2-2-上UML图" class="headerlink" title="2.2 上UML图"></a>2.2 上UML图</h3><p><img src="/images/2021/04/20/4a2c8f37-32be-424c-ad5f-1c7932066617.png" alt="观察者模式.png"></p>
 <hr>
 <h3 id="2-3-上代码"><a href="#2-3-上代码" class="headerlink" title="2.3 上代码"></a>2.3 上代码</h3><ol>
-<li>主题和观察者的接口<pre><code class="Java">// 主题接口
+<li>主题和观察者的接口</li>
+</ol>
+<pre><code class="language-Java">// 主题接口
 interface Subject &#123;
- void registerObserver(Observer o);
- void removeObserver(Observer o);
- void notifyObserver();
+    void registerObserver(Observer o);
+    void removeObserver(Observer o);
+    void notifyObserver();
 &#125;
 // 观察者接口
 interface Observer &#123;
- void update(Subject o, Object arg);
+    void update(Subject o, Object arg);
 &#125;
 </code></pre>
-</li>
-<li>具体主题1<br>&#96;&#96;&#96;Java<br>import java.util.ArrayList;</li>
+<ol start="2">
+<li>具体主题1</li>
 </ol>
-<p>public class ConcreteSubject1 implements Subject{<br>    private ArrayList<Observer> observers;<br>    private ArrayList<String> arg;<br>    private boolean changed &#x3D; false;</p>
-<pre><code>public ConcreteSubject1() &#123;
-    observers = new ArrayList&lt;Observer&gt;();
-    arg = new ArrayList&lt;String&gt;();
-&#125;
+<pre><code class="language-Java">import java.util.ArrayList;
 
-public void registerObserver(Observer o) &#123;
-    observers.add(o);
-&#125;
-public void removeObserver(Observer o) &#123;
-    observers.remove(o);
-&#125;
-public void notifyObserver() &#123;
-    if (changed) &#123;
-        for (int i = 0; i &lt; observers.size(); i++) &#123;
-            Observer observer = (Observer)observers.get(i);
-            observer.update(this, arg);
+public class ConcreteSubject1 implements Subject&#123;
+    private ArrayList&lt;Observer&gt; observers;
+    private ArrayList&lt;String&gt; arg;
+    private boolean changed = false;
+
+    public ConcreteSubject1() &#123;
+        observers = new ArrayList&lt;Observer&gt;();
+        arg = new ArrayList&lt;String&gt;();
+    &#125;
+
+    public void registerObserver(Observer o) &#123;
+        observers.add(o);
+    &#125;
+    public void removeObserver(Observer o) &#123;
+        observers.remove(o);
+    &#125;
+    public void notifyObserver() &#123;
+        if (changed) &#123;
+            for (int i = 0; i &lt; observers.size(); i++) &#123;
+                Observer observer = (Observer)observers.get(i);
+                observer.update(this, arg);
+            &#125;
+            changed = false;
         &#125;
-        changed = false;
+    &#125;
+
+    protected void setChanged() &#123;
+        changed = true;
+    &#125;
+    public void setMeasurements(String data) &#123;
+        arg.add(data);
+        notifyObserver();
     &#125;
 &#125;
-
-protected void setChanged() &#123;
-    changed = true;
-&#125;
-public void setMeasurements(String data) &#123;
-    arg.add(data);
-    notifyObserver();
-&#125;
 </code></pre>
-<p>}</p>
-<pre><code>3. 具体主题2
-```Java
-import java.util.ArrayList;
+<ol start="3">
+<li>具体主题2</li>
+</ol>
+<pre><code class="language-Java">import java.util.ArrayList;
 
 public class ConcreteSubject2 implements Subject&#123;
     private ArrayList&lt;Observer&gt; observers;
@@ -1342,15 +1351,25 @@ public class ConcreteSubject2 implements Subject&#123;
 &#125;
 </code></pre>
 <ol start="4">
-<li><p>关注具体主题1的具体观察者1<br>&#96;&#96;&#96;Java<br>public class ConcreteObserver1 implements Observer {<br> private Subject subject;</p>
-<p> public ConcreteObserver1(Subject subject) {<br> this.subject &#x3D; subject;<br> subject.registerObserver(this);<br> }</p>
-<p> public void update(Subject o, Object arg) {<br> System.out.println(“我是观察者1，我的主题1更新了”);<br> }</p>
-</li>
+<li>关注具体主题1的具体观察者1</li>
 </ol>
-<p>}</p>
-<pre><code>5. 关注具体主题1，2的具体观察者2
-```Java
-public class ConcreteObserver2 implements Observer &#123;
+<pre><code class="language-Java">public class ConcreteObserver1 implements Observer &#123;
+    private Subject subject;
+
+    public ConcreteObserver1(Subject subject) &#123;
+        this.subject = subject;
+        subject.registerObserver(this);
+    &#125;
+
+    public void update(Subject o, Object arg) &#123;
+        System.out.println(&quot;我是观察者1，我的主题1更新了&quot;);
+    &#125; 
+&#125;
+</code></pre>
+<ol start="5">
+<li>关注具体主题1，2的具体观察者2</li>
+</ol>
+<pre><code class="language-Java">public class ConcreteObserver2 implements Observer &#123;
     private Subject subject1;
     private Subject subject2;
 
@@ -1372,15 +1391,25 @@ public class ConcreteObserver2 implements Observer &#123;
 &#125;
 </code></pre>
 <ol start="6">
-<li><p>关注具体主题2的具体观察者3<br>&#96;&#96;&#96;Java<br>public class ConcreteObserver3 implements Observer {<br> private Subject subject;</p>
-<p> public ConcreteObserver3(Subject subject) {<br> this.subject &#x3D; subject;<br> subject.registerObserver(this);<br> }</p>
-<p> public void update(Subject o, Object arg) {<br> System.out.println(“我是观察者3, 我的主题2更新了”);<br> }</p>
-</li>
+<li>关注具体主题2的具体观察者3</li>
 </ol>
-<p>}</p>
-<pre><code>7. 测试代码
-```Java
-import java.util.ArrayList;
+<pre><code class="language-Java">public class ConcreteObserver3 implements Observer &#123;
+    private Subject subject;
+
+    public ConcreteObserver3(Subject subject) &#123;
+        this.subject = subject;
+        subject.registerObserver(this);
+    &#125;
+
+    public void update(Subject o, Object arg) &#123;
+        System.out.println(&quot;我是观察者3, 我的主题2更新了&quot;);
+    &#125;
+&#125;
+</code></pre>
+<ol start="7">
+<li>测试代码</li>
+</ol>
+<pre><code class="language-Java">import java.util.ArrayList;
 
 public class ObserverTest &#123;
     public static void main(String[] args) &#123;
@@ -1397,13 +1426,15 @@ public class ObserverTest &#123;
 &#125;
 </code></pre>
 <ol start="8">
-<li>测试结果<pre><code class="bash">$ java ObserverTest
+<li>测试结果</li>
+</ol>
+<pre><code class="language-bash">$ java ObserverTest
 我是观察者1，我的主题1更新了
 我是观察者2，我的主题1更新了
 我是观察者2，我的主题2更新了
 我是观察者3, 我的主题2更新了
 </code></pre>
-</li>
+<ol start="9">
 <li>java.util包实现了Observable类，也可以满足一些观察者的情况。首先，因为没有Observer接口，所以无法建立自己的实现，和Java内置的Observer API搭配使用。</li>
 </ol>
 <hr>
@@ -1420,96 +1451,96 @@ public class ObserverTest &#123;
 <h3 id="3-2上UML图"><a href="#3-2上UML图" class="headerlink" title="3.2上UML图"></a>3.2上UML图</h3><p><strong>先决定那种咖啡，在决定使用什么配料。</strong><br><img src="/images/2021/04/23/a2c4ef40-4bd5-46ae-89b4-0a1f9b421c13.png" alt="装饰者模式.png"></p>
 <hr>
 <h3 id="3-3上代码"><a href="#3-3上代码" class="headerlink" title="3.3上代码"></a>3.3上代码</h3><ol>
-<li>定义饮料类，必须设置一个抽象方法。<pre><code class="Java">public abstract class Beverage &#123;
- String description = &quot;Unknown Beverage&quot;;
- public String getDescription() &#123;
-     return description;
- &#125;
- public abstract double cost();
+<li>定义饮料类，必须设置一个抽象方法。</li>
+</ol>
+<pre><code class="language-Java">public abstract class Beverage &#123;
+    String description = &quot;Unknown Beverage&quot;;
+    public String getDescription() &#123;
+        return description;
+    &#125;
+    public abstract double cost();
 &#125;
 </code></pre>
-</li>
-</ol>
 <hr>
 <ol start="2">
-<li>深烘咖啡，实现夫类的抽象方法。<pre><code class="Java">public class DarkRoast extends Beverage &#123;
- public DarkRoast() &#123;
-     description = &quot;DarkRoast Coffee&quot;;
- &#125;
- public double cost() &#123;
-     return 1.19;
- &#125;
+<li>深烘咖啡，实现夫类的抽象方法。</li>
+</ol>
+<pre><code class="language-Java">public class DarkRoast extends Beverage &#123;
+    public DarkRoast() &#123;
+        description = &quot;DarkRoast Coffee&quot;;
+    &#125;
+    public double cost() &#123;
+        return 1.19;
+    &#125;
 &#125;
 </code></pre>
-</li>
-</ol>
 <hr>
 <ol start="3">
-<li>定义装饰者。调味装饰者<pre><code class="Java">public abstract class CondimentDecorator extends Beverage &#123;
- public abstract String getDescription();
+<li>定义装饰者。调味装饰者</li>
+</ol>
+<pre><code class="language-Java">public abstract class CondimentDecorator extends Beverage &#123;
+    public abstract String getDescription();
 &#125;
 </code></pre>
-</li>
-</ol>
 <hr>
 <ol start="4">
-<li>实现第一个一个装饰者。牛奶配料<pre><code class="Java">public class Milk extends CondimentDecorator&#123;
- Beverage beverage;
- public Milk(Beverage beverage) &#123;
-     this.beverage = beverage;
- &#125;
- public String getDescription() &#123;
-     return beverage.getDescription() + &quot;, Milk&quot;;
- &#125;
- public double cost() &#123;
-     return .10 + beverage.cost();
- &#125;
+<li>实现第一个一个装饰者。牛奶配料</li>
+</ol>
+<pre><code class="language-Java">public class Milk extends CondimentDecorator&#123;
+    Beverage beverage;
+    public Milk(Beverage beverage) &#123;
+        this.beverage = beverage;
+    &#125;
+    public String getDescription() &#123;
+        return beverage.getDescription() + &quot;, Milk&quot;;
+    &#125;
+    public double cost() &#123;
+        return .10 + beverage.cost();
+    &#125;
 &#125;
 </code></pre>
-</li>
-</ol>
 <hr>
 <ol start="5">
-<li>实现第二个装饰者。摩卡配料<pre><code class="Java">public class Mocha extends CondimentDecorator &#123;
- Beverage beverage;
- public Mocha(Beverage beverage) &#123;
-     this.beverage = beverage;
- &#125;
- public String getDescription() &#123;
-     return beverage.getDescription() + &quot;, Mocha&quot;;
- &#125;
- public double cost() &#123;
-     return .20 + beverage.cost();
- &#125;
+<li>实现第二个装饰者。摩卡配料</li>
+</ol>
+<pre><code class="language-Java">public class Mocha extends CondimentDecorator &#123;
+    Beverage beverage;
+    public Mocha(Beverage beverage) &#123;
+        this.beverage = beverage;
+    &#125;
+    public String getDescription() &#123;
+        return beverage.getDescription() + &quot;, Mocha&quot;;
+    &#125;
+    public double cost() &#123;
+        return .20 + beverage.cost();
+    &#125;
 &#125;
 </code></pre>
-</li>
-</ol>
 <hr>
 <ol start="6">
-<li>测试代码<pre><code class="Java">public class StarbuzzCoffee &#123;
- public static void main(String[] args) &#123;
-     // 没有配料的拿铁咖啡
-     Beverage beverage = new DarkRoast();
-     System.out.println(beverage.getDescription() + &quot; $&quot; + beverage.cost());
-     // 摩卡， 牛奶， 拿铁咖啡(DarkRoast)
-     Beverage beverage2 = new DarkRoast();
-     beverage2 = new Mocha(beverage2);
-     beverage2 = new Milk(beverage2);
-     System.out.println(beverage2.getDescription() + &quot; $&quot; + beverage2.cost());
- &#125;
+<li>测试代码</li>
+</ol>
+<pre><code class="language-Java">public class StarbuzzCoffee &#123;
+    public static void main(String[] args) &#123;
+        // 没有配料的拿铁咖啡
+        Beverage beverage = new DarkRoast();
+        System.out.println(beverage.getDescription() + &quot; $&quot; + beverage.cost());
+        // 摩卡， 牛奶， 拿铁咖啡(DarkRoast)
+        Beverage beverage2 = new DarkRoast();
+        beverage2 = new Mocha(beverage2);
+        beverage2 = new Milk(beverage2);
+        System.out.println(beverage2.getDescription() + &quot; $&quot; + beverage2.cost());
+    &#125;
 &#125;
 </code></pre>
-</li>
-</ol>
 <hr>
 <ol start="7">
-<li>运行结果<pre><code class="bash">java StarbuzzCoffee
+<li>运行结果</li>
+</ol>
+<pre><code class="language-bash">java StarbuzzCoffee
 DarkRoast Coffee $1.19
 DarkRoast Coffee, Mocha, Milk $1.49
 </code></pre>
-</li>
-</ol>
 <hr>
 <h2 id="第四招-工厂模式"><a href="#第四招-工厂模式" class="headerlink" title="第四招 工厂模式"></a>第四招 工厂模式</h2><p><strong>工厂方法模式</strong>：定义了一个创建对象的接口，但由子类决定要实例化的类是哪一个。工厂方法让类把实例化推迟到子类。</p>
 <h3 id="4-1设计原则"><a href="#4-1设计原则" class="headerlink" title="4.1设计原则"></a>4.1设计原则</h3><ol>

@@ -250,7 +250,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="73">
-<input type="hidden" id="yelog_site_word_count" value="114.1k">
+<input type="hidden" id="yelog_site_word_count" value="114.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1145,7 +1145,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Mybatis配置代码"><a href="#Mybatis配置代码" class="headerlink" title="Mybatis配置代码"></a>Mybatis配置代码</h1><h2 id="1-Log4j的配置"><a href="#1-Log4j的配置" class="headerlink" title="1. Log4j的配置"></a>1. Log4j的配置</h2><h3 id="步骤1-导入包"><a href="#步骤1-导入包" class="headerlink" title="步骤1 导入包"></a>步骤1 导入包</h3><pre><code class="pom">&lt;!-- https://mvnrepository.com/artifact/log4j/log4j --&gt;
+        <h1 id="Mybatis配置代码"><a href="#Mybatis配置代码" class="headerlink" title="Mybatis配置代码"></a>Mybatis配置代码</h1><h2 id="1-Log4j的配置"><a href="#1-Log4j的配置" class="headerlink" title="1. Log4j的配置"></a>1. Log4j的配置</h2><h3 id="步骤1-导入包"><a href="#步骤1-导入包" class="headerlink" title="步骤1 导入包"></a>步骤1 导入包</h3><pre><code class="language-pom">&lt;!-- https://mvnrepository.com/artifact/log4j/log4j --&gt;
 &lt;dependency&gt;
     &lt;groupId&gt;log4j&lt;/groupId&gt;
     &lt;artifactId&gt;log4j&lt;/artifactId&gt;
@@ -1153,7 +1153,7 @@
 &lt;/dependency&gt;
 </code></pre>
 <hr>
-<h3 id="步骤2-log4j-properties"><a href="#步骤2-log4j-properties" class="headerlink" title="步骤2 log4j.properties"></a>步骤2 log4j.properties</h3><pre><code class="properties">#将等级为DEBUG的日志信息输出到console和file两个目的地
+<h3 id="步骤2-log4j-properties"><a href="#步骤2-log4j-properties" class="headerlink" title="步骤2 log4j.properties"></a>步骤2 log4j.properties</h3><pre><code class="language-properties">#将等级为DEBUG的日志信息输出到console和file两个目的地
 log4j.rootLogger=DEBUG,console,file
 
 #控制台输出的相关设置
@@ -1179,10 +1179,10 @@ log4j.logger.java.sql.ResultSet=DEBUG
 log4j.logger.java.sql.PreparedStatement=DEBUG
 </code></pre>
 <hr>
-<h3 id="步骤3-设置使用log4j"><a href="#步骤3-设置使用log4j" class="headerlink" title="步骤3 设置使用log4j"></a>步骤3 设置使用log4j</h3><h3 id="4-使用log4j"><a href="#4-使用log4j" class="headerlink" title="4 使用log4j"></a>4 使用log4j</h3><pre><code class="java">static Logger logger = Logger.getLogger(xx.class)
+<h3 id="步骤3-设置使用log4j"><a href="#步骤3-设置使用log4j" class="headerlink" title="步骤3 设置使用log4j"></a>步骤3 设置使用log4j</h3><h3 id="4-使用log4j"><a href="#4-使用log4j" class="headerlink" title="4 使用log4j"></a>4 使用log4j</h3><pre><code class="language-java">static Logger logger = Logger.getLogger(xx.class)
 logger.info(&quot;进入到了log4j&quot;);
 </code></pre>
-<h2 id="1-Log4j的配置-1"><a href="#1-Log4j的配置-1" class="headerlink" title="1. Log4j的配置"></a>1. Log4j的配置</h2><h3 id="步骤1-导入包-1"><a href="#步骤1-导入包-1" class="headerlink" title="步骤1 导入包"></a>步骤1 导入包</h3><pre><code class="pom">&lt;!-- https://mvnrepository.com/artifact/log4j/log4j --&gt;
+<h2 id="1-Log4j的配置-1"><a href="#1-Log4j的配置-1" class="headerlink" title="1. Log4j的配置"></a>1. Log4j的配置</h2><h3 id="步骤1-导入包-1"><a href="#步骤1-导入包-1" class="headerlink" title="步骤1 导入包"></a>步骤1 导入包</h3><pre><code class="language-pom">&lt;!-- https://mvnrepository.com/artifact/log4j/log4j --&gt;
 &lt;dependency&gt;
     &lt;groupId&gt;log4j&lt;/groupId&gt;
     &lt;artifactId&gt;log4j&lt;/artifactId&gt;
@@ -1190,7 +1190,7 @@ logger.info(&quot;进入到了log4j&quot;);
 &lt;/dependency&gt;
 </code></pre>
 <hr>
-<h3 id="步骤2-log4j-properties-1"><a href="#步骤2-log4j-properties-1" class="headerlink" title="步骤2 log4j.properties"></a>步骤2 log4j.properties</h3><pre><code class="properties">#将等级为DEBUG的日志信息输出到console和file两个目的地
+<h3 id="步骤2-log4j-properties-1"><a href="#步骤2-log4j-properties-1" class="headerlink" title="步骤2 log4j.properties"></a>步骤2 log4j.properties</h3><pre><code class="language-properties">#将等级为DEBUG的日志信息输出到console和file两个目的地
 log4j.rootLogger=DEBUG,console,file
 
 #控制台输出的相关设置
@@ -1216,10 +1216,10 @@ log4j.logger.java.sql.ResultSet=DEBUG
 log4j.logger.java.sql.PreparedStatement=DEBUG
 </code></pre>
 <hr>
-<h3 id="步骤3-设置使用log4j-1"><a href="#步骤3-设置使用log4j-1" class="headerlink" title="步骤3 设置使用log4j"></a>步骤3 设置使用log4j</h3><pre><code class="xml">
+<h3 id="步骤3-设置使用log4j-1"><a href="#步骤3-设置使用log4j-1" class="headerlink" title="步骤3 设置使用log4j"></a>步骤3 设置使用log4j</h3><pre><code class="language-xml">
 </code></pre>
 <p>— ###4 使用log4j</p>
-<pre><code class="java">static Logger logger = Logger.getLogger(xx.class)
+<pre><code class="language-java">static Logger logger = Logger.getLogger(xx.class)
 logger.info(&quot;进入到了log4j&quot;);
 </code></pre>
 <h2 id="第二章-配置模式"><a href="#第二章-配置模式" class="headerlink" title="第二章 配置模式"></a>第二章 配置模式</h2><h3 id="1-1-配置"><a href="#1-1-配置" class="headerlink" title="1.1 配置"></a>1.1 配置</h3><ol>
@@ -1228,7 +1228,7 @@ logger.info(&quot;进入到了log4j&quot;);
 <li><p>全局配置文件</p>
 </li>
 </ol>
-<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
 &lt;!DOCTYPE configuration
         PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;
         &quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&gt;
@@ -1239,12 +1239,12 @@ logger.info(&quot;进入到了log4j&quot;);
 <ol start="3">
 <li>mapper 映射文件</li>
 </ol>
-<pre><code class="xml">
+<pre><code class="language-xml">
 </code></pre>
 <h3 id="1-2-使用"><a href="#1-2-使用" class="headerlink" title="1.2 使用"></a>1.2 使用</h3><ol>
 <li>定义实体类</li>
 </ol>
-<pre><code class="java">package com.fh.oa.entity;
+<pre><code class="language-java">package com.fh.oa.entity;
 
 import lombok.Data;
 
@@ -1258,7 +1258,7 @@ public class Account &#123;
 <ol start="2">
 <li>定义接口</li>
 </ol>
-<pre><code class="java">package com.fh.oa.dao;
+<pre><code class="language-java">package com.fh.oa.dao;
 
 import com.fh.oa.entity.Account;
 
@@ -1270,7 +1270,7 @@ public interface AccountDao &#123;
 <ol start="3">
 <li>mapper</li>
 </ol>
-<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
 &lt;!DOCTYPE mapper
         PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;
         &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
@@ -1282,7 +1282,7 @@ public interface AccountDao &#123;
 &lt;/mapper&gt;
 </code></pre>
 <hr>
-<h2 id="第三章-MyBatis-Plus简单使用"><a href="#第三章-MyBatis-Plus简单使用" class="headerlink" title="第三章 MyBatis-Plus简单使用"></a>第三章 MyBatis-Plus简单使用</h2><h3 id="1-pom-xml"><a href="#1-pom-xml" class="headerlink" title="1. pom.xml"></a>1. pom.xml</h3><pre><code class="xml">    &lt;!--MyBatis Plus--&gt;
+<h2 id="第三章-MyBatis-Plus简单使用"><a href="#第三章-MyBatis-Plus简单使用" class="headerlink" title="第三章 MyBatis-Plus简单使用"></a>第三章 MyBatis-Plus简单使用</h2><h3 id="1-pom-xml"><a href="#1-pom-xml" class="headerlink" title="1. pom.xml"></a>1. pom.xml</h3><pre><code class="language-xml">	&lt;!--MyBatis Plus--&gt;
         &lt;dependency&gt;
             &lt;groupId&gt;com.baomidou&lt;/groupId&gt;
             &lt;artifactId&gt;mybatis-plus-boot-starter&lt;/artifactId&gt;
@@ -1309,7 +1309,7 @@ public interface AccountDao &#123;
         &lt;/dependency&gt;
 </code></pre>
 <hr>
-<h3 id="2-自动代码生成类"><a href="#2-自动代码生成类" class="headerlink" title="2. 自动代码生成类"></a>2. 自动代码生成类</h3><pre><code class="java">package com.fh.oateat;
+<h3 id="2-自动代码生成类"><a href="#2-自动代码生成类" class="headerlink" title="2. 自动代码生成类"></a>2. 自动代码生成类</h3><pre><code class="language-java">package com.fh.oateat;
 
 
 import com.baomidou.mybatisplus.annotation.IdType;
@@ -1376,12 +1376,12 @@ public class AutoMapper &#123;
 &#125;
 </code></pre>
 <hr>
-<h3 id="3-Application"><a href="#3-Application" class="headerlink" title="3. Application"></a>3. Application</h3><pre><code class="java">
+<h3 id="3-Application"><a href="#3-Application" class="headerlink" title="3. Application"></a>3. Application</h3><pre><code class="language-java">
 @MapperScan(&quot;com.fh.oateat.v1.mapper&quot;) // 该注解可以省略在每个mapper接口的注解
 @SpringBootApplication
 </code></pre>
 <hr>
-<h3 id="4-application-yaml"><a href="#4-application-yaml" class="headerlink" title="4. application.yaml"></a>4. application.yaml</h3><pre><code class="yaml">spring:
+<h3 id="4-application-yaml"><a href="#4-application-yaml" class="headerlink" title="4. application.yaml"></a>4. application.yaml</h3><pre><code class="language-yaml">spring:
   datasource:
     url: jdbc:mysql://localhost:3306/oa?serverTimezone=UTC&amp;characterEncoding=utf8&amp;useUnicode=true&amp;useSSL=false&amp;allowPublicKeyRetrieval=true
     username: root
@@ -1394,7 +1394,7 @@ mybatis-plus:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 </code></pre>
 <hr>
-<h3 id="5-分页插件"><a href="#5-分页插件" class="headerlink" title="5. 分页插件"></a>5. 分页插件</h3><pre><code class="java">@Configuration
+<h3 id="5-分页插件"><a href="#5-分页插件" class="headerlink" title="5. 分页插件"></a>5. 分页插件</h3><pre><code class="language-java">@Configuration
 public class MybatisPlusConfig &#123;
     //分页查询 mybatis-plus
     @Bean
@@ -1413,9 +1413,9 @@ public class MybatisPlusConfig &#123;
 <li>会根据数据库的表自动生成entity,mapper,service,controller</li>
 </ol>
 <hr>
-<h3 id="7-Controller测试"><a href="#7-Controller测试" class="headerlink" title="7. Controller测试"></a>7. Controller测试</h3><h2 id="第二章-逻辑删除"><a href="#第二章-逻辑删除" class="headerlink" title="第二章 逻辑删除"></a>第二章 逻辑删除</h2><h3 id="1-在实体类和数据库添加enable字段"><a href="#1-在实体类和数据库添加enable字段" class="headerlink" title="1. 在实体类和数据库添加enable字段"></a>1. 在实体类和数据库添加enable字段</h3><pre><code class="java">private Integer enabled;
+<h3 id="7-Controller测试"><a href="#7-Controller测试" class="headerlink" title="7. Controller测试"></a>7. Controller测试</h3><h2 id="第二章-逻辑删除"><a href="#第二章-逻辑删除" class="headerlink" title="第二章 逻辑删除"></a>第二章 逻辑删除</h2><h3 id="1-在实体类和数据库添加enable字段"><a href="#1-在实体类和数据库添加enable字段" class="headerlink" title="1. 在实体类和数据库添加enable字段"></a>1. 在实体类和数据库添加enable字段</h3><pre><code class="language-java">private Integer enabled;
 </code></pre>
-<h3 id="2-添加注解，实现局部逻辑删除"><a href="#2-添加注解，实现局部逻辑删除" class="headerlink" title="2. 添加注解，实现局部逻辑删除"></a>2. 添加注解，实现局部逻辑删除</h3><pre><code class="java">@TableLogic
+<h3 id="2-添加注解，实现局部逻辑删除"><a href="#2-添加注解，实现局部逻辑删除" class="headerlink" title="2. 添加注解，实现局部逻辑删除"></a>2. 添加注解，实现局部逻辑删除</h3><pre><code class="language-java">@TableLogic
     private Integer enabled;
 </code></pre>
 

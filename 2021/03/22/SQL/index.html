@@ -250,7 +250,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="73">
-<input type="hidden" id="yelog_site_word_count" value="114.1k">
+<input type="hidden" id="yelog_site_word_count" value="114.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1157,11 +1157,11 @@
 <li>保证代码简洁明了、没有多余的 SQL —— 比如非必要的引号或括号，或者可以推导出的 <code>WHERE</code> 子句。</li>
 <li>必要时在 SQL 代码中加入注释。优先使用 C 语言式的以 <code>/*</code> 开始以 <code>*/</code> 结束的块注释，或使用以 <code>--</code> 开始的行注释，并在末尾换行。</li>
 </ul>
-<pre><code class="sql">SELECT file_hash  -- stored ssdeep hash
+<pre><code class="language-sql">SELECT file_hash  -- stored ssdeep hash
   FROM file_system
  WHERE file_name = &#39;.vimrc&#39;;
 </code></pre>
-<pre><code class="sql">/* Updating the file record after writing to the file */
+<pre><code class="language-sql">/* Updating the file record after writing to the file */
 UPDATE file_system
    SET file_modified_date = &#39;1980-02-22 13:19:01.00000&#39;,
        file_size = 209732
@@ -1183,7 +1183,7 @@ UPDATE file_system
 <li>在名字中需要空格的地方用下划线代替（<code>first name</code> 变为 <code>first_name</code>）。</li>
 <li>尽量避免使用缩写词。使用时一定确定这个缩写简明易懂。</li>
 </ul>
-<pre><code class="sql">SELECT first_name
+<pre><code class="language-sql">SELECT first_name
   FROM staff;
 </code></pre>
 <h3 id="Tables-表名"><a href="#Tables-表名" class="headerlink" title="Tables 表名"></a>Tables 表名</h3><ul>
@@ -1205,12 +1205,12 @@ UPDATE file_system
 <li>总是加上 <code>AS</code> 关键字，因为这样的明确声明易于阅读。</li>
 <li>为计算出的数据（<code>SUM()</code> 或 <code>AVG()</code>）命名时，用一个将这条数据存在表中时会使用的列名。</li>
 </ul>
-<pre><code class="sql">SELECT first_name AS fn
+<pre><code class="language-sql">SELECT first_name AS fn
   FROM staff AS s1
   JOIN students AS s2
     ON s2.mentor_id = s1.staff_num;
 </code></pre>
-<pre><code class="sql">SELECT SUM(s.monitor_tally) AS monitor_total
+<pre><code class="language-sql">SELECT SUM(s.monitor_tally) AS monitor_total
   FROM staff AS s;
 </code></pre>
 <h3 id="Stored-procedures-存储过程名"><a href="#Stored-procedures-存储过程名" class="headerlink" title="Stored procedures 存储过程名"></a>Stored procedures 存储过程名</h3><ul>
@@ -1233,13 +1233,13 @@ UPDATE file_system
 <h2 id="Query-syntax-查询语句"><a href="#Query-syntax-查询语句" class="headerlink" title="Query syntax 查询语句"></a>Query syntax 查询语句</h2><h3 id="Reserved-words-保留字"><a href="#Reserved-words-保留字" class="headerlink" title="Reserved words 保留字"></a>Reserved words 保留字</h3><p>关键字总是大写，如 <code>SELECT</code> 和 <code>WHERE</code>。</p>
 <p>最好使用关键字的全称而不是简写，用 <code>ABSOLUTE</code> 而不用 <code>ABS</code>。</p>
 <p>当标准 ANSI SQL 关键字能完成相同的事情时，不要使用数据库服务器特定的关键字，这样能增强可移植性。</p>
-<pre><code class="sql">SELECT model_num
+<pre><code class="language-sql">SELECT model_num
   FROM phones AS p
  WHERE p.release_date &gt; &#39;2014-09-30&#39;;
 </code></pre>
 <h3 id="White-space-空白字符"><a href="#White-space-空白字符" class="headerlink" title="White space 空白字符"></a>White space 空白字符</h3><p>正确地使用空白字符对清晰的代码十分重要。不要把代码堆在一起或移除自然语言中的空格。</p>
 <h4 id="Spaces-空格"><a href="#Spaces-空格" class="headerlink" title="Spaces 空格"></a>Spaces 空格</h4><p>用空格使根关键字都结束在同一列上。在代码中间形成一个从上到下的“川流”，这样帮助读者快速扫视代码并将关键字和实现细节分开。川流在排版时应该避免，但是对阅读 SQL 语句是有帮助的。</p>
-<pre><code class="sql">(SELECT f.species_name,
+<pre><code class="language-sql">(SELECT f.species_name,
         AVG(f.height) AS average_height, AVG(f.diameter) AS average_diameter
    FROM flora AS f
   WHERE f.species_name = &#39;Banksia&#39;
@@ -1264,7 +1264,7 @@ UPDATE file_system
 <li>在逗号（<code>,</code>）后</li>
 <li>成对的单引号（<code>&#39;</code>）前后，除非在括号中或后面是逗号 &#x2F; 分号</li>
 </ul>
-<pre><code class="sql">SELECT a.title, a.release_date, a.recording_date
+<pre><code class="language-sql">SELECT a.title, a.release_date, a.recording_date
   FROM albums AS a
  WHERE a.title = &#39;Charcoal Lane&#39;
     OR a.title = &#39;The New Danger&#39;;
@@ -1278,15 +1278,15 @@ UPDATE file_system
 <li>将代码分隔成相关联的多个部分，帮助提高大段代码的可读性</li>
 </ul>
 <p>让所有的关键字右对齐、所有的值左对齐，这样就能在查询语句中间留出一个空隙，有助于快速扫读整个查询的定义。</p>
-<pre><code class="sql">INSERT INTO albums (title, release_date, recording_date)
+<pre><code class="language-sql">INSERT INTO albums (title, release_date, recording_date)
 VALUES (&#39;Charcoal Lane&#39;, &#39;1990-01-01 01:01:01.00000&#39;, &#39;1990-01-01 01:01:01.00000&#39;),
        (&#39;The New Danger&#39;, &#39;2008-01-01 01:01:01.00000&#39;, &#39;1990-01-01 01:01:01.00000&#39;);
 </code></pre>
-<pre><code class="sql">UPDATE albums
+<pre><code class="language-sql">UPDATE albums
    SET release_date = &#39;1990-01-01 01:01:01.00000&#39;
  WHERE title = &#39;The New Danger&#39;;
 </code></pre>
-<pre><code class="sql">SELECT a.title,
+<pre><code class="language-sql">SELECT a.title,
        a.release_date, a.recording_date, a.production_date -- 将所有的日期放在一起
   FROM albums AS a
  WHERE a.title = &#39;Charcoal Lane&#39;
@@ -1294,7 +1294,7 @@ VALUES (&#39;Charcoal Lane&#39;, &#39;1990-01-01 01:01:01.00000&#39;, &#39;1990-
 </code></pre>
 <h3 id="Indentation-缩进"><a href="#Indentation-缩进" class="headerlink" title="Indentation 缩进"></a>Indentation 缩进</h3><p>为确保 SQL 的可读性，一定要遵守下列规则。</p>
 <h4 id="Joins-Join-语句"><a href="#Joins-Join-语句" class="headerlink" title="Joins Join 语句"></a>Joins Join 语句</h4><p>Join 语句应该缩进到川流的另一侧并在必要的时候添加一个换行。</p>
-<pre><code class="sql">SELECT r.last_name
+<pre><code class="language-sql">SELECT r.last_name
   FROM riders AS r
        INNER JOIN bikes AS b
        ON r.bike_vin_num = b.vin_num
@@ -1305,7 +1305,7 @@ VALUES (&#39;Charcoal Lane&#39;, &#39;1990-01-01 01:01:01.00000&#39;, &#39;1990-
           AND c.chief = &#39;Y&#39;;
 </code></pre>
 <h4 id="Subqueries-子查询"><a href="#Subqueries-子查询" class="headerlink" title="Subqueries 子查询"></a>Subqueries 子查询</h4><p>子查询应该在川流的右侧对齐并使用其他查询相同的样式。有时候将右括号单独置于一行并同与它配对的左括号对齐是有意义的 —— 尤其是当存在嵌套子查询的时候。</p>
-<pre><code class="sql">SELECT r.last_name,
+<pre><code class="language-sql">SELECT r.last_name,
        (SELECT MAX(YEAR(championship_date))
           FROM champions AS c
          WHERE c.last_name = r.last_name
@@ -1323,7 +1323,7 @@ VALUES (&#39;Charcoal Lane&#39;, &#39;1990-01-01 01:01:01.00000&#39;, &#39;1990-
 <li>当数据输出数据库时需要处理时，使用 <code>CASE</code> 表达式。<code>CASE</code> 语句能嵌套形成更复杂的逻辑结构。</li>
 <li>尽量避免 <code>UNION</code> 语句和临时表。如果数据库架构能够不靠这些语句运行，那么多数情况下它就不应该依靠这些语句。</li>
 </ul>
-<pre><code class="sql">SELECT CASE postcode
+<pre><code class="language-sql">SELECT CASE postcode
        WHEN &#39;BN1&#39; THEN &#39;Brighton&#39;
        WHEN &#39;EH1&#39; THEN &#39;Edinburgh&#39;
        END AS city
@@ -1369,7 +1369,7 @@ VALUES (&#39;Charcoal Lane&#39;, &#39;1990-01-01 01:01:01.00000&#39;, &#39;1990-
 <li>当数值的范围可以确定时，用范围 <code>CHECK()</code> 来防止错误的值进入数据库或在没有提示的情况下截断。大部分情况下至少要确认数值大于零。</li>
 <li><code>CHECK()</code> 约束应该在单独的子句中以便 debug。</li>
 </ul>
-<h5 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h5><pre><code class="sql">CREATE TABLE staff (
+<h5 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h5><pre><code class="language-sql">CREATE TABLE staff (
     PRIMARY KEY (staff_num),
     staff_num      INT(5)       NOT NULL,
     first_name     VARCHAR(100) NOT NULL,
@@ -1385,7 +1385,7 @@ VALUES (&#39;Charcoal Lane&#39;, &#39;1990-01-01 01:01:01.00000&#39;, &#39;1990-
 <li>因为某些原因（如为了根据时间归档、为了划分跨国组织的区域）将本应该放在一个表中的数据分到多个表中 —— 这样的设计导致以后必须使用 <code>UNION</code> 操作而不能直接查询一个表。</li>
 </ul>
 <h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><h3 id="保留字参考"><a href="#保留字参考" class="headerlink" title="保留字参考"></a>保留字参考</h3><p>下表包含了 ANSI SQL（92，99 和 2003)、MySQL 3 到 5.x、PostgreSQL 8.1、MS SQL Server 2000、MS ODBC 和 Oracle 10.2 中的关键字。</p>
-<pre><code class="sql">A
+<pre><code class="language-sql">A
 ABORT
 ABS
 ABSOLUTE

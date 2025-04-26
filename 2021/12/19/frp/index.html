@@ -250,7 +250,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="73">
-<input type="hidden" id="yelog_site_word_count" value="114.1k">
+<input type="hidden" id="yelog_site_word_count" value="114.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1154,27 +1154,27 @@
 <h2 id="二、腾讯云设置"><a href="#二、腾讯云设置" class="headerlink" title="二、腾讯云设置"></a>二、腾讯云设置</h2><ol>
 <li>域名申请</li>
 </ol>
-<pre><code class="shell">本次使用的域名是 huangfamily.cn
+<pre><code class="language-shell">本次使用的域名是 huangfamily.cn
 </code></pre>
 <ol start="2">
 <li>SSL 证书申请</li>
 </ol>
-<pre><code class="shell">腾讯云[申请链接](https://console.cloud.tencent.com/ssl)
+<pre><code class="language-shell">腾讯云[申请链接](https://console.cloud.tencent.com/ssl)
 </code></pre>
 <ol start="3">
 <li>DNS 解析</li>
 </ol>
-<pre><code class="shell">腾讯云[DNSPod](https://console.cloud.tencent.com/cns/detail/huangfamily.cn/records/0)
+<pre><code class="language-shell">腾讯云[DNSPod](https://console.cloud.tencent.com/cns/detail/huangfamily.cn/records/0)
 </code></pre>
 <h2 id="三、公网服务器"><a href="#三、公网服务器" class="headerlink" title="三、公网服务器"></a>三、公网服务器</h2><h3 id="3-1-frps-配置"><a href="#3-1-frps-配置" class="headerlink" title="3.1 frps 配置"></a>3.1 frps 配置</h3><ol>
 <li>启动命令</li>
 </ol>
-<pre><code class="shell">nohup ./frps -c frps.ini &amp;
+<pre><code class="language-shell">nohup ./frps -c frps.ini &amp;
 </code></pre>
 <ol start="2">
 <li>frps.ini 配置文件</li>
 </ol>
-<pre><code class="shell">[common]
+<pre><code class="language-shell">[common]
 # frp监听的端口，用作服务端和客户端通信
 bind_port = 4000
 token = XXX
@@ -1201,7 +1201,7 @@ subdomain_host = huangfamily.cn
 <h3 id="3-2-nginx-配置"><a href="#3-2-nginx-配置" class="headerlink" title="3.2 nginx 配置"></a>3.2 nginx 配置</h3><ol>
 <li>frp.conf</li>
 </ol>
-<pre><code class="shell">server &#123;
+<pre><code class="language-shell">server &#123;
     listen 80;
     server_name huangfamily.cn home.huangfamily.cn dev.huangfamily.cn staging.huangfamily.cn git.huangfamily.cn;
 
@@ -1230,7 +1230,7 @@ subdomain_host = huangfamily.cn
 <ol start="2">
 <li>ssl.conf</li>
 </ol>
-<pre><code class="shell">server &#123;
+<pre><code class="language-shell">server &#123;
         #SSL 访问端口号为 443
         listen 443 ssl;
         #填写绑定证书的域名
@@ -1262,7 +1262,7 @@ subdomain_host = huangfamily.cn
 <h2 id="四、frp-使用"><a href="#四、frp-使用" class="headerlink" title="四、frp 使用"></a>四、frp 使用</h2><ol>
 <li>内网客户端配置</li>
 </ol>
-<pre><code class="shell">[common]
+<pre><code class="language-shell">[common]
 # 部署frp服务端的公网服务器的ip
 server_addr = 106.55.104.24
 # 和服务端的bind_port保持一致
@@ -1317,7 +1317,7 @@ subdomain = git
 <blockquote>
 <p>vim &#x2F;lib&#x2F;systemd&#x2F;system&#x2F;frps.service</p>
 </blockquote>
-<pre><code class="shell">[Unit]
+<pre><code class="language-shell">[Unit]
 Description=frps service
 After=network.target syslog.target
 Wants=network.target

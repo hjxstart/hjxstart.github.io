@@ -250,7 +250,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="73">
-<input type="hidden" id="yelog_site_word_count" value="114.1k">
+<input type="hidden" id="yelog_site_word_count" value="114.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1137,15 +1137,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="LLDP"><a href="#LLDP" class="headerlink" title="LLDP"></a>LLDP</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/NetworkLab_003_LLDP.png" alt="LLDP"></p>
-<h4 id="1-路由器互联接口配置同网段-IP-地址"><a href="#1-路由器互联接口配置同网段-IP-地址" class="headerlink" title="1. 路由器互联接口配置同网段 IP 地址"></a>1. 路由器互联接口配置同网段 IP 地址</h4><pre><code class="shell">[R1] int g0/0/0
+<h4 id="1-路由器互联接口配置同网段-IP-地址"><a href="#1-路由器互联接口配置同网段-IP-地址" class="headerlink" title="1. 路由器互联接口配置同网段 IP 地址"></a>1. 路由器互联接口配置同网段 IP 地址</h4><pre><code class="language-shell">[R1] int g0/0/0
 [R1-g0/0/0] ip add 12.1.1.1 24
 [R2] int g0/0/0
 [R2-g0/0/0] ip add 12.1.1.2 24
 </code></pre>
-<h4 id="2-在系统视图下开启-LLDP"><a href="#2-在系统视图下开启-LLDP" class="headerlink" title="2. 在系统视图下开启 LLDP"></a>2. 在系统视图下开启 LLDP</h4><pre><code class="shell">[R1] lldp enable
+<h4 id="2-在系统视图下开启-LLDP"><a href="#2-在系统视图下开启-LLDP" class="headerlink" title="2. 在系统视图下开启 LLDP"></a>2. 在系统视图下开启 LLDP</h4><pre><code class="language-shell">[R1] lldp enable
 [R2] lldp enable
 </code></pre>
-<h4 id="3-查看-LLDP-邻居信息"><a href="#3-查看-LLDP-邻居信息" class="headerlink" title="3. 查看 LLDP 邻居信息"></a>3. 查看 LLDP 邻居信息</h4><pre><code class="shell">display lldp neighbor
+<h4 id="3-查看-LLDP-邻居信息"><a href="#3-查看-LLDP-邻居信息" class="headerlink" title="3. 查看 LLDP 邻居信息"></a>3. 查看 LLDP 邻居信息</h4><pre><code class="language-shell">display lldp neighbor
 </code></pre>
 
       

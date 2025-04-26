@@ -250,7 +250,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="73">
-<input type="hidden" id="yelog_site_word_count" value="114.1k">
+<input type="hidden" id="yelog_site_word_count" value="114.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1145,7 +1145,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-Nginx作用"><a href="#1-Nginx作用" class="headerlink" title="1. Nginx作用"></a>1. Nginx作用</h1><pre><code class="java">1. Http代理，反向代理：作为web服务器最常用的功能之一，尤其是反向代理。
+        <h1 id="1-Nginx作用"><a href="#1-Nginx作用" class="headerlink" title="1. Nginx作用"></a>1. Nginx作用</h1><pre><code class="language-java">1. Http代理，反向代理：作为web服务器最常用的功能之一，尤其是反向代理。
 2. Nginx提供的负载均衡策略有2种：内置策略和扩展策略。内置策略为轮询，加权轮询，Ip hash。扩展策略，就天马行空，只有你想不到的没有他做不到的。iphash对客户端请求的ip进行hash操作，然后根据hash结果将同一个客户端ip的请求分发给同一台服务器进行处理，可以解决session不共享的问题。
 3. 动静分离，在我们的软件开发中，有些请求是需要后台处理的，有些请求是不需要经过后台处理的（如：css、html、jpg、js等等文件），这些不需要经过后台处理的文件称为静态文件。让动态网站里的动态网页根据一定规则把不变的资源和经常变的资源区分开来，动静资源做好了拆分以后，我们就可以根据静态资源的特点将其做缓存操作。提高资源响应的速度。
 </code></pre>
@@ -1153,46 +1153,46 @@
 <h1 id="2-linux下安装Nginx"><a href="#2-linux下安装Nginx" class="headerlink" title="2. linux下安装Nginx"></a>2. linux下安装Nginx</h1><ol>
 <li>安装gcc</li>
 </ol>
-<pre><code class="shell">yum install gcc-c++
+<pre><code class="language-shell">yum install gcc-c++
 </code></pre>
 <ol start="2">
 <li>PCRE pcre-devel 安装</li>
 </ol>
-<pre><code class="shell">yum install -y pcre pcre-devel
+<pre><code class="language-shell">yum install -y pcre pcre-devel
 </code></pre>
 <ol start="3">
 <li>zlib 安装</li>
 </ol>
-<pre><code class="shell">yum install -y zlib zlib-devel
+<pre><code class="language-shell">yum install -y zlib zlib-devel
 </code></pre>
 <ol start="4">
 <li>OpenSSL 安装</li>
 </ol>
-<pre><code class="shell">yum install -y openssl openssl-devel
+<pre><code class="language-shell">yum install -y openssl openssl-devel
 </code></pre>
 <ol start="5">
 <li>下载安装包<a target="_blank" rel="noopener" href="https://nginx.org/en/download.html">链接</a></li>
 <li>解压</li>
 </ol>
-<pre><code class="shell">tar -zxvf nginx-1.18.0.tar.gz
+<pre><code class="language-shell">tar -zxvf nginx-1.18.0.tar.gz
 cd nginx-1.18.0
 </code></pre>
 <ol start="7">
 <li>配置</li>
 </ol>
-<pre><code class="shell">./configure
+<pre><code class="language-shell">./configure
 make
 make install
 </code></pre>
 <ol start="8">
 <li>查找安装路径</li>
 </ol>
-<pre><code class="shell">whereis nginx
+<pre><code class="language-shell">whereis nginx
 </code></pre>
 <ol start="9">
 <li>Nginx常用命令</li>
 </ol>
-<pre><code class="shell">cd /usr/local/nginx/sbin/
+<pre><code class="language-shell">cd /usr/local/nginx/sbin/
 ./nginx  启动
 ./nginx -s stop  停止
 ./nginx -s quit  安全退出
@@ -1202,7 +1202,7 @@ ps aux|grep nginx  查看nginx进程
 <ol start="10">
 <li>Linux其他相关命令</li>
 </ol>
-<pre><code class="shell"># 开启
+<pre><code class="language-shell"># 开启
 service firewalld start
 # 重启
 service firewalld restart
@@ -1226,7 +1226,7 @@ firewall-cmd --reload
 <ol start="11">
 <li>负载均衡联系</li>
 </ol>
-<pre><code class="shell">upstream lb&#123;
+<pre><code class="language-shell">upstream lb&#123;
     server 127.0.0.1:8080 weight=1;
     server 127.0.0.1:8081 weight=1;
 &#125;

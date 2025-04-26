@@ -250,7 +250,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="73">
-<input type="hidden" id="yelog_site_word_count" value="114.1k">
+<input type="hidden" id="yelog_site_word_count" value="114.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1148,7 +1148,7 @@
         <h2 id="Docker安装Reids"><a href="#Docker安装Reids" class="headerlink" title="Docker安装Reids"></a>Docker安装Reids</h2><h3 id="redis安装"><a href="#redis安装" class="headerlink" title="redis安装"></a>redis安装</h3><blockquote>
 <p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/363e8ac2d9b3">参考链接</a></p>
 </blockquote>
-<h3 id="创建挂载的目录"><a href="#创建挂载的目录" class="headerlink" title="创建挂载的目录"></a>创建挂载的目录</h3><pre><code class="shell">mkdir -p /home/docker-data/redis/conf
+<h3 id="创建挂载的目录"><a href="#创建挂载的目录" class="headerlink" title="创建挂载的目录"></a>创建挂载的目录</h3><pre><code class="language-shell">mkdir -p /home/docker-data/redis/conf
 mkdir -p /home/docker-data/redis/data
 </code></pre>
 <h3 id="新增Redis配置文件"><a href="#新增Redis配置文件" class="headerlink" title="新增Redis配置文件"></a>新增Redis配置文件</h3><blockquote>
@@ -1160,9 +1160,9 @@ mkdir -p /home/docker-data/redis/data
 <blockquote>
 <p>requirepass：设置访问密码为123456</p>
 </blockquote>
-<pre><code class="shell">vim /home/docker-data/redis/conf/redis.conf
+<pre><code class="language-shell">vim /home/docker-data/redis/conf/redis.conf
 </code></pre>
-<pre><code class="bash">#bind 127.0.0.1
+<pre><code class="language-bash">#bind 127.0.0.1
 protected-mode no
 appendonly yes
 requirepass 123456
@@ -1170,7 +1170,7 @@ requirepass 123456
 <h3 id="创建redis容器并启动"><a href="#创建redis容器并启动" class="headerlink" title="创建redis容器并启动"></a>创建redis容器并启动</h3><blockquote>
 <p>redis redis-server 实现让docker容器运行时使用本地配置的Redis配置文件的功能了</p>
 </blockquote>
-<pre><code class="shell">docker run \
+<pre><code class="language-shell">docker run \
 --name redis \
 -p 6379:6379 \
 -v /home/docker-data/redis/data:/data \
@@ -1180,25 +1180,25 @@ requirepass 123456
 <h3 id="进入容器内部进行测试"><a href="#进入容器内部进行测试" class="headerlink" title="进入容器内部进行测试"></a>进入容器内部进行测试</h3><ol>
 <li>进入容器</li>
 </ol>
-<pre><code class="shell">docker exec -it redis redis-cli
+<pre><code class="language-shell">docker exec -it redis redis-cli
 </code></pre>
 <ol start="2">
 <li>设置密码</li>
 </ol>
-<pre><code class="bash">auth 123456
+<pre><code class="language-bash">auth 123456
 </code></pre>
 <ol start="3">
 <li>测试</li>
 </ol>
-<pre><code class="shell">set a 1
+<pre><code class="language-shell">set a 1
 get a
 </code></pre>
-<h2 id="K8s安装Reids集群"><a href="#K8s安装Reids集群" class="headerlink" title="K8s安装Reids集群"></a>K8s安装Reids集群</h2><h3 id="1-设置redis集群网卡及查看"><a href="#1-设置redis集群网卡及查看" class="headerlink" title="1. 设置redis集群网卡及查看"></a>1. 设置redis集群网卡及查看</h3><pre><code class="shell">docker network create redis --subnet 172.38.0.0/16
+<h2 id="K8s安装Reids集群"><a href="#K8s安装Reids集群" class="headerlink" title="K8s安装Reids集群"></a>K8s安装Reids集群</h2><h3 id="1-设置redis集群网卡及查看"><a href="#1-设置redis集群网卡及查看" class="headerlink" title="1. 设置redis集群网卡及查看"></a>1. 设置redis集群网卡及查看</h3><pre><code class="language-shell">docker network create redis --subnet 172.38.0.0/16
 docker network ls
 docker network inspect redis
 </code></pre>
 <hr>
-<h3 id="2-创建redis节点及设置"><a href="#2-创建redis节点及设置" class="headerlink" title="2. 创建redis节点及设置"></a>2. 创建redis节点及设置</h3><pre><code class="shell">for port in $(seq 1 6);
+<h3 id="2-创建redis节点及设置"><a href="#2-创建redis节点及设置" class="headerlink" title="2. 创建redis节点及设置"></a>2. 创建redis节点及设置</h3><pre><code class="language-shell">for port in $(seq 1 6);
 do
 mkdir -p /mydata/redis/node-$&#123;port&#125;/conf
 touch /mydata/redis/node-$&#123;port&#125;/conf/redis.conf
@@ -1219,58 +1219,58 @@ done
 <h3 id="3-拉取redis镜像并启动redis节点"><a href="#3-拉取redis镜像并启动redis节点" class="headerlink" title="3. 拉取redis镜像并启动redis节点"></a>3. 拉取redis镜像并启动redis节点</h3><ol>
 <li>节点1</li>
 </ol>
-<pre><code class="shell">docker run -p 6371:6379 -p 16371:16379 --name redis-1 \
+<pre><code class="language-shell">docker run -p 6371:6379 -p 16371:16379 --name redis-1 \
  -v /mydata/redis/node-1/data:/data \
  -v /mydata/redis/node-1/conf/redis.conf:/etc/redis/redis.conf \
  -d --net redis --ip 172.38.0.11 redis:5.0.9-alpine3.11 redis-server /etc/redis/redis.conf
 </code></pre>
 <p>2 . 节点2</p>
-<pre><code class="shell">docker run -p 6372:6379 -p 16372:16379 --name redis-2 \
+<pre><code class="language-shell">docker run -p 6372:6379 -p 16372:16379 --name redis-2 \
  -v /mydata/redis/node-2/data:/data \
  -v /mydata/redis/node-2/conf/redis.conf:/etc/redis/redis.conf \
  -d --net redis --ip 172.38.0.12 redis:5.0.9-alpine3.11 redis-server /etc/redis/redis.conf
 </code></pre>
 <p>3 . 节点3</p>
-<pre><code class="shell">docker run -p 6373:6379 -p 16373:16379 --name redis-3 \
+<pre><code class="language-shell">docker run -p 6373:6379 -p 16373:16379 --name redis-3 \
  -v /mydata/redis/node-3/data:/data \
  -v /mydata/redis/node-3/conf/redis.conf:/etc/redis/redis.conf \
  -d --net redis --ip 172.38.0.13 redis:5.0.9-alpine3.11 redis-server /etc/redis/redis.conf
 </code></pre>
 <p>4 . 节点4</p>
-<pre><code class="shell">docker run -p 6374:6379 -p 16374:16379 --name redis-4 \
+<pre><code class="language-shell">docker run -p 6374:6379 -p 16374:16379 --name redis-4 \
  -v /mydata/redis/node-4data:/data \
  -v /mydata/redis/node-4/conf/redis.conf:/etc/redis/redis.conf \
  -d --net redis --ip 172.38.0.14 redis:5.0.9-alpine3.11 redis-server /etc/redis/redis.conf
 </code></pre>
 <p>5 . 节点5</p>
-<pre><code class="shell">docker run -p 6375:6379 -p 16375:16379 --name redis-5 \
+<pre><code class="language-shell">docker run -p 6375:6379 -p 16375:16379 --name redis-5 \
  -v /mydata/redis/node-5/data:/data \
  -v /mydata/redis/node-5/conf/redis.conf:/etc/redis/redis.conf \
  -d --net redis --ip 172.38.0.15 redis:5.0.9-alpine3.11 redis-server /etc/redis/redis.conf
 </code></pre>
 <p>6 . 节点6</p>
-<pre><code class="shell">docker run -p 6376:6379 -p 16376:16379 --name redis-6 \
+<pre><code class="language-shell">docker run -p 6376:6379 -p 16376:16379 --name redis-6 \
  -v /mydata/redis/node-6/data:/data \
  -v /mydata/redis/node-6/conf/redis.conf:/etc/redis/redis.conf \
  -d --net redis --ip 172.38.0.16 redis:5.0.9-alpine3.11 redis-server /etc/redis/redis.conf
 </code></pre>
 <hr>
-<h3 id="4-以交互模式进入redis节点内"><a href="#4-以交互模式进入redis节点内" class="headerlink" title="4. 以交互模式进入redis节点内"></a>4. 以交互模式进入redis节点内</h3><pre><code class="shell">docker exec -it redis-1 /bin/sh
+<h3 id="4-以交互模式进入redis节点内"><a href="#4-以交互模式进入redis节点内" class="headerlink" title="4. 以交互模式进入redis节点内"></a>4. 以交互模式进入redis节点内</h3><pre><code class="language-shell">docker exec -it redis-1 /bin/sh
 </code></pre>
 <hr>
-<h3 id="5-创建redis集群"><a href="#5-创建redis集群" class="headerlink" title="5. 创建redis集群"></a>5. 创建redis集群</h3><pre><code class="shell">redis-cli --cluster create 172.38.0.11:6379 172.38.0.12:6379 \
+<h3 id="5-创建redis集群"><a href="#5-创建redis集群" class="headerlink" title="5. 创建redis集群"></a>5. 创建redis集群</h3><pre><code class="language-shell">redis-cli --cluster create 172.38.0.11:6379 172.38.0.12:6379 \
 172.38.0.13:6379 172.38.0.14:6379 172.38.0.15:6379 \
 172.38.0.16:6379 --cluster-replicas 1
 </code></pre>
 <h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41896265/article/details/108245264">参考链接</a></h3><h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><h2 id="string"><a href="#string" class="headerlink" title="string"></a>string</h2><blockquote>
 <p>可变对象，在1M大小以下空间扩展速度为1倍，1M以上速度为每次1M，最大512M，超过会报错。</p>
 </blockquote>
-<pre><code class="redis">
+<pre><code class="language-redis">
 </code></pre>
 <h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><blockquote>
 <p>可以保存2^32-1个item<br>列表的插入数据O(1),索引定位O(n)<br>主要用于队列。rpush lpop<br>用于栈：rpush rpop</p>
 </blockquote>
-<pre><code class="redis">lpush key value1 vlue2
+<pre><code class="language-redis">lpush key value1 vlue2
 rpush key value1 vlue2
 lpop key 
 rpop key

@@ -250,7 +250,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="73">
-<input type="hidden" id="yelog_site_word_count" value="114.1k">
+<input type="hidden" id="yelog_site_word_count" value="114.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1145,7 +1145,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="第一章-Docker-安装-gitlab"><a href="#第一章-Docker-安装-gitlab" class="headerlink" title="第一章 Docker 安装 gitlab"></a>第一章 Docker 安装 gitlab</h1><h3 id="1-运行-gitlab"><a href="#1-运行-gitlab" class="headerlink" title="1. 运行 gitlab"></a>1. 运行 gitlab</h3><pre><code class="shell">sudo docker run --detach \
+        <h1 id="第一章-Docker-安装-gitlab"><a href="#第一章-Docker-安装-gitlab" class="headerlink" title="第一章 Docker 安装 gitlab"></a>第一章 Docker 安装 gitlab</h1><h3 id="1-运行-gitlab"><a href="#1-运行-gitlab" class="headerlink" title="1. 运行 gitlab"></a>1. 运行 gitlab</h3><pre><code class="language-shell">sudo docker run --detach \
   --hostname 192.168.18.199 \
   --publish 20443:443 --publish 20080:80 --publish 20022:22 \
   --name gitlab \
@@ -1155,14 +1155,14 @@
   --volume /home/hjx/docker/gitlab/data:/var/opt/gitlab \
   gitlab/gitlab-ce:latest
 </code></pre>
-<h3 id="2-gitlab-重置密码"><a href="#2-gitlab-重置密码" class="headerlink" title="2. gitlab 重置密码"></a>2. gitlab 重置密码</h3><pre><code class="shell">docker exec -it gitlab /bin/bash
+<h3 id="2-gitlab-重置密码"><a href="#2-gitlab-重置密码" class="headerlink" title="2. gitlab 重置密码"></a>2. gitlab 重置密码</h3><pre><code class="language-shell">docker exec -it gitlab /bin/bash
 gitlab-rails console -e production
 user = User.where(id: 1).first
 user.password = &#39;密码&#39;
 user.password_confirmation = &#39;密码&#39;
 user.save!
 </code></pre>
-<h3 id="3-配置邮件和修改clone地址"><a href="#3-配置邮件和修改clone地址" class="headerlink" title="3. 配置邮件和修改clone地址"></a>3. 配置邮件和修改clone地址</h3><pre><code class="shell">vim /etc/gitlab/gitlab.rb
+<h3 id="3-配置邮件和修改clone地址"><a href="#3-配置邮件和修改clone地址" class="headerlink" title="3. 配置邮件和修改clone地址"></a>3. 配置邮件和修改clone地址</h3><pre><code class="language-shell">vim /etc/gitlab/gitlab.rb
 
 gitlab_rails[&#39;time_zone&#39;] = &#39;Asia/Shanghai&#39;
 gitlab_rails[&#39;gitlab_email_display_name&#39;] = &#39;gitlab&#39;
@@ -1303,7 +1303,7 @@ server &#123;
 <li>在nginx.conf上添加上</li>
 </ol>
 <p><code>vim /usr/local/nginx/conf/nginx.conf</code></p>
-<pre><code class="bash"># 1.配置成root用户，gitlab代理权限问题
+<pre><code class="language-bash"># 1.配置成root用户，gitlab代理权限问题
 user root;
 
 worker_processes  1
@@ -1339,7 +1339,7 @@ ps aux|grep nginx  查看nginx进程
 <li>gitlab-ce-12.5.2-ce.0.el7.x86_64.rpm</li>
 </ol>
 <hr>
-<h3 id="第二章-安装GitLab"><a href="#第二章-安装GitLab" class="headerlink" title="第二章 安装GitLab"></a>第二章 安装GitLab</h3><pre><code class="bash">yum localinstall gitlab-ce-12.5.2-ce.0.el7.x86_64.rpm
+<h3 id="第二章-安装GitLab"><a href="#第二章-安装GitLab" class="headerlink" title="第二章 安装GitLab"></a>第二章 安装GitLab</h3><pre><code class="language-bash">yum localinstall gitlab-ce-12.5.2-ce.0.el7.x86_64.rpm
 </code></pre>
 <hr>
 <ol>
@@ -1348,7 +1348,7 @@ ps aux|grep nginx  查看nginx进程
 <h3 id="第三章-修改配置"><a href="#第三章-修改配置" class="headerlink" title="第三章 修改配置"></a>第三章 修改配置</h3><ol start="2">
 <li>Gitlab 邮箱配置</li>
 </ol>
-<pre><code class="bash">vim /etc/gitlab/gitlab.rb
+<pre><code class="language-bash">vim /etc/gitlab/gitlab.rb
 # 将external_url 变量的地址修改为gitlab 所在centos 的ip 地址。
 external_url &#39;http://gitlab.example.com&#39;
 
@@ -1356,7 +1356,7 @@ external_url &#39;http://gitlab.example.com&#39;
 gitlab-ctl reconfigure
 gitlab-ctl restart
 </code></pre>
-<pre><code class="bash"># 修改配置文件
+<pre><code class="language-bash"># 修改配置文件
 vim /etc/gitlab/gitlab.rb
 
 # 添加以下配置
@@ -1405,7 +1405,7 @@ Notify.test_email(&#39;hjxstart@163.com&#39;,&#39;test mail&#39;, &#39;test mail
 <li>方法一：可视化创建ssh key, 在任意文件夹下点击右键，选择 Git GUI Here。在弹出的程序中选择主菜单的[Help] -&gt; [Show SSH Key]</li>
 <li>方法二：命令行方式创建ssh key</li>
 </ul>
-<pre><code class="bash"># linux
+<pre><code class="language-bash"># linux
 # 默认为rsa加密算法
 ssh-keygen -C &quot;hjxstart@126.com&quot; -f ~/.ssh/id_rsa -N &#39;&#39; -q
 # -t: 指定为dsa加密算法; -f: 指定存放的位置; -C: 邮箱；-P 密码; -q: 静默模式
@@ -1416,7 +1416,7 @@ ssh-keygen.exe -f ~/.ssh/id_rsa -C &quot;hjxstart@126.com&quot; -N &#39;&#39; -q
 <ol start="2">
 <li>查看 SSH key</li>
 </ol>
-<pre><code class="bash">cat ~/.sshid_rsa.pub
+<pre><code class="language-bash">cat ~/.sshid_rsa.pub
 </code></pre>
 <ol start="3">
 <li>添加 SSH key。</li>
@@ -1438,7 +1438,7 @@ ssh-keygen.exe -f ~/.ssh/id_rsa -C &quot;hjxstart@126.com&quot; -N &#39;&#39; -q
 <li>创建里程碑 lssues &gt; Miletones &gt; new Miletones (Title: v1.0; Description: 官网v1.0)</li>
 <li>分配任务 lssues &gt; new lssues（Title:首页; Descripiton: 首页开发；Assignce(指派): dev1；Miletones: v1.0;结束时间）</li>
 </ul>
-<h4 id="4-5-项目检出check"><a href="#4-5-项目检出check" class="headerlink" title="4.5 项目检出check"></a>4.5 项目检出check</h4><pre><code class="bash"># 1. 克隆项目
+<h4 id="4-5-项目检出check"><a href="#4-5-项目检出check" class="headerlink" title="4.5 项目检出check"></a>4.5 项目检出check</h4><pre><code class="language-bash"># 1. 克隆项目
 git clone 
 
 # 2. 配置用户信息
@@ -1477,39 +1477,39 @@ git push
 <h3 id="第五章-Gitlab备份与回复"><a href="#第五章-Gitlab备份与回复" class="headerlink" title="第五章 Gitlab备份与回复"></a>第五章 Gitlab备份与回复</h3><h4 id="5-1-备份管理"><a href="#5-1-备份管理" class="headerlink" title="5.1 备份管理"></a>5.1 备份管理</h4><ol>
 <li>配置文件中加入 # vim &#x2F;etc&#x2F;gitlab&#x2F;gitlab.rb</li>
 </ol>
-<pre><code class="bash">gitlab_rails[&#39;backup_path&#39;] = &#39;/data/backup/gitlab&#39;
+<pre><code class="language-bash">gitlab_rails[&#39;backup_path&#39;] = &#39;/data/backup/gitlab&#39;
 gitlab_rails[&#39;backup_keep_time&#39;] = 604800
 </code></pre>
 <ol start="2">
 <li>重置配置: gitlab-ctl reconfigure</li>
 <li>如果自定义备份目录需要赋予git权限</li>
 </ol>
-<pre><code class="bash">mkdir /data/backup/gitlab -p
+<pre><code class="language-bash">mkdir /data/backup/gitlab -p
 chown -R git.git /data/backup/gitlab
 </code></pre>
 <ol start="4">
 <li>重置配置: gitlab-ctl reconfigure</li>
 <li>手动备份</li>
 </ol>
-<pre><code class="bash">gitlab-rake gitlab:backup:create
+<pre><code class="language-bash">gitlab-rake gitlab:backup:create
 </code></pre>
 <ol start="6">
 <li>查看备份</li>
 </ol>
-<pre><code class="bash">ls /data/backup/gitlab -ps
+<pre><code class="language-bash">ls /data/backup/gitlab -ps
 </code></pre>
 <hr>
 <h4 id="5-2-恢复管理"><a href="#5-2-恢复管理" class="headerlink" title="5.2 恢复管理"></a>5.2 恢复管理</h4><p>恢复是删除原有数据，恢复备份tar包中的数据。</p>
 <ol>
 <li>先停止数据写入服务</li>
 </ol>
-<pre><code class="bash">gitlab-ctl stop unicorn
+<pre><code class="language-bash">gitlab-ctl stop unicorn
 gitlab-ctl stop sidekiq
 </code></pre>
 <ol start="2">
 <li>还原</li>
 </ol>
-<pre><code class="bash"># 1. 查看要还原的文件
+<pre><code class="language-bash"># 1. 查看要还原的文件
 ls /data/backup/gitlab -p
 # 2. 还原，只需要写到时间戳就可以了1625903798_2021_07_10_12.5.2_gitlab_backup.tar
 gitlab-rake gitlab:backup:restore BACKUP=1625903798_2021_07_10_12.5.2
@@ -1519,7 +1519,7 @@ date -d @1625903798
 <ol start="3">
 <li>设定计划划任务</li>
 </ol>
-<pre><code class="bash">定时任务Crontab中加入
+<pre><code class="language-bash">定时任务Crontab中加入
 0 2 * * * /usr/bin/gitlab-rake gitlab:backup:create
 策略建议: 本地保留三到七天 在异地备份永久保存
 手动备份测试: gitlab-rake gitlab:backup:create
@@ -1539,11 +1539,11 @@ date -d @1625903798
 <h3 id="第七章-常用命令"><a href="#第七章-常用命令" class="headerlink" title="第七章 常用命令"></a>第七章 常用命令</h3><ol>
 <li>gitlab-ctl command</li>
 </ol>
-<pre><code class="bash">gitlab-ctl start # 启动所有服务
+<pre><code class="language-bash">gitlab-ctl start # 启动所有服务
 gitlab-ctl restart # 重启所有服务
 gitlab-ctl stop # 关闭所有服务
 gitlab-ctl status # 查看所有服务状态
-gitlab-ctl tail    # 查看日志信息
+gitlab-ctl tail	# 查看日志信息
 gitlab-ctl service-list # 列举所有启动服务
 gitlab-ctl  graceful-kill # 平稳停止一个服务
 gitlab-ctl reconfigure # 修改配置文件之后，需要重新加载下

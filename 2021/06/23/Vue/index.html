@@ -250,7 +250,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="73">
-<input type="hidden" id="yelog_site_word_count" value="114.1k">
+<input type="hidden" id="yelog_site_word_count" value="114.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1143,7 +1143,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="第一章-CDN开发上"><a href="#第一章-CDN开发上" class="headerlink" title="第一章 CDN开发上"></a>第一章 CDN开发上</h1><h2 id="1-1、开发环境介绍"><a href="#1-1、开发环境介绍" class="headerlink" title="1.1、开发环境介绍"></a>1.1、开发环境介绍</h2><pre><code class="bash">$ node --version
+        <h1 id="第一章-CDN开发上"><a href="#第一章-CDN开发上" class="headerlink" title="第一章 CDN开发上"></a>第一章 CDN开发上</h1><h2 id="1-1、开发环境介绍"><a href="#1-1、开发环境介绍" class="headerlink" title="1.1、开发环境介绍"></a>1.1、开发环境介绍</h2><pre><code class="language-bash">$ node --version
 v14.15.1
 $ npm --version
 7.17.0
@@ -1151,14 +1151,14 @@ $ vue --version
 @vue/cli 4.5.13
 </code></pre>
 <hr>
-<h2 id="1-2、CDN方式使用Vue"><a href="#1-2、CDN方式使用Vue" class="headerlink" title="1.2、CDN方式使用Vue"></a>1.2、CDN方式使用Vue</h2><pre><code class="html">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js&quot;&gt;&lt;/script&gt;
+<h2 id="1-2、CDN方式使用Vue"><a href="#1-2、CDN方式使用Vue" class="headerlink" title="1.2、CDN方式使用Vue"></a>1.2、CDN方式使用Vue</h2><pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js&quot;&gt;&lt;/script&gt;
 </code></pre>
 <hr>
-<h2 id="1-3、vue-app的基本结构"><a href="#1-3、vue-app的基本结构" class="headerlink" title="1.3、vue-app的基本结构"></a>1.3、vue-app的基本结构</h2><h3 id="1-3-1、HTML代码"><a href="#1-3-1、HTML代码" class="headerlink" title="1.3.1、HTML代码"></a>1.3.1、HTML代码</h3><pre><code class="html">&lt;div id=&quot;app&quot;&gt;
+<h2 id="1-3、vue-app的基本结构"><a href="#1-3、vue-app的基本结构" class="headerlink" title="1.3、vue-app的基本结构"></a>1.3、vue-app的基本结构</h2><h3 id="1-3-1、HTML代码"><a href="#1-3-1、HTML代码" class="headerlink" title="1.3.1、HTML代码"></a>1.3.1、HTML代码</h3><pre><code class="language-html">&lt;div id=&quot;app&quot;&gt;
   &#123;&#123; message &#125;&#125;
 &lt;/div&gt;
 </code></pre>
-<h3 id="1-3-2、JS代码"><a href="#1-3-2、JS代码" class="headerlink" title="1.3.2、JS代码"></a>1.3.2、JS代码</h3><pre><code class="js">var app = new Vue(&#123;
+<h3 id="1-3-2、JS代码"><a href="#1-3-2、JS代码" class="headerlink" title="1.3.2、JS代码"></a>1.3.2、JS代码</h3><pre><code class="language-js">var app = new Vue(&#123;
   el: &#39;#app&#39;, // 将 Vue 应用会将其挂载到一个 DOM 元素上（#app）
   data: &#123;
     message: &#39;Hello Vue!&#39;
@@ -1166,7 +1166,7 @@ $ vue --version
 &#125;)
 </code></pre>
 <hr>
-<h3 id="1-4、好玩的Vue语法"><a href="#1-4、好玩的Vue语法" class="headerlink" title="1.4、好玩的Vue语法"></a>1.4、好玩的Vue语法</h3><h4 id="1-4-1、HTML代码"><a href="#1-4-1、HTML代码" class="headerlink" title="1.4.1、HTML代码"></a>1.4.1、HTML代码</h4><pre><code class="html">&lt;!DOCTYPE html&gt;
+<h3 id="1-4、好玩的Vue语法"><a href="#1-4、好玩的Vue语法" class="headerlink" title="1.4、好玩的Vue语法"></a>1.4、好玩的Vue语法</h3><h4 id="1-4-1、HTML代码"><a href="#1-4-1、HTML代码" class="headerlink" title="1.4.1、HTML代码"></a>1.4.1、HTML代码</h4><pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
     &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js&quot;&gt;&lt;/script&gt;
@@ -1181,7 +1181,7 @@ $ vue --version
         &lt;p&gt;&lt;input type=&quot;text&quot; :value=&quot;name&quot; /&gt;&lt;/p&gt; &lt;!-- 省略的绑定方式 --&gt;
     &lt;/div&gt;
     &lt;div id=&quot;vue-events&quot;&gt;
-    &lt;!-- click event --&gt;
+	&lt;!-- click event --&gt;
         &lt;button @click=&quot;age++&quot;&gt;add a year&lt;/button&gt;
         &lt;button v-on:click=&quot;age--&quot;&gt;subtract a year&lt;/button&gt;
         &lt;button @dblclick=&quot;add(10)&quot;&gt;add 10 year&lt;/button&gt; &lt;!-- 点击两次 --&gt;
@@ -1222,7 +1222,7 @@ $ vue --version
 &lt;script src=&quot;./app.js&quot;&gt;&lt;/script&gt;
 &lt;/html&gt;
 </code></pre>
-<h4 id="1-4-2、JS代码"><a href="#1-4-2、JS代码" class="headerlink" title="1.4.2、JS代码"></a>1.4.2、JS代码</h4><pre><code class="js">// 实例化 vue 对象
+<h4 id="1-4-2、JS代码"><a href="#1-4-2、JS代码" class="headerlink" title="1.4.2、JS代码"></a>1.4.2、JS代码</h4><pre><code class="language-js">// 实例化 vue 对象
 new Vue(&#123;
     el: &quot;#vue-app&quot;, // element
     data() &#123;
@@ -1315,7 +1315,7 @@ new Vue(&#123;
 &#125;)
 </code></pre>
 <p>1.4.3、Css代码</p>
-<pre><code class="css">#canvas &#123;
+<pre><code class="language-css">#canvas &#123;
   width: 600px;
   padding: 200px 20px;
   text-align: center;
@@ -1324,7 +1324,7 @@ new Vue(&#123;
 </code></pre>
 <hr>
 <h1 id="第二章-CDN开发下"><a href="#第二章-CDN开发下" class="headerlink" title="第二章 CDN开发下"></a>第二章 CDN开发下</h1><h2 id="2-1、watch"><a href="#2-1、watch" class="headerlink" title="2.1、watch"></a>2.1、watch</h2><p><strong>不建议生产环境使用，开发调试可以</strong>。watch的用法如下</p>
-<pre><code class="js">new Vue(&#123;
+<pre><code class="language-js">new Vue(&#123;
     data() &#123;
         return &#123;
             name: &#39;&#39;, // 1.需要在data中有声明
@@ -1341,22 +1341,22 @@ new Vue(&#123;
 <ol>
 <li>和watch、method的性能区别，computed只有在值发生变化的时候才触发。</li>
 <li>computed的里面的每一个方法一定要有<strong>return</strong>。</li>
-<li>computed的用法如下<pre><code class="html">  &lt;div id=&quot;vue-computed&quot;&gt;
-     &lt;button @click=&quot;a++&quot;&gt;Add to A &lt;/button&gt;
-     &lt;button @click=&quot;b++&quot;&gt;Add to B &lt;/button&gt;
-     &lt;p&gt;A - &#123;&#123;a&#125;&#125;&lt;/p&gt;
-     &lt;p&gt;B - &#123;&#123;b&#125;&#125;&lt;/p&gt;
-     &lt;!-- methods --&gt;
-     &lt;p&gt;Age + A = &#123;&#123;addToA1()&#125;&#125;&lt;/p&gt;
-     &lt;p&gt;Age + B = &#123;&#123;addToB1()&#125;&#125;&lt;/p&gt;
-     &lt;!-- computed, 因为是属性不可以加括号 --&gt;
-     &lt;p&gt;Age + A = &#123;&#123; addToA2 &#125;&#125;&lt;/p&gt;
-     &lt;p&gt;Age + B = &#123;&#123; addToB2 &#125;&#125;&lt;/p&gt;
- &lt;/div&gt;
-</code></pre>
-</li>
+<li>computed的用法如下</li>
 </ol>
-<pre><code class="js">new Vue(&#123;
+<pre><code class="language-html">  &lt;div id=&quot;vue-computed&quot;&gt;
+        &lt;button @click=&quot;a++&quot;&gt;Add to A &lt;/button&gt;
+        &lt;button @click=&quot;b++&quot;&gt;Add to B &lt;/button&gt;
+        &lt;p&gt;A - &#123;&#123;a&#125;&#125;&lt;/p&gt;
+        &lt;p&gt;B - &#123;&#123;b&#125;&#125;&lt;/p&gt;
+        &lt;!-- methods --&gt;
+        &lt;p&gt;Age + A = &#123;&#123;addToA1()&#125;&#125;&lt;/p&gt;
+        &lt;p&gt;Age + B = &#123;&#123;addToB1()&#125;&#125;&lt;/p&gt;
+        &lt;!-- computed, 因为是属性不可以加括号 --&gt;
+        &lt;p&gt;Age + A = &#123;&#123; addToA2 &#125;&#125;&lt;/p&gt;
+        &lt;p&gt;Age + B = &#123;&#123; addToB2 &#125;&#125;&lt;/p&gt;
+    &lt;/div&gt;
+</code></pre>
+<pre><code class="language-js">new Vue(&#123;
     el: &quot;#vue-computed&quot;,
     data() &#123;
         return &#123;
@@ -1390,38 +1390,44 @@ new Vue(&#123;
 <hr>
 <h2 id="2-3、动态绑定Css"><a href="#2-3、动态绑定Css" class="headerlink" title="2.3、动态绑定Css"></a>2.3、动态绑定Css</h2><p><strong>使用computed动态绑定Css</strong></p>
 <ol>
-<li>html代码<pre><code class="html"> &lt;div id=&quot;vue-css&quot;&gt;
-     &lt;h1&gt;动态绑定样式 两种方式&lt;/h1&gt;
-     &lt;h2&gt;示例1 属性绑定&lt;/h2&gt;
-     &lt;div @click=&quot;mrChangeColor = !mrChangeColor&quot; v-bind:class=&quot;&#123;changeColor:mrChangeColor&#125;&quot;&gt;
-         &lt;span&gt;Hello&lt;/span&gt;
-     &lt;/div&gt;
-     &lt;h2&gt;示例2 计算属性绑定&lt;/h2&gt;
-     &lt;button @click=&quot;mrChangeColor = !mrChangeColor&quot;&gt;ChangeColor&lt;/button&gt;
-     &lt;button @click=&quot;changeLength = !changeLength&quot;&gt;changeLength&lt;/button&gt;
-     &lt;div  v-bind:class=&quot;compClasses&quot;&gt;
-         &lt;span&gt;Hello&lt;/span&gt;
-     &lt;/div&gt;
- &lt;/div&gt;
+<li>html代码</li>
+</ol>
+<pre><code class="language-html">    &lt;div id=&quot;vue-css&quot;&gt;
+        &lt;h1&gt;动态绑定样式 两种方式&lt;/h1&gt;
+        &lt;h2&gt;示例1 属性绑定&lt;/h2&gt;
+        &lt;div @click=&quot;mrChangeColor = !mrChangeColor&quot; v-bind:class=&quot;&#123;changeColor:mrChangeColor&#125;&quot;&gt;
+            &lt;span&gt;Hello&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;h2&gt;示例2 计算属性绑定&lt;/h2&gt;
+        &lt;button @click=&quot;mrChangeColor = !mrChangeColor&quot;&gt;ChangeColor&lt;/button&gt;
+        &lt;button @click=&quot;changeLength = !changeLength&quot;&gt;changeLength&lt;/button&gt;
+        &lt;div  v-bind:class=&quot;compClasses&quot;&gt;
+            &lt;span&gt;Hello&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
 </code></pre>
-</li>
-<li>js代码<pre><code class="js">new Vue(&#123;
- el: &quot;#vue-css&quot;,
- data() &#123;
-     return &#123;
-         mrChangeColor: false,
-         changeLength: false,
-     &#125;
- &#125;,
- computed: &#123;
-     compClasses() &#123;
-         return &#123; changeColor: this.mrChangeColor, changeLength: this.changeLength &#125;
-     &#125;
- &#125;
+<ol start="2">
+<li>js代码</li>
+</ol>
+<pre><code class="language-js">new Vue(&#123;
+    el: &quot;#vue-css&quot;,
+    data() &#123;
+        return &#123;
+            mrChangeColor: false,
+            changeLength: false,
+        &#125;
+    &#125;,
+    computed: &#123;
+        compClasses() &#123;
+            return &#123; changeColor: this.mrChangeColor, changeLength: this.changeLength &#125;
+        &#125;
+    &#125;
 &#125;)
 </code></pre>
-</li>
-<li>css代码<pre><code class="css">#vue-css span &#123;
+<ol start="3">
+<li>css代码</li>
+</ol>
+<pre><code class="language-css">#vue-css span &#123;
   background: red;
   display: inline-block;
   padding: 10px;
@@ -1436,47 +1442,47 @@ new Vue(&#123;
   margin-left: 10px;
 &#125;
 </code></pre>
-</li>
-</ol>
 <hr>
 <h2 id="2-4、if和show指令"><a href="#2-4、if和show指令" class="headerlink" title="2.4、if和show指令"></a>2.4、if和show指令</h2><p><strong>if调试内容是一行注释，show调试内容是标签并且有属性display: none</strong></p>
 <ol>
-<li>示例<pre><code class="html">&lt;div id=&quot;vue-if&quot;&gt;
- &lt;h1&gt;v-if指令&lt;/h1&gt;
-     &lt;button @click=&quot;error = !error&quot;&gt;toggle&lt;/button&gt;
-     &lt;button @click=&quot;success = !success&quot;&gt;success&lt;/button&gt;
-     &lt;p v-if=&quot;error&quot;&gt;error:如果error=true，那么显示&lt;/p&gt;&lt;!-- 调试不显示标签内容，只是一行注释 --&gt;
-     &lt;p v-else-if=&quot;success&quot;&gt;success: 如果error=false,success=true则显示&lt;/p&gt;
-     &lt;p v-else&gt;如果error和success都为假，那么显示&lt;/p&gt;
-     &lt;h1&gt;v-show指令&lt;/h1&gt;
-     &lt;p v-show=&quot;error&quot;&gt;网络连接错误 404&lt;/p&gt;&lt;!-- 调试显示标签内容：display: none--&gt;
-     &lt;p v-show=&quot;success&quot;&gt;网络连接成功 200&lt;/p&gt;
+<li>示例</li>
+</ol>
+<pre><code class="language-html">&lt;div id=&quot;vue-if&quot;&gt;
+	&lt;h1&gt;v-if指令&lt;/h1&gt;
+        &lt;button @click=&quot;error = !error&quot;&gt;toggle&lt;/button&gt;
+        &lt;button @click=&quot;success = !success&quot;&gt;success&lt;/button&gt;
+        &lt;p v-if=&quot;error&quot;&gt;error:如果error=true，那么显示&lt;/p&gt;&lt;!-- 调试不显示标签内容，只是一行注释 --&gt;
+        &lt;p v-else-if=&quot;success&quot;&gt;success: 如果error=false,success=true则显示&lt;/p&gt;
+        &lt;p v-else&gt;如果error和success都为假，那么显示&lt;/p&gt;
+        &lt;h1&gt;v-show指令&lt;/h1&gt;
+        &lt;p v-show=&quot;error&quot;&gt;网络连接错误 404&lt;/p&gt;&lt;!-- 调试显示标签内容：display: none--&gt;
+        &lt;p v-show=&quot;success&quot;&gt;网络连接成功 200&lt;/p&gt;
 &lt;/div&gt;
 </code></pre>
-</li>
-</ol>
 <hr>
 <h2 id="2-5、v-for指令"><a href="#2-5、v-for指令" class="headerlink" title="2.5、v-for指令"></a>2.5、v-for指令</h2><p><strong>遍历时，如果不需要外出容器，可以使用template标签作为遍历对象</strong></p>
 <ol>
-<li>html代码<pre><code class="html">&lt;div id=&quot;vue-for&quot;
- &lt;template v-for=&quot;(character,index) in characters&quot;&gt;
-     &lt;h6&gt;index&lt;/h6&gt;
-     &lt;p&gt;character&lt;/p&gt;
- &lt;/template&gt;
+<li>html代码</li>
+</ol>
+<pre><code class="language-html">&lt;div id=&quot;vue-for&quot;
+	&lt;template v-for=&quot;(character,index) in characters&quot;&gt;
+		&lt;h6&gt;index&lt;/h6&gt;
+		&lt;p&gt;character&lt;/p&gt;
+	&lt;/template&gt;
 &lt;/div&gt;
 </code></pre>
-</li>
-<li>js代码<pre><code class="js">new Vue(&#123;
- el: &quot;#vue-for&quot;,
- data() &#123;
-     return &#123;
-         characters: [&quot;Vue&quot;, &quot;Java&quot;, &quot;MySQL&quot;, &quot;Linux&quot;],
-     &#125;
- &#125;,
+<ol start="2">
+<li>js代码</li>
+</ol>
+<pre><code class="language-js">new Vue(&#123;
+    el: &quot;#vue-for&quot;,
+    data() &#123;
+        return &#123;
+            characters: [&quot;Vue&quot;, &quot;Java&quot;, &quot;MySQL&quot;, &quot;Linux&quot;],
+        &#125;
+    &#125;,
 &#125;)
 </code></pre>
-</li>
-</ol>
 <hr>
 <h2 id="2-6、注册全局组件"><a href="#2-6、注册全局组件" class="headerlink" title="2.6、注册全局组件"></a>2.6、注册全局组件</h2><hr>
 <h2 id="2-7、fetch请求"><a href="#2-7、fetch请求" class="headerlink" title="2.7、fetch请求"></a>2.7、fetch请求</h2><hr>
@@ -1490,7 +1496,7 @@ new Vue(&#123;
 <h1 id="第四章-路由-axios"><a href="#第四章-路由-axios" class="headerlink" title="第四章 路由+axios"></a>第四章 路由+axios</h1><h1 id="饿了么app"><a href="#饿了么app" class="headerlink" title="饿了么app"></a>饿了么app</h1><h2 id="1-环境搭建"><a href="#1-环境搭建" class="headerlink" title="1.环境搭建"></a>1.环境搭建</h2><h3 id="2-项目创建步骤"><a href="#2-项目创建步骤" class="headerlink" title="2.项目创建步骤"></a>2.项目创建步骤</h3><ol>
 <li>在当前路径下创建一个项目</li>
 </ol>
-<pre><code class="bash"># vue create .
+<pre><code class="language-bash"># vue create .
 </code></pre>
 <ol start="2">
 <li>同意在当前文件夹下创建项目：y</li>
@@ -1503,12 +1509,12 @@ new Vue(&#123;
 <li>调整一下项目文件的命名和位置：参考4.1项目说明</li>
 <li>项目启动命令：</li>
 </ol>
-<pre><code class="bash">npm run serve
+<pre><code class="language-bash">npm run serve
 </code></pre>
 <h3 id="3-功能实现过程"><a href="#3-功能实现过程" class="headerlink" title="3.功能实现过程"></a>3.功能实现过程</h3><h4 id="3-1实现登陆模块"><a href="#3-1实现登陆模块" class="headerlink" title="3.1实现登陆模块"></a>3.1实现登陆模块</h4><ol>
 <li>创建 src&#x2F;views&#x2F;Login.vue, 代码如下所示</li>
 </ol>
-<pre><code class="vue">&lt;template&gt;
+<pre><code class="language-vue">&lt;template&gt;
   &lt;div class=&quot;login&quot;&gt;
     Login
   &lt;/div&gt;
@@ -1537,7 +1543,7 @@ export default &#123;
 <ol start="2">
 <li>设置当前路由 route.js 和 按需加载</li>
 </ol>
-<pre><code class="vue">&#123;
+<pre><code class="language-vue">&#123;
     path: &#39;/&#39;,
     name: &#39;Index&#39;,
     // component: Index
@@ -1552,7 +1558,7 @@ export default &#123;
 <ol start="3">
 <li>设置路由守卫，route.js</li>
 </ol>
-<pre><code class="vue">// 路由守卫
+<pre><code class="language-vue">// 路由守卫
 router.beforeEach((to, from, next) =&gt; &#123;
   const isLogin = localStorage.ele_login ? true : false;
   if (to.path == &#39;/login&#39;) &#123;
@@ -1567,7 +1573,7 @@ router.beforeEach((to, from, next) =&gt; &#123;
 export default router
 </code></pre>
 <p>4.导入logo到 assets中，在 login中使用</p>
-<pre><code class="Vue">&lt;template&gt;
+<pre><code class="language-Vue">&lt;template&gt;
   &lt;div class=&quot;login&quot;&gt;
     &lt;div class=&quot;logo&quot;&gt;
         &lt;img src=&quot;../assets/logo.jpeg&quot; alt=&quot;my logo image&quot;&gt;
@@ -1592,7 +1598,7 @@ export default router
 &lt;/style&gt;
 </code></pre>
 <p>5.input组件封装，创建 components&#x2F;InputGroup.vue</p>
-<pre><code class="vue">&lt;template&gt;
+<pre><code class="language-vue">&lt;template&gt;
   &lt;div class=&quot;text_group&quot;&gt;
     &lt;!-- 组件结构 --&gt;
 
@@ -1669,7 +1675,7 @@ export default &#123;
 <ol start="6">
 <li>使用组件，在login.vue 的 script引用组件,在components{}注册组件，创建组件需要的data</li>
 </ol>
-<pre><code class="vue">&lt;template&gt;
+<pre><code class="language-vue">&lt;template&gt;
   &lt;div class=&quot;login&quot;&gt;
     &lt;div class=&quot;logo&quot;&gt;
         &lt;img src=&quot;../assets/logo.jpeg&quot; alt=&quot;my logo image&quot;&gt;
@@ -1755,7 +1761,7 @@ export default &#123;
 <li>新建 public&#x2F;css&#x2F;reset.css, 拷贝 reset.css的代码过来，可以上网拷贝。</li>
 <li>修改 src&#x2F;main.js 内容为</li>
 </ol>
-<pre><code class="Vue">import Vue from &#39;vue&#39;
+<pre><code class="language-Vue">import Vue from &#39;vue&#39;
 import App from &#39;./App.vue&#39;
 import router from &#39;./router.js&#39;
 import store from &#39;./store.js&#39;
@@ -1771,7 +1777,7 @@ new Vue(&#123;
 <ol start="7">
 <li>修改 router.js 的内容为</li>
 </ol>
-<pre><code class="Vue">import Vue from &#39;vue&#39;
+<pre><code class="language-Vue">import Vue from &#39;vue&#39;
 import VueRouter from &#39;vue-router&#39;
 import Index from &#39;./views/Index.vue&#39;
 
@@ -1796,7 +1802,7 @@ export default router
 <ol start="8">
 <li>src&#x2F;App.vue里面全部内容。</li>
 </ol>
-<pre><code class="Vue">&lt;template&gt;
+<pre><code class="language-Vue">&lt;template&gt;
   &lt;div id=&quot;app&quot;&gt;
     &lt;router-view/&gt;
   &lt;/div&gt;
@@ -1820,7 +1826,7 @@ export default &#123;
 <ol start="9">
 <li>重命名 src&#x2F;views&#x2F;Home.vue为Index.vue,修改其内容为</li>
 </ol>
-<pre><code class="Vue">&lt;template&gt;
+<pre><code class="language-Vue">&lt;template&gt;
   &lt;div class=&quot;index&quot;&gt;
     主页
   &lt;/div&gt;
@@ -1836,7 +1842,7 @@ export default &#123;
 <ol start="10">
 <li>在 public&#x2F;index.html 引用 .&#x2F;css&#x2F;reset.css和修改部分内容</li>
 </ol>
-<pre><code class="html">&lt;link rel=&quot;stylesheet&quot; href=&quot;./css/reset.css&quot;&gt;
+<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;./css/reset.css&quot;&gt;
     &lt;style&gt;
       html,body &#123;
         width: 100%;

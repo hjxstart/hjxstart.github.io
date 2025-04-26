@@ -250,7 +250,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="73">
-<input type="hidden" id="yelog_site_word_count" value="114.1k">
+<input type="hidden" id="yelog_site_word_count" value="114.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1148,33 +1148,33 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="虚拟机安装"><a href="#虚拟机安装" class="headerlink" title="虚拟机安装"></a>虚拟机安装</h2><h3 id="1-分区"><a href="#1-分区" class="headerlink" title="1.分区"></a>1.分区</h3><p>&#x2F;blos boot 2M<br>&#x2F;boot 1G<br>&#x2F; 10G 修改为固定<br>&#x2F;home 5G<br>swap 1G</p>
-<h2 id="最小安装配置"><a href="#最小安装配置" class="headerlink" title="最小安装配置"></a>最小安装配置</h2><h3 id="1-安装-net-tools"><a href="#1-安装-net-tools" class="headerlink" title="1.安装 net-tools"></a>1.安装 net-tools</h3><pre><code class="shell">yum install net-tools
+<h2 id="最小安装配置"><a href="#最小安装配置" class="headerlink" title="最小安装配置"></a>最小安装配置</h2><h3 id="1-安装-net-tools"><a href="#1-安装-net-tools" class="headerlink" title="1.安装 net-tools"></a>1.安装 net-tools</h3><pre><code class="language-shell">yum install net-tools
 y
 y
 ifconfig
 </code></pre>
-<h3 id="2-安装-openssh、openssl-并启动"><a href="#2-安装-openssh、openssl-并启动" class="headerlink" title="2.安装 openssh、openssl 并启动"></a>2.安装 openssh、openssl 并启动</h3><pre><code class="shell">yum install openssh*
+<h3 id="2-安装-openssh、openssl-并启动"><a href="#2-安装-openssh、openssl-并启动" class="headerlink" title="2.安装 openssh、openssl 并启动"></a>2.安装 openssh、openssl 并启动</h3><pre><code class="language-shell">yum install openssh*
 y
 yum -y install openssl openssl-devel patch
 systemctl start sshd
 </code></pre>
-<h3 id="3-安装-vim"><a href="#3-安装-vim" class="headerlink" title="3.安装 vim"></a>3.安装 vim</h3><pre><code class="shell">yum -y install vim
+<h3 id="3-安装-vim"><a href="#3-安装-vim" class="headerlink" title="3.安装 vim"></a>3.安装 vim</h3><pre><code class="language-shell">yum -y install vim
 </code></pre>
-<h3 id="4-安装-wget"><a href="#4-安装-wget" class="headerlink" title="4.安装 wget"></a>4.安装 wget</h3><pre><code class="shell">yum -y install wget
+<h3 id="4-安装-wget"><a href="#4-安装-wget" class="headerlink" title="4.安装 wget"></a>4.安装 wget</h3><pre><code class="language-shell">yum -y install wget
 </code></pre>
-<h3 id="5-安装-gcc-编译套件"><a href="#5-安装-gcc-编译套件" class="headerlink" title="5.安装 gcc 编译套件"></a>5.安装 gcc 编译套件</h3><pre><code class="shell">yum install gcc
+<h3 id="5-安装-gcc-编译套件"><a href="#5-安装-gcc-编译套件" class="headerlink" title="5.安装 gcc 编译套件"></a>5.安装 gcc 编译套件</h3><pre><code class="language-shell">yum install gcc
 y
 </code></pre>
-<h2 id="系统优化"><a href="#系统优化" class="headerlink" title="系统优化"></a>系统优化</h2><h3 id="1-关闭-selinux"><a href="#1-关闭-selinux" class="headerlink" title="1.关闭 selinux"></a>1.关闭 selinux</h3><pre><code class="bash">sed -i &#39;s/=enforcing/=disabled/&#39; /etc/selinux/config
+<h2 id="系统优化"><a href="#系统优化" class="headerlink" title="系统优化"></a>系统优化</h2><h3 id="1-关闭-selinux"><a href="#1-关闭-selinux" class="headerlink" title="1.关闭 selinux"></a>1.关闭 selinux</h3><pre><code class="language-bash">sed -i &#39;s/=enforcing/=disabled/&#39; /etc/selinux/config
 setenforce 0
 </code></pre>
 <hr>
-<h3 id="2-更改为阿里-yum-源"><a href="#2-更改为阿里-yum-源" class="headerlink" title="2.更改为阿里 yum 源"></a>2.更改为阿里 yum 源</h3><pre><code class="bash">mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+<h3 id="2-更改为阿里-yum-源"><a href="#2-更改为阿里-yum-源" class="headerlink" title="2.更改为阿里 yum 源"></a>2.更改为阿里 yum 源</h3><pre><code class="language-bash">mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
 wget -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo
 yum makecache
 </code></pre>
 <hr>
-<h3 id="3-优化-ssh-远程登录配置"><a href="#3-优化-ssh-远程登录配置" class="headerlink" title="3.优化 ssh 远程登录配置"></a>3.优化 ssh 远程登录配置</h3><pre><code class="bash">#备份/etc/ssh/sshd_conf
+<h3 id="3-优化-ssh-远程登录配置"><a href="#3-优化-ssh-远程登录配置" class="headerlink" title="3.优化 ssh 远程登录配置"></a>3.优化 ssh 远程登录配置</h3><pre><code class="language-bash">#备份/etc/ssh/sshd_conf
 cp /etc/ssh/sshd_config&#123;,.`date +%F`.bak&#125;
 #不允许基于GSSAPI的用户认证
 sed -i &#39;s/^GSSAPIAuthentication yes$/GSSAPIAuthentication no/&#39; /etc/ssh/sshd_config
@@ -1182,7 +1182,7 @@ sed -i &#39;s/^GSSAPIAuthentication yes$/GSSAPIAuthentication no/&#39; /etc/ssh/
 sed -i &#39;s/#UseDNS yes/UseDNS no/&#39; /etc/ssh/sshd_config
 systemctl restart sshd
 </code></pre>
-<h3 id="4-历史记录数及登录超时环境变量设置"><a href="#4-历史记录数及登录超时环境变量设置" class="headerlink" title="4.历史记录数及登录超时环境变量设置"></a>4.历史记录数及登录超时环境变量设置</h3><pre><code class="bash"># 设置闲置超时时间为300s
+<h3 id="4-历史记录数及登录超时环境变量设置"><a href="#4-历史记录数及登录超时环境变量设置" class="headerlink" title="4.历史记录数及登录超时环境变量设置"></a>4.历史记录数及登录超时环境变量设置</h3><pre><code class="language-bash"># 设置闲置超时时间为300s
 echo &#39;export TMOUT=300&#39; &gt;&gt;/etc/profile
 # 设置历史记录文件的命令数量为100
 echo &#39;export HISTFILESIZE=100&#39; &gt;&gt;/etc/profile
@@ -1195,7 +1195,7 @@ source /etc/profile
 tail -4 /etc/profile
 </code></pre>
 <hr>
-<h3 id="5-调整-linux-描述符"><a href="#5-调整-linux-描述符" class="headerlink" title="5.调整 linux 描述符"></a>5.调整 linux 描述符</h3><pre><code class="bash">#文件描述符是由无符号整数表示的句柄,进程使用它来标识打开的文件.文件描述符与包括相关信息(如文件的打开模式,文件的位置类型,文件的初始类型等)的文件对象相关联,这些信息被称作文件的上下文.文件描述符的有效范围是0到OPEN_MAX.
+<h3 id="5-调整-linux-描述符"><a href="#5-调整-linux-描述符" class="headerlink" title="5.调整 linux 描述符"></a>5.调整 linux 描述符</h3><pre><code class="language-bash">#文件描述符是由无符号整数表示的句柄,进程使用它来标识打开的文件.文件描述符与包括相关信息(如文件的打开模式,文件的位置类型,文件的初始类型等)的文件对象相关联,这些信息被称作文件的上下文.文件描述符的有效范围是0到OPEN_MAX.
 #对于内核而言,所有打开的文件都是通过文件的描述符引用的.当打开一个现有文件或创建一个新文件时,内核向进程返回一个文件描述符,当读或写一个文件时,使用open或create返回的文件描述符标识该文件,并将其作为参数传递给read或write.
 # 查看系统文件描述符设置的情况可以使用下面的命令,文件描述符大小默认是1024.
 ulimit -n
@@ -1210,7 +1210,7 @@ echo &quot; ulimit -HSn 65535&quot; &gt;&gt;/etc/rc.d/rc.local
 echo &quot; ulimit -s 65535&quot; &gt;&gt;/etc/rc.d/rc.local
 </code></pre>
 <hr>
-<h3 id="6-定时清理邮件服务临时目录垃圾文件"><a href="#6-定时清理邮件服务临时目录垃圾文件" class="headerlink" title="6.定时清理邮件服务临时目录垃圾文件"></a>6.定时清理邮件服务临时目录垃圾文件</h3><pre><code class="bash"># centos7默认是安装了Postfix邮件服务的,因此邮件临时存放地点的路径为/var/spool/postfix/maildrop,为了防止目录被垃圾文件填满,导致系统额inode数量不够用,需要定期清理.
+<h3 id="6-定时清理邮件服务临时目录垃圾文件"><a href="#6-定时清理邮件服务临时目录垃圾文件" class="headerlink" title="6.定时清理邮件服务临时目录垃圾文件"></a>6.定时清理邮件服务临时目录垃圾文件</h3><pre><code class="language-bash"># centos7默认是安装了Postfix邮件服务的,因此邮件临时存放地点的路径为/var/spool/postfix/maildrop,为了防止目录被垃圾文件填满,导致系统额inode数量不够用,需要定期清理.
 # 定时清理的方法为:将清理命令写成脚本,然后做成定时任务,每日凌晨0点执行一次.
 # 创建存放脚本的目录
 [ -d /server/scripts/shell ] &amp;&amp; echo &quot;directory already exists.&quot; || mkdir /server/scripts/shell -p
@@ -1225,7 +1225,7 @@ crontab -l
 </code></pre>
 <hr>
 <h3 id="7-内核优化"><a href="#7-内核优化" class="headerlink" title="7.内核优化"></a>7.内核优化</h3><p>Linux 服务器内核参数优化,主要是指在 Linux 系统中针对业务服务应用而进行的系统内核参数调整,优化并无一定的标准.下面是生产环境下 Linux 常见的内核优化:</p>
-<pre><code class="bash">cat &gt;&gt;/etc/sysctl.conf&lt;&lt;EOF
+<pre><code class="language-bash">cat &gt;&gt;/etc/sysctl.conf&lt;&lt;EOF
 #kernel_flag
 #关闭ipv6
 net.ipv6.conf.all.disable_ipv6 = 1
@@ -1299,15 +1299,15 @@ EOF
 /sbin/sysctl -p
 </code></pre>
 <hr>
-<h3 id="8-安装常用软件"><a href="#8-安装常用软件" class="headerlink" title="8.安装常用软件"></a>8.安装常用软件</h3><pre><code class="bash">yum install lrzsz ntpdate sysstat net-tools wget vim bash-completion dos2unix -y
+<h3 id="8-安装常用软件"><a href="#8-安装常用软件" class="headerlink" title="8.安装常用软件"></a>8.安装常用软件</h3><pre><code class="language-bash">yum install lrzsz ntpdate sysstat net-tools wget vim bash-completion dos2unix -y
 </code></pre>
 <hr>
-<h3 id="9-更新系统到最新"><a href="#9-更新系统到最新" class="headerlink" title="9.更新系统到最新"></a>9.更新系统到最新</h3><pre><code class="bash"># 更新补丁并升级系统版本
+<h3 id="9-更新系统到最新"><a href="#9-更新系统到最新" class="headerlink" title="9.更新系统到最新"></a>9.更新系统到最新</h3><pre><code class="language-bash"># 更新补丁并升级系统版本
 yum update  -y
 # 只更新安全补丁，不升级系统版本
 yum --security check-update    #检查是否有安全补丁
 </code></pre>
-<h3 id="10-电脑不休眠"><a href="#10-电脑不休眠" class="headerlink" title="10.电脑不休眠"></a>10.电脑不休眠</h3><pre><code class="bash">vim  /etc/systemd/logind.conf
+<h3 id="10-电脑不休眠"><a href="#10-电脑不休眠" class="headerlink" title="10.电脑不休眠"></a>10.电脑不休眠</h3><pre><code class="language-bash">vim  /etc/systemd/logind.conf
 # 修改为仅锁屏
 HandleLidSwitch=lock
 # 必须要使用如下命令才能使上面的配置生效
@@ -1320,7 +1320,7 @@ systemctl restart systemd-logind
 <blockquote>
 <p>关键字有：[u, g, o, a][+, -][r, w, x]</p>
 </blockquote>
-<pre><code class="bash">chmod a+w filename.txt
+<pre><code class="language-bash">chmod a+w filename.txt
 </code></pre>
 <ol start="2">
 <li>数字修改权限</li>
@@ -1328,23 +1328,23 @@ systemctl restart systemd-logind
 <blockquote>
 <p>(r&#x3D;0, w&#x3D;1, x&#x3D;0) &#x3D;&gt; (010&#x3D;2)</p>
 </blockquote>
-<pre><code class="bash">chmod 222 filename.txt
+<pre><code class="language-bash">chmod 222 filename.txt
 </code></pre>
 <hr>
 <h3 id="2-修改用户和组"><a href="#2-修改用户和组" class="headerlink" title="2.修改用户和组"></a>2.修改用户和组</h3><ol>
 <li>修改所属用户：chown [-R] 目标用户 文件或文件夹</li>
 </ol>
-<pre><code class="bash">chown username filename.txt
+<pre><code class="language-bash">chown username filename.txt
 </code></pre>
 <ol start="2">
 <li>修改所属组：chown [-R] 目标组 文件或文件夹</li>
 </ol>
-<pre><code class="bash">chgrp groupname filename.txt
+<pre><code class="language-bash">chgrp groupname filename.txt
 </code></pre>
 <ol start="3">
 <li>同时修改所属用户和组：chown [-R] 目标用户 目标组 文件或文件夹</li>
 </ol>
-<pre><code class="bash">chown username:groupname filename.txt
+<pre><code class="language-bash">chown username:groupname filename.txt
 # 递归修改，目录包含的子文件或目录也修改
 chown -R username:groupname filename.txt
 </code></pre>
@@ -1359,47 +1359,47 @@ chown -R username:groupname filename.txt
 <h3 id="5-文件内容查阅"><a href="#5-文件内容查阅" class="headerlink" title="5.文件内容查阅"></a>5.文件内容查阅</h3><ol>
 <li>cat: 由第一行开始显示文件内容</li>
 </ol>
-<pre><code class="bash">cat filename
+<pre><code class="language-bash">cat filename
 </code></pre>
 <ol start="2">
 <li>tac: 从最后一行开始显示，可以看出 tac 是 cat 的倒置显示</li>
 </ol>
-<pre><code class="bash">tac filename
+<pre><code class="language-bash">tac filename
 </code></pre>
 <ol start="3">
 <li>nl: 显示的时候，顺道输出行号！</li>
 </ol>
-<pre><code class="bash">nl filename
+<pre><code class="language-bash">nl filename
 # 等同于
 cat -n filename
 </code></pre>
 <ol start="4">
 <li>more: 一页一页的显示文件内容。空格下一页，q 退出。</li>
 </ol>
-<pre><code class="bash">more filename
+<pre><code class="language-bash">more filename
 </code></pre>
 <ol start="5">
 <li>less: 与 more 类似，但是比 more 更好的是，他可以通过方向键往前翻页！</li>
 </ol>
-<pre><code class="bash">less filename
+<pre><code class="language-bash">less filename
 </code></pre>
 <ol start="6">
 <li>head: 只看头几行</li>
 </ol>
-<pre><code class="bash">head filename
+<pre><code class="language-bash">head filename
 head -3 filename
 </code></pre>
 <ol start="7">
 <li>tail: 只看尾巴几行</li>
 </ol>
-<pre><code class="bash">tail filename
+<pre><code class="language-bash">tail filename
 # 查看日志是，只查看后几行并实时更新
 tail -f filename.log
 </code></pre>
 <ol start="8">
 <li>od: 以二进位的方式读取文件内容（string）</li>
 </ol>
-<pre><code class="bash">od binfilename
+<pre><code class="language-bash">od binfilename
 string binfilename
 </code></pre>
 <hr>
@@ -1407,7 +1407,7 @@ string binfilename
 <li>文件默认权限：umask,使用默认权限进行过来</li>
 </ol>
 <p>默认文件权限 666: 110 110 110<br>umask 值为 0 022: 000 010 010<br>默认文件权限 &amp; umask 值 &#x3D; 过滤后的权限<br>过滤文件权限 644: 110 100 100<br>一开始是文件权限(755);默认创建文件夹的权限(644)<br>默认创建文件的权限(666);默认创建文件夹的权限(777)</p>
-<pre><code class="bash">umask
+<pre><code class="language-bash">umask
 #0022 # 默认0(标志) 0(谁都不过滤) 2(过滤组的w权限) 2(过滤其他用户的w权限)
 umask 000 # 修改 umask 值
 umask -S
@@ -1417,82 +1417,82 @@ umask -S
 <li>文件隐藏权限</li>
 </ol>
 <p>文件的 i 权限(不能修改)和 a 权限(只能添加)<br>修改隐藏权限: chattr [+-] [attr] 文件或文件夹</p>
-<pre><code class="bash">chattr +a dir # dir目录下只能添加文件，不能删除文件
+<pre><code class="language-bash">chattr +a dir # dir目录下只能添加文件，不能删除文件
 chattr +i dir # dir目录下不能操作文件
 </code></pre>
 <hr>
 <h3 id="7-文件类型查看"><a href="#7-文件类型查看" class="headerlink" title="7.文件类型查看"></a>7.文件类型查看</h3><ol>
 <li>file 命令</li>
 </ol>
-<pre><code class="bash">file /bin/touch
+<pre><code class="language-bash">file /bin/touch
 file /usr/bin/passwd
 file /var/lib/mlocate/mlocate.db
 </code></pre>
 <hr>
-<h3 id="8-用户相关命令："><a href="#8-用户相关命令：" class="headerlink" title="8.用户相关命令："></a>8.用户相关命令：</h3><pre><code class="bash">id    # 显示当前用户信息
-passwd    # 修改当前用户的密码
-groups    # 查看所属组
+<h3 id="8-用户相关命令："><a href="#8-用户相关命令：" class="headerlink" title="8.用户相关命令："></a>8.用户相关命令：</h3><pre><code class="language-bash">id	# 显示当前用户信息
+passwd	# 修改当前用户的密码
+groups	# 查看所属组
 
 #添加用户：useradd [options] username
-#选项：    -g    主组     指定用户所属的用户组
-#    -G    附属组    指定用户所属的附加组
-#    -r    等效于--system 表示创建一个系统账号
+#选项：	-g	主组 	指定用户所属的用户组
+#	-G	附属组	指定用户所属的附加组
+#	-r	等效于--system 表示创建一个系统账号
 #注：默认不会为系统用户创建对应的主目录
 
 #锁定或解锁用户：passwd [options] [username]
 #如果只提供用户名，则修改当前用户的密码
-#选项：    -l    锁定用户
-#    -u    解锁用户
-#    -d    设置用户无密码，用户下次登陆时系统不再询问密码。
+#选项：	-l	锁定用户
+#	-u	解锁用户
+#	-d	设置用户无密码，用户下次登陆时系统不再询问密码。
 #非root用户临时使用root权限：sudo
 #注：有时需要修改 vim /etc/sudoers, 把用户添加进去才可以
 </code></pre>
 <hr>
-<h3 id="9-组相关命令"><a href="#9-组相关命令" class="headerlink" title="9.组相关命令"></a>9.组相关命令</h3><pre><code class="bash"># 1.添加组：groupadd groupname
+<h3 id="9-组相关命令"><a href="#9-组相关命令" class="headerlink" title="9.组相关命令"></a>9.组相关命令</h3><pre><code class="language-bash"># 1.添加组：groupadd groupname
 groupadd javadevgroup
 # 2.删除组：groupdel [options] groupname
 groupdel javadevgroup
 # 注：-r 同时删除该用户的主目录
 # 3.修改用户所属组：usermod [options] username
 usermod -G javadevgroup hjx
-# 注：-g 主组    -G 附属组
+# 注：-g 主组	-G 附属组
 </code></pre>
 <hr>
 <h3 id="10-指令与档案的搜寻"><a href="#10-指令与档案的搜寻" class="headerlink" title="10.指令与档案的搜寻"></a>10.指令与档案的搜寻</h3><ol>
 <li>查找指令：which 命令</li>
 </ol>
-<pre><code class="bash"># 查找文件：find [查找位置] [查找参数]
+<pre><code class="language-bash"># 查找文件：find [查找位置] [查找参数]
 # 示例：find . -name &quot;s*&quot; 按文件名查找，可使用通配符
 # 选项：
-#    -name 查找文件/文件夹名称
-#    -iname 忽略大小写的名称查找
-#    -user    查找所属用户的文件
-#    -group 查找所属组的文件
-#    -or 或条件
+#	-name 查找文件/文件夹名称
+#	-iname 忽略大小写的名称查找
+#	-user    查找所属用户的文件
+#	-group 查找所属组的文件
+#	-or 或条件
 which ls
 </code></pre>
 <ol start="2">
 <li>查找内容：grep（全称 Global Regular Expression Pring）</li>
 </ol>
-<pre><code class="bash"># grep [option] pattern file
+<pre><code class="language-bash"># grep [option] pattern file
 # 基于正则表达式搜索文本，并吧匹配的行显示出来。如果正则表达式中包括空格，则必须使# 用引号将正则表达式引起来。
-# 选项:    -n    #显示行号
-#    -i        #忽略大小写
-#    -w       # 单词完整匹配
+# 选项:	-n    #显示行号
+#	-i        #忽略大小写
+#	-w       # 单词完整匹配
 grep &#39;linux&#39; test.txt #从文件中查找关键词
 grep ^u test.txt # 找出以u开头的行
 grep hat$   test.txt # 找出以hat结尾的行
 </code></pre>
 <hr>
-<h3 id="11-Linux-常见的压缩与打包指令"><a href="#11-Linux-常见的压缩与打包指令" class="headerlink" title="11.Linux 常见的压缩与打包指令"></a>11.Linux 常见的压缩与打包指令</h3><pre><code class="bash"># 1. zip压缩（归档）：
-#    zip [目标压缩文件名] [源文件名]
+<h3 id="11-Linux-常见的压缩与打包指令"><a href="#11-Linux-常见的压缩与打包指令" class="headerlink" title="11.Linux 常见的压缩与打包指令"></a>11.Linux 常见的压缩与打包指令</h3><pre><code class="language-bash"># 1. zip压缩（归档）：
+#	zip [目标压缩文件名] [源文件名]
 zip test1to3 test1.txt test2.txt test3.txt
-#    unzip [压缩文件名]
+#	unzip [压缩文件名]
 unzip testto3.zip
 # 2. gzip压缩 (压缩)：
-#    gzip [file-list] # 压缩后会删除原始文件，压缩后的文件后缀为.gz
+#	gzip [file-list] # 压缩后会删除原始文件，压缩后的文件后缀为.gz
 gzip file1 file2
-#    gzip -d [zip-file-list] # 解压缩文件
+#	gzip -d [zip-file-list] # 解压缩文件
 gzip -d file.gz
 # 3. tar (归档)
 tar -cvf filename.tar ./dir1 # 将dir1目录归档
@@ -1501,7 +1501,7 @@ tar -cvzf filename.tar.gz ./dir1 #归档的同时使用gzip压缩
 tar -xvzf filename.tar.gz # 解压
 </code></pre>
 <hr>
-<h3 id="12-Linux-安装软件的方式"><a href="#12-Linux-安装软件的方式" class="headerlink" title="12.Linux 安装软件的方式"></a>12.Linux 安装软件的方式</h3><pre><code class="bash"># 二进制文件的安装，常用于归档的编译好的文件压缩包。（XXX.tar 或者 XXX.tar.gz）
+<h3 id="12-Linux-安装软件的方式"><a href="#12-Linux-安装软件的方式" class="headerlink" title="12.Linux 安装软件的方式"></a>12.Linux 安装软件的方式</h3><pre><code class="language-bash"># 二进制文件的安装，常用于归档的编译好的文件压缩包。（XXX.tar 或者 XXX.tar.gz）
 # 1. rmp文件安装
 rpm(Red-Hat Package Manager)红帽的一种安装包方式
 rpm -qa | grep [keywords] # 查询是否已经安装某个应用程序
@@ -1516,7 +1516,7 @@ yum install software-name # 安装软件包
 yum remove software-name # 卸载软件包
 </code></pre>
 <hr>
-<h3 id="13-安装-JDK8-和-Tomcat8"><a href="#13-安装-JDK8-和-Tomcat8" class="headerlink" title="13.安装 JDK8 和 Tomcat8"></a>13.安装 JDK8 和 Tomcat8</h3><pre><code class="bash"># 1.安装JDK8
+<h3 id="13-安装-JDK8-和-Tomcat8"><a href="#13-安装-JDK8-和-Tomcat8" class="headerlink" title="13.安装 JDK8 和 Tomcat8"></a>13.安装 JDK8 和 Tomcat8</h3><pre><code class="language-bash"># 1.安装JDK8
 # 上传文件到 /opt 下，并解压，修改解压文件名称为 jkd8，
 # 再到/etc/profile中添加环境变量PATH
 export PATH USER LOGNAME MAIL HOSTNAME HISTSIZE HISTCONTROL
@@ -1543,7 +1543,7 @@ DNS1=180.76.76.76
 DNS2=114.114.114.114
 </code></pre>
 <hr>
-<h3 id="14-安装-MySQL8"><a href="#14-安装-MySQL8" class="headerlink" title="14.安装 MySQL8"></a>14.安装 MySQL8</h3><pre><code class="bash">rpm -qa | grep mysql # 查看老版本mysql
+<h3 id="14-安装-MySQL8"><a href="#14-安装-MySQL8" class="headerlink" title="14.安装 MySQL8"></a>14.安装 MySQL8</h3><pre><code class="language-bash">rpm -qa | grep mysql # 查看老版本mysql
 rpm -e --nodeps mysqll-XXXX（一个一个）# 删除老版本mysql
 rm -rf /usr/share/mysql # 删除mysql的文件
 rm -rf /var/lib/mysql # 删除mysql文件
@@ -1581,7 +1581,7 @@ service mysqld start
 <li>前提:系统开启 atd 服务</li>
 </ol>
 </blockquote>
-<pre><code class="shell">yum install at
+<pre><code class="language-shell">yum install at
 # 开启服务
 systemctl start atd.service
 # 开机自启动
@@ -1590,7 +1590,7 @@ systemctl enable atd.service
 systemctl status atd
 </code></pre>
 <h3 id="2-at-简单使用"><a href="#2-at-简单使用" class="headerlink" title="2.at 简单使用"></a>2.at 简单使用</h3><p>定义定时任务 1</p>
-<pre><code class="shell"># 设置当前用户的一次性任务命令
+<pre><code class="language-shell"># 设置当前用户的一次性任务命令
 at 23:30
 # 定义定时任务要执行的命令
 systemctl restart httpd
@@ -1599,13 +1599,13 @@ systemctl restart httpd
 <p><code>注意:</code> 一次性的计划任务使用 ctr+D 来结束提交</p>
 </blockquote>
 <p>定义定时任务 2</p>
-<pre><code class="bash">echo &quot;systemctl restart httpd&quot; | at 23:30
+<pre><code class="language-bash">echo &quot;systemctl restart httpd&quot; | at 23:30
 </code></pre>
 <p>查看定时任务</p>
-<pre><code class="shell">at -l
+<pre><code class="language-shell">at -l
 </code></pre>
 <p>删除编号为 2 的定时任务</p>
-<pre><code class="shell">atrm 2
+<pre><code class="language-shell">atrm 2
 </code></pre>
 <blockquote>
 <p>使用帮助： <code>at --help</code> 或者 <code>man at</code></p>
@@ -1634,7 +1634,7 @@ systemctl restart httpd
 </ol>
 </blockquote>
 <p>示例</p>
-<pre><code class="shell"># 注释格式who,when,why?
+<pre><code class="language-shell"># 注释格式who,when,why?
 # 每周1，周3，周五的3:25分
 25 3 * * 1,3,5 command
 # 每周工作日(周一至周五)1:00
@@ -1664,7 +1664,7 @@ systemctl restart httpd
 <ol start="2">
 <li>文件&#x2F;etc&#x2F;crontab</li>
 </ol>
-<pre><code class="shell"># For details see man 4 crontabs
+<pre><code class="language-shell"># For details see man 4 crontabs
 # Example of job definition:
 # .---------------- minute (0 - 59)
 # | .------------- hour (0 - 23)
@@ -1687,7 +1687,7 @@ systemctl restart httpd
 <ol start="2">
 <li>示例</li>
 </ol>
-<pre><code class="bash"># 每月1、10、22日的4:45重启network服务
+<pre><code class="language-bash"># 每月1、10、22日的4:45重启network服务
 45 4 1,10,22 * * systemctl restart network
 45 4 1,10,22 * * /usr/bin/systemctl restart network
 
@@ -1724,7 +1724,7 @@ systemctl restart httpd
 <li>每两小时取出当前系统&#x2F;proc&#x2F;meminfo 文件中以 S 或 M 开 头的行信息追加至&#x2F;tmp&#x2F;meminfo.txt 文件中。</li>
 </ol>
 </blockquote>
-<pre><code class="shell"># 1.设置一次性计划任务在18:00时关闭系统，并查看任务 信息。
+<pre><code class="language-shell"># 1.设置一次性计划任务在18:00时关闭系统，并查看任务 信息。
 at 18:00
 systemctl poweroff
 at -l
@@ -1775,7 +1775,7 @@ at -l
 <li><code>事件产生的时间</code>,;<code>发生事件的服务器的主机名</code>;<code>产生事件的服务名或程序名</code>;<code>事件的具体信息。</code></li>
 </ol>
 </blockquote>
-<pre><code class="shell">tail -2 /var/log/messages
+<pre><code class="language-shell">tail -2 /var/log/messages
 Jun  9 10:11:03 localhost dbus[6555]: [system] Activating service name=&#39;org.freedesktop.problems&#39; (using servicehelper)
 Jun  9 10:11:03 localhost dbus[6555]: [system] Successfully activated service &#39;org.freedesktop.problems&#39;
 </code></pre>
@@ -1790,7 +1790,7 @@ Jun  9 10:11:03 localhost dbus[6555]: [system] Successfully activated service &#
 <li>日志记录位置：文件，远程主机(tcp@@IP:514, udp@IP)需要在线，并用户对等传输(root-&gt;root)</li>
 </ol>
 </blockquote>
-<pre><code class="shell">服务名称[连接符号]日志等级 日志记录位置
+<pre><code class="language-shell">服务名称[连接符号]日志等级 日志记录位置
 authpriv.* /var/log/secure
 认证相关服务.所有日志等级 记录在/var/log/secure 日志中
 </code></pre>
@@ -1798,17 +1798,17 @@ authpriv.* /var/log/secure
 <li>日志服务 rsyslogd</li>
 </ol>
 <p>存放日志的服务器（开启接受功能）:192.168.17.130</p>
-<pre><code class="shell"># 编辑配置文件
+<pre><code class="language-shell"># 编辑配置文件
 vim /etc/rsyslog.conf
 </code></pre>
-<pre><code class="shell"># Provides UDP syslog reception 开启UDP传输
+<pre><code class="language-shell"># Provides UDP syslog reception 开启UDP传输
 $ModLoad imudp
 $UDPServerRun 514
 # Provides TCP syslog reception 开启TCP传输
 $ModLoad imtcp
 $InputTCPServerRun 514
 </code></pre>
-<pre><code class="shell"># 重启服务
+<pre><code class="language-shell"># 重启服务
 systemctl restart rsyslog
 # 查看514端口是否在监听
 netstat -tnlup | grep :514
@@ -1816,7 +1816,7 @@ netstat -tnlup | grep :514
 tail /var/log/maillog -f
 </code></pre>
 <p>产生日志服务器（发送日志）:192.168.17.133</p>
-<pre><code class="shell"># 默认端口为514
+<pre><code class="language-shell"># 默认端口为514
 echo &#39;mail.info @192.168.17.130:514&#39;&gt;&gt; /etc/rsyslog.conf
 # 测试
 [root@localhost ~]# systemctl restart rsyslog # 重启服务
@@ -1827,45 +1827,45 @@ echo &#39;mail.info @192.168.17.130:514&#39;&gt;&gt; /etc/rsyslog.conf
 <li>作业</li>
 </ol>
 <p>扩展：集中日志管理工具 elk, 有收集，分析，展示日志功能，并支持分布式</p>
-<pre><code class="shell">1.将authpriv设备日志记录到 /var/log/auth.log
-    1).修改日志文件位置
-    # vim /etc/rsyslog.conf
-    #authpriv.* /var/log/secure
-    authpriv.* /var/log/auth.log
-    2).重启程序，触发日志生成
-    # systemctl restart rsyslog.service
-    # ll /var/log/auth.log
+<pre><code class="language-shell">1.将authpriv设备日志记录到 /var/log/auth.log
+	1).修改日志文件位置
+	# vim /etc/rsyslog.conf
+	#authpriv.* /var/log/secure
+	authpriv.* /var/log/auth.log
+	2).重启程序，触发日志生成
+	# systemctl restart rsyslog.service
+	# ll /var/log/auth.log
 2.改变应用程序sshd的日志设备为local5,并定义lcoal5设备日志记录到/var/log/local5.local。
-    1).设置ssh程序的日志设备为自定义设备。
-    # vim /etc/ssh/sshd_config
-    #SyslogFacility AUTHPRIV
-    SyslogFacility FOCAL5
-    2).设置自定义设备日志文件存放位置。
-    # vim /etc/rsyslog.conf
-    local5.* /var/log/local5.local
-    3).重启失效
-    # systemctl restart ssh // 重启sshd程序
-    # systemctl restart rsyslog // 重启日志
-    4).尝试登录，触发日志。
-    5).观察日志。理解自定义日志设备。
+	1).设置ssh程序的日志设备为自定义设备。
+	# vim /etc/ssh/sshd_config
+	#SyslogFacility AUTHPRIV
+	SyslogFacility FOCAL5
+	2).设置自定义设备日志文件存放位置。
+	# vim /etc/rsyslog.conf
+	local5.* /var/log/local5.local
+	3).重启失效
+	# systemctl restart ssh // 重启sshd程序
+	# systemctl restart rsyslog // 重启日志
+	4).尝试登录，触发日志。
+	5).观察日志。理解自定义日志设备。
 3.使用logger程序写日志到指定的设备及级别。
-    服务器1(192.168.17.133)发送日志
-    # vim /etc/ssh/sshd_config
-    #SyslogFacility AUTHPRIV // 将原来配置注释
-    SyslogFacility LOCAL5 // 自定义接受设备 local5
-    # vim /etc/rsyslog.conf // 此文件来管理日志
-    local5.* @192.168.17.130:514 // 此处填写日志服务器的IP地址
-    # systemctl restart sshd // 重启sshd程序
-    # systemctl restart rsyslog // 重启日志
+	服务器1(192.168.17.133)发送日志
+	# vim /etc/ssh/sshd_config
+	#SyslogFacility AUTHPRIV // 将原来配置注释
+	SyslogFacility LOCAL5 // 自定义接受设备 local5
+	# vim /etc/rsyslog.conf // 此文件来管理日志
+	local5.* @192.168.17.130:514 // 此处填写日志服务器的IP地址
+	# systemctl restart sshd // 重启sshd程序
+	# systemctl restart rsyslog // 重启日志
 
-    服务器2(192.168.17.130)接受日志
-    # vim /etc/rsyslog.conf
-    $ModLoad imudp
-    $UDPServerRun 514 // 这两个注释去掉，使用udp
-    local5.* /var/log/server12.log
-    # systemctl restart rsyslog
-    尝试ssh登录服务器1,并观察本地日志
-    # tail -f /var/log/server12.log
+	服务器2(192.168.17.130)接受日志
+	# vim /etc/rsyslog.conf
+	$ModLoad imudp
+	$UDPServerRun 514 // 这两个注释去掉，使用udp
+	local5.* /var/log/server12.log
+	# systemctl restart rsyslog
+	尝试ssh登录服务器1,并观察本地日志
+	# tail -f /var/log/server12.log
 </code></pre>
 <hr>
 <h3 id="7-logrotate-日志轮转"><a href="#7-logrotate-日志轮转" class="headerlink" title="7.logrotate 日志轮转"></a>7.logrotate 日志轮转</h3><ol>
@@ -1879,9 +1879,9 @@ echo &#39;mail.info @192.168.17.130:514&#39;&gt;&gt; /etc/rsyslog.conf
 <li>logrotate 本身不是系统守护进程，它是通过计划任务 crond 每天执行;</li>
 </ol>
 </blockquote>
-<pre><code class="shell">cat /etc/cron.daily/logrotate
+<pre><code class="language-shell">cat /etc/cron.daily/logrotate
 </code></pre>
-<pre><code class="shell">#!/bin/sh
+<pre><code class="language-shell">#!/bin/sh
 /usr/sbin/logrotate -s /var/lib/logrotate/logrotate.status /etc/logrotate.conf
 EXITVALUE=$?
 if [ $EXITVALUE != 0 ]; then
@@ -1900,7 +1900,7 @@ exit 0
 <ol start="3">
 <li>logrotate 配置文件</li>
 </ol>
-<pre><code class="shell"># vim /etc/logrotate.conf
+<pre><code class="language-shell"># vim /etc/logrotate.conf
 weekly  // 轮转的周期，一周轮转
 rotate 4 // 保留4份
 create // 轮转后创建新文件
@@ -1909,16 +1909,16 @@ dateext // 使用日期作为后缀
 include /etc/logrotate.d // 包含该目录下的文件也轮询
 
 /var/log/wtmp &#123; // 对该日志文件设置轮转的方法
-    monthly    // 一月轮转一次
-    create 0664 root utmp    // 轮转后创建新文件，并设置权限
-    minsize 1M    // 最小达到1M才轮转
-    rotate 1    // 保留一份
+    monthly	// 一月轮转一次
+    create 0664 root utmp	// 轮转后创建新文件，并设置权限
+    minsize 1M	// 最小达到1M才轮转
+    rotate 1	// 保留一份
 &#125;
 /var/log/btmp &#123;
-    missingok    // 丢失不提示
-    monthly    // 每月轮转一次
-    create 0600 root utmp    // 轮转后创建新文件，并设置权限
-    rotate 1    // 保留一份
+    missingok	// 丢失不提示
+    monthly	// 每月轮转一次
+    create 0600 root utmp	// 轮转后创建新文件，并设置权限
+    rotate 1	// 保留一份
 &#125;
 </code></pre>
 <p>其他配置信息</p>
@@ -1935,7 +1935,7 @@ include /etc/logrotate.d // 包含该目录下的文件也轮询
 <ol start="4">
 <li>轮转案例:对&#x2F;var&#x2F;log&#x2F;err.log 轮转</li>
 </ol>
-<pre><code class="shell"># vim /etc/logrotate.d/err_log # 编辑轮转规则
+<pre><code class="language-shell"># vim /etc/logrotate.d/err_log # 编辑轮转规则
 /var/log/err.log &#123;
         # 每天轮转
         daily
@@ -1956,56 +1956,56 @@ include /etc/logrotate.d // 包含该目录下的文件也轮询
 <ol start="5">
 <li>作业</li>
 </ol>
-<pre><code class="shell">logrotate日志轮转
+<pre><code class="language-shell">logrotate日志轮转
 
 1、将我们自己生产的/var/log/err.log 日志志加入日志轮替的策略
-    vim /etc/logrotate.d/err
-    # 创建err文件，把/var/log/err.log加入轮替
+	vim /etc/logrotate.d/err
+	# 创建err文件，把/var/log/err.log加入轮替
 
-    /var/log/err.log &#123;
-        weekly                #每周轮替一次
-        rotate 6            #保留6个轮替日志
-        sharedscripts        #以下命令只执行一次
-        prerotate
-            /usr/bin/chattr -a /var/log/err.log
-            #在日志轮替前取消a属性，以便让日志可以轮替
-        endscript
+	/var/log/err.log &#123;
+		weekly				#每周轮替一次
+		rotate 6			#保留6个轮替日志
+		sharedscripts		#以下命令只执行一次
+		prerotate
+			/usr/bin/chattr -a /var/log/err.log
+			#在日志轮替前取消a属性，以便让日志可以轮替
+		endscript
 
-        sharedscripts
-        postretate
-            /usr/bin/chattr +a /var/log/err.log
-            #日志轮替完毕再加上a属性
-        endscript
+		sharedscripts
+		postretate
+			/usr/bin/chattr +a /var/log/err.log
+			#日志轮替完毕再加上a属性
+		endscript
 
-        sharedscripts
-        postrotate
-            /bin/kill -HUP $(/bin/cat /var/run/syslogd.pid 2&gt;/dev/null) &amp;&gt;/dev/null
-            #重启rsyslog服务，确保日志轮替正常
-        endscript
-    &#125;
+		sharedscripts
+		postrotate
+			/bin/kill -HUP $(/bin/cat /var/run/syslogd.pid 2&gt;/dev/null) &amp;&gt;/dev/null
+			#重启rsyslog服务，确保日志轮替正常
+		endscript
+	&#125;
 
 2、要把 Nginx 服务的日志加入日志轮替，则也需要重启 Nginx 服务
-    首先，安装nginx
-    // yum install http://nginx.org/packages/rhel/7/x86_64/RPMS/nginx-1.10.3-1.el7.ngx.x86_64.rpm
-    其次，启动服务后，客户端访问及可产生日志
-        # systemctl start nginx
-        # systemctl enable nginx#
-        # ls /var/log/nginx/
-        access.log  error.log
+	首先，安装nginx
+	// yum install http://nginx.org/packages/rhel/7/x86_64/RPMS/nginx-1.10.3-1.el7.ngx.x86_64.rpm
+	其次，启动服务后，客户端访问及可产生日志
+		# systemctl start nginx
+		# systemctl enable nginx#
+		# ls /var/log/nginx/
+		access.log  error.log
 
-    最后，对访问和错误日志加入轮替
-    vim /etc/logrotate.d/nginx
-    /var/log/nginx/access.log /var/log/nginx/error.log &#123;
-        daily
-        rotate 15
-        sharedscripts
-        postrotate
-            /bin/kill -HUP $(/bin/cat /var/run/syslogd.pid) &amp;&gt;/dev/null
-            #重启 rsyslog 服务
-            /bin/kill -HUP $(/bin/cat /var/run/nginx.pid) &amp;&gt;/dev/null
-            #重启 Nginx 服务
-        endscript
-    &#125;
+	最后，对访问和错误日志加入轮替
+	vim /etc/logrotate.d/nginx
+	/var/log/nginx/access.log /var/log/nginx/error.log &#123;
+		daily
+		rotate 15
+		sharedscripts
+		postrotate
+			/bin/kill -HUP $(/bin/cat /var/run/syslogd.pid) &amp;&gt;/dev/null
+			#重启 rsyslog 服务
+			/bin/kill -HUP $(/bin/cat /var/run/nginx.pid) &amp;&gt;/dev/null
+			#重启 Nginx 服务
+		endscript
+	&#125;
 </code></pre>
 <h3 id="8-sshd"><a href="#8-sshd" class="headerlink" title="8.sshd"></a>8.sshd</h3><ol>
 <li>sshd 简介</li>
@@ -2014,13 +2014,13 @@ include /etc/logrotate.d // 包含该目录下的文件也轮询
 <li>传统的网络服务程序，如:ftp 和 telnet 在本质上都是不安全的，因为它们在网络上用明文传送口令和数据，别有用心的人非常容易就可以截获这些口令和数据。</li>
 <li>演示 tcpdump 截获 ftp 用户名和密码。</li>
 </ul>
-<pre><code class="shell">1.前置条件
-[root@localhost ~]# yum install vsftpd -y    // 安装 ftp 服务期端
-[root@localhost ~]# systemctl start vsftpd    // 启动 ftp 服务
-[root@localhost ~]# yum install tcpdump        // 安装 tcpdump
-[root@localhost ~]# tcpdump -i ens33 -nnX port 21    // 使用 tcpdump 监听 21端口
+<pre><code class="language-shell">1.前置条件
+[root@localhost ~]# yum install vsftpd -y	// 安装 ftp 服务期端
+[root@localhost ~]# systemctl start vsftpd	// 启动 ftp 服务
+[root@localhost ~]# yum install tcpdump		// 安装 tcpdump
+[root@localhost ~]# tcpdump -i ens33 -nnX port 21	// 使用 tcpdump 监听 21端口
 
-[root@localhost ~]# useradd ftpuser    // 创建ftp测试用户
+[root@localhost ~]# useradd ftpuser	// 创建ftp测试用户
 [root@localhost ~]# echo &quot;hadoop&quot; | passwd --stdin ftpuser
 </code></pre>
 

@@ -250,7 +250,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="73">
-<input type="hidden" id="yelog_site_word_count" value="114.1k">
+<input type="hidden" id="yelog_site_word_count" value="114.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1147,7 +1147,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-安装docker"><a href="#1-安装docker" class="headerlink" title="1. 安装docker"></a>1. 安装docker</h1><pre><code class="shell"># 安装docker所需的工具
+        <h1 id="1-安装docker"><a href="#1-安装docker" class="headerlink" title="1. 安装docker"></a>1. 安装docker</h1><pre><code class="language-shell"># 安装docker所需的工具
 yum install -y yum-utils device-mapper-persistent-data lvm2
 # 配置阿里云的docker源
 yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
@@ -1157,7 +1157,7 @@ yum install -y docker-ce-18.09.9-3.el7
 systemctl enable docker &amp;&amp; systemctl start docker
 </code></pre>
 <hr>
-<h1 id="2-only-centos"><a href="#2-only-centos" class="headerlink" title="2. only centos"></a>2. only centos</h1><pre><code class="shell"># 关闭防火墙
+<h1 id="2-only-centos"><a href="#2-only-centos" class="headerlink" title="2. only centos"></a>2. only centos</h1><pre><code class="language-shell"># 关闭防火墙
 systemctl disable firewalld
 systemctl stop firewalld
 # 关闭selinux
@@ -1177,7 +1177,7 @@ net.bridge.bridge-nf-call-iptables = 1
 EOF
 sysctl --system
 </code></pre>
-<h1 id="3-更改k8阿里云源"><a href="#3-更改k8阿里云源" class="headerlink" title="3.更改k8阿里云源"></a>3.更改k8阿里云源</h1><pre><code class="shell">cat &lt;&lt;EOF &gt; /etc/yum.repos.d/kubernetes.repo
+<h1 id="3-更改k8阿里云源"><a href="#3-更改k8阿里云源" class="headerlink" title="3.更改k8阿里云源"></a>3.更改k8阿里云源</h1><pre><code class="language-shell">cat &lt;&lt;EOF &gt; /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
 name=Kubernetes
 baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/
@@ -1187,7 +1187,7 @@ repo_gpgcheck=1
 gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
 EOF
 </code></pre>
-<h1 id="4-允许-iptables-检查桥接流量"><a href="#4-允许-iptables-检查桥接流量" class="headerlink" title="4.允许 iptables 检查桥接流量"></a>4.允许 iptables 检查桥接流量</h1><pre><code class="shell">cat &lt;&lt;EOF | sudo tee /etc/modules-load.d/k8s.conf
+<h1 id="4-允许-iptables-检查桥接流量"><a href="#4-允许-iptables-检查桥接流量" class="headerlink" title="4.允许 iptables 检查桥接流量"></a>4.允许 iptables 检查桥接流量</h1><pre><code class="language-shell">cat &lt;&lt;EOF | sudo tee /etc/modules-load.d/k8s.conf
 br_netfilter
 EOF
 
@@ -1198,14 +1198,14 @@ EOF
 sudo sysctl --system
 </code></pre>
 <hr>
-<h1 id="5-安装kubeadm"><a href="#5-安装kubeadm" class="headerlink" title="5. 安装kubeadm"></a>5. 安装kubeadm</h1><pre><code class="shell">yum install -y kubelet-1.20.1-0 kubeadm-1.20.1-0 kubectl-1.20.1-0 --disableexcludes=kubernetes
+<h1 id="5-安装kubeadm"><a href="#5-安装kubeadm" class="headerlink" title="5. 安装kubeadm"></a>5. 安装kubeadm</h1><pre><code class="language-shell">yum install -y kubelet-1.20.1-0 kubeadm-1.20.1-0 kubectl-1.20.1-0 --disableexcludes=kubernetes
 sudo systemctl enable --now kubelet
 </code></pre>
 <hr>
 <h1 id="6-编写docker文件"><a href="#6-编写docker文件" class="headerlink" title="6.编写docker文件"></a>6.编写docker文件</h1><ol>
 <li>编辑daemon文件：<code>vi /etc/docker/daemon.json</code></li>
 </ol>
-<pre><code class="bash">&#123;
+<pre><code class="language-bash">&#123;
     &quot;exec-opts&quot;: [&quot;native.cgroupdriver=systemd&quot;]
 &#125;
 </code></pre>
@@ -1213,7 +1213,7 @@ sudo systemctl enable --now kubelet
 <h1 id="7-设置科学上网-可以不设置"><a href="#7-设置科学上网-可以不设置" class="headerlink" title="7.设置科学上网(可以不设置)"></a>7.设置科学上网(可以不设置)</h1><ol>
 <li>编辑配置文件：<code>vi /etc/profile</code></li>
 </ol>
-<pre><code class="shell"># IP:同一个局域网内可以翻墙机器的IP地址，Port为代理的端口
+<pre><code class="language-shell"># IP:同一个局域网内可以翻墙机器的IP地址，Port为代理的端口
 export proxy=&quot;http://IP:Port&quot;
 export http_proxy=$proxy 
 export https_proxy=$proxy 
@@ -1223,23 +1223,23 @@ export no_proxy=&quot;localhost, 127.0.0.1, ::1&quot;
 <ol start="2">
 <li>更新配置文件</li>
 </ol>
-<pre><code class="shell">source /etc/profile
+<pre><code class="language-shell">source /etc/profile
 </code></pre>
 <ol start="3">
 <li>测试</li>
 </ol>
-<pre><code class="shell">curl http://www.google.com
+<pre><code class="language-shell">curl http://www.google.com
 </code></pre>
 <hr>
 <h1 id="8-Docker网络代理设置"><a href="#8-Docker网络代理设置" class="headerlink" title="8.Docker网络代理设置"></a>8.Docker网络代理设置</h1><ol>
 <li>创建和编辑docker服务文件：</li>
 </ol>
-<pre><code class="shell">mkdir -p /etc/systemd/system/docker.service.d
+<pre><code class="language-shell">mkdir -p /etc/systemd/system/docker.service.d
 </code></pre>
 <ol start="2">
 <li>创建和编辑文件</li>
 </ol>
-<pre><code class="shell">vi /etc/systemd/system/docker.service.d/http-proxy.conf
+<pre><code class="language-shell">vi /etc/systemd/system/docker.service.d/http-proxy.conf
 i
 # 中[proxy-addr]和[proxy-port]分别改成实际情况的代理地址和端口
 [Service]
@@ -1255,12 +1255,12 @@ systemctl restart docker
 <h1 id="9-下载镜像"><a href="#9-下载镜像" class="headerlink" title="9.下载镜像"></a>9.下载镜像</h1><ol>
 <li>下载安装k8s所需的镜像</li>
 </ol>
-<pre><code class="shell">kubeadm config images pull
+<pre><code class="language-shell">kubeadm config images pull
 </code></pre>
 <ol start="2">
 <li>下载flannel</li>
 </ol>
-<pre><code class="shell"># 下载flanner镜像
+<pre><code class="language-shell"># 下载flanner镜像
 docker pull quay.mirrors.ustc.edu.cn/coreos/flannel:v0.14.0 
 docker tag quay.mirrors.ustc.edu.cn/coreos/flannel:v0.14.0  quay.io/coreos/flannel:v0.14.0
 docker rmi quay.mirrors.ustc.edu.cn/coreos/flannel:v0.14.0
@@ -1271,12 +1271,12 @@ docker rmi quay.mirrors.ustc.edu.cn/coreos/flannel:v0.14.0
 <ul>
 <li>编辑配置文件并注释相关配置</li>
 </ul>
-<pre><code class="shell">vi /etc/profile
+<pre><code class="language-shell">vi /etc/profile
 </code></pre>
 <ul>
 <li>如果要关闭代理，仅仅注释掉profile的代理内容是不行的，在文件内加入以下内容</li>
 </ul>
-<pre><code class="bash">unset http_proxy
+<pre><code class="language-bash">unset http_proxy
 unset https_proxy
 unset ftp_proxy
 unset no_proxy
@@ -1284,7 +1284,7 @@ unset no_proxy
 <ul>
 <li>更新配置文件</li>
 </ul>
-<pre><code class="shell">source /etc/profile
+<pre><code class="language-shell">source /etc/profile
 </code></pre>
 <ol start="2">
 <li>关闭Docker代理(可以不关闭)</li>
@@ -1292,12 +1292,12 @@ unset no_proxy
 <ul>
 <li>编辑配置文件，注释相关配置</li>
 </ul>
-<pre><code class="shell">vi /etc/systemd/system/docker.service.d/http-proxy.conf
+<pre><code class="language-shell">vi /etc/systemd/system/docker.service.d/http-proxy.conf
 </code></pre>
 <ul>
 <li>更新配置并重启docker</li>
 </ul>
-<pre><code class="shell">systemctl daemon-reload
+<pre><code class="language-shell">systemctl daemon-reload
 systemctl restart docker
 </code></pre>
 <h1 id="11-在maste上创建集群"><a href="#11-在maste上创建集群" class="headerlink" title="11.在maste上创建集群"></a>11.在maste上创建集群</h1><ol>
@@ -1310,7 +1310,7 @@ kubeadm init --apiserver-advertise-address 10.0.1.128 --pod-network-cidr=10.244.
 <ol start="2">
 <li>安装flanner网络</li>
 </ol>
-<pre><code class="shell"># 接着还需要执行如下命令安装 Pod 网络（这里我们使用 flannel），否则 Pod 之间无法通信。
+<pre><code class="language-shell"># 接着还需要执行如下命令安装 Pod 网络（这里我们使用 flannel），否则 Pod 之间无法通信。
 # https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml需要科学上网才能访问，
 # kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 kubectl apply -f kube-flannel.yml
@@ -1318,7 +1318,7 @@ kubectl apply -f kube-flannel.yml
 <ul>
 <li>创建和编辑kube-flannel.yml文件: <code>vi kube-flannel.yml</code></li>
 </ul>
-<pre><code class="bash">---
+<pre><code class="language-bash">---
 apiVersion: policy/v1beta1
 kind: PodSecurityPolicy
 metadata:
@@ -1545,16 +1545,16 @@ spec:
 <ol start="3">
 <li>查看节点状态，状态必须为ready</li>
 </ol>
-<pre><code class="shell">kubectl get nodes
+<pre><code class="language-shell">kubectl get nodes
 </code></pre>
 <ol start="4">
 <li>查看加入集群的命令</li>
 </ol>
-<pre><code class="shell">kubeadm token create --print-join-command
+<pre><code class="language-shell">kubeadm token create --print-join-command
 </code></pre>
-<h1 id="12-node加入集群"><a href="#12-node加入集群" class="headerlink" title="12.node加入集群"></a>12.node加入集群</h1><pre><code class="shell">kubeadm join 192.168.18.200:6443 --token opip9p.rh35kkvqzwjizely --discovery-token-ca-cert-hash sha256:9252e13d2ffd3569c40b02c477f59038fac39aade9e99f282a333c0f8c5d7b22
+<h1 id="12-node加入集群"><a href="#12-node加入集群" class="headerlink" title="12.node加入集群"></a>12.node加入集群</h1><pre><code class="language-shell">kubeadm join 192.168.18.200:6443 --token opip9p.rh35kkvqzwjizely --discovery-token-ca-cert-hash sha256:9252e13d2ffd3569c40b02c477f59038fac39aade9e99f282a333c0f8c5d7b22
 </code></pre>
-<h1 id="13-测试"><a href="#13-测试" class="headerlink" title="13.测试"></a>13.测试</h1><pre><code class="shell"># https://raw.githubusercontent.com/kubernetes/website/master/content/en/examples/application/nginx-app.yaml需要科学上网才能访问，
+<h1 id="13-测试"><a href="#13-测试" class="headerlink" title="13.测试"></a>13.测试</h1><pre><code class="language-shell"># https://raw.githubusercontent.com/kubernetes/website/master/content/en/examples/application/nginx-app.yaml需要科学上网才能访问，
 # 可在你的电脑访问后，在master服务器上创建nginx-app.yaml后，粘贴进去。
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/website/master/content/en/examples/application/nginx-app.yaml
 # 执行如下命令查看副本（pod）情况

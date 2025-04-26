@@ -250,7 +250,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="73">
-<input type="hidden" id="yelog_site_word_count" value="114.1k">
+<input type="hidden" id="yelog_site_word_count" value="114.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1164,7 +1164,7 @@
 <li><p>Nginx 设置，并打开防火墙的入站数据</p>
 </li>
 </ol>
-<pre><code class="conf">server &#123;
+<pre><code class="language-conf">server &#123;
         listen 443 ssl;
         server_name huangfamily.cn;
         ssl_certificate /etc/nginx/conf.d/crt/huangfamily.cn_bundle.crt;
@@ -1181,7 +1181,7 @@
             proxy_set_header Host $http_host;
             proxy_set_header X-NginX-Proxy true;
 
-            proxy_http_version 1.1;
+			proxy_http_version 1.1;
             proxy_set_header Upgrade $http_upgrade;
             proxy_set_header Connection &quot;upgrade&quot;;
         &#125;

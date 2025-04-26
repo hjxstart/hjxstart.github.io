@@ -250,7 +250,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="73">
-<input type="hidden" id="yelog_site_word_count" value="114.1k">
+<input type="hidden" id="yelog_site_word_count" value="114.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1129,7 +1129,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="Centos7-6-minimal安装ROS"><a href="#Centos7-6-minimal安装ROS" class="headerlink" title="Centos7.6 minimal安装ROS"></a>Centos7.6 minimal安装ROS</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250404102000.png" alt="下载"></p>
-<pre><code class="bash">yum -y install unzip
+<pre><code class="language-bash">yum -y install unzip
 # 在线下载ROM执行
 wget https://download.mikrotik.com/routeros/7.18.2/chr-7.18.2.img.zip
 # 解压
@@ -1155,24 +1155,24 @@ dd if=chr-7.18.2.img bs=1024 of=/dev/vda &amp;&amp; reboot
 <h2 id="Ubuntu18-04安装ROS-可选"><a href="#Ubuntu18-04安装ROS-可选" class="headerlink" title="Ubuntu18.04安装ROS[可选]"></a>Ubuntu18.04安装ROS[可选]</h2><h3 id="前置条件"><a href="#前置条件" class="headerlink" title="前置条件"></a>前置条件</h3><blockquote>
 <p>此文档使用的Ubuntu系统版本是16.04或者18.04<br>Ubuntu系统只挂载了一个磁盘, 磁盘20G以上空间即可，多了浪费<br>此文档使用的Ubuntu系统的网卡是自动获取IP地址</p>
 </blockquote>
-<h3 id="下载MikroTik的CHR版本镜像"><a href="#下载MikroTik的CHR版本镜像" class="headerlink" title="下载MikroTik的CHR版本镜像"></a>下载MikroTik的CHR版本镜像</h3><pre><code class="bash"># 更新存储库，并下载wget和unzip程序
+<h3 id="下载MikroTik的CHR版本镜像"><a href="#下载MikroTik的CHR版本镜像" class="headerlink" title="下载MikroTik的CHR版本镜像"></a>下载MikroTik的CHR版本镜像</h3><pre><code class="language-bash"># 更新存储库，并下载wget和unzip程序
 apt update  &amp;&amp; apt install -y wget unzip
 # 下载CHR镜像
 wget https://download.mikrotik.com/routeros/7.18.1/chr-7.18.1.img.zip
 # 解压CHR镜像
 gunzip -c chr-7.18.1.img.zip &gt; chr.img
 </code></pre>
-<h3 id="挂载镜像"><a href="#挂载镜像" class="headerlink" title="挂载镜像"></a>挂载镜像</h3><pre><code class="bash"># 安装kpartx
+<h3 id="挂载镜像"><a href="#挂载镜像" class="headerlink" title="挂载镜像"></a>挂载镜像</h3><pre><code class="language-bash"># 安装kpartx
 apt-get install kpartx
 # 挂载镜像
 kpartx -av chr.img
 mount -o loop /dev/mapper/loop0p1 /mnt
 </code></pre>
-<h3 id="卸载镜像"><a href="#卸载镜像" class="headerlink" title="卸载镜像"></a>卸载镜像</h3><pre><code class="bash">umount /mnt
+<h3 id="卸载镜像"><a href="#卸载镜像" class="headerlink" title="卸载镜像"></a>卸载镜像</h3><pre><code class="language-bash">umount /mnt
 kpartx -dv /dev/loop0
 losetup -d /dev/loop0
 </code></pre>
-<h3 id="查看Ubuntu系统的盘符标识"><a href="#查看Ubuntu系统的盘符标识" class="headerlink" title="查看Ubuntu系统的盘符标识"></a>查看Ubuntu系统的盘符标识</h3><pre><code class="bash"># Ubuntu系统挂载为只读
+<h3 id="查看Ubuntu系统的盘符标识"><a href="#查看Ubuntu系统的盘符标识" class="headerlink" title="查看Ubuntu系统的盘符标识"></a>查看Ubuntu系统的盘符标识</h3><pre><code class="language-bash"># Ubuntu系统挂载为只读
 echo u &gt; /proc/sysrq-trigger
 # 替换Ubuntu系统为MikroTik系统 lsblk
 # 注意替换vda为实际的盘符标识
@@ -1236,7 +1236,7 @@ echo s &gt; /proc/sysrq-trigger &amp;&amp; sleep 5 &amp;&amp; echo b &gt; /proc/
 <li><p>设置开机自启动</p>
 </li>
 </ol>
-<pre><code class="bash">
+<pre><code class="language-bash">
 
 /interface/veth/add name=veth2 address=172.17.0.2 gateway=172.17.0.1
 /interface/bridge/port add bridge=bridge interface=veth2

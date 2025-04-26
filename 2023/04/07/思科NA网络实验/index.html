@@ -250,7 +250,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="73">
-<input type="hidden" id="yelog_site_word_count" value="114.1k">
+<input type="hidden" id="yelog_site_word_count" value="114.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1150,7 +1150,7 @@
 <details>
   <summary>配置概述</summary>
 
-<pre><code class="bash">1. 交换机：在SW1~3都创建2个vlan；
+<pre><code class="language-bash">1. 交换机：在SW1~3都创建2个vlan；
 2. 交换机-交换机：在交换机之间的连接接口配置中继，并且放行相应的VLAN；
 3. 交换机-PC：在交换机与PC连接的接口配置Access接口，并且方通相应的VLAN；
 4. PC：配置对于VLAN的IP。
@@ -1160,7 +1160,7 @@
 <details>
   <summary>SW1</summary>
 
-<pre><code class="bash">#
+<pre><code class="language-bash">#
 enable
 configure terminal
 vlan 10
@@ -1184,7 +1184,7 @@ write
 <details>
   <summary>SW2</summary>
 
-<pre><code class="bash">#
+<pre><code class="language-bash">#
 enable
 configure terminal
 vlan 10
@@ -1221,7 +1221,7 @@ write
 <details>
   <summary>SW3</summary>
 
-<pre><code class="bash">#
+<pre><code class="language-bash">#
 enable
 configure terminal
 vlan 10
@@ -1258,7 +1258,7 @@ write
 <details>
   <summary>PC</summary>
 
-<pre><code class="bash"># PC1
+<pre><code class="language-bash"># PC1
 ip 13.1.1.1 255.255.255.0
 # PC2
 ip 24.1.1.2 255.255.255.0
@@ -1272,7 +1272,7 @@ ip 24.1.1.4 255.255.255.0
 <details>
   <summary>实验验证</summary>
 
-<pre><code class="bash"># PC1 ping PC3
+<pre><code class="language-bash"># PC1 ping PC3
 ping 13.1.1.3
 # PC2 ping PC4
 ping 24.1.1.4
@@ -1285,7 +1285,7 @@ ping 24.1.1.4
 <details>
   <summary>配置概述</summary>
 
-<pre><code class="bash">1. 给设备命名
+<pre><code class="language-bash">1. 给设备命名
 2. 配置路由器之间的接口IP地址
 3. 添加静态路由
 4. 测试Loopback0口之间的网络
@@ -1295,7 +1295,7 @@ ping 24.1.1.4
 <details>
   <summary>R1</summary>
 
-<pre><code class="bash">#
+<pre><code class="language-bash">#
 enable
 configure terminal
 hostname R1
@@ -1323,7 +1323,7 @@ ip route 3.3.3.3 255.255.255.255 ethernet 0/1 13.1.1.3
 <details>
   <summary>R2</summary>
 
-<pre><code class="bash">#
+<pre><code class="language-bash">#
 enable
 configure terminal
 hostname R2
@@ -1347,7 +1347,7 @@ ip route 3.3.3.3 255.255.255.255 ethernet 0/1 12.1.1.1
 <details>
   <summary>R3</summary>
 
-<pre><code class="bash">#
+<pre><code class="language-bash">#
 enable
 configure terminal
 hostname R2
@@ -1385,7 +1385,7 @@ ip route 2.2.2.2 255.255.255.255 ethernet 0/0 13.1.1.1
 <details>
   <summary>配置概述</summary>
 
-<pre><code class="bash">1. 路由器启用OSPF进程
+<pre><code class="language-bash">1. 路由器启用OSPF进程
 2. 设置路由器ID
 3. 路由器之间的直连接口宣告到同一个区域
 4. 路由器与非路由的接口也需要宣告一个区域
@@ -1395,7 +1395,7 @@ ip route 2.2.2.2 255.255.255.255 ethernet 0/0 13.1.1.1
 <details>
   <summary>R1</summary>
 
-<pre><code class="bash">#
+<pre><code class="language-bash">#
 enable
 configure terminal
 hostname R1
@@ -1427,7 +1427,7 @@ show ip route ospf
 <details>
   <summary>R2</summary>
 
-<pre><code class="bash">#
+<pre><code class="language-bash">#
 enable
 configure terminal
 hostname R2
@@ -1462,7 +1462,7 @@ show ip route ospf
 <details>
   <summary>R3</summary>
 
-<pre><code class="bash">#
+<pre><code class="language-bash">#
 enable
 configure terminal
 hostname R3
@@ -1499,7 +1499,7 @@ show ip route ospf
 <details>
   <summary>PC</summary>
 
-<pre><code class="bash"># PC1
+<pre><code class="language-bash"># PC1
 ip 2.2.2.1 255.255.255.0 2.2.2.254
 # PC2
 ip 3.3.3.2 255.255.255.0 3.3.3.254
@@ -1518,7 +1518,7 @@ ip 3.3.3.2 255.255.255.0 3.3.3.254
 <details>
   <summary>配置概述</summary>
 
-<pre><code class="bash">1. 配置对于的接口IP地址和路由协议
+<pre><code class="language-bash">1. 配置对于的接口IP地址和路由协议
 2. 在可能的网关设备的网关接口上配置FHRP的Virtual IP 和 优先级
 </code></pre>
 </details>
@@ -1526,7 +1526,7 @@ ip 3.3.3.2 255.255.255.0 3.3.3.254
 <details>
   <summary>R1</summary>
 
-<pre><code class="bash">#
+<pre><code class="language-bash">#
 enable
 configure terminal
 hostname R1
@@ -1561,7 +1561,7 @@ show ip route eigrp
 <details>
   <summary>R2</summary>
 
-<pre><code class="bash">#
+<pre><code class="language-bash">#
 enable
 configure terminal
 hostname R2
@@ -1600,7 +1600,7 @@ show standby brief
 <details>
   <summary>R3</summary>
 
-<pre><code class="bash">#
+<pre><code class="language-bash">#
 enable
 configure terminal
 hostname R3
@@ -1653,14 +1653,14 @@ show standby brief
 <details>
   <summary>配置概述</summary>
 
-<pre><code class="bash">1.
+<pre><code class="language-bash">1.
 </code></pre>
 </details>
 
 <details>
   <summary>R1</summary>
 
-<pre><code class="bash">#
+<pre><code class="language-bash">#
 enable
 configure terminal
 hostname R1
@@ -1699,7 +1699,7 @@ show ip route eigrp
 <details>
   <summary>R2</summary>
 
-<pre><code class="bash">#
+<pre><code class="language-bash">#
 enable
 configure terminal
 hostname R2
@@ -1733,7 +1733,7 @@ show ip route eigrp
 <details>
   <summary>R3</summary>
 
-<pre><code class="bash">#
+<pre><code class="language-bash">#
 enable
 configure terminal
 hostname R3
@@ -1776,14 +1776,14 @@ show ip route eigrp
 <details>
   <summary>配置概述</summary>
 
-<pre><code class="bash">1.
+<pre><code class="language-bash">1.
 </code></pre>
 </details>
 
 <details>
   <summary>R1</summary>
 
-<pre><code class="bash">#
+<pre><code class="language-bash">#
 enable
 configure terminal
 hostname R1

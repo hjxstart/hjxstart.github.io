@@ -250,7 +250,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="73">
-<input type="hidden" id="yelog_site_word_count" value="114.1k">
+<input type="hidden" id="yelog_site_word_count" value="114.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1132,7 +1132,7 @@
 <p>Centos7.9最小安装后初始化</p>
 </blockquote>
 <p>关闭防火墙&#x2F;SELinux&#x2F;配置yum源&#x2F;安装常用软件&#x2F;关闭sshd服务器的DNS</p>
-<pre><code class="bash">systemctl disable --now firewalld
+<pre><code class="language-bash">systemctl disable --now firewalld
 systemctl disable --now postfix
 sed -i.bak &#39;/^SELINUX=/c SELINUX=disabled/&#39; /etc/selinux/config
 setenforce 0
@@ -1155,7 +1155,7 @@ alias cdnet=&#39;cd /etc/sysconfig/network-scripts/&#39;
 <h3 id="1-2-安装和配置TFTP服务"><a href="#1-2-安装和配置TFTP服务" class="headerlink" title="1.2 安装和配置TFTP服务"></a>1.2 安装和配置TFTP服务</h3><blockquote>
 <p>安装tftp和xinetd</p>
 </blockquote>
-<pre><code class="bash">yum install -y tftp-server.x86_64 xinetd
+<pre><code class="language-bash">yum install -y tftp-server.x86_64 xinetd
 rpm -ql tftp-server
 systemctl enable --now tftp
 systemctl enable --now xinetd
@@ -1164,13 +1164,13 @@ netstat -tnlpu | grep 69
 <blockquote>
 <p>修改配置文件</p>
 </blockquote>
-<pre><code class="bash">chmod -R 757  /var/lib/tftpboot/
+<pre><code class="language-bash">chmod -R 757  /var/lib/tftpboot/
 sed -i.bak &#39;/args/s/$/ -c/&#39; /etc/xinetd.d/tftp
 sed -i &#39;14s#yes#no#&#39; /etc/xinetd.d/tftp
 systemctl restart xinetd
 </code></pre>
 <hr>
-<h3 id="1-3-安装和配置DHCP服务"><a href="#1-3-安装和配置DHCP服务" class="headerlink" title="1.3 安装和配置DHCP服务"></a>1.3 安装和配置DHCP服务</h3><pre><code class="bash">yum install -y dhcp
+<h3 id="1-3-安装和配置DHCP服务"><a href="#1-3-安装和配置DHCP服务" class="headerlink" title="1.3 安装和配置DHCP服务"></a>1.3 安装和配置DHCP服务</h3><pre><code class="language-bash">yum install -y dhcp
 cp /usr/share/doc/dhcp-4.2.5/dhcpd.conf.example /etc/dhcp/dhcpd.conf
 #start  vi /etc/dhcp/dhcpd.conf
 option domain-name &quot;baidu.com&quot;;
@@ -1198,7 +1198,7 @@ tailf /var/log/messages
 cat /var/lib/dhcpd/dhcpd.leases
 </code></pre>
 <hr>
-<h3 id="1-4-安装和配置HTTP服务"><a href="#1-4-安装和配置HTTP服务" class="headerlink" title="1.4 安装和配置HTTP服务"></a>1.4 安装和配置HTTP服务</h3><pre><code class="bash">yum install -y httpd
+<h3 id="1-4-安装和配置HTTP服务"><a href="#1-4-安装和配置HTTP服务" class="headerlink" title="1.4 安装和配置HTTP服务"></a>1.4 安装和配置HTTP服务</h3><pre><code class="language-bash">yum install -y httpd
 systemctl enable --now httpd
 sed -i.bak &#39;/#ServerName/aServerName localhost:80&#39; /etc/httpd/conf/httpd.conf
 systemctl restart httpd
@@ -1211,7 +1211,7 @@ systemctl status httpd -l
 <blockquote>
 <p>实现UEFI SecureBoot的bootx64.efi；启动引导文件grubx64.efi；菜单文件grub.cfg</p>
 </blockquote>
-<pre><code class="bash">apt-get download grub-efi-amd64-signed
+<pre><code class="language-bash">apt-get download grub-efi-amd64-signed
 mkdir grub
 dpkg -x grub-efi-amd64-signed_1.187.6xxxxx_amd64.deb grub
 # 下载 grubnetx64.efi.signed 文件到pxe的/var/lib/tftpboot/grub/grubx64.efi
@@ -1221,7 +1221,7 @@ scp grub/usr/lib/grub/x86_64-efi-signed/grubnetx64.efi.signed  root@192.168.35.5
 <blockquote>
 <p>Ubuntu2204系统下载shim.signed(UEFI SecureBoot的bootx64.efi)文件</p>
 </blockquote>
-<pre><code class="bash">apt-get download shim.signed
+<pre><code class="language-bash">apt-get download shim.signed
 mkdir shim
 dpkg -x shim-signed_1.51.4+15.8-0ubuntu1_amd64.deb shim
 # 将shim/usr/lib/shim/shimx64.efi.signed.latest文件拷贝到pxe的/var/lib/tftpboot/grub/bootx64.efi
@@ -1230,7 +1230,7 @@ scp shim/usr/lib/shim/shimx64.efi.signed.latest root@192.168.35.5:/var/lib/tftpb
 <blockquote>
 <p>Ubuntu2204镜像找到&#x2F;boot&#x2F;grub&#x2F;grub.cfg文件</p>
 </blockquote>
-<pre><code class="bash">上传到PXE /var/lib/tftpboot/grub目录中
+<pre><code class="language-bash">上传到PXE /var/lib/tftpboot/grub目录中
 </code></pre>
 <hr>
 <h4 id="1-5-1-grub启动菜单的美化"><a href="#1-5-1-grub启动菜单的美化" class="headerlink" title="1.5.1 grub启动菜单的美化"></a>1.5.1 grub启动菜单的美化</h4><p><a target="_blank" rel="noopener" href="https://hugh712.gitbooks.io/grub/content/configuration-parameters.html">gfxterm文档</a></p>
@@ -1240,7 +1240,7 @@ scp shim/usr/lib/shim/shimx64.efi.signed.latest root@192.168.35.5:/var/lib/tftpb
 <blockquote>
 <p>颜色</p>
 </blockquote>
-<pre><code class="bash"># 未选中菜单项的颜色，菜单框背景颜色
+<pre><code class="language-bash"># 未选中菜单项的颜色，菜单框背景颜色
 set menu_color_normal=white/cyan
 # 突出显示的菜单项的颜色及其在菜单框中的背景
 set menu_color_highlight=yellow/blue
@@ -1250,7 +1250,7 @@ set color_normal=yellow/black
 <blockquote>
 <p>字体<a target="_blank" rel="noopener" href="https://dejavu-fonts.github.io/Download.html">下载链接(dejavu-fonts-ttf-2.37.zip)</a></p>
 </blockquote>
-<pre><code class="bash"># 准备工作
+<pre><code class="language-bash"># 准备工作
 wget https://dejavu-fonts.github.io/Download.html
 unzip dejavu-fonts-ttf-2.37.zip 
 grub2-mkfont -s 23 -o dejavu-sans-mono.pf2 dejavu-fonts-ttf-2.37/ttf/DejaVuSansMono.ttf
@@ -1260,7 +1260,7 @@ loadfont /grub/dejavu-sans-mono.pf2
 terminal_output gfxterm
 </code></pre>
 <hr>
-<h4 id="1-5-2-grub菜单的-menuentry"><a href="#1-5-2-grub菜单的-menuentry" class="headerlink" title="1.5.2  grub菜单的 menuentry"></a>1.5.2  grub菜单的 menuentry</h4><pre><code class="bash"># 说明
+<h4 id="1-5-2-grub菜单的-menuentry"><a href="#1-5-2-grub菜单的-menuentry" class="headerlink" title="1.5.2  grub菜单的 menuentry"></a>1.5.2  grub菜单的 menuentry</h4><pre><code class="language-bash"># 说明
 menuentry &quot;title&quot; [--class-class ..] [--users=users] [--unrestricted] [--hotkey-key] [--id=id] [arg...] &#123;command; ...&#125;
 # linux加载内核文件，initrd加载虚拟根文件；
 # linux和linuxefi是一样的，initrd和initrdefi是一样的
@@ -1277,7 +1277,7 @@ menuentry --hotkey=c &quot;c  Centos7.9&quot; &#123;
 menuentry --hotkey=u &quot;u  Ubuntu2204&quot; &#123;
         set gfxpayload=keep
         echo &quot;Loading Ubuntu2204 Kernel...&quot;
-    linux kernel/Ubuntu2204/vmlinuz ip=dhcp url=&quot;http://$&#123;IP&#125;/iso/src/Ubuntu2204.iso&quot;
+	linux kernel/Ubuntu2204/vmlinuz ip=dhcp url=&quot;http://$&#123;IP&#125;/iso/src/Ubuntu2204.iso&quot;
         echo &quot;Loading Ubuntu2204 RamDisk...&quot;
         initrd kernel/Ubuntu2204/initrd.img
 &#125;
@@ -1310,7 +1310,7 @@ menuentry &#39;Test memory&#39; &#123;
 fi
 </code></pre>
 <hr>
-<h3 id="6-ks自动应答文件配置"><a href="#6-ks自动应答文件配置" class="headerlink" title="6. ks自动应答文件配置"></a>6. ks自动应答文件配置</h3><h4 id="6-1-Kylin-Server"><a href="#6-1-Kylin-Server" class="headerlink" title="6.1 Kylin Server"></a>6.1 Kylin Server</h4><pre><code class="bash">#version=DEVEL
+<h3 id="6-ks自动应答文件配置"><a href="#6-ks自动应答文件配置" class="headerlink" title="6. ks自动应答文件配置"></a>6. ks自动应答文件配置</h3><h4 id="6-1-Kylin-Server"><a href="#6-1-Kylin-Server" class="headerlink" title="6.1 Kylin Server"></a>6.1 Kylin Server</h4><pre><code class="language-bash">#version=DEVEL
 # Use graphical install
 text
 
@@ -1426,7 +1426,7 @@ EOF
 %include http://192.168.35.5/ks/sub-ks-v10-sp3-20240626-x86_64-gui.ks
 %end
 </code></pre>
-<h4 id="6-2-Kylin-Desktop"><a href="#6-2-Kylin-Desktop" class="headerlink" title="6.2 Kylin Desktop"></a>6.2 Kylin Desktop</h4><pre><code class="bash">[Encrypty]
+<h4 id="6-2-Kylin-Desktop"><a href="#6-2-Kylin-Desktop" class="headerlink" title="6.2 Kylin Desktop"></a>6.2 Kylin Desktop</h4><pre><code class="language-bash">[Encrypty]
 # true开启加密，false 为关闭
 encrypty=false
 # 加密密钥，如 qwer1234
@@ -1539,7 +1539,7 @@ computer=&quot;mips64el/loongson-3;loongsonarch64/generic&quot;
 <blockquote>
 <p>安装系统前检查和确定分区方案，并输出到&#x2F;tmp&#x2F;sda-nvme.txt中，等安装系统时执行</p>
 </blockquote>
-<pre><code class="bash">#!/bin/sh
+<pre><code class="language-bash">#!/bin/sh
 #!/bin/bash
 if lsblk | grep nvme0n1;then
         echo &#39;ignoredisk --only-use=nvme0n1&#39; &gt; /tmp/sda-nvme.txt
@@ -1558,7 +1558,7 @@ fi
 <h2 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h2><blockquote>
 <p>bond.sh</p>
 </blockquote>
-<pre><code class="bash">#!/bin/bash
+<pre><code class="language-bash">#!/bin/bash
 
 echo &quot;请输入bond接口名称&quot;
 read bond_name

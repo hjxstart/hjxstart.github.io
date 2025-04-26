@@ -250,7 +250,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="73">
-<input type="hidden" id="yelog_site_word_count" value="114.1k">
+<input type="hidden" id="yelog_site_word_count" value="114.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1156,12 +1156,12 @@
 <h4 id="1-1-3、数据类型"><a href="#1-1-3、数据类型" class="headerlink" title="1.1.3、数据类型"></a>1.1.3、数据类型</h4><ul>
 <li>字面量：单个的，不可再分的值。date、boolean、string、number、null</li>
 </ul>
-<pre><code class="yaml">k: v
+<pre><code class="language-yaml">k: v
 </code></pre>
 <ul>
 <li>对象：键值对的集合。map、hash、set、object</li>
 </ul>
-<pre><code class="yaml">行内写法：k: &#123;k1:v1,k2:v2,k3:v3&#125;
+<pre><code class="language-yaml">行内写法：k: &#123;k1:v1,k2:v2,k3:v3&#125;
 #或
 k:
   k1: v1
@@ -1172,7 +1172,7 @@ k:
 <ul>
 <li>数组：一组按次序排列的值。array、list、queue</li>
 </ul>
-<pre><code class="yaml">行内写法：k: [v1,v2,v3]
+<pre><code class="language-yaml">行内写法：k: [v1,v2,v3]
 #或者
 k:
  - v1
@@ -1183,7 +1183,7 @@ k:
 <h4 id="1-1-4、示例"><a href="#1-1-4、示例" class="headerlink" title="1.1.4、示例"></a>1.1.4、示例</h4><ul>
 <li>Person.java &amp; Pet.java</li>
 </ul>
-<pre><code class="java">@ConfigurationProperties(prefix = &quot;data.person&quot;)
+<pre><code class="language-java">@ConfigurationProperties(prefix = &quot;data.person&quot;)
 @Component
 @ToString
 @Data
@@ -1211,7 +1211,7 @@ public class Pet &#123;
 <ul>
 <li>application.yaml</li>
 </ul>
-<pre><code class="yaml">data:
+<pre><code class="language-yaml">data:
   person:
     userName: hjxstart
     boss: true
@@ -1244,7 +1244,7 @@ public class Pet &#123;
 <li>默认支持的静态资源的目录<br>&#x2F;static(or &#x2F;public or &#x2F;resources or &#x2F;META-INF&#x2F;resources)</li>
 <li>可以自定义静态资源访问前缀(默认为”&#x2F;**”)和静态资源目录<br><strong>注意</strong>：自定义静态资源访问前缀会导致对欢迎页和Favicon的支持失效</li>
 </ul>
-<pre><code class="yaml">spring:
+<pre><code class="language-yaml">spring:
   mvc:
     static-path-pattern: /res/** #自定义静态资源访问前缀
   resources:
@@ -1263,7 +1263,7 @@ public class Pet &#123;
 <ul>
 <li>示例</li>
 </ul>
-<pre><code class="java">// 有参构造器所有参数的值都会从容器中确定
+<pre><code class="language-java">// 有参构造器所有参数的值都会从容器中确定
 //ResourceProperties resourceProperties；获取和spring.resources绑定的所有的值的对象
 //WebMvcProperties mvcProperties 获取和spring.mvc绑定的所有的值的对象
 //ListableBeanFactory beanFactory Spring的beanFactory
@@ -1296,7 +1296,7 @@ public class Pet &#123;
 <h3 id="2-2-请求参数处理"><a href="#2-2-请求参数处理" class="headerlink" title="2.2 请求参数处理"></a>2.2 请求参数处理</h3><h3 id="2-2-1、请求映射"><a href="#2-2-1、请求映射" class="headerlink" title="2.2.1、请求映射"></a>2.2.1、请求映射</h3><h3 id="2-2-2、普通参数与基本注解"><a href="#2-2-2、普通参数与基本注解" class="headerlink" title="2.2.2、普通参数与基本注解"></a>2.2.2、普通参数与基本注解</h3><ol>
 <li>常用注解<br>@PathVariable, @RequestHeader, @RequestParam, @CookieValue, @ModelAttribute, @MatriVariable, @RequestBody</li>
 </ol>
-<pre><code class="java">@PathVariable // 获取 url 路径变量(id, username)的值
+<pre><code class="language-java">@PathVariable // 获取 url 路径变量(id, username)的值
 @RequestHeader // 获取请求的Header的值
 @RequestParam // 获取 url 的参数(age, inters)的值
 @CookieValue // 获取 Cookie 的值
@@ -1367,21 +1367,21 @@ public class Pet &#123;
 <ul>
 <li>ServletRequestMethodArgumentResolver 可以处理以上的部分参数</li>
 </ul>
-<pre><code class="java">@Override
+<pre><code class="language-java">@Override
 public boolean supportsParameter(MethodParameter parameter) &#123;
-    Class&lt;?&gt; paramType = parameter.getParameterType();
-    return (WebRequest.class.isAssignableFrom(paramType) ||
-        ServletRequest.class.isAssignableFrom(paramType) ||
-        MultipartRequest.class.isAssignableFrom(paramType) ||
-        HttpSession.class.isAssignableFrom(paramType) ||
-        (pushBuilder != null &amp;&amp; pushBuilder.isAssignableFrom(paramType)) ||
-        Principal.class.isAssignableFrom(paramType) ||
-        InputStream.class.isAssignableFrom(paramType) ||
-        Reader.class.isAssignableFrom(paramType) ||
-        HttpMethod.class == paramType ||
-        Locale.class == paramType ||
-        TimeZone.class == paramType ||
-        ZoneId.class == paramType);
+	Class&lt;?&gt; paramType = parameter.getParameterType();
+	return (WebRequest.class.isAssignableFrom(paramType) ||
+		ServletRequest.class.isAssignableFrom(paramType) ||
+		MultipartRequest.class.isAssignableFrom(paramType) ||
+		HttpSession.class.isAssignableFrom(paramType) ||
+		(pushBuilder != null &amp;&amp; pushBuilder.isAssignableFrom(paramType)) ||
+		Principal.class.isAssignableFrom(paramType) ||
+		InputStream.class.isAssignableFrom(paramType) ||
+		Reader.class.isAssignableFrom(paramType) ||
+		HttpMethod.class == paramType ||
+		Locale.class == paramType ||
+		TimeZone.class == paramType ||
+		ZoneId.class == paramType);
 &#125;
 </code></pre>
 <ol start="3">
@@ -1400,7 +1400,7 @@ public boolean supportsParameter(MethodParameter parameter) &#123;
 <h2 id="4、单元测试"><a href="#4、单元测试" class="headerlink" title="4、单元测试"></a>4、单元测试</h2><hr>
 <h2 id="5、指标监控"><a href="#5、指标监控" class="headerlink" title="5、指标监控"></a>5、指标监控</h2><hr>
 <h2 id="6、原来解析"><a href="#6、原来解析" class="headerlink" title="6、原来解析"></a>6、原来解析</h2><hr>
-<h1 id="SpringBoot统一返回信息格式"><a href="#SpringBoot统一返回信息格式" class="headerlink" title="SpringBoot统一返回信息格式"></a>SpringBoot统一返回信息格式</h1><h2 id="1-创建枚举类"><a href="#1-创建枚举类" class="headerlink" title="1. 创建枚举类"></a>1. 创建枚举类</h2><pre><code class="java">package com.example.demo2.v1.dto;
+<h1 id="SpringBoot统一返回信息格式"><a href="#SpringBoot统一返回信息格式" class="headerlink" title="SpringBoot统一返回信息格式"></a>SpringBoot统一返回信息格式</h1><h2 id="1-创建枚举类"><a href="#1-创建枚举类" class="headerlink" title="1. 创建枚举类"></a>1. 创建枚举类</h2><pre><code class="language-java">package com.example.demo2.v1.dto;
 
 /**
  * @author jxh
@@ -1443,7 +1443,7 @@ public enum RHttpStatusEnum &#123;
 &#125;
 </code></pre>
 <hr>
-<h2 id="2-创建自定义异常类"><a href="#2-创建自定义异常类" class="headerlink" title="2. 创建自定义异常类"></a>2. 创建自定义异常类</h2><pre><code class="java">package com.example.demo2.v1.dto.exception;
+<h2 id="2-创建自定义异常类"><a href="#2-创建自定义异常类" class="headerlink" title="2. 创建自定义异常类"></a>2. 创建自定义异常类</h2><pre><code class="language-java">package com.example.demo2.v1.dto.exception;
 
 import com.example.demo2.v1.dto.RHttpStatusEnum;
 
@@ -1466,7 +1466,7 @@ public class DiariesException extends RuntimeException &#123;
 &#125;
 </code></pre>
 <hr>
-<h2 id="3-创建统一返回格式类"><a href="#3-创建统一返回格式类" class="headerlink" title="3. 创建统一返回格式类"></a>3. 创建统一返回格式类</h2><pre><code class="java">package com.example.demo2.v1.dto;
+<h2 id="3-创建统一返回格式类"><a href="#3-创建统一返回格式类" class="headerlink" title="3. 创建统一返回格式类"></a>3. 创建统一返回格式类</h2><pre><code class="language-java">package com.example.demo2.v1.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -1539,7 +1539,7 @@ public class R &#123;
 &#125;
 </code></pre>
 <hr>
-<h2 id="4-创建异常处理类"><a href="#4-创建异常处理类" class="headerlink" title="4. 创建异常处理类"></a>4. 创建异常处理类</h2><pre><code class="java">package com.example.demo2.v1.dto;
+<h2 id="4-创建异常处理类"><a href="#4-创建异常处理类" class="headerlink" title="4. 创建异常处理类"></a>4. 创建异常处理类</h2><pre><code class="language-java">package com.example.demo2.v1.dto;
 
 
 import com.example.demo2.v1.dto.exception.DiariesException;
@@ -1572,7 +1572,7 @@ public class ControllerExceptionAdvice &#123;
 &#125;
 </code></pre>
 <hr>
-<h2 id="5-创建统一返回格式处理类"><a href="#5-创建统一返回格式处理类" class="headerlink" title="5. 创建统一返回格式处理类"></a>5. 创建统一返回格式处理类</h2><pre><code class="java">package com.example.demo2.v1.dto;
+<h2 id="5-创建统一返回格式处理类"><a href="#5-创建统一返回格式处理类" class="headerlink" title="5. 创建统一返回格式处理类"></a>5. 创建统一返回格式处理类</h2><pre><code class="language-java">package com.example.demo2.v1.dto;
 
 import com.example.demo2.v1.dto.exception.DiariesException;
 import com.example.demo2.v1.util.JsonUtil;
@@ -1635,7 +1635,7 @@ public class ResultResponseHandler implements ResponseBodyAdvice&lt;Object&gt; &
 <h1 id="1-统一返回格式"><a href="#1-统一返回格式" class="headerlink" title="1. 统一返回格式"></a>1. 统一返回格式</h1><ol>
 <li>定义枚举类型</li>
 </ol>
-<pre><code class="java">public enum RHttpStatusEnum &#123;
+<pre><code class="language-java">public enum RHttpStatusEnum &#123;
     /**
      * 成功
      */
@@ -1661,7 +1661,7 @@ public class ResultResponseHandler implements ResponseBodyAdvice&lt;Object&gt; &
 <ol start="2">
 <li>定义 dto</li>
 </ol>
-<pre><code class="java">@Data
+<pre><code class="language-java">@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
@@ -1707,7 +1707,7 @@ public class R&#123;
 <ol start="3">
 <li>定义全局处理</li>
 </ol>
-<pre><code class="java">/**
+<pre><code class="language-java">/**
  * 对返回结果处理，统一返回格式。
  */
 @ControllerAdvice(basePackages = &quot;com.fh.java.internalsystemjava&quot;)

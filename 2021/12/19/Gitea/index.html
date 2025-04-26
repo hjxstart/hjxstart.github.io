@@ -250,7 +250,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="73">
-<input type="hidden" id="yelog_site_word_count" value="114.1k">
+<input type="hidden" id="yelog_site_word_count" value="114.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1153,21 +1153,21 @@
 <h2 id="1-1-前期配置"><a href="#1-1-前期配置" class="headerlink" title="1.1 前期配置"></a>1.1 前期配置</h2><ol>
 <li>创建 git 用户并且指定 uid 和 gid</li>
 </ol>
-<pre><code class="bash">gruopadd git -g 1000
+<pre><code class="language-bash">gruopadd git -g 1000
 useradd git -u 1000 -g 1000
 </code></pre>
 <ol start="2">
 <li>将 git 用户百年规定 git 组的某个文件</li>
 </ol>
-<pre><code class="shell">chown -R git:git /app/gitea/gitea
+<pre><code class="language-shell">chown -R git:git /app/gitea/gitea
 </code></pre>
 <ol start="3">
 <li>创建&#x2F;app&#x2F;gitea&#x2F;gitea 文件</li>
 </ol>
-<pre><code class="shell">ssh -p 4002 -o StrictHostKeyChecking=no git@127.0.0.1 &quot;SSH_ORIGINAL_COMMAND=\&quot;$SSH_ORIGINAL_COMMAND\&quot; $0 $@&quot;
+<pre><code class="language-shell">ssh -p 4002 -o StrictHostKeyChecking=no git@127.0.0.1 &quot;SSH_ORIGINAL_COMMAND=\&quot;$SSH_ORIGINAL_COMMAND\&quot; $0 $@&quot;
 </code></pre>
 <hr>
-<h2 id="1-2-安装配置"><a href="#1-2-安装配置" class="headerlink" title="1.2 安装配置"></a>1.2 安装配置</h2><pre><code class="yaml">version: &quot;3&quot;
+<h2 id="1-2-安装配置"><a href="#1-2-安装配置" class="headerlink" title="1.2 安装配置"></a>1.2 安装配置</h2><pre><code class="language-yaml">version: &quot;3&quot;
 
 networks:
   gitea:
@@ -1219,7 +1219,7 @@ services:
 <h1 id="2-整合-Drone-CI"><a href="#2-整合-Drone-CI" class="headerlink" title="2. 整合 Drone CI"></a>2. 整合 Drone CI</h1><blockquote>
 <p>基于 Gitea 和 Drone 的轻量级的 CI 解决方案。</p>
 </blockquote>
-<h2 id="2-1-安装配置"><a href="#2-1-安装配置" class="headerlink" title="2.1 安装配置"></a>2.1 安装配置</h2><pre><code class="yml">services:
+<h2 id="2-1-安装配置"><a href="#2-1-安装配置" class="headerlink" title="2.1 安装配置"></a>2.1 安装配置</h2><pre><code class="language-yml">services:
   drone-server:
     container_name: drone-server
     image: drone/drone:latest
@@ -1277,7 +1277,7 @@ services:
     # ports:
     #   - 3000:3000
 </code></pre>
-<h2 id="2-2-CI-配置文件"><a href="#2-2-CI-配置文件" class="headerlink" title="2.2 CI 配置文件"></a>2.2 CI 配置文件</h2><pre><code class="yml">---
+<h2 id="2-2-CI-配置文件"><a href="#2-2-CI-配置文件" class="headerlink" title="2.2 CI 配置文件"></a>2.2 CI 配置文件</h2><pre><code class="language-yml">---
 kind: pipeline
 type: docker
 name: default
@@ -1366,7 +1366,7 @@ volumes:
     host:
       path: /tmp/cache/graduation_project
 </code></pre>
-<h2 id="2-3-钉钉通知模板"><a href="#2-3-钉钉通知模板" class="headerlink" title="2.3 钉钉通知模板"></a>2.3 钉钉通知模板</h2><pre><code class="tpl">[TPL_REPO_SHORT_NAME] [TPL_COMMIT_BRANCH] [TPL_BUILD_STATUS] 耗时[TPL_BUILD_CONSUMING]s
+<h2 id="2-3-钉钉通知模板"><a href="#2-3-钉钉通知模板" class="headerlink" title="2.3 钉钉通知模板"></a>2.3 钉钉通知模板</h2><pre><code class="language-tpl">[TPL_REPO_SHORT_NAME] [TPL_COMMIT_BRANCH] [TPL_BUILD_STATUS] 耗时[TPL_BUILD_CONSUMING]s
 </code></pre>
 
       

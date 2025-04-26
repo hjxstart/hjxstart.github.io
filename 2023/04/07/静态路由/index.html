@@ -250,7 +250,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="73">
-<input type="hidden" id="yelog_site_word_count" value="114.1k">
+<input type="hidden" id="yelog_site_word_count" value="114.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1146,13 +1146,13 @@
         <h2 id="1-1-静态路由两种配置方式"><a href="#1-1-静态路由两种配置方式" class="headerlink" title="1.1 静态路由两种配置方式"></a>1.1 静态路由两种配置方式</h2><ol>
 <li>出接口</li>
 </ol>
-<pre><code class="bash"># 点对点网络可以直接配置出接口路由
+<pre><code class="language-bash"># 点对点网络可以直接配置出接口路由
 ip route 10.1.1.0 255.255.255.255 gigabitethernet 0/1
 </code></pre>
 <ol start="2">
 <li>下一跳</li>
 </ol>
-<pre><code class="bash"># 多路访问网络MA建议配置下一跳路由
+<pre><code class="language-bash"># 多路访问网络MA建议配置下一跳路由
 ip route 10.1.1.0 255.255.255.0 12.1.1.2 # 递归查询
 </code></pre>
 <p><code>如果2种路由都配置，则需要先配置出接口，再配置下一跳</code></p>
@@ -1172,7 +1172,7 @@ ip route 10.1.1.0 255.255.255.0 12.1.1.2 # 递归查询
 <li>该路由器通过该协议学习到的已加入路由表的该协议的路由</li>
 </ol>
 <p>距离矢量协议 DV：EIGRP, RIP</p>
-<pre><code class="bash">system-view
+<pre><code class="language-bash">system-view
 interface loopback 0
 ip address 3.3.3.3 32
 rip 100

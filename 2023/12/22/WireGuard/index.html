@@ -250,7 +250,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="73">
-<input type="hidden" id="yelog_site_word_count" value="114.1k">
+<input type="hidden" id="yelog_site_word_count" value="114.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1128,9 +1128,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="WireGuard"><a href="#WireGuard" class="headerlink" title="WireGuard"></a>WireGuard</h1><h2 id="服务端配置"><a href="#服务端配置" class="headerlink" title="服务端配置"></a>服务端配置</h2><h2 id="客户端配置"><a href="#客户端配置" class="headerlink" title="客户端配置"></a>客户端配置</h2><h3 id="1-安装-wireguard-tools"><a href="#1-安装-wireguard-tools" class="headerlink" title="1.安装 wireguard-tools"></a>1.安装 wireguard-tools</h3><pre><code class="shell">brew install wireguard-tools
+        <h1 id="WireGuard"><a href="#WireGuard" class="headerlink" title="WireGuard"></a>WireGuard</h1><h2 id="服务端配置"><a href="#服务端配置" class="headerlink" title="服务端配置"></a>服务端配置</h2><h2 id="客户端配置"><a href="#客户端配置" class="headerlink" title="客户端配置"></a>客户端配置</h2><h3 id="1-安装-wireguard-tools"><a href="#1-安装-wireguard-tools" class="headerlink" title="1.安装 wireguard-tools"></a>1.安装 wireguard-tools</h3><pre><code class="language-shell">brew install wireguard-tools
 </code></pre>
-<h3 id="2-配置-wireguard-tools"><a href="#2-配置-wireguard-tools" class="headerlink" title="2.配置 wireguard-tools"></a>2.配置 wireguard-tools</h3><pre><code class="shell"># 创建文件夹
+<h3 id="2-配置-wireguard-tools"><a href="#2-配置-wireguard-tools" class="headerlink" title="2.配置 wireguard-tools"></a>2.配置 wireguard-tools</h3><pre><code class="language-shell"># 创建文件夹
 sudo mkdir /etc/wireguard
 
 # 设置文件夹权限
@@ -1148,7 +1148,7 @@ touch wg0.conf
 # 编辑虚拟网卡配置文件内容
 vi wg0.conf
 </code></pre>
-<h3 id="3-wg0-conf-虚拟网卡配置"><a href="#3-wg0-conf-虚拟网卡配置" class="headerlink" title="3.wg0.conf 虚拟网卡配置"></a>3.wg0.conf 虚拟网卡配置</h3><pre><code class="shell">[Interface]
+<h3 id="3-wg0-conf-虚拟网卡配置"><a href="#3-wg0-conf-虚拟网卡配置" class="headerlink" title="3.wg0.conf 虚拟网卡配置"></a>3.wg0.conf 虚拟网卡配置</h3><pre><code class="language-shell">[Interface]
 Address = 192.168.XX.20/24
 PrivateKey = 客户端的私钥 (privatekey)
 DNS = 192.168.XX.1
@@ -1159,14 +1159,14 @@ Endpoint = 服务器公网IP:13231
 AllowedIPs = 0.0.0.0/0
 PersistentKeepalive = 30
 </code></pre>
-<h3 id="4-相关命令"><a href="#4-相关命令" class="headerlink" title="4.相关命令"></a>4.相关命令</h3><pre><code class="shell"># 启动网卡
+<h3 id="4-相关命令"><a href="#4-相关命令" class="headerlink" title="4.相关命令"></a>4.相关命令</h3><pre><code class="language-shell"># 启动网卡
 wg-quick up wg0
 # 停止服务
 wg-quick down wg0
 # 查看配置
 wg-quick strip wg0
 </code></pre>
-<pre><code class="bash">
+<pre><code class="language-bash">
 
 [Interface]
 PrivateKey = cOVbYQzoRcUsr31GtEV1rKgO9FK2vohF6WWy72R11l0=
