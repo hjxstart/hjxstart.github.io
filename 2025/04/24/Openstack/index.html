@@ -250,7 +250,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="73">
-<input type="hidden" id="yelog_site_word_count" value="111.5k">
+<input type="hidden" id="yelog_site_word_count" value="112.1k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1088,7 +1088,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-04-26 14:08:54'>2025-04-24 09:04</time>
+            发布时间 : <time class="date" title='最后更新: 2025-04-26 18:49:28'>2025-04-24 09:04</time>
         
     </div>
     <div class="article-meta">
@@ -1112,7 +1112,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-text">环境搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E4%BB%8B%E7%BB%8D"><span class="toc-text">环境介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OpenStack%E4%BB%8B%E7%BB%8D"><span class="toc-text">OpenStack介绍</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text"></span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-text">环境搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E4%BB%8B%E7%BB%8D"><span class="toc-text">环境介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OpenStack%E4%BB%8B%E7%BB%8D"><span class="toc-text">OpenStack介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Test"><span class="toc-text">Test</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1128,7 +1128,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><pre><code class="bash">RHOPS13（红帽-商业版 V13）
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><pre><code class="language-bash">RHOPS13（红帽-商业版 V13）
 内容：Openstack的运维（基于原生的Q版）
 环境：配套环境的文件夹 -&gt; RHSOP13 -&gt; RHOSP13.wmx
 硬件：内存32G以上，开启CPU虚拟化
@@ -1162,7 +1162,7 @@
     步骤4:：rht-overcloud.sh start
 </code></pre>
 <h2 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h2><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250424093017420.png" alt="课堂环境"></p>
-<pre><code class="bash">Undercloud(云下环境): director: 存储OpenStack中各种组件的应用程序，便于节点安装（All in One）
+<pre><code class="language-bash">Undercloud(云下环境): director: 存储OpenStack中各种组件的应用程序，便于节点安装（All in One）
 Overcloud(云上环境): 实际作用:模拟生产环境节点
     controller: 控制节点，安装有各种API，网络的组件，身份验证API，Keystone等
     compute: 计算节点（一般不止一个）：做虚拟机迁移，资源不够网其他节点去迁移等
@@ -1186,7 +1186,7 @@ classroom服务器：充当时间同步服务器使用
 身份认证服务器(IDM): IPMI协议 623端口；root@power，执行 netstat -uln | grep 623
     随时对设备进行上电和下单的处理-模拟带外管理口
 </code></pre>
-<h2 id="OpenStack介绍"><a href="#OpenStack介绍" class="headerlink" title="OpenStack介绍"></a>OpenStack介绍</h2><pre><code class="bash"># 什么是OpenStack
+<h2 id="OpenStack介绍"><a href="#OpenStack介绍" class="headerlink" title="OpenStack介绍"></a>OpenStack介绍</h2><pre><code class="language-bash"># 什么是OpenStack
     开源的云计算管理平台项目
     官网(原生平台): https://www.openstack.org/
     官方文档: https://docs.openstack.org/
@@ -1217,7 +1217,9 @@ classroom服务器：充当时间同步服务器使用
             对象存储服务: swift, 用于存储undercloud的用户镜像和日志
             网络服务: 提供undercloud的调配网络访问，在调配网络中
 </code></pre>
-<h1 id=""><a href="#" class="headerlink" title=""></a></h1>
+<h2 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h2><pre><code class="language-bash">
+</code></pre>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 hjxstart@126.com </span>
     </div>
