@@ -1,0 +1,138 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: 黄金贤的博客 # 网站标题
+subtitle: '学习笔记' # 网站副标题
+description: '黄金贤 hjxstart' # 网站副标题
+keywords: 计算机网络 数据库 操作系统 数据结构 算法 Java Nodejs # 网站的关键词。支持多个关键词。
+author: 黄金贤 # 您的名字
+language: zh-CN # 网站使用的语言。对于简体中文用户来说，使用不同的主题可能需要设置成不同的值，请参考你的主题的文档自行设置，常见的有 zh-Hans和 zh-CN。
+timezone: 'Asia/Shanghai' # 网站时区
+
+# URL
+## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
+url: https://hjxstart.github.io
+permalink: :year/:month/:day/:title/ # 文章的 永久链接 格式
+permalink_defaults: # 永久链接中各部分的默认值
+pretty_urls: # 改写 permalink 的值来美化 URL
+  trailing_index: true # 是否在永久链接中保留尾部的 index.html
+  trailing_html: true # 是否在永久链接中保留尾部的 .html
+
+# Directory
+source_dir: source # 资源文件夹，这个文件夹用来存放内容。
+public_dir: public # 公共文件夹，这个文件夹用于存放生成的站点文件
+tag_dir: tags # 标签文件夹
+archive_dir: archives # 归档文件夹
+category_dir: categories # 分类文件夹
+code_dir: downloads/code # Include code 文件夹，source_dir 下的子目录
+i18n_dir: :lang # 国际化（i18n）文件夹
+skip_render:
+
+# Writing
+new_post_name: :title.md # 新文章的文件名称
+default_layout: post # 预设布局
+auto_spacing: true # 在中文和英文之间加入空格
+titlecase: false # 把标题转换为 title case
+external_link:
+  enable: true # 在新标签中打开链接
+  field: site # 对整个网站（site）生效或仅对文章（post）生效
+  exclude: '' # 需要排除的域名。主域名和子域名如 www 需分别配置
+filename_case: 0 # 把文件名称转换为 (1) 小写或 (2) 大写
+render_drafts: false # 显示草稿
+post_asset_folder: false # 启动 Asset 文件夹
+relative_link: false # 把链接改为与根目录的相对位址
+future: true # 显示未来的文章
+highlight: # 代码块的设置, 请参考 Highlight.js 进行设置
+  enable: false
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+prismjs: # 代码块的设置, 请参考 PrismJS 进行设置
+  enable: false
+  preprocess: true
+  line_number: true
+  tab_replace: ''
+
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ''
+  per_page: 1
+  order_by: -date
+
+# 分类 & 标签
+default_category: uncategorized  #默认分类
+category_map: # 分类别名
+tag_map: # 标签别名
+
+# Metadata elements
+## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+meta_generator: true
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD # 日期格式
+time_format: HH:mm:ss
+## updated_option supports 'mtime', 'date', 'empty'
+updated_option: 'mtime'
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10 # 每页显示的文章量 (0 = 关闭分页功能)
+pagination_dir: page # 分页目录
+
+# Include / Exclude file(s)
+## include:/exclude: options only apply to the 'source/' folder
+include:
+  - ".nojekyll"
+  # 处理 'source/css/_typing.css'
+  - "css/_typing.css"
+  # 处理 'source/_css/' 中的任何文件，但不包括子目录及其其中的文件。
+  - "_css/*"
+  # 处理 'source/_css/' 中的任何文件和子目录下的任何文件
+  - "_css/**/*"
+exclude:
+  # 不处理 'source/js/test.js'
+  - "js/test.js"
+  # 不处理 'source/js/' 中的文件、但包括子目录下的所有目录和文件
+  - "js/*"
+  # 不处理 'source/js/' 中的文件和子目录下的任何文件
+  - "js/**/*"
+  # 不处理 'source/js/' 目录下的所有文件名以 'test' 开头的文件，但包括其它文件和子目录下的单文件
+  - "js/test*"
+  # 不处理 'source/js/' 及其子目录中任何以 'test' 开头的文件
+  - "js/**/test*"
+  # 不要用 exclude 来忽略 'source/_posts/' 中的文件。你应该使用 'skip_render'，或者在要忽略的文件的文件名之前加一个下划线 '_'
+  # 在这里配置一个 - "_posts/hello-world.md" 是没有用的。
+ignore:
+  # 忽略任何一个名叫 'foo' 的文件夹
+  - "**/foo"
+  # 只忽略 'themes/' 下的 'foo' 文件夹
+  - "**/themes/*/foo"
+  # 对 'themes/' 目录下的每个文件夹中忽略名叫 'foo' 的子文件夹
+  - "**/themes/**/foo"
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: 3-hexo
+
+# 开启全文搜索
+search:
+  path: search.xml
+  field: post
+
+# Deployment
+## Docs: https://hexo.io/docs/one-command-deployment
+deploy:
+  type: 'git'
+  repo: 'git@github.com:hjxstart/hjxstart.github.io'
+  branch: 'master'

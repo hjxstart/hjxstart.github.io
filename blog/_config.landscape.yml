@@ -1,0 +1,57 @@
+services:
+  drone-server:
+    container_name: drone-server
+    image: drone/drone:latest
+    restart: always
+    environment:
+    - DRONE_GITEA=true
+    - DRONE_GITEA_SERVER=http://192.168.31.128:4001
+    - DRONE_GITEA_CLIENT_ID=d8dc19e7-82a7-4254-8287-5091c39e94d5
+    - DRONE_GITEA_CLIENT_SECRET=gto_5zbaix7yymdhe4j42s6irp3bihmzevaupimqgymjehjhuocyuavq
+    - DRONE_GIT_ALWAYS_AUTH=true
+    - DRONE_GITEA_SKIP_VERIFY=true
+    - DRONE_RUNNER_CAPACITY=2
+    - DRONE_SERVER_PROTO=http
+    - DRONE_SERVER_HOST=192.168.18.241:7890
+    - DRONE_NETWORK=cicd_default
+    - DRONE_RUNNER_NETWORKS=cicd_default
+    # 这个密钥是给runner用的
+    - DRONE_RPC_SECRET=07d3caaa3e2d2d33bc1ce18c60d43213
+    - DRONE_AGENTS_ENABLED=true
+    - SET_CONTAINER_TIMEZONE=true
+    - CONTAINER_TIMEZONE=Asia/Shanghai
+    - DRONE_USER_CREATE=username:test_admin,admin:true
+    ports:
+    # 控制台页面端口
+    - '7890:80'
+    # - 9000:9000
+    volumes:
+    - /etc/timezone:/etc/timezone
+    - /etc/localtime:/etc/localtime
+
+  drone-runner:
+    container_name: drone-runner
+    image: drone/drone-runner-docker:latest
+    restart: always
+    depends_on:
+    - drone-server
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    - /etc/timezone:/etc/timezone
+    - /etc/localtime:/etc/localtime
+    environment:
+    - SET_CONTAINER_TIMEZONE=true
+    - CONTAINER_TIMEZONE=Asia/Shanghai
+    - DRONE_RPC_PROTO=http
+    # 如果直接使用本配置，这儿不需要改，如果部署到DRONE_RUNNER_LABELS其他服务器，需要填server的域名
+    - DRONE_RPC_HOST=drone-server
+    # server配置的DRONE_RPC_SECRET
+    - DRONE_RPC_SECRET=07d3caaa3e2d2d33bc1ce18c60d43213
+    - DRONE_RUNNER_CAPACITY=2
+    - DRONE_RUNNER_NAME=drone-runner
+    - DRONE_RPC_SKIP_VERIFY=true
+# 下面注释的是runner的控制台，没必要加上，server可以直接看到
+# - DRONE_UI_USERNAME=root
+# - DRONE_UI_PASSWORD=root
+# ports:
+# - 3000:3000

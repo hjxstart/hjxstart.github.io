@@ -1,0 +1,11 @@
+*/node_modules/
+.idea/
+blog/public
+blog/themes
+blog/.deploy_git
+package-lock.json
+.deploy_git
+blog/db.json
+*/db.json
+blog/package-lock.json
+*/package-lock.json
