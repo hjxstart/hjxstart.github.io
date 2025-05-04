@@ -11,7 +11,7 @@ date: 2023-04-08 11:46:05
 
 设PC1和PC3都是VLAN13，PC2和PC4属于VLAN24，实现同一个VLAN的设备可以互通。
 
-![网络拓扑](https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202304081908634.png)
+<center>![网络拓扑](https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202304081908634.png)</center>
 
 
 <details>

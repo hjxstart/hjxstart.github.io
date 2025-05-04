@@ -72,7 +72,6 @@ classroom服务器：充当时间同步服务器使用
     在openstack中，一定要加载时间同步服务器，一定要保证各个节点的时间0误差，因为会涉及到keystone认证时间戳问题。
 身份认证服务器(IDM): IPMI协议 623端口；root@power，执行 netstat -uln | grep 623
     随时对设备进行上电和下单的处理-模拟带外管理口
-
 ```
 
 ## OpenStack介绍
@@ -110,5 +109,10 @@ classroom服务器：充当时间同步服务器使用
             网络服务: 提供undercloud的调配网络访问，在调配网络中
 ```
 
+## Test
 
-# 
+
+```bash
+
+
+```
