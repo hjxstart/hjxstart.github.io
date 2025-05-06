@@ -6,18 +6,20 @@
   <meta name="keywords" content="">
   <meta name="description" content="网络工程师 | 黄金贤的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="1Panel概述网站   FrpFrpc# proxies serverAddr &#x3D; &quot;154.222.24.218&quot; serverPort &#x3D; 7000 auth.method &#x3D; &quot;token&quot; auth.token &#x3D; &quot;FRPS&quot;  [[proxies]] name &#x3D; &quot;7735h-rdp&quot; type &#x3D; &amp;">
+<meta name="description" content="概述环境搭建RHOPS13（红帽-商业版 V13） 内容：Openstack的运维（基于原生的Q版） 环境：配套环境的文件夹 -&gt; RHSOP13 -&gt; RHOSP13.wmx 硬件：内存32G以上，开启CPU虚拟化 网络：仅主机，172.25.254.0&#x2F;24,关闭DHCP 打开虚拟机: 选择我已经复制虚拟机 账号信息: kiosk&#x2F;redhat  root&#x2F;Asimov 切换到ro">
 <meta property="og:type" content="article">
-<meta property="og:title" content="1Panel">
-<meta property="og:url" content="https://hjxstart.github.io/2025/04/26/1Panel/index.html">
+<meta property="og:title" content="Openstack">
+<meta property="og:url" content="https://hjxstart.github.io/2025/04/24/Openstack/index.html">
 <meta property="og:site_name" content="黄金贤的博客">
-<meta property="og:description" content="1Panel概述网站   FrpFrpc# proxies serverAddr &#x3D; &quot;154.222.24.218&quot; serverPort &#x3D; 7000 auth.method &#x3D; &quot;token&quot; auth.token &#x3D; &quot;FRPS&quot;  [[proxies]] name &#x3D; &quot;7735h-rdp&quot; type &#x3D; &amp;">
+<meta property="og:description" content="概述环境搭建RHOPS13（红帽-商业版 V13） 内容：Openstack的运维（基于原生的Q版） 环境：配套环境的文件夹 -&gt; RHSOP13 -&gt; RHOSP13.wmx 硬件：内存32G以上，开启CPU虚拟化 网络：仅主机，172.25.254.0&#x2F;24,关闭DHCP 打开虚拟机: 选择我已经复制虚拟机 账号信息: kiosk&#x2F;redhat  root&#x2F;Asimov 切换到ro">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-04-26T06:09:16.000Z">
-<meta property="article:modified_time" content="2025-04-26T10:05:28.660Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250424093017420.png">
+<meta property="article:published_time" content="2025-04-24T01:04:36.000Z">
+<meta property="article:modified_time" content="2025-04-26T10:49:28.999Z">
 <meta property="article:author" content="黄金贤">
 <meta property="article:tag" content="计算机网络 数据库 操作系统 数据结构 算法 Java Nodejs">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250424093017420.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -250,7 +252,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="73">
-<input type="hidden" id="yelog_site_word_count" value="117.2k">
+<input type="hidden" id="yelog_site_word_count" value="122.4k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1088,12 +1090,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-05-04 22:29:51'>2025-04-16 22:14</time>
+            发布时间 : <time class="date" title='最后更新: 2025-05-06 22:28:59'>2025-04-16 22:14</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:8.4k</span>
+        <span>字数:13.6k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1112,7 +1114,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88"><span class="toc-text">网络工程师</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%80%83%E8%AF%95%E7%94%A8%E5%88%B0%E7%9A%84%E5%B7%A5%E5%85%B7"><span class="toc-text">考试用到的工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP-IP"><span class="toc-text">TCP&#x2F;IP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AB%AF%E5%8F%A3%E7%B1%BB%E5%9E%8B"><span class="toc-text">端口类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%B1%82"><span class="toc-text">物理层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82"><span class="toc-text">数据链路层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%B1%82"><span class="toc-text">网络层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E8%BE%93%E5%B1%82"><span class="toc-text">传输层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8"><span class="toc-text">安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A0%E7%BA%BF"><span class="toc-text">无线</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8B%B1%E8%AF%AD"><span class="toc-text">英语</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-text">其他</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C"><span class="toc-text">实验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Telnet-23"><span class="toc-text">Telnet 23</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%9C%AC%E6%9C%BA%E5%92%8Ctelenet"><span class="toc-text">配置本机和telenet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FTP"><span class="toc-text">FTP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Console"><span class="toc-text">Console</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SSH"><span class="toc-text">SSH</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%8A%E5%8D%88%E5%8E%86%E5%B9%B4%E7%9C%9F%E9%A2%98"><span class="toc-text">上午历年真题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%8B%E5%8D%88%E5%8E%86%E5%B9%B4%E7%9C%9F%E9%A2%98"><span class="toc-text">下午历年真题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2024%E5%B9%B411%E6%9C%88"><span class="toc-text">2024年11月</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%95%E9%A2%98%E4%B8%80%EF%BC%8815%E5%88%86%EF%BC%89"><span class="toc-text">试题一（15分）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%95%E9%A2%98%E4%BA%8C%EF%BC%8820%E5%88%86%EF%BC%89"><span class="toc-text">试题二（20分）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%95%E9%A2%98%E4%B8%89%EF%BC%8820%E5%88%86%EF%BC%89"><span class="toc-text">试题三（20分）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%95%E9%A2%98%E5%9B%9B%EF%BC%8820%E5%88%86%EF%BC%89"><span class="toc-text">试题四（20分）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2024%E5%B9%B45%E6%9C%88"><span class="toc-text">2024年5月</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%95%E9%A2%98%E4%B8%80%EF%BC%8820%E5%88%86%EF%BC%89"><span class="toc-text">试题一（20分）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%95%E9%A2%98%E4%BA%8C%EF%BC%8820%E5%88%86%EF%BC%89-1"><span class="toc-text">试题二（20分）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%95%E9%A2%98%E4%B8%89%EF%BC%8820%E5%88%86%EF%BC%89-1"><span class="toc-text">试题三（20分）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%95%E9%A2%98%E5%9B%9B%EF%BC%8815%E5%88%86%EF%BC%89"><span class="toc-text">试题四（15分）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%8B%E5%8D%88%E5%8E%86%E5%B9%B4%E7%9C%9F%E9%A2%98-1"><span class="toc-text">下午历年真题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2024%E5%B9%B411%E6%9C%88-1"><span class="toc-text">2024年11月</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2024%E5%B9%B45%E6%9C%88-1"><span class="toc-text">2024年5月</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88"><span class="toc-text">网络工程师</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%80%83%E8%AF%95%E7%94%A8%E5%88%B0%E7%9A%84%E5%B7%A5%E5%85%B7"><span class="toc-text">考试用到的工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP-IP"><span class="toc-text">TCP&#x2F;IP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AB%AF%E5%8F%A3%E7%B1%BB%E5%9E%8B"><span class="toc-text">端口类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%B1%82"><span class="toc-text">物理层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82"><span class="toc-text">数据链路层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%B1%82"><span class="toc-text">网络层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E8%BE%93%E5%B1%82"><span class="toc-text">传输层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8"><span class="toc-text">安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A0%E7%BA%BF"><span class="toc-text">无线</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8B%B1%E8%AF%AD"><span class="toc-text">英语</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-text">其他</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C"><span class="toc-text">实验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Telnet-23"><span class="toc-text">Telnet 23</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%9C%AC%E6%9C%BA%E5%92%8Ctelenet"><span class="toc-text">配置本机和telenet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FTP"><span class="toc-text">FTP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Console"><span class="toc-text">Console</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SSH"><span class="toc-text">SSH</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%8A%E5%8D%88%E5%8E%86%E5%B9%B4%E7%9C%9F%E9%A2%98"><span class="toc-text">上午历年真题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2024%E5%B9%B411%E6%9C%88"><span class="toc-text">2024年11月</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E7%94%B1OSI-RM-%E8%A1%A8%E7%A4%BA%E5%B1%82%E5%AE%9A%E4%B9%89%E7%9A%84%E6%95%B0%E6%8D%AE%E5%8E%8B%E7%BC%A9%E3%80%81%E5%8A%A0%E5%AF%86%E7%AD%89%E5%8A%9F%E8%83%BD%E5%9C%A8%E5%AE%9E%E8%B7%B5%E4%B8%AD%E6%98%AF%E7%94%B1TCP-IP%E6%A8%A1%E5%9E%8B%E7%9A%84%EF%BC%88%EF%BC%89%E5%B1%82%E5%AE%9E%E7%8E%B0%E3%80%82"><span class="toc-text">1. 由OSI&#x2F;RM 表示层定义的数据压缩、加密等功能在实践中是由TCP&#x2F;IP模型的（）层实现。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%9C%A8%EF%BC%88%EF%BC%89%E5%B1%80%E5%9F%9F%E7%BD%91%E6%8B%93%E6%89%91%E4%B8%AD%EF%BC%8C%E6%AF%8F%E4%B8%AA%E8%8A%82%E7%82%B9%E9%83%BD%E7%9B%B4%E6%8E%A5%E8%BF%9E%E6%8E%A5%E5%88%B0%E5%85%B6%E7%9B%B8%E9%82%BB%E7%9A%84%E4%B8%A4%E4%B8%AA%E8%8A%82%E7%82%B9%EF%BC%8C%E5%BD%A2%E6%88%90%E4%B8%80%E4%B8%AA%E7%89%A9%E7%90%86%E6%88%96%E9%80%BB%E8%BE%91%E7%9A%84%E7%8E%AF%E3%80%82"><span class="toc-text">2. 在（）局域网拓扑中，每个节点都直接连接到其相邻的两个节点，形成一个物理或逻辑的环。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%9C%A8%E6%B5%B7%E6%98%8E%E7%A0%81%E4%B8%AD%EF%BC%8C%E5%A6%82%E6%9E%9C%E4%BF%A1%E6%81%AF%E4%BD%8D%E9%95%BF%E5%BA%A6%E4%B8%BA7%EF%BC%8C%E9%82%A3%E4%B9%88%E4%B8%BA%E4%BA%86%E7%BA%A0%E6%AD%A3%E5%8D%95%E4%B8%AA%E9%94%99%E8%AF%AF%EF%BC%8C%E8%87%B3%E5%B0%91%E9%9C%80%E8%A6%81%E6%B7%BB%E5%8A%A0%EF%BC%88%EF%BC%89%E4%BD%8D%E6%A0%A1%E9%AA%8C%E4%BD%8D%E3%80%82"><span class="toc-text">3. 在海明码中，如果信息位长度为7，那么为了纠正单个错误，至少需要添加（）位校验位。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%9C%A8%E7%BB%9F%E8%AE%A1%E6%97%B6%E5%88%86%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%EF%BC%88STDM%EF%BC%89%E4%B8%AD%EF%BC%8C%E5%A6%82%E6%9E%9C%E6%9F%90%E4%B8%AA%E7%94%A8%E6%88%B7%E7%9A%84%E5%B8%A7%E5%88%B0%E8%BE%BE%E7%8E%87%E8%BF%9C%E9%AB%98%E4%BA%8E%E5%85%B6%E4%BB%96%E7%94%A8%E6%88%B7%EF%BC%8C%E4%B8%BA%E4%BA%86%E9%98%B2%E6%AD%A2%E8%AF%A5%E7%94%A8%E6%88%B7%E7%8B%AC%E5%8D%A0%E4%BF%A1%E9%81%93%EF%BC%8C%E9%80%9A%E5%B8%B8%E4%BC%9A-%E3%80%82"><span class="toc-text">4. 在统计时分多路复用（STDM）中，如果某个用户的帧到达率远高于其他用户，为了防止该用户独占信道，通常会( )。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E4%B8%8B%E5%88%97%E9%AB%98%E9%80%9F%E4%BB%A5%E5%A4%AA%E7%BD%91%E8%BF%9E%E6%8E%A5%E6%8A%80%E6%9C%AF%E4%B8%AD%EF%BC%8C%E4%BC%A0%E8%BE%93%E8%B7%9D%E7%A6%BB%E8%B6%85%E8%BF%87-10km-%E7%9A%84%E6%98%AF-%E3%80%82"><span class="toc-text">5. 下列高速以太网连接技术中，传输距离超过 10km 的是( )。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E6%9F%90%E5%A4%A7%E5%9E%8B%E4%BB%A5%E5%A4%AA%E7%BD%91%E5%8F%AA%E6%9C%89%E4%B8%A4%E4%B8%AA%E4%B8%BB%E6%9C%BA%EF%BC%8C%E5%AE%83%E4%BB%AC%E5%90%8C%E6%97%B6%E5%8F%91%E9%80%81%E5%B8%A7%EF%BC%8C%E5%BD%A2%E6%88%90%E7%A2%B0%E6%92%9E%E5%90%8E%E6%8C%89%E6%88%AA%E6%96%AD%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%8C%87%E6%95%B0%E9%80%80%E9%81%BF%E7%AE%97%E6%B3%95%E8%BF%9B%E8%A1%8C%E9%87%8D%E4%BC%A0%E3%80%82%E9%87%8D%E4%BC%A0%E6%AC%A1%E6%95%B0%E8%AE%B0%E4%B8%BA-i%EF%BC%8Ci-1-2-3-%E2%80%A6-%EF%BC%8C%E5%88%99%E4%B8%80%E4%B8%AA%E4%B8%BB%E6%9C%BA%E6%88%90%E5%8A%9F%E5%8F%91%E9%80%81%E6%95%B0%E6%8D%AE%E4%B9%8B%E5%89%8D%E7%9A%84%E5%B9%B3%E5%9D%87%E9%87%8D%E4%BC%A0%E6%AC%A1%E6%95%B0%E7%BA%A6%E4%B8%BA-%E3%80%82"><span class="toc-text">6. 某大型以太网只有两个主机，它们同时发送帧，形成碰撞后按截断二进制指数退避算法进行重传。重传次数记为 i，i&#x3D;1,2,3,…..，则一个主机成功发送数据之前的平均重传次数约为( )。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-%E5%BD%93%E4%BA%A4%E6%8D%A2%E6%9C%BA%E6%94%B6%E5%88%B0%E4%B8%80%E4%B8%AA%E5%B8%A7%EF%BC%8C%E5%85%B6%E7%9B%AE%E7%9A%84-MAC-%E5%9C%B0%E5%9D%80%E4%B8%8D%E5%9C%A8%E8%BD%AC%E5%8F%91%E8%A1%A8%E4%B8%AD%EF%BC%8C%E5%88%99%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%B0%86-%E3%80%82"><span class="toc-text">7. 当交换机收到一个帧，其目的 MAC 地址不在转发表中，则交换机将( )。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-VLAN-%E6%8A%80%E6%9C%AF%E6%89%80%E4%BE%9D%E6%8D%AE%E7%9A%84%E5%8D%8F%E8%AE%AE%E6%98%AF-%E3%80%82"><span class="toc-text">8. VLAN 技术所依据的协议是( )。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-%E4%B8%8B%E5%88%97%E5%85%B3%E4%BA%8E-RSTP-%E7%9A%84%E8%AF%B4%E6%B3%95%E4%B8%AD%E6%AD%A3%E7%A1%AE%E7%9A%84%E6%98%AF-%E3%80%82"><span class="toc-text">9.下列关于 RSTP 的说法中正确的是( )。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-%E4%B8%8B%E5%88%97%E5%85%B3%E4%BA%8E%E5%9C%A8%E4%BA%A4%E6%8D%A2%E6%9C%BA%E4%B8%8A%E9%85%8D%E7%BD%AE-VLAN-%E7%9A%84%E8%AF%B4%E6%B3%95%E4%B8%AD%EF%BC%8C%E6%AD%A3%E7%A1%AE%E7%9A%84%E6%98%AF-%E3%80%82"><span class="toc-text">10. 下列关于在交换机上配置 VLAN 的说法中，正确的是( )。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-%E5%9C%A8%E9%87%8F%E5%AD%90%E9%80%9A%E4%BF%A1%E9%A2%86%E5%9F%9F%EF%BC%8C%E4%B8%BA%E4%BA%86%E5%AE%9E%E7%8E%B0%E4%BF%A1%E6%81%AF%E7%9A%84%E7%BB%9D%E5%AF%B9%E5%AE%89%E5%85%A8%E4%BC%A0%E8%BE%93%EF%BC%8C%E9%80%9A%E5%B8%B8%E9%87%87%E7%94%A8-%E3%80%82"><span class="toc-text">11. 在量子通信领域，为了实现信息的绝对安全传输，通常采用( )。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12-%E7%BD%91%E7%BB%9C%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%AF%E9%9D%A0%E6%80%A7%E6%B5%8B%E5%BA%A6%E4%B8%8D%E5%8C%85%E6%8B%AC"><span class="toc-text">12. 网络信息系统的可靠性测度不包括( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13-%E4%B8%8B%E5%88%97%E5%85%B3%E4%BA%8E%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%A0%86%E5%8F%A0%E7%9A%84%E8%AF%B4%E6%B3%95%E6%AD%A3%E7%A1%AE%E7%9A%84%E6%98%AF-%E3%80%82"><span class="toc-text">13. 下列关于交换机堆叠的说法正确的是( )。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#14-%E5%9F%BA%E4%BA%8E-L-%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC%EF%BC%8C%E5%81%87%E8%AE%BE%E8%BF%90%E8%BE%93%E5%B1%82%E3%80%81%E7%BD%91%E7%BB%9C%E5%B1%82%E5%92%8C%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%E6%89%80%E7%94%A8%E7%9A%84%E9%A6%96%E9%83%A8%E5%BC%80%E9%94%80%E5%85%B1-66-%E5%AD%97%E8%8A%82%EF%BC%8C%E9%93%BE%E8%B7%AF%E7%9A%84%E6%95%B0%E6%8D%AE%E7%8E%87%E4%B8%BA-10Mbit-s%EF%BC%8C%E5%88%99%E5%8F%91%E9%80%81%E8%AF%A5%E6%96%87%E4%BB%B6%E6%89%80%E9%9C%80%E7%9A%84%E6%9C%80%E7%9F%AD%E6%97%B6%E9%97%B4%E4%B8%BA-%E3%80%82"><span class="toc-text">14. 基于 L 的最大值，假设运输层、网络层和数据链路层所用的首部开销共 66 字节，链路的数据率为 10Mbit&#x2F;s，则发送该文件所需的最短时间为( )。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#15-%E5%9C%A8%E8%B7%AF%E7%94%B1%E5%99%A8%E4%B8%89%E5%B1%82%E6%8E%A5%E5%8F%A3%E4%B8%8B%E9%85%8D%E7%BD%AE%E5%A6%82%E4%B8%8B%E6%89%80%E7%A4%BA%E5%91%BD%E4%BB%A4%EF%BC%8C%E5%85%B6%E4%BD%9C%E7%94%A8%E6%98%AF-%E3%80%82"><span class="toc-text">15. 在路由器三层接口下配置如下所示命令，其作用是( )。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#16-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%E5%A6%82%E6%9E%9C%E9%87%87%E7%94%A8%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E5%8D%8F%E8%AE%AE%E8%BF%9B%E8%A1%8C%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93%EF%BC%8C%E5%B9%B6%E4%B8%94%E5%8F%91%E7%94%9F%E4%BA%86%E5%B8%A7%E4%B8%A2%E5%A4%B1%EF%BC%8C%E5%88%99%E5%AF%B9%E5%90%8C%E6%AD%A5%E6%8E%A7%E5%88%B6%E9%80%A0%E6%88%90%E7%9A%84%E5%BD%B1%E5%93%8D%E6%98%AF-%E3%80%82"><span class="toc-text">16. 数据链路层如果采用滑动窗口协议进行可靠传输，并且发生了帧丢失，则对同步控制造成的影响是( )。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#17-%E9%9D%99%E6%80%81%E8%B7%AF%E7%94%B1%E7%9A%84%E7%BC%BA%E7%82%B9%E6%98%AF-%E3%80%82"><span class="toc-text">17. 静态路由的缺点是( )。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#18-%E5%BD%93IP%E6%8A%A5%E6%96%87%E5%9C%A8%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E6%97%B6%EF%BC%8C%E5%A6%82%E6%9E%9C%E5%85%B6%E7%94%9F%E5%AD%98%E6%97%B6%E9%97%B4%EF%BC%88TTL%EF%BC%89%E5%87%8F%E8%87%B30%EF%BC%8C%E5%B0%86%E4%BC%9A%E5%8F%91%E9%80%81%E7%9A%84ICMP%E6%B6%88%E6%81%AF%E6%98%AF%EF%BC%88%EF%BC%89%E3%80%82"><span class="toc-text">18. 当IP报文在网络传输时，如果其生存时间（TTL）减至0，将会发送的ICMP消息是（）。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#19-%E5%9C%A8%E8%B7%AF%E7%94%B1%E5%99%A8%E4%B8%8A%E5%81%9A%E4%BB%A5%E4%B8%8B%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%85%B6%E4%BD%9C%E7%94%A8%E6%98%AF-%E3%80%82"><span class="toc-text">19. 在路由器上做以下配置，其作用是( )。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#20-%E4%BA%A4%E6%8D%A2%E6%9C%BA-SW3-%E7%94%9F%E6%88%90%E6%A0%91%E4%BF%A1%E6%81%AF%E5%A6%82%E4%B8%8B%E5%9B%BE%E6%89%80%E7%A4%BA%EF%BC%8C%E4%B8%8B%E5%88%97%E5%85%B3%E4%BA%8E%E8%AF%A5%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%94%9F%E6%88%90%E6%A0%91%E7%9A%84%E8%AF%B4%E6%B3%95%E4%B8%AD%E6%AD%A3%E7%A1%AE%E7%9A%84%E6%98%AF-%E3%80%82"><span class="toc-text">20. 交换机 SW3 生成树信息如下图所示，下列关于该交换机生成树的说法中正确的是( )。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21-%E8%AE%BF%E9%97%AEHTTP%E8%BF%9E%E6%8E%A5%E5%92%8CHTTPS%E9%93%BE%E6%8E%A5%E5%88%86%E5%88%AB%E4%BD%BF%E7%94%A8%E7%9A%84%E9%BB%98%E8%AE%A4%E7%AB%AF%E5%8F%A3%E6%98%AF-%E3%80%82"><span class="toc-text">21. 访问HTTP连接和HTTPS链接分别使用的默认端口是( )。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#22-%E4%BA%A4%E6%8D%A2%E6%9C%BA%E4%BA%8C%E5%B1%82%E7%8E%AF%E8%B7%AF%E5%90%8E%E5%8F%AF%E8%83%BD%E4%BA%A7%E7%94%9F%E7%9A%84%E6%95%85%E9%9A%9C%E7%8E%B0%E8%B1%A1%E4%B8%8D%E5%8C%85%E6%8B%AC-%E3%80%82"><span class="toc-text">22. 交换机二层环路后可能产生的故障现象不包括( )。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#23-%E4%B8%8B%E5%88%97-IPv6-%E6%95%B0%E6%8D%AE%E6%8A%A5%E5%A4%B4%E7%9A%84%E5%AD%97%E6%AE%B5%E5%9C%A8-IPv4-%E6%8A%A5%E6%96%87%E4%B8%AD%E6%97%A0%E5%AF%B9%E5%BA%94%E5%8A%9F%E8%83%BD%E7%9A%84%E6%98%AF-%E3%80%82"><span class="toc-text">23. 下列 IPv6 数据报头的字段在 IPv4 报文中无对应功能的是( )。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#24-%E6%A0%B9%E6%8D%AE%E3%80%8A%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E6%B3%95%E3%80%8B%EF%BC%8C%E5%9B%BD%E5%AE%B6-%E4%BE%9D%E7%85%A7%E6%9C%AC%E6%B3%95%E5%92%8C%E6%9C%89%E5%85%B3%E6%B3%95%E5%BE%8B%E3%80%81%E8%A1%8C%E6%94%BF%E6%B3%95%E8%A7%84%E7%9A%84%E8%A7%84%E5%AE%9A%EF%BC%8C%E8%B4%9F%E8%B4%A3%E7%BB%9F%E7%AD%B9%E5%8D%8F%E8%B0%83%E7%BD%91%E7%BB%9C%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%92%8C%E7%9B%B8%E5%85%B3%E7%9B%91%E7%AE%A1%E5%B7%A5%E4%BD%9C%E3%80%82"><span class="toc-text">24. 根据《中华人民共和国数据安全法》，国家( )依照本法和有关法律、行政法规的规定，负责统筹协调网络数据安全和相关监管工作。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25-%E5%9C%A8-NFV-%E7%BD%91%E7%BB%9C%E5%8A%9F%E8%83%BD%E8%99%9A%E6%8B%9F%E5%8C%96-%E7%8E%AF%E5%A2%83%EF%BC%8C-%E8%B4%9F%E8%B4%A3%E6%89%A7%E8%A1%8C%E8%99%9A%E6%8B%9F%E5%8C%96%E7%9A%84%E7%BD%91%E7%BB%9C%E5%8A%9F%E8%83%BD%E3%80%82"><span class="toc-text">25. 在 NFV (网络功能虚拟化)环境，()负责执行虚拟化的网络功能。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#26-%E5%9C%A8Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%AD%EF%BC%8C%E4%B8%BB%E6%9C%BA%E5%90%8D%E5%88%B0IP%E5%9C%B0%E5%9D%80%E7%9A%84%E6%98%A0%E5%B0%84%E5%8C%85%E5%90%AB%E5%9C%A8-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%B8%AD%E3%80%82"><span class="toc-text">26. 在Linux操作系统中，主机名到IP地址的映射包含在()配置文件中。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#27-%E5%9C%A8Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%AD%EF%BC%8C%E8%A6%81%E5%81%9A%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6%E4%B8%AD%E6%9F%A5%E6%89%BE%E7%9B%AE%E6%A0%87%E6%96%87%E5%AD%97%E5%8F%AF%E4%BB%A5%E7%94%A8-%E3%80%82"><span class="toc-text">27. 在Linux操作系统中，要做指定文件中查找目标文字可以用()。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#28-%E4%B8%8B%E5%88%97%E5%85%B3%E4%BA%8EVLAN%E9%97%B4%E9%80%9A%E4%BF%A1%E7%9A%84%E8%AF%B4%E6%B3%95%E4%B8%AD%EF%BC%8C%E6%AD%A3%E7%A1%AE%E7%9A%84%E6%98%AF%EF%BC%88%EF%BC%89%E3%80%82"><span class="toc-text">28. 下列关于VLAN间通信的说法中，正确的是（）。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#29-%E4%B8%8B%E5%88%97%E5%85%B3%E4%BA%8E-SNMP-%E7%9A%84%E8%AF%B4%E6%B3%95%E6%AD%A3%E7%A1%AE%E7%9A%84%E6%98%AF-%E3%80%82"><span class="toc-text">29. 下列关于 SNMP 的说法正确的是()。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#30-%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E7%9A%84%E4%BD%9C%E7%94%A8%E6%98%AF%EF%BC%88%EF%BC%89%E3%80%82"><span class="toc-text">30. 数字证书的作用是（）。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#31-ARP%E7%97%85%E6%AF%92%E9%80%9A%E8%BF%87-%E5%BD%B1%E5%93%8D%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1%E3%80%82"><span class="toc-text">31. ARP病毒通过()影响网络通信。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#32-UTM-%E7%BB%9F%E4%B8%80%E5%A8%81%E8%83%81%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F-%E7%9A%84%E5%8A%9F%E8%83%BD%E4%B8%8D%E5%8C%85%E6%8B%AC%EF%BC%88%EF%BC%89%E3%80%82"><span class="toc-text">32. UTM (统一威胁管理系统) 的功能不包括（）。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#33"><span class="toc-text">33.</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%8B%E5%8D%88%E5%8E%86%E5%B9%B4%E7%9C%9F%E9%A2%98"><span class="toc-text">下午历年真题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2024%E5%B9%B411%E6%9C%88-1"><span class="toc-text">2024年11月</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%95%E9%A2%98%E4%B8%80%EF%BC%8815%E5%88%86%EF%BC%89"><span class="toc-text">试题一（15分）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%95%E9%A2%98%E4%BA%8C%EF%BC%8820%E5%88%86%EF%BC%89"><span class="toc-text">试题二（20分）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%95%E9%A2%98%E4%B8%89%EF%BC%8820%E5%88%86%EF%BC%89"><span class="toc-text">试题三（20分）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%95%E9%A2%98%E5%9B%9B%EF%BC%8820%E5%88%86%EF%BC%89"><span class="toc-text">试题四（20分）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2024%E5%B9%B45%E6%9C%88"><span class="toc-text">2024年5月</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%95%E9%A2%98%E4%B8%80%EF%BC%8820%E5%88%86%EF%BC%89"><span class="toc-text">试题一（20分）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%95%E9%A2%98%E4%BA%8C%EF%BC%8820%E5%88%86%EF%BC%89-1"><span class="toc-text">试题二（20分）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%95%E9%A2%98%E4%B8%89%EF%BC%8820%E5%88%86%EF%BC%89-1"><span class="toc-text">试题三（20分）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%95%E9%A2%98%E5%9B%9B%EF%BC%8815%E5%88%86%EF%BC%89"><span class="toc-text">试题四（15分）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2023%E5%B9%B411%E6%9C%88"><span class="toc-text">2023年11月</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%95%E9%A2%98%E4%B8%80%EF%BC%8815%E5%88%86%EF%BC%89-1"><span class="toc-text">试题一（15分）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%95%E9%A2%98%E4%BA%8C%EF%BC%8820%E5%88%86%EF%BC%89-2"><span class="toc-text">试题二（20分）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%95%E9%A2%98%E4%B8%89%EF%BC%8820%E5%88%86%EF%BC%89-2"><span class="toc-text">试题三（20分）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%95%E9%A2%98%E5%9B%9B%EF%BC%8815%E5%88%86%EF%BC%89-1"><span class="toc-text">试题四（15分）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2023%E5%B9%B45%E6%9C%88"><span class="toc-text">2023年5月</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1354,7 +1356,298 @@ user-interface vty 0 4
     acl 2000 inbound
 </code></pre>
 <hr>
-<h1 id="上午历年真题"><a href="#上午历年真题" class="headerlink" title="上午历年真题"></a>上午历年真题</h1><h1 id="下午历年真题"><a href="#下午历年真题" class="headerlink" title="下午历年真题"></a>下午历年真题</h1><h2 id="2024年11月"><a href="#2024年11月" class="headerlink" title="2024年11月"></a>2024年11月</h2><h4 id="试题一（15分）"><a href="#试题一（15分）" class="headerlink" title="试题一（15分）"></a>试题一（15分）</h4><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250426201008590.png" alt="图1"></p>
+<h1 id="上午历年真题"><a href="#上午历年真题" class="headerlink" title="上午历年真题"></a>上午历年真题</h1><h2 id="2024年11月"><a href="#2024年11月" class="headerlink" title="2024年11月"></a>2024年11月</h2><h4 id="1-由OSI-RM-表示层定义的数据压缩、加密等功能在实践中是由TCP-IP模型的（）层实现。"><a href="#1-由OSI-RM-表示层定义的数据压缩、加密等功能在实践中是由TCP-IP模型的（）层实现。" class="headerlink" title="1. 由OSI&#x2F;RM 表示层定义的数据压缩、加密等功能在实践中是由TCP&#x2F;IP模型的（）层实现。"></a>1. 由OSI&#x2F;RM <code>表示层</code>定义的数据压缩、加密等功能在实践中是由TCP&#x2F;IP模型的（）层实现。</h4><pre><code>A.物理层
+B.应用层
+C.传输层
+D.网络层
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250506204655201.png"></p>
+<blockquote>
+<p>B. 应用层</p>
+</blockquote>
+<h4 id="2-在（）局域网拓扑中，每个节点都直接连接到其相邻的两个节点，形成一个物理或逻辑的环。"><a href="#2-在（）局域网拓扑中，每个节点都直接连接到其相邻的两个节点，形成一个物理或逻辑的环。" class="headerlink" title="2. 在（）局域网拓扑中，每个节点都直接连接到其相邻的两个节点，形成一个物理或逻辑的环。"></a>2. 在（）局域网拓扑中，每个节点都直接连接到其相邻的两个节点，形成一个物理或逻辑的环。</h4><pre><code>A.以太网
+B.令牌总线
+C.标签交换
+D.WiFi
+</code></pre>
+<blockquote>
+<p>答: B</p>
+</blockquote>
+<blockquote>
+<p>A: 是总线，所以节点连接到总线上；B: 物理环是令牌环网，逻辑环是令牌总线；C: MPLS</p>
+</blockquote>
+<h4 id="3-在海明码中，如果信息位长度为7，那么为了纠正单个错误，至少需要添加（）位校验位。"><a href="#3-在海明码中，如果信息位长度为7，那么为了纠正单个错误，至少需要添加（）位校验位。" class="headerlink" title="3. 在海明码中，如果信息位长度为7，那么为了纠正单个错误，至少需要添加（）位校验位。"></a>3. 在海明码中，如果信息位长度为7，那么为了纠正单个错误，至少需要添加（）位校验位。</h4><pre><code>A.7
+B.14
+C.4
+D.3
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250506205701748.png"></p>
+<blockquote>
+<p>答：C     </p>
+</blockquote>
+<blockquote>
+<p>解析：题目说明m&#x3D;7, 要想等式成立，k&#x3D;4</p>
+</blockquote>
+<h4 id="4-在统计时分多路复用（STDM）中，如果某个用户的帧到达率远高于其他用户，为了防止该用户独占信道，通常会-。"><a href="#4-在统计时分多路复用（STDM）中，如果某个用户的帧到达率远高于其他用户，为了防止该用户独占信道，通常会-。" class="headerlink" title="4. 在统计时分多路复用（STDM）中，如果某个用户的帧到达率远高于其他用户，为了防止该用户独占信道，通常会( )。"></a>4. 在统计时分多路复用（STDM）中，如果某个用户的帧到达率远高于其他用户，为了防止该用户独占信道，通常会( )。</h4><pre><code>A.确保每个用户至少有一个最小保证时隙（解析：要结合缓冲区）
+B.拒绝服务该用户的帧，直到其他用户的帧被传输动态调整时隙分配
+C.强制降低该用户的传输速率
+D.使用缓冲区来存储等待传输的帧，但不调整时隙分配（解析：会调整）
+</code></pre>
+<blockquote>
+<p>答：C</p>
+</blockquote>
+<blockquote>
+<p>解析：TDM是时分复用，把信道的时间分成时间片，每个用户可以使用一个固定的时间片，但是有些时间某些用户是空闲的，所以有了STDM根据需求分配；将空闲的时间片分给其他用户。</p>
+</blockquote>
+<h4 id="5-下列高速以太网连接技术中，传输距离超过-10km-的是-。"><a href="#5-下列高速以太网连接技术中，传输距离超过-10km-的是-。" class="headerlink" title="5. 下列高速以太网连接技术中，传输距离超过 10km 的是( )。"></a>5. 下列高速以太网连接技术中，传输距离超过 10km 的是( )。</h4><pre><code>A.1000BASE-CX （解析：使用两对屏蔽双绞线，最大传输距离25M,常用在机柜中交换机之间的连接）
+B.1000BASE-ZX （解析：千兆以太网，思科指定的标准，最大传输距离70km）
+C.1000BASE-LX （解析：单模光纤，最大传输距离5km）
+D.1000BASE-FX （解析：多模光纤，最大传输距离2km）
+</code></pre>
+<blockquote>
+<p>答：B</p>
+</blockquote>
+<h4 id="6-某大型以太网只有两个主机，它们同时发送帧，形成碰撞后按截断二进制指数退避算法进行重传。重传次数记为-i，i-1-2-3-…-，则一个主机成功发送数据之前的平均重传次数约为-。"><a href="#6-某大型以太网只有两个主机，它们同时发送帧，形成碰撞后按截断二进制指数退避算法进行重传。重传次数记为-i，i-1-2-3-…-，则一个主机成功发送数据之前的平均重传次数约为-。" class="headerlink" title="6. 某大型以太网只有两个主机，它们同时发送帧，形成碰撞后按截断二进制指数退避算法进行重传。重传次数记为 i，i&#x3D;1,2,3,…..，则一个主机成功发送数据之前的平均重传次数约为( )。"></a>6. 某大型以太网只有两个主机，它们同时发送帧，形成碰撞后按截断二进制指数退避算法进行重传。重传次数记为 i，i&#x3D;1,2,3,…..，则一个主机成功发送数据之前的平均重传次数约为( )。</h4><pre><code>A.1
+B.4.75
+C.1.64
+D.3.25
+</code></pre>
+<blockquote>
+<p>答：C</p>
+</blockquote>
+<h4 id="7-当交换机收到一个帧，其目的-MAC-地址不在转发表中，则交换机将-。"><a href="#7-当交换机收到一个帧，其目的-MAC-地址不在转发表中，则交换机将-。" class="headerlink" title="7. 当交换机收到一个帧，其目的 MAC 地址不在转发表中，则交换机将( )。"></a>7. 当交换机收到一个帧，其目的 MAC 地址不在转发表中，则交换机将( )。</h4><pre><code>A.洪泛该帧到其他所有端口
+B.丢弃该帧
+C.在输入端口复制该帧
+D.在上联端口复制该帧
+</code></pre>
+<blockquote>
+<p>答：A</p>
+</blockquote>
+<h4 id="8-VLAN-技术所依据的协议是-。"><a href="#8-VLAN-技术所依据的协议是-。" class="headerlink" title="8. VLAN 技术所依据的协议是( )。"></a>8. VLAN 技术所依据的协议是( )。</h4><pre><code>A.IEEE 802.15   （解析：蓝牙）
+B.IEEE 802.3    （解析：以太网）
+C.IEEE 802.11   （解析：无线网）
+D.IEEE 802.1q
+</code></pre>
+<blockquote>
+<p>答：D</p>
+</blockquote>
+<h4 id="9-下列关于-RSTP-的说法中正确的是-。"><a href="#9-下列关于-RSTP-的说法中正确的是-。" class="headerlink" title="9.下列关于 RSTP 的说法中正确的是( )。"></a>9.下列关于 RSTP 的说法中正确的是( )。</h4><pre><code>A.交换机端口处于 discarding 状态即可进行流量转发 （解析：3种状态，forward才是转发的）
+B.依靠计时器超时机制确定根端口和指定端口 （解析：依靠的是选举机制）
+C.采用 P/A 机制实现快速收敛 （解析：P是协商，A是同意;不用等待30s）
+D.优先级数值大的交换机会被选为根桥 （解析：和生成树的机制一样，越小才对）
+</code></pre>
+<blockquote>
+<p>答：C</p>
+</blockquote>
+<h4 id="10-下列关于在交换机上配置-VLAN-的说法中，正确的是-。"><a href="#10-下列关于在交换机上配置-VLAN-的说法中，正确的是-。" class="headerlink" title="10. 下列关于在交换机上配置 VLAN 的说法中，正确的是( )。"></a>10. 下列关于在交换机上配置 VLAN 的说法中，正确的是( )。</h4><pre><code>A.交换机中的 VLAN 均有其对应的 VLANIF 接口 （解析：每一个vlanif接口都有一个对应的VLAN，反之不成立）
+B.可用 VLAN 编号范围是 0-4096 （解析：0-4095,可用范围1-4094）
+C.交换机中的所有 VLAN 均可删除 （解析：默认的VLAN 1 无法删除）
+D.交换机中的 VLAN 数量与其物理接口数量无关 
+</code></pre>
+<blockquote>
+<p>答：D</p>
+</blockquote>
+<h4 id="11-在量子通信领域，为了实现信息的绝对安全传输，通常采用-。"><a href="#11-在量子通信领域，为了实现信息的绝对安全传输，通常采用-。" class="headerlink" title="11. 在量子通信领域，为了实现信息的绝对安全传输，通常采用( )。"></a>11. 在量子通信领域，为了实现信息的绝对安全传输，通常采用( )。</h4><pre><code>A.经典电磁波，通过光纤传输
+B.量子隐形传态，无需物理介质，通过量子纠缠实现
+C.纠缠态量子比特，通过自由空间（如大气层）传输
+D.单个光子，通过超低损耗的单模光纤传输
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250506212654442.png"></p>
+<blockquote>
+<p>答：B</p>
+</blockquote>
+<h4 id="12-网络信息系统的可靠性测度不包括"><a href="#12-网络信息系统的可靠性测度不包括" class="headerlink" title="12. 网络信息系统的可靠性测度不包括( )"></a>12. 网络信息系统的可靠性测度不包括( )</h4><pre><code>A.完整性
+B.有效性
+C.抗毁性 （解析：人为破坏）
+D.生存性 （解析：随机破坏）
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250506212900733.png"></p>
+<blockquote>
+<p>答：A</p>
+</blockquote>
+<h4 id="13-下列关于交换机堆叠的说法正确的是-。"><a href="#13-下列关于交换机堆叠的说法正确的是-。" class="headerlink" title="13. 下列关于交换机堆叠的说法正确的是( )。"></a>13. 下列关于交换机堆叠的说法正确的是( )。</h4><pre><code>A.Master 交换机故障后，Slave 交换机中优先级值最大的会被选举为 Master 交换机，承担控制层面功能 （解析： 只有一个Slave, Master才需要选）
+B.堆叠就是将多台交换机相互级联 （解析：堆叠是通过堆叠卡，当成一台管理；级联通过任意普通口连接起来，还是多台交换机，分别管理）
+C.Master 交换机和 Backup、Slave 交换机共同承担数据转发
+D.必须使用专用堆叠卡和堆叠线缆 （解析：还可以使用高速的光纤等也可以）
+</code></pre>
+<blockquote>
+<p>答：C</p>
+</blockquote>
+<h4 id="14-基于-L-的最大值，假设运输层、网络层和数据链路层所用的首部开销共-66-字节，链路的数据率为-10Mbit-s，则发送该文件所需的最短时间为-。"><a href="#14-基于-L-的最大值，假设运输层、网络层和数据链路层所用的首部开销共-66-字节，链路的数据率为-10Mbit-s，则发送该文件所需的最短时间为-。" class="headerlink" title="14. 基于 L 的最大值，假设运输层、网络层和数据链路层所用的首部开销共 66 字节，链路的数据率为 10Mbit&#x2F;s，则发送该文件所需的最短时间为( )。"></a>14. 基于 L 的最大值，假设运输层、网络层和数据链路层所用的首部开销共 66 字节，链路的数据率为 10Mbit&#x2F;s，则发送该文件所需的最短时间为( )。</h4><pre><code>A.3591.29s 
+B.3435.97s 
+C.429.49s 
+D.448.91s
+</code></pre>
+<blockquote>
+<p>答：A</p>
+</blockquote>
+<blockquote>
+<p>解析：2^32&#x2F;1460 &#x3D; 2941758.42 帧；….</p>
+</blockquote>
+<h4 id="15-在路由器三层接口下配置如下所示命令，其作用是-。"><a href="#15-在路由器三层接口下配置如下所示命令，其作用是-。" class="headerlink" title="15. 在路由器三层接口下配置如下所示命令，其作用是( )。"></a>15. 在路由器三层接口下配置如下所示命令，其作用是( )。</h4><pre><code>A.配置 192.168.1.253 为非信任 DHCP 服务器
+B.配置 DHCP 中继
+C.使能全局 DHCP 功能，并配置 DHCP 服务器 IP 为 192.168.1.253
+D.由于三层接口无法转发 DHCP 广播报文，上述配置无效
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250506213840444.png"></p>
+<blockquote>
+<p>答：B</p>
+</blockquote>
+<h4 id="16-数据链路层如果采用滑动窗口协议进行可靠传输，并且发生了帧丢失，则对同步控制造成的影响是-。"><a href="#16-数据链路层如果采用滑动窗口协议进行可靠传输，并且发生了帧丢失，则对同步控制造成的影响是-。" class="headerlink" title="16. 数据链路层如果采用滑动窗口协议进行可靠传输，并且发生了帧丢失，则对同步控制造成的影响是( )。"></a>16. 数据链路层如果采用滑动窗口协议进行可靠传输，并且发生了帧丢失，则对同步控制造成的影响是( )。</h4><pre><code>A.同步控制依赖于更高层的协议来处理帧丢失 （解析：不是更高层，还是数据链路层控制）
+B.同步控制完全失效，需要重新建立连接    （解析：不需要重新建立连接，需要请求重传丢失的帧，或者通过确认机制来同步这些确认信息）
+C.同步控制不受影响，但会导致重传和可能的拥塞 （解析：受影响，不会导致拥塞）
+D.同步控制通过自动重传请求（ARQ）机制来恢复
+</code></pre>
+<blockquote>
+<p>答：D</p>
+</blockquote>
+<h4 id="17-静态路由的缺点是-。"><a href="#17-静态路由的缺点是-。" class="headerlink" title="17. 静态路由的缺点是( )。"></a>17. 静态路由的缺点是( )。</h4><pre><code>A.路由收敛慢 
+B.不能灵活适应网络结构的变化
+C.不支持 IPv6 
+D.必须运行路由协议才能生成路由表
+</code></pre>
+<blockquote>
+<p>答：B</p>
+</blockquote>
+<h4 id="18-当IP报文在网络传输时，如果其生存时间（TTL）减至0，将会发送的ICMP消息是（）。"><a href="#18-当IP报文在网络传输时，如果其生存时间（TTL）减至0，将会发送的ICMP消息是（）。" class="headerlink" title="18. 当IP报文在网络传输时，如果其生存时间（TTL）减至0，将会发送的ICMP消息是（）。"></a>18. 当IP报文在网络传输时，如果其生存时间（TTL）减至0，将会发送的ICMP消息是（）。</h4><pre><code>A.Parameter Problem (type: 12)
+B.TTL Exceeded (type: 11)
+C.Source Quench (type: 4)
+D.Destination Unreachable (Type: 3)
+</code></pre>
+<blockquote>
+<p>答：B</p>
+</blockquote>
+<h4 id="19-在路由器上做以下配置，其作用是-。"><a href="#19-在路由器上做以下配置，其作用是-。" class="headerlink" title="19. 在路由器上做以下配置，其作用是( )。"></a>19. 在路由器上做以下配置，其作用是( )。</h4><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250506214541829.png"></p>
+<pre><code>A.允许访问路由器管理接口
+B.全局开启管理接口的流量抑制功能
+C.开启管理接口的流量统计功能
+D.限制管理口和业务接口之间的流量转发
+</code></pre>
+<blockquote>
+<p>答：D</p>
+</blockquote>
+<blockquote>
+<p>解析：命令的作用是使能业务口和管理口的流量隔离</p>
+</blockquote>
+<h4 id="20-交换机-SW3-生成树信息如下图所示，下列关于该交换机生成树的说法中正确的是-。"><a href="#20-交换机-SW3-生成树信息如下图所示，下列关于该交换机生成树的说法中正确的是-。" class="headerlink" title="20. 交换机 SW3 生成树信息如下图所示，下列关于该交换机生成树的说法中正确的是( )。"></a>20. 交换机 SW3 生成树信息如下图所示，下列关于该交换机生成树的说法中正确的是( )。</h4><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250506214949311.png"></p>
+<pre><code>A.交换机 SW3 的生成树模式为 RSTP （解析： 有MSTID，说明是MSTP协议）
+B.Instance 20MST 域内，GigabitEthernet0/0/1 为 GigabitEthernet0/0/2 GigabitEthernet0/0/3的备份端口 （3个都是Forwarding状态，所以是错的，应该是Discarding）
+C.SW3 为 Instance 20MST 域的根桥 (解析：根桥没有Root根端口，只能有指定端口)
+D.SW3 为 Instance 10MST 域的根桥
+</code></pre>
+<blockquote>
+<p>答：D</p>
+</blockquote>
+<h4 id="21-访问HTTP连接和HTTPS链接分别使用的默认端口是-。"><a href="#21-访问HTTP连接和HTTPS链接分别使用的默认端口是-。" class="headerlink" title="21. 访问HTTP连接和HTTPS链接分别使用的默认端口是( )。"></a>21. 访问HTTP连接和HTTPS链接分别使用的默认端口是( )。</h4><pre><code>A.443 和 443
+B.443 和 80
+C.80 和 443
+D.80 和 80
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250506215731769.png"></p>
+<blockquote>
+<p>答：C</p>
+</blockquote>
+<h4 id="22-交换机二层环路后可能产生的故障现象不包括-。"><a href="#22-交换机二层环路后可能产生的故障现象不包括-。" class="headerlink" title="22. 交换机二层环路后可能产生的故障现象不包括( )。"></a>22. 交换机二层环路后可能产生的故障现象不包括( )。</h4><pre><code>A.交换机管理口无法登录
+B.交换机命令操作变得卡顿
+C.交换机下连接的终端访问网络很慢或者无法访问网络
+D.交换机的接口指示灯由绿灯变为黄灯 (解析：绿灯说明是千兆的速率，黄灯说明是百兆的速率)
+</code></pre>
+<blockquote>
+<p>答：D</p>
+</blockquote>
+<h4 id="23-下列-IPv6-数据报头的字段在-IPv4-报文中无对应功能的是-。"><a href="#23-下列-IPv6-数据报头的字段在-IPv4-报文中无对应功能的是-。" class="headerlink" title="23. 下列 IPv6 数据报头的字段在 IPv4 报文中无对应功能的是( )。"></a>23. 下列 IPv6 数据报头的字段在 IPv4 报文中无对应功能的是( )。</h4><pre><code>A.Payload Length (解析：负载长度；IPv6是不包括固定头部)
+B.Traffic Class (解析：通信类型；ipv4是区分类型，ipv6是通信类型)
+C.Hop Limit （解析：调数；ipv4是生产时间，ipv6是跳数限制）
+D.Flow Label
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250506220132899.png" alt="IPv4"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250506220208249.png" alt="IPv6"></p>
+<blockquote>
+<p>答：D</p>
+</blockquote>
+<blockquote>
+<p>解析：流标志，原目地址相同的可以统一处理，不用按数据包一个个转发；第二个IPv6安全性更高。</p>
+</blockquote>
+<h4 id="24-根据《中华人民共和国数据安全法》，国家-依照本法和有关法律、行政法规的规定，负责统筹协调网络数据安全和相关监管工作。"><a href="#24-根据《中华人民共和国数据安全法》，国家-依照本法和有关法律、行政法规的规定，负责统筹协调网络数据安全和相关监管工作。" class="headerlink" title="24. 根据《中华人民共和国数据安全法》，国家( )依照本法和有关法律、行政法规的规定，负责统筹协调网络数据安全和相关监管工作。"></a>24. 根据《中华人民共和国数据安全法》，国家( )依照本法和有关法律、行政法规的规定，负责统筹协调网络数据安全和相关监管工作。</h4><pre><code>A.网信部门
+B.工信部门
+C.公安机关
+D.检察机关
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250506220639904.png" alt="数据安全法规定"></p>
+<blockquote>
+<p>答：A</p>
+</blockquote>
+<h4 id="25-在-NFV-网络功能虚拟化-环境，-负责执行虚拟化的网络功能。"><a href="#25-在-NFV-网络功能虚拟化-环境，-负责执行虚拟化的网络功能。" class="headerlink" title="25. 在 NFV (网络功能虚拟化)环境，()负责执行虚拟化的网络功能。"></a>25. 在 NFV (网络功能虚拟化)环境，()负责执行虚拟化的网络功能。</h4><pre><code>A.VNF
+B.VNFM
+C.MANO
+D.NFVI 
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250506221010882.png"></p>
+<blockquote>
+<p>答：D</p>
+</blockquote>
+<h4 id="26-在Linux操作系统中，主机名到IP地址的映射包含在-配置文件中。"><a href="#26-在Linux操作系统中，主机名到IP地址的映射包含在-配置文件中。" class="headerlink" title="26. 在Linux操作系统中，主机名到IP地址的映射包含在()配置文件中。"></a>26. 在Linux操作系统中，主机名到IP地址的映射包含在()配置文件中。</h4><pre><code>A./etc/networks     (解析：网络的设置)
+B./etc/hostname     (解析：主机名)
+C./etc/hosts        (解析：解析域名到IP地址的映射关系)
+D./etc/resolv.conf  (解析：设置主DNS服务器或者备份DNS服务器的IP地址)
+E./etc/host.conf    (解析：设置域名解析顺序)
+</code></pre>
+<blockquote>
+<p>答：C</p>
+</blockquote>
+<h4 id="27-在Linux操作系统中，要做指定文件中查找目标文字可以用-。"><a href="#27-在Linux操作系统中，要做指定文件中查找目标文字可以用-。" class="headerlink" title="27. 在Linux操作系统中，要做指定文件中查找目标文字可以用()。"></a>27. 在Linux操作系统中，要做指定文件中查找目标文字可以用()。</h4><pre><code>A.grep      (解析：查看文件中符合条件的字符串或者内容)
+B.find      (解析：查找文件和目录)
+C.search    (解析：在windows中显示可安装的程序)
+D.wget      (解析：下载工具)
+</code></pre>
+<blockquote>
+<p>答：A</p>
+</blockquote>
+<h4 id="28-下列关于VLAN间通信的说法中，正确的是（）。"><a href="#28-下列关于VLAN间通信的说法中，正确的是（）。" class="headerlink" title="28. 下列关于VLAN间通信的说法中，正确的是（）。"></a>28. 下列关于VLAN间通信的说法中，正确的是（）。</h4><pre><code>A.不同VLAN之间可以使用专用线缆链接以实现其通信
+B.同交换机中相同VLAN间通信，必须通过三层实现
+C.不同VLAN跨交换机通信必须通过三层实现
+D.相同交换机中不同VLAN间通信，无需通过VLANIF接口
+</code></pre>
+<blockquote>
+<p>答：C</p>
+</blockquote>
+<h4 id="29-下列关于-SNMP-的说法正确的是-。"><a href="#29-下列关于-SNMP-的说法正确的是-。" class="headerlink" title="29. 下列关于 SNMP 的说法正确的是()。"></a>29. 下列关于 SNMP 的说法正确的是()。</h4><pre><code>A.SNMP 可以实现对不同设备的统一管理，管理成本低
+B.SNMP 采用TCP报文承载数据，保障设备信息传输的可靠性 （解析：UDP，端口是161是发送和接受，162是报警信息接收的端口）
+C.SNMPv2 在 SNMPv1 的基础上重新定义了网络管理框架和安全机制 （解析：没有添加安全机制）
+D.SNMPv3 专为管理 IPv6设备而定制的版本，不支持 IPv4 设备 （解析：也支持IPv4）
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250506221933722.png"></p>
+<blockquote>
+<p>答：A</p>
+</blockquote>
+<h4 id="30-数字证书的作用是（）。"><a href="#30-数字证书的作用是（）。" class="headerlink" title="30. 数字证书的作用是（）。"></a>30. 数字证书的作用是（）。</h4><pre><code>A.隐藏用户私钥 （解析：用户保存）
+B.防止用户公钥泄露 （解析：公开公钥）
+C.保障数据完整性 (解析：数字签名)
+D.绑定实体与公钥
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250506222306729.png"></p>
+<blockquote>
+<p>答：D</p>
+</blockquote>
+<h4 id="31-ARP病毒通过-影响网络通信。"><a href="#31-ARP病毒通过-影响网络通信。" class="headerlink" title="31. ARP病毒通过()影响网络通信。"></a>31. ARP病毒通过()影响网络通信。</h4><pre><code>A.拦截和篡改IP数据包
+B.SYN泛洪占用大量网络带宽导致网络拥塞
+C.伪造ARP请求或应答来欺骗网络中的设备
+D.加密网络流量使其无法被正确解析
+</code></pre>
+<blockquote>
+<p>答：C</p>
+</blockquote>
+<h4 id="32-UTM-统一威胁管理系统-的功能不包括（）。"><a href="#32-UTM-统一威胁管理系统-的功能不包括（）。" class="headerlink" title="32. UTM (统一威胁管理系统) 的功能不包括（）。"></a>32. UTM (统一威胁管理系统) 的功能不包括（）。</h4><pre><code>A.重要数据加密和备份
+B.恶意软件过滤
+C.访问控制
+D.垃圾邮件拦截2
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250506222832261.png"></p>
+<blockquote>
+<p>答：A</p>
+</blockquote>
+<h4 id="33"><a href="#33" class="headerlink" title="33."></a>33.</h4><hr>
+<h1 id="下午历年真题"><a href="#下午历年真题" class="headerlink" title="下午历年真题"></a>下午历年真题</h1><h2 id="2024年11月-1"><a href="#2024年11月-1" class="headerlink" title="2024年11月"></a>2024年11月</h2><h4 id="试题一（15分）"><a href="#试题一（15分）" class="headerlink" title="试题一（15分）"></a>试题一（15分）</h4><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250426201008590.png" alt="图1"></p>
 <p>公司为某科技园区的不同企业提供网络服务，不同企业的业务有所不同，每个企业因业务需要在不同的地点有多个分支机构。其拓扑结构如图 1 所示。企业用户通过楼层接入交换机、楼栋汇聚交换机和区域交换机接入园区汇聚网络。</p>
 <blockquote>
 <p>问题1（3分，配置Access和Trunk）：如表1所示，交换机 H1 和 H2 是为企业用户提供服务的楼层接入交换机，交换机 P1 和 P2是楼栋汇聚交换机，交换机 C1 是区域交换机。各层交换机所配置 VLAN 如表 1 所示。</p>
@@ -1423,7 +1716,7 @@ user-interface vty 0 4
 </blockquote>
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250426202317352.png"></p>
 <blockquote>
-<p>问题2（8分，网络安全）：网络源发现某台主机感染了病毒，大部分的文件后缀都变成了.LOCK，桌面背景被篡改，提示“All you data has been locked, mail to <a href="mailto:&#120;&#120;&#120;&#x78;&#x40;&#x6c;&#111;&#99;&#x6b;&#46;&#120;&#121;&#x7a;">xxxx@lock.xyz</a>”。该主机可能感染（）类型的病毒，网管员应该采取（）的措施（至少回答3点措施）。</p>
+<p>问题2（8分，网络安全）：网络源发现某台主机感染了病毒，大部分的文件后缀都变成了.LOCK，桌面背景被篡改，提示“All you data has been locked, mail to <a href="mailto:&#x78;&#120;&#120;&#x78;&#x40;&#x6c;&#111;&#x63;&#x6b;&#x2e;&#120;&#x79;&#122;">xxxx@lock.xyz</a>”。该主机可能感染（）类型的病毒，网管员应该采取（）的措施（至少回答3点措施）。</p>
 </blockquote>
 <blockquote>
 <p>答：</p>
@@ -1591,7 +1884,7 @@ Router  2.2.2.2         2.2.2.2         1149    36      8000000004  1
 </blockquote>
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250427093657667.png" alt="区域"></p>
 <p>答：不会有4类、5类的LSA，但是会生成一条3类LSA。</p>
-<h2 id="2024年5月"><a href="#2024年5月" class="headerlink" title="2024年5月"></a>2024年5月</h2><h3 id="试题一（20分）"><a href="#试题一（20分）" class="headerlink" title="试题一（20分）"></a>试题一（20分）</h3><p>某高校网络拓扑如下图所示，两校区核心（CORE-1、CORE-2），出口防火墙（NGFW-1、NGFW-2）通过校区间光缆互联，配置OSPF实现全校路由收敛，两校区相距40km。两校区默认由本地出口进行互联网访问。<br><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250427094539760.png" alt="拓扑图"></p>
+<h2 id="2024年5月"><a href="#2024年5月" class="headerlink" title="2024年5月"></a>2024年5月</h2><h4 id="试题一（20分）"><a href="#试题一（20分）" class="headerlink" title="试题一（20分）"></a>试题一（20分）</h4><p>某高校网络拓扑如下图所示，两校区核心（CORE-1、CORE-2），出口防火墙（NGFW-1、NGFW-2）通过校区间光缆互联，配置OSPF实现全校路由收敛，两校区相距40km。两校区默认由本地出口进行互联网访问。<br><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250427094539760.png" alt="拓扑图"></p>
 <blockquote>
 <p>问题1（3分）新校区规划以双栈方式部署IPv6网络，分配的IPv6地址为240C:DB8:1024::&#x2F;49。请将IPv6网络地址规划表补充完整。</p>
 </blockquote>
@@ -1605,7 +1898,9 @@ Router  2.2.2.2         2.2.2.2         1149    36      8000000004  1
 <blockquote>
 <p>答：</p>
 </blockquote>
-<pre><code class="language-bash">
+<pre><code class="language-bash">（1）240C:DB8:1024::FFFF:FFFF:FFFF:FFFF
+（2）240C:DB8:1024:4000::~240C:DB8:1024:7FFF:FFFF:FFFF:FFFF:FFFF
+（3）50
 </code></pre>
 <blockquote>
 <p>问题2（4分）为实现NGFW-2与NGFW-1、CORE-2正常建立OSPF邻居关系，实现路由全收敛，网络工程师对NGFW-2进行相关配置，请补充完善下列trust到local的配置</p>
@@ -1653,7 +1948,7 @@ Router  2.2.2.2         2.2.2.2         1149    36      8000000004  1
     服务器请求客户端公钥。客户端有证书即双向身份认证，没有证书时随机生成公钥。客户端与服务器通过公钥保密协议共同的主私钥（双方随机协商），后续的数据均使用这个主密钥进行加密传输。
 （14）CA
 </code></pre>
-<h3 id="试题二（20分）-1"><a href="#试题二（20分）-1" class="headerlink" title="试题二（20分）"></a>试题二（20分）</h3><p>某单位网络拓扑如下图所示，SW1、SW2为核心层交换机，PC网关配置在核心层，SW3、SW4为接入层交换机，行政部PC划为Vlan10，销售部PC划为Vlan20。</p>
+<h4 id="试题二（20分）-1"><a href="#试题二（20分）-1" class="headerlink" title="试题二（20分）"></a>试题二（20分）</h4><p>某单位网络拓扑如下图所示，SW1、SW2为核心层交换机，PC网关配置在核心层，SW3、SW4为接入层交换机，行政部PC划为Vlan10，销售部PC划为Vlan20。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250428205037520.png"></p>
 <blockquote>
 <p>问题1（4分）要实现骨干链路冗余，需要在哪些设备之间增加连线？增加连线后还需要配置什么避免形成二层环路？</p>
@@ -1689,39 +1984,147 @@ Router  2.2.2.2         2.2.2.2         1149    36      8000000004  1
 <pre><code class="language-bash">（1）10.0.1.129~10.0.1.157  （2）224
 （3）10.0.1.193~10.0.1.253  （4）26
 </code></pre>
-<h3 id="试题三（20分）-1"><a href="#试题三（20分）-1" class="headerlink" title="试题三（20分）"></a>试题三（20分）</h3><p>某网络拓扑如下图所示，路由器R1、R2、R3通过OSPF实现网络互通，R1和R3建立IBGP邻居关系，R3和R5建立EBGP邻居关系，R1和R4建立EBGP邻居关系。</p>
+<h4 id="试题三（20分）-1"><a href="#试题三（20分）-1" class="headerlink" title="试题三（20分）"></a>试题三（20分）</h4><p>某网络拓扑如下图所示，路由器R1、R2、R3通过OSPF实现网络互通，R1和R3建立IBGP邻居关系，R3和R5建立EBGP邻居关系，R1和R4建立EBGP邻居关系。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250427110948763.png"></p>
 <blockquote>
 <p>问题1（10分）各路由器IP地址等基本参数已正确配置，且R1、R2、R3之间OSPF邻居关系已建立且完成收敛，在R4配置本地环回Lo0模拟ISP地址210.23.3.4&#x2F;32，根据要求完成以下配置。</p>
 </blockquote>
-<pre><code class="language-shell">[R1] bgp 100 # (1)
-[R1-bgp] peer 10.14.14.4 as-number 200 # (2) (3) //与R4建立BGP邻居关系
+<pre><code class="language-shell">[R1] bgp (1) # 
+[R1-bgp] peer (2) as-number (3) # 与R4建立BGP邻居关系 
 [R1-bgp] peer 10.14.14.4 enable
 ...
 [R1-bgp] peer 3.3.3.3 next-hop-local # 作用是（4）
 # 在R4将210.23.3.4/32引入BGP
 [R4] bgp 200
-[R4-bgp] # (5) 将210.23.3.4/32 引入BGP
+[R4-bgp] (5) #  将210.23.3.4/32 引入BGP   
+</code></pre>
+<p>答：</p>
+<pre><code class="language-bash">(1) 100
+(2) 10.14.14.4
+(3) 200
+(4) 设置向IBGP对等体（组）通告路由时，把下一跳属性设为自身的IP地址。
+(5) network 210.23.3.4 255.255.255.255
 </code></pre>
 <blockquote>
 <p>问题2（3分）上述配置完成后，路由器R5上210.23.3.4&#x2F;32的路由信息如下图所示，但是无法ping通210.23.3.4，请分析原因。</p>
 </blockquote>
+<p>答：当访问210.23.3.4时，R5查询BGP路由表首先将报文转发到10.35.35.3，R3接收到报文以后查询路由表发现BGP路由的下一跳地址为R1，由于R1并非自己的直连路由，根据OSPF路由表查询到达R1的下一跳地址为R2，当R2收到上述报文后，由于R2没有启用BGP路由协议，所有路由表中无法查询去往210.23.3.4的路由，从而无法转发，于是将数据丢弃，形成“路由黑洞”。</p>
 <blockquote>
 <p>问题3（7分）管理员计划采用BGP路由反射功能解决上述问题。BGP路由反射功能需要遵循如下三条规则：</p>
 </blockquote>
-<ol>
-<li>从非客户机学到的路由，反射器发布给（1）</li>
-<li>从客户机学到的路由，反射器发布给（2）</li>
-<li>从eBGP邻居学到的路由，反射器发布给所有的非客户机和客户机。</li>
-</ol>
-<pre><code class="language-bash"># BGP反射器配置片段，配置R1为反射器、R2为客户端。
+<pre><code class="language-bash">1. 从非客户机学到的路由，反射器发布给 # (1) 
+2. 从客户机学到的路由，反射器发布给 # (2) 
+3. 从eBGP邻居学到的路由，反射器发布给所有的非客户机和客户机。
+# BGP反射器配置片段，配置R1为反射器、R2为客户端。
 # ...略去R2和R1建立BGP邻居配置
-[R1-bgp] reflector cluster-id 12  # 该条命令的作用是（3）
-[R1-bgp] peer (4) reflect-client
+[R1-bgp] reflector cluster-id 12  # 该条命令的作用是（3） 
+[R1-bgp] peer (4) reflect-client #
 </code></pre>
-<h3 id="试题四（15分）"><a href="#试题四（15分）" class="headerlink" title="试题四（15分）"></a>试题四（15分）</h3><p>某公司计划在骨干网络上建立静态MPLS，以便部署L2 VPN或者L3 VPN业务。其网络拓扑结果如下所示。</p>
+<p>答：</p>
+<pre><code class="language-bash">(1) 所有的客户机
+(2) 所有的客户机和非客户机
+(3) 配置路由反射器的集群ID
+(4) 2.2.2.2
+</code></pre>
+<h4 id="试题四（15分）"><a href="#试题四（15分）" class="headerlink" title="试题四（15分）"></a>试题四（15分）</h4><p>某公司计划在骨干网络上建立静态MPLS，以便部署L2 VPN或者L3 VPN业务。其网络拓扑结果如下所示。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250429205440572.png"></p>
-<h1 id="下午历年真题-1"><a href="#下午历年真题-1" class="headerlink" title="下午历年真题"></a>下午历年真题</h1><h2 id="2024年11月-1"><a href="#2024年11月-1" class="headerlink" title="2024年11月"></a>2024年11月</h2><h2 id="2024年5月-1"><a href="#2024年5月-1" class="headerlink" title="2024年5月"></a>2024年5月</h2>
+<p>问题1（16分）MPLS基于（1）进行转发，进行MPLS标签交换和报文转发的网络设备称为（2），构成MPLS域（MPLSDomain）。位于MPLS域边缘、连接其他网络的LSR称为（3），区域内部的LSR称为核心LSR（CoreLSR）IP报文进入MPLS网络时，MPLS入口设备分析IP报文的内容并为其添加合适的标签，所有MPLS网络中的LSR根据表情转发数据，当该IP报文离开MPLS网络时，标签由出口LER弹出。<br>IP报文在MPLS网络中经过的路径称为（4），LSP是一个单向路径，与数据流的方向一致。LSP的入口LER称为（5），位于LSP中间的LSR称为中间节点（Transit）；LSP的出口LER称为（6）。一条LSP可以有0个、1个或多个中间节点，但有且只有一个入节点和一个出节点。</p>
+<p>答：</p>
+<pre><code class="language-bash">（1）标签
+（2）标签交换路由器LSR（LabelSwitchingRouter）
+（3）入节点（Ingress）
+（4）边缘路由器LER（LableEdgeRouter）
+（5）标签交换路径LSP（LabelSwitchedPath）
+（6）出节点（Egress）
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250506203617589.png"></p>
+<p>问题2（9分）上图中，骨干网络中已完成路由协议配置，各个节点之间可以互通。下面是为该网络配置静态MPLS的代码，请将下面的配置代码补充完整。</p>
+<pre><code class="language-bash"># 使能LSR-1及各接口的MPLS功能
+[LSR-1] mpls (7) 1.1.1.9 # 
+[LSR-1] (8) # 
+[LSR-1-mpls] quit
+[LSR-1] interface (9) 100 # 
+[LSR-1-Vlanif100] mpls
+[LSR-1-Vlanif100] quit
+# 创建从LSR-1到LSR-3的静态LSP
+[LSR-1] static-lsp ingress LSP1 destination 3.3.3.9 32 nexthop 172.16.1.2 (10) 20 # 
+[LSR-2] static-lsp transit LSP1 incoming-interface vlanif100 in-label (11) nexthop 172.16.2.2 out-label (12) # 
+[LSR-3] static-lsp egress LSP1 incoming-interface vlanif200 () 40 #
+# 创建从LSR-3到LSR-1静态LSP
+[LSR-3] static-lsp ingress LSP2 destination 1.1.1.9 32 nexthop 172.16.2.1 out-label 30
+[LSR-2] static-lsp transit LSP2 incoming-interface vlanif200 in-label (13) nexthop 172.16.1.1 out-label (14) #
+[LSR-1] static-lsp egress LSP2 incoming-interface vlanif100 in-label 60
+</code></pre>
+<p>答：</p>
+<pre><code class="language-bash">(7) lsr-id
+(8) mpls
+(9) vlanif
+(10) out-label
+(11) 20
+(12) 40
+(13) in-label
+(14) 30 
+(15) 60
+</code></pre>
+<h2 id="2023年11月"><a href="#2023年11月" class="headerlink" title="2023年11月"></a>2023年11月</h2><h4 id="试题一（15分）-1"><a href="#试题一（15分）-1" class="headerlink" title="试题一（15分）"></a>试题一（15分）</h4><p>某企业生产网络拓扑如图1所示。该网络采用静态路由配置，交换机A、B配置VRRP，车间1与车间2之间部署了多台AGV（Automated Guded Vehicle），通过多个Wi-Fi进行数据转发。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250506172739423.png"></p>
+<p>问题1（6分）</p>
+<ol>
+<li>写出PC1的网关地址。</li>
+<li>配置交换机A默认路由。</li>
+<li>配置交换机C到PC1网段的静态路由。</li>
+</ol>
+<p>问题2（8分）</p>
+<ol>
+<li>由于生产需要，车间3需要扩充网络接入端口，需要增加1台交换机。新增加的交换机与原交换机可采用哪些连接方式？简要说明这些连接方式的区别和优缺点。</li>
+<li>简要说明交换机A、B互联的配置要点。</li>
+</ol>
+<p>问题3（6分）<br>简要说明AGV工作时可靠性受Wi-Fi信号影响因素有哪些。</p>
+<h4 id="试题二（20分）-2"><a href="#试题二（20分）-2" class="headerlink" title="试题二（20分）"></a>试题二（20分）</h4><p>某企业网络拓扑结果如下图所示，企业内部有两部分用户：生产部、研发部，全网IP地址由DHCP服务器统一分配。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250506173123615.png"></p>
+<p>问题1（4分）在Agg-Sw与Core-Sw之间采用OSPF协议，网络工程师小明负责方案实施，在配置完成后，Core-SW和Agg-SW之间无法学习路由。以下为网络工程师的检查结果，请分析故障原因，简要说明在Core SW交换机上如何调整配置以解决该故障。</p>
+<p>问题2（4分）网络运行中，经常出现网络终端获取到非规划的私有地址而导致无法上网和IP地址冲突的情况。请分析出现这两种现象的原因，并给出解决方案。</p>
+<p>问题3（6分）该企业在网络中使用了VLAN技术，VLAN是将一个物理的LAN在逻辑上划分成多个（1）的通信技术，实现网络隔离。当同一VLAN内地需要网络隔离时，我们可采用交换机的（2）功能，若在配置了二层隔离后，部分主机有互通的需求，则可在需求主机的网关上配置（3）功能。</p>
+<p>问题4（6分）该企业激活将原存储系统升级为分布式式存储，原存储设备依旧作为新建分布式存储的一个节点，为保证数据不丢失，采用3副本冗余，新建的分布式存储至少应规划（4）节点（含原存储设备），将原存储设备磁盘的RAID模式修改为（5）模式，加入新建的分布式存储系统，该存储系统通过（6）技术实现数据冗余。</p>
+<h4 id="试题三（20分）-2"><a href="#试题三（20分）-2" class="headerlink" title="试题三（20分）"></a>试题三（20分）</h4><p>下图为某公司网络拓扑片段，从R1到R2有两条转发路径，下一跳分别为R2和R3。由于R1和R2之间物理距离较远，通过一个二层交换机S1作为中继。假设图中设备已完成接口IP地址配置。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250506174911870.png"></p>
+<p>问题1（2分）从PC1发出目的地址为ISP1的IP报文默认将转发至R2的接口GE2&#x2F;0&#x2F;1，PC1构造帧时，是否需要获得该接口的MAC地址？请说明原因。</p>
+<p>问题2（10分）假设R2不支持BFD（双向转发检测），要求在R1上使用静态路由与BFD联动技术，实现当R2与S1之间的链路出现故障时，R1能快速感知，并将流量切换到R3的链路上。补全下列命令片段完成R1的相关配置。</p>
+<pre><code class="language-bash">[R1] bfd # 启动BFD功能
+[R1] quit
+[R1] bfd R1toR2 bind peer-ip (1) interface GigabitEthernet2/0/1 one-arm-echo # (1) 配置R1和R2之间的BFD会话
+[R1-R1toR2] discriminator local 1 # BFD 本地标识符1
+[R1-R1toR2] # (2)提交配置
+[R1-R1toR2] quit
+[R1] ip route-static 0.0.0.0 0.0.0.0 GigabitEthernet2/0/1 (3) track (4) R1 to R2 # 配置R1的缺省路由，联动BFD使得R1到2的流量优先走R1-&gt;S1-&gt;R2链路，当此链路发生故障时，流量切换到R1-&gt;R3-&gt;R2链路上
+[R1] ip route-static 0.0.0.0 0.0.0.0 GigabitEthernet2/0/2 10.13.13.3 preference 100 # 该条命令的功能是(5)
+</code></pre>
+<p>问题3（8分）路由器R2作为公司接入网关，为内网用户提供双链路都通过静态IP方式接入运营商。要求在R2的两个上行接口配置NAT，使内网用户可以访问Internet。</p>
+<pre><code class="language-bash"># 补全下列命令片段完成R2的相关配置
+[R2] acl number 3001 # 允许内部所有网络通过NAT访问外网
+[R2-acl-adv-3001] rule 5 permit ip source 10.0.0.0 (6) # (6)
+[R2-acl-adv-3001] quit
+[R2] interface GigabitEthernet 0/0/1
+[R2-GigabitEthernet0/0/1] nat (7) 3001 # 在GE0/0/1接口配置NAT
+[R2-GigabitEthernet0/0/1] quit
+...
+[R2] ip route-static 0.0.0.0 221.137.0.1
+[R2] ip route-static 0.0.0.0 210.25.0.1
+[R2] ip load-balance hash src-ip
+# 上述三条命令的功能是（8）
+</code></pre>
+<h4 id="试题四（15分）-1"><a href="#试题四（15分）-1" class="headerlink" title="试题四（15分）"></a>试题四（15分）</h4><p>某公司有部门A和部门B两个部门，分别使用C类地址192.168.1.0&#x2F;24和192.168.2.0&#x2F;24两个私有地址段，其中部门A为固定办公区域，部门B为移动办公区域。两个部门均有访问互联网的需求。公司网络的拓扑结构示意如图1所示。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250506193010111.png"></p>
+<p>问题1（4分）在Switch A上为部门A和部门B划分VLAN 10和VLAN 20，在R1上采用单臂路由方式实现VLAN间的通信。请将下面的空白补充完整。</p>
+<pre><code class="language-bash">&lt;R1&gt; system-view
+[R1] interface GigabitEthernet 0/0/1.1
+[R1-GigabitEthernet0/0/1.1] ip address 192.168.1.254 255.255.255.0
+[R1-GigabitEthernet0/0/1.1] dot1q termination vid 10
+[R1-GigabitEthernet0/0/1.1] arp broadcast enable
+# 为实现网络设计目标，工作人员需要在交换机Switch A上完成了创建VLAN10、VLAN20，为对应VLAN添加接口，设置对应的接口模式；除此以外，为确保网络连通，还需要在交换机SwitchA上完成（4）配置。
+</code></pre>
+<p>问题2（7分）公司计划使用</p>
+<h2 id="2023年5月"><a href="#2023年5月" class="headerlink" title="2023年5月"></a>2023年5月</h2>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 hjxstart@126.com </span>
     </div>
