@@ -23,9 +23,9 @@ tags: 项目
 
 ```bash
 # 通用的密码
-admin/Admin@123
-# 防火墙 X_T1_FW1
 admin/Huawei@123
+# 防火墙 X_T1_FW1
+admin/Admin@123
 ```
 
 2. IP规划
@@ -228,6 +228,8 @@ interface Eth-trunk 3
   port hybrid tagged vlan 11 to 15 21 to 25 100
 #
 dis ip int brief
+interface lo0
+  ip add 10.1.0.6 32
 interface vlanif 11
   ip add 10.1.11.254 24
   dhcp select relay
@@ -701,7 +703,7 @@ switch vsys Employee
       rule name Employee_Service //内部无线访问服务器
         source-zone trust
         destination-zone trust
-        source-address 10.1.51.0 10.1.55.255
+        source-address range 10.1.51.0 10.1.55.255
         destination-address 10.1.60.100 mask 255.255.255.255
         action permit
       rule name Deny_Service
@@ -737,10 +739,10 @@ acl 3000
   rule permit ip source 10.1.53.0 0.0.0.255 destination 10.1.60.0 0.0.0.255
   rule permit ip source 10.1.54.0 0.0.0.255 destination 10.1.60.0 0.0.0.255
   rule permit ip source 10.1.55.0 0.0.0.255 destination 10.1.60.0 0.0.0.255
-# 连接AC 的物理口,记住即可，无法配置 拟器不用敲
+# 连接AC 的物理口,记住即可，无法配置 拟器不用敲。将Employee无线访问服务器60的流量下一跳直接扔给vlan 206
 interface g0/0/3 
   traffic-redirect inbound acl 3000 vpn-instance Employee ip-nexthop 10.1.200.22
-#
+# 将源10.1.60.101的tcp 80 流量，直接扔给10.1.200.5
 acl number 3001
   rule permit tcp source 10.1.60.101 0.0.0.0 source-port eq 80 destination any
 interface GigabitEthernet 0/0/4
