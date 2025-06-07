@@ -48,7 +48,16 @@ cd ~/.local/share/Trash/files/
 # 进入单用户模式，修改root密码或者是开机用户的密码
 # 1. 重启主机，在选择界面按: e
 # 2. 将 linux 行的 ro 修改成 rw
-# 3. 在 Linux 行的 audit=0后面或者 security 之前添加 init=/bin/bash
+# 3. 在 Linux 行的 audit=0后面或者 security 之前添加 init=/bin/bash console=tty0
+# 4. 
+
+```
+
+### 刻录
+
+```bash
+kylin-burner
+
 
 ```
 

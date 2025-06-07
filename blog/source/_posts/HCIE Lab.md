@@ -894,6 +894,7 @@ NCE-南向地址: 172.22.8.82
 user001/Huawei@123
 
 
+admin/Huawei@123
 # 设备清空
 # 路由器设备清空> reset saved-configuration
 # 路由器设备清空> reboot fast
@@ -901,6 +902,53 @@ user001/Huawei@123
 
 ```
 
+1. 纳管路由器
+
+```bash
+# 清除残留netconf
+> factory-configuration reset
+# Ping通南向地址
+ping 172.22.8.72
+
+# Y_Export1
+int G0/0/8
+undo portswitch
+ip address 10.255.5.1 24
+#
+int g0/0/9
+undo portswitch
+ip address 10.255.6.1 24
+#
+ip route-static 0.0.0.0 0 10.255.5.254
+ip route-static 0.0.0.0 0 10.255.6.254
+
+# Store_Export1
+int G0/0/8
+undo portswitch
+ip address 10.255.7.1 24
+#
+int g0/0/9
+undo portswitch
+ip address 10.255.8.1 24
+#
+ip route-static 0.0.0.0 0 10.255.7.254
+ip route-static 0.0.0.0 0 10.255.8.254
+
+# Y_Export1/Store1_Export1 设备设置控制器地址（预配没有）
+agile controller host 172.22.8.72 port 10020
+
+# esn
+dis esn
+# 查看注册设备的上线上线
+dis agile-controller status
+```
+2. 纳管交换机
+
+```bash
+
+# reset netconf db-configuration
+
+```
 #### 1 - 切换 EVPN 网络隧道模式
 
 > 设计 / 基础网络设计 / 网络设置 / 隧道模式 / EVPN
