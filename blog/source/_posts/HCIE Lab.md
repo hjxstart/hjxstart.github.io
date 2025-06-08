@@ -2040,6 +2040,458 @@ return
 
 ---
 
+## Z园区: SRv6
+
+### 1、全局ISIS IPv6配置（IBG打通）
+
+```bash
+## PEX
+bfd
+#
+isis 1
+  is-level level-2
+  cost-style wide
+  network-entity 49.0001.00X0.0000.000X.00
+  ipv6 enable topology ipv6
+  ipv6 bfd all-interfaces enable
+  ipv6 bfd all-interfaces min-tx-interval 15 min-rx-interval 15 //模拟器 300
+  domain-authentication-mode md5 plain Huawei@123
+#
+interface loopback0
+  isis ipv6 enable 1
+#
+interface G0/2/28
+  isis ipv6 enable 1
+  isis circuit-type p2p
+  isis authentication-mode md5 cipher Huawei@123
+  isis ppp-negotiation 2-way
+#
+interface G0/2/29
+  isis ipv6 enable 1
+  isis circuit-type p2p
+  isis authentication-mode md5 cipher Huawei@123
+  isis ppp-negotiation 2-way
+#
+interface G0/2/30
+  isis ipv6 enable 1
+  isis circuit-type p2p
+  isis authentication-mode md5 cipher Huawei@123
+  isis ppp-negotiation 2-way
+  isis ipv6 cost 4
+
+## 检查
+dis ipv6 routing-table fc00::5:5 verbose # X_PE1
+dis isis route ipv6 # X_PE1
+```
+
+### 2、部署SRv6 Locator 和 Opcode静态
+
+```bash
+## PEX 
+## 部署 SRv6 Locator
+segment-routing ipv6
+  sr-te frr enable
+  encapsulation source-address FC00::X:X //Loopback0 ipv6 地址
+  locator HCIE ipv6-prefix FC02:X:: 96 static 16 //注意考场有没要求特点前缀
+#
+isis 1
+  segment-routing ipv6 locator HCIE
+  avoid-microloop frr-protected
+  ipv6 avoid-microloop segment-routing
+  ipv6 frr
+    loop-free-alternate level-2
+
+## Opcode静态部署
+# X_PE1
+segment-routing ipv6
+  locator HCIE
+    opcode ::1 end psp
+    opcode ::10 end-x interface G0/2/30 nexthop FC01:10::A psp
+    opcode ::20 end-x interface G0/2/28 nexthop FC01:10::2 psp
+    opcode ::30 end-x interface G0/2/29 nexthop FC01:10::6 psp
+    opcode ::100 end-op
+# X_PE2
+segment-routing ipv6
+  locator HCIE
+    opcode ::1 end psp
+    opcode ::10 end-x interface G0/2/30 nexthop FC01:10::9 psp
+    opcode ::20 end-x interface G0/2/28 nexthop FC01:10::E psp
+    opcode ::30 end-x interface G0/2/29 nexthop FC01:10::12 psp
+# Y_PE1
+segment-routing ipv6
+  locator HCIE
+    opcode ::1 end psp
+    opcode ::10 end-x interface G0/2/30 nexthop FC01:10::1A psp
+    opcode ::20 end-x interface G0/2/28 nexthop FC01:10::1 psp
+    opcode ::30 end-x interface G0/2/29 nexthop FC01:10::16 psp
+    opcode ::100 end-op
+# Y_PE2
+segment-routing ipv6
+  locator HCIE
+    opcode ::1 end psp
+    opcode ::10 end-x interface G0/2/30 nexthop FC01:10::19 psp
+    opcode ::20 end-x interface G0/2/28 nexthop FC01:10::D psp
+    opcode ::30 end-x interface G0/2/29 nexthop FC01:10::1E psp
+    opcode ::100 end-op
+# Z_PE1
+segment-routing ipv6
+  locator HCIE
+    opcode ::1 end psp
+    opcode ::10 end-x interface G0/2/30 nexthop FC01:10::22 psp
+    opcode ::20 end-x interface G0/2/28 nexthop FC01:10::5 psp
+    opcode ::30 end-x interface G0/2/29 nexthop FC01:10::15 psp
+    opcode ::100 end-op
+# Z_PE2
+segment-routing ipv6
+  locator HCIE
+    opcode ::1 end psp
+    opcode ::10 end-x interface G0/2/30 nexthop FC01:10::21 psp
+    opcode ::20 end-x interface G0/2/28 nexthop FC01:10::11 psp
+    opcode ::30 end-x interface G0/2/29 nexthop FC01:10::1D psp
+    opcode ::100 end-op
+
+## 检查
+ping ipv6-sid segment-by-segment fc02:2::10 # X_PE1
+ping ipv6-sid segment-by-segment fc02:2::20 # X_PE1
+ping ipv6-sid segment-by-segment fc02:2::30 # X_PE1
+ping ipv6-sid segment-by-segment fc02:3::10 # X_PE1
+ping ipv6-sid segment-by-segment fc02:3::20 # X_PE1
+ping ipv6-sid segment-by-segment fc02:3::30 # X_PE1
+ping ipv6-sid segment-by-segment fc02:4::10 # X_PE1
+ping ipv6-sid segment-by-segment fc02:4::20 # X_PE1
+ping ipv6-sid segment-by-segment fc02:4::30 # X_PE1
+ping ipv6-sid segment-by-segment fc02:5::10 # X_PE1
+ping ipv6-sid segment-by-segment fc02:5::20 # X_PE1
+ping ipv6-sid segment-by-segment fc02:5::30 # X_PE1
+ping ipv6-sid segment-by-segment fc02:6::10 # X_PE1
+ping ipv6-sid segment-by-segment fc02:6::20 # X_PE1
+ping ipv6-sid segment-by-segment fc02:6::30 # X_PE1
+
+ping ipv6-sid segment-by-segment fc02:1::10 # X_PE2
+ping ipv6-sid segment-by-segment fc02:1::20 # X_PE2
+ping ipv6-sid segment-by-segment fc02:1::30 # X_PE2
+
+dis segment-routing ipv6 local-sid locator HCIE forwarding
+```
+
+### 3、BGP 65000 / EVPN 配置
+
+```bash
+## Z_PE1/2
+bgp 65000
+  router-id X.0.0.X //手动配置 RID
+  peer FC00::1 as-number 65000
+  peer FC00::1 connect-interface loopback 0
+  peer FC00::1 password simple Huawei@123
+  peer FC00::2 as-number 65000
+  peer FC00::2 connect-interface loopback 0
+  peer FC00::2 password simple Huawei@123
+  peer FC00::3 as-number 65000
+  peer FC00::3 connect-interface loopback 0
+  peer FC00::3 password simple Huawei@123
+  peer FC00::4 as-number 65000
+  peer FC00::4 connect-interface loopback 0
+  peer FC00::4 password simple Huawei@123 (考场看需求配置)
+  l2vpn-family evpn
+    policy vpn-target
+    peer FC00::1 enable
+    y
+    peer FC00::1 advertise encap-type srv6
+    peer FC00::2 enable
+    y
+    peer FC00::2 advertise encap-type srv6
+    peer FC00::3 enable
+    y
+    peer FC00::3 advertise encap-type srv6
+    peer FC00::4 enable
+    y
+    peer FC00::4 advertise encap-type srv6
+    quit
+  quit
+
+## X/Y_PE1/2
+bgp 65000
+  router-id X.0.0.X 手动配置 RID
+  peer FC00::5 as-number 65000
+  peer FC00::5 connect-interface loopback 0
+  peer FC00::5 password simple Huawei@123
+  peer FC00::6 as-number 65000
+  peer FC00::6 connect-interface loopback 0
+  peer FC00::6 password simple Huawei@123
+  l2vpn-family evpn
+    policy vpn-target
+    peer FC00::5 enable
+    y
+    peer FC00::5 advertise encap-type srv6
+    peer FC00::6 enable
+    y
+    peer FC00::6 advertise encap-type srv6
+    quit
+  quit
+
+## 检查
+dis bgp evpn peer
+```
+
+### 4、[65000, 65001] vpn-instance / IP / BGP EVPN / 双点双站路由重分布
+
+```bash
+## X_PE1
+ip vpn-instance OA
+  route-distinguisher 65001:1
+  vpn-target 1:4 export-extcommunity evpn
+  vpn-target 4:1 import-extcommunity evpn
+#
+interface G0/2/31
+  ip binding vpn-instance OA
+  ip address 10.20.1.2 30
+#
+bgp 65000
+  ipv4-family vpn-instance OA
+    advertise l2vpn evpn
+    segment-routing ipv6 traffic-engineer best-effort evpn
+    segment-routing ipv6 locator HCIE evpn
+    peer 10.20.1.1 as-number 65001
+
+## X_PE2
+ip vpn-instance OA
+  route-distinguisher 65001:2
+  vpn-target 1:4 export-extcommunity evpn
+  vpn-target 4:1 import-extcommunity evpn
+#
+interface G0/2/31
+  ip binding vpn-instance OA
+  ip address 10.20.1.10 30
+#
+bgp 65000
+  ipv4-family vpn-instance OA
+    advertise l2vpn evpn
+    segment-routing ipv6 traffic-engineer best-effort evpn
+    segment-routing ipv6 locator HCIE evpn
+    peer 10.20.1.9 as-number 65001
+
+## X_Export1
+inter E0/0/7
+  ip add 10.20.1.1 30
+#
+inter E0/0/6
+  ip add 10.20.1.5 30
+#
+bgp 65001
+  router-id 10.1.0.1
+  peer 10.20.1.2 as 65000 //与 X_PE1 建立 BGP 邻居关系
+
+## X_Export2
+inter E0/0/7
+  ip add 10.20.1.9 30
+#
+inter E0/0/6
+  ip add 10.20.1.6 30
+#
+bgp 65001
+  router-id 10.1.0.2
+  peer 10.20.1.10 as 65000 //与 X_PE2 建立邻居关系
+```
+
+### 5、[65000, 65003] vpn-instance / IP / BGP EVPN
+
+```bash
+## Y_PE1
+ip vpn-instance OA
+  route-distinguisher 65003:1
+  vpn-target 3:4 export-extcommunity evpn
+  vpn-target 4:3 import-extcommunity evpn
+#
+ip vpn-instance R&D
+  route-distinguisher 65003:3
+  vpn-target 33:44 export-extcommunity evpn
+  vpn-target 44:33 import-extcommunity evpn
+#
+interface G0/2/31.10
+  vlan-type dot1q 10
+  ip binding vpn-instance OA
+  ip address 10.20.2.2 30
+#
+interface G0/2/31.20
+  vlan-type dot1q 20
+  ip binding vpn-instance R&D
+  ip address 10.20.2.6 30
+#
+bgp 65000
+  ipv4-family vpn-instance OA
+    advertise l2vpn evpn
+    segment-routing ipv6 traffic-engineer best-effort evpn
+    segment-routing ipv6 locator HCIE evpn
+    peer 10.20.2.1 as-number 65003
+  ipv4-family vpn-instance R&D
+    advertise l2vpn evpn
+    segment-routing ipv6 traffic-engineer best-effort evpn
+    segment-routing ipv6 locator HCIE evpn
+    peer 10.20.2.5 as-number 65003
+
+## Y_PE2
+ip vpn-instance OA
+  route-distinguisher 65003:2
+  vpn-target 3:4 export-extcommunity evpn
+  vpn-target 4:3 import-extcommunity evpn
+#
+ip vpn-instance R&D
+  route-distinguisher 65003:4
+  vpn-target 33:44 export-extcommunity evpn
+  vpn-target 44:33 import-extcommunity evpn
+#
+interface G0/2/31.10
+  vlan-type dot1q 10
+  ip binding vpn-instance OA
+  ip address 10.20.2.10 30
+#
+interface G0/2/31.20
+  vlan-type dot1q 20
+  ip binding vpn-instance R&D
+  ip address 10.20.2.14 30
+#
+bgp 65000
+  ipv4-family vpn-instance OA
+    advertise l2vpn evpn
+    segment-routing ipv6 traffic-engineer best-effort evpn
+    segment-routing ipv6 locator HCIE evpn
+    peer 10.20.2.9 as-number 65003
+  ipv4-family vpn-instance R&D
+    advertise l2vpn evpn
+    segment-routing ipv6 traffic-engineer best-effort evpn
+    segment-routing ipv6 locator HCIE evpn
+    peer 10.20.2.13 as-number 65003
+
+## Y_Export
+ip ip-prefix OA index 10 permit 10.2.0.0 16 greater-equal 24 less-equal 24
+ip ip-prefix OA index 20 permit 10.100.2.0 24
+#
+ip ip-prefix RD index 10 permit 10.2.0.0 16 greater-equal 24 less-equal 24
+ip ip-prefix RD index 20 permit 10.100.3.0 24
+#
+interface G0/0/7
+  undo portswitch
+interface G0/0/6
+  undo portswitch
+interface G0/0/7.10
+  dot1q termination vid 10
+  ip binding vpn-instance vpn2
+  ip address 10.20.2.1 255.255.255.252
+interface G0/0/7.20
+  dot1q termination vid 20
+  ip binding vpn-instance vpn3
+  ip address 10.20.2.5 255.255.255.252
+interface G0/0/6.10
+  dot1q termination vid 10
+  ip binding vpn-instance vpn2
+  ip address 10.20.2.9 255.255.255.252
+interface G0/0/6.20
+  dot1q termination vid 20
+  ip binding vpn-instance vpn3
+  ip address 10.20.2.13 255.255.255.252
+#
+bgp 65003
+  ipv4-family vpn-instance vpn2
+    peer 10.20.2.2 as-number 65000
+    peer 10.20.2.2 ip-prefix OA export
+    peer 10.20.2.10 as-number 65000
+    peer 10.20.2.10 ip-prefix OA export
+  ipv4-family vpn-instance vpn3
+    peer 10.20.2.6 as-number 65000
+    peer 10.20.2.6 ip-prefix RD export
+    peer 10.20.2.14 as-number 65000
+    peer 10.20.2.14 ip-prefix RD export
+```
+
+### 6、[65000, 65004] vpn-instance / IP / BGP EVPN
+
+```bash
+## Z_PE1
+ip vpn-instance OA
+  route-distinguisher 65004:1
+  vpn-target 1:4 import-extcommunity evpn
+  vpn-target 3:4 import-extcommunity evpn
+  vpn-target 4:1 export-extcommunity evpn
+  vpn-target 4:3 export-extcommunity evpn
+ip vpn-instance R&D
+  route-distinguisher 65004:3
+  vpn-target 44:33 export-extcommunity evpn
+  vpn-target 33:44 import-extcommunity evpn
+#
+interface G0/2/31.10
+  vlan-type dot1q 10
+  ip binding vpn-instance OA
+  ip address 10.20.3.2 30
+interface G0/2/31.20
+  vlan-type dot1q 20
+  ip binding vpn-instance R&D
+  ip address 10.20.3.6 30
+#
+bgp 65000
+  ipv4-family vpn-instance OA
+    advertise l2vpn evpn
+    segment-routing ipv6 traffic-engineer best-effort evpn
+    segment-routing ipv6 locator HCIE evpn
+    peer 10.20.3.1 as-number 65004
+  ipv4-family vpn-instance R&D
+    advertise l2vpn evpn
+    segment-routing ipv6 traffic-engineer best-effort evpn
+    segment-routing ipv6 locator HCIE evpn
+    peer 10.20.3.5 as-number 65004
+
+## Z_PE2
+ip vpn-instance OA
+  route-distinguisher 65004:2
+  vpn-target 1:4 import-extcommunity evpn
+  vpn-target 3:4 import-extcommunity evpn
+  vpn-target 4:1 export-extcommunity evpn
+  vpn-target 4:3 export-extcommunity evpn
+#
+ip vpn-instance R&D
+  route-distinguisher 65004:4
+  vpn-target 44:33 export-extcommunity evpn
+  vpn-target 33:44 import-extcommunity evpn
+#
+interface G0/2/31.10
+  vlan-type dot1q 10
+  ip binding vpn-instance OA
+  ip address 10.20.3.10 30
+#
+interface G0/2/31.20
+  vlan-type dot1q 20
+  ip binding vpn-instance R&D
+  ip address 10.20.3.14 30
+#
+bgp 65000
+  ipv4-family vpn-instance OA
+    advertise l2vpn evpn
+    segment-routing ipv6 traffic-engineer best-effort evpn
+    segment-routing ipv6 locator HCIE evpn
+    peer 10.20.3.9 as-number 65004
+  ipv4-family vpn-instance R&D
+    advertise l2vpn evpn
+    segment-routing ipv6 traffic-engineer best-effort evpn
+    segment-routing ipv6 locator HCIE evpn
+    peer 10.20.3.13 as-number 65004
+
+## Z_Export1
+
+```
+
+### 7、SRv6 Policy 部署
+
+### 8、SRv6 SBFD 部署
+
+### 9、业务路径规划实现
+
+### 10、VPN FRR部署
+
+### 11、部署 QOS
+
+
+
+---
+
 ## Python网络自动化
 
 ### 1、前5个需求
