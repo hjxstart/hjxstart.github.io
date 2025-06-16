@@ -162,3 +162,140 @@
 #@web-server # 基本网页服务器，这些工具运行您在系统上运行万维网服务器。
 %end
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+#version=DEVEL
+# Use graphical install
+graphical
+
+
+%post --nochroot
+
+#####copy kyinfo and LICENSE
+if [ -e /tmp/.kyinfo ];then
+  echo y | cp -a /tmp/.kyinfo $ANA_INSTALL_PATH/etc/
+fi
+if [ -e /tmp/LICENSE ];then
+  echo y | cp -a /tmp/LICENSE $ANA_INSTALL_PATH/etc/
+fi
+
+if [ -e /run/install/repo/.kyinfo ];then
+  echo y | cp -a /run/install/repo/.kyinfo $ANA_INSTALL_PATH/etc/
+fi
+
+if [ -e /run/install/repo/LICENSE ];then
+  echo y | cp -a /run/install/repo/LICENSE $ANA_INSTALL_PATH/etc/
+fi
+
+##### kylin postaction
+## cdrom install, copy .kylin-post-actions
+if [ -e /run/install/repo/.kylin-post-actions ];then
+  echo y | cp -a /run/install/repo/.kylin-post-actions /tmp/.kylin-post-actions
+  echo "repo=/run/install/repo" > /tmp/.kylin-repo
+fi
+## copy kylin post scripts in new os
+if [ -e /tmp/.kylin-post-actions ];then
+  echo y | cp -a /tmp/.kylin-post-actions $ANA_INSTALL_PATH/bin
+fi
+if [ -e /tmp/.kylin-repo ];then
+  echo y | cp -a /tmp/.kylin-repo $ANA_INSTALL_PATH/tmp/
+fi
+
+## copy and run .kylin-post-actions-nochroot
+if [ -e /run/install/repo/.kylin-post-actions-nochroot ];then
+  echo y | cp -a /run/install/repo/.kylin-post-actions-nochroot /tmp/.kylin-post-actions-nochroot
+fi
+if [ -e /tmp/.kylin-post-actions-nochroot ];then
+  /bin/bash -x /tmp/.kylin-post-actions-nochroot &> $ANA_INSTALL_PATH/var/log/.kylin-post-actions-nochroot.log
+fi
+
+
+%end
+
+%post
+
+systemctl disable systemd-networkd-wait-online.service
+systemctl disable multipathd.service
+
+### do kylin post action
+if [ -e /bin/.kylin-post-actions ];then
+  /bin/bash -x /bin/.kylin-post-actions &> /var/log/.kylin-post-actions.log
+fi
+
+%end
+
+%packages
+@^web-server-environment
+@container-management
+@kysecurity-SDK
+@man-help
+
+%end
+
+# Keyboard layouts
+keyboard --xlayouts='cn'
+# System language
+lang zh_CN.UTF-8 --addsupport=en_US.UTF-8
+
+# Network information
+network  --bootproto=dhcp --device=em1 --onboot=off --ipv6=auto --no-activate
+network  --bootproto=dhcp --device=em2 --onboot=off --ipv6=auto
+network  --bootproto=dhcp --device=p4p1 --onboot=off --ipv6=auto
+network  --bootproto=dhcp --device=p4p2 --onboot=off --ipv6=auto
+network  --bootproto=dhcp --device=p8p1 --onboot=off --ipv6=auto
+network  --bootproto=dhcp --device=p8p2 --onboot=off --ipv6=auto
+network  --hostname=localhost.localdomain
+
+# Use hard drive installation media
+harddrive --dir= --partition=/dev/sda2
+
+# Run the Setup Agent on first boot
+firstboot --enable
+# System services
+services --enabled="chronyd"
+
+ignoredisk --only-use=sdb
+# Partition clearing information
+clearpart --none --initlabel
+# Disk partitioning information
+part pv.156 --fstype="lvmpv" --ondisk=sdb --size=912642
+part /boot --fstype="xfs" --ondisk=sdb --size=2048
+part /boot/efi --fstype="efi" --ondisk=sdb --size=1024 --fsoptions="umask=0077,shortname=winnt"
+volgroup klas --pesize=4096 pv.156
+logvol swap --fstype="swap" --size=32768 --name=swap --vgname=klas
+logvol /backup --fstype="xfs" --grow --size=500 --name=backup --vgname=klas
+logvol / --fstype="xfs" --size=828672 --name=root --vgname=klas
+
+# System timezone
+timezone Asia/Shanghai
+
+# Root password
+rootpw --iscrypted $6$5DIT9nNUuBEfChJJ$cD9Q2xHtCMkp1mTKdIOefnry2Nf.DUtPm7HEclrMC95X55K3ggg26GnKgI.lOXqex3wqG722HSV414kWTbHsW0
+
+%addon com_redhat_kdump --disable --reserve-mb='128'
+
+%end
+
+%anaconda
+pwpolicy root --minlen=8 --minquality=1 --strict --nochanges --notempty
+pwpolicy user --minlen=8 --minquality=1 --strict --nochanges --emptyok
+pwpolicy luks --minlen=8 --minquality=1 --strict --nochanges --notempty
+%end
+
+
+
+
+西藏大数据 AI 性能测试：协助西藏大数据中心完成了 AI 性能测试相关工作。利用麒麟操作系统对多种国产 AI 芯片进行适配与优化，在测试过程中，系统展现出了出色的兼容性与稳定性。经过 10 轮测试与调优，AI 模型的训练速度提升了 60%，推理效率提高了 55%，为西藏地区大数据与人工智能产业的发展提供了有力的技术支撑，也进一步证明了麒麟软件在新兴技术领域的强大实力。同时，在大数据中心项目运维中积累的经验，为后续 AI 项目的落地实施奠定了实践基础。
+
+背景：部署AI模型 DeepSeek R1  671B, 采用服务器Atlas 800T A2，GPU鲲鹏920 昇腾,每台 4个920，和8个910B3 GUP；2台组成多机推理；系统镜像采用麒麟Kylin-Server-V10-SP3-General-Release-2303-ARM64，升级4k内核，打开透明大页，进程绑核优化；使用gsm8k测试集，启动服务化推理后benchmark测试。

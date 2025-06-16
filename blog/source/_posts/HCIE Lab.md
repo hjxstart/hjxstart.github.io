@@ -1385,7 +1385,7 @@ dis bgp vpnv4 all peer # X5个 Y2个 Z2个
 dis bgp bfd session all # X5个 
 ```
 
-###  4、 [65000, 65001] VPN-Instance/IP/BGP
+###  4、 [65000, 65001] VPN-Instance / IP / route-policy / BGP
 
 ```bash
 ## X_PE1/2
@@ -1405,11 +1405,18 @@ interface GigabitEthernet2/0/0
  ip binding vpn-instance OA
  ip address 10.20.1.2 30
  quit
+# X_PE1 oa主路径
+#  apply cost 12
+route-policy oa_med permit node 10
+ apply cost-type internal # 继承
+ quit
 # BGP绑定VPN-instance
 #   peer 10.20.1.9 as-number 65001
+#   peer 10.20.1.9 route-policy oa_med export
 bgp 65000
  ipv4-family vpn-instance OA
   peer 10.20.1.1 as-number 65001
+  peer 10.20.1.1 route-policy oa_med export
   quit
  quit
 
@@ -1422,7 +1429,50 @@ interface GigabitEthernet2/0/0
 interface GigabitEthernet2/0/1
  ip address 10.20.1.5 30
  quit
-ping 10.20.1.2
+# X双点双路路由重发布
+acl 2001
+ rule permit source 10.1.11.0 0.0.0.255
+ rule permit source 10.1.12.0 0.0.0.255
+ rule permit source 10.1.13.0 0.0.0.255
+ rule permit source 10.1.14.0 0.0.0.255
+ rule permit source 10.1.15.0 0.0.0.255
+ rule permit source 10.1.21.0 0.0.0.255
+ rule permit source 10.1.22.0 0.0.0.255
+ rule permit source 10.1.23.0 0.0.0.255
+ rule permit source 10.1.24.0 0.0.0.255
+ rule permit source 10.1.25.0 0.0.0.255
+ rule permit source 10.1.31.0 0.0.0.255
+ rule permit source 10.1.32.0 0.0.0.255
+ rule permit source 10.1.33.0 0.0.0.255
+ rule permit source 10.1.34.0 0.0.0.255
+ rule permit source 10.1.35.0 0.0.0.255
+ rule permit source 10.1.41.0 0.0.0.255
+ rule permit source 10.1.42.0 0.0.0.255
+ rule permit source 10.1.43.0 0.0.0.255
+ rule permit source 10.1.44.0 0.0.0.255
+ rule permit source 10.1.45.0 0.0.0.255
+ rule permit source 10.1.51.0 0.0.0.255
+ rule permit source 10.1.52.0 0.0.0.255
+ rule permit source 10.1.53.0 0.0.0.255
+ rule permit source 10.1.54.0 0.0.0.255
+ rule permit source 10.1.55.0 0.0.0.255
+ quit
+route-policy b2o permit node 10
+ apply tag 10
+ quit
+route-policy o2b deny node 10
+ if-match tag 20
+ quit
+route-policy o2b permit node 20
+ if-match acl 2001
+ quit
+dis cur config route-policy
+# OSPF
+ospf 1
+ import-route bgp route-policy b2o
+ default cost inherit-metric
+ quit
+#
 # BGP
 #  router-id 10.1.0.2
 #  peer 10.20.1.10 as-number 65000
@@ -1430,10 +1480,26 @@ bgp 65001
  router-id 10.1.0.1
  dis ip int brief
  peer 10.20.1.2 as-number 65000
+ network 10.20.1.4 30
+ preference 120 255 255
+ import-route ospf 1 route-policy o2b
  quit
+# 检查
+dis ip routing-table 10.2.31.0
+dis ip routing-table 10.2.51.0
+dis ip routing-table protocol ospf  # 70 49 21
+## X_PE1
+dis ip routing-table vpn-instance OA # 51
+dis bgp vpnv4 vpn-instance OA routing-table # 120
+## X_PE1
+dis bgp vpnv4 vpn-instance OA routing-table # 112
+## X_T1_CORE
+dis ip routing-table protocol ospf # 67
+## Y_PE1
+dis ip routing-table vpn-instance OA 10.3.101.0 verbose
 ```
 
-###  5、 [65000, 65003] VPN-Instance/IP/BGP
+###  5、 [65000, 65003] VPN-Instance / IP / route-policy / BGP
 
 ```bash
 ## Y_PE1/2
@@ -1468,14 +1534,27 @@ interface GigabitEthernet2/0/0.20
  ip address 10.20.2.6 30
  arp broadcast enable
  quit
+## Y_PE1 oa主路径，rd备路径
+# apply cost 12
+# apply cost-type internal
+route-policy oa_med permit node 10
+ apply cost-type internal
+ quit
+route-policy rd_med permit node 10
+ apply cost 12
+ quit
 # BGP绑定VPN-instance
 #  peer 10.20.2.9 as-number 65003
+#  peer 10.20.2.9 route-policy oa_med export
 #  peer 10.20.2.13 as-number 65003
+#  peer 10.20.2.13 route-policy rd_med export
 bgp 65000
  ipv4-family vpn-instance OA
   peer 10.20.2.1 as-number 65003
+  peer 10.20.2.1 route-policy oa_med export
  ipv4-family vpn-instance R&D
   peer 10.20.2.5 as-number 65003
+  peer 10.20.2.5 route-policy rd_med export
   quit
  quit
 
@@ -1496,16 +1575,28 @@ interface GigabitEthernet2/0/0.20
  ip address 10.20.2.5 30
  arp broadcast enable
  quit
+# Y过滤路由
+ip ip-prefix deny_Default deny 0.0.0.0 0
+ip ip-prefix deny_Default permit 0.0.0.0 0 less-equal 32
+ip ip-prefix OA permit 10.2.0.0 16 greater-equal 24 less-equal 24 
+ip ip-prefix OA permit 10.100.2.0 24
+dis cur int lo 2
+ip ip-prefix R&D permit 10.2.0.0 16 greater-equal 24 less-equal 24
+ip ip-prefix R&D permit 10.100.3.0 24
 # BGP绑定VPN-instance
 bgp 65003
  ipv4-family vpn-instance vpn2
   peer 10.20.2.2 as-number 65000
   peer 10.20.2.2 ip-prefix deny_default export
+  peer 10.20.2.2 ip-prefix OA export
   peer 10.20.2.10 as-number 65000
   peer 10.20.2.10 ip-prefix deny_default export 
+  peer 10.20.2.10 ip-prefix OA export
  ipv4-family vpn-instance vpn3
   peer 10.20.2.6 as-number 65000
+  peer 10.20.2.6 ip-prefix R&D export
   peer 10.20.2.14 as-number 65000
+  peer 10.20.2.14 ip-prefix R&D export
   quit
  quit
 ```
@@ -1555,18 +1646,31 @@ int g 2/0/0.20
  ip add 10.20.3.10 30
  arp broadcast enable
  quit
+## Z_PE1 oa主路径，rd备路径
+# apply cost 12
+# apply cost-type internal
+route-policy oa_med permit node 10
+ apply cost-type internal
+ quit
+route-policy rd_med permit node 10
+ apply cost 12
+ quit
 # BGP绑定VPN-instance
 #  peer 10.20.3.13 as-number 65004
+#  peer 10.20.3.13 route-policy oa_med export
 #  peer 10.20.3.17 as-number 65004
 #  peer 10.20.3.21 as-number 65004
+#  peer 10.20.3.21 route-policy rd_med export
 bgp 65000
  ipv4-family vpn-instance OA_In
   peer 10.20.3.1 as-number 65004
+  peer 10.20.3.1 route-policy oa_med export
  ipv4-family vpn-instance OA_Out
   peer 10.20.3.5 as-number 65004
   peer 10.20.3.5 allow-as-loop
  ipv4-family vpn-instance R&D
   peer 10.20.3.9 as-number 65004
+  peer 10.20.3.9 route-policy rd_med export
   quit
  quit
 
@@ -1637,106 +1741,6 @@ bgp 65004
   network 10.3.100.0 24
   quit
  quit
-```
-
-### 7、配置PE BGP export route-policy
-
-```bash
-## X_PE1 oa主路径
-route-policy oa_med permit node 10
- apply cost-type internal # 继承
- quit
-#
-bgp 65000
- ipv4-family vpn-instance OA
-  dis this
-  peer 10.20.1.1 route-policy oa_med export
-  quit
- quit
-## X_PE2 oa备用路径
-route-policy oa_med permit node 10
- apply cost 12
- quit
-#
-bgp 65000
- ipv4-family vpn-instance OA
-  dis this
-  peer 10.20.1.9 route-policy oa_med export
-  quit
- quit
-## Y_PE1 oa主路径，rd备路径
-route-policy oa_med permit node 10
- apply cost-type internal
- quit
-route-policy rd_med permit node 10
- apply cost 12
- quit
-#
-bgp 65000
- ipv4-family vpn-instance OA
-  dis this
-  peer 10.20.2.1 route-policy oa_med export
-  quit
- ipv4-family vpn-instance R&D
-  dis this
-  peer 10.20.2.5 route-policy rd_med export
-  quit
- quit
-## Y_PE2 oa备路径，rd主路径
-route-policy oa_med permit node 10
- apply cost 12
- quit
-route-policy rd_med permit node 10
- apply cost-type internal
- quit
-#
-bgp 65000
- ipv4-family vpn-instance OA
-  dis this
-  peer 10.20.2.9 route-policy oa_med export
-  quit
- ipv4-family vpn-instance R&D
-  dis this
-  peer 10.20.2.13 route-policy rd_med export
-  quit
- quit
-## Z_PE1 oa主路径，rd备路径
-route-policy oa_med permit node 10
- apply cost-type internal
- quit
-route-policy rd_med permit node 10
- apply cost 12
- quit
-#
-bgp 65000
- ipv4-family vpn-instance OA_In
-  dis this
-  peer 10.20.3.1 route-policy oa_med export
-  quit
- ipv4-family vpn-instance R&D
-  dis this
-  peer 10.20.3.9 route-policy rd_med export
-  quit
- quit
-## Z_PE2 oa备路径，rd主路径
-route-policy oa_med permit node 10
- apply cost 12
- quit
-route-policy rd_med permit node 10
- apply cost-type internal
- quit
-#
-bgp 65000
- ipv4-family vpn-instance OA_In
-  dis this
-  peer 10.20.3.13 route-policy oa_med export
-  quit
- ipv4-family vpn-instance R&D
-  dis this
-  peer 10.20.3.21 route-policy rd_med export
-  quit
- quit
-
 # 检查
 ## Z_Export1
 dis bgp vpnv4 all peer # 6
@@ -1754,149 +1758,8 @@ dis bgp vpnv4 vpn-instance OA_In routing-table # 41 --- to do 21
 dis bgp vpnv4 vpn-instance OA_Out routing-table # 21
 ```
 
-### 8、Y过滤路由,X双点双路路由重发布
 
-```bash
-## Y_Export1 ----- to do
-ip ip-prefix deny_Default deny 0.0.0.0 0
-ip ip-prefix deny_Default permit 0.0.0.0 0 less-equal 32
-bgp 65003
- ipv4-family vpn-instance vpn2
-  dis this
-  peer 10.20.2.2 ip-prefix deny_Default export
-  peer 10.20.2.10 ip-prefix deny_Default export
-  quit
- quit
-## Y_Export1
-dis cur int lo 1
-ip ip-prefix OA permit 10.2.0.0 16 greater-equal 24 less-equal 24 
-ip ip-prefix OA permit 10.100.2.0 24
-dis cur int lo 2
-ip ip-prefix R&D permit 10.2.0.0 16 greater-equal 24 less-equal 24
-ip ip-prefix R&D permit 10.100.3.0 24
-bgp 65003
- ipv4-family vpn-instance vpn2
-  dis this
-  peer 10.20.2.2 ip-prefix OA export
-  peer 10.20.2.10 ip-prefix OA export
- ipv4-family vpn-instance vpn3
-  dis this
-  peer 10.20.2.6 ip-prefix R&D export
-  peer 10.20.2.14 ip-prefix R&D export
-  quit
- quit
-  
-## X_T_Export1
-acl 2001
- rule permit source 10.1.11.0 0.0.0.255
- rule permit source 10.1.12.0 0.0.0.255
- rule permit source 10.1.13.0 0.0.0.255
- rule permit source 10.1.14.0 0.0.0.255
- rule permit source 10.1.15.0 0.0.0.255
- rule permit source 10.1.21.0 0.0.0.255
- rule permit source 10.1.22.0 0.0.0.255
- rule permit source 10.1.23.0 0.0.0.255
- rule permit source 10.1.24.0 0.0.0.255
- rule permit source 10.1.25.0 0.0.0.255
- rule permit source 10.1.31.0 0.0.0.255
- rule permit source 10.1.32.0 0.0.0.255
- rule permit source 10.1.33.0 0.0.0.255
- rule permit source 10.1.34.0 0.0.0.255
- rule permit source 10.1.35.0 0.0.0.255
- rule permit source 10.1.41.0 0.0.0.255
- rule permit source 10.1.42.0 0.0.0.255
- rule permit source 10.1.43.0 0.0.0.255
- rule permit source 10.1.44.0 0.0.0.255
- rule permit source 10.1.45.0 0.0.0.255
- rule permit source 10.1.51.0 0.0.0.255
- rule permit source 10.1.52.0 0.0.0.255
- rule permit source 10.1.53.0 0.0.0.255
- rule permit source 10.1.54.0 0.0.0.255
- rule permit source 10.1.55.0 0.0.0.255
- quit
-route-policy b2o permit node 10
- apply tag 10
- quit
-route-policy o2b deny node 10
- if-match tag 20
- quit
-route-policy o2b permit node 20
- if-match acl 2001
- quit
-dis cur config route-policy
-#
-ospf 1
- import-route bgp route-policy b2o
- default cost inherit-metric
- quit
-bgp 65001
- preference 120 255 255
- import-route ospf 1 route-policy o2b
- network 10.20.1.4 30
- quit
-
-
-## X_T_Export2
-acl 2001
- rule permit source 10.1.11.0 0.0.0.255
- rule permit source 10.1.12.0 0.0.0.255
- rule permit source 10.1.13.0 0.0.0.255
- rule permit source 10.1.14.0 0.0.0.255
- rule permit source 10.1.15.0 0.0.0.255
- rule permit source 10.1.21.0 0.0.0.255
- rule permit source 10.1.22.0 0.0.0.255
- rule permit source 10.1.23.0 0.0.0.255
- rule permit source 10.1.24.0 0.0.0.255
- rule permit source 10.1.25.0 0.0.0.255
- rule permit source 10.1.31.0 0.0.0.255
- rule permit source 10.1.32.0 0.0.0.255
- rule permit source 10.1.33.0 0.0.0.255
- rule permit source 10.1.34.0 0.0.0.255
- rule permit source 10.1.35.0 0.0.0.255
- rule permit source 10.1.41.0 0.0.0.255
- rule permit source 10.1.42.0 0.0.0.255
- rule permit source 10.1.43.0 0.0.0.255
- rule permit source 10.1.44.0 0.0.0.255
- rule permit source 10.1.45.0 0.0.0.255
- rule permit source 10.1.51.0 0.0.0.255
- rule permit source 10.1.52.0 0.0.0.255
- rule permit source 10.1.53.0 0.0.0.255
- rule permit source 10.1.54.0 0.0.0.255
- rule permit source 10.1.55.0 0.0.0.255
- quit
-route-policy b2o permit node 10
- apply tag 20
- quit
-route-policy o2b deny node 10
- if-match tag 10
- quit
-route-policy o2b permit node 20
- if-match acl 2001
- quit
-#
-ospf 1
- import-route bgp route-policy b2o
- default cost inherit-metric
- quit
-bgp 65001
- preference 120 255 255
- import-route ospf 1 route-policy o2b
- quit
-dis ip routing-table 10.2.31.0
-dis ip routing-table 10.2.51.0
-dis ip routing-table protocol ospf  # 70 49 21
-## X_PE1
-dis ip routing-table vpn-instance OA # 51
-dis bgp vpnv4 vpn-instance OA routing-table # 120
-## X_PE1
-dis bgp vpnv4 vpn-instance OA routing-table # 112
-## X_T1_CORE
-dis ip routing-table protocol ospf # 67
-## Y_PE1
-dis ip routing-table vpn-instance OA 10.3.101.0 verbose
-```
-
-### 9、VPN FRR与 MPLS MTU
+### 7、VPN FRR与 MPLS MTU
 
 ```bash
 ## X/Y_PE1
@@ -1913,7 +1776,7 @@ dis ip routing-table vpn-instance OA 10.2.31.0 verbose
 dis ip routing-table vpn-instance OA 10.3.101.0 verbose
 ```
 
-### 10、QOS & FW & Test
+### 8、QOS & FW & Test
 
 ```bash
 ## Y_Export1
@@ -2504,6 +2367,41 @@ bgp 65000
 5. 每24小时自动保存设备的配置文件并备份到本地，并通过安全的传输协议存在本地设备，以【当天日期_设备名字.后续】的名称命名设备端以及本地的配置文件。举例：2022_2_14_X_T2_AGG1.zip 2022_2_14_X_T2_AGG1.bak
 ```
 
+- X_T1_AGG1
+
+```bash
+user-interface vty 0 4
+  authentication-mode aaa
+  protocol inbound ssh
+  user privilege level 15
+  quit
+aaa
+  local-user python password irreversible-cipher Huawei@123
+  local-user python privilege level 15
+  local-user python service-type ssh
+  local-user netconf password irreversible-cipher Huawei@123
+  local-user netconf privilege level 15
+  local-user netconf service-type api
+  quit
+netconf
+  source ip interface loopback 0 port 830
+  quit
+stelnet server enable
+
+ssh user python
+ssh server-source all-interface
+ssh user python authentication-type password
+ssh user python service-type stelnet
+
+sftp server enable
+ssh user python service-type all
+
+ssh user python sftp-directory flash:/
+aaa
+  local-aaa-user password policy administrator
+  undo password alert original
+```
+
 ### 2、创建“command.txt”文件，完成1和4需求
 
 ```
@@ -2516,6 +2414,11 @@ display ospf peer brief
 ```
 
 ### 3、相关需求的Python程序
+
+```bash
+pip install ncclient
+pip install paramiko
+```
 
 ```py
 from paramiko import SSHClient,AutoAddPolicy
@@ -2900,4 +2803,12 @@ CTRL+D 删除当前光标所在位置的字符
 CTRL+H 删除光标左侧的一个字符
 CTRL+N 显示历史命令缓冲区中的后一条命令
 CTRL+P 显示历史命令缓冲区中的前一条命令
+```
+
+
+## 排查命令
+
+```bash
+display  ospf 65001 error
+dis cu configuration  ospf  65001
 ```
