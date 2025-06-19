@@ -854,6 +854,103 @@ sys
 telnet 10.1.60.99 3389
 ```
 
+### 8、其他
+
+```bash
+## X_T1_AGG1
+# netconf连接
+user-interface vty 0 4
+  authentication-mode password
+  protocol inbound ssh
+  user privilege level 15
+  quit
+  
+aaa
+  local-user python password irreversible-cipher Huawei@123
+  local-user python service-type ssh
+  local-user python privilege level 15
+  local-user netconf password irreversible-cipher Huawei@123
+  local-user netconf service-type ssh
+  local-user netconf privilege level 15
+  local-aaa-user password policy administrator
+  undo password alter original
+  quit
+  
+netconf
+  source ip interface loopback 0 port 830
+  quit
+  
+stelnet server enable
+  ssh server-source all-interface
+  ssh user python authentication password
+  ssh user python service-type stelnet
+  quit
+  
+sftp server enable
+  ssh user python service-type all
+  ssh user python sftp-directory flash:/
+  quit
+
+## X_FW
+sys
+switch vsys Employee
+sys
+
+ip address-set Y type object
+  address range 10.2.31.0 10.2.35.255
+  address range 10.2.41.0 10.2.41.255
+  address range 10.2.51.0 10.2.51.255
+  quit
+  
+ip address-set Z&Store type object
+  address range 10.3.101.0 mask 24
+  address range 10.100.2.0 mask 24
+  
+ip address-set X type object
+  address range 10.1.11.0 10.1.15.255
+  address range 10.1.21.0 10.1.25.255
+  address range 10.1.31.0 10.1.35.255
+  address range 10.1.41.0 10.1.45.255
+  address range 10.1.51.0 10.1.55.255
+  quit
+  
+security-policy
+  rule name X_TO_Y&Z&Store
+  source-zone trust
+  source-zone untrust
+  destination-zone trust
+  destinatino-zone untrust
+  source-address address-set X
+  destination-address address-set Y
+  destination-address address-set Z&Store
+  action permit
+  
+  rule name Y&Z&Store_TO_X
+  source-zone trust
+  source-zone untrust
+  destination-zone trust
+  destinatino-zone untrust
+  source-address address-set Y
+  source-address address-set Z&Store
+  destination-address address-set Y
+  action permit
+  
+rule move Employee_to_Internet bottom
+
+
+ospf 1
+  area 2
+    stub
+ospf 65002
+  area 2
+    stub
+    
+# FW
+ospf 65002
+  area 2
+    stub
+```
+
 ---
 
 ## Y园区：iMaster NCE-Campus SD-WAN 部署
@@ -1559,6 +1656,10 @@ bgp 65000
  quit
 
 ## Y_Export1
+interface GigabitEthernet0/0/7
+undo portswitch
+interface GigabitEthernet0/0/6
+undo portswitch
 # ip binding vpn-instance
 #  interface GigabitEthernet2/0/1.10
 #   ip address 10.20.2.9 30
@@ -1580,7 +1681,6 @@ ip ip-prefix deny_Default deny 0.0.0.0 0
 ip ip-prefix deny_Default permit 0.0.0.0 0 less-equal 32
 ip ip-prefix OA permit 10.2.0.0 16 greater-equal 24 less-equal 24 
 ip ip-prefix OA permit 10.100.2.0 24
-dis cur int lo 2
 ip ip-prefix R&D permit 10.2.0.0 16 greater-equal 24 less-equal 24
 ip ip-prefix R&D permit 10.100.3.0 24
 # BGP绑定VPN-instance
@@ -1599,6 +1699,38 @@ bgp 65003
   peer 10.20.2.14 ip-prefix R&D export
   quit
  quit
+# 配置RD业务QOS
+acl number 3001
+  rule permit ip source 10.2.11.0 0.0.0.255
+  rule permit ip source 10.2.12.0 0.0.0.255
+  rule permit ip source 10.2.13.0 0.0.0.255
+  rule permit ip source 10.2.14.0 0.0.0.255
+  rule permit ip source 10.2.15.0 0.0.0.255
+  description rd
+acl number 3002
+  rule permit ip source 10.2.21.0 0.0.0.255
+  rule permit ip source 10.2.22.0 0.0.0.255
+  rule permit ip source 10.2.23.0 0.0.0.255
+  rule permit ip source 10.2.24.0 0.0.0.255
+  rule permit ip source 10.2.25.0 0.0.0.255
+  description product
+traffic classifier rd
+  if-match acl 3001
+traffic classifier pro
+  if-match acl 3002
+traffic behavior pro
+  remark dscp ef
+  queue llq bandwidth 100000
+traffic behavior rd
+  remark dscp af41
+  queue af bandwidth 300000
+traffic policy RD
+  classifier rd behavior rd
+  classifier pro behavior pro
+interface GigabitEthernet0/0/6.20
+  traffic-policy RD outbound
+interface GigabitEthernet0/0/7.20
+  traffic-policy RD outbound
 ```
 
 ### 6、 [65000, 65004] VPN-Instance/IP/BGP
