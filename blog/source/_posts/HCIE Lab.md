@@ -1489,6 +1489,7 @@ acl 2001
  rule permit source 10.1.53.0 0.0.0.255
  rule permit source 10.1.54.0 0.0.0.255
  rule permit source 10.1.55.0 0.0.0.255
+ rule permit source 10.20.1.4 0
  quit
 route-policy b2o permit node 10
  apply tag 10
@@ -2104,6 +2105,69 @@ bgp 65000
     segment-routing ipv6 traffic-engineer best-effort evpn
     segment-routing ipv6 locator HCIE evpn
     peer 10.20.1.1 as-number 65001
+    quit
+  quit
+
+# SRv6 Policy部署
+segment-routing ipv6
+  srv6-te-policy locator HCIE
+  segment-list x1-z1-zhu
+    index 10 sid ipv6 FC02:1::30
+  segment-list x1-z1-bei
+    index 10 sid ipv6 FC02:1::10
+    index 20 sid ipv6 FC02:2::30
+    index 30 sid ipv6 FC02:6::10
+srv6-te policy x1-z1 endpoint FC00::5 Color 101
+  candidate-path preference 200
+    segment-list x1-z1-zhu
+  candidate-path preference 100
+    segment-list x1-z1-bei
+#
+route-policy fz1 permit node 10
+  apply extcommunity color 0:101
+#
+route-policy fz2 permit node 10
+  apply cost 10
+#
+bgp 65000
+l2vpn-family evpn
+  peer FC00::5 route-policy fz1 import
+  peer FC00::6 route-policy fz2 import
+#
+tunnel-policy x1-z1
+  tunnel select-seq ipv6 srv6-te-policy load-balance-number 1
+#
+ip vpn-instance OA
+  ipv4-family
+  tnl-policy x1-z1 evpn
+
+# SRv6 SBFD部署
+te ipv6-router-id FC00::X
+bfd
+sbfd
+  reflector discriminator X.0.0.X 对应自己的 Router-ID
+  destination ipv6 FC00::5 remote-discriminator 5.0.0.5
+te ipv6-router-id FC00::X
+segment-routing ipv6
+srv6-te-policy backup hot-standby enable
+  srv6-te-policy bfd seamless enable
+  srv6-te-policy bfd no-bypass
+  srv6-te-policy bfd min-tx-interval 50
+#考场配置如下：
+srv6-te-policy seamless-bfd enable
+srv6-te-policy seamless-bfd min-tx-interval 50
+# 检查
+dis bfd session all
+dis srv6-te policy
+
+# 路径规划实现， OA主路径
+route-policy MED_OA permit node 10
+  apply cost 10
+#
+bgp 65000
+  ipv4-family vpn-instance OA
+    peer 10.20.1.1 route-policy MED_OA export
+
 
 ## X_PE2
 ip vpn-instance OA
@@ -2122,27 +2186,183 @@ bgp 65000
     segment-routing ipv6 locator HCIE evpn
     peer 10.20.1.9 as-number 65001
 
+# SRv6 Policy部署
+segment-routing ipv6
+  srv6-te-policy locator HCIE
+  segment-list x2-z2-zhu
+    index 10 sid ipv6 FC02:2::30
+  segment-list x2-z2-bei
+    index 10 sid ipv6 FC02:2::10
+    index 20 sid ipv6 FC02:1::30
+    index 30 sid ipv6 FC02:5::10
+srv6-te policy x2-z2 endpoint FC00::6 Color 102
+  candidate-path preference 200
+    segment-list x2-z2-zhu
+  candidate-path preference 100
+    segment-list x2-z2-bei
+#
+route-policy fz1 permit node 10
+  apply cost 10
+#
+route-policy fz2 permit node 10
+  apply extcommunity color 0:102
+#
+bgp 65000
+l2vpn-family evpn
+  peer FC00::5 route-policy fz1 import
+  peer FC00::6 route-policy fz2 import
+#
+tunnel-policy x2-z2
+  tunnel select-seq ipv6 srv6-te-policy load-balance-number 1
+#
+ip vpn-instance OA
+  ipv4-family
+  tnl-policy x2-z2 evpn
+
+# SRv6 SBFD部署
+te ipv6-router-id FC00::X
+bfd
+sbfd
+  reflector discriminator X.0.0.X 对应自己的 Router-ID
+  destination ipv6 FC00::6 remote-discriminator 6.0.0.6
+segment-routing ipv6
+srv6-te-policy backup hot-standby enable
+  srv6-te-policy bfd seamless enable
+  srv6-te-policy bfd no-bypass
+  srv6-te-policy bfd min-tx-interval 50
+# 考场配置如下：
+srv6-te-policy seamless-bfd enable
+srv6-te-policy seamless-bfd min-tx-interval 50
+# 检查
+dis bfd session all
+dis srv6-te policy
+
+# 路径规划实现， OA主路径
+route-policy MED_OA permit node 10
+  apply cost 12
+bgp 65000 
+  ipv4-family vpn-instance OA 
+    peer 10.20.1.9 route-policy MED_OA export 
+
+
 ## X_Export1
 inter E0/0/7
   ip add 10.20.1.1 30
-#
 inter E0/0/6
   ip add 10.20.1.5 30
-#
+  quit
+
+acl 2001
+ rule permit source 10.1.11.0 0
+ rule permit source 10.1.12.0 0
+ rule permit source 10.1.13.0 0
+ rule permit source 10.1.14.0 0
+ rule permit source 10.1.15.0 0
+ rule permit source 10.1.21.0 0
+ rule permit source 10.1.22.0 0
+ rule permit source 10.1.23.0 0
+ rule permit source 10.1.24.0 0
+ rule permit source 10.1.25.0 0
+ rule permit source 10.1.31.0 0
+ rule permit source 10.1.32.0 0
+ rule permit source 10.1.33.0 0
+ rule permit source 10.1.34.0 0
+ rule permit source 10.1.35.0 0
+ rule permit source 10.1.41.0 0
+ rule permit source 10.1.42.0 0
+ rule permit source 10.1.43.0 0
+ rule permit source 10.1.44.0 0
+ rule permit source 10.1.45.0 0
+ rule permit source 10.1.51.0 0
+ rule permit source 10.1.52.0 0
+ rule permit source 10.1.53.0 0
+ rule permit source 10.1.54.0 0
+ rule permit source 10.1.55.0 0
+ quit
+
+route-policy b2o permit node 10
+  apply tag 10
+route-policy o2b deny node 10
+  if-match tag 20
+route-policy o2b permit node 20
+  if-match acl 2001
+  quit
+
 bgp 65001
   router-id 10.1.0.1
   peer 10.20.1.2 as 65000 //与 X_PE1 建立 BGP 邻居关系
+  preference 120 255 255
+  import ospf 1 route-policy o2b
+  quit
+
+
+ospf 1
+  import bgp route-policy b2o
+  default cost inherit-metric
+  area 0
+    network 10.20.1.5 0.0.0.0
+    quit
+  quit
+
 
 ## X_Export2
 inter E0/0/7
   ip add 10.20.1.9 30
-#
 inter E0/0/6
   ip add 10.20.1.6 30
-#
+  quit
+
+acl 2001
+ rule permit source 10.1.11.0 0
+ rule permit source 10.1.12.0 0
+ rule permit source 10.1.13.0 0
+ rule permit source 10.1.14.0 0
+ rule permit source 10.1.15.0 0
+ rule permit source 10.1.21.0 0
+ rule permit source 10.1.22.0 0
+ rule permit source 10.1.23.0 0
+ rule permit source 10.1.24.0 0
+ rule permit source 10.1.25.0 0
+ rule permit source 10.1.31.0 0
+ rule permit source 10.1.32.0 0
+ rule permit source 10.1.33.0 0
+ rule permit source 10.1.34.0 0
+ rule permit source 10.1.35.0 0
+ rule permit source 10.1.41.0 0
+ rule permit source 10.1.42.0 0
+ rule permit source 10.1.43.0 0
+ rule permit source 10.1.44.0 0
+ rule permit source 10.1.45.0 0
+ rule permit source 10.1.51.0 0
+ rule permit source 10.1.52.0 0
+ rule permit source 10.1.53.0 0
+ rule permit source 10.1.54.0 0
+ rule permit source 10.1.55.0 0
+ quit
+
+route-policy b2o permit node 10
+  apply tag 20
+route-policy o2b deny node 10
+  if-match tag 10
+route-policy o2b permit node 20
+  if-match acl 2001
+  quit
+
 bgp 65001
   router-id 10.1.0.2
   peer 10.20.1.10 as 65000 //与 X_PE2 建立邻居关系
+  preference 120 255 255
+  import opsf 1 route-policy o2b
+  quit
+
+ospf 1
+  import bgp route-policy b2o
+  default cost inherit-metric
+  area 0
+    network 10.20.1.6 0.0.0.0
+    quit
+  quit
+
 ```
 
 ### 5、[65000, 65003] vpn-instance / IP / BGP EVPN
@@ -2181,6 +2401,75 @@ bgp 65000
     segment-routing ipv6 locator HCIE evpn
     peer 10.20.2.5 as-number 65003
 
+# SRv6 Policy部署
+segment-routing ipv6
+  srv6-te-policy locator HCIE
+  segment-list y1-z1-zhu
+    index 10 sid ipv6 FC02:3::30
+  segment-list y1-z1-bei
+    index 10 sid ipv6 FC02:3::10
+    index 20 sid ipv6 FC02:4::30
+    index 30 sid ipv6 FC02:6::10
+srv6-te policy y1-z1 endpoint FC00::5 Color 103
+  candidate-path preference 200
+    segment-list y1-z1-zhu
+    candidate-path preference 100
+      segment-list y1-z1-bei
+#
+route-policy fz1 permit node 10
+  apply extcommunity color 0:103
+#
+route-policy fz2 permit node 10
+  apply cost 10
+#
+bgp 65000
+l2vpn-family evpn
+  peer FC00::5 route-policy fz1 import
+  peer FC00::6 route-policy fz2 import
+#
+tunnel-policy y1-z1
+  tunnel select-seq ipv6 srv6-te-policy load-balance-number 1
+#
+ip vpn-instance OA
+  ipv4-family
+  tnl-policy y1-z1 evpn
+#
+ip vpn-instance R&D
+  ipv4-family
+  tnl-policy y1-z1 evpn
+
+# SRv6 SBFD部署
+te ipv6-router-id FC00::X
+bfd
+sbfd
+  reflector discriminator X.0.0.X 对应自己的 Router-ID
+  destination ipv6 FC00::5 remote-discriminator 5.0.0.5
+te ipv6-router-id FC00::X
+segment-routing ipv6
+srv6-te-policy backup hot-standby enable
+  srv6-te-policy bfd seamless enable
+  srv6-te-policy bfd no-bypass
+  srv6-te-policy bfd min-tx-interval 50
+考场配置如下：
+srv6-te-policy seamless-bfd enable
+srv6-te-policy seamless-bfd min-tx-interval 50
+# 检查
+dis bfd session all
+dis srv6-te policy
+
+# 路径规划实现， OA主路径，RD备路径
+route-policy MED_OA permit node 10 
+  apply cost 10 
+route-policy MED_RD permit node 10 
+  apply cost 12
+bgp 65000 
+  ipv4-family vpn-instance OA 
+    peer 10.20.2.1 route-policy MED_OA export
+  ipv4-family vpn-instance R&D 
+    peer 10.20.2.5 route-policy MED_RD export
+
+  
+
 ## Y_PE2
 ip vpn-instance OA
   route-distinguisher 65003:2
@@ -2213,6 +2502,75 @@ bgp 65000
     segment-routing ipv6 traffic-engineer best-effort evpn
     segment-routing ipv6 locator HCIE evpn
     peer 10.20.2.13 as-number 65003
+
+# SRv6 Policy部署
+segment-routing ipv6
+  srv6-te-policy locator HCIE
+  segment-list y2-z2-zhu
+    index 10 sid ipv6 FC02:4::30
+  segment-list y2-z2-bei
+    index 10 sid ipv6 FC02:4::10
+    index 20 sid ipv6 FC02:3::30
+    index 30 sid ipv6 FC02:5::10
+srv6-te policy y2-z2 endpoint FC00::6 Color 104
+  candidate-path preference 200
+    segment-list y2-z2-zhu
+  candidate-path preference 100
+    segment-list y2-z2-bei
+#
+route-policy fz2 permit node 10
+  apply extcommunity color 0:104
+#
+route-policy fz1 permit node 10
+  apply cost 10
+#
+bgp 65000
+l2vpn-family evpn
+  peer FC00::5 route-policy fz1 import
+  peer FC00::6 route-policy fz2 import
+#
+tunnel-policy y2-z2
+  tunnel select-seq ipv6 srv6-te-policy load-balance-number 1
+#
+ip vpn-instance OA
+  ipv4-family
+  tnl-policy y2-z2 evpn
+#
+ip vpn-instance R&D
+  ipv4-family
+  tnl-policy y2-z2 evpn
+
+
+# SRv6 SBFD部署
+te ipv6-router-id FC00::X
+bfd
+sbfd
+  reflector discriminator X.0.0.X 对应自己的 Router-ID
+  destination ipv6 FC00::6 remote-discriminator 6.0.0.6
+segment-routing ipv6
+srv6-te-policy backup hot-standby enable
+  srv6-te-policy bfd seamless enable
+  srv6-te-policy bfd no-bypass
+  srv6-te-policy bfd min-tx-interval 50
+# 考场配置如下：
+srv6-te-policy seamless-bfd enable
+srv6-te-policy seamless-bfd min-tx-interval 50
+## 检查
+dis bfd session all
+dis srv6-te policy
+
+# 路径规划实现， OA备路径，RD主路径
+route-policy MED_OA permit node 10 
+  apply cost 12 
+route-policy MED_RD permit node 10 
+  apply cost 10
+bgp 65000 
+  ipv4-family vpn-instance OA 
+    peer 10.20.2.9 route-policy MED_OA export
+  ipv4-family vpn-instance R&D 
+    peer 10.20.2.13 route-policy MED_RD export 
+
+
 
 ## Y_Export
 ip ip-prefix OA index 10 permit 10.2.0.0 16 greater-equal 24 less-equal 24
@@ -2291,6 +2649,97 @@ bgp 65000
     segment-routing ipv6 locator HCIE evpn
     peer 10.20.3.5 as-number 65004
 
+# SRv6 Policy部署
+segment-routing ipv6
+  srv6-te-policy locator HCIE 
+  segment-list z1-x1-zhu
+    index 10 sid ipv6 FC02:5::20
+  segment-list z1-x1-bei
+    index 10 sid ipv6 FC02:5::10
+    index 20 sid ipv6 FC02:6::20
+    index 30 sid ipv6 FC02:2::10
+srv6-te policy z1-x1 endpoint FC00::1 Color 101
+  candidate-path preference 200
+    segment-list z1-x1-zhu
+  candidate-path preference 100
+    segment-list z1-x1-bei
+    quit
+  quit
+segment-list z1-y1-zhu
+  index 10 sid ipv6 FC02:5::30
+segment-list z1-y1-bei
+  index 10 sid ipv6 FC02:5::10
+  index 20 sid ipv6 FC02:6::30
+  index 30 sid ipv6 FC02:4::10
+srv6-te policy z1-y1 endpoint FC00::3 Color 103
+  candidate-path preference 200
+    segment-list z1-y1-zhu
+  candidate-path preference 100
+    segment-list z1-y1-bei
+#
+route-policy fx1 permit node 10
+  apply extcommunity color 0:101
+#
+route-policy fx2 permit node 10
+  apply cost 10
+#
+route-policy fy1 permit node 10
+  apply extcommunity color 0:103
+#
+route-policy fy2 permit node 10
+  apply cost 10
+
+#
+bgp 65000
+l2vpn-family evpn
+  peer FC00::1 route-policy fx1 import
+  peer FC00::2 route-policy fx2 import
+  peer FC00::3 route-policy fy1 import
+  peer FC00::4 route-policy fy2 import
+#
+tunnel-policy z1-xy1
+  tunnel select-seq ipv6 srv6-te-policy load-balance-number 1
+#
+ip vpn-instance OA
+  ipv4-family
+  tnl-policy z1-xy1 evpn
+#
+ip vpn-instance R&D
+  ipv4-family
+  tnl-policy z1-xy1 evpn
+
+# SRv6 SBFD部署
+te ipv6-router-id FC00::5
+bfd
+sbfd
+  reflector discriminator 5.0.0.5 对应自己的 Router-ID
+  destination ipv6 FC00::1 remote-discriminator 1.0.0.1
+  destination ipv6 FC00::3 remote-discriminator 3.0.0.3
+segment-routing ipv6
+  srv6-te-policy backup hot-standby enable
+  srv6-te-policy bfd seamless enable
+  srv6-te-policy bfd no-bypass
+  srv6-te-policy bfd min-tx-interval 50
+#考场配置如下：
+srv6-te-policy seamless-bfd enable
+srv6-te-policy seamless-bfd min-tx-interval 50
+# 检查
+dis bfd session all
+dis srv6-te policy
+
+## 路径规划实现， OA主路径，RD备路径
+route-policy MED_OA permit node 10 
+  apply cost 10 
+route-policy MED_RD permit node 10
+  apply cost 12
+bgp 65000 
+  ipv4-family vpn-instance OA 
+    peer 10.20.3.1 route-policy MED_OA export
+  ipv4-family vpn-instance R&D
+    peer 10.20.3.5 route-policy MED_RD export
+
+
+
 ## Z_PE2
 ip vpn-instance OA
   route-distinguisher 65004:2
@@ -2325,21 +2774,227 @@ bgp 65000
     segment-routing ipv6 traffic-engineer best-effort evpn
     segment-routing ipv6 locator HCIE evpn
     peer 10.20.3.13 as-number 65004
-## Z_Export1
 
+# SRv6 Policy部署
+segment-routing ipv6
+  srv6-te-policy locator HCIE
+  segment-list z2-x2-zhu
+    index 10 sid ipv6 FC02:6::20
+  segment-list z2-x2-bei
+    index 10 sid ipv6 FC02:6::10
+    index 20 sid ipv6 FC02:5::20
+    index 30 sid ipv6 FC02:1::10
+srv6-te policy z2-x2 endpoint FC00::2 Color 102
+  candidate-path preference 200
+    segment-list z2-x2-zhu
+  candidate-path preference 100
+    segment-list z2-x2-bei
+    quit
+  quit
+segment-list z2-y2-zhu
+  index 10 sid ipv6 FC02:6::30
+segment-list z2-y2-bei
+  index 10 sid ipv6 FC02:6::10
+  index 20 sid ipv6 FC02:5::30
+  index 30 sid ipv6 FC02:3::10
+srv6-te policy z2-y2 endpoint FC00::4 Color 104
+  candidate-path preference 200
+    segment-list z2-y2-zhu
+  candidate-path preference 100
+    segment-list z2-y2-bei
+#
+route-policy fx1 permit node 10
+  apply cost 10
+#
+route-policy fx2 permit node 10
+  apply extcommunity color 0:102
+#
+route-policy fy1 permit node 10
+  apply cost 10
+#
+route-policy fy2 permit node 10
+  apply extcommunity color 0:104
+#
+bgp 65000
+l2vpn-family evpn
+  peer FC00::1 route-policy fx1 import
+  peer FC00::2 route-policy fx2 import
+  peer FC00::3 route-policy fy1 import
+  peer FC00::4 route-policy fy2 import
+#
+tunnel-policy z2-xy2
+  tunnel select-seq ipv6 srv6-te-policy load-balance-number 1
+#
+ip vpn-instance OA
+  ipv4-family
+  tnl-policy z2-xy2 evpn
+#
+ip vpn-instance R&D
+  ipv4-family
+  tnl-policy z2-xy2 evpn
+
+# SRv6 SBFD部署
+te ipv6-router-id FC00::6
+bfd
+sbfd
+  reflector discriminator 6.0.0.6 对应自己的 Router-ID
+  destination ipv6 FC00::2 remote-discriminator 2.0.0.2
+  destination ipv6 FC00::4 remote-discriminator 4.0.0.4
+segment-routing ipv6
+  srv6-te-policy backup hot-standby enable
+  srv6-te-policy bfd seamless enable
+  srv6-te-policy bfd no-bypass
+  srv6-te-policy bfd min-tx-interval 50
+#考场配置如下：
+srv6-te-policy seamless-bfd enable
+srv6-te-policy seamless-bfd min-tx-interval 50
+# 检查
+dis bfd session all
+dis srv6-te policy
+
+## 路径规划实现， OA备路径，RD主路径
+route-policy MED_OA permit node 10 
+  apply cost 12
+route-policy MED_RD permit node 10 
+  apply cost 10
+bgp 65000 
+  ipv4-family vpn-instance OA 
+    peer 10.20.3.9 route-policy MED_OA export
+  ipv4-family vpn-instance R&D 
+    peer 10.20.2.13 route-policy MED_RD export
+
+## Z_Export1
+sysname Z_Export1
+# 
+ip vpn-instance OA
+  route-distinguisher 65004:10
+ip vpn-instance RD
+  route-distinguisher 65004:20
+  quit
+
+int lo0
+  ip binding vpn-instance OA
+  ip add 10.3.101.254 24
+int lo1
+  ip binding vpn-instance R&D
+  ip add 10.3.99.254 24
+int lo2
+  ip binding vpn-instance R&D
+  ip add 10.3.100.254 24
+  quit
+
+int E 0/0/7
+  undo portswitch
+int E 0/0/6
+  undo portswitch
+int E 0/0/7.10
+  dot1q termination vid 10
+  ip binding vpn-instance OA
+  ip add 10.20.3.1 30
+  arp broadcast enable
+int E 0/0/7.20
+  dot1q termination vid 20
+  ip binding vpn-instance R&D
+  ip add 10.20.3.5 30
+  arp broadcast enable
+int E 0/0/6.10
+  dot1q termination vid 10
+  ip binding vpn-instance OA
+  ip add 10.20.3.9 30
+  arp broadcast enable
+int E 0/0/6.20
+  dot1q termination vid 20
+  ip binding vpn-instance R&D
+  ip add 10.20.3.13 30
+  arp broadcast enable
+
+bgp 65004
+  router-id 10.3.99.254
+  ipv4-family vpn-instance OA
+    network 10.3.101.0 24
+    peer 10.20.3.2 as-number 65000
+    peer 10.20.3.10 as-number 65000
+  ipv4-family vpn-instance R&D
+    network 10.3.99.0 24
+    network 10.3.100.0 24
+    peer 10.20.3.6 as-number 65000
+    peer 10.20.3.14 as-number 65000
+    quit
+  quit
+
+# 检查
+dis bgp peer
+dis bgp vpnv4 all peer
+dis vpnv4 vpn-instance OA routing-table
+dis vpnv4 vpn-instance R&D routing-table
 ```
 
-### 7、SRv6 Policy 部署
+### 7、VPN FRR部署 / 部署 QOS
 
-### 8、SRv6 SBFD 部署
+```bash
+## VPN FRR部署
+# X/Y_PE1
+bgp 65000
+  ipv4-family vpn-instance OA
+    auto-frr \\使能 VPN FRR
 
-### 9、业务路径规划实现
+## 部署QOS
+acl number 3001
+  rule permit ip source 10.2.11.0 0.0.0.255
+  rule permit ip source 10.2.12.0 0.0.0.255
+  rule permit ip source 10.2.13.0 0.0.0.255
+  rule permit ip source 10.2.14.0 0.0.0.255
+  rule permit ip source 10.2.15.0 0.0.0.255
+  description rd
+acl number 3002
+  rule permit ip source 10.2.21.0 0.0.0.255
+  rule permit ip source 10.2.22.0 0.0.0.255
+  rule permit ip source 10.2.23.0 0.0.0.255
+  rule permit ip source 10.2.24.0 0.0.0.255
+  rule permit ip source 10.2.25.0 0.0.0.255
+  description product
+traffic classifier rd
+  if-match acl 3001
+traffic classifier pro
+  if-match acl 3002
+traffic behavior pro
+  remark dscp ef
+  queue llq bandwidth 100000
+traffic behavior rd
+  remark dscp af41
+  queue af bandwidth 300000
+traffic policy RD
+  classifier rd behavior rd
+  classifier pro behavior pro
+interface GigabitEthernet0/0/6.20
+  traffic-policy RD outbound
+interface GigabitEthernet0/0/7.20
+  traffic-policy RD outbound
 
-### 10、VPN FRR部署
+## Y_PE1/2
+interface G0/2/31.20 
+  trust upstream default # 信任 QOS 映射
 
-### 11、部署 QOS
-
-
+## ALL PE
+flow-wred drop
+  color green low-limit 70 high-limit 90 discard-percentage 50
+  color yellow low-limit 60 high-limit 90 discard-percentage 50
+  color red low-limit 50 high-limit 90 discard-percentage 100
+flow-queue QOS
+  queue af4 wfq weight 10 flow-wred drop
+  queue ef pq flow-wred drop
+qos-profile QOS
+  user-queue cir 1000000 pir 1000000 flow-queue QOS
+interface G0/2/28
+  qos-profile QOS outbound
+interface G0/2/29
+  qos-profile QOS outbound
+interface G0/2/30
+  qos-profile QOS outbound
+# Z_PE1/2
+int G0/2/31.20
+  qos-profile QOS outbound
+```
 
 ---
 
