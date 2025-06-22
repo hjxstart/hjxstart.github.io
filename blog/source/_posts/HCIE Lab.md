@@ -526,6 +526,7 @@ ospf 1 router-id 10.1.0.3
     network 10.1.200.13 0.0.0.0
     filter ip-prefix Guest import
   area 2
+    stub
     network 10.1.200.17 0.0.0.0
     filter ip-prefix Employee import
 ospf 65001 vpn-instance Employee router-id 10.1.0.4
@@ -541,6 +542,7 @@ ospf 65001 vpn-instance Employee router-id 10.1.0.4
 ospf 65002 vpn-instance Guest router-id 10.1.0.5
   vpn-instance-capability simple
   area 2
+    stub
     network 10.1.0.0 0.0.255.255
   silent-interface vlanif 101
   silent-interface vlanif 102
@@ -569,6 +571,7 @@ ospf 65001 vpn-instance Employee router-id 10.1.0.8
 ospf 65002 vpn-instance Guest router-id 10.1.0.9
   vpn-instance-capability simple
   area 2
+    stub
     network 10.1.0.9 0.0.0.0
     network 10.1.200.18 0.0.0.0
     network 10.1.200.26 0.0.0.0
@@ -581,6 +584,10 @@ ospf 65002 vpn-instance Guest router-id 10.1.0.9
 
 ```bash
 # X_T1_AC
+vlan 51 to 55 101 to 105
+int g 0/0/1
+  port trunk allow-pass vlan 51 to 55 101 to 105
+  quit
 vlan pool wireless_Employee
   vlan 51 to 55
   assignment hash
@@ -676,13 +683,13 @@ switch vsys Guest
         destination-address 10.1.60.99 mask 255.255.255.255
         service Guest_Service
         action permit
-      rule name Deny_Servcie
+      rule name Deny_other_Servcie
         source-zone trust
         destination-zone untrust
         source-address range 10.1.101.0 10.1.105.255
         destination-address 10.1.60.0 mask 255.255.255.0
         action deny
-      rule name Guest_Internet //访问Internet 的策略最后配置
+      rule name Guest_to_Internet //访问Internet 的策略最后配置
         source-zone trust
         destination-zone untrust
         source-address range 10.1.101.0 10.1.105.255
@@ -692,32 +699,60 @@ switch vsys Employee
   sys
     ip service-set Guest_Service type object
       service protocol tcp source-port 0 to 65535 destination-port 3389
+     ip address-set X type object
+      add range 10.1.11.0 10.1.15.255
+      add range 10.1.21.0 10.1.25.255
+      add range 10.1.31.0 10.1.35.255
+      add range 10.1.41.0 10.1.45.255
+      add range 10.1.51.0 10.1.55.255
+    ip address-set Y type object
+      add range 10.2.31.0 10.2.35.255
+      add range 10.2.41.0 10.2.45.255
+      add range 10.2.51.0 10.2.55.255
+    ip address-set Z&Store type object
+      add range 10.2.101.0 10.3.101.255
+      add range 10.100.2.0 10.100.2.255
+    quit
     security-policy
+      rule name Wireless_to_Service //内部无线访问服务器
+        source-zone trust
+        destination-zone trust
+        source-address range 10.1.51.0 10.1.55.255
+        destination-address 10.1.60.100 0.0.0.0
+        action permit
+      rule name Deny_other_Service
+        source-zone trust
+        destination-zone trust
+        source-address range 10.1.51.0 10.1.55.255
+        destination-address 10.1.60.0 0.0.0.255
+        action deny
       rule name Guest_Service //放行Guest 到服务器区域的流量
         source-zone untrust
         destination-zone trust
         source-address range 10.1.101.0 10.1.105.255
-        destination-address 10.1.60.99 mask 255.255.255.255
+        destination-address 10.1.60.99 0.0.0.0
         service Guest_Service
         action permit
-      rule name Employee_Service //内部无线访问服务器
-        source-zone trust
-        destination-zone trust
-        source-address range 10.1.51.0 10.1.55.255
-        destination-address 10.1.60.100 mask 255.255.255.255
-        action permit
-      rule name Deny_Service
-        source-zone trust
-        destination-zone trust
-        source-address range 10.1.51.0 10.1.55.255
-        destination-address 10.1.60.0 mask 255.255.255.0
-        action deny
-      rule name NAT_http_Service //放行NAT_Service 流量
+      rule name Service_http_10.1.60.101 //放行NAT_Service 流量
         source-zone untrust
         destination-zone trust
         source-address any
-        destination-address 10.1.60.101 mask 255.255.255.255
+        destination-address 10.1.60.101 0.0.0.0
         service http
+        action permit
+      rule name X_to_Y&Z&Store
+        source-zone trust
+        destination-zone untrust
+        source-address address-set X
+        destination-address address-set Y
+        destination-address address-set Z&Store
+        action permit
+      rule name Y&Z&Store_to_X
+        source-zone untrust
+        destination-zone trust
+        source-address address-set Y
+        source-address address-set Z&Store
+        destination-address address-set X
         action permit
       rule name Employee_to_Internet //访问Internet 的策略最后配置
         source-zone trust
@@ -745,7 +780,7 @@ interface g0/0/3
 # 将源10.1.60.101的tcp 80 流量，直接扔给10.1.200.5
 acl number 3001
   rule permit tcp source 10.1.60.101 0.0.0.0 source-port eq 80 destination any
-interface GigabitEthernet 0/0/4
+interface vlan 204
   traffic-redirect inbound acl 3001 ip-nexthop 10.1.200.5
 
 ## X_T_Export1
@@ -854,103 +889,6 @@ sys
 telnet 10.1.60.99 3389
 ```
 
-### 8、其他
-
-```bash
-## X_T1_AGG1
-# netconf连接
-user-interface vty 0 4
-  authentication-mode password
-  protocol inbound ssh
-  user privilege level 15
-  quit
-  
-aaa
-  local-user python password irreversible-cipher Huawei@123
-  local-user python service-type ssh
-  local-user python privilege level 15
-  local-user netconf password irreversible-cipher Huawei@123
-  local-user netconf service-type ssh
-  local-user netconf privilege level 15
-  local-aaa-user password policy administrator
-  undo password alter original
-  quit
-  
-netconf
-  source ip interface loopback 0 port 830
-  quit
-  
-stelnet server enable
-  ssh server-source all-interface
-  ssh user python authentication password
-  ssh user python service-type stelnet
-  quit
-  
-sftp server enable
-  ssh user python service-type all
-  ssh user python sftp-directory flash:/
-  quit
-
-## X_FW
-sys
-switch vsys Employee
-sys
-
-ip address-set Y type object
-  address range 10.2.31.0 10.2.35.255
-  address range 10.2.41.0 10.2.41.255
-  address range 10.2.51.0 10.2.51.255
-  quit
-  
-ip address-set Z&Store type object
-  address range 10.3.101.0 mask 24
-  address range 10.100.2.0 mask 24
-  
-ip address-set X type object
-  address range 10.1.11.0 10.1.15.255
-  address range 10.1.21.0 10.1.25.255
-  address range 10.1.31.0 10.1.35.255
-  address range 10.1.41.0 10.1.45.255
-  address range 10.1.51.0 10.1.55.255
-  quit
-  
-security-policy
-  rule name X_TO_Y&Z&Store
-  source-zone trust
-  source-zone untrust
-  destination-zone trust
-  destinatino-zone untrust
-  source-address address-set X
-  destination-address address-set Y
-  destination-address address-set Z&Store
-  action permit
-  
-  rule name Y&Z&Store_TO_X
-  source-zone trust
-  source-zone untrust
-  destination-zone trust
-  destinatino-zone untrust
-  source-address address-set Y
-  source-address address-set Z&Store
-  destination-address address-set Y
-  action permit
-  
-rule move Employee_to_Internet bottom
-
-
-ospf 1
-  area 2
-    stub
-ospf 65002
-  area 2
-    stub
-    
-# FW
-ospf 65002
-  area 2
-    stub
-```
-
 ---
 
 ## Y园区：iMaster NCE-Campus SD-WAN 部署
@@ -959,8 +897,6 @@ ospf 65002
 ### 概述
 
 OSPF / BGP 65003 / VXLAN
-
-
 
 ### NCE 纳管设备
 
@@ -1854,26 +1790,20 @@ bgp 65004
  router-id 10.3.99.254
  undo default ipv4-unicast
  ipv4-family vpn-instance OA
+  network 10.3.101.0 24
   peer 10.20.3.2 as-number 65000
   peer 10.20.3.6 as-number 65000
   peer 10.20.3.14 as-number 65000
   peer 10.20.3.18 as-number 65000
  ipv4-family vpn-instance R&D
+   network 10.3.99.0 24
+  network 10.3.100.0 24
   peer 10.20.3.10 as-number 65000
   peer 10.20.3.22 as-number 65000
   quit
  quit
-# to-do
-bgp 65004
- ipv4-family vpn-instance OA
-  network 10.3.101.0 24
-  quit
- ipv4-family vpn-instance R&D
-  network 10.3.99.0 24
-  network 10.3.100.0 24
-  quit
- quit
-# 检查
+
+ # 检查
 ## Z_Export1
 dis bgp vpnv4 all peer # 6
 ## X_T_Export1/2
@@ -1891,10 +1821,11 @@ dis bgp vpnv4 vpn-instance OA_Out routing-table # 21
 ```
 
 
-### 7、VPN FRR与 MPLS MTU
+### 7、VPN FRR / QOS / 防止OA路由倒灌
 
 ```bash
-## X/Y_PE1
+## VPN FRR
+# X/Y_PE1
 route-policy vpnfrr permit node 10
  apply backup-interface g 0/0/2 
  apply backup-nexthop 6.0.0.6
@@ -1906,131 +1837,57 @@ ip vpn-instance OA
 dis ip routing-table vpn-instance OA 10.2.31.0 verbose
 # Y_PE1
 dis ip routing-table vpn-instance OA 10.3.101.0 verbose
-```
 
-### 8、QOS & FW & Test
-
-```bash
-## Y_Export1
-acl number 3001
- rule permit ip source 10.2.11.0 0.0.0.255
- rule permit ip source 10.2.12.0 0.0.0.255
- rule permit ip source 10.2.13.0 0.0.0.255
- rule permit ip source 10.2.14.0 0.0.0.255
- rule permit ip source 10.2.15.0 0.0.0.255
- description discover
- quit
-acl number 3002
- rule permit ip source 10.2.21.0 0.0.0.255
- rule permit ip source 10.2.22.0 0.0.0.255
- rule permit ip source 10.2.23.0 0.0.0.255
- rule permit ip source 10.2.24.0 0.0.0.255
- rule permit ip source 10.2.25.0 0.0.0.255
- quit
-traffic classifier discover
- if-match acl 3001
- quit
-traffic behavior discover
- remark dscp af41
- queue af bandwidth 300000
- quit
-traffic classifier product
- if-match acl 3002
- quit
-traffic behavior product
- remark dscp ef
- queue llq bandwidth 100000
- quit
-traffic policy R&D
- classifier discover behavior discover
- classifier product behavior product
- quit
-int g 2/0/0.20
- dis this
- traffic-policy R&D outbound
-int g 2/0/1.20
- dis this
- traffic-policy R&D outbound
-
-## Y/Z_PE1/2
-drop-profile discover
+## QOS
+## X/Y/Z_PE1/2
+drop-profile rd
  wred dscp
  dscp af41 low-limit 50 high-limit 90 discard-percentage 50
-traffic classifier discover
+traffic classifier rd
  if-match dscp af41
- quit
-traffic behavior discover
+ traffic classifier product
+ if-match dscp ef
+traffic behavior rd
  queue af bandwidth 300000
  drop-profile discover
- quit
-traffic classifier product
- if-match dscp ef
- quit
 traffic behavior product
- queue llq bandwidth 100000 cbs 2500000
- quit
+ queue llq bandwidth 100000
 traffic policy R&D
- classifier discover behavior discover
+ classifier discover behavior rd
  classifier product behavior product
- quit
 int g 0/0/0
  traffic-policy R&D outbound
 int g 0/0/1
  traffic-policy R&D outbound
 int g 0/0/2
  traffic-policy R&D outbound
- quit
-
 ## Z_PE1/2
 int g 2/0/0.20
  traffic-policy R&D outbound
  quit
-
-
-## X_T_FW
-switch vsys Employee
- sys
- ip address-set X type object
-  add range 10.1.11.0 10.1.15.255
-  add range 10.1.21.0 10.1.25.255
-  add range 10.1.31.0 10.1.35.255
-  add range 10.1.41.0 10.1.45.255
-  add range 10.1.51.0 10.1.55.255
-  quit
-ip address-set Y type object
-  add range 10.2.31.0 10.2.35.255
-  add range 10.2.41.0 10.2.45.255
-  add range 10.2.51.0 10.2.55.255
-  quit
-ip address-set Z&Store type object
-  add range 10.2.101.0 10.3.101.255
-  add range 10.100.2.0 10.100.2.255
-  quit
-security-policy
- rule name X_Y&Z&Store
-  source-zone trust
-  destination-zone untrust
-  source-address address-set X
-  destination-address address-set Y
-  destination-address address-set Z&Store
-  action permit
- rule name Y&Z&Store_X
-  source-zone untrust
-  destination-zone trust
-  source-address address-set Y
-  source-address address-set Z&Store
-  destination-address address-set X
-  action permit
- rule name Employee_Internet bottom
-
 ## X_T_Export1
 tracert  -a 10.20.1.5 10.100.2.1
 ## Y_Export1
 ping -vpn-instance vpn3 -a 10.100.3.1 10.3.99.254
 ## 
-return
- save
- Y
+
+## 防止OA路由倒灌
+# X_PE1/PE2
+ip ip-prefix YZ index 10 deny 10.1.0.0 16 greater-equal 16 less-equal 32
+ip ip-prefix YZ index 20 deny 10.20.1.4 30
+ip ip-prefix YZ index 30 permit 0.0.0.0 0 less-equal 32
+route-policy YZ permit node 10
+if-match ip-prefix YZ
+ip vpn-instance OA
+import route-policy YZ
+# Y_PE1/PE2
+ip ip-prefix XZ index 10 deny 10.2.0.0 16 greater-equal 16 less-equal 32
+ip ip-prefix XZ index 20 deny 10.100.2.0 24
+ip ip-prefix XZ index 30 permit 0.0.0.0 0 less-equal 32
+route-policy XZ permit node 10
+if-match ip-prefix XZ
+ip vpn-instance OA
+import route-policy XZ
 ```
 
 ---
@@ -2468,7 +2325,6 @@ bgp 65000
     segment-routing ipv6 traffic-engineer best-effort evpn
     segment-routing ipv6 locator HCIE evpn
     peer 10.20.3.13 as-number 65004
-
 ## Z_Export1
 
 ```
