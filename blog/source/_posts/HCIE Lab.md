@@ -3626,7 +3626,7 @@ sbfd
   destination ipv6 FC00::5 remote-discriminator 5.0.0.5
 te ipv6-router-id FC00::X
 segment-routing ipv6
-srv6-te-policy backup hot-standby enable
+  srv6-te-policy backup hot-standby enable
   srv6-te-policy bfd seamless enable
   srv6-te-policy bfd no-bypass
   srv6-te-policy bfd min-tx-interval 50
@@ -3708,27 +3708,33 @@ bfd
 ### 2. X_PE1
 
 ```bash
-sbfd
+bfd
+  sbfd
   reflector discriminator 1.0.0.1
   destination ipv6 fc00::5 remote-discriminator 5.0.0.5
   quit
-te ipv6-router-id FC00::1
-segment-routing ipv6 
+
+te ipv6-router-id fc00::1
+
+segment-routing ipv6
   sr-te frr enable
   encapsulation source-address fc00::1
+  
   locator HCIE ipv6-prefix fc02:1:: 96 static 16
     opcode ::1 end psp
-    display ipv6 inter brief
-    opcode ::10 end-x int g 0/2/30 nexthop fc01:10::a psp
-    opcode ::20 end-x int g 0/2/28 nexthop fc01:10::2 psp
-    opcode ::30 end-x int g 0/2/29 nexthop fc01:10::6 psp
+    opcode ::10 end-x interface ethernet 3/0/0 nexthop fc01:10::A psp
+    opcode ::20 end-x interface ethernet 3/0/1 nexthop fc01:10::2 psp
+    opcode ::30 end-x interface ethernet 3/0/2 nexthop fc01:10::6 psp
     opcode ::100 end-op
     quit
+  
+
   srv6-te-policy backup hot-standby enable
   srv6-te-policy locator HCIE
   srv6-te-policy bfd seamless enable
   srv6-te-policy bfd no-bypass
-  srv6-te-policy bfd min-tx-interval 50 
+  srv6-te-policy bfd min-tx-interval 50
+
   segment-list x1-z1-zhu
     index 10 sid ipv6 fc02:1::30
   segment-list x1-z1-bei
@@ -3736,10 +3742,10 @@ segment-routing ipv6
     index 20 sid ipv6 fc02:2::30
     index 30 sid ipv6 fc02:6::10
     quit
+  
   srv6-te policy x1-z1 endpoint fc00::5 color 101
     candidate-path preference 200
       segment-list x1-z1-zhu
-      quit
     candidate-path preference 100
       segment-list x1-z1-bei
       quit
@@ -3747,34 +3753,31 @@ segment-routing ipv6
   quit
 
 
-#
 route-policy fz1 permit node 10
   apply extcommunity color 0:101
-  quit
-route-policy fz2 permit node 20
+route-policy fz2 permit node 10
   apply cost 10
-  quit
 route-policy oa_med permit node 10
   apply cost 10
   quit
-#
+
 tunnel-policy x1-z1
   tunnel select-seq ipv6 srv6-te-policy load-balance-number 1
   quit
-#
+
 ip vpn-instance OA
   route-distinguisher 65001:1
   vpn-target 1:4 export-extcommunity evpn
   vpn-target 4:1 import-extcommunity evpn
   tnl-policy x1-z1 evpn
   quit
-#
-int g 0/2/31 # X_Export1
+
+interface ethernet 3/0/7
   ip binding vpn-instance OA
   ip add 10.20.1.2 30
   quit
-#
-isis 1
+
+isis 1 
   is-level level-2
   cost-style wide
   network-entity 49.0001.0010.0000.0001.00
@@ -3782,7 +3785,6 @@ isis 1
   ipv6 enable topology ipv6
   ipv6 bfd all-interfaces enable
   ipv6 bfd all-interfaces min-tx-interval 300 min-rx-interval 300
-  #
   segment-routing ipv6 locator HCIE
   avoid-microloop frr-protected
   ipv6 avoid-microloop segment-routing
@@ -3790,135 +3792,134 @@ isis 1
     loop-free-alternate level-2
     quit
   quit
-#
-int loop 0
+
+int lo0
   isis ipv6 enable 1
+int ethernet 3/0/1
+  isis ipv6 enable 1
+  isis circuit-type p2p
+  isis ppp-negotiation 2-way
+  isis authentication-mode md5 plain Huawei@123
+int ethernet 3/0/2
+  isis ipv6 enable 1
+  isis circuit-type p2p
+  isis ppp-negotiation 2-way
+  isis authentication-mode md5 plain Huawei@123
+int ethernet 3/0/0
+  isis ipv6 enable 1
+  isis cost 4
+  isis circuit-type p2p
+  isis ppp-negotiation 2-way
+  isis authentication-mode md5 plain Huawei@123
   quit
-int g 0/2/28
-  isis ipv6 enable 1
-  isis circuit-type p2p
-  isis ppp-negotiation 2-way
-  isis authentication-mode md5 cipher Huawei@123
-  qos-profile QOS
-int g 0/2/29
-  isis ipv6 enable 1
-  isis circuit-type p2p
-  isis ppp-negotiation 2-way
-  isis authentication-mode md5 cipher Huawei@123
-  qos-profile QOS
-int g 0/2/30
-  isis ipv6 enable 1
-  isis ipv6 cost 4
-  isis circuit-type p2p
-  isis ppp-negotiation 2-way
-  isis authentication-mode md5 cipher Huawei@123
-  qos-profile QOS
-  quit
-#
+
 bgp 65000
   router-id 1.0.0.1
   peer fc00::5 as-number 65000
   peer fc00::5 password cipher Huawei@123
-  peer fc00::5 connect-interface LoopBack 0
+  peer fc00::5 connect-interface loopback 0
   peer fc00::6 as-number 65000
   peer fc00::6 password cipher Huawei@123
-  peer fc00::6 connect-interface LoopBack 0
-  l2vpn-family evpn 
+  peer fc00::6 connect-interface loopback 0
+  l2vpn-family evpn
     peer fc00::5 enable
+    y
     peer fc00::5 route-policy fz1 import
     peer fc00::5 advertise encap-type srv6
     peer fc00::6 enable
+    y
     peer fc00::6 route-policy fz2 import
     peer fc00::6 advertise encap-type srv6
-    quit
   ipv4-family vpn-instance OA
     advertise l2vpn evpn
-    segment-routing ipv6 locator HCIE evpn
+    segment-routing ipv6 locator HCIE
     segment-routing ipv6 traffic-engineer best-effort evpn
     peer 10.20.1.1 as-number 65001
     peer 10.20.1.1 route-policy oa_med export
     quit
   quit
-#
 ```
 
 ### 3. X_PE2
 
 ```bash
-sbfd
-  reflector discriminator 2.0.0.2 # 1->2
-  destination ipv6 fc00::6 remote-discriminator 6.0.0.6 # 5->6
+bfd
+  sbfd
+  reflector discriminator 2.0.0.2
+  destination ipv6 fc00::6 remote-discriminator 6.0.0.6
   quit
-te ipv6-router-id FC00::2 # 1->2
-segment-routing ipv6 
+
+te ipv6-router-id fc00::2
+
+segment-routing ipv6
   sr-te frr enable
-  encapsulation source-address fc00::2 # 1->2
-  locator HCIE ipv6-prefix fc02:2:: 96 static 16 # fc02:1 -> fc02:2
+  encapsulation source-address fc00::2
+  
+  locator HCIE ipv6-prefix fc02:2:: 96 static 16
     opcode ::1 end psp
-    display ipv6 inter brief
-    opcode ::10 end-x int g 0/2/30 nexthop fc01:10::9 psp # A -> 9
-    opcode ::20 end-x int g 0/2/28 nexthop fc01:10::3 psp # 2 -> e
-    opcode ::30 end-x int g 0/2/29 nexthop fc01:10::12 psp # 6 -> 12
+    opcode ::10 end-x interface ethernet 3/0/0 nexthop fc01:10::9 psp
+    opcode ::20 end-x interface ethernet 3/0/1 nexthop fc01:10::E psp
+    opcode ::30 end-x interface ethernet 3/0/2 nexthop fc01:10::12 psp
     opcode ::100 end-op
     quit
+  
+
   srv6-te-policy backup hot-standby enable
   srv6-te-policy locator HCIE
   srv6-te-policy bfd seamless enable
   srv6-te-policy bfd no-bypass
-  srv6-te-policy bfd min-tx-interval 50 
-  segment-list x2-z2-zhu # 1 -> 2
-    index 10 sid ipv6 fc02:2::30 # fc02:1 -> fc02:2
-  segment-list x2-z2-bei # 1 -> 2
-    index 10 sid ipv6 fc02:1::10 # 1 -> 2
-    index 20 sid ipv6 fc02:2::30 # 2 -> 1
-    index 30 sid ipv6 fc02:6::10 # 6 -> 5
+  srv6-te-policy bfd min-tx-interval 50
+
+  segment-list x2-z2-zhu
+    index 10 sid ipv6 fc02:2::30
+  segment-list x2-z2-bei
+    index 10 sid ipv6 fc02:2::10
+    index 20 sid ipv6 fc02:1::30
+    index 30 sid ipv6 fc02:5::10
     quit
-  srv6-te policy x2-z2 endpoint fc00::6 color 102 # 1 -> 2, fc00::5 -> fc00::6, 101 -> 102
+  
+  srv6-te policy x2-z2 endpoint fc00::6 color 102
     candidate-path preference 200
-      segment-list x2-z2-zhu # 1 -> 2
-      quit
+      segment-list x2-z2-zhu
     candidate-path preference 100
-      segment-list x2-z2-bei # 1 -> 2
+      segment-list x2-z2-bei
       quit
     quit
   quit
 
-#
-route-policy fz2 permit node 10 # fz1 -> fz2
-  apply extcommunity color 0:101 # 101 -> 102
-  quit
-route-policy fz2 permit node 20 # fz1 -> fz2
+
+route-policy fz1 permit node 10
   apply cost 10
-  quit
+route-policy fz2 permit node 10
+  apply extcommunity color 0:102
 route-policy oa_med permit node 10
-  apply cost 12 # 10 -> 12
+  apply cost 12
   quit
-#
-tunnel-policy x2-z2 # 1 -> 2
+
+tunnel-policy x2-z2
   tunnel select-seq ipv6 srv6-te-policy load-balance-number 1
   quit
-#
+
 ip vpn-instance OA
-  route-distinguisher 65001:1 # 65001:1 -> 65001:2
+  route-distinguisher 65001:2
   vpn-target 1:4 export-extcommunity evpn
   vpn-target 4:1 import-extcommunity evpn
-  tnl-policy x2-z2 evpn # 1 -> 2
+  tnl-policy x2-z2 evpn
   quit
-#
-int g 0/2/31 # X_Export1
+
+interface ethernet 3/0/7
   ip binding vpn-instance OA
-  ip add 10.20.1.10 30 # 2 -> 10
+  ip add 10.20.1.10 30
   quit
-#
-isis 1
+
+isis 1 
   is-level level-2
   cost-style wide
-  network-entity 49.0001.0020.0000.0002.00 # 1 -> 2
+  network-entity 49.0001.0020.0000.0002.00
   domain-authentication-mode md5 cipher Huawei@123
   ipv6 enable topology ipv6
   ipv6 bfd all-interfaces enable
   ipv6 bfd all-interfaces min-tx-interval 300 min-rx-interval 300
-  #
   segment-routing ipv6 locator HCIE
   avoid-microloop frr-protected
   ipv6 avoid-microloop segment-routing
@@ -3926,144 +3927,139 @@ isis 1
     loop-free-alternate level-2
     quit
   quit
-#
-int loop 0
+
+int lo0
   isis ipv6 enable 1
+int ethernet 3/0/1
+  isis ipv6 enable 1
+  isis circuit-type p2p
+  isis ppp-negotiation 2-way
+  isis authentication-mode md5 plain Huawei@123
+int ethernet 3/0/2
+  isis ipv6 enable 1
+  isis circuit-type p2p
+  isis ppp-negotiation 2-way
+  isis authentication-mode md5 plain Huawei@123
+int ethernet 3/0/0
+  isis ipv6 enable 1
+  isis cost 4
+  isis circuit-type p2p
+  isis ppp-negotiation 2-way
+  isis authentication-mode md5 plain Huawei@123
   quit
-int g 0/2/28
-  isis ipv6 enable 1
-  isis circuit-type p2p
-  isis ppp-negotiation 2-way
-  isis authentication-mode md5 cipher Huawei@123
-  qos-profile QOS
-int g 0/2/29
-  isis ipv6 enable 1
-  isis circuit-type p2p
-  isis ppp-negotiation 2-way
-  isis authentication-mode md5 cipher Huawei@123
-  qos-profile QOS
-int g 0/2/30
-  isis ipv6 enable 1
-  isis ipv6 cost 4
-  isis circuit-type p2p
-  isis ppp-negotiation 2-way
-  isis authentication-mode md5 cipher Huawei@123
-  qos-profile QOS
-  quit
-#
+
 bgp 65000
-  router-id 2.0.0.2 # 1 -> 2
+  router-id 2.0.0.2
   peer fc00::5 as-number 65000
   peer fc00::5 password cipher Huawei@123
-  peer fc00::5 connect-interface LoopBack 0
+  peer fc00::5 connect-interface loopback 0
   peer fc00::6 as-number 65000
   peer fc00::6 password cipher Huawei@123
-  peer fc00::6 connect-interface LoopBack 0
-  l2vpn-family evpn 
+  peer fc00::6 connect-interface loopback 0
+  l2vpn-family evpn
     peer fc00::5 enable
+    y
     peer fc00::5 route-policy fz1 import
     peer fc00::5 advertise encap-type srv6
     peer fc00::6 enable
+    y
     peer fc00::6 route-policy fz2 import
     peer fc00::6 advertise encap-type srv6
-    quit
   ipv4-family vpn-instance OA
     advertise l2vpn evpn
-    segment-routing ipv6 locator HCIE evpn
+    segment-routing ipv6 locator HCIE
     segment-routing ipv6 traffic-engineer best-effort evpn
-    peer 10.20.1.1 as-number 65001 # 1 -> 9
-    peer 10.20.1.1 route-policy oa_med export # 1 -> 9
+    peer 10.20.1.9 as-number 65001
+    peer 10.20.1.9 route-policy oa_med export
     quit
   quit
-#
-
 ```
 
 ### 4. Y_PE1
 
 ```bash
-sbfd
-  reflector discriminator 3.0.0.3 #
-  destination ipv6 fc00::5 remote-discriminator 5.0.0.5 #
+bfd
+  sbfd
+  reflector discriminator 3.0.0.3
+  destination ipv6 fc00::5 remote-discriminator 5.0.0.5
   quit
-te ipv6-router-id FC00::3 #
-segment-routing ipv6 
+
+te ipv6-router-id fc00::3
+
+segment-routing ipv6
   sr-te frr enable
-  encapsulation source-address fc00::3 #
-  locator HCIE ipv6-prefix fc02:3:: 96 static 16 #
+  encapsulation source-address fc00::3
+  
+  locator HCIE ipv6-prefix fc02:3:: 96 static 16
     opcode ::1 end psp
-    display ipv6 inter brief
-    opcode ::10 end-x int g 0/2/30 nexthop fc01:10::1a psp #
-    opcode ::20 end-x int g 0/2/28 nexthop fc01:10::1 psp #
-    opcode ::30 end-x int g 0/2/29 nexthop fc01:10::16 psp #
+    opcode ::10 end-x interface ethernet 3/0/0 nexthop fc01:10::1A psp
+    opcode ::20 end-x interface ethernet 3/0/1 nexthop fc01:10::1 psp
+    opcode ::30 end-x interface ethernet 3/0/2 nexthop fc01:10::16 psp
     opcode ::100 end-op
     quit
+  
+
   srv6-te-policy backup hot-standby enable
   srv6-te-policy locator HCIE
   srv6-te-policy bfd seamless enable
   srv6-te-policy bfd no-bypass
-  srv6-te-policy bfd min-tx-interval 50 
-  segment-list y1-z1-zhu #
+  srv6-te-policy bfd min-tx-interval 50
+
+  segment-list y1-z1-zhu
     index 10 sid ipv6 fc02:3::30
-  segment-list y1-z1-bei #
+  segment-list y1-z1-bei
     index 10 sid ipv6 fc02:3::10
     index 20 sid ipv6 fc02:4::30
     index 30 sid ipv6 fc02:6::10
     quit
-  srv6-te policy y1-z1 endpoint fc00::5 color 103 #
+  
+  srv6-te policy y1-z1 endpoint fc00::5 color 103
     candidate-path preference 200
-      segment-list y1-z1-zhu #
-      quit
+      segment-list y1-z1-zhu
     candidate-path preference 100
-      segment-list y1-z1-bei #
+      segment-list y1-z1-bei
       quit
     quit
   quit
 
 
-#
 route-policy fz1 permit node 10
-  apply extcommunity color 0:103 #
-  quit
-route-policy fz2 permit node 20
+  apply extcommunity color 0:103
+route-policy fz2 permit node 10
   apply cost 10
-  quit
 route-policy oa_med permit node 10
   apply cost 10
-  quit
-route-policy rd_med permit node 10 # 
+route-policy rd_med permit node 10
   apply cost 12
   quit
-#
-tunnel-policy y1-z1 #
+
+tunnel-policy y1-z1
   tunnel select-seq ipv6 srv6-te-policy load-balance-number 1
   quit
-#
+
 ip vpn-instance OA
   route-distinguisher 65003:1
   vpn-target 3:4 export-extcommunity evpn
   vpn-target 4:3 import-extcommunity evpn
-  tnl-policy y1-z1 evpn #
-  quit
+  tnl-policy y1-z1 evpn
 ip vpn-instance R&D
   route-distinguisher 65003:3
   vpn-target 33:44 export-extcommunity evpn
   vpn-target 44:33 import-extcommunity evpn
-  tnl-policy y1-z1 evpn #
+  tnl-policy y1-z1 evpn
   quit
-#
-int g 0/2/31.10 # X_Export1
+
+interface ethernet 3/0/7.10
   vlan-t do 10
   ip binding vpn-instance OA
   ip add 10.20.2.2 30
-  quit
-int g 0/2/31.20 # X_Export1
+interface ethernet 3/0/7.20
   vlan-t do 20
   ip binding vpn-instance R&D
   ip add 10.20.2.6 30
   quit
-#
-isis 1
+
+isis 1 
   is-level level-2
   cost-style wide
   network-entity 49.0001.0030.0000.0003.00
@@ -4071,7 +4067,6 @@ isis 1
   ipv6 enable topology ipv6
   ipv6 bfd all-interfaces enable
   ipv6 bfd all-interfaces min-tx-interval 300 min-rx-interval 300
-  #
   segment-routing ipv6 locator HCIE
   avoid-microloop frr-protected
   ipv6 avoid-microloop segment-routing
@@ -4079,160 +4074,152 @@ isis 1
     loop-free-alternate level-2
     quit
   quit
-#
-int loop 0
+
+int lo0
   isis ipv6 enable 1
+int ethernet 3/0/1
+  isis ipv6 enable 1
+  isis circuit-type p2p
+  isis ppp-negotiation 2-way
+  isis authentication-mode md5 plain Huawei@123
+int ethernet 3/0/2
+  isis ipv6 enable 1
+  isis circuit-type p2p
+  isis ppp-negotiation 2-way
+  isis authentication-mode md5 plain Huawei@123
+int ethernet 3/0/0
+  isis ipv6 enable 1
+  isis cost 4
+  isis circuit-type p2p
+  isis ppp-negotiation 2-way
+  isis authentication-mode md5 plain Huawei@123
   quit
-int g 0/2/28
-  isis ipv6 enable 1
-  isis circuit-type p2p
-  isis ppp-negotiation 2-way
-  isis authentication-mode md5 cipher Huawei@123
-  qos-profile QOS
-int g 0/2/29
-  isis ipv6 enable 1
-  isis circuit-type p2p
-  isis ppp-negotiation 2-way
-  isis authentication-mode md5 cipher Huawei@123
-  qos-profile QOS
-int g 0/2/30
-  isis ipv6 enable 1
-  isis ipv6 cost 4
-  isis circuit-type p2p
-  isis ppp-negotiation 2-way
-  isis authentication-mode md5 cipher Huawei@123
-  qos-profile QOS
-  quit
-#
+
 bgp 65000
   router-id 3.0.0.3
   peer fc00::5 as-number 65000
   peer fc00::5 password cipher Huawei@123
-  peer fc00::5 connect-interface LoopBack 0
+  peer fc00::5 connect-interface loopback 0
   peer fc00::6 as-number 65000
   peer fc00::6 password cipher Huawei@123
-  peer fc00::6 connect-interface LoopBack 0
-  l2vpn-family evpn 
+  peer fc00::6 connect-interface loopback 0
+  l2vpn-family evpn
     peer fc00::5 enable
+    y
     peer fc00::5 route-policy fz1 import
     peer fc00::5 advertise encap-type srv6
     peer fc00::6 enable
+    y
     peer fc00::6 route-policy fz2 import
     peer fc00::6 advertise encap-type srv6
-    quit
   ipv4-family vpn-instance OA
     advertise l2vpn evpn
-    segment-routing ipv6 locator HCIE evpn
+    segment-routing ipv6 locator HCIE
     segment-routing ipv6 traffic-engineer best-effort evpn
     peer 10.20.2.1 as-number 65003
     peer 10.20.2.1 route-policy oa_med export
-    quit
   ipv4-family vpn-instance R&D
     advertise l2vpn evpn
-    segment-routing ipv6 locator HCIE evpn
+    segment-routing ipv6 locator HCIE
     segment-routing ipv6 traffic-engineer best-effort evpn
     peer 10.20.2.5 as-number 65003
     peer 10.20.2.5 route-policy rd_med export
     quit
   quit
-#
-interface g 0/2/31.20
-  trust upstream default
 ```
 
 ### 5. Y_PE2
 
 ```bash
-sbfd
-  reflector discriminator 4.0.0.4 # 1->2
-  destination ipv6 fc00::6 remote-discriminator 6.0.0.6 # 5->6
+bfd
+  sbfd
+  reflector discriminator 4.0.0.4
+  destination ipv6 fc00::6 remote-discriminator 6.0.0.6
   quit
-te ipv6-router-id FC00::4 # 1->2
-segment-routing ipv6 
+
+te ipv6-router-id fc00::4
+
+segment-routing ipv6
   sr-te frr enable
-  encapsulation source-address fc00::2 # 1->2
-  locator HCIE ipv6-prefix fc02:4:: 96 static 16 # fc02:1 -> fc02:2
+  encapsulation source-address fc00::4
+  
+  locator HCIE ipv6-prefix fc02:4:: 96 static 16
     opcode ::1 end psp
-    display ipv6 inter brief
-    opcode ::10 end-x int g 0/2/30 nexthop fc01:10::19 psp # A -> 9
-    opcode ::20 end-x int g 0/2/28 nexthop fc01:10::d psp # 2 -> e
-    opcode ::30 end-x int g 0/2/29 nexthop fc01:10::1e psp # 6 -> 12
+    opcode ::10 end-x interface ethernet 3/0/0 nexthop fc01:10::19 psp
+    opcode ::20 end-x interface ethernet 3/0/1 nexthop fc01:10::D psp
+    opcode ::30 end-x interface ethernet 3/0/2 nexthop fc01:10::1E psp
     opcode ::100 end-op
     quit
+  
+
   srv6-te-policy backup hot-standby enable
   srv6-te-policy locator HCIE
   srv6-te-policy bfd seamless enable
   srv6-te-policy bfd no-bypass
-  srv6-te-policy bfd min-tx-interval 50 
-  segment-list y2-z2-zhu # 1 -> 2
-    index 10 sid ipv6 fc02:4::30 # fc02:1 -> fc02:2
-  segment-list y2-z2-bei # 1 -> 2
-    index 10 sid ipv6 fc02:4::10 # 1 -> 2
-    index 20 sid ipv6 fc02:3::30 # 2 -> 1
-    index 30 sid ipv6 fc02:5::10 # 6 -> 5
+  srv6-te-policy bfd min-tx-interval 50
+
+  segment-list y2-z2-zhu
+    index 10 sid ipv6 fc02:4::30
+  segment-list y2-z2-bei
+    index 10 sid ipv6 fc02:4::10
+    index 20 sid ipv6 fc02:3::30
+    index 30 sid ipv6 fc02:6::10
     quit
-  srv6-te policy y2-z2 endpoint fc00::6 color 104 # 1 -> 2, fc00::5 -> fc00::6, 101 -> 102
+  
+  srv6-te policy y2-z2 endpoint fc00::6 color 104
     candidate-path preference 200
-      segment-list y2-z2-zhu # 1 -> 2
-      quit
+      segment-list y2-z2-zhu
     candidate-path preference 100
-      segment-list y2-z2-bei # 1 -> 2
+      segment-list y2-z2-bei
       quit
     quit
   quit
 
-#
-route-policy fz2 permit node 10 # fz1 -> fz2
-  apply extcommunity color 0:104 # 101 -> 102
-  quit
-route-policy fz1 permit node 20 # fz1 -> fz2
+
+route-policy fz1 permit node 10
   apply cost 10
-  quit
+route-policy fz2 permit node 10
+  apply extcommunity color 0:104
 route-policy oa_med permit node 10
-  apply cost 12 # 10 -> 12
-  quit
+  apply cost 12
 route-policy rd_med permit node 10
   apply cost 10
   quit
-#
-tunnel-policy y2-z2 # 1 -> 2
+
+tunnel-policy y2-z2
   tunnel select-seq ipv6 srv6-te-policy load-balance-number 1
   quit
-#
+
 ip vpn-instance OA
-  route-distinguisher 65003:2 # 65001:1 -> 65001:2
+  route-distinguisher 65003:2
   vpn-target 3:4 export-extcommunity evpn
   vpn-target 4:3 import-extcommunity evpn
-  tnl-policy y2-z2 evpn # 1 -> 2
-  quit
+  tnl-policy y2-z2 evpn
 ip vpn-instance R&D
-  route-distinguisher 65003:4 # 65001:1 -> 65001:2
+  route-distinguisher 65003:4
   vpn-target 33:44 export-extcommunity evpn
   vpn-target 44:33 import-extcommunity evpn
-  tnl-policy y2-z2 evpn # 1 -> 2
+  tnl-policy y2-z2 evpn
   quit
-#
-int g 0/2/31.10 # X_Export1
-  vlan-t do 10
+
+interface ethernet 3/0/7.10
+  vlan do 10
   ip binding vpn-instance OA
-  ip add 10.20.2.10 30 # 2 -> 10
-  quit
-int g 0/2/31.20 # X_Export1
-  vlan-t do 20
+  ip add 10.20.2.10 30
+interface ethernet 3/0/7.20
+  vlan do 20
   ip binding vpn-instance R&D
-  ip add 10.20.2.14 30 # 2 -> 10
-  trust upstream default
+  ip add 10.20.2.14 30
   quit
-#
-isis 1
+
+isis 1 
   is-level level-2
   cost-style wide
-  network-entity 49.0001.0040.0000.0004.00 # 1 -> 2
+  network-entity 49.0001.0040.0000.0004.00
   domain-authentication-mode md5 cipher Huawei@123
   ipv6 enable topology ipv6
   ipv6 bfd all-interfaces enable
   ipv6 bfd all-interfaces min-tx-interval 300 min-rx-interval 300
-  #
   segment-routing ipv6 locator HCIE
   avoid-microloop frr-protected
   ipv6 avoid-microloop segment-routing
@@ -4240,183 +4227,177 @@ isis 1
     loop-free-alternate level-2
     quit
   quit
-#
-int loop 0
+
+int lo0
   isis ipv6 enable 1
+int ethernet 3/0/1
+  isis ipv6 enable 1
+  isis circuit-type p2p
+  isis ppp-negotiation 2-way
+  isis authentication-mode md5 plain Huawei@123
+int ethernet 3/0/2
+  isis ipv6 enable 1
+  isis circuit-type p2p
+  isis ppp-negotiation 2-way
+  isis authentication-mode md5 plain Huawei@123
+int ethernet 3/0/0
+  isis ipv6 enable 1
+  isis cost 4
+  isis circuit-type p2p
+  isis ppp-negotiation 2-way
+  isis authentication-mode md5 plain Huawei@123
   quit
-int g 0/2/28
-  isis ipv6 enable 1
-  isis circuit-type p2p
-  isis ppp-negotiation 2-way
-  isis authentication-mode md5 cipher Huawei@123
-  qos-profile QOS
-int g 0/2/29
-  isis ipv6 enable 1
-  isis circuit-type p2p
-  isis ppp-negotiation 2-way
-  isis authentication-mode md5 cipher Huawei@123
-  qos-profile QOS
-int g 0/2/30
-  isis ipv6 enable 1
-  isis ipv6 cost 4
-  isis circuit-type p2p
-  isis ppp-negotiation 2-way
-  isis authentication-mode md5 cipher Huawei@123
-  qos-profile QOS
-  quit
-#
+
 bgp 65000
-  router-id 4.0.0.4 # 1 -> 2
+  router-id 4.0.0.4
   peer fc00::5 as-number 65000
   peer fc00::5 password cipher Huawei@123
-  peer fc00::5 connect-interface LoopBack 0
+  peer fc00::5 connect-interface loopback 0
   peer fc00::6 as-number 65000
   peer fc00::6 password cipher Huawei@123
-  peer fc00::6 connect-interface LoopBack 0
-  l2vpn-family evpn 
+  peer fc00::6 connect-interface loopback 0
+  l2vpn-family evpn
     peer fc00::5 enable
+    y
     peer fc00::5 route-policy fz1 import
     peer fc00::5 advertise encap-type srv6
     peer fc00::6 enable
+    y
     peer fc00::6 route-policy fz2 import
     peer fc00::6 advertise encap-type srv6
-    quit
   ipv4-family vpn-instance OA
     advertise l2vpn evpn
-    segment-routing ipv6 locator HCIE evpn
+    segment-routing ipv6 locator HCIE
     segment-routing ipv6 traffic-engineer best-effort evpn
-    peer 10.20.2.9 as-number 65003 # 1 -> 9
-    peer 10.20.2.9 route-policy oa_med export # 1 -> 9
-    quit
+    peer 10.20.2.9 as-number 65003
+    peer 10.20.2.9 route-policy oa_med export
   ipv4-family vpn-instance R&D
     advertise l2vpn evpn
-    segment-routing ipv6 locator HCIE evpn
+    segment-routing ipv6 locator HCIE
     segment-routing ipv6 traffic-engineer best-effort evpn
-    peer 10.20.2.13 as-number 65003 # 1 -> 9
-    peer 10.20.2.13 route-policy rd_med export # 1 -> 9
+    peer 10.20.2.13 as-number 65003
+    peer 10.20.2.13 route-policy rd_med export
     quit
   quit
-#
+  
 
 ```
 
 ### 6. Z_PE1
 
 ```bash
-sbfd
-  reflector discriminator 5.0.0.5 # 1->2
-  destination ipv6 fc00::1 remote-discriminator 1.0.0.1 # 5->6
-  destination ipv6 fc00::3 remote-discriminator 3.0.0.3 # 5->6
+bfd
+  sbfd
+  reflector discriminator 5.0.0.5
+  destination ipv6 fc00::1 remote-discriminator 1.0.0.1
+  destination ipv6 fc00::3 remote-discriminator 3.0.0.3
   quit
-te ipv6-router-id FC00::5 # 1->2
-segment-routing ipv6 
+
+te ipv6-router-id fc00::5
+
+segment-routing ipv6
   sr-te frr enable
-  encapsulation source-address fc00::5 # 1->2
-  locator HCIE ipv6-prefix fc02:5:: 96 static 16 # fc02:1 -> fc02:2
+  encapsulation source-address fc00::5
+  
+  locator HCIE ipv6-prefix fc02:5:: 96 static 16
     opcode ::1 end psp
-    display ipv6 inter brief
-    opcode ::10 end-x int g 0/2/30 nexthop fc01:10::22 psp # A -> 9
-    opcode ::20 end-x int g 0/2/28 nexthop fc01:10::5 psp # 2 -> e
-    opcode ::30 end-x int g 0/2/29 nexthop fc01:10::15 psp # 6 -> 12
+    opcode ::10 end-x interface ethernet 3/0/0 nexthop fc01:10::22 psp
+    opcode ::20 end-x interface ethernet 3/0/1 nexthop fc01:10::5 psp
+    opcode ::30 end-x interface ethernet 3/0/2 nexthop fc01:10::15 psp
     opcode ::100 end-op
     quit
+  
+
   srv6-te-policy backup hot-standby enable
   srv6-te-policy locator HCIE
   srv6-te-policy bfd seamless enable
   srv6-te-policy bfd no-bypass
-  srv6-te-policy bfd min-tx-interval 50 
-  segment-list z1-x1-zhu # 1 -> 2
-    index 10 sid ipv6 fc02:5::20 # fc02:1 -> fc02:2
-  segment-list z1-x1-bei # 1 -> 2
-    index 10 sid ipv6 fc02:5::10 # 1 -> 2
-    index 20 sid ipv6 fc02:6::20 # 2 -> 1
-    index 30 sid ipv6 fc02:2::10 # 6 -> 5
+  srv6-te-policy bfd min-tx-interval 50
+
+  segment-list z1-x1-zhu
+    index 10 sid ipv6 fc02:5::20
+  segment-list z1-x1-bei
+    index 10 sid ipv6 fc02:5::10
+    index 20 sid ipv6 fc02:6::20
+    index 30 sid ipv6 fc02:2::10
     quit
-  srv6-te policy z1-x1 endpoint fc00::1 color 101 # 1 -> 2, fc00::5 -> fc00::6, 101 -> 102
+  
+  srv6-te policy z1-x1 endpoint fc00::1 color 101
     candidate-path preference 200
-      segment-list z1-x1-zhu # 1 -> 2
-      quit
+      segment-list z1-x1-zhu
     candidate-path preference 100
-      segment-list z1-x1-bei # 1 -> 2
+      segment-list z1-x1-bei
       quit
     quit
-  segment-list z1-y1-zhu # 1 -> 2
-    index 10 sid ipv6 fc02:5::30 # fc02:1 -> fc02:2
-  segment-list z1-y1-bei # 1 -> 2
-    index 10 sid ipv6 fc02:5::10 # 1 -> 2
-    index 20 sid ipv6 fc02:6::30 # 2 -> 1
-    index 30 sid ipv6 fc02:4::10 # 6 -> 5
+    
+  segment-list z1-y1-zhu
+    index 10 sid ipv6 fc02:5::30
+  segment-list z1-y1-bei
+    index 10 sid ipv6 fc02:5::10
+    index 20 sid ipv6 fc02:6::20
+    index 30 sid ipv6 fc02:4::10
     quit
-  srv6-te policy z1-y1 endpoint fc00::3 color 103 # 1 -> 2, fc00::5 -> fc00::6, 101 -> 102
+  
+  srv6-te policy z1-y1 endpoint fc00::3 color 103
     candidate-path preference 200
-      segment-list z1-y1-zhu # 1 -> 2
-      quit
+      segment-list z1-y1-zhu
     candidate-path preference 100
-      segment-list z1-y1-bei # 1 -> 2
+      segment-list z1-y1-bei
       quit
     quit
   quit
 
-#
-route-policy fx1 permit node 10 # fz1 -> fz2
-  apply extcommunity color 0:101 # 101 -> 102
-  quit
-route-policy fx2 permit node 20 # fz1 -> fz2
+
+route-policy fx1 permit node 10
+  apply extcommunity color 0:101
+route-policy fx2 permit node 10
   apply cost 10
-  quit
-route-policy fy1 permit node 10 # fz1 -> fz2
-  apply extcommunity color 0:103 # 101 -> 102
-  quit
-route-policy fy2 permit node 20 # fz1 -> fz2
+route-policy fy1 permit node 10
+  apply extcommunity color 0:103
+route-policy fy2 permit node 10
   apply cost 10
-  quit
 route-policy oa_med permit node 10
-  apply cost 10 # 10 -> 12
-  quit
+  apply cost 10
 route-policy rd_med permit node 10
   apply cost 12
   quit
-#
-tunnel-policy z1-xy1 # 1 -> 2
+
+tunnel-policy z1-xy1
   tunnel select-seq ipv6 srv6-te-policy load-balance-number 1
   quit
-#
+
 ip vpn-instance OA
-  route-distinguisher 65004:1 # 65001:1 -> 65001:2
-  vpn-target 4:3 export-extcommunity evpn
-  vpn-target 3:4 import-extcommunity evpn
+  route-distinguisher 65004:1
   vpn-target 4:1 export-extcommunity evpn
   vpn-target 1:4 import-extcommunity evpn
-  tnl-policy z1-xy1 evpn # 1 -> 2
-  quit
+  vpn-target 4:3 export-extcommunity evpn
+  vpn-target 3:4 import-extcommunity evpn
+  tnl-policy z1-xy1 evpn
 ip vpn-instance R&D
-  route-distinguisher 65004:3 # 65001:1 -> 65001:2
+  route-distinguisher 65004:3
   vpn-target 44:33 export-extcommunity evpn
   vpn-target 33:44 import-extcommunity evpn
-  tnl-policy z1-xy1 evpn # 1 -> 2
+  tnl-policy z1-xy1 evpn
   quit
-#
-int g 0/2/31.10 # X_Export1
-  vlan-t do 10
+
+interface ethernet 3/0/7.10
+  vlan do 10
   ip binding vpn-instance OA
-  ip add 10.20.3.2 30 # 2 -> 10
-  quit
-int g 0/2/31.20 # X_Export1
-  vlan-t do 20
+  ip add 10.20.3.2 30
+interface ethernet 3/0/7.20
+  vlan do 20
   ip binding vpn-instance R&D
-  ip add 10.20.3.6 30 # 2 -> 10
-  trust upstream default
+  ip add 10.20.3.6 30
   quit
-#
-isis 1
+
+isis 1 
   is-level level-2
   cost-style wide
-  network-entity 49.0001.0050.0000.0005.00 # 1 -> 2
+  network-entity 49.0001.0050.0000.0005.00
   domain-authentication-mode md5 cipher Huawei@123
   ipv6 enable topology ipv6
   ipv6 bfd all-interfaces enable
   ipv6 bfd all-interfaces min-tx-interval 300 min-rx-interval 300
-  #
   segment-routing ipv6 locator HCIE
   avoid-microloop frr-protected
   ipv6 avoid-microloop segment-routing
@@ -4424,46 +4405,42 @@ isis 1
     loop-free-alternate level-2
     quit
   quit
-#
-int loop 0
+
+int lo0
   isis ipv6 enable 1
+int ethernet 3/0/1
+  isis ipv6 enable 1
+  isis circuit-type p2p
+  isis ppp-negotiation 2-way
+  isis authentication-mode md5 plain Huawei@123
+int ethernet 3/0/2
+  isis ipv6 enable 1
+  isis circuit-type p2p
+  isis ppp-negotiation 2-way
+  isis authentication-mode md5 plain Huawei@123
+int ethernet 3/0/0
+  isis ipv6 enable 1
+  isis cost 4
+  isis circuit-type p2p
+  isis ppp-negotiation 2-way
+  isis authentication-mode md5 plain Huawei@123
   quit
-int g 0/2/28
-  isis ipv6 enable 1
-  isis circuit-type p2p
-  isis ppp-negotiation 2-way
-  isis authentication-mode md5 cipher Huawei@123
-  qos-profile QOS
-int g 0/2/29
-  isis ipv6 enable 1
-  isis circuit-type p2p
-  isis ppp-negotiation 2-way
-  isis authentication-mode md5 cipher Huawei@123
-  qos-profile QOS
-int g 0/2/30
-  isis ipv6 enable 1
-  isis ipv6 cost 4
-  isis circuit-type p2p
-  isis ppp-negotiation 2-way
-  isis authentication-mode md5 cipher Huawei@123
-  qos-profile QOS
-  quit
-#
+
 bgp 65000
-  router-id 5.0.0.5 # 1 -> 2
+  router-id 5.0.0.5
   peer fc00::1 as-number 65000
   peer fc00::1 password cipher Huawei@123
-  peer fc00::1 connect-interface LoopBack 0
+  peer fc00::1 connect-interface loopback 0
   peer fc00::2 as-number 65000
   peer fc00::2 password cipher Huawei@123
-  peer fc00::2 connect-interface LoopBack 0
+  peer fc00::2 connect-interface loopback 0
   peer fc00::3 as-number 65000
   peer fc00::3 password cipher Huawei@123
-  peer fc00::3 connect-interface LoopBack 0
+  peer fc00::3 connect-interface loopback 0
   peer fc00::4 as-number 65000
   peer fc00::4 password cipher Huawei@123
-  peer fc00::4 connect-interface LoopBack 0
-  l2vpn-family evpn 
+  peer fc00::4 connect-interface loopback 0
+  l2vpn-family evpn
     peer fc00::1 enable
     y
     peer fc00::1 route-policy fx1 import
@@ -4476,146 +4453,142 @@ bgp 65000
     y
     peer fc00::3 route-policy fy1 import
     peer fc00::3 advertise encap-type srv6
-    y
     peer fc00::4 enable
+    y
     peer fc00::4 route-policy fy2 import
     peer fc00::4 advertise encap-type srv6
-    quit
   ipv4-family vpn-instance OA
     advertise l2vpn evpn
-    segment-routing ipv6 locator HCIE evpn
+    segment-routing ipv6 locator HCIE
     segment-routing ipv6 traffic-engineer best-effort evpn
-    peer 10.20.3.1 as-number 65004 # 1 -> 9
-    peer 10.20.3.1 route-policy oa_med export # 1 -> 9
-    quit
+    peer 10.20.3.1 as-number 65004
+    peer 10.20.3.1 route-policy oa_med export
   ipv4-family vpn-instance R&D
     advertise l2vpn evpn
-    segment-routing ipv6 locator HCIE evpn
+    segment-routing ipv6 locator HCIE
     segment-routing ipv6 traffic-engineer best-effort evpn
-    peer 10.20.3.5 as-number 65004 # 1 -> 9
-    peer 10.20.3.5 route-policy rd_med export # 1 -> 9
+    peer 10.20.3.5 as-number 65004
+    peer 10.20.3.5 route-policy rd_med export
     quit
   quit
-#
+
 ```
 
 ### 7. Z_PE2
 
 ```bash
-sbfd
-  reflector discriminator 6.0.0.6 # 1->2
-  destination ipv6 fc00::2 remote-discriminator 2.0.0.2 # 5->6
-  destination ipv6 fc00::4 remote-discriminator 4.0.0.4 # 5->6
+bfd
+  sbfd
+  reflector discriminator 6.0.0.6
+  destination ipv6 fc00::2 remote-discriminator 2.0.0.2
+  destination ipv6 fc00::4 remote-discriminator 4.0.0.4
   quit
-te ipv6-router-id FC00::6 # 1->2
-segment-routing ipv6 
+
+te ipv6-router-id fc00::6
+
+segment-routing ipv6
   sr-te frr enable
-  encapsulation source-address fc00::6 # 1->2
-  locator HCIE ipv6-prefix fc02:6:: 96 static 16 # fc02:1 -> fc02:2
+  encapsulation source-address fc00::6
+  
+  locator HCIE ipv6-prefix fc02:6:: 96 static 16
     opcode ::1 end psp
-    display ipv6 inter brief
-    opcode ::10 end-x int g 0/2/30 nexthop fc01:10::21 psp # A -> 9
-    opcode ::20 end-x int g 0/2/28 nexthop fc01:10::11 psp # 2 -> e
-    opcode ::30 end-x int g 0/2/29 nexthop fc01:10::1d psp # 6 -> 12
+    opcode ::10 end-x interface ethernet 3/0/0 nexthop fc01:10::21 psp
+    opcode ::20 end-x interface ethernet 3/0/1 nexthop fc01:10::11 psp
+    opcode ::30 end-x interface ethernet 3/0/2 nexthop fc01:10::1D psp
     opcode ::100 end-op
     quit
+  
+
   srv6-te-policy backup hot-standby enable
   srv6-te-policy locator HCIE
   srv6-te-policy bfd seamless enable
   srv6-te-policy bfd no-bypass
-  srv6-te-policy bfd min-tx-interval 50 
-  segment-list z2-x2-zhu # 1 -> 2
-    index 10 sid ipv6 fc02:6::20 # fc02:1 -> fc02:2
-  segment-list z2-x2-bei # 1 -> 2
-    index 10 sid ipv6 fc02:6::10 # 1 -> 2
-    index 20 sid ipv6 fc02:5::20 # 2 -> 1
-    index 30 sid ipv6 fc02:1::10 # 6 -> 5
+  srv6-te-policy bfd min-tx-interval 50
+
+  segment-list z2-x2-zhu
+    index 10 sid ipv6 fc02:6::20
+  segment-list z2-x2-bei
+    index 10 sid ipv6 fc02:6::10
+    index 20 sid ipv6 fc02:5::20
+    index 30 sid ipv6 fc02:1::10
     quit
-  srv6-te policy z2-x2 endpoint fc00::2 color 102 # 1 -> 2, fc00::5 -> fc00::6, 101 -> 102
+  
+  srv6-te policy z2-x2 endpoint fc00::2 color 102
     candidate-path preference 200
-      segment-list z2-x2-zhu # 1 -> 2
-      quit
+      segment-list z2-x2-zhu
     candidate-path preference 100
-      segment-list z2-x2-bei # 1 -> 2
+      segment-list z2-x2-bei
       quit
     quit
-  segment-list z2-y2-zhu # 1 -> 2
-    index 10 sid ipv6 fc02:6::30 # fc02:1 -> fc02:2
-  segment-list z2-y2-bei # 1 -> 2
-    index 10 sid ipv6 fc02:6::10 # 1 -> 2
-    index 20 sid ipv6 fc02:5::30 # 2 -> 1
-    index 30 sid ipv6 fc02:3::10 # 6 -> 5
+    
+  segment-list z2-y2-zhu
+    index 10 sid ipv6 fc02:6::30
+  segment-list z2-y2-bei
+    index 10 sid ipv6 fc02:6::10
+    index 20 sid ipv6 fc02:5::20
+    index 30 sid ipv6 fc02:3::10
     quit
-  srv6-te policy z2-y2 endpoint fc00::4 color 104 # 1 -> 2, fc00::5 -> fc00::6, 101 -> 102
+  
+  srv6-te policy z2-y2 endpoint fc00::4 color 104
     candidate-path preference 200
-      segment-list z2-y2-zhu # 1 -> 2
-      quit
+      segment-list z2-y2-zhu
     candidate-path preference 100
-      segment-list z2-y2-bei # 1 -> 2
+      segment-list z2-y2-bei
       quit
     quit
   quit
 
-#
-route-policy fx2 permit node 10 # fz1 -> fz2
-  apply extcommunity color 0:102 # 101 -> 102
-  quit
-route-policy fx1 permit node 20 # fz1 -> fz2
+
+route-policy fx1 permit node 10
   apply cost 10
-  quit
-route-policy fy2 permit node 10 # fz1 -> fz2
-  apply extcommunity color 0:104 # 101 -> 102
-  quit
-route-policy fy1 permit node 20 # fz1 -> fz2
+route-policy fx2 permit node 10
+  apply extcommunity color 0:102
+route-policy fy1 permit node 10
   apply cost 10
-  quit
+route-policy fy2 permit node 10
+  apply extcommunity color 0:104
 route-policy oa_med permit node 10
-  apply cost 12 # 10 -> 12
-  quit
-route-policy rd_med permit node 10
   apply cost 10
+route-policy rd_med permit node 10
+  apply cost 12
   quit
-#
-tunnel-policy z2-xy2 # 1 -> 2
+
+tunnel-policy z2-xy2
   tunnel select-seq ipv6 srv6-te-policy load-balance-number 1
   quit
-#
+
 ip vpn-instance OA
-  route-distinguisher 65004:2 # 65001:1 -> 65001:2
-  vpn-target 4:3 export-extcommunity evpn
-  vpn-target 3:4 import-extcommunity evpn
+  route-distinguisher 65004:2
   vpn-target 4:1 export-extcommunity evpn
   vpn-target 1:4 import-extcommunity evpn
-  tnl-policy z2-xy2 evpn # 1 -> 2
-  quit
+  vpn-target 4:3 export-extcommunity evpn
+  vpn-target 3:4 import-extcommunity evpn
+  tnl-policy z2-xy2 evpn
 ip vpn-instance R&D
-  route-distinguisher 65004:4 # 65001:1 -> 65001:2
+  route-distinguisher 65004:4
   vpn-target 44:33 export-extcommunity evpn
   vpn-target 33:44 import-extcommunity evpn
-  tnl-policy z2-xy2 evpn # 1 -> 2
+  tnl-policy z2-xy2 evpn
   quit
-#
-int g 0/2/31.10 # X_Export1
-  vlan-t do 10
+
+interface ethernet 3/0/7.10
+  vlan do 10
   ip binding vpn-instance OA
-  ip add 10.20.3.10 30 # 2 -> 10
-  quit
-int g 0/2/31.20 # X_Export1
-  vlan-t do 20
+  ip add 10.20.3.10 30
+interface ethernet 3/0/7.20
+  vlan do 20
   ip binding vpn-instance R&D
-  ip add 10.20.3.14 30 # 2 -> 10
-  trust upstream default
+  ip add 10.20.3.14 30
   quit
-#
-isis 1
+
+isis 1 
   is-level level-2
   cost-style wide
-  network-entity 49.0001.0060.0000.0006.00 # 1 -> 2
+  network-entity 49.0001.0060.0000.0006.00
   domain-authentication-mode md5 cipher Huawei@123
   ipv6 enable topology ipv6
   ipv6 bfd all-interfaces enable
   ipv6 bfd all-interfaces min-tx-interval 300 min-rx-interval 300
-  #
   segment-routing ipv6 locator HCIE
   avoid-microloop frr-protected
   ipv6 avoid-microloop segment-routing
@@ -4623,46 +4596,42 @@ isis 1
     loop-free-alternate level-2
     quit
   quit
-#
-int loop 0
+
+int lo0
   isis ipv6 enable 1
+int ethernet 3/0/1
+  isis ipv6 enable 1
+  isis circuit-type p2p
+  isis ppp-negotiation 2-way
+  isis authentication-mode md5 plain Huawei@123
+int ethernet 3/0/2
+  isis ipv6 enable 1
+  isis circuit-type p2p
+  isis ppp-negotiation 2-way
+  isis authentication-mode md5 plain Huawei@123
+int ethernet 3/0/0
+  isis ipv6 enable 1
+  isis cost 4
+  isis circuit-type p2p
+  isis ppp-negotiation 2-way
+  isis authentication-mode md5 plain Huawei@123
   quit
-int g 0/2/28
-  isis ipv6 enable 1
-  isis circuit-type p2p
-  isis ppp-negotiation 2-way
-  isis authentication-mode md5 cipher Huawei@123
-  qos-profile QOS
-int g 0/2/29
-  isis ipv6 enable 1
-  isis circuit-type p2p
-  isis ppp-negotiation 2-way
-  isis authentication-mode md5 cipher Huawei@123
-  qos-profile QOS
-int g 0/2/30
-  isis ipv6 enable 1
-  isis ipv6 cost 4
-  isis circuit-type p2p
-  isis ppp-negotiation 2-way
-  isis authentication-mode md5 cipher Huawei@123
-  qos-profile QOS
-  quit
-#
+
 bgp 65000
-  router-id 6.0.0.6 # 1 -> 2
+  router-id 6.0.0.6
   peer fc00::1 as-number 65000
   peer fc00::1 password cipher Huawei@123
-  peer fc00::1 connect-interface LoopBack 0
+  peer fc00::1 connect-interface loopback 0
   peer fc00::2 as-number 65000
   peer fc00::2 password cipher Huawei@123
-  peer fc00::2 connect-interface LoopBack 0
+  peer fc00::2 connect-interface loopback 0
   peer fc00::3 as-number 65000
   peer fc00::3 password cipher Huawei@123
-  peer fc00::3 connect-interface LoopBack 0
+  peer fc00::3 connect-interface loopback 0
   peer fc00::4 as-number 65000
   peer fc00::4 password cipher Huawei@123
-  peer fc00::4 connect-interface LoopBack 0
-  l2vpn-family evpn 
+  peer fc00::4 connect-interface loopback 0
+  l2vpn-family evpn
     peer fc00::1 enable
     y
     peer fc00::1 route-policy fx1 import
@@ -4675,83 +4644,84 @@ bgp 65000
     y
     peer fc00::3 route-policy fy1 import
     peer fc00::3 advertise encap-type srv6
-    y
     peer fc00::4 enable
+    y
     peer fc00::4 route-policy fy2 import
     peer fc00::4 advertise encap-type srv6
-    quit
   ipv4-family vpn-instance OA
     advertise l2vpn evpn
-    segment-routing ipv6 locator HCIE evpn
+    segment-routing ipv6 locator HCIE
     segment-routing ipv6 traffic-engineer best-effort evpn
-    peer 10.20.3.9 as-number 65004 # 1 -> 9
-    peer 10.20.3.9 route-policy oa_med export # 1 -> 9
-    quit
+    peer 10.20.3.9 as-number 65004
+    peer 10.20.3.9 route-policy oa_med export
   ipv4-family vpn-instance R&D
     advertise l2vpn evpn
-    segment-routing ipv6 locator HCIE evpn
+    segment-routing ipv6 locator HCIE
     segment-routing ipv6 traffic-engineer best-effort evpn
-    peer 10.20.3.13 as-number 65004 # 1 -> 9
-    peer 10.20.3.13 route-policy rd_med export # 1 -> 9
+    peer 10.20.3.13 as-number 65004
+    peer 10.20.3.13 route-policy rd_med export
     quit
   quit
-#
+
 ```
 
 ### 8. Z_Export
 
 ```bash
+
 ip vpn-instance OA
   route-distinguisher 65004:1
 ip vpn-instance R&D
   route-distinguisher 65004:2
   quit
-
-int loop 0
+  
+int g 0/0/7
+  undo portswitch
+int g 0/0/6
+  undo portswitch
+  quit
+  
+int lo0
   ip binding vpn-instance OA
   ip add 10.3.101.254 24
-int loop 1
+int lo1
   ip binding vpn-instance R&D
   ip add 10.3.99.254 24
-int loop 2
+int lo2
   ip binding vpn-instance R&D
   ip add 10.3.100.254 24
 
-
-int g 0/0/2.10
-  do t v 10
-  ip bin vpn OA
+interface G 0/0/7.10
+  dot1q termination vid 10
+  ip binding vpn-instance OA
   ip add 10.20.3.1 30
-  arp b enable
-int g 0/0/2.20
-  do t v 20
-  ip bin vpn R&D
+interface G 0/0/7.20
+  dot1q termination vid 20
+  ip binding vpn-instance R&D
   ip add 10.20.3.5 30
-  arp b enable
-int g 0/0/3.10
-  do t v 10
-  ip bin vpn OA
+interface G 0/0/6.10
+  dot1q termination vid 10
+  ip binding vpn-instance OA
   ip add 10.20.3.9 30
-  arp b enable
-int g 0/0/3.20
-  do t v 20
-  ip bin vpn R&D
+interface G 0/0/6.20
+  dot1q termination vid 20
+  ip binding vpn-instance R&D
   ip add 10.20.3.13 30
-  arp b enable
   quit
-
+  
 bgp 65004
   router-id 10.3.99.254
   ipv4-family vpn-instance OA
     network 10.3.101.0 24
-    peer 10.20.3.2 as 65000
-    peer 10.20.3.10 as 65000
+    peer 10.20.3.2 as-number 65000
+    peer 10.20.3.10 as-number 65000
   ipv4-family vpn-instance R&D
     network 10.3.99.0 24
     network 10.3.100.0 24
-    peer 10.20.3.6 as 65000
-    peer 10.20.3.14 as 65000
-
+    peer 10.20.3.6 as-number 65000
+    peer 10.20.3.14 as-number 65000
+    quit
+  quit
 ```
 
 ### 9. 其他
