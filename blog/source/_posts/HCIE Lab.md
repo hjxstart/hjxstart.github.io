@@ -2254,38 +2254,39 @@ bgp 65000
 
 
 ## X_Export1
-inter E0/0/7
+inter G0/0/7
+  undo portswitch
   ip add 10.20.1.1 30
-inter E0/0/6
+inter G0/0/8
   ip add 10.20.1.5 30
   quit
 
 acl 2001
- rule permit source 10.1.11.0 0
- rule permit source 10.1.12.0 0
- rule permit source 10.1.13.0 0
- rule permit source 10.1.14.0 0
- rule permit source 10.1.15.0 0
- rule permit source 10.1.21.0 0
- rule permit source 10.1.22.0 0
- rule permit source 10.1.23.0 0
- rule permit source 10.1.24.0 0
- rule permit source 10.1.25.0 0
- rule permit source 10.1.31.0 0
- rule permit source 10.1.32.0 0
- rule permit source 10.1.33.0 0
- rule permit source 10.1.34.0 0
- rule permit source 10.1.35.0 0
- rule permit source 10.1.41.0 0
- rule permit source 10.1.42.0 0
- rule permit source 10.1.43.0 0
- rule permit source 10.1.44.0 0
- rule permit source 10.1.45.0 0
- rule permit source 10.1.51.0 0
- rule permit source 10.1.52.0 0
- rule permit source 10.1.53.0 0
- rule permit source 10.1.54.0 0
- rule permit source 10.1.55.0 0
+  rule permit source 10.1.11.0 0.0.0.255
+  rule permit source 10.1.12.0 0.0.0.255
+  rule permit source 10.1.13.0 0.0.0.255
+  rule permit source 10.1.14.0 0.0.0.255
+  rule permit source 10.1.15.0 0.0.0.255
+  rule permit source 10.1.21.0 0.0.0.255
+  rule permit source 10.1.22.0 0.0.0.255
+  rule permit source 10.1.23.0 0.0.0.255
+  rule permit source 10.1.24.0 0.0.0.255
+  rule permit source 10.1.25.0 0.0.0.255
+  rule permit source 10.1.31.0 0.0.0.255
+  rule permit source 10.1.32.0 0.0.0.255
+  rule permit source 10.1.33.0 0.0.0.255
+  rule permit source 10.1.34.0 0.0.0.255
+  rule permit source 10.1.35.0 0.0.0.255
+  rule permit source 10.1.41.0 0.0.0.255
+  rule permit source 10.1.42.0 0.0.0.255
+  rule permit source 10.1.43.0 0.0.0.255
+  rule permit source 10.1.44.0 0.0.0.255
+  rule permit source 10.1.45.0 0.0.0.255
+  rule permit source 10.1.51.0 0.0.0.255
+  rule permit source 10.1.52.0 0.0.0.255
+  rule permit source 10.1.53.0 0.0.0.255
+  rule permit source 10.1.54.0 0.0.0.255
+  rule permit source 10.1.55.0 0.0.0.255
  quit
 
 route-policy b2o permit node 10
@@ -2298,7 +2299,7 @@ route-policy o2b permit node 20
 
 bgp 65001
   router-id 10.1.0.1
-  peer 10.20.1.2 as 65000 //与 X_PE1 建立 BGP 邻居关系
+  peer 10.20.1.2 as 65000
   preference 120 255 255
   import ospf 1 route-policy o2b
   quit
@@ -2314,38 +2315,39 @@ ospf 1
 
 
 ## X_Export2
-inter E0/0/7
+inter G0/0/7
+  undo portswitch
   ip add 10.20.1.9 30
-inter E0/0/6
+inter G0/0/8
   ip add 10.20.1.6 30
   quit
 
 acl 2001
- rule permit source 10.1.11.0 0
- rule permit source 10.1.12.0 0
- rule permit source 10.1.13.0 0
- rule permit source 10.1.14.0 0
- rule permit source 10.1.15.0 0
- rule permit source 10.1.21.0 0
- rule permit source 10.1.22.0 0
- rule permit source 10.1.23.0 0
- rule permit source 10.1.24.0 0
- rule permit source 10.1.25.0 0
- rule permit source 10.1.31.0 0
- rule permit source 10.1.32.0 0
- rule permit source 10.1.33.0 0
- rule permit source 10.1.34.0 0
- rule permit source 10.1.35.0 0
- rule permit source 10.1.41.0 0
- rule permit source 10.1.42.0 0
- rule permit source 10.1.43.0 0
- rule permit source 10.1.44.0 0
- rule permit source 10.1.45.0 0
- rule permit source 10.1.51.0 0
- rule permit source 10.1.52.0 0
- rule permit source 10.1.53.0 0
- rule permit source 10.1.54.0 0
- rule permit source 10.1.55.0 0
+  rule permit source 10.1.11.0 0.0.0.255
+  rule permit source 10.1.12.0 0.0.0.255
+  rule permit source 10.1.13.0 0.0.0.255
+  rule permit source 10.1.14.0 0.0.0.255
+  rule permit source 10.1.15.0 0.0.0.255
+  rule permit source 10.1.21.0 0.0.0.255
+  rule permit source 10.1.22.0 0.0.0.255
+  rule permit source 10.1.23.0 0.0.0.255
+  rule permit source 10.1.24.0 0.0.0.255
+  rule permit source 10.1.25.0 0.0.0.255
+  rule permit source 10.1.31.0 0.0.0.255
+  rule permit source 10.1.32.0 0.0.0.255
+  rule permit source 10.1.33.0 0.0.0.255
+  rule permit source 10.1.34.0 0.0.0.255
+  rule permit source 10.1.35.0 0.0.0.255
+  rule permit source 10.1.41.0 0.0.0.255
+  rule permit source 10.1.42.0 0.0.0.255
+  rule permit source 10.1.43.0 0.0.0.255
+  rule permit source 10.1.44.0 0.0.0.255
+  rule permit source 10.1.45.0 0.0.0.255
+  rule permit source 10.1.51.0 0.0.0.255
+  rule permit source 10.1.52.0 0.0.0.255
+  rule permit source 10.1.53.0 0.0.0.255
+  rule permit source 10.1.54.0 0.0.0.255
+  rule permit source 10.1.55.0 0.0.0.255
  quit
 
 route-policy b2o permit node 10
@@ -2358,9 +2360,9 @@ route-policy o2b permit node 20
 
 bgp 65001
   router-id 10.1.0.2
-  peer 10.20.1.10 as 65000 //与 X_PE2 建立邻居关系
+  peer 10.20.1.10 as 65000 
   preference 120 255 255
-  import opsf 1 route-policy o2b
+  import ospf 1 route-policy o2b
   quit
 
 ospf 1
@@ -4488,8 +4490,7 @@ te ipv6-router-id fc00::6
 
 segment-routing ipv6
   sr-te frr enable
-  encapsulation source-address fc00::6
-  
+  encapsulation source-address fc00
   locator HCIE ipv6-prefix fc02:6:: 96 static 16
     opcode ::1 end psp
     opcode ::10 end-x interface ethernet 3/0/0 nexthop fc01:10::21 psp
@@ -5271,6 +5272,33 @@ ARP欺骗是针对ARP的一种攻击技术，通过使用错误的ARP 载荷信�
 
 ## 截图
 
+截图心法
+
+```bash
+X园区
+Export: ospf，tracert(Service_OA)
+AC: AP
+Core: ip, ospf, ip pool, routing-table
+AGG: ip, routing-table, access-user, stack
+ACC: interface
+FW: ip, routing-table, firewall session table
+Terminal1/2/5: ping (出口，99,100,101)
+
+Y园区 Terminal 互相ping 并ping（Service_RD1, Service_RD2, Service_common, Store(OA/RD)）
+Terminal 03: R&D / Marketing
+Terminal 04: Production
+Terminal 05: Employee / Guest
+Y_Export: ospf
+Store_Export1: ping -vpn-instance(Store(OA/RD)), tracert -vpn-instance(vpn2/4, 5.254)
+
+Z园区
+ALL PE: interface, config(isis/bgp), isis peer, mpls ldp, bgp peer
+X_PE1: routing-table vpn-instance OA Service(OA/R&D) verbose, tracert(1->5 lo0)
+Y_PE1: routing-table vpn-instance OA/R&D Service(OA/R&D) verbose, tracert(3->5 lo0)
+Z_PE1/2: routing-table vpn-instance OA/RD,
+Z_Export: ip, routing-table vpn-instance OA/RD
+````
+
 ### X园区
 
 ```bash
@@ -5363,8 +5391,8 @@ ipconfig # 10.2.21.x
 ping -w 1 10.100.3.1 # 通
 ping -w 1 10.3.99.254 # 通
 ping -w 1 10.3.100.254 # 通
-ping -w 10.3.101.254 # 不通
-ping -w 10.2.110.149 # 不通
+ping -w 1 10.3.101.254 # 不通
+ping -w 1 10.2.110.149 # 不通
 # 3 Terminal 05
 # 网站认证：empl1/Huawei@123
 ipconfig # 10.2.55.x
@@ -5382,8 +5410,7 @@ tracert -vpn-instance vpn2 -a 10.100.2.1 10.255.5.254 # 通
 tracert -vpn-instance vpn4 -a 10.100.4.1 10.255.5.254 # 通
 # 6. NCE
 1. 准入/准入策略/用户在线控制/在线用户
-2. 隧道模式
-3. SDW/基础网络/全局配置/物理网络/加密
+
 ```
 
 ### Z园区
@@ -5410,8 +5437,8 @@ tracert -a 1.0.0.1 5.0.0.5
 int g 0/0/1 & shutdown & tracert -a 1.0.0.1 5.0.0.5 & undo shutdown
 # Y_PE1
 display ip routing-table vpn-instance OA 10.3.101.0 24 verbose
-display ip routing-table vpn-instance OA 10.3.100.0 24 verbose
-display ip routing-table vpn-instance OA 10.3.99.0 24 verbose
+display ip routing-table vpn-instance R&D 10.3.100.0 24 verbose
+display ip routing-table vpn-instance R&D 10.3.99.0 24 verbose
 # Z_PE1
 display ip routing-table vpn-instance OA_In
 display ip routing-table vpn-instance OA_Out
