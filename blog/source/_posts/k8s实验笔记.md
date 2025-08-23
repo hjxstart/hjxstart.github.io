@@ -1,7 +1,6 @@
 ---
 title: k8s实验笔记
 categories: 运维
-top: 12
 tags:
   - K8s
 date: 2021-09-20 08:04:10

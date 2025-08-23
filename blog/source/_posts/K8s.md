@@ -1,7 +1,6 @@
 ---
 title: 'k8s'
 categories: 运维
-top: 11
 tags:
   - K8s
   - Docker
@@ -508,7 +507,7 @@ kubectl get service
 mkdir -p /data/kubernetes
 ```
 
-2. 安装组件
+2. xxxxxxxxxx 前因后果状态。​bash
 
 ```
 yum -y install nfs-utils rpcbind

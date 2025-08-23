@@ -1,7 +1,6 @@
 ---
 title: InfluxDB
 categories: 数据库
-top: 25
 tags:
   - InfluxDB
   - 数据库

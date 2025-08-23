@@ -1,6 +1,6 @@
 ---
 title: Springboot项目
-categories: 后端
+categories: 开发
 tags:
   - Java
   - SpringBoot

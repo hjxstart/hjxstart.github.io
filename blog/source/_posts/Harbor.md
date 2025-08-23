@@ -1,7 +1,6 @@
 ---
 title: Harbor
 categories: 运维
-top: 23
 tags:
   - Harbor
   - K8s

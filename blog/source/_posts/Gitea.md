@@ -1,7 +1,6 @@
 ---
 title: Gitea
 categories: 运维
-top: 8
 tags:
   - Git
   - CICD

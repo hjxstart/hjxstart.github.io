@@ -1,6 +1,6 @@
 ---
 title: Java多线程
-categories: 后端
+categories: 开发
 tags:
   - Java
 date: 2021-08-15 14:36:42

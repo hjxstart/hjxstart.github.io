@@ -1,6 +1,6 @@
 ---
 title: SpringSecurity
-categories: 后端
+categories: 开发
 tags:
   - Java
   - Spring

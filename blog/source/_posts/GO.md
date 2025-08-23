@@ -1,7 +1,6 @@
 ---
 title: GO
-categories: 后端
-top: 22
+categories: 开发
 tags:
   - GO
   - 编程语言

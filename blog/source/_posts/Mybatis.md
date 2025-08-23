@@ -1,6 +1,6 @@
 ---
 title: Mybatis
-categories: 后端
+categories: 开发
 tags:
   - Java
   - Mybatis

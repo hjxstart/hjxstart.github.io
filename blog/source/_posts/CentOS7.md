@@ -1,7 +1,6 @@
 ---
 title: CentOS7
 categories: 运维
-top: 5
 tags:
   - Linux
   - CentOS7

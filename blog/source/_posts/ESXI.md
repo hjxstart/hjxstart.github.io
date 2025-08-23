@@ -2,7 +2,6 @@
 title: ESXI
 date: 2023-12-18 17:05:10
 categories:
-top: 20
 tags:
 ---
 

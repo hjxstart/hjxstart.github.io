@@ -1,6 +1,6 @@
 ---
 title: Vue
-categories: 前端
+categories: 开发
 tags:
   - Vue
 date: 2021-06-23 10:48:20
