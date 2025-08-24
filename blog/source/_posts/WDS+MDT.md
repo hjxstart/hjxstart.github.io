@@ -1,6 +1,6 @@
 ---
 title: WDS+MDT
-date: 2024-07-28 21:33:05
+date: 2022-07-28 21:33:05
 categories: 运维
 tags: Windows
 ---

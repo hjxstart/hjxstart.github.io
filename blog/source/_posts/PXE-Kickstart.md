@@ -2,6 +2,7 @@
 title: PXE+Kickstart
 date: 2025-04-04 10:45:08
 categories: 运维
+top: 90
 tags: KylinOS
 ---
 
