@@ -1,7 +1,7 @@
 ---
 title: HomeLab
 date: 2025-08-12 15:09:29
-categories:
+categories: 运维
 tags:
 ---
 

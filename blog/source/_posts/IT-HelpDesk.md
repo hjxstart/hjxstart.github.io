@@ -1,7 +1,7 @@
 ---
 title: IT HelpDesk
 date: 2023-11-30 21:21:59
-categories:
+categories: 运维
 tags:
 ---
 

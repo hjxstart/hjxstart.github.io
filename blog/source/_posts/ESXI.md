@@ -1,7 +1,7 @@
 ---
 title: ESXI
 date: 2023-12-18 17:05:10
-categories:
+categories: 运维
 tags:
 ---
 

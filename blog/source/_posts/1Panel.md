@@ -1,7 +1,7 @@
 ---
 title: 1Panel
 date: 2025-04-26 14:09:16
-categories:
+categories: 运维
 tags:
 ---
 

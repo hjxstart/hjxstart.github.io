@@ -1,7 +1,7 @@
 ---
 title: 思科NP网络实验
 date: 2023-06-01 10:46:26
-categories: 
+categories: 网络
 - 网络
 tags: 
 - 思科网络实验

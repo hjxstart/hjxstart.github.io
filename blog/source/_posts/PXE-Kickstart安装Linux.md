@@ -1,7 +1,7 @@
 ---
 title: PXE+Kickstart安装Linux
 date: 2025-04-04 10:45:08
-categories:
+categories: 运维
 tags:
 ---
 

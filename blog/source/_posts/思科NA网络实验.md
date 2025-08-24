@@ -1,7 +1,7 @@
 ---
 title: 思科NA网络实验
 date: 2023-04-07 20:13:29
-categories:
+categories: 网络
   - 网络
 tags:
   - 思科网络实验

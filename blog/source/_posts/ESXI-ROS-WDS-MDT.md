@@ -1,7 +1,7 @@
 ---
 title: ESXI+ROS+WDS+MDT
 date: 2024-07-28 21:33:05
-categories:
+categories: 运维
 tags: IT Helpdesk
 ---
 

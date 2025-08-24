@@ -1,7 +1,7 @@
 ---
 title: HCIE Datacom机考
 date: 2025-08-07 19:33:32
-categories:
+categories: 网络
 tags:
 ---
 

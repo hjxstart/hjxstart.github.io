@@ -1,7 +1,7 @@
 ---
 title: Windows10系统封装
 date: 2024-07-28 21:32:18
-categories:
+categories: 运维
 tags:
 ---
 
