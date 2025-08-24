@@ -1,8 +1,7 @@
 ---
-title: SpringBoot2学习
+title: SpringBoot2
 categories: 开发
 tags:
-  - Java
 date: 2021-06-08 16:51:25
 ---
 

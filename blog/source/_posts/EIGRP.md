@@ -2,9 +2,7 @@
 title: EIGRP
 date: 2023-04-09 15:14:50
 categories: 网络
-tags:
-  - EIGRP
-  - 路由协议
+tags: 协议
 ---
 
 

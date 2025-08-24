@@ -1,5 +1,5 @@
 ---
-title: 华为NA网络实验
+title: HCNA Lab
 categories: 网络
 tags: 
   - VLAN

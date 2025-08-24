@@ -1,7 +1,7 @@
 ---
 title: OpenWrt
 date: 2023-11-18 17:03:16
-categories: 网络
+categories: 工具
 tags:
 ---
 

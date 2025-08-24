@@ -1,8 +1,7 @@
 ---
 title: Maven
 categories: 开发
-tags:
-  - Java
+tags: Java
 date: 2021-08-06 09:38:42
 ---
 

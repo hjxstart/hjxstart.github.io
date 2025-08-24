@@ -2,7 +2,6 @@
 title: Nginx
 categories: 运维
 tags:
-  - Nginx
 date: 2021-08-11 23:28:55
 ---
 

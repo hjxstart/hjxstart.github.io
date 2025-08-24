@@ -1,5 +1,5 @@
 ---
-title: 华为NP网络实验
+title: HCNP Lab
 date: 2023-06-01 10:46:04
 categories: 网络
 ---

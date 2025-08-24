@@ -2,8 +2,6 @@
 title: Redis
 categories: 数据库
 tags:
-  - 数据库
-  - Docker
 date: 2021-10-06 17:19:30
 ---
 

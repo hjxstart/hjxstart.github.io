@@ -1,9 +1,7 @@
 ---
 title: GO
 categories: 开发
-tags:
-  - GO
-  - 编程语言
+tags: Go
 date: 2021-08-26 11:50:00
 ---
 

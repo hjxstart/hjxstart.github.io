@@ -1,5 +1,5 @@
 ---
-title: 堆叠
+title: stack-port
 date: 2023-12-21 19:31:45
 categories: 网络
 tags:
@@ -11,6 +11,10 @@ SW1
 
 ```shell
 1. 修改接口
+```bash
+ interface stack-port 0/1
+ 
+```
 2. 优先级，默认是1，shutdown接口
 3. 堆叠接口你
 4. no shutdown 接口

@@ -2,8 +2,6 @@
 title: MongoDB
 categories: 数据库
 tags:
-  - MongoDB
-  - 数据库
 date: 2022-03-06 17:38:45
 ---
 

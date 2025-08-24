@@ -1,11 +1,7 @@
 ---
 title: OSPF
 categories: 网络
-tags:
-  - OSPF
-  - 路由协议
-  - 动态路由协议
-  - IGP
+tags: 协议
 date: 2023-04-07 19:19:35
 ---
 

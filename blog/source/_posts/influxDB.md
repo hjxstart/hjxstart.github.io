@@ -2,8 +2,6 @@
 title: InfluxDB
 categories: 数据库
 tags:
-  - InfluxDB
-  - 数据库
 date: 2022-03-06 12:47:36
 ---
 

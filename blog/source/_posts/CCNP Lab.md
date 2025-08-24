@@ -1,8 +1,7 @@
 ---
-title: 思科NP网络实验
+title: CCNP Lab
 date: 2023-06-01 10:46:26
 categories: 网络
-- 网络
 tags: 
 - 思科网络实验
 - Cisco

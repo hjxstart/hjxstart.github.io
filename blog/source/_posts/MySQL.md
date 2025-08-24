@@ -2,8 +2,7 @@
 title: MySQL
 date: 2022-03-19 21:51:35
 categories: 数据库
-tags: 
-  - MySQL
+tags: MySQL
 ---
 
 # 安装

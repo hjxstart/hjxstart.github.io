@@ -1,9 +1,7 @@
 ---
 title: Harbor
 categories: 运维
-tags:
-  - Harbor
-  - K8s
+tags: K8s
 date: 2021-09-08 18:04:32
 ---
 

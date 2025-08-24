@@ -1,7 +1,7 @@
 ---
-title: Windows10系统封装
+title: NTLite
 date: 2024-07-28 21:32:18
-categories: 运维
+categories: 工具
 tags:
 ---
 

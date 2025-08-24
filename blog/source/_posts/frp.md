@@ -1,9 +1,7 @@
 ---
-title: frp
-categories: 运维
+title: Frp
+categories: 工具
 tags:
-  - Nginx
-  - frp
 date: 2021-12-19 20:34:09
 ---
 

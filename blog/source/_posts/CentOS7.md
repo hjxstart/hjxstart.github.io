@@ -2,8 +2,6 @@
 title: CentOS7
 categories: 运维
 tags:
-  - Linux
-  - CentOS7
 date: 2021-06-07 23:16:42
 ---
 

@@ -2,7 +2,7 @@
 title: Git
 date: 2023-12-18 17:00:20
 categories: 工具
-tags:
+tags: Git
 ---
 
 ### 配置Git

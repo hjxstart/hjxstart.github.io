@@ -1,9 +1,7 @@
 ---
 title: Mybatis
 categories: 开发
-tags:
-  - Java
-  - Mybatis
+tags: Java
 date: 2021-07-13 10:38:01
 ---
 

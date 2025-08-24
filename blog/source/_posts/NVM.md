@@ -1,8 +1,7 @@
 ---
 title: NVM
-categories: 工具
+categories: 开发
 tags:
-  - Nodejs
 date: 2021-07-05 08:15:33
 ---
 

@@ -1,9 +1,7 @@
 ---
-title: 'k8s'
+title: K8s
 categories: 运维
-tags:
-  - K8s
-  - Docker
+tags: Docker
 date: 2021-09-15 20:48:34
 ---
 

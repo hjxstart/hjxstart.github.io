@@ -1,9 +1,7 @@
 ---
 title: Docker
 categories: 运维
-tags:
-  - Docker
-  - 环境
+tags: Docker
 date: 2021-07-22 14:53:59
 ---
 

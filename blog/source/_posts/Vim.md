@@ -2,7 +2,6 @@
 title: Vim
 categories: 工具
 tags:
-  - Linux
 date: 2021-12-27 09:15:01
 ---
 

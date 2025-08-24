@@ -1,8 +1,8 @@
 ---
-title: 001-Telnet
+title: Telnet
 date: 2024-01-27 10:45:39
 categories: 网络
-tags:
+tags: 协议
 ---
 
 ### Telnet

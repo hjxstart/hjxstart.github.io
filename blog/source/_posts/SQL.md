@@ -2,7 +2,6 @@
 title: SQL
 categories: 数据库
 tags:
-  - MySQL
 date: 2021-03-22 18:33:13
 ---
 

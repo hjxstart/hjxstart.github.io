@@ -1,5 +1,5 @@
 ---
-title: 校园交易项目
+title: Java Project1
 categories: 开发
 tags:
   - Java

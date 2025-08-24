@@ -1,22 +1,91 @@
 ---
 title: STP
-date: 2024-01-20 10:26:37
+date: 2024-01-27 14:01:47
 categories: 网络
 tags:
 ---
 
-# STP
+# NA复习
+1. IP规划. IP地址的作用是寻址；
+2. 路由技术. 高速路上的路标；路由形成的3种方式，直连路由/静态路由/动态路由.
+3. 静态路由
+4. OSPF协议
+5. VLAN技术
+6. VLAN间通信
+7. ACL技术
+8. NAT技术
+
+
+```shell
+# 关闭系统日志
+undo info-center enable
+# 修改系统语言
+> language-mode Chinese
+```
+
+![NA实验](https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20240225140752.png)
+
+#### NA实验
+
+```shell
+# access
+port link-type access
+port default vlan 10
+
+# trunk
+port link-type trunk
+port trunk allow-pass vlan all
+
+# vlanif
+int vlanif 10
+ip add 10.1.10.254 24
+
+# 单臂路由子接口
+int g0/0/1.30
+dot1q termination vid 30
+arp broadcast enable
+ip address 10.1.30.254 24
+
+# OSPF
+ospf router-id 2.2.2.2
+area 0
+interface g0/0/1
+ospf enable area 0
+interface vlanif 10
+ospf enable area 0
+interface g0/0/1.30
+ospf enable area 0
+
+# 静态路由
+ip route-static 0.0.0.0 0 100.1.1.1
+
+# 默认路由下放
+ospf
+default-route-advertise
+
+# NAT
+acl 2000
+rule permit source any
+quit
+int g0/0/0
+nat outbound 2000
+```
+
+
+# 生成树 Spanning tree protocal
 
 ## 概述
 
-Spanning-Tree Protocol 生成树协议
 
-## 交换机的控制层面的缺陷，以及该缺陷导致的问题
 
-交换机总会人员
+### 使用场景
 
-## STP 的两大用途介绍
+1. 现网环境一般不会使用，一般默认设备会启动MSTP.
+2. 解决二层环路，MAC地址漂移。二层环路的原因是交换机尽力而为的
 
-## STP 中的各种参数术语介绍
+## 二层环路
 
-## STP 的选举以及端口角色对应的接口状态
+## STP的作用
+
+## STP的运行原理
+

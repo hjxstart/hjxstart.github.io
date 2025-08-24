@@ -1,9 +1,7 @@
 ---
 title: GitLab
 categories: 运维
-tags:
-  - Git
-  - CICD
+tags: Git
 date: 2021-07-22 21:41:24
 ---
 

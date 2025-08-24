@@ -1,8 +1,7 @@
 ---
-title: 思科NA网络实验
+title: CCNA Lab
 date: 2023-04-07 20:13:29
 categories: 网络
-  - 网络
 tags:
   - 思科网络实验
   - Cisco

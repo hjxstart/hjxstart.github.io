@@ -2,7 +2,6 @@
 title: VMware
 categories: 工具
 tags:
-  - Linux
 date: 2021-09-09 15:38:41
 ---
 

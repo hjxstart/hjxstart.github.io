@@ -1,5 +1,5 @@
 ---
-title: 002_SSH
+title: SSH
 date: 2024-01-27 10:44:10
 categories: 网络
 tags:

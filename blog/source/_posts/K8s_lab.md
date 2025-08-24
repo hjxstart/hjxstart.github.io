@@ -1,8 +1,7 @@
 ---
-title: k8s实验笔记
+title: K8s_lab
 categories: 运维
-tags:
-  - K8s
+tags: Docker
 date: 2021-09-20 08:04:10
 ---
 

@@ -2,7 +2,7 @@
 title: KylinOS
 date: 2025-02-12 16:47:23
 categories: 运维
-tags: Linux
+tags: KylinOS
 ---
 
 # 概述

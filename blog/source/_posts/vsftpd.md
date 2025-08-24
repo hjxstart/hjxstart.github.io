@@ -2,7 +2,6 @@
 title: vsftpd
 categories: 运维
 tags:
-  - ftp
 date: 2021-12-16 08:49:01
 ---
 

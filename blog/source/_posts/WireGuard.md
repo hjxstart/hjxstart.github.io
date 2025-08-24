@@ -1,7 +1,7 @@
 ---
 title: WireGuard
 date: 2023-12-22 07:40:46
-categories: 网络
+categories: 工具
 tags:
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: cisp-practice03
 date: 2025-08-23 19:33:12
-categories: 网络安全
-tags:
+categories: 安全
+tags: cisp
 ---
 
 ## 03Windows访问控制列表配置实验

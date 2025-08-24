@@ -1,7 +1,7 @@
 ---
 title: cisp-practice02
-date: 2025-08-23 19:41:02
-categories: 网络安全
+date: 2025-08-22 19:41:02
+categories: 安全
 tags:
 ---
 

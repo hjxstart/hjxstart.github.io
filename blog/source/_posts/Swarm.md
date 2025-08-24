@@ -1,8 +1,7 @@
 ---
 title: Swarm
-tags:
-  - Docker
 categories: 运维
+tags:
 date: 2021-08-28 20:46:10
 ---
 

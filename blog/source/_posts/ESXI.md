@@ -2,7 +2,7 @@
 title: ESXI
 date: 2023-12-18 17:05:10
 categories: 运维
-tags:
+tags: ESXI
 ---
 
 # 概述 ESXI

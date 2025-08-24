@@ -2,9 +2,7 @@
 title: FHPR
 date: 2023-04-09 11:25:26
 categories: 网络
-tags:
-  - FHPR
-  - VRRP
+tags: 协议
 ---
 
 

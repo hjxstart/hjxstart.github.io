@@ -1,9 +1,7 @@
 ---
 title: Gitea
 categories: 运维
-tags:
-  - Git
-  - CICD
+tags: Git
 date: 2021-12-19 21:53:48
 ---
 
