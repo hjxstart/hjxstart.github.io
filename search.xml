@@ -111,82 +111,6 @@
     
     
     <entry>
-      <title>HomeLab</title>
-      <link href="/2025/08/12/HomeLab/"/>
-      <url>/2025/08/12/HomeLab/</url>
-      
-        <content type="html"><![CDATA[<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><pre><code class="language-bash"># 修改主机名hostnamectl set-hostname homelab_01# Centos7 更换腾讯源curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.cloud.tencent.com/repo/centos7_base.repoyum install -y net-tools vim wget gccyum -y install openssl openssl-devel patchsystemctl start sshd# 安装1Panel. http://目标服务器 IP 地址:目标端口/安全入口bash -c &quot;$(curl -sSL https://resource.fit2cloud.com/1panel/package/v2/quick_start.sh)&quot;</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> 运维 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Anaconda</title>
-      <link href="/2025/06/21/Anaconda/"/>
-      <url>/2025/06/21/Anaconda/</url>
-      
-        <content type="html"><![CDATA[<h1 id="创建Python环境"><a href="#创建Python环境" class="headerlink" title="创建Python环境"></a>创建Python环境</h1><pre><code class="language-bash"># 查看虚拟环境conda env list# 创建虚拟机环境conda create -n hcie python=3.8.3# 激活虚拟环境conda activate hcie# 退出虚拟环境conda deactivate# 删除虚拟环境conda remove -n hcie --all# 查看配置文件路径pip -v config list# 添加代理 pip.ini[global]proxy= http://127.0.0.1:7890</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> 开发 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>IBMC</title>
-      <link href="/2025/05/13/IBMC/"/>
-      <url>/2025/05/13/IBMC/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      <categories>
-          
-          <category> 运维 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>1Panel</title>
-      <link href="/2025/04/26/1Panel/"/>
-      <url>/2025/04/26/1Panel/</url>
-      
-        <content type="html"><![CDATA[<h1 id="1Panel"><a href="#1Panel" class="headerlink" title="1Panel"></a>1Panel</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h2 id="网站"><a href="#网站" class="headerlink" title="网站"></a>网站</h2><pre><code class="language-bash"></code></pre><hr><h2 id="Frp"><a href="#Frp" class="headerlink" title="Frp"></a>Frp</h2><h3 id="Frpc"><a href="#Frpc" class="headerlink" title="Frpc"></a>Frpc</h3><pre><code class="language-bash"># proxiesserverAddr = &quot;154.222.24.218&quot;serverPort = 7000auth.method = &quot;token&quot;auth.token = &quot;FRPS&quot;[[proxies]]name = &quot;7735h-rdp&quot;type = &quot;xtcp&quot;secretKey = &quot;&quot;localIP = &quot;127.0.0.1&quot;localPort = 3389# visitorsserverAddr = &quot;154.222.24.218&quot;serverPort = 7000auth.method = &quot;token&quot;auth.token = &quot;FRPS&quot;[[visitors]]name = &quot;zdy_&quot;type = &quot;xtcp&quot;serverName = &quot;7735h-rdp&quot;secretKey = &quot;&quot;bindAddr = &quot;0.0.0.0&quot;bindPort = 6000keepTunnelOpen = true</code></pre><hr><h2 id="Cloudreve"><a href="#Cloudreve" class="headerlink" title="Cloudreve"></a>Cloudreve</h2><pre><code class="language-bash"># 七牛存储策略</code></pre><hr><h2 id="maxkb"><a href="#maxkb" class="headerlink" title="maxkb"></a>maxkb</h2><pre><code class="language-bash"></code></pre><hr><h2 id="jumpserver"><a href="#jumpserver" class="headerlink" title="jumpserver"></a>jumpserver</h2><pre><code class="language-bash"></code></pre><hr><h2 id="zyplayer-doc"><a href="#zyplayer-doc" class="headerlink" title="zyplayer-doc"></a>zyplayer-doc</h2><pre><code class="language-bash"># 配置系统功能配置时，onlyoffice和drawio需要配置https域名</code></pre><blockquote><p>docker-compose.yml</p></blockquote><pre><code class="language-yml">version: &#39;3&#39;services:  zyplayer:    container_name: zyplayer-doc    image: registry.cn-beijing.aliyuncs.com/zyplayer/zyplayer-doc:latest    ports:      - 8083:8083    environment:      - DATASOURCE_HOST_PORT=10.0.142.2:3306      - DATASOURCE_DATABASE=zyplayer_doc      - DATASOURCE_USER=zyplayer      - DATASOURCE_PASSWORD=    # 指定数据库密码    volumes:      - ./files:/zyplayer/files    healthcheck:      test: [&quot;CMD&quot;, &quot;curl&quot;, &quot;-f&quot;, &quot;http://localhost:8083&quot;]      interval: 5s      timeout: 5s      retries: 10      start_period: 10s</code></pre><hr><h2 id="surveyking"><a href="#surveyking" class="headerlink" title="surveyking"></a>surveyking</h2><pre><code class="language-yml">services:    surveyking:        image: surveyking/surveyking:latest        container_name: surveyking        volumes:            - ./files:/app/files  # 文件目录，存储上传的文件，冒号左侧改成自己的，下同            - ./logs:/app/logs    # 运行日志        ports:            - 41991:1991 # 冒号左侧可改        environment:            - PROFILE=mysql                       # 使用外部 MySQL 数据库            - MYSQL_USER=surveyking               # 数据库用户名            - MYSQL_PASS=               # 数据库密码            - DB_URL=jdbc:mysql://10.0.142.2:3306/surveyking?rewriteBatchedStatements=true&amp;useUnicode=true&amp;characterEncoding=UTF-8        restart: always</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> 运维 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Openstack</title>
       <link href="/2025/04/24/Openstack/"/>
       <url>/2025/04/24/Openstack/</url>
@@ -269,31 +193,6 @@
           
       </categories>
       
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>WDS+MDT</title>
-      <link href="/2024/07/28/WDS+MDT/"/>
-      <url>/2024/07/28/WDS+MDT/</url>
-      
-        <content type="html"><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><blockquote><p>搭建一套自动化批量安装 Windows 电脑的服务</p></blockquote><h1 id="ESXI-安装与配置"><a href="#ESXI-安装与配置" class="headerlink" title="ESXI 安装与配置"></a>ESXI 安装与配置</h1><h2 id="硬件环境概述"><a href="#硬件环境概述" class="headerlink" title="硬件环境概述"></a>硬件环境概述</h2><blockquote><p>畅网 N305 多网口迷你小主机一台<br>32G DDR5 4800MHZ 内存条一根<br>长城 1TB M.2 PCIE 3.0 固态硬盘一根<br>网线 2 根, PEU 盘一个, 鼠标键盘一套</p></blockquote><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224148.png"><br><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224320.png"><br><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224521.png"></p><ol><li>按 Enter 继续安装</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224705.png"></p><ol start="2"><li>按 F11 接受许可</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225551.png"></p><ol start="3"><li>按 Enter 选择硬盘</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225341.png"></p><ol start="4"><li>按 Enter 重启</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225745.png"></p><ol start="5"><li>选择 OS</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225912.png"></p><ol start="6"><li>输入管理员密码</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230033.png"></p><ol start="7"><li>选择 F11 Install</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230241.png"></p><ol start="8"><li>重启</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230445.png"></p><ol start="9"><li>管理员登录</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230753.png"></p><ol start="10"><li>选择修改管理网络</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230951.png"></p><ol start="11"><li>打开网络设备</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222231317.png"></p><ol start="12"><li>选择管理口</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222231628.png"></p><ol start="13"><li>选择 IPv4</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222231733.png"></p><ol start="14"><li>设置静态 IP</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222232011.png"></p><ol start="15"><li><p>ESC 退出和保存配置，就可以使用浏览器通过 IP 地址访问 ESXI 了</p></li><li><p>网卡直通，过滤出可直通的设备，选择除管理网卡外的网络直通</p></li></ol><hr><h1 id="ROS-安装与配置"><a href="#ROS-安装与配置" class="headerlink" title="ROS 安装与配置"></a>ROS 安装与配置</h1><h2 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h2><ol><li>创建 Linux4.x 以上的系统</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA1.png"></p><ol start="2"><li>自定义配置和锁定 1G 及以上内存</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA2.png"></p><ol start="3"><li>添加 PCIE 设备</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA3.png"></p><ol start="4"><li>配置虚拟机引导方式为 BIOS 启动，点击下一步，最后点击完成</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA4.png"></p><ol start="5"><li>将 ROS 官网下载的 VDMK 硬盘上次，并添加到 ROS 虚拟机后，点击保存</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA5.png"></p><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA5.2.png"></p><ol start="6"><li>修改 VMDK 的打开和磁盘模式后，点击和打开虚拟机去配置即可。</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA6.png"></p><h2 id="ROS-快速配置"><a href="#ROS-快速配置" class="headerlink" title="ROS 快速配置"></a>ROS 快速配置</h2><hr><h1 id="WDS-安装与配置"><a href="#WDS-安装与配置" class="headerlink" title="WDS 安装与配置"></a>WDS 安装与配置</h1><pre><code class="language-shell"># 修改主机名# 修改静态IP# 关闭防火墙# 打开远程连接# 安装WDS# 配置WDS()</code></pre><h1 id="MDT-安装与配置"><a href="#MDT-安装与配置" class="headerlink" title="MDT 安装与配置"></a>MDT 安装与配置</h1><h2 id="Rules"><a href="#Rules" class="headerlink" title="Rules"></a>Rules</h2><pre><code class="language-shell">[Settings]Priority=DefaultProperties=MyCustomProperty[Default]OSInstall=YES_SMSTSOrgName=CICCHKSkipBDDWelcome=YESSkipCapture=YESSkipAdminPassword=YESAdminPassword=XXXSkipAppsOnUpgrade=YESSkipProductKey=YESSkipComputerBackup=YESSkipBitLocker=YESSkipComputerName=YESComputerName=CICCHKSkipDomainMembership=YESSkipTaskSequence=YESTaskSequenceID=TestSkipTimeZone=YESTimeZoneName=China Standard TimeSkipLocaleSelection=YESKeyboardLocale=en-USUserLocale=en-USUILanguage=en-USSkipLocalSelection=YESSkipUserData=YESSkipSummary=YESHideShell=YESFinishAction=LOGOFF</code></pre><h2 id="Bootstrap"><a href="#Bootstrap" class="headerlink" title="Bootstrap"></a>Bootstrap</h2><pre><code class="language-shell">[Default]DeployRoot=\\WDS\DeploymentShare$SkipBDDWelcome=YESUserDomain=workgroupUserID=administratorUserPassword=KeyboardLocale=en-US</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> 运维 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Windows </tag>
-            
-        </tags>
       
     </entry>
     
@@ -687,6 +586,44 @@
     
     
     <entry>
+      <title>IBMC</title>
+      <link href="/2023/05/13/IBMC/"/>
+      <url>/2023/05/13/IBMC/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 运维 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>1Panel</title>
+      <link href="/2023/04/26/1Panel/"/>
+      <url>/2023/04/26/1Panel/</url>
+      
+        <content type="html"><![CDATA[<h1 id="1Panel"><a href="#1Panel" class="headerlink" title="1Panel"></a>1Panel</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h2 id="网站"><a href="#网站" class="headerlink" title="网站"></a>网站</h2><pre><code class="language-bash"></code></pre><hr><h2 id="Frp"><a href="#Frp" class="headerlink" title="Frp"></a>Frp</h2><h3 id="Frpc"><a href="#Frpc" class="headerlink" title="Frpc"></a>Frpc</h3><pre><code class="language-bash"># proxiesserverAddr = &quot;154.222.24.218&quot;serverPort = 7000auth.method = &quot;token&quot;auth.token = &quot;FRPS&quot;[[proxies]]name = &quot;7735h-rdp&quot;type = &quot;xtcp&quot;secretKey = &quot;&quot;localIP = &quot;127.0.0.1&quot;localPort = 3389# visitorsserverAddr = &quot;154.222.24.218&quot;serverPort = 7000auth.method = &quot;token&quot;auth.token = &quot;FRPS&quot;[[visitors]]name = &quot;zdy_&quot;type = &quot;xtcp&quot;serverName = &quot;7735h-rdp&quot;secretKey = &quot;&quot;bindAddr = &quot;0.0.0.0&quot;bindPort = 6000keepTunnelOpen = true</code></pre><hr><h2 id="Cloudreve"><a href="#Cloudreve" class="headerlink" title="Cloudreve"></a>Cloudreve</h2><pre><code class="language-bash"># 七牛存储策略</code></pre><hr><h2 id="maxkb"><a href="#maxkb" class="headerlink" title="maxkb"></a>maxkb</h2><pre><code class="language-bash"></code></pre><hr><h2 id="jumpserver"><a href="#jumpserver" class="headerlink" title="jumpserver"></a>jumpserver</h2><pre><code class="language-bash"></code></pre><hr><h2 id="zyplayer-doc"><a href="#zyplayer-doc" class="headerlink" title="zyplayer-doc"></a>zyplayer-doc</h2><pre><code class="language-bash"># 配置系统功能配置时，onlyoffice和drawio需要配置https域名</code></pre><blockquote><p>docker-compose.yml</p></blockquote><pre><code class="language-yml">version: &#39;3&#39;services:  zyplayer:    container_name: zyplayer-doc    image: registry.cn-beijing.aliyuncs.com/zyplayer/zyplayer-doc:latest    ports:      - 8083:8083    environment:      - DATASOURCE_HOST_PORT=10.0.142.2:3306      - DATASOURCE_DATABASE=zyplayer_doc      - DATASOURCE_USER=zyplayer      - DATASOURCE_PASSWORD=    # 指定数据库密码    volumes:      - ./files:/zyplayer/files    healthcheck:      test: [&quot;CMD&quot;, &quot;curl&quot;, &quot;-f&quot;, &quot;http://localhost:8083&quot;]      interval: 5s      timeout: 5s      retries: 10      start_period: 10s</code></pre><hr><h2 id="surveyking"><a href="#surveyking" class="headerlink" title="surveyking"></a>surveyking</h2><pre><code class="language-yml">services:    surveyking:        image: surveyking/surveyking:latest        container_name: surveyking        volumes:            - ./files:/app/files  # 文件目录，存储上传的文件，冒号左侧改成自己的，下同            - ./logs:/app/logs    # 运行日志        ports:            - 41991:1991 # 冒号左侧可改        environment:            - PROFILE=mysql                       # 使用外部 MySQL 数据库            - MYSQL_USER=surveyking               # 数据库用户名            - MYSQL_PASS=               # 数据库密码            - DB_URL=jdbc:mysql://10.0.142.2:3306/surveyking?rewriteBatchedStatements=true&amp;useUnicode=true&amp;characterEncoding=UTF-8        restart: always</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 运维 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>信息系统项目管理师</title>
       <link href="/2023/04/24/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/"/>
       <url>/2023/04/24/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/</url>
@@ -864,6 +801,69 @@
       <categories>
           
           <category> 工具 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>HomeLab</title>
+      <link href="/2022/08/12/HomeLab/"/>
+      <url>/2022/08/12/HomeLab/</url>
+      
+        <content type="html"><![CDATA[<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><pre><code class="language-bash"># 修改主机名hostnamectl set-hostname homelab_01# Centos7 更换腾讯源curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.cloud.tencent.com/repo/centos7_base.repoyum install -y net-tools vim wget gccyum -y install openssl openssl-devel patchsystemctl start sshd# 安装1Panel. http://目标服务器 IP 地址:目标端口/安全入口bash -c &quot;$(curl -sSL https://resource.fit2cloud.com/1panel/package/v2/quick_start.sh)&quot;</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 运维 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>WDS+MDT</title>
+      <link href="/2022/07/28/WDS+MDT/"/>
+      <url>/2022/07/28/WDS+MDT/</url>
+      
+        <content type="html"><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><blockquote><p>搭建一套自动化批量安装 Windows 电脑的服务</p></blockquote><h1 id="ESXI-安装与配置"><a href="#ESXI-安装与配置" class="headerlink" title="ESXI 安装与配置"></a>ESXI 安装与配置</h1><h2 id="硬件环境概述"><a href="#硬件环境概述" class="headerlink" title="硬件环境概述"></a>硬件环境概述</h2><blockquote><p>畅网 N305 多网口迷你小主机一台<br>32G DDR5 4800MHZ 内存条一根<br>长城 1TB M.2 PCIE 3.0 固态硬盘一根<br>网线 2 根, PEU 盘一个, 鼠标键盘一套</p></blockquote><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224148.png"><br><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224320.png"><br><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224521.png"></p><ol><li>按 Enter 继续安装</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224705.png"></p><ol start="2"><li>按 F11 接受许可</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225551.png"></p><ol start="3"><li>按 Enter 选择硬盘</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225341.png"></p><ol start="4"><li>按 Enter 重启</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225745.png"></p><ol start="5"><li>选择 OS</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225912.png"></p><ol start="6"><li>输入管理员密码</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230033.png"></p><ol start="7"><li>选择 F11 Install</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230241.png"></p><ol start="8"><li>重启</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230445.png"></p><ol start="9"><li>管理员登录</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230753.png"></p><ol start="10"><li>选择修改管理网络</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230951.png"></p><ol start="11"><li>打开网络设备</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222231317.png"></p><ol start="12"><li>选择管理口</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222231628.png"></p><ol start="13"><li>选择 IPv4</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222231733.png"></p><ol start="14"><li>设置静态 IP</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222232011.png"></p><ol start="15"><li><p>ESC 退出和保存配置，就可以使用浏览器通过 IP 地址访问 ESXI 了</p></li><li><p>网卡直通，过滤出可直通的设备，选择除管理网卡外的网络直通</p></li></ol><hr><h1 id="ROS-安装与配置"><a href="#ROS-安装与配置" class="headerlink" title="ROS 安装与配置"></a>ROS 安装与配置</h1><h2 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h2><ol><li>创建 Linux4.x 以上的系统</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA1.png"></p><ol start="2"><li>自定义配置和锁定 1G 及以上内存</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA2.png"></p><ol start="3"><li>添加 PCIE 设备</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA3.png"></p><ol start="4"><li>配置虚拟机引导方式为 BIOS 启动，点击下一步，最后点击完成</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA4.png"></p><ol start="5"><li>将 ROS 官网下载的 VDMK 硬盘上次，并添加到 ROS 虚拟机后，点击保存</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA5.png"></p><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA5.2.png"></p><ol start="6"><li>修改 VMDK 的打开和磁盘模式后，点击和打开虚拟机去配置即可。</li></ol><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA6.png"></p><h2 id="ROS-快速配置"><a href="#ROS-快速配置" class="headerlink" title="ROS 快速配置"></a>ROS 快速配置</h2><hr><h1 id="WDS-安装与配置"><a href="#WDS-安装与配置" class="headerlink" title="WDS 安装与配置"></a>WDS 安装与配置</h1><pre><code class="language-shell"># 修改主机名# 修改静态IP# 关闭防火墙# 打开远程连接# 安装WDS# 配置WDS()</code></pre><h1 id="MDT-安装与配置"><a href="#MDT-安装与配置" class="headerlink" title="MDT 安装与配置"></a>MDT 安装与配置</h1><h2 id="Rules"><a href="#Rules" class="headerlink" title="Rules"></a>Rules</h2><pre><code class="language-shell">[Settings]Priority=DefaultProperties=MyCustomProperty[Default]OSInstall=YES_SMSTSOrgName=CICCHKSkipBDDWelcome=YESSkipCapture=YESSkipAdminPassword=YESAdminPassword=XXXSkipAppsOnUpgrade=YESSkipProductKey=YESSkipComputerBackup=YESSkipBitLocker=YESSkipComputerName=YESComputerName=CICCHKSkipDomainMembership=YESSkipTaskSequence=YESTaskSequenceID=TestSkipTimeZone=YESTimeZoneName=China Standard TimeSkipLocaleSelection=YESKeyboardLocale=en-USUserLocale=en-USUILanguage=en-USSkipLocalSelection=YESSkipUserData=YESSkipSummary=YESHideShell=YESFinishAction=LOGOFF</code></pre><h2 id="Bootstrap"><a href="#Bootstrap" class="headerlink" title="Bootstrap"></a>Bootstrap</h2><pre><code class="language-shell">[Default]DeployRoot=\\WDS\DeploymentShare$SkipBDDWelcome=YESUserDomain=workgroupUserID=administratorUserPassword=KeyboardLocale=en-US</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 运维 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Windows </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Anaconda</title>
+      <link href="/2022/06/21/Anaconda/"/>
+      <url>/2022/06/21/Anaconda/</url>
+      
+        <content type="html"><![CDATA[<h1 id="创建Python环境"><a href="#创建Python环境" class="headerlink" title="创建Python环境"></a>创建Python环境</h1><pre><code class="language-bash"># 查看虚拟环境conda env list# 创建虚拟机环境conda create -n hcie python=3.8.3# 激活虚拟环境conda activate hcie# 退出虚拟环境conda deactivate# 删除虚拟环境conda remove -n hcie --all# 查看配置文件路径pip -v config list# 添加代理 pip.ini[global]proxy= http://127.0.0.1:7890</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 开发 </category>
           
       </categories>
       
