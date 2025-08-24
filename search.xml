@@ -137,25 +137,6 @@
     
     
     <entry>
-      <title>HCIE Datacom机考</title>
-      <link href="/2025/08/07/HCIE-Datacom%E6%9C%BA%E8%80%83/"/>
-      <url>/2025/08/07/HCIE-Datacom%E6%9C%BA%E8%80%83/</url>
-      
-        <content type="html"><![CDATA[<h1 id="X园区（MPLS）"><a href="#X园区（MPLS）" class="headerlink" title="X园区（MPLS）"></a>X园区（MPLS）</h1><h1 id="Z园区（MPLS）"><a href="#Z园区（MPLS）" class="headerlink" title="Z园区（MPLS）"></a>Z园区（MPLS）</h1><h2 id="X-PE"><a href="#X-PE" class="headerlink" title="X_PE"></a>X_PE</h2><pre><code class="language-bash"># ALL_PEdrop-profile rd  wred dscp  dscp 34 lo 50 hi 90 dis 50  quittraffic classifier rd  if-match dscp 34traffic behavior rd  queue af bandwidth 300000  drop-profile rdtraffic classifier pro  if-match dscp 46traffic behavior pro  queue llq bandwidth 100000traffic policy RD  classifier rd behavior rd  classifier pro behavior rd  quitinterface g 0/0/1  traffic-policy RD outboundinterface g 0/0/2  traffic-policy RD outboundinterface g 0/0/0  traffic-policy RD outbound# Z_PE1/2interface g 0/0/10.20  traffic-policy RD outbound# ALL_PEbfd  mpls-passive  quitisis 1  is-level level-2  cost-style wide  network-entity 49.0001.0010.0000.0001.00  domain-authentication-mode md5 cipher Huawei@123  bfd all-interfaces enable  bfd all-interfaces min-tx-interval 15 min-rx-interval 15   frr    loop-free-alternate level-2    quit  quitint lo0  isis enable 1interface g 0/0/1  isis enable 1  isis circuit-type p2p  isis ppp-negotiation 2-way  isis authentication-mode md5 cipher Huawei@123interface g 0/0/2  isis enable 1  isis circuit-type p2p  isis ppp-negotiation 2-way  isis authentication-mode md5 cipher Huawei@123interface g 0/0/0  isis enable 1  isis cost 4  isis circuit-type p2p  isis ppp-negotiation 2-way  isis authentication-mode md5 cipher Huawei@123  quitmpls lsr-id 1.0.0.1mpls  mpls bfd enable  mpld bfd-trigger host  mpls bfd min-tx-interval 15 mini-rx-interval 15  quitmpls ldpinterface g 0/0/1  mpls  mpls ldp  mpls mtu 1382  </code></pre><h1 id="Z园区（SRv6）"><a href="#Z园区（SRv6）" class="headerlink" title="Z园区（SRv6）"></a>Z园区（SRv6）</h1><h2 id="X-PE1"><a href="#X-PE1" class="headerlink" title="X_PE1"></a>X_PE1</h2><pre><code class="language-bash"># ALL_PEflow-wred drop  co g lo 70 hi 90 dis 50  co y lo 60 hi 90 dis 50  co r lo 50 hi 90 dis 50flow-queue qos  queue af4 wfq weight 10 flow-wred drop  queue llq pq flow-wred dropqos-profile QOS  user-queue cir 1000000 pir 1000000 flow-queue qos  quitinterface g 0/0/0  qos-profile QOS outboundinterface g 0/0/1  qos-profile QOS outboundinterface g 0/0/2  qos-profile QOS outbound# Z_PE1/2interface g 0/0/10.20  qos-profile QOS outbound# ALL_PEbfd  sbfd  reflector discriminator 1.0.0.1  destination ipv6 fc00::5 remote-discriminator 5.0.0.5  quitte ipv6-router-id fc00::1segment-routing ipv6  sr-te frr enable  encapsulation source-address fc00::1  locator HCIE ipv6-prefix fc02:1:: 96 static 16    opcode ::1 end psp    opcode ::10 end-x interface g 0/0/0 nexthop fc01:10::x psp    opcode ::20 end-x interface g 0/0/1 nexthop fc01:10::x psp    opcode ::30 end-x interface g 0/0/2 nexthop fc01:10::x psp    opcode ::100 end-op    quit  srv6-te-policy backup hot-standby enable  srv6-te-policy locator HCIE   srv6-te-policy bfd seamless enable  srv6-te-policy bfd no-bypass  srv6-te-policy bfd min-tx-interval 50  segment-list x1-z1-zhu    index 10 sid ipv6 fc02:1::30  segment-list x1-z1-bei    index 10 sid ipv6 fc02:1::10    index 20 sid ipv6 fc02:2::30    index 30 sid ipv6 fc02:6::10  srv6-te policy x1-z1 endpoint fc00::5 color 101    candidate-path preference 200      segment-list x1-z1-zhu    candidate-path preference 100      segment-list x1-z1-bei      quit    quit  quitroute-policy fz1 permit node 10  apply extcommunity color 0:101route-policy fz2 permit node 10  apply cost 10route-policy oa_med permit node 10  apply cost 10  quittunnel-policy x1-z1  tunnel select-seq ipv6 srv6-te-policy load-balance-number 1  quitip vpn-instance OA  route-distinguisher 65001:1  vpn-target 1:4 export-extcommunity evpn  vpn-target 4:1 import-extcommunity evpn  tnl x1-z1 evpn  quitinterface g 0/0/10  ip binding vpn-instance OA  ip add 10.20.1.2 30  quitisis 1  is-level level-2  cost-style wide  network-entity 49.0001.0010.0000.0001.00  domain-authentication-mode md5 cipher Huawei@123  ipv6 enable topology ipv6  ipv6 bfd all-interfaces enable  ipv6 bfd all-interfaces min-tx-interval 15 min-rx-interval 15  segment-routing ipv6 locator HCIE  avoid-microloop frr-protected  ipv6 avoid-microloop segment-routing   ipv6 frr    loop-free-alternate level-2    quit  quitinterface lo0  isis ipv6 enable 1interface g 0/0/1  isis ipv6 enable 1  isis circuit-type p2p  isis ppp-negotiation 2-way  isis authentication-mode md5 cipher Huawei@123interface g 0/0/2  isis ipv6 enable 1  isis circuit-type p2p  isis ppp-negotiation 2-way  isis authentication-mode md5 cipher Huawei@123interface g 0/0/0  isis ipv6 enable 1  isis ipv6 cost 4  isis circuit-type p2p  isis ppp-negotiation 2-way  isis authentication-mode md5 cipher Huawei@123  quitbgp 65000  router-id 1.0.0.1  undo default ipv4-unicast  peer fc00::5 as-number 65000  peer fc00::5 connect-interface loopback 0  peer fc00::5 password cipher Huawei@123  peer fc00::6 as-number 65000  peer fc00::6 connect-interface loopback 0  peer fc00::6 password cipher Huawei@123  l2vpn-family evpn    peer fc00::5 enable    peer fc00::5 route-policy fz1 import    peer fc00::5 advertise encap-type srv6    peer fc00::6 enable    peer fc00::6 route-policy fz1 import    peer fc00::6 advertise encap-type srv6  ipv4-family vpn-instance OA    advertise l2vpn evpn    segment-routing ipv6 locator HICE evpn    segment-routing ipv6 traffic-engineer best-effort evpn    peer 10.20.1.1 as-number 65001    peer 10.20.1.1 route-policy oa_med export    quit  quit</code></pre><h1 id="论述"><a href="#论述" class="headerlink" title="论述"></a>论述</h1>]]></content>
-      
-      
-      <categories>
-          
-          <category> 网络 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Anaconda</title>
       <link href="/2025/06/21/Anaconda/"/>
       <url>/2025/06/21/Anaconda/</url>
@@ -207,7 +188,7 @@
     
     
     <entry>
-      <title>默认服务器IBMC地址</title>
+      <title>IBMC</title>
       <link href="/2025/05/13/%E9%BB%98%E8%AE%A4%E6%9C%8D%E5%8A%A1%E5%99%A8IBMC%E5%9C%B0%E5%9D%80/"/>
       <url>/2025/05/13/%E9%BB%98%E8%AE%A4%E6%9C%8D%E5%8A%A1%E5%99%A8IBMC%E5%9C%B0%E5%9D%80/</url>
       
@@ -365,7 +346,7 @@
     
     
     <entry>
-      <title>Windows10系统封装</title>
+      <title>NTLite</title>
       <link href="/2024/07/28/Windows10%E7%B3%BB%E7%BB%9F%E5%B0%81%E8%A3%85/"/>
       <url>/2024/07/28/Windows10%E7%B3%BB%E7%BB%9F%E5%B0%81%E8%A3%85/</url>
       
@@ -589,7 +570,7 @@
       
       <categories>
           
-          <category> 网络 </category>
+          <category> 工具 </category>
           
       </categories>
       
@@ -599,11 +580,11 @@
     
     
     <entry>
-      <title>堆叠</title>
+      <title>stack-port</title>
       <link href="/2023/12/21/%E5%A0%86%E5%8F%A0/"/>
       <url>/2023/12/21/%E5%A0%86%E5%8F%A0/</url>
       
-        <content type="html"><![CDATA[<h1 id="堆叠介绍"><a href="#堆叠介绍" class="headerlink" title="堆叠介绍"></a>堆叠介绍</h1><p>SW1</p><pre><code class="language-shell">1. 修改接口2. 优先级，默认是1，shutdown接口3. 堆叠接口你4. no shutdown 接口5. 激活接口</code></pre><p>主，备，从</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="堆叠介绍"><a href="#堆叠介绍" class="headerlink" title="堆叠介绍"></a>堆叠介绍</h1><p>SW1</p><pre><code class="language-shell">1. 修改接口```bash interface stack-port 0/1 </code></pre><ol start="2"><li>优先级，默认是1，shutdown接口</li><li>堆叠接口你</li><li>no shutdown 接口</li><li>激活接口</li></ol><pre><code>主，备，从</code></pre>]]></content>
       
       
       <categories>
@@ -627,7 +608,7 @@
       
       <categories>
           
-          <category> 网络 </category>
+          <category> 工具 </category>
           
       </categories>
       
@@ -703,7 +684,7 @@
       
       <categories>
           
-          <category> 网络 </category>
+          <category> 工具 </category>
           
       </categories>
       
@@ -1215,7 +1196,7 @@
     
     
     <entry>
-      <title>k8s实验笔记</title>
+      <title>k8s_lab</title>
       <link href="/2021/09/20/k8s%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/"/>
       <url>/2021/09/20/k8s%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/</url>
       
@@ -1685,7 +1666,7 @@
     
     
     <entry>
-      <title>校园交易项目</title>
+      <title>Java Project</title>
       <link href="/2021/06/26/%E6%A0%A1%E5%9B%AD%E4%BA%A4%E6%98%93%E9%A1%B9%E7%9B%AE/"/>
       <url>/2021/06/26/%E6%A0%A1%E5%9B%AD%E4%BA%A4%E6%98%93%E9%A1%B9%E7%9B%AE/</url>
       
@@ -1737,7 +1718,7 @@
     
     
     <entry>
-      <title>SpringBoot2学习</title>
+      <title>SpringBoot2</title>
       <link href="/2021/06/08/SpringBoot2/"/>
       <url>/2021/06/08/SpringBoot2/</url>
       
