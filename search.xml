@@ -23,44 +23,6 @@
     
     
     <entry>
-      <title>cisp-practice01</title>
-      <link href="/2025/08/23/cisp-practice01/"/>
-      <url>/2025/08/23/cisp-practice01/</url>
-      
-        <content type="html"><![CDATA[<h2 id="cisp-practice01-DOS命令–文件管理"><a href="#cisp-practice01-DOS命令–文件管理" class="headerlink" title="cisp-practice01 - DOS命令–文件管理"></a>cisp-practice01 - DOS命令–文件管理</h2><p>1、打开“开始”-“运行”-输入“cmd”，进入DOS命令提示符；</p><p>2、从C盘进入D盘，在D:\ 盘根目录下，使用md命令建立如下所示的多级目录，并查看文件夹是否创建</p><p>成功；</p><p>3、使用cd命令进入子目录，继续使用md命令建立如下多级目录，并查看是否创建成功；</p><p>4、使用cd&gt;命令在ceshi01文件家里创建ceshi.txt，并查看是否创建成功；</p><p>5、将“hello word”写入ceshi.txt，并在命令提示符中浏览；</p><p>6、将massage“we are here”覆盖到ceshi.txt当中，并在命令提示符中浏览；</p><p>7、在ceshi.txt追加massage“hello wangdun”，并在命令提示符中浏览；</p><p>8、复制文件ceshi.txt到ceshi02，并更改文件名为haha.txt，查看是否更改成功；</p><p>9、使用del命令进行删除haha.txt文件，并查看是否成功删除；</p><p>10、使用rd命令删除先删除ceshi02文件夹，再删除test02文件文件夹，并查看是否成功删除；</p><p>11、使用rd命令删除test01，并查看是否成功删除；</p><p>12、exit退出命令提示符。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 安全 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>cisp-practice02</title>
-      <link href="/2025/08/23/cisp-practice02/"/>
-      <url>/2025/08/23/cisp-practice02/</url>
-      
-        <content type="html"><![CDATA[<h2 id="cisp-practice02"><a href="#cisp-practice02" class="headerlink" title="cisp-practice02"></a>cisp-practice02</h2><p>1、虚拟机的运行模式？</p><p>VMware:全虚拟化</p><p>2、家庭网络、工作网络、公用网络，哪个类型安全性最低？</p><p>公用网络</p><p>3、虚拟机中实现真实机与虚拟机互动的工具叫什么？</p><p>VMware Tools</p><p>4、可以将虚拟机状态恢复到最佳状态的VMware 功能是什么？</p><p>快照</p><p>5、虚拟机的三种网络模式是什么？</p><p>仅主机</p><p>桥接</p><p>NAT</p><p>6、获取本地IP地址的命令是？</p><p>ipconfig</p><p>7、测试网络联通性的命令是？</p><p>ping&#x2F;tracert</p><p>8、显示当前路径下的文件和目录的命令是？</p><p>dir</p><p>可选参数 &#x2F;s &#x2F;p &#x2F;a</p><p>9、通配符？和*的区别？</p><p>?代表一个字符</p><p>*可表示任意字符</p><p>10、如何返回上级目录？</p><p>cd ..</p><p>11、用绝对路径在D盘的“ceshi”文件夹下面创建一个“test.txt”，命令书写？</p><p>cd &gt; D:\ceshi\test.txt</p><p>12、从C盘进入D盘的命令书写是？</p><p>cd &#x2F;d D:</p><p>或者D:</p><p>13、创建一个abcdefg的目录树？</p><p>md a&#x2F;b&#x2F;c&#x2F;d&#x2F;e&#x2F;f&#x2F;g</p><p>14、忘记命令用法可以采取什么方法解决？</p><p>command &#x2F;?</p><p>15、用绝对路径创建一条文字信息“wuhanwangdun”到桌面下的文件“test.txt”，命令如何书写？</p><p>echo wuhanwangdun &gt; “%USERPROFILE%\Desktop\test.txt”</p><p>16、NTFS的默认继承是指？</p><p>默认继承权限；可以通过禁用继承，修改权限和主体；</p><p>aa&#x2F;bb: 如果aa禁用了继承，并修改权限；bb没有禁用继承，则bb会继承aa的权限；</p><p>cc&#x2F;dd：如果dd禁用了继承，并修改权限；cc没有禁用继承，dd的权限保持不变；</p><p>17、当一个用户同时有两权限（即同时属于两个组：分别读取和写入），不冲突时，该用户的权限是？</p><p>可读可写</p><p>18、用户在组A允许写入，在组B拒绝写入，那么该用户是否可以在某文件中进行写入？</p><p>不可以，拒绝优先</p><p>19、windows系统中默认管理员账号是？</p><p>Administrator</p><p>20、windows中最高权限账户是？</p><p>SYSTEM</p><p>21、设置一个正确的“密码策略”（任意设置，合理即可）</p><p>最小密码长度：6位</p><p>密码最短使用期限：0</p><p>强制密码历史：3</p><p>密码最长使用期限：42</p><p>22、设置一个正确的“账户锁定策略”（任意设置，合理即可）</p><p>账户锁定时间：30分钟</p><p>账户锁定阈值：3次</p><p>重置账户锁定计数器：10分钟内</p><p>23、本地组策略的运行命令？</p><p>gpedit.msc</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 安全 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>cisp-practice03</title>
       <link href="/2025/08/23/cisp-practice03/"/>
       <url>/2025/08/23/cisp-practice03/</url>
@@ -86,11 +48,30 @@
     
     
     <entry>
-      <title>CISO</title>
-      <link href="/2025/08/23/CISO/"/>
-      <url>/2025/08/23/CISO/</url>
+      <title>cisp-practice02</title>
+      <link href="/2025/08/22/cisp-practice02/"/>
+      <url>/2025/08/22/cisp-practice02/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h2 id="cisp-practice02"><a href="#cisp-practice02" class="headerlink" title="cisp-practice02"></a>cisp-practice02</h2><p>1、虚拟机的运行模式？</p><p>VMware:全虚拟化</p><p>2、家庭网络、工作网络、公用网络，哪个类型安全性最低？</p><p>公用网络</p><p>3、虚拟机中实现真实机与虚拟机互动的工具叫什么？</p><p>VMware Tools</p><p>4、可以将虚拟机状态恢复到最佳状态的VMware 功能是什么？</p><p>快照</p><p>5、虚拟机的三种网络模式是什么？</p><p>仅主机</p><p>桥接</p><p>NAT</p><p>6、获取本地IP地址的命令是？</p><p>ipconfig</p><p>7、测试网络联通性的命令是？</p><p>ping&#x2F;tracert</p><p>8、显示当前路径下的文件和目录的命令是？</p><p>dir</p><p>可选参数 &#x2F;s &#x2F;p &#x2F;a</p><p>9、通配符？和*的区别？</p><p>?代表一个字符</p><p>*可表示任意字符</p><p>10、如何返回上级目录？</p><p>cd ..</p><p>11、用绝对路径在D盘的“ceshi”文件夹下面创建一个“test.txt”，命令书写？</p><p>cd &gt; D:\ceshi\test.txt</p><p>12、从C盘进入D盘的命令书写是？</p><p>cd &#x2F;d D:</p><p>或者D:</p><p>13、创建一个abcdefg的目录树？</p><p>md a&#x2F;b&#x2F;c&#x2F;d&#x2F;e&#x2F;f&#x2F;g</p><p>14、忘记命令用法可以采取什么方法解决？</p><p>command &#x2F;?</p><p>15、用绝对路径创建一条文字信息“wuhanwangdun”到桌面下的文件“test.txt”，命令如何书写？</p><p>echo wuhanwangdun &gt; “%USERPROFILE%\Desktop\test.txt”</p><p>16、NTFS的默认继承是指？</p><p>默认继承权限；可以通过禁用继承，修改权限和主体；</p><p>aa&#x2F;bb: 如果aa禁用了继承，并修改权限；bb没有禁用继承，则bb会继承aa的权限；</p><p>cc&#x2F;dd：如果dd禁用了继承，并修改权限；cc没有禁用继承，dd的权限保持不变；</p><p>17、当一个用户同时有两权限（即同时属于两个组：分别读取和写入），不冲突时，该用户的权限是？</p><p>可读可写</p><p>18、用户在组A允许写入，在组B拒绝写入，那么该用户是否可以在某文件中进行写入？</p><p>不可以，拒绝优先</p><p>19、windows系统中默认管理员账号是？</p><p>Administrator</p><p>20、windows中最高权限账户是？</p><p>SYSTEM</p><p>21、设置一个正确的“密码策略”（任意设置，合理即可）</p><p>最小密码长度：6位</p><p>密码最短使用期限：0</p><p>强制密码历史：3</p><p>密码最长使用期限：42</p><p>22、设置一个正确的“账户锁定策略”（任意设置，合理即可）</p><p>账户锁定时间：30分钟</p><p>账户锁定阈值：3次</p><p>重置账户锁定计数器：10分钟内</p><p>23、本地组策略的运行命令？</p><p>gpedit.msc</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 安全 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>cisp-practice01</title>
+      <link href="/2025/08/21/cisp-practice01/"/>
+      <url>/2025/08/21/cisp-practice01/</url>
+      
+        <content type="html"><![CDATA[<h2 id="cisp-practice01-DOS命令–文件管理"><a href="#cisp-practice01-DOS命令–文件管理" class="headerlink" title="cisp-practice01 - DOS命令–文件管理"></a>cisp-practice01 - DOS命令–文件管理</h2><p>1、打开“开始”-“运行”-输入“cmd”，进入DOS命令提示符；</p><p>2、从C盘进入D盘，在D:\ 盘根目录下，使用md命令建立如下所示的多级目录，并查看文件夹是否创建</p><p>成功；</p><p>3、使用cd命令进入子目录，继续使用md命令建立如下多级目录，并查看是否创建成功；</p><p>4、使用cd&gt;命令在ceshi01文件家里创建ceshi.txt，并查看是否创建成功；</p><p>5、将“hello word”写入ceshi.txt，并在命令提示符中浏览；</p><p>6、将massage“we are here”覆盖到ceshi.txt当中，并在命令提示符中浏览；</p><p>7、在ceshi.txt追加massage“hello wangdun”，并在命令提示符中浏览；</p><p>8、复制文件ceshi.txt到ceshi02，并更改文件名为haha.txt，查看是否更改成功；</p><p>9、使用del命令进行删除haha.txt文件，并查看是否成功删除；</p><p>10、使用rd命令删除先删除ceshi02文件夹，再删除test02文件文件夹，并查看是否成功删除；</p><p>11、使用rd命令删除test01，并查看是否成功删除；</p><p>12、exit退出命令提示符。</p>]]></content>
       
       
       <categories>
@@ -269,6 +250,25 @@
             <tag> KylinOS </tag>
             
         </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CISO</title>
+      <link href="/2024/08/23/CISO/"/>
+      <url>/2024/08/23/CISO/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 安全 </category>
+          
+      </categories>
+      
       
     </entry>
     
