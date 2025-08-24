@@ -1,0 +1,3889 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Java Project1 | 黄金贤的博客</title>
+  <meta name="keywords" content=" Java , Spring ">
+  <meta name="description" content="Java Project1 | 黄金贤的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="黄金贤 hjxstart">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markdown">
+<meta property="og:url" content="https://hjxstart.github.io/2025/08/23/Markdown/index.html">
+<meta property="og:site_name" content="黄金贤的博客">
+<meta property="og:description" content="黄金贤 hjxstart">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-08-23T11:54:42.000Z">
+<meta property="article:modified_time" content="2025-08-24T01:40:42.872Z">
+<meta property="article:author" content="黄金贤">
+<meta property="article:tag" content="计算机网络 数据库 操作系统 数据结构 算法 Java Nodejs">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-dark.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 6.0.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>黄金贤</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="github"
+               href="https://github.com/hjxstart"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="email"
+               href="mailto:hjxstart@126.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=1726283687&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(75)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="读书">
+                        
+                        读书
+                        <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(10)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据库">
+                        
+                        数据库
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(21)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(11)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="网络">
+                        
+                        网络
+                        <small>(17)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="75">
+<input type="hidden" id="yelog_site_word_count" value="189.2k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://github.com/hjxstart">hjxstart</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>笔记</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>设计模式</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>思科网络实验</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>协议</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Cisco</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>cisp</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Docker</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ESXI</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Git</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Go</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Java</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>K8s</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>KylinOS</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>MySQL</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>OSPF</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Spring</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>VLAN</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Windows</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a  class="全部文章 "
+           href="/2025/08/24/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="软件设计师">软件设计师</span>
+            <span class="post-date" title="2025-08-24 10:51:38">2025/08/24</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2025/08/24/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="信息系统项目管理师">信息系统项目管理师</span>
+            <span class="post-date" title="2025-08-24 10:51:20">2025/08/24</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2025/08/23/Markdown/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Markdown">Markdown</span>
+            <span class="post-date" title="2025-08-23 19:54:42">2025/08/23</span>
+        </a>
+        
+        <a  class="全部文章 安全 "
+           href="/2025/08/23/cisp-practice01/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="cisp-practice01">cisp-practice01</span>
+            <span class="post-date" title="2025-08-23 19:41:07">2025/08/23</span>
+        </a>
+        
+        <a  class="全部文章 安全 "
+           href="/2025/08/23/cisp-practice02/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="cisp-practice02">cisp-practice02</span>
+            <span class="post-date" title="2025-08-23 19:41:02">2025/08/23</span>
+        </a>
+        
+        <a  class="全部文章 安全 "
+           href="/2025/08/23/cisp-practice03/"
+           data-tag="cisp"
+           data-author="" >
+            <span class="post-title" title="cisp-practice03">cisp-practice03</span>
+            <span class="post-date" title="2025-08-23 19:33:12">2025/08/23</span>
+        </a>
+        
+        <a  class="全部文章 安全 "
+           href="/2025/08/23/CISO/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CISO">CISO</span>
+            <span class="post-date" title="2025-08-23 19:29:38">2025/08/23</span>
+        </a>
+        
+        <a  class="全部文章 安全 "
+           href="/2025/08/17/CISP-PTE/"
+           data-tag="cisp"
+           data-author="" >
+            <span class="post-title" title="CISP-PTE">CISP-PTE</span>
+            <span class="post-date" title="2025-08-17 11:12:01">2025/08/17</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2025/08/12/HomeLab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HomeLab">HomeLab</span>
+            <span class="post-date" title="2025-08-12 15:09:29">2025/08/12</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2025/06/21/Anaconda/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Anaconda">Anaconda</span>
+            <span class="post-date" title="2025-06-21 20:56:49">2025/06/21</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2025/05/25/%E7%BD%91%E7%BB%9C%E8%A7%84%E5%88%92%E5%B8%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="网络规划师">网络规划师</span>
+            <span class="post-date" title="2025-05-25 11:57:53">2025/05/25</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2025/05/13/IBMC/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="IBMC">IBMC</span>
+            <span class="post-date" title="2025-05-13 21:04:58">2025/05/13</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2025/04/26/1Panel/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1Panel">1Panel</span>
+            <span class="post-date" title="2025-04-26 14:09:16">2025/04/26</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2025/04/24/Openstack/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Openstack">Openstack</span>
+            <span class="post-date" title="2025-04-24 09:04:36">2025/04/24</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2025/04/16/%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="网络工程师">网络工程师</span>
+            <span class="post-date" title="2025-04-16 22:14:39">2025/04/16</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2025/04/04/PXE-Kickstart/"
+           data-tag="KylinOS"
+           data-author="" >
+            <span class="post-title" title="PXE+Kickstart">PXE+Kickstart</span>
+            <span class="post-date" title="2025-04-04 10:45:08">2025/04/04</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2025/02/12/KylinOS/"
+           data-tag="KylinOS"
+           data-author="" >
+            <span class="post-title" title="KylinOS">KylinOS</span>
+            <span class="post-date" title="2025-02-12 16:47:23">2025/02/12</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2024/07/28/WDS+MDT/"
+           data-tag="Windows"
+           data-author="" >
+            <span class="post-title" title="WDS+MDT">WDS+MDT</span>
+            <span class="post-date" title="2024-07-28 21:33:05">2024/07/28</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2024/07/28/NTLite/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="NTLite">NTLite</span>
+            <span class="post-date" title="2024-07-28 21:32:18">2024/07/28</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/05/06/HCIE%20Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HCIE Lab">HCIE Lab</span>
+            <span class="post-date" title="2024-05-06 19:42:49">2024/05/06</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2024/03/31/RHCE9/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="RHCE9">RHCE9</span>
+            <span class="post-date" title="2024-03-31 15:33:32">2024/03/31</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/28/BGP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="BGP">BGP</span>
+            <span class="post-date" title="2024-01-28 11:20:29">2024/01/28</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/STP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="STP">STP</span>
+            <span class="post-date" title="2024-01-27 14:01:47">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/VLAN/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="VLAN">VLAN</span>
+            <span class="post-date" title="2024-01-27 11:42:02">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/LLDP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="LLDP">LLDP</span>
+            <span class="post-date" title="2024-01-27 11:31:16">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/Telnet/"
+           data-tag="协议"
+           data-author="" >
+            <span class="post-title" title="Telnet">Telnet</span>
+            <span class="post-date" title="2024-01-27 10:45:39">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/SSH/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SSH">SSH</span>
+            <span class="post-date" title="2024-01-27 10:44:10">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2023/12/22/WireGuard/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="WireGuard">WireGuard</span>
+            <span class="post-date" title="2023-12-22 07:40:46">2023/12/22</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/12/21/stack-port/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="stack-port">stack-port</span>
+            <span class="post-date" title="2023-12-21 19:31:45">2023/12/21</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2023/12/18/RouterOS/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="RouterOS">RouterOS</span>
+            <span class="post-date" title="2023-12-18 17:05:19">2023/12/18</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2023/12/18/ESXI/"
+           data-tag="ESXI"
+           data-author="" >
+            <span class="post-title" title="ESXI">ESXI</span>
+            <span class="post-date" title="2023-12-18 17:05:10">2023/12/18</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2023/12/18/Git/"
+           data-tag="Git"
+           data-author="" >
+            <span class="post-title" title="Git">Git</span>
+            <span class="post-date" title="2023-12-18 17:00:20">2023/12/18</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2023/11/30/IT-HelpDesk/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="IT HelpDesk">IT HelpDesk</span>
+            <span class="post-date" title="2023-11-30 21:21:59">2023/11/30</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2023/11/18/OpenWrt/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OpenWrt">OpenWrt</span>
+            <span class="post-date" title="2023-11-18 17:03:16">2023/11/18</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/06/01/CCNP%20Lab/"
+           data-tag="思科网络实验,Cisco"
+           data-author="" >
+            <span class="post-title" title="CCNP Lab">CCNP Lab</span>
+            <span class="post-date" title="2023-06-01 10:46:26">2023/06/01</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/06/01/HCNP%20Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HCNP Lab">HCNP Lab</span>
+            <span class="post-date" title="2023-06-01 10:46:04">2023/06/01</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/09/EIGRP/"
+           data-tag="协议"
+           data-author="" >
+            <span class="post-title" title="EIGRP">EIGRP</span>
+            <span class="post-date" title="2023-04-09 15:14:50">2023/04/09</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/09/FHPR/"
+           data-tag="协议"
+           data-author="" >
+            <span class="post-title" title="FHPR">FHPR</span>
+            <span class="post-date" title="2023-04-09 11:25:26">2023/04/09</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/08/HCNA%20Lab/"
+           data-tag="OSPF,VLAN"
+           data-author="" >
+            <span class="post-title" title="HCNA Lab">HCNA Lab</span>
+            <span class="post-date" title="2023-04-08 11:46:05">2023/04/08</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/07/CCNA%20Lab/"
+           data-tag="思科网络实验,Cisco"
+           data-author="" >
+            <span class="post-title" title="CCNA Lab">CCNA Lab</span>
+            <span class="post-date" title="2023-04-07 20:13:29">2023/04/07</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/07/OSPF/"
+           data-tag="协议"
+           data-author="" >
+            <span class="post-title" title="OSPF">OSPF</span>
+            <span class="post-date" title="2023-04-07 19:19:35">2023/04/07</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2022/03/19/MySQL/"
+           data-tag="MySQL"
+           data-author="" >
+            <span class="post-title" title="MySQL">MySQL</span>
+            <span class="post-date" title="2022-03-19 21:51:35">2022/03/19</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2022/03/06/MongoDB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="MongoDB">MongoDB</span>
+            <span class="post-date" title="2022-03-06 17:38:45">2022/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2022/03/06/InfluxDB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="InfluxDB">InfluxDB</span>
+            <span class="post-date" title="2022-03-06 12:47:36">2022/03/06</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/12/27/Vim/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Vim">Vim</span>
+            <span class="post-date" title="2021-12-27 09:15:01">2021/12/27</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/12/19/Gitea/"
+           data-tag="Git"
+           data-author="" >
+            <span class="post-title" title="Gitea">Gitea</span>
+            <span class="post-date" title="2021-12-19 21:53:48">2021/12/19</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/12/19/Frp/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Frp">Frp</span>
+            <span class="post-date" title="2021-12-19 20:34:09">2021/12/19</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/12/16/vsftpd/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="vsftpd">vsftpd</span>
+            <span class="post-date" title="2021-12-16 08:49:01">2021/12/16</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2021/10/06/Redis/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Redis">Redis</span>
+            <span class="post-date" title="2021-10-06 17:19:30">2021/10/06</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/20/K8s_lab/"
+           data-tag="Docker"
+           data-author="" >
+            <span class="post-title" title="K8s_lab">K8s_lab</span>
+            <span class="post-date" title="2021-09-20 08:04:10">2021/09/20</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/15/K8s/"
+           data-tag="Docker"
+           data-author="" >
+            <span class="post-title" title="K8s">K8s</span>
+            <span class="post-date" title="2021-09-15 20:48:34">2021/09/15</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/09/09/VMware/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="VMware">VMware</span>
+            <span class="post-date" title="2021-09-09 15:38:41">2021/09/09</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/08/Ingress/"
+           data-tag="K8s"
+           data-author="" >
+            <span class="post-title" title="Ingress">Ingress</span>
+            <span class="post-date" title="2021-09-08 23:56:01">2021/09/08</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/08/Harbor/"
+           data-tag="K8s"
+           data-author="" >
+            <span class="post-title" title="Harbor">Harbor</span>
+            <span class="post-date" title="2021-09-08 18:04:32">2021/09/08</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/08/28/Swarm/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Swarm">Swarm</span>
+            <span class="post-date" title="2021-08-28 20:46:10">2021/08/28</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/08/26/GO/"
+           data-tag="Go"
+           data-author="" >
+            <span class="post-title" title="GO">GO</span>
+            <span class="post-date" title="2021-08-26 11:50:00">2021/08/26</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/08/15/Java/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="Java多线程">Java多线程</span>
+            <span class="post-date" title="2021-08-15 14:36:42">2021/08/15</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/08/11/Nginx/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Nginx">Nginx</span>
+            <span class="post-date" title="2021-08-11 23:28:55">2021/08/11</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/08/06/Maven/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="Maven">Maven</span>
+            <span class="post-date" title="2021-08-06 09:38:42">2021/08/06</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/07/31/Springboot%E9%A1%B9%E7%9B%AE/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Springboot项目">Springboot项目</span>
+            <span class="post-date" title="2021-07-31 19:34:21">2021/07/31</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/07/22/GitLab/"
+           data-tag="Git"
+           data-author="" >
+            <span class="post-title" title="GitLab">GitLab</span>
+            <span class="post-date" title="2021-07-22 21:41:24">2021/07/22</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/07/22/Docker/"
+           data-tag="Docker"
+           data-author="" >
+            <span class="post-title" title="Docker">Docker</span>
+            <span class="post-date" title="2021-07-22 14:53:59">2021/07/22</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/07/19/SpringSecurity/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SpringSecurity">SpringSecurity</span>
+            <span class="post-date" title="2021-07-19 20:58:25">2021/07/19</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/07/13/Mybatis/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="Mybatis">Mybatis</span>
+            <span class="post-date" title="2021-07-13 10:38:01">2021/07/13</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/07/05/NVM/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="NVM">NVM</span>
+            <span class="post-date" title="2021-07-05 08:15:33">2021/07/05</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/06/26/Java%20Project1/"
+           data-tag="Java,Spring"
+           data-author="" >
+            <span class="post-title" title="Java Project1">Java Project1</span>
+            <span class="post-date" title="2021-06-26 07:58:18">2021/06/26</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/06/23/Vue/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Vue">Vue</span>
+            <span class="post-date" title="2021-06-23 10:48:20">2021/06/23</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/06/08/SpringBoot2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SpringBoot2">SpringBoot2</span>
+            <span class="post-date" title="2021-06-08 16:51:25">2021/06/08</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/06/07/CentOS7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CentOS7">CentOS7</span>
+            <span class="post-date" title="2021-06-07 23:16:42">2021/06/07</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/06/02/Spring%E5%AE%9E%E6%88%98V5/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Spring实战(第五版)">Spring实战(第五版)</span>
+            <span class="post-date" title="2021-06-02 09:42:37">2021/06/02</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/04/25/Spring%E5%AE%9E%E6%88%98V4/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Spring实战(第四版)">Spring实战(第四版)</span>
+            <span class="post-date" title="2021-04-25 18:38:03">2021/04/25</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/04/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"
+           data-tag="Java,设计模式"
+           data-author="" >
+            <span class="post-title" title="设计模式">设计模式</span>
+            <span class="post-date" title="2021-04-18 22:19:45">2021/04/18</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2021/03/22/SQL/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SQL">SQL</span>
+            <span class="post-date" title="2021-03-22 18:33:13">2021/03/22</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/03/14/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/"
+           data-tag="笔记"
+           data-author="" >
+            <span class="post-title" title="时间管理">时间管理</span>
+            <span class="post-date" title="2021-03-14 21:49:15">2021/03/14</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/03/14/Hexo/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hexo">Hexo</span>
+            <span class="post-date" title="2021-03-14 08:31:47">2021/03/14</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-Java Project1" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Java Project1</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="开发">开发</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color5">Java</a>
+            
+            <a class="color2">Spring</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2025-08-24 10:49:58'>2021-06-26 07:58</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:17.6k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E7%AE%80%E5%8D%95%E7%9A%84-SSM-%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA"><span class="toc-text">第一章 简单的 SSM 项目搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1%E3%80%81%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-text">1.1、环境配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2%E3%80%81%E5%88%9B%E5%BB%BA-Maven-project-%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="toc-text">1.2、创建 Maven project 的步骤</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97"><span class="toc-text">第二章 系统功能模块</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1%E3%80%81%E6%A8%A1%E5%9D%97%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E"><span class="toc-text">2.1、模块功能说明</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-1%E3%80%81%E5%89%8D%E7%AB%AF%E5%B1%95%E7%A4%BA%E7%B3%BB%E7%BB%9F"><span class="toc-text">2.1.1、前端展示系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-2%E3%80%81%E5%BA%97%E5%AE%B6%E7%B3%BB%E7%BB%9F"><span class="toc-text">2.1.2、店家系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-3%E3%80%81%E8%B6%85%E7%BA%A7%E7%AE%A1%E7%90%86%E5%91%98%E7%B3%BB%E7%BB%9F"><span class="toc-text">2.1.3、超级管理员系统</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2%E3%80%81%E6%A8%A1%E5%9D%97%E5%8A%9F%E8%83%BD%E5%AF%B9%E8%B1%A1"><span class="toc-text">2.2、模块功能对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-1%E3%80%81%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%85%B3%E7%B3%BB%E5%9B%BE"><span class="toc-text">2.2.1、实体类关系图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-2%E3%80%81%E5%AE%9E%E4%BD%93%E7%B1%BB%E4%BB%A3%E7%A0%81"><span class="toc-text">2.2.2、实体类代码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3%E3%80%81%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-text">2.3、代码实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-1%E3%80%81%E5%88%9B%E5%BB%BA%E7%9B%B8%E5%BA%94%E7%9A%84%E7%B1%BB"><span class="toc-text">2.3.1、创建相应的类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-2%E3%80%81%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8"><span class="toc-text">2.3.2、创建数据库表</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE"><span class="toc-text">第三章 项目配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1%E3%80%81-%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E8%AF%B4%E6%98%8E"><span class="toc-text">3.1、 项目目录说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2%E3%80%81%E5%88%9B%E5%BB%BA-sources-%E8%B5%84%E6%BA%90%E5%8C%85"><span class="toc-text">3.2、创建 sources 资源包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3%E3%80%81%E5%88%9B%E5%BB%BA-package"><span class="toc-text">3.3、创建 package</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4%E3%80%81%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE"><span class="toc-text">3.4、项目配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-1%E3%80%81%E9%85%8D%E7%BD%AE%E6%80%9D%E8%B7%AF%EF%BC%9A%E8%87%AA%E4%B8%8B%E8%80%8C%E4%B8%8A%E7%9A%84%E9%85%8D%E7%BD%AE%E3%80%82"><span class="toc-text">3.4.1、配置思路：自下而上的配置。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-2%E3%80%81%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86"><span class="toc-text">3.4.2、依赖管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-3%E3%80%81-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E9%85%8D%E7%BD%AE%E6%93%8D%E4%BD%9C"><span class="toc-text">3.4.3、 数据库的配置操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-4%E3%80%81-Spring-%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE"><span class="toc-text">3.4.4、 Spring 相关配置</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-logback-%E6%97%A5%E5%BF%97%E9%85%8D%E7%BD%AE"><span class="toc-text">3.5 logback 日志配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-text">第四章 代码实现</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1%E3%80%81%E7%AE%80%E5%8D%95%E7%9A%84-SSM-%E6%A1%88%E4%BE%8B-Area"><span class="toc-text">4.1、简单的 SSM 案例-Area</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-1%E3%80%81dao-%E5%B1%82"><span class="toc-text">4.1.1、dao 层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-2%E3%80%81Service-%E5%B1%82"><span class="toc-text">4.1.2、Service 层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-3%E3%80%81web-%E5%B1%82"><span class="toc-text">4.1.3、web 层</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BA%97%E9%93%BA%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-text">第五章 店铺系统的实现</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1%E3%80%81%E5%BA%97%E9%93%BA%E7%9A%84%E6%B3%A8%E5%86%8C%E6%A8%A1%E5%9D%97"><span class="toc-text">5.1、店铺的注册模块</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-1%E3%80%81dao-%E5%B1%82%E4%BB%A3%E7%A0%81"><span class="toc-text">5.1.1、dao 层代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-2%E3%80%81service-%E5%B1%82%E4%BB%A3%E7%A0%81"><span class="toc-text">5.1.2、service 层代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-3%E3%80%81-Controller-%E5%B1%82"><span class="toc-text">5.1.3、 Controller 层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-4%E3%80%81-%E6%8B%93%E5%B1%95"><span class="toc-text">5.1.4、 拓展</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-%E5%BA%97%E9%93%BA%E4%BF%A1%E6%81%AF%E7%BC%96%E8%BE%91%E6%A8%A1%E5%9D%97"><span class="toc-text">5.2 店铺信息编辑模块</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-1-Dao-%E5%B1%82"><span class="toc-text">5.2.1 Dao 层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-2-Service-%E5%B1%82"><span class="toc-text">5.2.2 Service 层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-3-Controller-%E5%B1%82"><span class="toc-text">5.2.3 Controller 层</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-3-%E5%95%86%E5%93%81%E7%B1%BB%E5%88%AB%E5%88%97%E8%A1%A8%E5%B1%95%E7%A4%BA"><span class="toc-text">5.3 商品类别列表展示</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-1-dao-%E5%B1%82"><span class="toc-text">5.3.1 dao 层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-2-service-%E5%B1%82"><span class="toc-text">5.3.2 service 层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-3-controller-%E5%B1%82-ProductCategoryManagementController-java"><span class="toc-text">5.3.3 controller 层 ProductCategoryManagementController.java</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-3-Controller-%E5%B1%82"><span class="toc-text">5.3.3 Controller 层</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-4-%E6%89%B9%E9%87%8F%E6%B7%BB%E5%8A%A0%E5%95%86%E5%93%81%E5%88%97%E8%A1%A8"><span class="toc-text">5.4 批量添加商品列表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-1-dao-%E5%B1%82"><span class="toc-text">5.4.1 dao 层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-2-Service-%E5%B1%82"><span class="toc-text">5.4.2 Service 层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-3-Controller-%E5%B1%82"><span class="toc-text">5.4.3 Controller 层</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-5-%E5%88%A0%E9%99%A4%E5%95%86%E5%93%81%E7%B1%BB%E5%88%AB"><span class="toc-text">5.5 删除商品类别</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-5-1-dao-%E5%B1%82"><span class="toc-text">5.5.1 dao 层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-5-2-Serivce-%E5%B1%82"><span class="toc-text">5.5.2 Serivce 层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-5-3-Controller-%E5%B1%82"><span class="toc-text">5.5.3 Controller 层</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6%E3%80%81%E5%95%86%E5%93%81%E7%AE%A1%E7%90%86"><span class="toc-text">6、商品管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#6-1-%E5%95%86%E5%93%81%E6%B7%BB%E5%8A%A0%EF%BC%8C-%E5%95%86%E5%93%81%E8%AF%A6%E6%83%85%E5%9B%BE%E6%89%B9%E9%87%8F%E6%B7%BB%E5%8A%A0"><span class="toc-text">6.1 商品添加， 商品详情图批量添加</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-1"><span class="toc-text">6.1.1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-2-service-%E5%B1%82"><span class="toc-text">6.1.2 service 层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-3-controller-%E5%B1%82"><span class="toc-text">6.1.3 controller 层</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-2-%E5%95%86%E5%93%81%E7%BC%96%E8%BE%91"><span class="toc-text">6.2 商品编辑</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-1%E3%80%81dao-%E5%B1%82"><span class="toc-text">6.2.1、dao 层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-2%E3%80%81Service-%E5%B1%82"><span class="toc-text">6.2.2、Service 层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-3-Controller-%E5%B1%82-ProductCategoryManagementController-java"><span class="toc-text">6.2.3 Controller 层 ProductCategoryManagementController.java</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-3-%E5%95%86%E5%93%81%E5%88%97%E8%A1%A8%E5%B1%95%E7%A4%BA"><span class="toc-text">6.3 商品列表展示</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E9%A6%96%E9%A1%B5"><span class="toc-text">第七章 首页</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#7-1"><span class="toc-text">7.1</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#SSM-%E6%A1%86%E6%9E%B6%E5%AE%9E%E7%8E%B0%E5%8A%9F%E8%83%BD%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="toc-text">SSM 框架实现功能的步骤</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Junit"><span class="toc-text">Junit</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Junit-%E6%B5%8B%E8%AF%95%E6%AD%A5%E9%AA%A4"><span class="toc-text">Junit 测试步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E5%9F%BA%E7%B1%BB"><span class="toc-text">1、定义一个基类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E5%AE%9E%E7%8E%B0%E7%B1%BB"><span class="toc-text">2、定义一个实现类</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Junit-%E6%8B%93%E5%B1%95"><span class="toc-text">Junit 拓展</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Junit-%E6%B5%8B%E8%AF%95%E5%9B%9E%E7%8E%AF"><span class="toc-text">Junit 测试回环</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Junit-%E9%A1%BA%E5%BA%8F%E6%89%A7%E8%A1%8C"><span class="toc-text">Junit 顺序执行</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SSM-%E9%87%8D%E7%82%B9%E7%9F%A5%E8%AF%86"><span class="toc-text">SSM 重点知识</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="第一章-简单的-SSM-项目搭建"><a href="#第一章-简单的-SSM-项目搭建" class="headerlink" title="第一章 简单的 SSM 项目搭建"></a>第一章 简单的 SSM 项目搭建</h1><h2 id="1-1、环境配置"><a href="#1-1、环境配置" class="headerlink" title="1.1、环境配置"></a>1.1、环境配置</h2><p>JDK8, Maven3.3.9, MySQL8.0.12, Tomcat8, Eclipse</p>
+<hr>
+<h2 id="1-2、创建-Maven-project-的步骤"><a href="#1-2、创建-Maven-project-的步骤" class="headerlink" title="1.2、创建 Maven project 的步骤"></a>1.2、创建 Maven project 的步骤</h2><ol>
+<li>选择 maven-archetype-webapp 类型。</li>
+<li>输入项目名称。</li>
+<li>引入 tomcat 的一个 jar 包。选择项目&gt;属性&gt;Java Build Path&gt;Libraries&gt;Add Library&gt;Server Runtime&gt;Apache Tomcat v8.0。</li>
+<li>修改 pom.xml 的 JRE 版本为 1.8，再 updata 项目。</li>
+</ol>
+<pre><code class="language-xml">    &lt;finalName&gt;o2o&lt;/finalName&gt;
+    &lt;plugins&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+            &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+            &lt;version&gt;3.3&lt;/version&gt;
+            &lt;configuration&gt;
+            	&lt;encoding&gt;UTF-8&lt;/encoding&gt;
+            	&lt;source&gt;1.8&lt;/source&gt;
+            	&lt;target&gt;1.8&lt;/target&gt;
+            &lt;/configuration&gt;
+        &lt;/plugin&gt;
+    &lt;/plugins&gt;
+</code></pre>
+<ol start="5">
+<li>创建一个 maven 结构的文件夹,并修改属性。创建 src&#x2F;test&#x2F;resources 文件夹，并修改工程属性&gt;Java Build Path&gt; Source &gt; resources 的 output 属性。</li>
+<li>修改 Dynamic Web Module 的版本，提高性能。查看,项目属性&gt;Project Facetes；修改, vim “projectsrc”&#x2F;.settings&#x2F;org.eclipse.wst.common.project.facet.core.xml；修改, jst.web 的 version。</li>
+<li>修改 web.xml 的规范头(因为 DWM 版本提高了)。</li>
+</ol>
+<pre><code class="language-xml">&lt;web-app xmlns=&quot;http://xmlns.jcp.org/xml/ns/javaee&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation=&quot;http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd&quot;
+    version=&quot;3.1&quot; metadata-complete=&quot;true&quot;&gt;
+</code></pre>
+<ol start="8">
+<li>运行项目。在 Tomcat 中 add 项目；再 Tomcat 中 clean 项目；start 项目.</li>
+<li>在 web.xml 指定默认的页面。</li>
+</ol>
+<pre><code class="language-xml">  &lt;welcome-file-list&gt;
+  	&lt;welcome-file&gt;index.js&lt;/welcome-file&gt;
+  	&lt;welcome-file&gt;index.html&lt;/welcome-file&gt;
+  &lt;/welcome-file-list&gt;
+</code></pre>
+<hr>
+<h1 id="第二章-系统功能模块"><a href="#第二章-系统功能模块" class="headerlink" title="第二章 系统功能模块"></a>第二章 系统功能模块</h1><h2 id="2-1、模块功能说明"><a href="#2-1、模块功能说明" class="headerlink" title="2.1、模块功能说明"></a>2.1、模块功能说明</h2><h4 id="2-1-1、前端展示系统"><a href="#2-1-1、前端展示系统" class="headerlink" title="2.1.1、前端展示系统"></a>2.1.1、前端展示系统</h4><ol>
+<li>头条展示</li>
+<li>店铺类别展示</li>
+<li>区域展示</li>
+<li>店铺（列表展示，查询，详情）</li>
+<li>商品（列表展示，查询，详情）</li>
+</ol>
+<hr>
+<h4 id="2-1-2、店家系统"><a href="#2-1-2、店家系统" class="headerlink" title="2.1.2、店家系统"></a>2.1.2、店家系统</h4><ol>
+<li>Local 账号维护</li>
+<li>微信账号维护</li>
+<li>店铺信息维护</li>
+<li>权限验证</li>
+<li>商品类别维护</li>
+</ol>
+<hr>
+<h4 id="2-1-3、超级管理员系统"><a href="#2-1-3、超级管理员系统" class="headerlink" title="2.1.3、超级管理员系统"></a>2.1.3、超级管理员系统</h4><ol>
+<li>头条信息维护</li>
+<li>店铺类别信息维护</li>
+<li>区域信息维护</li>
+<li>权限验证</li>
+<li>店铺管理</li>
+<li>用户管理</li>
+</ol>
+<hr>
+<h2 id="2-2、模块功能对象"><a href="#2-2、模块功能对象" class="headerlink" title="2.2、模块功能对象"></a>2.2、模块功能对象</h2><h4 id="2-2-1、实体类关系图"><a href="#2-2-1、实体类关系图" class="headerlink" title="2.2.1、实体类关系图"></a>2.2.1、实体类关系图</h4><hr>
+<h4 id="2-2-2、实体类代码"><a href="#2-2-2、实体类代码" class="headerlink" title="2.2.2、实体类代码"></a>2.2.2、实体类代码</h4><ol>
+<li>区域</li>
+<li>用户信息</li>
+<li>微信账号</li>
+<li>本地账号</li>
+<li>头条</li>
+<li>店铺类别</li>
+<li>店铺</li>
+<li>商品</li>
+<li>详情图片</li>
+<li>商品类别</li>
+</ol>
+<hr>
+<h2 id="2-3、代码实现"><a href="#2-3、代码实现" class="headerlink" title="2.3、代码实现"></a>2.3、代码实现</h2><h4 id="2-3-1、创建相应的类"><a href="#2-3-1、创建相应的类" class="headerlink" title="2.3.1、创建相应的类"></a>2.3.1、创建相应的类</h4><h4 id="2-3-2、创建数据库表"><a href="#2-3-2、创建数据库表" class="headerlink" title="2.3.2、创建数据库表"></a>2.3.2、创建数据库表</h4><hr>
+<h1 id="第三章-项目配置"><a href="#第三章-项目配置" class="headerlink" title="第三章 项目配置"></a>第三章 项目配置</h1><h2 id="3-1、-项目目录说明"><a href="#3-1、-项目目录说明" class="headerlink" title="3.1、 项目目录说明"></a>3.1、 项目目录说明</h2><ol>
+<li>src&#x2F;main&#x2F;java:业务代码</li>
+<li>src&#x2F;main&#x2F;resources:项目资源文件.例如:spring, mapper 等。</li>
+<li>src&#x2F;test&#x2F;java:单元测试代码</li>
+<li>src&#x2F;test&#x2F;resources:单元测试的配置文件:</li>
+<li>src&#x2F;main&#x2F;webapp:存放前端的静态资源。例如 jsp,html,js,css 等</li>
+<li>src&#x2F;main&#x2F;webapp&#x2F;resources:静态资源文件。例如 js,css,img</li>
+<li>src&#x2F;main&#x2F;webapp&#x2F;WEB-INF:外部浏览器无法访问的目录</li>
+<li>src&#x2F;main&#x2F;webapp&#x2F;WEB-INF&#x2F;web.xml:用于初始化配置信息。例如 welcoml page,初始化 sevlet,servlet mapper</li>
+<li>target:存放项目构建后的文件和目录，jar,war,编译的 class 文件等。</li>
+</ol>
+<hr>
+<h2 id="3-2、创建-sources-资源包"><a href="#3-2、创建-sources-资源包" class="headerlink" title="3.2、创建 sources 资源包"></a>3.2、创建 sources 资源包</h2><ol>
+<li>src&#x2F;main&#x2F;resources&#x2F;spring:存放 spring 相关的配置信息</li>
+<li>src&#x2F;main&#x2F;resources&#x2F;mapper:存放 dao 中每个方法对应的 service,不需要写 dao 的实现类,由 mybatis 自动实现,日志配置文件。</li>
+</ol>
+<hr>
+<h2 id="3-3、创建-package"><a href="#3-3、创建-package" class="headerlink" title="3.3、创建 package"></a>3.3、创建 package</h2><ol>
+<li>com.imooc.o2o.entity:实体类包</li>
+<li>com.imooc.o2o.web:controller 层，存放 controller 控制器</li>
+<li>com.imooc.o2o.service:业务逻辑层，</li>
+<li>com.imooc.o2o.service.impl:业务逻辑层的实现</li>
+<li>com.imooc.o2o.dao:dao 层，与数据库打交道，存放数据库的操作，也可以是文件的对象操作或者缓存等。与数据相关的操作。</li>
+<li>com.imooc.o2o.dto:弥补 entity 的不足，例如 entity&#x2F;Product 需要返回一个商品列表和是否返回成功地标识，那这个时候就 7. 需要 dto 进行二次封装，流入 status,productlist</li>
+<li>com.imooc.o2o.enums:枚举</li>
+<li>com.imooc.o2o.intercaptor:拦截器代码</li>
+<li>com.imooc.o2o.util:通用工具类</li>
+</ol>
+<hr>
+<h2 id="3-4、项目配置"><a href="#3-4、项目配置" class="headerlink" title="3.4、项目配置"></a>3.4、项目配置</h2><h4 id="3-4-1、配置思路：自下而上的配置。"><a href="#3-4-1、配置思路：自下而上的配置。" class="headerlink" title="3.4.1、配置思路：自下而上的配置。"></a>3.4.1、配置思路：自下而上的配置。</h4><ol>
+<li>在 pom.xml 指定项目所需要的 jar 包；</li>
+<li>在 jdbc.properties 指定数据库的连接方式和创建 mybatis-config.xml 对 mybatis 进行配置；</li>
+<li>创建 spring-dao.xml 将 jdbc.proerties 和 mybatis-config.xml 加载进来了并创建连接池同时配置好 mybatis 和数据库交互的方式；</li>
+<li>创建 spring-service.xml 做事务管理，将 spring 在 dao 层配置好的 dataSource 连接池给注入到事务管理器中，便于 service 层做操作；</li>
+<li>创建 spring-web.xmlding 定义 controller 的行为；</li>
+<li>在 web.xml 将 spring-dispatcher 当做一个 servlet 注册到里面去来相应请求，同时将 spring-*.xml 的配置文件注册进来整合在一起。</li>
+</ol>
+<hr>
+<h4 id="3-4-2、依赖管理"><a href="#3-4-2、依赖管理" class="headerlink" title="3.4.2、依赖管理"></a>3.4.2、依赖管理</h4><ol>
+<li><p>Maven jar <a target="_blank" rel="noopener" href="https://mvnrepository.com/">链接</a></p>
+</li>
+<li><p>pom.xml</p>
+</li>
+</ol>
+<pre><code class="language-xml">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+  xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&quot;&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+  &lt;groupId&gt;com.imooc&lt;/groupId&gt;
+  &lt;artifactId&gt;o2o&lt;/artifactId&gt;
+  &lt;packaging&gt;war&lt;/packaging&gt;
+  &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+  &lt;name&gt;o2o Maven Webapp&lt;/name&gt;
+  &lt;url&gt;http://maven.apache.org&lt;/url&gt;
+  &lt;properties&gt;
+  	&lt;spring.version&gt;4.3.7.RELEASE&lt;/spring.version&gt;
+  &lt;/properties&gt;
+  &lt;dependencies&gt;
+  	&lt;!-- 测试相关的jar包 --&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;junit&lt;/groupId&gt;
+      &lt;artifactId&gt;junit&lt;/artifactId&gt;
+      &lt;version&gt;4.12&lt;/version&gt;
+      &lt;!-- 作用于test环境 --&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+    &lt;!-- 日志相关的jar包 --&gt;
+	&lt;dependency&gt;
+	    &lt;groupId&gt;ch.qos.logback&lt;/groupId&gt;
+	    &lt;artifactId&gt;logback-classic&lt;/artifactId&gt;
+	    &lt;version&gt;1.2.3&lt;/version&gt;
+	&lt;/dependency&gt;
+	&lt;!-- Spring --&gt;
+	&lt;!-- 1）包含Spring 框架基本的核心工具类。Spring 其他组件都要使用到这个包里的类，是其他组件的基本核心 --&gt;
+	&lt;dependency&gt;
+	    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+	    &lt;artifactId&gt;spring-core&lt;/artifactId&gt;
+	    &lt;version&gt;4.3.7.RELEASE&lt;/version&gt;
+	    &lt;!-- &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt; --&gt;
+	&lt;/dependency&gt;
+	&lt;!-- 2）这个jar 文件是所有应用都要使用的，它包含访问配置文件，创建和管理bean 以及进行Inversion of Context
+		/ Dependency Injection（Ioc/DI）操作相关的所有类。如果应用只需基本的Ioc/DI支持，引入spring-core及spring-beans.jar文件就可以了 --&gt;
+	&lt;dependency&gt;
+	    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+	    &lt;artifactId&gt;spring-beans&lt;/artifactId&gt;
+	    &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;
+	&lt;/dependency&gt;
+	&lt;!-- 3）这个jar 文件为Spring 核心提供了大量拓展。可以找到使用Spring ApplicationContext 特效时所需的全部
+		所需的全部类，instrumentation 组件以及校验Validation 方面的相关类。 --&gt;
+	&lt;dependency&gt;
+	    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+	    &lt;artifactId&gt;spring-context&lt;/artifactId&gt;
+	    &lt;version&gt;4.3.7.RELEASE&lt;/version&gt;
+	&lt;/dependency&gt;
+	&lt;!-- 4）这个jar 文件包含对SPring 对JDBC 数据访问进行封装的所有类。 --&gt;
+	&lt;dependency&gt;
+	    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+	    &lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt;
+	    &lt;version&gt;4.3.7.RELEASE&lt;/version&gt;
+	&lt;/dependency&gt;
+	&lt;!-- 5）为JDBC、Hibernate、JDO、JPA 等提供的一致性的声明式和编程式事务管理。 --&gt;
+	&lt;dependency&gt;
+	    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+	    &lt;artifactId&gt;spring-tx&lt;/artifactId&gt;
+	    &lt;version&gt;4.3.7.RELEASE&lt;/version&gt;
+	&lt;/dependency&gt;
+	&lt;!-- 6）Spring web 包含Web 应用开发时，用到Spring 框架时所需的核心类，包括自动载入WebApplicationContext
+		 文件上传的支持类，filter类，和大量的工作辅助类--&gt;
+	&lt;dependency&gt;
+	    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+	    &lt;artifactId&gt;spring-web&lt;/artifactId&gt;
+	    &lt;version&gt;4.3.7.RELEASE&lt;/version&gt;
+	&lt;/dependency&gt;
+	&lt;!-- 7）包含Spring MVC框架相关的所有类。dispathservlet --&gt;
+	&lt;dependency&gt;
+	    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+	    &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;
+	    &lt;version&gt;4.3.7.RELEASE&lt;/version&gt;
+	&lt;/dependency&gt;
+	&lt;!-- 8）Spring test 对Junit 等测试框架的简单封装 --&gt;
+	&lt;dependency&gt;
+	    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+	    &lt;artifactId&gt;spring-test&lt;/artifactId&gt;
+	    &lt;version&gt;4.3.7.RELEASE&lt;/version&gt;
+	    &lt;scope&gt;test&lt;/scope&gt;
+	&lt;/dependency&gt;
+	&lt;!-- Servlet web --&gt;
+	&lt;dependency&gt;
+	    &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
+	    &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt;
+	    &lt;version&gt;3.1.0&lt;/version&gt;
+	&lt;/dependency&gt;
+	&lt;!-- json解析 --&gt;
+	&lt;dependency&gt;
+	    &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;
+	    &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;
+	    &lt;version&gt;2.8.7&lt;/version&gt;
+	&lt;/dependency&gt;
+	&lt;!-- Map工具类 对标准java Collection的扩展 spring-core.jar需commons-collections.jar --&gt;
+	&lt;dependency&gt;
+	    &lt;groupId&gt;commons-collections&lt;/groupId&gt;
+	    &lt;artifactId&gt;commons-collections&lt;/artifactId&gt;
+	    &lt;version&gt;3.2&lt;/version&gt;
+	&lt;/dependency&gt;
+	&lt;!-- DAO:MyBatis --&gt;
+	&lt;dependency&gt;
+	    &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
+	    &lt;artifactId&gt;mybatis&lt;/artifactId&gt;
+	    &lt;version&gt;3.4.2&lt;/version&gt;
+	&lt;/dependency&gt;
+	&lt;dependency&gt;
+	    &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
+	    &lt;artifactId&gt;mybatis-spring&lt;/artifactId&gt;
+	    &lt;version&gt;1.3.1&lt;/version&gt;
+	&lt;/dependency&gt;
+	&lt;!-- 数据库，支持JDBC --&gt;
+   &lt;dependency&gt;
+	    &lt;groupId&gt;mysql&lt;/groupId&gt;
+	    &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+	    &lt;version&gt;8.0.12&lt;/version&gt;
+	&lt;/dependency&gt;
+	&lt;!-- 链接池 --&gt;
+	&lt;dependency&gt;
+	    &lt;groupId&gt;c3p0&lt;/groupId&gt;
+	    &lt;artifactId&gt;c3p0&lt;/artifactId&gt;
+	    &lt;version&gt;0.9.1.2&lt;/version&gt;
+	&lt;/dependency&gt;
+  &lt;/dependencies&gt;
+
+  &lt;build&gt;
+    &lt;finalName&gt;o2o&lt;/finalName&gt;
+    &lt;plugins&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+            &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+            &lt;version&gt;3.3&lt;/version&gt;
+            &lt;configuration&gt;
+            &lt;encoding&gt;UTF-8&lt;/encoding&gt;
+            &lt;source&gt;1.8&lt;/source&gt;
+            &lt;target&gt;1.8&lt;/target&gt;
+            &lt;/configuration&gt;
+        &lt;/plugin&gt;
+    &lt;/plugins&gt;
+  &lt;/build&gt;
+&lt;/project&gt;
+</code></pre>
+<hr>
+<h4 id="3-4-3、-数据库的配置操作"><a href="#3-4-3、-数据库的配置操作" class="headerlink" title="3.4.3、 数据库的配置操作"></a>3.4.3、 数据库的配置操作</h4><ol>
+<li>创建 src&#x2F;main&#x2F;resources&#x2F;jdbc.properties</li>
+</ol>
+<pre><code class="language-properties">jdbc.driver=com.mysql.cj.jdbc.Driver
+jdbc.url=jdbc:mysql://localhost:3306/o2o?useUnicode=true&amp;characterEncoding=utf8&amp;verifyServerCertificate=false&amp;useSSL=false&amp;allowPublicKeyRetrieval=true
+jdbc.username=root
+jdbc.password=&quot;密码&quot;
+</code></pre>
+<ol start="2">
+<li>配置 src&#x2F;main&#x2F;resources&#x2F;mybatis-config.xml</li>
+</ol>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;!DOCTYPE configuration PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&gt;
+&lt;configuration&gt;
+	&lt;!-- 配置全局属性 --&gt;
+    &lt;settings&gt;
+        &lt;!-- 使用jdbc多的getGeneratedKeys获取数据库自增主键值 --&gt;
+        &lt;setting name=&quot;useGeneratedKeys&quot; value=&quot;true&quot; /&gt;
+
+        &lt;!-- 使用列标签替换列别名 默认:true--&gt;
+        &lt;setting name=&quot;useColumnLabel&quot; value=&quot;true&quot;/&gt;
+
+        &lt;!-- 开启驼峰命名转换：Table&#123;create_time&#125; -&gt; Entity&#123;createTime&#125;  --&gt;
+        &lt;setting name=&quot;mapUnderscoreToCamelCase&quot; value=&quot;true&quot;/&gt;
+    &lt;/settings&gt;
+&lt;/configuration&gt;
+</code></pre>
+<hr>
+<h4 id="3-4-4、-Spring-相关配置"><a href="#3-4-4、-Spring-相关配置" class="headerlink" title="3.4.4、 Spring 相关配置"></a>3.4.4、 Spring 相关配置</h4><ol>
+<li>Dao 层: src&#x2F;main&#x2F;resources&#x2F;spring&#x2F;spring-dao.xml</li>
+</ol>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+	xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+	xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd&quot;&gt;
+	&lt;!-- 配置整合mybatis过程 --&gt;
+	&lt;!-- 1.配置数据库相关参数properties的属性：$&#123;url&#125; --&gt;
+	&lt;context:property-placeholder location=&quot;classpath:jdbc.properties&quot; /&gt;
+
+	&lt;!-- 2.数据库连接池 --&gt;
+	&lt;bean id=&quot;dataSource&quot; class=&quot;com.mchange.v2.c3p0.ComboPooledDataSource&quot;&gt;
+		&lt;!-- 配置连接池属性 --&gt;
+		&lt;property name=&quot;driverClass&quot; value=&quot;$&#123;jdbc.driver&#125;&quot; /&gt;
+		&lt;property name=&quot;jdbcUrl&quot; value=&quot;$&#123;jdbc.url&#125;&quot; /&gt;
+		&lt;property name=&quot;user&quot; value=&quot;$&#123;jdbc.username&#125;&quot; /&gt;
+		&lt;property name=&quot;password&quot; value=&quot;$&#123;jdbc.password&#125;&quot; /&gt;
+		&lt;!-- c3p0连接池的私有属性 --&gt;
+		&lt;property name=&quot;maxPoolSize&quot; value=&quot;30&quot; /&gt;
+		&lt;property name=&quot;minPoolSize&quot; value=&quot;10&quot; /&gt;
+		&lt;!-- 关闭连接后不自动commit --&gt;
+		&lt;property name=&quot;autoCommitOnClose&quot; value=&quot;false&quot; /&gt;
+		&lt;!-- 获取连接超时时间 --&gt;
+		&lt;property name=&quot;checkoutTimeout&quot; value=&quot;10000&quot; /&gt;
+		&lt;!-- 当获取连接失败重试次数 --&gt;
+		&lt;property name=&quot;acquireRetryAttempts&quot; value=&quot;2&quot; /&gt;
+	&lt;/bean&gt;
+
+	&lt;!-- 3.配置SqlSessionFactory对象,用于创建数据库连接池的对象 --&gt;
+	&lt;bean id=&quot;sqlSessionFactory&quot; class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;
+		&lt;!-- 注入数据库连接池 --&gt;
+		&lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot; /&gt;
+		&lt;!-- 配置MyBaties全局配置文件:mybatis-config.xml --&gt;
+		&lt;property name=&quot;configLocation&quot; value=&quot;classpath:mybatis-config.xml&quot; /&gt;
+		&lt;!-- 扫描entity包 使用别名 --&gt;
+		&lt;property name=&quot;typeAliasesPackage&quot; value=&quot;com.imooc.o2o.entity&quot; /&gt;
+		&lt;!-- 扫描sql配置文件:mapper需要的xml文件 --&gt;
+		&lt;property name=&quot;mapperLocations&quot; value=&quot;classpath:mapper/*.xml&quot; /&gt;
+	&lt;/bean&gt;
+
+	&lt;!-- 4.配置扫描Dao接口包，动态实现Dao接口，注入到spring容器中 --&gt;
+	&lt;bean class=&quot;org.mybatis.spring.mapper.MapperScannerConfigurer&quot;&gt;
+		&lt;!-- 注入sqlSessionFactory --&gt;
+		&lt;property name=&quot;sqlSessionFactoryBeanName&quot; value=&quot;sqlSessionFactory&quot; /&gt;
+		&lt;!-- 给出需要扫描Dao接口包 --&gt;
+		&lt;property name=&quot;basePackage&quot; value=&quot;com.imooc.o2o.dao&quot; /&gt;
+	&lt;/bean&gt;
+&lt;/beans&gt;
+</code></pre>
+<ol start="2">
+<li>Service 层: src&#x2F;main&#x2F;resources&#x2F;spring&#x2F;spring-service.xml</li>
+</ol>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+    xmlns:tx=&quot;http://www.springframework.org/schema/tx&quot;
+    xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx.xsd&quot;&gt;
+    &lt;!-- 扫描service包下所有使用注解的类型 --&gt;
+    &lt;context:component-scan base-package=&quot;com.imooc.o2o.service&quot; /&gt;
+
+    &lt;!-- 配置事务管理器,事务原子性等 --&gt;
+    &lt;bean id=&quot;transactionManager&quot;
+        class=&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;&gt;
+        &lt;!-- 注入数据库连接池 --&gt;
+        &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot; /&gt;
+    &lt;/bean&gt;
+
+    &lt;!-- 配置基于注解的声明式事务 --&gt;
+    &lt;tx:annotation-driven transaction-manager=&quot;transactionManager&quot; /&gt;
+&lt;/beans&gt;
+</code></pre>
+<ol start="3">
+<li>Web 层: src&#x2F;main&#x2F;resources&#x2F;spring&#x2F;spring-web.xml</li>
+</ol>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+	xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+	xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+	xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;
+	xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/mvc
+	http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd&quot;&gt;
+	&lt;!-- HandlerMapping 无需配置，SpringMVC可以默认启动，DefaultAnnotationHandlerMapping annotation-driven HandlerMapping --&gt;
+	&lt;!-- 配置SpringMVC --&gt;
+	&lt;!-- 1.开启SpringMVC注解模式 --&gt;
+	&lt;mvc:annotation-driven/&gt;
+
+	&lt;!-- 2.静态资源默认servlet配置 (1)加入对静态资源的处理：js,gif,png (2)允许使用&quot;/&quot;做整体映射 , 不会拦截，当为静态资源。 这两个都是处理静态资源的，区别可以理解成一个是指定一个自定义的serlvet来专门处理相应的静态资源，如果不指定 会默认找default名字的servlet 而&lt;mvc:resources&gt;的好处可以理解成是静态资源可以在我们项目中的任意位置配置，只需要将对应的位置声明即可 --&gt;
+	&lt;mvc:resources mapping=&quot;/resources/**&quot; location=&quot;/resources/&quot;/&gt;
+	&lt;mvc:default-servlet-handler/&gt;
+
+	&lt;!-- 3.定义视图解析器 --&gt;
+	&lt;!-- ViewResolver:视图解析器。可以配置多个 但是一定要将这个ViewResolver(InternalResourceViewResolver) 放到最后 --&gt;
+	&lt;!-- 解析json格式的传参和封装数据到页面，注意spring的版本和对应的配置方式 --&gt;
+	&lt;!-- spring-4.2以后 --&gt;
+	&lt;bean id=&quot;viewResolver&quot;
+		class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;
+		&lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/html/&quot;&gt;&lt;/property&gt;
+		&lt;property name=&quot;suffix&quot; value=&quot;.html&quot;&gt;&lt;/property&gt;
+	&lt;/bean&gt;
+
+	&lt;!-- 4.扫描web相关的bean --&gt;
+	&lt;!-- 激活组件扫描功能,扫描aop的相关组件组件 --&gt;
+	&lt;context:component-scan base-package=&quot;com.imooc.o2o.web&quot;/&gt;
+&lt;/beans&gt;
+</code></pre>
+<ol start="4">
+<li>将 sping 的配置整合在一起，web.xml</li>
+</ol>
+<pre><code class="language-xml"> &lt;servlet&gt;
+  	&lt;servlet-name&gt;spring-dispatcher&lt;/servlet-name&gt;
+  	&lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
+  	&lt;init-param&gt;
+  		&lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+  		&lt;param-value&gt;classpath:spring/spring-*.xml&lt;/param-value&gt;
+  	&lt;/init-param&gt;
+  &lt;/servlet&gt;
+  &lt;servlet-mapping&gt;
+  	&lt;servlet-name&gt;spring-dispatcher&lt;/servlet-name&gt;
+  	&lt;!-- 默认匹配所有的请求 --&gt;
+  	&lt;url-pattern&gt;/&lt;/url-pattern&gt;
+  &lt;/servlet-mapping&gt;
+</code></pre>
+<hr>
+<h2 id="3-5-logback-日志配置"><a href="#3-5-logback-日志配置" class="headerlink" title="3.5 logback 日志配置"></a>3.5 logback 日志配置</h2><ol>
+<li>src&#x2F;main&#x2F;resources&#x2F;logback.xml</li>
+</ol>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;configuration scan=&quot;true&quot; scanPeriod=&quot;60 seconds&quot;
+	debug=&quot;false&quot;&gt;
+	&lt;!-- 定义参数常liang --&gt;
+	&lt;!-- TRACE &lt; DEBUG &lt; INFO &lt; WARN &lt; ERROR --&gt;
+	&lt;!-- 常用 DEBUG、INFO 和 ERROR 就可以了 --&gt;
+	&lt;property name=&quot;log.level&quot; value=&quot;debug&quot;/&gt;
+	&lt;!-- 文件保留时间 --&gt;
+	&lt;property name=&quot;log.maxHistory&quot; value=&quot;30&quot; /&gt;
+	&lt;!-- 日志存储的位置 --&gt;
+	&lt;property name=&quot;log.filePath&quot;
+		value=&quot;$&#123;catalina.base&#125;/logs/webapps&quot; /&gt;
+	&lt;!-- 日志格式：时间 线程 级别 那个类输出的日志信息 换行 --&gt;
+	&lt;property name=&quot;log.pattern&quot;
+		value=&quot;%d&#123;yyyy-MM-dd HH:mm:ss.SSS&#125; [%thread] %-5level %logger&#123;55&#125; - %msg%n&quot;/&gt;
+
+	&lt;!-- 输出到控制台的。日志输出媒介，控制台输出 --&gt;
+	&lt;appender name=&quot;consoleAppender&quot; class=&quot;ch.qos.logback.core.ConsoleAppender&quot;&gt;
+		&lt;encoder&gt;
+			&lt;pattern&gt;$&#123;log.pattern&#125;&lt;/pattern&gt;
+		&lt;/encoder&gt;
+	&lt;/appender&gt;
+
+	&lt;!-- 以下是输出日志文件的 --&gt;
+	&lt;!-- DEBUG --&gt;
+	&lt;!-- 滚动日志 --&gt;
+	&lt;appender name=&quot;debugAppender&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;
+		&lt;!-- 文件路径 --&gt;
+		&lt;file&gt;$&#123;log.filePath&#125;/debug.log&lt;/file&gt;
+		&lt;!-- 基于时间滚动，按天 --&gt;
+		&lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;
+			&lt;!-- 文件名称,在log.filePath路径下生产以 debug.日期.log.gz结尾的文件 --&gt;
+			&lt;fileNamePattern&gt;$&#123;log.filePath&#125;/debug/debug.%d&#123;yyyy-MM-dd&#125;.log.gz&lt;/fileNamePattern&gt;
+			&lt;!-- 文件最大保存数量，轮询 --&gt;
+			&lt;maxHistory&gt;$&#123;log.maxHistory&#125;&lt;/maxHistory&gt;
+		&lt;/rollingPolicy&gt;
+		&lt;!-- 将日志信息转化为字符串，将字符串输出到文件里 --&gt;
+		&lt;encoder&gt;
+			&lt;pattern&gt;$&#123;log.pattern&#125;&lt;/pattern&gt;
+		&lt;/encoder&gt;
+		&lt;!-- 过滤器：过滤不是 debug.level的日志 --&gt;
+		&lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;
+			&lt;level&gt;DEBUG&lt;/level&gt;
+			&lt;!-- 如何时debug日志就记录下来 --&gt;
+			&lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;
+			&lt;!-- 如果不是debug日志就否定掉 --&gt;
+			&lt;onMismatch&gt;DENY&lt;/onMismatch&gt;
+		&lt;/filter&gt;
+	&lt;/appender&gt;
+
+	&lt;!-- INFO --&gt;
+	&lt;!-- 文件滚动日志 --&gt;
+	&lt;appender name=&quot;infoAppender&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;
+		&lt;!-- 文件路径 --&gt;
+		&lt;file&gt;$&#123;log.filePath&#125;/info.log&lt;/file&gt;
+		&lt;!-- 上面写满了，就使用下面的滚动文件 --&gt;
+		&lt;!-- 基于时间滚动，按天 --&gt;
+		&lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;
+			&lt;!-- 文件名称,在log.filePath路径下生产以 debug.日期.log.gz结尾的文件 --&gt;
+			&lt;fileNamePattern&gt;$&#123;log.filePath&#125;/info/info.%d&#123;yyyy-MM-dd&#125;.log.gz&lt;/fileNamePattern&gt;
+			&lt;!-- 文件最大保存数量，轮询 --&gt;
+			&lt;maxHistory&gt;$&#123;log.maxHistory&#125;&lt;/maxHistory&gt;
+		&lt;/rollingPolicy&gt;
+		&lt;!-- 将日志信息转化为字符串，将字符串输出到文件里 --&gt;
+		&lt;encoder&gt;
+			&lt;pattern&gt;$&#123;log.pattern&#125;&lt;/pattern&gt;
+		&lt;/encoder&gt;
+		&lt;!-- 过滤器：过滤不是 debug.level的日志 --&gt;
+		&lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;
+			&lt;level&gt;INFO&lt;/level&gt;
+			&lt;!-- 如何时debug日志就记录下来 --&gt;
+			&lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;
+			&lt;!-- 如果不是debug日志就否定掉 --&gt;
+			&lt;onMismatch&gt;DENY&lt;/onMismatch&gt;
+		&lt;/filter&gt;
+	&lt;/appender&gt;
+
+	&lt;!-- ERROR --&gt;
+	&lt;!-- 文件滚动日志 --&gt;
+	&lt;appender name=&quot;errorAppender&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;
+		&lt;!-- 文件路径 --&gt;
+		&lt;file&gt;$&#123;log.filePath&#125;/error.log&lt;/file&gt;
+		&lt;!-- 上面写满了，就使用下面的滚动文件 --&gt;
+		&lt;!-- 基于时间滚动，按天 --&gt;
+		&lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;
+			&lt;!-- 文件名称,在log.filePath路径下生产以 debug.日期.log.gz结尾的文件 --&gt;
+			&lt;fileNamePattern&gt;$&#123;log.filePath&#125;/error/error.%d&#123;yyyy-MM-dd&#125;.log.gz&lt;/fileNamePattern&gt;
+			&lt;!-- 文件最大保存数量，轮询 --&gt;
+			&lt;maxHistory&gt;$&#123;log.maxHistory&#125;&lt;/maxHistory&gt;
+		&lt;/rollingPolicy&gt;
+		&lt;!-- 将日志信息转化为字符串，将字符串输出到文件里 --&gt;
+		&lt;encoder&gt;
+			&lt;pattern&gt;$&#123;log.pattern&#125;&lt;/pattern&gt;
+		&lt;/encoder&gt;
+		&lt;!-- 过滤器：过滤不是 debug.level的日志 --&gt;
+		&lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;
+			&lt;level&gt;ERROR&lt;/level&gt;
+			&lt;!-- 如何时debug日志就记录下来 --&gt;
+			&lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;
+			&lt;!-- 如果不是debug日志就否定掉 --&gt;
+			&lt;onMismatch&gt;DENY&lt;/onMismatch&gt;
+		&lt;/filter&gt;
+	&lt;/appender&gt;
+
+
+	&lt;!-- 告诉logback 需要关注那个包下面的信息 只记录那个日记级别的信息 additivity(将root日志的信息也放在这个 logger 里面来)  --&gt;
+	&lt;logger name=&quot;com.imooc.o2o&quot; level=&quot;$&#123;log.level&#125;&quot; additivity=&quot;true&quot;&gt;
+		&lt;!-- 绑定 appender, 往这个鞋appender输出信息 --&gt;
+		&lt;appender-ref ref=&quot;debugAppender&quot;/&gt;
+		&lt;appender-ref ref=&quot;infoAppender&quot;/&gt;
+		&lt;appender-ref ref=&quot;errorAppender&quot;/&gt;
+	&lt;/logger&gt;
+
+	&lt;!-- 根 root, 如果没有指定 level 会继承 root 的level --&gt;
+	&lt;root level=&quot;info&quot;&gt;
+		&lt;!-- 往下面的 consoleAppender 输出信息 --&gt;
+		&lt;appender-ref ref=&quot;consoleAppender&quot;/&gt;
+	&lt;/root&gt;
+&lt;/configuration&gt;
+</code></pre>
+<hr>
+<h1 id="第四章-代码实现"><a href="#第四章-代码实现" class="headerlink" title="第四章 代码实现"></a>第四章 代码实现</h1><h2 id="4-1、简单的-SSM-案例-Area"><a href="#4-1、简单的-SSM-案例-Area" class="headerlink" title="4.1、简单的 SSM 案例-Area"></a>4.1、简单的 SSM 案例-Area</h2><h4 id="4-1-1、dao-层"><a href="#4-1-1、dao-层" class="headerlink" title="4.1.1、dao 层"></a>4.1.1、dao 层</h4><ol>
+<li>在 dao 层创建一个 AreaDao 接口，代码如下</li>
+</ol>
+<pre><code class="language-Java">package com.imooc.o2o.dao;
+
+import java.util.List;
+import com.imooc.o2o.entity.Area;
+
+public interface AreaDao &#123;
+	/**
+	 * 列出区域列表
+	 * @return areaList
+	 */
+	List&lt;Area&gt; queryArea();
+&#125;
+</code></pre>
+<hr>
+<ol start="2">
+<li>在 mapper 配置，创建 AreaDao.xml, 代码如下</li>
+</ol>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
+&lt;mapper namespace=&quot;com.imooc.o2o.dao.AreaDao&quot;&gt;
+	&lt;select id=&quot;queryArea&quot; resultType=&quot;com.imooc.o2o.entity.Area&quot;&gt;
+		SELECT
+		area_id,area_name,priority,create_time,last_edit_time
+		FROM tb_area
+		ORDER BY priority DESC
+	&lt;/select&gt;
+&lt;/mapper&gt;
+</code></pre>
+<hr>
+<ol start="3">
+<li>dao 层单元测试，com.imooc.o2o.dao</li>
+</ol>
+<ul>
+<li>BaseTest.java 基类，初始化 spring 的配置</li>
+</ul>
+<pre><code class="language-Java">package com.imooc.o2o;
+
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+/**
+ * 初始化spring和junit整合，junit启动时加载springIOC容器
+ * @author jxh
+ */
+@RunWith(SpringJUnit4ClassRunner.class)
+// 告诉Junit spring配置文件的位置
+@ContextConfiguration(&#123;&quot;classpath:spring/spring-dao.xml&quot;, &quot;classpath:spring/spring-service.xml&quot;&#125;)
+public class BaseTest &#123;
+
+&#125;
+</code></pre>
+<ul>
+<li>测试类</li>
+</ul>
+<pre><code class="language-Java">package com.imooc.o2o.dao;
+
+import static org.junit.Assert.assertEquals;
+import java.util.List;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import com.imooc.o2o.BaseTest;
+import com.imooc.o2o.entity.Area;
+
+public class AreaDaoTest extends BaseTest &#123;
+	@Autowired
+	private AreaDao areaDao;
+
+	@Test
+	public void testQueryArea() &#123;
+		List&lt;Area&gt; areaList = areaDao.queryArea();
+		assertEquals(2, areaList.size());
+	&#125;
+&#125;
+</code></pre>
+<hr>
+<h4 id="4-1-2、Service-层"><a href="#4-1-2、Service-层" class="headerlink" title="4.1.2、Service 层"></a>4.1.2、Service 层</h4><ol>
+<li>service AreaService.java 接口类</li>
+</ol>
+<pre><code class="language-Java">package com.imooc.o2o.service;
+
+import java.util.List;
+
+import com.imooc.o2o.entity.Area;
+
+public interface AreaService &#123;
+	List&lt;Area&gt; getAreaList();
+&#125;
+</code></pre>
+<ol start="2">
+<li>service.impl AreaServiceImpl.java 实现类</li>
+</ol>
+<pre><code class="language-Java">package com.imooc.o2o.service.impi;
+
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.imooc.o2o.dao.AreaDao;
+import com.imooc.o2o.entity.Area;
+import com.imooc.o2o.service.AreaService;
+
+@Service // Spring IOC 托管
+public class AreaServiceImpl implements AreaService &#123;
+
+	@Autowired
+	private AreaDao areaDao;
+
+	@Override
+	public List&lt;Area&gt; getAreaList() &#123; // 从数据库取出数据
+		return areaDao.queryArea();
+	&#125;
+&#125;
+</code></pre>
+<ol start="3">
+<li>service 层单元测试</li>
+</ol>
+<ul>
+<li>AreaServiceTest.java 代码</li>
+</ul>
+<pre><code class="language-Java">package com.imooc.o2o.service;
+
+import static org.junit.Assert.assertEquals;
+import java.util.List;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import com.imooc.o2o.BaseTest;
+import com.imooc.o2o.entity.Area;
+
+public class AreaServiceTest extends BaseTest &#123;
+	@Autowired
+	private AreaService areaService;
+
+	@Test
+	public void testGetArealist() &#123;
+		List&lt;Area&gt; areaList = areaService.getAreaList();
+		assertEquals(&quot;西苑&quot;, areaList.get(0).getAreaName());
+	&#125;
+&#125;
+</code></pre>
+<h4 id="4-1-3、web-层"><a href="#4-1-3、web-层" class="headerlink" title="4.1.3、web 层"></a>4.1.3、web 层</h4><ol>
+<li>AreaController.java</li>
+</ol>
+<pre><code class="language-Java">package com.imooc.o2o.web.superadmin;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import com.imooc.o2o.entity.Area;
+import com.imooc.o2o.service.AreaService;
+
+@Controller
+@RequestMapping(&quot;/superadmin&quot;)
+public class AreaController &#123;
+
+	@Autowired
+	private AreaService areaService;
+
+	@RequestMapping(value = &quot;/listarea&quot;, method = RequestMethod.GET)
+	@ResponseBody
+	private Map&lt;String, Object&gt; listArea() &#123;
+		Map&lt;String, Object&gt; modelMap = new HashMap&lt;String, Object&gt;();
+		List&lt;Area&gt; list = new ArrayList&lt;Area&gt;();
+		try &#123;
+			list = areaService.getAreaList();
+			modelMap.put(&quot;rows&quot;, list);
+			modelMap.put(&quot;total&quot;, list.size());
+		&#125; catch (Exception e) &#123;
+			e.printStackTrace();
+			modelMap.put(&quot;success&quot;, false);
+			modelMap.put(&quot;errMsg&quot;, e.toString());
+		&#125;
+		return modelMap;
+	&#125;
+&#125;
+</code></pre>
+<hr>
+<hr>
+<h1 id="第五章-店铺系统的实现"><a href="#第五章-店铺系统的实现" class="headerlink" title="第五章 店铺系统的实现"></a>第五章 店铺系统的实现</h1><h2 id="5-1、店铺的注册模块"><a href="#5-1、店铺的注册模块" class="headerlink" title="5.1、店铺的注册模块"></a>5.1、店铺的注册模块</h2><h4 id="5-1-1、dao-层代码"><a href="#5-1-1、dao-层代码" class="headerlink" title="5.1.1、dao 层代码"></a>5.1.1、dao 层代码</h4><ol>
+<li>ShopDao.java 接口</li>
+</ol>
+<pre><code class="language-Java">package com.imooc.o2o.dao;
+
+public interface ShopDao &#123;
+	// 新增店铺，return 0 &amp; 1
+	int insertShop(Shop shop);
+	// 更新店铺信息
+	int updateShop(Shop shop);
+&#125;
+</code></pre>
+<ol start="2">
+<li>mapper 的配置 ShopDao.xml</li>
+</ol>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
+&lt;mapper namespace=&quot;com.imooc.o2o.dao.ShopDao&quot;&gt;
+	&lt;!-- 使用JDBC的getGeneratedKeys获取数据库自增主键值 --&gt;
+	&lt;insert id=&quot;insertShop&quot; useGeneratedKeys=&quot;true&quot;
+		keyColumn=&quot;shop_id&quot; keyProperty=&quot;shopId&quot;&gt;
+		INSERT INTO
+		tb_shop(owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone,shop_img,priority,create_time,last_edit_time,enable_status,advice)
+		VALUES
+		(#&#123;owner.userId&#125;,#&#123;area.areaId&#125;,#&#123;shopCategory.shopCategoryId&#125;,#&#123;shopName&#125;,#&#123;shopDesc&#125;,#&#123;shopAddr&#125;,#&#123;phone&#125;,#&#123;shopImg&#125;,#&#123;priority&#125;,#&#123;createTime&#125;,#&#123;lastEditTime&#125;,#&#123;enableStatus&#125;,#&#123;advice&#125;)
+	&lt;/insert&gt;
+	&lt;!-- Mybatis支持动态SQ, set标签里面是动态的SQL语句，xxx:是实体类的成员变量; xxx_xxx:数据库表中的字段名,例如&lt;if test=&quot;xxx != null&quot;&gt;xxx_xxx=#&#123;xxx&#125;&lt;/if&gt; --&gt;
+	&lt;update id=&quot;updateShop&quot; parameterType=&quot;com.imooc.o2o.entity.Shop&quot;&gt;
+		update tb_shop
+		&lt;set&gt;
+			&lt;if test=&quot;shopName != null&quot;&gt;shop_name=#&#123;shopName&#125;,&lt;/if&gt;
+			&lt;if test=&quot;shopDesc != null&quot;&gt;shop_desc=#&#123;shopDesc&#125;,&lt;/if&gt;
+			&lt;if test=&quot;shopAddr != null&quot;&gt;shop_addr=#&#123;shopAddr&#125;,&lt;/if&gt;
+			&lt;if test=&quot;phone != null&quot;&gt;phone=#&#123;phone&#125;,&lt;/if&gt;
+			&lt;if test=&quot;shopImg != null&quot;&gt;shop_img=#&#123;shopImg&#125;,&lt;/if&gt;
+			&lt;if test=&quot;priority != null&quot;&gt;priority=#&#123;priority&#125;,&lt;/if&gt;
+			&lt;if test=&quot;lastEditTime != null&quot;&gt;last_edit_time=#&#123;lastEditTime&#125;,&lt;/if&gt;
+			&lt;if test=&quot;enableStatus != null&quot;&gt;enable_status=#&#123;enableStatus&#125;,&lt;/if&gt;
+			&lt;if test=&quot;advice != null&quot;&gt;advice=#&#123;advice&#125;,&lt;/if&gt;
+			&lt;if test=&quot;area != null&quot;&gt;area_id = #&#123;area.areaId&#125;,&lt;/if&gt;
+			&lt;if test=&quot;shopCategory != null&quot;&gt;shop_category_id=#&#123;shopCategory.shopCategoryId&#125;&lt;/if&gt;
+		&lt;/set&gt;
+		where shop_id=#&#123;shopId&#125;
+	&lt;/update&gt;
+&lt;/mapper&gt;
+</code></pre>
+<ol start="3">
+<li>单元测试</li>
+</ol>
+<pre><code class="language-Java">package com.imooc.o2o.dao;
+
+public class ShopDaoTest extends BaseTest &#123;
+	@Autowired
+	private ShopDao shopDao;
+	@Test
+	// @Ignore // 忽略当前方法的测试
+	public void testInsertShop() &#123;
+		Shop shop = new Shop();
+		PersonInfo  owner = new PersonInfo();
+		Area area = new Area();
+		ShopCategory shopCategory = new ShopCategory();
+		// 由于该shop涉及其他表，所以给其他表设置了一些测试值，现在初始化这些值，才可以正常的添加店铺
+		owner.setUserId(1L);
+		area.setAreaId(2);
+		shopCategory.setShopCategoryId(1L);
+		shop.setOwner(owner);
+		shop.setArea(area);
+		shop.setShopCategory(shopCategory);
+		shop.setShopName(&quot;测试的店铺&quot;);
+		shop.setShopDesc(&quot;test&quot;);
+		shop.setShopAddr(&quot;test&quot;);
+		shop.setPhone(&quot;test&quot;);
+		shop.setShopImg(&quot;test&quot;);
+		shop.setCreateTime(new Date());
+		shop.setEnableStatus(1);
+		shop.setAdvice(&quot;审核中&quot;);
+		// 影响行数
+		int effectedNum = shopDao.insertShop(shop);
+		assertEquals(1,effectedNum);
+	&#125;
+	@Test
+	public void testUpdateShop() &#123;
+		Shop shop = new Shop();
+		// 需要指定ID
+		shop.setShopId(1L);
+		PersonInfo  owner = new PersonInfo();
+		Area area = new Area();
+		ShopCategory shopCategory = new ShopCategory();
+		// 由于该shop涉及其他表，所以给其他表设置了一些测试值，现在初始化这些值，才可以正常的添加店铺
+		owner.setUserId(1L);
+		area.setAreaId(2);
+		shop.setShopDesc(&quot;测试描述&quot;);
+		shop.setShopAddr(&quot;测试地址&quot;);
+		shop.setLastEditTime(new Date());
+		// 影响行数
+		int effectedNum = shopDao.updateShop(shop);
+		assertEquals(1,effectedNum);
+	&#125;
+&#125;
+</code></pre>
+<h4 id="5-1-2、service-层代码"><a href="#5-1-2、service-层代码" class="headerlink" title="5.1.2、service 层代码"></a>5.1.2、service 层代码</h4><ol>
+<li>ShopService 接口，定义操作方法和返回值</li>
+</ol>
+<pre><code class="language-Java">package com.imooc.o2o.service;
+
+import java.io.File;
+import com.imooc.o2o.dto.ShopExecution;
+import com.imooc.o2o.entity.Shop;
+
+public interface ShopService &#123;
+	ShopExecution addShop(Shop shop, File shopImg);
+&#125;
+</code></pre>
+<ol start="2">
+<li>dto，对返回值进行二次封装，添加 status 等参数</li>
+</ol>
+<pre><code class="language-Java">package com.imooc.o2o.dto;
+
+public class ShopExecution &#123;
+	private int state; // 结果状态
+	private String stateInfo; // 状态标识,接受 state的说明
+	private int count; // 店铺数量
+	private Shop shop; // 操作的shop (增删改店铺的时候用到)
+	private List&lt;Shop&gt; shopList; // shop列表(查询店铺列表的时候使用)
+	public ShopExecution() &#123;&#125;
+	// 店铺操作失败的时候使用的构造器
+	public ShopExecution(ShopStateEnum stateEnum) &#123;
+		this.state = stateEnum.getState();
+		this.stateInfo = stateEnum.getStateInfo();
+	&#125;
+	// 店铺操作成功时使用的构造器，同时返回单个shop
+	public ShopExecution(ShopStateEnum stateEnum, Shop shop) &#123;
+		this.state = stateEnum.getState();
+		this.stateInfo = stateEnum.getStateInfo();
+		this.shop = shop;
+	&#125;
+	// 店铺操作成功时使用的构造器，同时返回一个shop 列表
+	public ShopExecution(ShopStateEnum stateEnum, List&lt;Shop&gt; shopList) &#123;
+		this.state = stateEnum.getState();
+		this.stateInfo = stateEnum.getStateInfo();
+		this.shopList = shopList;
+	&#125;
+	// Getter &amp; Setter
+&#125;
+</code></pre>
+<ol start="3">
+<li>Service 实现类</li>
+</ol>
+<pre><code class="language-Java">package com.imooc.o2o.service.impi;
+
+@Service
+public class ShopServicelmpl implements ShopService&#123;
+	@Autowired
+	private ShopDao shopDao;
+	@Override
+	public ShopExecution addShop(Shop shop, File shopImg) &#123;
+		if(shop == null) &#123;
+			return new ShopExecution(ShopStateEnum.NULL_SHOP);
+		&#125;
+		try &#123;
+			// 给店铺信息赋初始值
+			shop.setEnableStatus(0);
+			shop.setCreateTime(new Date());
+			shop.setLastEditTime(new Date());
+			// 添加店铺信息
+			int effectedNum = shopDao.insertShop(shop);
+			if(effectedNum &lt;= 0) &#123;
+				throw new ShopOperationException(&quot;店铺创建失败&quot;);
+			&#125;else &#123;
+				if(shopImg != null) &#123;
+					// 存储图片
+					try &#123;
+						addShopImg(shop, shopImg);
+					&#125; catch(Exception e) &#123;
+						throw new ShopOperationException(&quot;添加店铺图片失败：&quot; + e.getMessage());
+					&#125;
+					// 更新店铺的图片地址
+					effectedNum = shopDao.updateShop(shop);
+					if(effectedNum &lt;= 0) &#123;
+						throw new ShopOperationException(&quot;更新图片地址失败&quot;);
+					&#125;
+				&#125;
+			&#125;
+		&#125; catch(Exception e) &#123;
+			throw new ShopOperationException(&quot;addShop error:&quot; + e.getMessage());
+		&#125;
+		return new ShopExecution(ShopStateEnum.CHECK, shop);
+	&#125;
+	private void addShopImg(Shop shop, File shopImg) &#123;
+		// TODO Auto-generated method stub
+		String dest = PathUtil.getShopImagePath(shop.getShopId());
+		String shopImgAddr = ImageUtil.generateThumbnail(shopImg, dest);
+		shop.setShopImg(shopImgAddr);
+	&#125;
+&#125;
+</code></pre>
+<ol start="4">
+<li>Service 层 单元测试</li>
+</ol>
+<pre><code class="language-Java">package com.imooc.o2o.service;
+
+@Service
+public class ShopServiceTest extends BaseTest &#123;
+	@Autowired
+	private ShopService shopService;
+	@Test
+	public void testAddShop() &#123;
+		Shop shop = new Shop();
+		PersonInfo  owner = new PersonInfo();
+		Area area = new Area();
+		ShopCategory shopCategory = new ShopCategory();
+		// 由于该shop涉及其他表，所以给其他表设置了一些测试值，现在初始化这些值，才可以正常的添加店铺
+		owner.setUserId(1L);
+		area.setAreaId(2);
+		shopCategory.setShopCategoryId(1L);
+		shop.setOwner(owner);
+		shop.setArea(area);
+		shop.setShopCategory(shopCategory);
+		shop.setShopName(&quot;测试的店铺1&quot;);
+		shop.setShopDesc(&quot;test1&quot;);
+		shop.setShopAddr(&quot;test1&quot;);
+		shop.setPhone(&quot;test1&quot;);
+		shop.setCreateTime(new Date());
+		shop.setEnableStatus(ShopStateEnum.CHECK.getState()); // 0
+		shop.setAdvice(&quot;审核中&quot;);
+		File shopImg = new File(&quot;/Users/jxh/Downloads/xiaohuangren.jpeg&quot;);
+		ShopExecution se = shopService.addShop(shop,shopImg);
+		assertEquals(ShopStateEnum.CHECK.getState(), se.getState());
+	&#125;
+&#125;
+</code></pre>
+<hr>
+<h4 id="5-1-3、-Controller-层"><a href="#5-1-3、-Controller-层" class="headerlink" title="5.1.3、 Controller 层"></a>5.1.3、 Controller 层</h4><ol>
+<li>ShopManagementController.java</li>
+</ol>
+<pre><code class="language-Java">package com.imooc.o2o.web.shopadmin;
+
+@Controller
+@RequestMapping(&quot;/shopadmin&quot;)
+public class ShopManagementController &#123;
+	@Autowired
+	private ShopService shopService;
+	@RequestMapping(value=&quot;/registershop&quot;, method = RequestMethod.POST)
+	@ResponseBody
+	private Map&lt;String, Object&gt; registerShop(HttpServletRequest request) throws ShopOperationException, IOException &#123;
+		Map&lt;String, Object&gt; modelMap = new HashMap&lt;String, Object&gt;();
+
+		// 验证码
+		if(!CodeUtil.checkVerifyCode(request)) &#123;
+			modelMap.put(&quot;success&quot;, false);
+			modelMap.put(&quot;errMsg&quot;, &quot;输入了错误的验证码&quot;);
+			return modelMap;
+		&#125;
+		// 1.接受并转化相应的参数，思路：获取前端传过来的店铺信息，将数据转换为实体类，同时获取前端传过来的文件流，将图片存放在shopImg里面去。
+		// 使用工具类，将相应的参数转化为字符串
+		String shopStr = HttpServletRequestUtil.getString(request, &quot;shopStr&quot;);
+		// 使用 jackson-databind库 将字符串转化为实体类，JSON to POJO and back
+		ObjectMapper mapper = new ObjectMapper();
+		Shop shop = null;
+		try &#123;
+			shop = mapper.readValue(shopStr, Shop.class);
+		&#125; catch(Exception e) &#123;
+			modelMap.put(&quot;success&quot;, false);
+			modelMap.put(&quot;errMsg&quot;, e.getMessage());
+			return modelMap;
+		&#125;
+		// 获取前端文件流，保存上传图片的文件流
+		CommonsMultipartFile shopImg = null; // 保存上传图片的文件流
+		// 从 request session 的上下文获取相关文件上传的内容
+		CommonsMultipartResolver commmonsMultipartResolver = new CommonsMultipartResolver(
+				request.getSession().getServletContext());
+		if(commmonsMultipartResolver.isMultipart(request)) &#123; // 判断是否有上传的文件流
+			// 如果有上传的文件流，就进行转换 MultipartHttpServletRequest 类型的对象，该对象可以被spring处理文件流对象
+			MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest) request;
+			// 从该上传对象中提取出图片的文件流，（shopImg 是与前端协商的名称）
+			shopImg = (CommonsMultipartFile) multipartHttpServletRequest.getFile(&quot;shopImg&quot;);
+		&#125; else &#123; // 如果没有图片就报错，因为图片是必须的
+			modelMap.put(&quot;success&quot;, false);
+			modelMap.put(&quot;errMsg&quot;, &quot;上传图片不能为空&quot;);
+			return modelMap;
+		&#125;
+		// 2.注册店铺
+		if(shop != null &amp;&amp; shopImg != null) &#123;
+			PersonInfo owner = new PersonInfo();
+			owner.setUserId(1L);
+			shop.setOwner(owner);
+			ShopExecution se = shopService.addShop(shop, shopImg.getInputStream(), shopImg.getOriginalFilename());
+			if(se.getState() == ShopStateEnum.CHECK.getState()) &#123;
+				modelMap.put(&quot;success&quot;, true);
+			&#125;else &#123;
+				modelMap.put(&quot;success&quot;, false);
+				modelMap.put(&quot;errMsg&quot;, se.getStateInfo());
+			&#125;
+			return modelMap;
+		&#125; else &#123;
+			modelMap.put(&quot;success&quot;, false);
+			modelMap.put(&quot;errMsg&quot;, &quot;请输入店铺信息&quot;);
+			return modelMap;
+		&#125;
+	&#125;
+&#125;
+</code></pre>
+<ol start="4">
+<li>kaptcha 验证码的使用</li>
+</ol>
+<ul>
+<li>引入依赖</li>
+</ul>
+<pre><code class="language-XML">	&lt;!-- https://mvnrepository.com/artifact/com.github.penggle/kaptcha --&gt;
+	&lt;dependency&gt;
+	    &lt;groupId&gt;com.github.penggle&lt;/groupId&gt;
+	    &lt;artifactId&gt;kaptcha&lt;/artifactId&gt;
+	    &lt;version&gt;2.3.2&lt;/version&gt;
+	&lt;/dependency&gt;
+</code></pre>
+<ul>
+<li>web.xml 配置</li>
+</ul>
+<pre><code class="language-xml">  &lt;!-- 验证码配置 --&gt;
+  &lt;servlet&gt;
+  	&lt;servlet-name&gt;Kaptcha&lt;/servlet-name&gt;
+  	&lt;servlet-class&gt;com.google.code.kaptcha.servlet.KaptchaServlet&lt;/servlet-class&gt;
+  	&lt;!-- 是否有边框 --&gt;
+  	&lt;init-param&gt;
+  		&lt;param-name&gt;kaptcha.border&lt;/param-name&gt;
+  		&lt;param-value&gt;no&lt;/param-value&gt;
+  	&lt;/init-param&gt;
+  	&lt;!-- 字体颜色 --&gt;
+  	&lt;init-param&gt;
+  		&lt;param-name&gt;kaptcha.textproducer.font.color&lt;/param-name&gt;
+  		&lt;param-value&gt;red&lt;/param-value&gt;
+  	&lt;/init-param&gt;
+  	&lt;!-- 字体大小 --&gt;
+  	&lt;init-param&gt;
+  		&lt;param-name&gt;kaptcha.textproducer.font.size&lt;/param-name&gt;
+  		&lt;param-value&gt;43&lt;/param-value&gt;
+  	&lt;/init-param&gt;
+  	 &lt;!-- 字体样式 --&gt;
+  	&lt;init-param&gt;
+  		&lt;param-name&gt;kaptcha.textproducer.font.names&lt;/param-name&gt;
+  		&lt;param-value&gt;Arial&lt;/param-value&gt;
+  	&lt;/init-param&gt;
+  	&lt;!-- 图片宽度 --&gt;
+  	&lt;init-param&gt;
+  		&lt;param-name&gt;kaptcha.image.width&lt;/param-name&gt;
+  		&lt;param-value&gt;135&lt;/param-value&gt;
+  	&lt;/init-param&gt;
+  	&lt;!-- 图片高度 --&gt;
+  	&lt;init-param&gt;
+  		&lt;param-name&gt;kaptcha.image.width&lt;/param-name&gt;
+  		&lt;param-value&gt;50&lt;/param-value&gt;
+  	&lt;/init-param&gt;
+  	&lt;!-- 使用那些字符生产验证码 --&gt;
+  	&lt;init-param&gt;
+  		&lt;param-name&gt;kaptcha.textproducer.char.string&lt;/param-name&gt;
+  		&lt;param-value&gt;ACDEFHKPRSTWX345679&lt;/param-value&gt;
+  	&lt;/init-param&gt;
+  	&lt;!-- 干扰线的颜色 --&gt;
+  	&lt;init-param&gt;
+  		&lt;param-name&gt;kaptcha.noise.color&lt;/param-name&gt;
+  		&lt;param-value&gt;black&lt;/param-value&gt;
+  	&lt;/init-param&gt;
+  	&lt;!-- 验证码字符个数 --&gt;
+  	&lt;init-param&gt;
+  		&lt;param-name&gt;kaptcha.textproducer.char.length&lt;/param-name&gt;
+  		&lt;param-value&gt;4&lt;/param-value&gt;
+  	&lt;/init-param&gt;
+  &lt;/servlet&gt;
+
+  &lt;servlet-mapping&gt;
+  	&lt;servlet-name&gt;Kaptcha&lt;/servlet-name&gt;
+  	&lt;url-pattern&gt;/Kaptcha&lt;/url-pattern&gt;
+  &lt;/servlet-mapping&gt;
+</code></pre>
+<ul>
+<li>判断验证码是否正确</li>
+</ul>
+<pre><code class="language-JAVA">package com.imooc.o2o.util;
+import javax.servlet.http.HttpServletRequest;
+public class CodeUtil &#123;
+	public static boolean checkVerifyCode(HttpServletRequest request) &#123;
+		String verifyCodeExpected = (String) request.getSession().getAttribute(com.google.code.kaptcha.Constants.KAPTCHA_SESSION_KEY);
+		String verifyCodeActual = HttpServletRequestUtil.getString(request, &quot;verifyCodeActual&quot;);
+		if(verifyCodeActual == null || !verifyCodeActual.equals(verifyCodeExpected)) &#123;
+			return false;
+		&#125;
+		return true;
+	&#125;
+&#125;
+</code></pre>
+<ul>
+<li>举个栗子</li>
+</ul>
+<pre><code class="language-Java">@RequestMapping(value=&quot;/registershop&quot;, method = RequestMethod.POST)
+@ResponseBody
+private Map&lt;String, Object&gt; registerShop(HttpServletRequest request) throws ShopOperationException, IOException &#123;
+	Map&lt;String, Object&gt; modelMap = new HashMap&lt;String, Object&gt;();
+	// 验证码
+	if(!CodeUtil.checkVerifyCode(request)) &#123;
+		modelMap.put(&quot;success&quot;, false);
+		modelMap.put(&quot;errMsg&quot;, &quot;输入了错误的验证码&quot;);
+		return modelMap;
+	&#125;
+</code></pre>
+<pre><code class="language-html">&lt;div class=&quot;item-inner&quot;&gt;
+  &lt;label for=&quot;j_captcha&quot; class=&quot;item-title label&quot;&gt;验证码&lt;/label&gt;
+  &lt;input
+    id=&quot;j_captcha&quot;
+    name=&quot;j_captcha&quot;
+    type=&quot;text&quot;
+    class=&quot;form-control in&quot;
+    placeholder=&quot;验证码&quot;
+  /&gt;
+  &lt;div class=&quot;item-input&quot;&gt;
+    &lt;img
+      id=&quot;captcha_img&quot;
+      alt=&quot;点击更换&quot;
+      title=&quot;点击更换&quot;
+      onclick=&quot;changeVerifyCode(this)&quot;
+      src=&quot;../Kaptcha&quot;
+    /&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-js">$(&#39;#submit&#39;).click(function () &#123;
+	var formData = new FormData();
+	var verifyCodeActual = $(&#39;#j_captcha&#39;).val();
+	formData.append(&#39;verifyCodeActual&#39;, verifyCodeActual);
+</code></pre>
+<hr>
+<h4 id="5-1-4、-拓展"><a href="#5-1-4、-拓展" class="headerlink" title="5.1.4、 拓展"></a>5.1.4、 拓展</h4><ol>
+<li>工具类 ImageUtil.该工具类用于处理预先定义好的图片,该处使用了浓缩图。</li>
+</ol>
+<pre><code class="language-Java">package com.imooc.o2o.util;
+
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Random;
+import javax.imageio.ImageIO;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
+import net.coobird.thumbnailator.Thumbnails;
+import net.coobird.thumbnailator.geometry.Positions;
+import net.coobird.thumbnailator.name.Rename;
+
+/**
+ * 该工具类用于处理预先定义好的图片
+ * @author jxh
+ */
+public class ImageUtil &#123;
+	// 获取classpath的绝对值路径
+	private static String basePath = Thread.currentThread().getContextClassLoader().getResource(&quot;&quot;).getPath();
+	private static final SimpleDateFormat sDateFormat = new SimpleDateFormat(&quot;yyyMMddHHmmss&quot;);
+	private static final Random r = new Random();
+	// 缩略图
+	public static String generateThumbnail(File thumbnail, String targetAddr) &#123;
+		// 自定义图片名称，由于用户可能有重复的图片名称
+		String realFileName = getRandomFileName();
+		// 获取图片的后缀
+		String extension = getFileExtension(thumbnail);
+		System.out.print(&quot;=================================&quot; + extension);
+		// 用于处理路径不存在的情况
+		makeDirPath(targetAddr);
+		// 图片相对路径
+		String relativeAddr = targetAddr + realFileName + extension;
+		// 文件：相对路径 + 文件组成
+		File dest = new File(PathUtil.getImgBasePath() + relativeAddr);
+		// 创建缩略图
+		try &#123;
+			Thumbnails.of(thumbnail).size(200, 200)
+			.watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + &quot;/watermark.png&quot;)), 0.25f)
+			.outputQuality(0.8f).toFile(dest); // 压缩和输出路径
+		&#125; catch(IOException e) &#123;
+			e.printStackTrace();
+		&#125;
+		return relativeAddr;
+	&#125;
+	/**
+	 * 创建目标路径所涉及的目录，即 /home/work/hjxstart/xxx.jpg, 那么 home work hjxstart 这三个文件夹都得自动创建
+	 * @param targetAddr
+	 */
+	private static void makeDirPath(String targetAddr) &#123;
+		// TODO Auto-generated method stub
+		String realFileParentPath = PathUtil.getImgBasePath() + targetAddr;
+		File dirPath = new File(realFileParentPath);
+		if(!dirPath.exists()) &#123;
+			dirPath.mkdirs();
+		&#125;
+	&#125;
+	/**
+	 * 获取输入文件流的拓展名,获取最后一个.的字符
+	 * @param thumbnail
+	 * @return
+	 */
+	private static String getFileExtension(File file) &#123;
+	    String name = file.getName();
+	    int lastIndexOf = name.lastIndexOf(&quot;.&quot;);
+	    if (lastIndexOf == -1) &#123;
+	        return &quot;&quot;; // empty extension
+	    &#125;
+	    return name.substring(lastIndexOf);
+	&#125;
+	/**
+	 * 生成随机文件名，当前年月日小时分钟秒钟 + 五位随机数
+	 * @return 随机文件名称
+	 */
+	private static String getRandomFileName() &#123;
+		// 获取随机的五位数
+		int rannum = r.nextInt(89999) + 10000;
+		String nowTimeStr = sDateFormat.format(new Date());
+		return nowTimeStr + rannum;
+	&#125;
+	public static void main(String[] args) throws IOException &#123;
+		// 获取classpath的绝对值路径，由于这个方法是通过线程去执行的，可以通过线程逆推到类加载器，从而从类加载器得到资源路径
+		String basePath = Thread.currentThread().getContextClassLoader().getResource(&quot;&quot;).getPath();
+		Thumbnails.of(new File(&quot;/Users/jxh/Downloads/src.jpeg&quot;)) // 需要处理的文件
+		.size(200, 200) // 处理后的文件大小
+		.watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + &quot;/hjxstart.png&quot;)), 0.25f) // 添
+		.outputQuality(0.8f).toFile(&quot;/Users/jxh/Downloads/det.jpeg&quot;);
+	&#125;
+&#125;
+</code></pre>
+<ol start="2">
+<li>工具类 PathUtil。用于处理在不同系统下的路径问题。</li>
+</ol>
+<pre><code class="language-Java">package com.imooc.o2o.util;
+
+public class PathUtil &#123;
+	private static String seperator = System.getProperty(&quot;file.separator&quot;);
+	public static String getImgBasePath() &#123;
+		String os = System.getProperty(&quot;os.name&quot;);
+		String basePath=&quot;&quot;;
+		if(os.toLowerCase().startsWith(&quot;win&quot;)) &#123;
+			basePath = &quot;D:/projectdev/image/&quot;;
+		&#125;else &#123;
+			basePath = &quot;/Users/jxh/Downloads/image/&quot;;
+		&#125;
+		basePath = basePath.replace(&quot;/&quot;, seperator);
+		return basePath;
+	&#125;
+	public static String getShopImagePath(long shopId) &#123;
+		String imagePath = &quot;upload/item/shop/&quot; + shopId + &quot;/&quot;;
+		return imagePath.replace(&quot;/&quot;, seperator);
+	&#125;
+&#125;
+</code></pre>
+<ol start="3">
+<li>Session，图片处理工具<a target="_blank" rel="noopener" href="https://github.com/coobird/thumbnailator">Thumbnailator</a>的使用</li>
+</ol>
+<ul>
+<li>导入依赖</li>
+</ul>
+<pre><code class="language-xml">	&lt;!-- 图片处理 --&gt;
+	&lt;!-- https://mvnrepository.com/artifact/net.coobird/thumbnailator --&gt;
+	&lt;dependency&gt;
+	    &lt;groupId&gt;net.coobird&lt;/groupId&gt;
+	    &lt;artifactId&gt;thumbnailator&lt;/artifactId&gt;
+	    &lt;version&gt;0.4.8&lt;/version&gt;
+	&lt;/dependency&gt;
+</code></pre>
+<ul>
+<li>简单的例子</li>
+</ul>
+<pre><code class="language-Java">public static void main(String[] args) throws IOException &#123;
+	// 获取class path的绝对值路径，由于这个方法是通过线程去执行的，可以通过线程逆推到类加载器，从而从类加载器得到资源路径
+	String basePath = Thread.currentThread().getContextClassLoader().getResource(&quot;&quot;).getPath();
+	Thumbnails.of(new File(&quot;/Users/jxh/Downloads/src.jpeg&quot;))
+	.size(200, 200).watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + &quot;/hjxstart.png&quot;)), 0.25f)
+	.outputQuality(0.8f).toFile(&quot;/Users/jxh/Downloads/det.jpeg&quot;);
+&#125;
+</code></pre>
+<hr>
+<h2 id="5-2-店铺信息编辑模块"><a href="#5-2-店铺信息编辑模块" class="headerlink" title="5.2 店铺信息编辑模块"></a>5.2 店铺信息编辑模块</h2><p>目标：实现单个店铺信息的获取，实现对店铺信息进行修改。</p>
+<h4 id="5-2-1-Dao-层"><a href="#5-2-1-Dao-层" class="headerlink" title="5.2.1 Dao 层"></a>5.2.1 Dao 层</h4><ol>
+<li>ShopDao.java 接口</li>
+</ol>
+<pre><code class="language-Java">	// 查询店铺接口，根据 shopId 进行查询
+	Shop queryByShopId(long shopId);
+	// 更新店铺接口，
+	int updateShop(Shop shop);
+</code></pre>
+<ol start="2">
+<li>shopDao.xml</li>
+</ol>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
+&lt;mapper namespace=&quot;com.imooc.o2o.dao.ShopDao&quot;&gt;
+	&lt;!-- 符合对象。扩展外键的值。涉及其他表的数据，比如原表只包含了其他ID，但是想要其他表的name。所有就要定义新的返回类型 --&gt;
+	&lt;resultMap type=&quot;com.imooc.o2o.entity.Shop&quot; id=&quot;shopMap&quot;&gt;
+		&lt;id column=&quot;shop_id&quot; property=&quot;shopId&quot; /&gt;
+		&lt;result column=&quot;shop_name&quot; property=&quot;shopName&quot; /&gt;
+		&lt;result column=&quot;shop_desc&quot; property=&quot;shopDesc&quot; /&gt;
+		&lt;result column=&quot;shop_addr&quot; property=&quot;shopAddr&quot; /&gt;
+		&lt;result column=&quot;phone&quot; property=&quot;phone&quot; /&gt;
+		&lt;result column=&quot;shop_img&quot; property=&quot;shopImg&quot; /&gt;
+		&lt;result column=&quot;priority&quot; property=&quot;priority&quot; /&gt;
+		&lt;result column=&quot;create_time&quot; property=&quot;createTime&quot; /&gt;
+		&lt;result column=&quot;last_edit_time&quot; property=&quot;lastEditTime&quot; /&gt;
+		&lt;result column=&quot;enable_status&quot; property=&quot;enableStatus&quot; /&gt;
+		&lt;result column=&quot;advice&quot; property=&quot;advice&quot; /&gt;
+		&lt;!-- 复合数据类型 --&gt;
+		&lt;association property=&quot;area&quot; column=&quot;area_id&quot;
+			javaType=&quot;com.imooc.o2o.entity.Area&quot;&gt;
+			&lt;id column=&quot;area_id&quot; property=&quot;areaId&quot; /&gt;
+			&lt;result column=&quot;area_name&quot; property=&quot;areaName&quot; /&gt;
+		&lt;/association&gt;
+		&lt;association property=&quot;shopCategory&quot;
+			column=&quot;shop_category_id&quot;
+			javaType=&quot;com.imooc.o2o.entity.ShopCategory&quot;&gt;
+			&lt;id column=&quot;shop_category_id&quot; property=&quot;shopCategoryId&quot; /&gt;
+			&lt;result column=&quot;shop_category_name&quot;
+				property=&quot;shopCategoryName&quot; /&gt;
+		&lt;/association&gt;
+		&lt;association property=&quot;owner&quot; column=&quot;user_id&quot;
+			javaType=&quot;com.imooc.o2o.entity.PersonInfo&quot;&gt;
+			&lt;id column=&quot;user_id&quot; property=&quot;userId&quot; /&gt;
+			&lt;result column=&quot;name&quot; property=&quot;name&quot; /&gt;
+		&lt;/association&gt;
+	&lt;/resultMap&gt;
+
+	&lt;select id=&quot;queryByShopId&quot; resultMap=&quot;shopMap&quot;
+		parameterType=&quot;Long&quot;&gt;
+		SELECT
+		s.shop_id,
+		s.shop_name,
+		s.shop_desc,
+		s.shop_addr,
+		s.phone,
+		s.shop_img,
+		s.priority,
+		s.create_time,
+		s.last_edit_time,
+		s.enable_status,
+		s.advice,
+		a.area_id,
+		a.area_name,
+		sc.shop_category_id,
+		sc.shop_category_name
+		FROM
+		tb_shop s,
+		tb_area a,
+		tb_shop_category sc
+		WHERE
+		s.area_id=a.area_id
+		AND
+		s.shop_category_id = sc.shop_category_id
+		AND
+		s.shop_id = #&#123;shopId&#125;
+	&lt;/select&gt;
+&lt;/mapper&gt;
+</code></pre>
+<ol start="3">
+<li>单元测试</li>
+</ol>
+<pre><code class="language-Java">	@Test
+	public void testQueryShopList() &#123;
+		Shop shopCondition = new Shop();
+		PersonInfo owner = new PersonInfo();
+		owner.setUserId(1L);
+		shopCondition.setOwner(owner);
+		List&lt;Shop&gt; shopList = shopDao.queryShopList(shopCondition, 0, 5);
+		System.out.println(&quot;店铺列表的大小：&quot; + shopList.size());
+	&#125;
+</code></pre>
+<hr>
+<h4 id="5-2-2-Service-层"><a href="#5-2-2-Service-层" class="headerlink" title="5.2.2 Service 层"></a>5.2.2 Service 层</h4><ol>
+<li>ShopService.java 接口</li>
+</ol>
+<pre><code class="language-Java">	// 通过店铺ID获取店铺信息
+	Shop getByShopId(long shopId);
+	// 更新店铺信息，包括对图片的处理，ShopExecution 封装了状态信息和店铺信息，对店铺的操作都会返回这个类
+	ShopExecution modifyShop(Shop shop, InputStream shopImgInputStream, String fileName) throws ShopOperationException;
+</code></pre>
+<ol start="2">
+<li>ShopServiceImpl.java 实现</li>
+</ol>
+<pre><code class="language-Java">	// 返回shop
+	@Override
+	public Shop getByShopId(long shopId) &#123;
+		// TODO Auto-generated method stub
+		return shopDao.queryByShopId(shopId);
+	&#125;
+
+	@Override
+	public ShopExecution modifyShop(Shop shop, InputStream shopImgInputStream, String fileName)
+			throws ShopOperationException &#123;
+
+		try &#123;
+			// 1.判断是否要修改图片，使用新的图片，删除就的图片 deleteFileOrPath
+			if(shop == null || shop.getShopId() ==  null &amp;&amp; fileName != null &amp;&amp; !&quot;&quot;.equals(fileName)) &#123;
+				return new ShopExecution(ShopStateEnum.NULL_SHOP);
+			&#125; else &#123;
+				 if(shopImgInputStream != null) &#123;
+					 Shop tempShop = shopDao.queryByShopId(shop.getShopId());
+					 if(tempShop.getShopImg() != null) &#123;
+						 ImageUtil.deleteFileOrPath(tempShop.getShopImg());
+					 &#125;
+					 addShopImg(shop, shopImgInputStream, fileName);
+				 &#125;
+			&#125;
+			// 2.更新店铺信息
+			shop.setLastEditTime(new Date());
+			int effectedNum = shopDao.updateShop(shop);
+			if(effectedNum &lt;= 0) &#123;
+				return new ShopExecution(ShopStateEnum.INNER_ERROR);
+			&#125;else &#123;
+				shop = shopDao.queryByShopId(shop.getShopId());
+				return new ShopExecution(ShopStateEnum.SUCCESS, shop);
+			&#125;
+
+		&#125; catch(Exception e) &#123;
+			throw new ShopOperationException(&quot;modifyShop error&quot; + e.getMessage());
+		&#125;
+	&#125;
+</code></pre>
+<ol start="3">
+<li>单元测试</li>
+</ol>
+<pre><code class="language-java">	@Test
+	@Ignore
+	public void testModifyShop() throws FileNotFoundException &#123;
+		Shop shop = new Shop();
+		shop.setShopId(1L);
+		shop.setShopName(&quot;修改后的店铺名称&quot;);
+		File shopImg = new File(&quot;/Users/jxh/Downloads/src.jpeg&quot;);
+		InputStream is = new FileInputStream(shopImg);
+		ShopExecution shopExecution =  shopService.modifyShop(shop, is, &quot;src.jpeg&quot;);
+		System.out.println(&quot;新的图片地址为：&quot; + shopExecution.getShop().getShopImg());
+	&#125;
+</code></pre>
+<ol start="4">
+<li>拓展</li>
+</ol>
+<ul>
+<li>ImageUtil.java 删除就图片文件或路径。生成新的图片路径</li>
+</ul>
+<pre><code class="language-java">	/**
+	 * storePath是文件的路径还是目录的路径，
+	 * 如果storePath是文件路径则删除改文件
+	 * 如果storePath是目录路径则删除改目录下的所有文件
+	 */
+	public static void deleteFileOrPath(String storePath) &#123;
+		File fileOrPath = new File(PathUtil.getImgBasePath() + storePath);
+		if(fileOrPath.exists()) &#123;
+			if(fileOrPath.isDirectory()) &#123;
+				File files[] = fileOrPath.listFiles();
+				for(int i = 0; i &lt; files.length; i++) &#123;
+					files[i].delete();
+				&#125;
+			&#125;
+			fileOrPath.delete();
+		&#125;
+	&#125;
+</code></pre>
+<hr>
+<h4 id="5-2-3-Controller-层"><a href="#5-2-3-Controller-层" class="headerlink" title="5.2.3 Controller 层"></a>5.2.3 Controller 层</h4><ol>
+<li>afsd</li>
+</ol>
+<h2 id="5-3-商品类别列表展示"><a href="#5-3-商品类别列表展示" class="headerlink" title="5.3 商品类别列表展示"></a>5.3 商品类别列表展示</h2><h4 id="5-3-1-dao-层"><a href="#5-3-1-dao-层" class="headerlink" title="5.3.1 dao 层"></a>5.3.1 dao 层</h4><ol>
+<li>ProductCategoryDao.java 接口</li>
+</ol>
+<pre><code class="language-java">import com.imooc.o2o.entity.ProductCategory;
+
+public interface ProductCategoryDao &#123;
+	/**
+	 * 通过shop id 查询店铺商品类别
+	 * @param shopId
+	 * @return
+	 */
+	List&lt;ProductCategory&gt; queryProductCategoryList(long shopId);
+&#125;
+</code></pre>
+<ol start="2">
+<li>Mapper 用于实现 dao 接口的 ProductCategoryDao.xml</li>
+</ol>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
+&lt;mapper namespace=&quot;com.imooc.o2o.dao.ProductCategoryDao&quot;&gt;
+	&lt;!-- 目的：为dao接口方法题哦功能sql语句配置 --&gt;
+	&lt;select id=&quot;queryProductCategory&quot; resultType=&quot;com.imooc.o2o.entity.ProductCategory&quot; parameterType=&quot;Long&quot;&gt;
+		SELECT
+		product_category_id,product_category_name,priority,create_time,shop_id
+		FROM tb_product_category
+		WHERE
+		shop_id = #&#123;shopId&#125;
+		ORDER BY priority DESC
+	&lt;/select&gt;
+&lt;/mapper&gt;
+</code></pre>
+<ol start="3">
+<li>单元测试 ProductCategoryDaoTest.java</li>
+</ol>
+<pre><code class="language-java">public class ProductCategoryDaoTest extends BaseTest &#123;
+	@Autowired
+	private ProductCategoryDao productCategoryDao;
+
+	@Test
+	public void testProductCategoryDao() &#123;
+		long shopId = 1;
+		List&lt;ProductCategory&gt; productCategoryList = productCategoryDao.queryProductCategoryList(shopId);
+		System.out.println(&quot;该店铺自定义类别数为：&quot; + productCategoryList.size());
+	&#125;
+&#125;
+</code></pre>
+<h4 id="5-3-2-service-层"><a href="#5-3-2-service-层" class="headerlink" title="5.3.2 service 层"></a>5.3.2 service 层</h4><ol>
+<li>接口</li>
+</ol>
+<pre><code class="language-java">import com.imooc.o2o.entity.ProductCategory;
+public interface ProductCategoryService &#123;
+	// 查询指定某个店铺下的所有商品类别信息
+	List&lt;ProductCategory&gt; getProductCategoryList(long shopId);
+&#125;
+</code></pre>
+<ol start="2">
+<li>实现类</li>
+</ol>
+<pre><code class="language-java">@Service
+public class ProductCategoryServiceImpl implements ProductCategoryService &#123;
+	@Autowired
+	private ProductCategoryDao productCategoryDao;
+
+	@Override
+	public List&lt;ProductCategory&gt; getProductCategoryList(long shopId) &#123;
+		return productCategoryDao.queryProductCategoryList(shopId);
+	&#125;
+&#125;
+</code></pre>
+<ol start="3">
+<li>单元测试</li>
+</ol>
+<h4 id="5-3-3-controller-层-ProductCategoryManagementController-java"><a href="#5-3-3-controller-层-ProductCategoryManagementController-java" class="headerlink" title="5.3.3 controller 层 ProductCategoryManagementController.java"></a>5.3.3 controller 层 ProductCategoryManagementController.java</h4><pre><code class="language-java">import com.imooc.o2o.dao.Result;
+import com.imooc.o2o.entity.ProductCategory;
+import com.imooc.o2o.entity.Shop;
+import com.imooc.o2o.enums.ProductCategoryStateEnum;
+import com.imooc.o2o.service.ProductCategoryService;
+
+@Controller
+@RequestMapping(&quot;/shopadmin&quot;)
+public class ProductCategoryManagementController &#123;
+	@Autowired
+	private ProductCategoryService productCategoryService;
+
+	@RequestMapping(value = &quot;/getproductcategorylist&quot;, method=RequestMethod.GET)
+	@ResponseBody
+	private Result&lt;List&lt;ProductCategory&gt;&gt; getProductCategoryList(HttpServletRequest request) &#123; // 返回一个对象，所有使用Result也可以
+
+		Shop currentShop = (Shop) request.getSession().getAttribute(&quot;currentShop&quot;);
+		List&lt;ProductCategory&gt; list = null;
+		if(currentShop != null &amp;&amp; currentShop.getShopId() &gt; 0) &#123; // 如果为空就是店铺没有操作的权限
+			list = productCategoryService.getProductCategoryList(currentShop.getShopId());
+			return new Result&lt;List&lt;ProductCategory&gt;&gt;(true, list);
+		&#125; else &#123;
+			ProductCategoryStateEnum ps = ProductCategoryStateEnum.INNER_ERROR;
+			return new Result&lt;List&lt;ProductCategory&gt;&gt;(false, ps.getState(), ps.getStateInfo());
+		&#125;
+	&#125;
+&#125;
+</code></pre>
+<h4 id="5-3-3-Controller-层"><a href="#5-3-3-Controller-层" class="headerlink" title="5.3.3 Controller 层"></a>5.3.3 Controller 层</h4><pre><code class="language-java">@Controller
+@RequestMapping(&quot;/shopadmin&quot;)
+public class ProductCategoryManagementController &#123;
+	@Autowired
+	private ProductCategoryService productCategoryService;
+
+	@RequestMapping(value = &quot;/getproductcategorylist&quot;, method=RequestMethod.GET)
+	@ResponseBody
+	private Result&lt;List&lt;ProductCategory&gt;&gt; getProductCategoryList(HttpServletRequest request) &#123; // 返回一个对象，所有使用Result也可以
+
+		Shop currentShop = (Shop) request.getSession().getAttribute(&quot;currentShop&quot;);
+		List&lt;ProductCategory&gt; list = null;
+		if(currentShop != null &amp;&amp; currentShop.getShopId() &gt; 0) &#123; // 如果为空就是店铺没有操作的权限
+			list = productCategoryService.getProductCategoryList(currentShop.getShopId());
+			return new Result&lt;List&lt;ProductCategory&gt;&gt;(true, list);
+		&#125; else &#123;
+			ProductCategoryStateEnum ps = ProductCategoryStateEnum.INNER_ERROR;
+			return new Result&lt;List&lt;ProductCategory&gt;&gt;(false, ps.getState(), ps.getStateInfo());
+		&#125;
+	&#125;
+&#125;
+</code></pre>
+<hr>
+<h2 id="5-4-批量添加商品列表"><a href="#5-4-批量添加商品列表" class="headerlink" title="5.4 批量添加商品列表"></a>5.4 批量添加商品列表</h2><h4 id="5-4-1-dao-层"><a href="#5-4-1-dao-层" class="headerlink" title="5.4.1 dao 层"></a>5.4.1 dao 层</h4><ol>
+<li>ProductCategoryDao.java 接口</li>
+</ol>
+<pre><code class="language-java">public interface ProductCategoryDao &#123;
+	// 批量新增商品类标
+	int batchInsertProductCategory(List&lt;ProductCategory&gt; productCategoryList);
+&#125;
+</code></pre>
+<ol start="2">
+<li>mapper ProductCategoryDao.xml</li>
+</ol>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
+&lt;mapper namespace=&quot;com.imooc.o2o.dao.ProductCategoryDao&quot;&gt;
+	&lt;insert id=&quot;batchInsertProductCategory&quot; parameterType=&quot;java.util.List&quot;&gt;
+		INSERT INTO
+		tb_product_category(product_category_name, priority, create_time, shop_id)
+		VALUES
+		&lt;!-- collection:遍历 list。separator分隔符:value(xxx),(xxx)  --&gt;
+		&lt;foreach collection=&quot;list&quot; item=&quot;productCategory&quot; index=&quot;index&quot; separator=&quot;,&quot;&gt;
+			(
+				#&#123;productCategory.productCategoryName&#125;,
+				#&#123;productCategory.priority&#125;,
+				#&#123;productCategory.createTime&#125;,
+				#&#123;productCategory.shopId&#125;
+			)
+		&lt;/foreach&gt;
+	&lt;/insert&gt;
+&lt;/mapper&gt;
+</code></pre>
+<ol start="3">
+<li>单元测试 ProductCategoryDaoTest.java</li>
+</ol>
+<pre><code class="language-java">	@Test
+	public void testBatchInsertProductCategory() &#123;
+		ProductCategory productCategory = new ProductCategory();
+		productCategory.setProductCategoryName(&quot;商品类别1&quot;);
+		productCategory.setPriority(1);
+		productCategory.setCreateTime(new Date());
+		productCategory.setShopId(1L);
+
+		ProductCategory productCategory2 = new ProductCategory();
+		productCategory2.setProductCategoryName(&quot;商品类别2&quot;);
+		productCategory2.setPriority(2);
+		productCategory2.setCreateTime(new Date());
+		productCategory2.setShopId(1L);
+
+		List&lt;ProductCategory&gt; productCategoryList = new ArrayList&lt;ProductCategory&gt;();
+		productCategoryList.add(productCategory);
+		productCategoryList.add(productCategory2);
+		int effectedNum = productCategoryDao.batchInsertProductCategory(productCategoryList);
+		assertEquals(2, effectedNum);
+
+	&#125;
+</code></pre>
+<h4 id="5-4-2-Service-层"><a href="#5-4-2-Service-层" class="headerlink" title="5.4.2 Service 层"></a>5.4.2 Service 层</h4><ol>
+<li>接口 ProductCategoryService.java</li>
+</ol>
+<pre><code class="language-java">import com.imooc.o2o.dto.ProductCategoryExecution;
+import com.imooc.o2o.entity.ProductCategory;
+import com.imooc.o2o.exceptions.ProductCategoryOperationException;
+public interface ProductCategoryService &#123;
+	// 查询指定某个店铺下的所有商品类别信息
+	List&lt;ProductCategory&gt; getProductCategoryList(long shopId);
+
+	ProductCategoryExecution batchAddProductCategory(List&lt;ProductCategory&gt; productCategoryList) throws ProductCategoryOperationException;
+&#125;
+</code></pre>
+<ol start="2">
+<li>实现类 ProductCategoryServiceImpl.java</li>
+</ol>
+<pre><code class="language-java">public class ProductCategoryServiceImpl implements ProductCategoryService &#123;
+	@Autowired
+	private ProductCategoryDao productCategoryDao;
+	@Override
+	public ProductCategoryExecution batchAddProductCategory(List&lt;ProductCategory&gt; productCategoryList)
+			throws ProductCategoryOperationException &#123;
+		// TODO Auto-generated method stub
+		if(productCategoryList != null &amp;&amp; productCategoryList.size() &gt; 0) &#123; // 空值判断
+			try &#123;
+				int effectedNum = productCategoryDao.batchInsertProductCategory(productCategoryList);
+				if(effectedNum &lt;= 0) &#123; // 添加成功
+					throw new ProductCategoryOperationException(&quot;店铺类别创建失败&quot;);
+				&#125; else &#123; // 添加失败
+					return new ProductCategoryExecution(ProductCategoryStateEnum.SUCCESS);
+				&#125;
+			&#125;catch(Exception e) &#123;
+				throw new ProductCategoryOperationException(&quot;batchAddProductCategory error: &quot; + e.getMessage());
+			&#125;
+		&#125;else &#123;
+			return new ProductCategoryExecution(ProductCategoryStateEnum.EMPTY_LIST);
+		&#125;
+	&#125;
+&#125;
+</code></pre>
+<h4 id="5-4-3-Controller-层"><a href="#5-4-3-Controller-层" class="headerlink" title="5.4.3 Controller 层"></a>5.4.3 Controller 层</h4><pre><code class="language-java">	@RequestMapping(value = &quot;/addproductcategorys&quot;, method = RequestMethod.POST)
+	@ResponseBody
+	private Map&lt;String, Object&gt; addProductCategorys(@RequestBody List&lt;ProductCategory&gt; productCategoryList,
+			HttpServletRequest request) &#123;
+		Map&lt;String, Object&gt; modelMap = new HashMap&lt;String, Object&gt;();
+		Shop currentShop = (Shop) request.getSession().getAttribute(&quot;currentShop&quot;);
+		for (ProductCategory pc : productCategoryList) &#123;
+			pc.setShopId(currentShop.getShopId());
+		&#125;
+		if (productCategoryList != null &amp;&amp; productCategoryList.size() &gt; 0) &#123;
+			try &#123;
+				ProductCategoryExecution pe = productCategoryService.batchAddProductCategory(productCategoryList);
+				if (pe.getState() == ProductCategoryStateEnum.SUCCESS.getState()) &#123;
+					modelMap.put(&quot;success&quot;, true);
+				&#125; else &#123;
+					modelMap.put(&quot;success&quot;, false);
+					modelMap.put(&quot;errMsg&quot;, pe.getStateInfo());
+				&#125;
+			&#125; catch (ProductCategoryOperationException e) &#123;
+				modelMap.put(&quot;success&quot;, false);
+				modelMap.put(&quot;errMsg&quot;, e.toString());
+				return modelMap;
+			&#125;
+		&#125; else &#123;
+			modelMap.put(&quot;success&quot;, false);
+			modelMap.put(&quot;errMsg&quot;, &quot;请至少输入一个商品类别&quot;);
+		&#125;
+		return modelMap;
+	&#125;
+</code></pre>
+<h2 id="5-5-删除商品类别"><a href="#5-5-删除商品类别" class="headerlink" title="5.5 删除商品类别"></a>5.5 删除商品类别</h2><h4 id="5-5-1-dao-层"><a href="#5-5-1-dao-层" class="headerlink" title="5.5.1 dao 层"></a>5.5.1 dao 层</h4><ol>
+<li>接口 ProductCategoryDao.java</li>
+</ol>
+<pre><code class="language-java">public interface ProductCategoryDao &#123;
+	// 删除指定商品类别, 如果有两个参数，mybatis认不出来，必须使用@param注解来标识
+	// 加多参数 shopId 是为了防止不是本店铺的对商品列表的操作
+	int deleteProductCategory(@Param(&quot;productCategoryId&quot;) long productCategoryId, @Param(&quot;shopId&quot;) long shopId);
+&#125;
+</code></pre>
+<ol start="2">
+<li>mapper ProductCategory.xml</li>
+</ol>
+<pre><code class="language-xml">	&lt;delete id=&quot;deleteProductCategory&quot;&gt;
+		DELETE FROM
+		tb_product_category
+		WHERE
+		product_category_id = #&#123;productCategoryId&#125;
+		AND shop_id = #&#123;shopId&#125;
+	&lt;/delete&gt;
+</code></pre>
+<ol start="3">
+<li>单元测试 ProductCategoryDaoTest.java</li>
+</ol>
+<pre><code class="language-java">	// junit回环，测试添加测试数据，和删除测试数据。对数据库没有影响。推荐设计 junit 回环
+	@Test
+	public void testCDeleteProductCategory() throws Exception &#123;
+		long shopId = 1;
+		List&lt;ProductCategory&gt; productCategoryList = productCategoryDao.queryProductCategoryList(shopId);
+		for(ProductCategory pc : productCategoryList) &#123;
+			if(&quot;商品类别1&quot;.equals(pc.getProductCategoryName()) || &quot;商品类别2&quot;.equals(pc.getProductCategoryName())) &#123;
+				int effectedNum = productCategoryDao.deleteProductCategory(pc.getProductCategoryId(), shopId);
+				assertEquals(1, effectedNum);
+			&#125;
+		&#125;
+	&#125;
+</code></pre>
+<h4 id="5-5-2-Serivce-层"><a href="#5-5-2-Serivce-层" class="headerlink" title="5.5.2 Serivce 层"></a>5.5.2 Serivce 层</h4><ol>
+<li>接口 ProductCategoryService.java</li>
+</ol>
+<pre><code class="language-java">	// 将此类别下的商品里的类别id置为空，再删除掉该商品类别
+	ProductCategoryExecution deleteProductCategory(long productCategoryId, long shopId) throws ProductCategoryOperationException;
+</code></pre>
+<ol start="2">
+<li>实现类 ProductCategoryServiceImpl.java</li>
+</ol>
+<pre><code class="language-java">	// 删除商品类别
+	@Override
+	@Transactional //事务管理注解：该方法进行有2步操作：删除商品类别，将此商品类别下的商品id置为空，同时操作完成后再提交。
+	public ProductCategoryExecution deleteProductCategory(long productCategoryId, long shopId)
+			throws ProductCategoryOperationException &#123;
+		try &#123;
+			int effectedNum = productCategoryDao.deleteProductCategory(productCategoryId, shopId);
+			if(effectedNum &lt;= 0) &#123;
+				throw new ProductCategoryOperationException(&quot;商品类别删除失败&quot;);
+			&#125;else &#123;
+				return new ProductCategoryExecution(ProductCategoryStateEnum.SUCCESS);
+			&#125;
+		&#125; catch(Exception e) &#123;
+			throw new ProductCategoryOperationException(&quot;deleteProductCategory error: &quot; + e.getMessage());
+		&#125;
+	&#125;
+</code></pre>
+<h4 id="5-5-3-Controller-层"><a href="#5-5-3-Controller-层" class="headerlink" title="5.5.3 Controller 层"></a>5.5.3 Controller 层</h4><pre><code class="language-java">	@RequestMapping(value = &quot;/removeproductcategorys&quot;, method = RequestMethod.POST)
+	@ResponseBody
+	private Map&lt;String, Object&gt; removeProductCategorys(Long productCategoryId, HttpServletRequest request) &#123;
+		Map&lt;String, Object&gt; modelMap = new HashMap&lt;String, Object&gt;();
+
+		if (productCategoryId != null &amp;&amp; productCategoryId &gt; 0) &#123;
+			try &#123;
+				Shop currentShop = (Shop) request.getSession().getAttribute(&quot;currentShop&quot;);
+				ProductCategoryExecution pe = productCategoryService.deleteProductCategory(productCategoryId, currentShop.getShopId());
+				if (pe.getState() == ProductCategoryStateEnum.SUCCESS.getState()) &#123;
+					modelMap.put(&quot;success&quot;, true);
+				&#125; else &#123;
+					modelMap.put(&quot;success&quot;, false);
+					modelMap.put(&quot;errMsg&quot;, pe.getStateInfo());
+				&#125;
+			&#125; catch (ProductCategoryOperationException e) &#123;
+				modelMap.put(&quot;success&quot;, false);
+				modelMap.put(&quot;errMsg&quot;, e.toString());
+				return modelMap;
+			&#125;
+		&#125; else &#123;
+			modelMap.put(&quot;success&quot;, false);
+			modelMap.put(&quot;errMsg&quot;, &quot;请至少选择一个商品类别&quot;);
+		&#125;
+		return modelMap;
+	&#125;
+</code></pre>
+<hr>
+<h1 id="6、商品管理"><a href="#6、商品管理" class="headerlink" title="6、商品管理"></a>6、商品管理</h1><h2 id="6-1-商品添加，-商品详情图批量添加"><a href="#6-1-商品添加，-商品详情图批量添加" class="headerlink" title="6.1 商品添加， 商品详情图批量添加"></a>6.1 商品添加， 商品详情图批量添加</h2><p>实现商品添加，掌握批量图片添加</p>
+<h4 id="6-1-1"><a href="#6-1-1" class="headerlink" title="6.1.1"></a>6.1.1</h4><ol>
+<li>接口 ProductImgDao.java &amp; ProductDao.java</li>
+</ol>
+<pre><code class="language-java">public interface ProductImgDao &#123;
+	// 批量添加商品详情图片
+	int batchInsertProductImg(List&lt;ProductImg&gt; productImgList);
+&#125;
+
+public interface ProductDao &#123;
+	// 添加商品
+	int insertProduct(Product product);
+&#125;
+</code></pre>
+<ol start="2">
+<li>mapper ProductImgDao.xml &amp; ProductDao.xml</li>
+</ol>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
+&lt;mapper namespace=&quot;com.imooc.o2o.dao.ProductImgDao&quot;&gt;
+	&lt;!-- 参数类型是List --&gt;
+	&lt;insert id=&quot;batchInsertProductImg&quot;
+		parameterType=&quot;java.util.List&quot;&gt;
+		INSERT INTO
+		tb_product_img(img_addr, img_desc, priority, create_time,
+		product_id)
+		VALUES
+		&lt;foreach collection=&quot;list&quot; item=&quot;productImg&quot; index=&quot;index&quot;
+			separator=&quot;,&quot;&gt;
+			(
+			#&#123;productImg.imgAddr&#125;,
+			#&#123;productImg.imgDesc&#125;,
+			#&#123;productImg.priority&#125;,
+			#&#123;productImg.createTime&#125;,
+			#&#123;productImg.productId&#125;
+			)
+		&lt;/foreach&gt;
+	&lt;/insert&gt;
+&lt;/mapper&gt;
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
+&lt;mapper namespace=&quot;com.imooc.o2o.dao.ProductDao&quot;&gt;
+	&lt;insert id=&quot;insertProduct&quot; parameterType=&quot;com.imooc.o2o.entity.Product&quot; useGeneratedKeys=&quot;true&quot; keyProperty=&quot;productId&quot; keyColumn=&quot;product_id&quot;&gt;
+		INSERT INTO
+		tb_product(product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time,
+		enable_status, product_category_id, shop_id)
+		VALUES
+		(#&#123;productName&#125;, #&#123;productDesc&#125;, #&#123;imgAddr&#125;, #&#123;normalPrice&#125;, #&#123;promotionPrice&#125;, #&#123;priority&#125;, #&#123;createTime&#125;, #&#123;lastEditTime&#125;,
+		#&#123;enableStatus&#125;, #&#123;productCategory.productCategoryId&#125;, #&#123;shop.shopId&#125;)
+	&lt;/insert&gt;
+&lt;/mapper&gt;
+</code></pre>
+<ol start="3">
+<li>单元测试 ProductImgDaoTest.java &amp; ProductDaoTest.java</li>
+</ol>
+<pre><code class="language-java">@FixMethodOrder(MethodSorters.NAME_ASCENDING) // 按照名字顺序执行测试方法
+public class ProductImgDaoTest extends BaseTest&#123;
+
+	@Autowired
+	private ProductImgDao productImgDao;
+
+	@Test
+	public void testABatchInsertProductImgDao() throws Exception &#123;
+		// productId 为1的商品里添加两个详情图记录
+		ProductImg productImg1= new ProductImg();
+		productImg1.setImgAddr(&quot;图片1&quot;);
+		productImg1.setImgDesc(&quot;测试图片1&quot;);
+		productImg1.setPriority(1);
+		productImg1.setCreateTime(new Date());
+		productImg1.setProductId(1L);
+
+		ProductImg productImg2= new ProductImg();
+		productImg2.setImgAddr(&quot;图片2&quot;);
+		productImg2.setImgDesc(&quot;测试图片2&quot;);
+		productImg2.setPriority(1);
+		productImg2.setCreateTime(new Date());
+		productImg2.setProductId(1L);
+
+		List&lt;ProductImg&gt; productImgList = new ArrayList&lt;ProductImg&gt;();
+		productImgList.add(productImg1);
+		productImgList.add(productImg2);
+		int effectedNum = productImgDao.batchInsertProductImg(productImgList);
+		assertEquals(2, effectedNum);
+	&#125;
+&#125;
+
+FixMethodOrder(MethodSorters.NAME_ASCENDING) // 按测试方法名字的顺序执行测试
+public class ProductDaoTest extends BaseTest &#123;
+
+	@Autowired
+	private ProductDao productDao;
+	@Autowired
+	private ProductImgDao productImgDao;
+
+	@Test
+	public void testAInsertProduct() throws Exception&#123;
+		Shop shop1 = new Shop();
+		shop1.setShopId(1L);
+		ProductCategory pc1 = new ProductCategory();
+		pc1.setProductCategoryId(1L);
+		// 初始化三个商品实例并添加进shopId为1的店铺里，同时商品类别Id也为1
+		Product product1 = new Product();
+		product1.setProductName(&quot;测试1&quot;);
+		product1.setProductDesc(&quot;测试Desc1&quot;);
+		product1.setImgAddr(&quot;test1&quot;);
+		product1.setPriority(1);
+		product1.setEnableStatus(1);
+		product1.setCreateTime(new Date());
+		product1.setLastEditTime(new Date());
+		product1.setShop(shop1);
+		product1.setProductCategory(pc1);
+
+		Product product2 = new Product();
+		product2.setProductName(&quot;测试2&quot;);
+		product2.setProductDesc(&quot;测试Desc2&quot;);
+		product2.setImgAddr(&quot;test2&quot;);
+		product2.setPriority(2);
+		product2.setEnableStatus(0);
+		product2.setCreateTime(new Date());
+		product2.setLastEditTime(new Date());
+		product2.setShop(shop1);
+		product2.setProductCategory(pc1);
+
+		Product product3 = new Product();
+		product3.setProductName(&quot;test3&quot;);
+		product3.setProductDesc(&quot;测试Desc3&quot;);
+		product3.setImgAddr(&quot;test3&quot;);
+		product3.setPriority(3);
+		product3.setEnableStatus(1);
+		product3.setCreateTime(new Date());
+		product3.setLastEditTime(new Date());
+		product3.setShop(shop1);
+		product3.setProductCategory(pc1);
+
+		// 判断添加是否成功
+		int effectedNum = productDao.insertProduct(product1);
+		assertEquals(1, effectedNum);
+		effectedNum = productDao.insertProduct(product2);
+		assertEquals(1, effectedNum);
+		effectedNum = productDao.insertProduct(product3);
+		assertEquals(1, effectedNum);
+	&#125;
+&#125;
+</code></pre>
+<h4 id="6-1-2-service-层"><a href="#6-1-2-service-层" class="headerlink" title="6.1.2 service 层"></a>6.1.2 service 层</h4><ol>
+<li>接口 ProductService.java</li>
+</ol>
+<pre><code class="language-java">public interface ProductService &#123;
+	// 添加商品信息以及图片处理。思路：1.处理缩略图;2.处理商品详情图片;3.添加商品信息
+	//ProductExecution addProduct(Product product, InputStream thumbnail, String thumbnailName, List&lt;InputStream&gt; productImgList, List&lt;String&gt; productImgNameList) throws ProductOperationException;
+	// 封装 图片和图片名
+	ProductExecution addProduct(Product product, ImageHolder thumbnail, List&lt;ImageHolder&gt; productImgList) throws ProductOperationException;
+&#125;
+</code></pre>
+<ol start="2">
+<li>实现类</li>
+</ol>
+<pre><code class="language-java">@Service
+public class ProductServiceImpl implements ProductService&#123;
+
+	@Autowired
+	private ProductDao productDao;
+	@Autowired
+	private ProductImgDao productImgDao;
+	/**
+	 * 添加缩略图(和店铺注册一样)
+	 * @param product
+	 * @param thumbnail
+	 */
+	private void addThumbnail(Product product, ImageHolder thumbnail) &#123;
+		String dest = PathUtil.getShopImagePath(product.getShop().getShopId());
+		String thumbnailAddr = ImageUtil.generateThumbnail(thumbnail, dest);
+		product.setImgAddr(thumbnailAddr);
+	&#125;
+	/**
+	 * 批量添加图片
+	 * @param product
+	 * @param productImgHolder
+	 */
+	private void addProductImgList(Product product, List&lt;ImageHolder&gt; productImgHolderList) &#123;
+		// 获取图片存储路径，这里直接存放到相应店铺的文件夹地下
+		String dest = PathUtil.getShopImagePath(product.getShop().getShopId());
+		List&lt;ProductImg&gt; productImgList = new ArrayList&lt;ProductImg&gt;();
+		// 遍历图片一次去处理，并添加进 productImg 实体类里
+		for(ImageHolder productImgHolder: productImgHolderList) &#123;
+			String imgAddr = ImageUtil.generateNormalImg(productImgHolder, dest);
+			ProductImg productImg = new ProductImg();
+			productImg.setImgAddr(imgAddr);
+			productImg.setProductId(product.getProductId());
+			productImg.setCreateTime(new Date());
+			productImgList.add(productImg);
+		&#125;
+		// 如果确实是有图片需要添加的，就执行批量添加操作
+		if(productImgList.size() &gt; 0) &#123;
+			try &#123;
+				int effectedNum = productImgDao.batchInsertProductImg(productImgList);
+				if(effectedNum &lt;= 0) &#123;
+					throw new ProductOperationException(&quot;创建商品详情图片失败&quot;);
+				&#125;
+			&#125; catch(Exception e) &#123;
+				throw new ProductOperationException(&quot;创建商品详情图片失败:&quot; + e.toString());
+			&#125;
+		&#125;
+	&#125;
+
+	@Override
+	@Transactional // 通过spring的事务管理，去管理以下4个步骤，其中任何一步出错了就会回滚数据
+	/**
+	 * 方法步骤：
+	 * 1. 处理缩略图，获取缩略图相对路径并赋值给product(和注册店铺差不多)
+	 * 2. 往 tb_product 写入商品信息，成功获取 productId(因为在mapper 使用了 useGeneratedKeys=&quot;true&quot;)
+	 * 3. 结合 productId 批量处理商品详情图
+	 * 4. 将商品详情列表批量插入 tb_product_img中
+	 */
+	public ProductExecution addProduct(Product product, ImageHolder thumbnail, List&lt;ImageHolder&gt; productImgHolderList)
+			throws ProductOperationException &#123;
+		// 空值判断
+		if(product != null &amp;&amp; product.getShop() != null &amp;&amp; product.getShop().getShopId() != null) &#123;
+			// 给商品设置上默认属性
+			product.setCreateTime(new Date());
+			product.setLastEditTime(new Date());
+			// 默认为上架的状态
+			product.setEnableStatus(1);
+			// 若商品缩略图不为空则添加
+			if(thumbnail != null) &#123;
+				addThumbnail(product, thumbnail);
+			&#125;
+			try &#123;
+				// 创建商品信息
+				int effectedNum = productDao.insertProduct(product);
+				if(effectedNum &lt;= 0) &#123;
+					throw new ProductOperationException(&quot;创建商品失败&quot;);
+				&#125;
+			&#125; catch(Exception e) &#123;
+				throw new ProductOperationException(&quot;创建商品失败:&quot; + e.toString());
+			&#125;
+			// 若商品详情图不为空则添加
+			if(productImgHolderList != null &amp;&amp; productImgHolderList.size() &gt; 0) &#123;
+				addProductImgList(product, productImgHolderList);
+			&#125;
+			return new ProductExecution(ProductStateEnum.SUCCESS, product);
+		&#125; else &#123;
+			// 传参为空则返回空值错误信息
+			return new ProductExecution(ProductStateEnum.EMPTY_LIST);
+		&#125;
+	&#125;
+
+&#125;
+</code></pre>
+<ol start="3">
+<li>单元测试</li>
+</ol>
+<pre><code class="language-java">public class ProductServiceTest extends BaseTest &#123;
+
+	@Autowired
+	private ProductService productService;
+
+	@Test
+	public void testAddProduct() throws ShopOperationException, FileNotFoundException&#123;
+		// 创建shopId 为1且productCategoryId为1的商品实例并给其成员变量赋值
+		Product product = new Product();
+		Shop shop = new Shop();
+		shop.setShopId(1L);
+		ProductCategory pc = new ProductCategory();
+		pc.setProductCategoryId(1L);
+		product.setShop(shop);
+		product.setProductCategory(pc);
+		product.setProductName(&quot;测试商品1&quot;);
+		product.setProductDesc(&quot;测试商品1&quot;);
+		product.setPriority(20);
+		product.setCreateTime(new Date());
+		product.setEnableStatus(ProductStateEnum.SUCCESS.getState());
+		// 创建缩略图文件流
+		File thumbnailFile =new File(&quot;/Users/jxh/Downloads/src.jpeg&quot;);
+		InputStream is = new FileInputStream(thumbnailFile);
+		ImageHolder thumbnail = new ImageHolder(thumbnailFile.getName(), is);
+		// 创建两个商品详情图片文件流并将他们添加到详情图列表中
+		File productImg1 = new File(&quot;/Users/jxh/Downloads/src.jpeg&quot;);
+		InputStream is1 = new FileInputStream(productImg1);
+		File productImg2 = new File(&quot;/Users/jxh/Downloads/src2.jpeg&quot;);
+		InputStream is2 = new FileInputStream(productImg1);
+		List&lt;ImageHolder&gt; productImgList = new ArrayList&lt;ImageHolder&gt;();
+		productImgList.add(new ImageHolder(productImg1.getName(),is1));
+		productImgList.add(new ImageHolder(productImg2.getName(),is2));
+		// 添加商品并验证
+		ProductExecution pe = productService.addProduct(product, thumbnail, productImgList);
+		assertEquals(ProductStateEnum.SUCCESS.getState(), pe.getState());
+
+	&#125;
+&#125;
+</code></pre>
+<h4 id="6-1-3-controller-层"><a href="#6-1-3-controller-层" class="headerlink" title="6.1.3 controller 层"></a>6.1.3 controller 层</h4><pre><code class="language-java">@Controller
+@RequestMapping(&quot;/shopadmin&quot;)
+public class ProductManagementController &#123;
+	@Autowired
+	private ProductService productService;
+
+	// 支持上次商品详情图的最大数量
+	private static final int IMAGEMAXCOUNT = 6;
+
+	@RequestMapping(value = &quot;/addproduct&quot;, method = RequestMethod.POST)
+	@ResponseBody
+	private Map&lt;String, Object&gt; addProduct(HttpServletRequest request) &#123;
+		Map&lt;String, Object&gt; modelMap = new HashMap&lt;String, Object&gt;();
+		// 验证码校验
+		if(!CodeUtil.checkVerifyCode(request)) &#123;
+			modelMap.put(&quot;success&quot;, false);
+			modelMap.put(&quot;errMsg&quot;, &quot;输入了错误的验证码&quot;);
+			return modelMap;
+		&#125;
+		// 接受前端参数的变量的初始化，包括商品，缩略图，详情图列表实体类
+		ObjectMapper mapper = new ObjectMapper();
+		Product product = null;
+		String productStr = HttpServletRequestUtil.getString(request, &quot;productStr&quot;);
+		MultipartHttpServletRequest multipartRequest = null;
+		ImageHolder thumbnail = null;
+		List&lt;ImageHolder&gt; productImgList = new ArrayList&lt;ImageHolder&gt;();
+		CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(request.getSession().getServletContext());
+		try &#123;
+			// 若请求中存在文件流，则取出相关的文件（包括缩略图和详情图）
+			if(multipartResolver.isMultipart(request)) &#123;
+				multipartRequest = (MultipartHttpServletRequest) request;
+				// 取出缩略图并构建 ImageHolder对象
+				CommonsMultipartFile thumbnailFile = (CommonsMultipartFile) multipartRequest.getFile(&quot;thumbnail&quot;);
+				thumbnail = new ImageHolder(thumbnailFile.getOriginalFilename(), thumbnailFile.getInputStream());
+				// 取出详情图列表并构建List&lt;ImageHolder&gt;列表对象，最多支持六张图片上传
+				for(int i = 0; i &lt; IMAGEMAXCOUNT; i++) &#123;
+					CommonsMultipartFile productImgFile = (CommonsMultipartFile) multipartRequest.getFile(&quot;productImg&quot; + i);
+					if(productImgFile != null) &#123;
+						// 若取出的第i个详情图片文件流不为空，则将其加入详情图列表
+						ImageHolder productImg = new ImageHolder(productImgFile.getOriginalFilename(), productImgFile.getInputStream());
+						productImgList.add(productImg);
+					&#125;else &#123;
+						// 若取出的第i个详情图片文件流为空，则终止循环
+						break;
+					&#125;
+				&#125;
+			&#125;else &#123;
+				modelMap.put(&quot;success&quot;, false);
+				modelMap.put(&quot;errMsg&quot;, &quot;上传图片不能为空&quot;);
+				return modelMap;
+			&#125;
+
+		&#125; catch(Exception e) &#123;
+			modelMap.put(&quot;success&quot;, false);
+			modelMap.put(&quot;errMsg&quot;, e.toString());
+			return modelMap;
+		&#125;
+
+		try &#123;
+			// 尝试获取前端传过来的表单string流并将其转换成 Product实体类
+			product = mapper.readValue(productStr, Product.class);
+		&#125; catch(Exception e) &#123;
+			modelMap.put(&quot;success&quot;, false);
+			modelMap.put(&quot;errMsg&quot;, e.toString());
+			return modelMap;
+		&#125;
+		// 若Product信息，缩略图以及详情图聊表为空，则开始进行商品添加操作
+		if(product != null &amp;&amp; thumbnail != null &amp;&amp; productImgList.size() &gt; 0) &#123;
+			try &#123;
+				// 从session 中获取当前店铺的Id 并赋值给 product, 减少对前端数据的依赖
+				Shop currentShop = (Shop) request.getSession().getAttribute(&quot;currentShop&quot;);
+				Shop shop = new Shop();
+				shop.setShopId(currentShop.getShopId());
+				product.setShop(shop);
+				// 执行添加操作
+				ProductExecution pe = productService.addProduct(product, thumbnail, productImgList);
+				if(pe.getState() == ProductStateEnum.SUCCESS.getState()) &#123;
+					modelMap.put(&quot;success&quot;, true);
+				&#125;else &#123;
+					modelMap.put(&quot;success&quot;, false);
+					modelMap.put(&quot;errMsg&quot;, pe.getStateInfo());
+				&#125;
+			&#125; catch(ProductOperationException e) &#123;
+				modelMap.put(&quot;success&quot;, false);
+				modelMap.put(&quot;errMsg&quot;, e.toString());
+				return modelMap;
+			&#125;
+		&#125; else &#123;
+			modelMap.put(&quot;success&quot;, false);
+			modelMap.put(&quot;errMsg&quot;, &quot;请输入商品信息&quot;);
+		&#125;
+
+		return modelMap;
+	&#125;
+&#125;
+</code></pre>
+<h2 id="6-2-商品编辑"><a href="#6-2-商品编辑" class="headerlink" title="6.2 商品编辑"></a>6.2 商品编辑</h2><p>目标：实现商品的编辑功能（可以借鉴商品的添加和店铺的编辑）；明确如何处理已存在的图片(如果有上传新的缩略图或详情图，就把之前的图片删除掉)。<br>思路：获取商品信息，传入新的图片就把之前的图片删除，提交按钮修改商品信息。</p>
+<h4 id="6-2-1、dao-层"><a href="#6-2-1、dao-层" class="headerlink" title="6.2.1、dao 层"></a>6.2.1、dao 层</h4><ol>
+<li>接口 ProductDoa.java; ProductImgDao.java</li>
+</ol>
+<p>获取商品信息：Product queryProductById(long productId),<br>修改商品信息：int updateProduct(Product product);</p>
+<p>删除商品图片：int deleteProductImgByProductId(long productId); 2. mapper ProductDao.xml &amp; ProductImgDao.xml</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
+&lt;mapper namespace=&quot;com.imooc.o2o.dao.ProductDao&quot;&gt;
+	&lt;!-- 复合数据类型(返回商品的信息和商品详情图的信息) 接口:Product queryProductById(long productId) --&gt;
+	&lt;resultMap type=&quot;com.imooc.o2o.entity.Product&quot;
+		id=&quot;productMap&quot;&gt;
+		&lt;id column=&quot;product_id&quot; property=&quot;productId&quot; /&gt;
+		&lt;result column=&quot;product_name&quot; property=&quot;productName&quot; /&gt;
+		&lt;result column=&quot;product_desc&quot; property=&quot;productDesc&quot; /&gt;
+		&lt;result column=&quot;img_addr&quot; property=&quot;imgAddr&quot; /&gt;
+		&lt;result column=&quot;normal_price&quot; property=&quot;normalPrice&quot; /&gt;
+		&lt;result column=&quot;promotion_price&quot; property=&quot;promotionPrice&quot; /&gt;
+		&lt;result column=&quot;priority&quot; property=&quot;priority&quot; /&gt;
+		&lt;result column=&quot;create_time&quot; property=&quot;createTime&quot; /&gt;
+		&lt;result column=&quot;last_edit_time&quot; property=&quot;lastEditTime&quot; /&gt;
+		&lt;result column=&quot;enable_status&quot; property=&quot;enableStatus&quot; /&gt;
+		&lt;!--assocication可以指定联合的JavaBean对象; property=&quot;role&quot;指定哪个属性是联合的对象; javaType:指定这个属性对象的类型 --&gt;
+		&lt;association column=&quot;product_category_id&quot;
+			property=&quot;productCategory&quot;
+			javaType=&quot;com.imooc.o2o.entity.ProductCategory&quot;&gt;
+			&lt;id column=&quot;product_category_id&quot; property=&quot;productCategoryId&quot; /&gt;
+			&lt;result column=&quot;product_category_name&quot;
+				property=&quot;productCategoryName&quot; /&gt;
+		&lt;/association&gt;
+		&lt;association property=&quot;shop&quot; column=&quot;shpo_id&quot;
+			javaType=&quot;com.imooc.o2o.entity.Shop&quot;&gt;
+			&lt;id column=&quot;shop_id&quot; property=&quot;shopId&quot; /&gt;
+			&lt;result column=&quot;owner_id&quot; property=&quot;ownerId&quot; /&gt;
+			&lt;result column=&quot;shop_name&quot; property=&quot;shopName&quot; /&gt;
+		&lt;/association&gt;
+		&lt;!-- 一对多的关系 List&lt;ProductImgList&gt; --&gt;
+		&lt;collection property=&quot;productImgList&quot; column=&quot;product_id&quot;
+			ofType=&quot;com.imooc.o2o.entity.ProductImg&quot;&gt;
+			&lt;id column=&quot;product_img_id&quot; property=&quot;productImgId&quot; /&gt;
+			&lt;result column=&quot;detail_img&quot; property=&quot;imgAddr&quot; /&gt;
+			&lt;result column=&quot;img_desc&quot; property=&quot;imgDesc&quot; /&gt;
+			&lt;result column=&quot;priority&quot; property=&quot;priority&quot; /&gt;
+			&lt;result column=&quot;create_time&quot; property=&quot;createTime&quot; /&gt;
+			&lt;result column=&quot;product_id&quot; property=&quot;productId&quot; /&gt;
+		&lt;/collection&gt;
+	&lt;/resultMap&gt;
+
+	&lt;!-- 根据 product id 查询商品信息 --&gt;
+	&lt;select id=&quot;queryProductById&quot; resultMap=&quot;productMap&quot;
+		parameterType=&quot;Long&quot;&gt;
+		SELECT
+		p.product_id,
+		p.product_name,
+		p.product_desc,
+		p.img_addr,
+		p.normal_price,
+		p.promotion_price,
+		p.priority,
+		p.create_time,
+		p.last_edit_time,
+		p.enable_status,
+		p.product_category_id,
+		p.shop_id,
+		pm.product_img_id,
+		pm.img_addr AS detail_img,
+		pm.img_desc,
+		pm.priority,
+		pm.create_time
+		FROM
+		tb_product p
+		LEFT JOIN
+		tb_product_img pm
+		ON
+		p.product_id=pm.product_id
+		WHERE
+		p.product_id=#&#123;productId&#125;
+		ORDER BY
+		pm.priority DESC
+	&lt;/select&gt;
+	&lt;!-- 更新店铺的信息 --&gt;
+	&lt;update id=&quot;updateProduct&quot; parameterType=&quot;com.imooc.o2o.entity.Product&quot; keyProperty=&quot;product_id&quot; useGeneratedKeys=&quot;true&quot;&gt;
+		UPDATE tb_product
+		&lt;set&gt;
+			&lt;if test=&quot;productName != null&quot;&gt;product_name=#&#123;productName&#125;,&lt;/if&gt;
+			&lt;if test=&quot;productDesc != null&quot;&gt;product_desc=#&#123;productDesc&#125;&lt;/if&gt;
+			&lt;if test=&quot;imgAddr != null&quot;&gt;img_addr=#&#123;imgAddr&#125;,&lt;/if&gt;
+			&lt;if test=&quot;normalPrice != null&quot;&gt;normal_price=#&#123;normalPrice&#125;,&lt;/if&gt;
+			&lt;if test=&quot;promotionPrice != null&quot;&gt;promotion_price=#&#123;promotionPrice&#125;,&lt;/if&gt;
+			&lt;if test=&quot;priority != null&quot;&gt;priority=#&#123;priority&#125;,&lt;/if&gt;
+			&lt;if test=&quot;lastEditTime != null&quot;&gt;last_edit_time=#&#123;lastEditTime&#125;,&lt;/if&gt;
+			&lt;if test=&quot;enableStatus != null&quot;&gt;enable_status=#&#123;enableStatus&#125;,&lt;/if&gt;
+			&lt;if test=&quot;productCategory != null and productCategory.productCategoryId != null&quot;&gt;
+				product_category_id=#&#123;productCategory.productCategoryId&#125;
+			&lt;/if&gt;
+		&lt;/set&gt;
+		WHERE product_id=#&#123;productId&#125; AND shop_id=#&#123;shop.shopId&#125;
+	&lt;/update&gt;
+&lt;/mapper&gt;
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
+&lt;mapper namespace=&quot;com.imooc.o2o.dao.ProductImgDao&quot;&gt;
+	&lt;!-- 根据 product id 删除商品 --&gt;
+	&lt;delete id=&quot;deleteProductImgByProductId&quot;&gt;
+		DELETE FROM
+		tb_product_img
+		WHERE
+		product_id=#&#123;productId&#125;
+	&lt;/delete&gt;
+&lt;/mapper&gt;
+</code></pre>
+<ol start="3">
+<li>JUnit 单元测试</li>
+</ol>
+<pre><code class="language-java">	&lt;!-- PorductTest.java --&gt;
+	@Test
+	public void testCQueryPorductByProductId() throws Exception&#123;
+		long productId = 1;
+		// 初始化两个商品详情图实例作为 productId 为 1 的商品的详情图片
+		// 批量插入到商品详情图中
+		ProductImg productImg1 = new ProductImg();
+		productImg1.setImgAddr(&quot;图片1&quot;);
+		productImg1.setImgDesc(&quot;测试图片1&quot;);
+		productImg1.setPriority(1);
+		productImg1.setCreateTime(new Date());
+		productImg1.setProductId(productId);
+
+		ProductImg productImg2 = new ProductImg();
+		productImg2.setImgAddr(&quot;图片1&quot;);
+		productImg2.setImgDesc(&quot;测试图片1&quot;);
+		productImg2.setPriority(1);
+		productImg2.setCreateTime(new Date());
+		productImg2.setProductId(productId);
+		List&lt;ProductImg&gt; productImgList = new ArrayList&lt;ProductImg&gt;();
+		productImgList.add(productImg1);
+		productImgList.add(productImg2);
+		int effectedNum = productImgDao.batchInsertProductImg(productImgList);
+		assertEquals(2, effectedNum);
+		// 查询productId 为1的商品信息并校验返回的详情图实例列表size 是否为2
+		Product product = productDao.queryProductById(productId);
+		assertEquals(2, product.getProductImgList().size());
+		// 删除新增的这两个商品详情图实例
+		effectedNum = productImgDao.deleteProductImgByProductId(productId);
+		assertEquals(2, effectedNum);
+	&#125;
+
+	@Test
+	public void testDUpdateProduct() throws Exception&#123;
+		Product product = new Product();
+		ProductCategory pc = new ProductCategory();
+		Shop shop = new Shop();
+		shop.setShopId(1L);
+		pc.setProductCategoryId(2L);
+		product.setProductId(1L);
+		product.setShop(shop);
+		product.setProductName(&quot;第二个产品&quot;);
+		product.setProductCategory(pc);
+		// 修改 productId 为1的商品的名称
+		// 以及商品类别并校验影响的行数是否为 1
+		int effectedNum = productDao.updateProduct(product);
+		assertEquals(1, effectedNum);
+	&#125;
+	&lt;!-- ProductImgDaoTest.java --&gt;
+	@Test
+	@Ignore
+	public void testCDeleteProductImgByProductId() throws Exception &#123;
+		// 删除新增的两条商品详情图片记录
+		long productId = 1;
+		int effectedNum = productImgDao.deleteProductImgByProductId(productId);
+		assertEquals(2, effectedNum);
+	&#125;
+</code></pre>
+<h4 id="6-2-2、Service-层"><a href="#6-2-2、Service-层" class="headerlink" title="6.2.2、Service 层"></a>6.2.2、Service 层</h4><ol>
+<li>接口 ProductService.java</li>
+</ol>
+<pre><code class="language-java">// 通过商品 Id 查询唯一的商品信息(商品编辑)
+	Product getProductById(long productId);
+	// 修改商品信息以及图片处理(商品编辑)
+	ProductExecution modifyProduct(Product product, ImageHolder thumbnail, List&lt;ImageHolder&gt; productImgList) throws ProductOperationException;
+</code></pre>
+<ol start="2">
+<li>实现类 ProductServiceImpl.java</li>
+</ol>
+<pre><code class="language-java">	// 商品编辑，获取商品信息
+	@Override
+	public Product getProductById(long productId) &#123;
+		return productDao.queryProductById(productId);
+	&#125;
+
+	// 商品编辑，修改商品信息
+	@Override
+	@Transactional
+	/**
+	 * 思路：1.若缩略图参数有值，则处理缩略图，若原先存在缩略图则先删除再添加新图，之后获取缩略图相对路径并赋值给product
+	 * 		2.若商品详情图列表参数有值，对商品详情图片列表进行同样的操作
+	 * 		3.将tb_product_img下面的该商品原先的商品详情图记录全部清除
+	 * 		4.更新tb_product_img 以及 tb_product的信息
+	 */
+	public ProductExecution modifyProduct(Product product, ImageHolder thumbnail, List&lt;ImageHolder&gt; productImgHolderList)
+			throws ProductOperationException &#123;
+		// 空值判断
+		if(product != null &amp;&amp; product.getShop() != null &amp;&amp; product.getShop().getShopId() != null) &#123;
+			// 给商品设置上默认属性
+			product.setLastEditTime(new Date());
+			// 若商品缩略图不为空且原有缩略图不为空则删除原有缩略图并添加
+			if(thumbnail != null) &#123;
+				// 先获取一遍原有信息，因为原来的信息里有图片地址
+				Product tempProduct = productDao.queryProductById(product.getProductId());
+				if(tempProduct.getImgAddr() != null) &#123;
+					ImageUtil.deleteFileOrPath(tempProduct.getImgAddr());
+				&#125;
+				addThumbnail(product, thumbnail);
+			&#125;
+			// 如果有新存入的商品详情图，则将原来的删除，并添加新的图片
+			if(productImgHolderList != null &amp;&amp; productImgHolderList.size() &gt; 0) &#123;
+				deleteProductImgList(product.getProductId());
+				addProductImgList(product, productImgHolderList);
+			&#125;
+			try &#123;
+				// 更新商品信息
+				int effentedNum = productDao.updateProduct(product);
+				if(effentedNum &lt;= 0) &#123;
+					throw new ProductOperationException(&quot;更新商品信息失败&quot;);
+				&#125;
+				return new ProductExecution(ProductStateEnum.SUCCESS, product);
+			&#125; catch(Exception e) &#123;
+				throw new ProductOperationException(&quot;更新商品信息失败:&quot; + e.toString());
+			&#125;
+		&#125;else &#123;
+			return new ProductExecution(ProductStateEnum.EMPTY_LIST);
+		&#125;
+	&#125;
+
+	// 根据 product id 删除商品详情图
+	private void deleteProductImgList(Long productId) &#123;
+		// 根据 productId 获取原来的图片
+		List&lt;ProductImg&gt; productImgList = productImgDao.queryProductImgList(productId);
+		// 删除原来的图片
+		for(ProductImg productImg : productImgList) &#123;
+			ImageUtil.deleteFileOrPath(productImg.getImgAddr());
+		&#125;
+		// 删除数据库里原有图片的信息
+		productImgDao.deleteProductImgByProductId(productId);
+</code></pre>
+<ol start="3">
+<li>测试 ProductServiceTest.java</li>
+</ol>
+<pre><code class="language-java">	@Test
+	public void testModifyProduct() throws ShopOperationException, FileNotFoundException &#123;
+		// 创建shopId 为1 且productCategoryId 为 1的商品实例并给其成员变量赋值
+		Product product = new Product();
+		Shop shop = new Shop();
+		shop.setShopId(1L);
+		ProductCategory pc = new ProductCategory();
+		pc.setProductCategoryId(1L);
+		product.setProductId(1L);
+		product.setShop(shop);
+		product.setProductCategory(pc);
+		product.setProductName(&quot;正式的商品Test&quot;);
+		product.setProductDesc(&quot;正式的商品Test&quot;);
+		// 创建缩略图文件流
+		File thumbnailFile = new File(&quot;/Users/jxh/Downloads/src.jpeg&quot;);
+		InputStream is = new FileInputStream(thumbnailFile);
+		ImageHolder thumbnail = new ImageHolder(thumbnailFile.getName(), is);
+		// 创建两个商品详情图文件流并将他们添加到详情图列表中
+		File productImg1 = new File(&quot;/Users/jxh/Downloads/src.jpeg&quot;);
+		InputStream is1 = new FileInputStream(productImg1);
+		File productImg2 = new File(&quot;/Users/jxh/Downloads/src2.jpeg&quot;);
+		InputStream is2 = new FileInputStream(productImg2);
+		List&lt;ImageHolder&gt; productImgList = new ArrayList&lt;ImageHolder&gt;();
+		productImgList.add(new ImageHolder(productImg1.getName(), is1));
+		productImgList.add(new ImageHolder(productImg2.getName(), is2));
+		// 添加商品并验证
+		ProductExecution pe = productService.modifyProduct(product, thumbnail, productImgList);
+		assertEquals(ProductStateEnum.SUCCESS.getState(), pe.getState());
+	&#125;
+</code></pre>
+<h4 id="6-2-3-Controller-层-ProductCategoryManagementController-java"><a href="#6-2-3-Controller-层-ProductCategoryManagementController-java" class="headerlink" title="6.2.3 Controller 层 ProductCategoryManagementController.java"></a>6.2.3 Controller 层 ProductCategoryManagementController.java</h4><pre><code class="language-java">// 商品编辑
+	@RequestMapping(value=&quot;/modifyproduct&quot;, method=RequestMethod.POST)
+	@ResponseBody
+	private Map&lt;String, Object&gt; modifyProduct(HttpServletRequest request) &#123;
+		Map&lt;String, Object&gt; modelMap = new HashMap&lt;String, Object&gt;();
+		//是商品编辑时候嗲用还是上下架操作的时候调用
+		//若为前者则进行验证码判断，后者则跳过验证码判断
+		boolean statusChange = HttpServletRequestUtil.getBoolean(request, &quot;statusChange&quot;);
+		// 验证码判断
+		if(!statusChange &amp;&amp; !CodeUtil.checkVerifyCode(request)) &#123;
+			modelMap.put(&quot;success&quot;, false);
+			modelMap.put(&quot;errMsg&quot;, &quot;输入了错误的验证码&quot;);
+			return modelMap;
+		&#125;
+		// 接受前端参数的变量的初始化，包括商品，缩略图，详情图列表实体类
+		ObjectMapper mapper = new ObjectMapper();
+		Product product = null;
+		ImageHolder thumbnail = null;
+		List&lt;ImageHolder&gt; productImgList = new ArrayList&lt;ImageHolder&gt;();
+		CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(request.getSession().getServletContext());
+		// 若请求中存在文件流，则取相关的文件（包括缩略图和详情图）
+		try &#123;
+			if(multipartResolver.isMultipart(request)) &#123;
+				handleImage(request, productImgList);
+			&#125;
+		&#125; catch(Exception e) &#123;
+			modelMap.put(&quot;success&quot;, false);
+			modelMap.put(&quot;errMsg&quot;, &quot;上传图片不能为空&quot;);
+			return modelMap;
+		&#125;
+		try &#123;
+			String productStr = HttpServletRequestUtil.getString(request, &quot;productStr&quot;);
+			// 尝试获取前端传过来的表单string流并将其转成Product实体类
+			product = mapper.readValue(productStr, Product.class);
+		&#125;catch(Exception e) &#123;
+			modelMap.put(&quot;success&quot;, false);
+			modelMap.put(&quot;errMsg&quot;, e.toString());
+			return modelMap;
+		&#125;
+		// 非空判断
+		if(product != null) &#123;
+			try &#123;
+				// 从session中获取当前店铺的Id并赋值给product, 减少对前端数据的依赖
+				Shop currentShop = (Shop) request.getSession().getAttribute(&quot;currentShop&quot;);
+				Shop shop = new Shop();
+				shop.setShopId(currentShop.getShopId());
+				product.setShop(shop);
+				// 开始进行商品信息变更操作
+				ProductExecution pe = productService.modifyProduct(product, thumbnail, productImgList);
+				if(pe.getState() == ProductStateEnum.SUCCESS.getState()) &#123;
+					modelMap.put(&quot;success&quot;, true);
+				&#125;else &#123;
+					modelMap.put(&quot;success&quot;, false);
+					modelMap.put(&quot;errMsg&quot;, pe.getStateInfo());
+				&#125;
+			&#125; catch(RuntimeException e) &#123;
+				modelMap.put(&quot;success&quot;, false);
+				modelMap.put(&quot;errMsg&quot;, e.toString());
+				return modelMap;
+			&#125;
+		&#125; else &#123;
+			modelMap.put(&quot;success&quot;, false);
+			modelMap.put(&quot;errMsg&quot;, &quot;请输入商品信息&quot;);
+		&#125;
+		return modelMap;
+	&#125;
+
+	private void handleImage(HttpServletRequest request, List&lt;ImageHolder&gt; productImgList) throws IOException &#123;
+		ImageHolder thumbnail;
+		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+		// 取出缩略图并构建ImageHolder对象
+		CommonsMultipartFile thumbnailFile = (CommonsMultipartFile) multipartRequest.getFile(&quot;thumbnailFile&quot;);
+		if(thumbnailFile != null) &#123;
+			thumbnail = new ImageHolder(thumbnailFile.getOriginalFilename(), thumbnailFile.getInputStream());
+		&#125;
+		// 取出详情图列表并构建List&lt;ImageHolder&gt;列表对象，最多支持六张图片上传
+		for(int i = 0; i &lt; IMAGEMAXCOUNT; i++) &#123;
+			CommonsMultipartFile productImgFile = (CommonsMultipartFile) multipartRequest.getFile(&quot;productImg&quot; + i);
+			if(productImgFile != null) &#123;
+				// 若取出的第i个详情图片文件流不为空，则将其加入详情图列表
+				ImageHolder productImg = new ImageHolder(productImgFile.getOriginalFilename(), productImgFile.getInputStream());
+				productImgList.add(productImg);
+			&#125;else &#123;
+				// 若取出的第i个详情图片文件流为空，则终止循环
+				break;
+			&#125;
+		&#125;
+	&#125;
+</code></pre>
+<h2 id="6-3-商品列表展示"><a href="#6-3-商品列表展示" class="headerlink" title="6.3 商品列表展示"></a>6.3 商品列表展示</h2><h1 id="第七章-首页"><a href="#第七章-首页" class="headerlink" title="第七章 首页"></a>第七章 首页</h1><p>目标: 头条读取以及滚动播放；一级类别列表的获取</p>
+<h2 id="7-1"><a href="#7-1" class="headerlink" title="7.1"></a>7.1</h2><hr>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h2 id="SSM-框架实现功能的步骤"><a href="#SSM-框架实现功能的步骤" class="headerlink" title="SSM 框架实现功能的步骤"></a>SSM 框架实现功能的步骤</h2><ol>
+<li>在 dao 层</li>
+</ol>
+<ul>
+<li>创建出相应的接口</li>
+<li>定义相关的方法</li>
+</ul>
+<ol start="2">
+<li>在 mapper 中</li>
+</ol>
+<ul>
+<li>在 resources&#x2F;mapper 下面创建出与 dao 层一一对应的 xml 文件</li>
+<li>在 xml 文件中定义出方法所需要的 SQL</li>
+</ul>
+<ol start="3">
+<li>在 service 层</li>
+</ol>
+<ul>
+<li>实现类继承接口，包含类注解(@Service)，</li>
+<li>使用注解(@Autowired)将 dao 层接口注入进来</li>
+<li>调用 dao 层的方法，将我们需要的数据返回到 Controller 去</li>
+</ul>
+<ol start="4">
+<li>在 controller 层</li>
+</ol>
+<ul>
+<li>包含有注解(@Controller，@RequestMapping(“&#x2F;url”))的类</li>
+<li>使用注解(@Autowired)将 dao 层接口注入进来</li>
+<li>创建包含有注解(@RequestMapping, @ResponseBody)的方法。</li>
+<li>调用 dao 层接口的方法获取数据后，直接将数据返回前台。</li>
+</ul>
+<hr>
+<h1 id="Junit"><a href="#Junit" class="headerlink" title="Junit"></a>Junit</h1><h2 id="Junit-测试步骤"><a href="#Junit-测试步骤" class="headerlink" title="Junit 测试步骤"></a>Junit 测试步骤</h2><h4 id="1、定义一个基类"><a href="#1、定义一个基类" class="headerlink" title="1、定义一个基类"></a>1、定义一个基类</h4><ol>
+<li>一个包含类注解(@RunWith(SpringJunit4ClassRunner.class))的类,指定使用那个类来单元测试</li>
+<li>一个包含类注解(@ContextConfiguration({“1.xml”,”2.xml”}))的类,指定 junit spring 配置文件的文件，1.xml 为 junit 的 dao 层做服务的，2.xml 为 service 单元测试做服务配置的。</li>
+</ol>
+<h4 id="2、定义一个实现类"><a href="#2、定义一个实现类" class="headerlink" title="2、定义一个实现类"></a>2、定义一个实现类</h4><ol>
+<li>定义一个方法，包含注解(@Test)的测试方法。</li>
+</ol>
+<h2 id="Junit-拓展"><a href="#Junit-拓展" class="headerlink" title="Junit 拓展"></a>Junit 拓展</h2><h4 id="Junit-测试回环"><a href="#Junit-测试回环" class="headerlink" title="Junit 测试回环"></a>Junit 测试回环</h4><p>测试回环是通过测试进行的数据插入，再通过测试进行数据的删除，在测试中推荐使用，这样对数据库基本没影响</p>
+<h4 id="Junit-顺序执行"><a href="#Junit-顺序执行" class="headerlink" title="Junit 顺序执行"></a>Junit 顺序执行</h4><p>做单元测试是，默认是不一定安装顺序执行测试的，但是有时候需要按顺序的执行测试，所以该注解是安装名字的顺序来执行测试。可在测试方法名字添加顺序:testAxxx, testBxxx</p>
+<hr>
+<h2 id="SSM-重点知识"><a href="#SSM-重点知识" class="headerlink" title="SSM 重点知识"></a>SSM 重点知识</h2><ol>
+<li><p>SpringMVC: DispatcherServlet</p>
+</li>
+<li><p>Spring: IOC 和 AOP</p>
+</li>
+</ol>
+<ul>
+<li>IOC</li>
+<li>Aop<br>例如，增删改查的操作，都需要做权限验证，我们并不希望权限验证的代码杂糅在我们增删改查的方法里，我们可以通过 AOP 在程序运行时候动态的将我们权限代码植入到我们的增删改查方法的前面，以完成权限的验证。AOP 的实现方式，就是动态代理。动态代理有 JDK 和 CJL 两种方式实现。</li>
+</ul>
+<ol start="3">
+<li>MyBatis:ORM</li>
+</ol>
+<ul>
+<li>ORM 就是通过使用描述对象和数据库之间映射的元数据，将程序中的对象自动持久化到关系数据库中。</li>
+<li>关系映射的实现方式。</li>
+</ul>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 hjxstart@126.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry"><span class="miit">
+                <img src="/img/gov.png" title="中华人民共和国工业和信息化部">
+                <a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">粤ICP备2021170625号-1</a>
+        </span>
+    
+    ©2019-2022 hjxstart
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("/img/article-list-bg-img.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
