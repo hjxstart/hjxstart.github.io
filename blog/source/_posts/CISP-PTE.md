@@ -222,7 +222,7 @@ ping baidu.com -n 10 # ping 10 次
 ping baidu.com -l 1464 # 指定ping包大小为10字节 [有些网站现在ping包大小]
 ```
 
-### [cisp-practise01](https://hjxstart.github.io/2025/08/23/cisp-practice01/)
+### [cisp-practise01](https://hjxstart.github.io/2025/08/21/cisp-practice01/)
 
 
 
@@ -331,7 +331,7 @@ regedit # 打开注册表
 
 ```
 
-### [cisp-practise02](https://hjxstart.github.io/2025/08/23/cisp-practice02/)
+### [cisp-practise02](https://hjxstart.github.io/2025/08/22/cisp-practice02/)
 
 ### [cisp-practise03](https://hjxstart.github.io/2025/08/23/cisp-practice03/)
 
