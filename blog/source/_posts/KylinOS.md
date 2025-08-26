@@ -6,31 +6,9 @@ top: 50
 tags: KylinOS
 ---
 
-# 概述
+# 一、概述
 
-## 背景概述
-
-待补充
-
-# 通用
-
-## 常用命令
-
-
-### 常用激活命令
-
-```bash
-# 命令行激活,扫描二维码回车输入激活码
-kylin-system-verify
-# 查看当前系统激活状态
-kylin_activation_check
-# ukey激活命令
-kylin_activate_ukey
-```
-
----
-21038046
-# 桌面
+# 二、桌面
 
 ## 常见问题
 
@@ -55,16 +33,36 @@ cd ~/.local/share/Trash/files/
 
 ### 刻录
 
-```bash
-kylin-burner
 
+
+### 清理缓存
+
+```bash
+rm -rf .config/ .cache/ .local/
+sudo systemctl restart lightdm
+```
+
+
+
+## 默认配置
+
+### 源
+
+```bash
+2403
+#本文件由源管理器管理，会定期检测与修复，请勿修改本文件
+deb http://archive.kylinos.cn/kylin/KYLIN-ALL 10.1 main restricted universe multiverse
+deb http://archive.kylinos.cn/kylin/KYLIN-ALL 10.1-2403-updates main restricted universe multiverse
+deb http://archive2.kylinos.cn/deb/kylin/production/PART-V10-SP1/custom/partner/V10-SP1 default all
 
 ```
+
+
 
 ---
 
 
-# 服务端
+# 三、服务端
 
 
 ### 手动配置网卡
@@ -124,7 +122,7 @@ systemctl status firewalld
 
 ---
 
-# Email
+# 四、邮件系统
 
 ## 部署
 
@@ -285,42 +283,78 @@ ln -s /usr/bin/sqlite3 /opt/AQYJ/nsmail/bin/
 
 ```
 
+## 快速使用
 
----
+```
+```
 
 
-# 应用商店
+
+# 五、应用商店
 
 ## 安装
 
-```bash
-# 挂载镜像
-mount -o loop Kylin-softwarestore-V2-2.5-Release-20231228-x86_64.iso /mnt
-
-# 拷贝安装文件到software目录
-mkdir software
-cp -r /mnt/* software/
-
-# 进入00init目录安装基础环境
-cd 00init/
-tar zxvf init-x86_64.tar.gz
-cd x86_64
-bash init.sh
-
-# 进入01soft_manager安装
-cd 01soft_manager
-cat ksm-inline-v2.5-amd64.tar.gz.sha* > ksm-inline-v2.5-amd64.tar.gz # 合并包
-tar xvzf ksm-inline-v2.5-amd64.tar.gz
-cp ../LICENSE ./  # 复制激活文件 .kyinfo 和 LICENSE 到 ksm-inline 同级安装目录
-cd ksm-inline/shell
-bash deploy.sh # 开始部署
-
-
-# 进入02
-
+```
+软件管理平台：http://192.168.16.118:8880/login ， 默认账号: admin/admin
+软件更新平台：http://192.168.16.118:8880/login，默认账号：root/Kylin2023*
 ```
 
-## 使用
+![](https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250826124633042.png)
+
+![](https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250826124712618.png)
+
+### 环境准备
+
+```bash
+# 麒麟服务器系统，最小化安装（选择安装开发工具），4C8G，150G空间
+默认服务器账号和密码
+# 部署软件商店需要ifconfig命令，故需要安装net-tools工具
+yum update
+yum install -y net-tools
+# 挂载镜像，将镜像安装资源拷贝除了
+mount /opt/Kylin-softwarestore-V2-2.7-Release-20250220-X86_64.iso /mnt
+mkdir /opt/software
+cp -r /mnt/* /opt/software/
+```
+
+![环境准备](https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250826103946384.png)
+
+### 初始化
+
+```bash
+cd /opt/software/00init
+tar zxvf init-x86_64.tar.gz
+cd base-env-x86_64/
+bash init.sh
+```
+
+![初始化环境](https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250826181708738.png)
+
+### 部署软件管理平台
+
+```bash
+cd /opt/software/01soft_manager
+cat ksm-inline-v2.7-amd64.tar.gz.sha* > ksm-inline-v2.7-amd64.tar.gz
+tar xvzf ksm-inline-v2.7-amd64.tar.gz
+#复制激活⽂件`.kyinfo`和`LICENSE`到`ksm-inline`同级安装⽬录
+ cd ksm-inline/shell/
+bash deploy.sh
+```
+
+
+
+### 部署更新管理平台
+
+```bash
+cd /opt/software/02update_manager/
+cat kss-2.2.1-amd64.tar.gz.sha0 > kss-2.2.1-amd64.tar.gz
+tar xvzf kss-2.2.1-amd64.tar.gz
+cd kss_deploy/
+# 使用脚本安装更新管理拓扑
+bash ./shell/main.sh
+```
+
+## 软件管理平台
 
 ### 清空公网软件包
 
@@ -336,15 +370,105 @@ flush privileges;
 exit
 ```
 
-### 软件上架
+## 软件上架-软件商店
 
-1. 软件管理 > 软件上架 > 普通软件
+### 1、创建仓库源
+
+![新建仓库](https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250826181800414.png)
+
+![](https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250826130335613.png)
+
+### 2、上传软件包
+
+```bash
+# 下载向日葵软件 https://sunlogin.oray.com/download/linux?type=personal
+SunloginClient_11.0.1.44968_kylin_amd64.deb
+# 错误类型deb文件名不能存在大写，软件名_版本_架构.deb
+sunloginclient_11.0.1.44968_amd64.deb
+
+```
+
+![上传软件](https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250826181834670.png)
+
+### 3、填写基本信息
+
+![](https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250826154718035.png)
+
+### 4、上传相关图片
+
+![](https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250826154753088.png)
+
+### 5、添加表情
+
+![](https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250826154825035.png)
+
+### 6、发布软件
+
+![](https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250826154905136.png)
+
+
+
+
+
+## 客户端使用
+
+```
+软件管理平台：http://192.168.16.118:8880/login ， 默认账号: admin/admin
+软件更新平台：http://192.168.16.118:18080，默认账号：root/Kylin2023*
+```
+
+
+
+
+
+### 客户端配置
+
+1、软件商店添加源地址
+
+![](https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250826151717074.png)
+
+````bash
+# 注释其他源地址，添加源 vim /etc/apt/sources.list
+deb http://192.168.16.118:8002/DEB/KYLIN_DEB bank_test main
+# 禁止修改
+sudo chattr +i /etc/apt/sources.list
+````
+
+2、软件商店修改服务器地址
+
+![](https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250826122328849.png)
+
+3、常用命令
+
+```bash
+# 常用命令
+sudo apt update # 更新源
+apt policy sunloginclient # 查看软件包
+```
+
+![apt policy](https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250826151920510.png)
+
+
+
+## 更新管理平台
+
+## 其他
+
+
 
 
 
 ---
 
-# 问题&解决方法
+
+
+# 六、KMS
+
+## 安装
+
+---
+
+# 七、问题&解决方法-待删除
 
 ## 通用
 
@@ -416,7 +540,6 @@ sudo wg-quick up wg0
 ## 服务器
 
 
-# KMS
 
 ## 概述
 
@@ -431,16 +554,8 @@ sudo wg-quick up wg0
 5、32940012西藏自治区民政厅-desktop-打印机驱动安装问题，已解决。
 
 
-# FAQ
 
-### 离线下载软件
-```bash
-
-```
-
-
-
-# 培训1
+# 其他
 
 ## 安装和使用
 

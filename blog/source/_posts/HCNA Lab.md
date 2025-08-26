@@ -220,7 +220,7 @@ display ip routing-table
   <summary>查看路由信息</summary>
 
   <p>配置动态路由之前直连路由信息</p>
-  
+
   ![R1直连路由](https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202304090005760.png)
   ![R2直连路由](https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202304090014248.png)
   ![R3直连路由](https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/202304090014528.png)
