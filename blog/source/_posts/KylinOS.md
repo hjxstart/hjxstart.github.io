@@ -432,6 +432,10 @@ sunloginclient_11.0.1.44968_amd64.deb
 deb http://192.168.16.118:8002/DEB/KYLIN_DEB bank_test main
 # 禁止修改
 sudo chattr +i /etc/apt/sources.list
+# 取消锁定
+sudo chattr -i /etc/apt/sources.list
+lsattr /etc/apt/sources.list
+
 ````
 
 2、软件商店修改服务器地址

