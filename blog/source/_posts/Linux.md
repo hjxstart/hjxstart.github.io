@@ -1,5 +1,5 @@
 ---
-title: Linux
+ title: Linux
 date: 2022-03-24 11:53:59
 categories: 运维
 top: 29
@@ -509,6 +509,10 @@ Ctrl + Z # 暂停当前任务
 
 ## Linux网络
 
+```bash
+
+```
+
 ### ifconfig & ip & ping
 
 ```bash
@@ -624,12 +628,63 @@ ss -anpt # 和netstat差不多
 
 ```
 
-### Wireshark工具学习
+## 抓包tcpdump
 
 ```bash
-# http://nm.people.com.cn/
+# 安装
+yum install -y tcpdump
+tcpdump --v # 查看版本
 
+# 常用参数
+-i	interface指定网卡
+-vv 显示更加详情的信息
+-e	显示mac地址
+-w	write 写入保存到文件中，导入的文件可以使用wireshark打开（例如: tcpdump -i ens33 -w test）
+-r 	read 读取文件中的数据（例：tcpdump -r [包文件名]）
+-c 	在收到指定包数目之后，tcpdump就会停止（例：tcpdump -i ens33 -c 2）
+-n	不把网络地址转换成名字
+-nn	不进行端口名称的转换
+
+## 过滤参数
+tcpdump命令中几种关键词
+# 类型关键词，包括: host, net,port
+# 传输方向关键字，包括: src, dst
+# 协议关键词，包括: ip, arp, tcp, udp等类型
+# 其他协议关键字，包括: gateway, broadcast, less, greater, not, !, and, &&, or, ||
+host: 根据主机IP来抓包
+src: 根据源IP地址来抓包
+dst: 根据目的IP地址来抓包
+port: 根据端口进行抓包
+net: 根据网段进行抓包
+protocol: 根据协议进行抓包
+protocol协议：tcp/udp/icmp/ip/arp/rarp/ether协议等
+icmp协议：ping命令
+mac地址：指定mac地址进行抓包src mac: 源mac, dst mac: 目的地址
 ```
+
+### 使用
+
+```bash
+
+tcpdump -i ens33 host 192.168.16.100
+tcpdump -ni ens33 host 192.168.16.100 # 显示ip地址
+tcpdump -vvni ens33 host 192.168.16.100 # 显示更加详细的信息
+tcpdump -vvnni ens33 host 192.168.16.100 # 显示更加详细的信息，协议转换成端口
+tcpdump -vvnni ens33 dst 192.168.16.100 # 目的地址
+tcpdump -vvnni ens33 src 192.168.16.100 # 目的地址
+tcpdump -vvnni ens33 port 22 -c 10 # 指定端口和10个包
+tcpdump -vvnni ens33 dst port 22 -c 10 # 指定端口和10个包
+tcpdump -vvnni ens33 src port 22 -c 10 # 指定端口和10个包
+tcpdump -vvnni ens33 src port 22 -c 10 -w tcpdump # 输入到tcpdump文件
+tcpdump -r tcpdump # 读取tcpdump文件
+tcpdump -nnr tcpdump # 读取tcpdump文件，不显示ssh，显示22端口
+tcpdump -vvnnr tcpdump # 读取tcpdump文件，不显示ssh，显示22端口,显示详细信息
+tcpdump -nnvvi ens33 -c 10 '((tcp)and(port 22)and(dst host 192.168.16.200)or(dst host 192.168.16.201))'
+tcpdum -ei ens33 '((icmp)and(ether host 00:0c:29:19:f4:ac))'
+tcpdum -vvnnei ens33 '((icmp)and(ether host 00:0c:29:19:f4:ac))' -c 10
+```
+
+
 
 
 

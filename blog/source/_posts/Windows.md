@@ -277,6 +277,73 @@ icacls "public" /inheritance:r /grant "owner":(OI)(CI)(F) /grant "admin":(OI)(CI
 | **`IO`** | **（更推荐用`/inheritance`）**仅继承：当需要确保某个权限仅对子对象生效，而不对父目录本身生效时使用 |
 |    I     |           继承权限（只读）：查看权限时标识继承状态           |
 
+## 抓包Wireshark
+
+![抓包](https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250829114043399.png)
+
+```bash
+1: 开始抓包
+2: 停止抓包
+3: 重新抓包
+4：捕获过滤器：抓包前设置
+
+16: 着色规则
+
+# 
+显示过滤器: 分析 > 显示过滤器。可以添加过滤条件
+
+```
+
+### 过滤使用
+
+```bash
+ip.addr==10.10.11.148
+tpc
+udp
+http
+
+## 捕获过滤器 (抓包前，输入的条件要是绿色才可以)
+ip host 192.168.16.100 and icmp
+# 协议
+tcp
+icmp
+# ip 过滤
+host 192.168.16.100 # 源目的
+src host 192.168.16.100 # 源
+dst host 192.168.16.100 # 目的
+# port 过滤
+port 443
+src port 443
+dst port 443
+# 一起使用
+# and | && 两个参数都可以
+# or | ||
+# !
+src host 192.168.16.100 && dst port 443
+!broadcast # 非广播
+
+## 搜索栏过滤
+icmp
+# ip
+ip.addr==192.168.16.100
+ip.src==192.168.16.100
+ip.dst==192.168.16.100
+tcp.port==443
+udp.port=443
+tcp.srcport=443
+tcp.dstport=443
+# 方法
+http.request.method==GET
+http.request.method==POST
+ip.addr==192.168.16.100 and icmp
+ip.addr==192.168.16.100 or icmp
+
+## 将抓包内容作为过滤条件应用
+
+```
+
+
+
 
 
 ## 其他
