@@ -1,0 +1,1829 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>MySQL | 黄金贤的博客</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="MySQL | 黄金贤的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="黄金贤 hjxstart">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java">
+<meta property="og:url" content="https://hjxstart.github.io/2025/10/04/Java/index.html">
+<meta property="og:site_name" content="黄金贤的博客">
+<meta property="og:description" content="黄金贤 hjxstart">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-10-04T13:55:05.000Z">
+<meta property="article:modified_time" content="2025-10-05T05:11:02.573Z">
+<meta property="article:author" content="黄金贤">
+<meta property="article:tag" content="计算机网络 数据库 操作系统 数据结构 算法 Java Nodejs">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-dark.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 8.0.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>黄金贤</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="github"
+               href="https://github.com/hjxstart"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="email"
+               href="mailto:hjxstart@126.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=1726283687&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(81)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="读书">
+                        
+                        读书
+                        <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(13)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据库">
+                        
+                        数据库
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="网络">
+                        
+                        网络
+                        <small>(17)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="81">
+<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://github.com/hjxstart">hjxstart</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="全部文章 网络 "
+           href="/2024/05/06/HCIE%20Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HCIE Lab">HCIE Lab</span>
+            <span class="post-date" title="2024-05-06 19:42:00">2024/05/06</span>
+        </a>
+        
+        <a id="top" class="全部文章 安全 "
+           href="/2025/08/17/CISP-PTE/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CISP-PTE">CISP-PTE</span>
+            <span class="post-date" title="2025-08-17 11:12:00">2025/08/17</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2025/04/04/PXE-Kickstart/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PXE+Kickstart">PXE+Kickstart</span>
+            <span class="post-date" title="2025-04-04 10:45:00">2025/04/04</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2025/02/12/KylinOS/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="KylinOS">KylinOS</span>
+            <span class="post-date" title="2025-02-12 16:47:00">2025/02/12</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2025/08/24/KylinOS-FAQ/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="KylinOS FAQ">KylinOS FAQ</span>
+            <span class="post-date" title="2025-08-24 11:07:00">2025/08/24</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2025/08/24/Windows/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Windows">Windows</span>
+            <span class="post-date" title="2025-08-24 11:19:00">2025/08/24</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2022/03/24/Linux/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Linux">Linux</span>
+            <span class="post-date" title="2022-03-24 11:53:00">2022/03/24</span>
+        </a>
+        
+        <a id="top" class="全部文章 工具 "
+           href="/2024/07/28/NTLite/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="NTLite">NTLite</span>
+            <span class="post-date" title="2024-07-28 21:32:00">2024/07/28</span>
+        </a>
+        
+        <a id="top" class="全部文章 数据库 "
+           href="/2020/03/19/MySQL/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="MySQL">MySQL</span>
+            <span class="post-date" title="2020-03-19 21:51:00">2020/03/19</span>
+        </a>
+        
+        <a id="top" class="全部文章 开发 "
+           href="/2025/09/13/Php/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Php">Php</span>
+            <span class="post-date" title="2025-09-13 23:10:00">2025/09/13</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2025/10/04/Java/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Java">Java</span>
+            <span class="post-date" title="2025-10-04 21:55:05">2025/10/04</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2025/10/04/Wireshark/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Wireshark">Wireshark</span>
+            <span class="post-date" title="2025-10-04 21:31:59">2025/10/04</span>
+        </a>
+        
+        <a  class="全部文章 安全 "
+           href="/2025/08/21/cisp-practice/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="cisp-practice">cisp-practice</span>
+            <span class="post-date" title="2025-08-21 19:41:00">2025/08/21</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2025/04/24/OpenStack/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OpenStack">OpenStack</span>
+            <span class="post-date" title="2025-04-24 09:04:00">2025/04/24</span>
+        </a>
+        
+        <a  class="全部文章 安全 "
+           href="/2024/08/23/CISO/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CISO">CISO</span>
+            <span class="post-date" title="2024-08-23 19:29:00">2024/08/23</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/04/16/%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="网络工程师">网络工程师</span>
+            <span class="post-date" title="2024-04-16 22:14:00">2024/04/16</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2024/03/31/RHCE9/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="RHCE9">RHCE9</span>
+            <span class="post-date" title="2024-03-31 15:33:00">2024/03/31</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/28/BGP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="BGP">BGP</span>
+            <span class="post-date" title="2024-01-28 11:20:00">2024/01/28</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/STP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="STP">STP</span>
+            <span class="post-date" title="2024-01-27 14:01:00">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/VLAN/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="VLAN">VLAN</span>
+            <span class="post-date" title="2024-01-27 11:42:00">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/LLDP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="LLDP">LLDP</span>
+            <span class="post-date" title="2024-01-27 11:31:00">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/Telnet/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Telnet">Telnet</span>
+            <span class="post-date" title="2024-01-27 10:45:00">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/SSH/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SSH">SSH</span>
+            <span class="post-date" title="2024-01-27 10:44:00">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2023/12/22/WireGuard/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="WireGuard">WireGuard</span>
+            <span class="post-date" title="2023-12-22 07:40:00">2023/12/22</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/12/21/Stack-Port/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Stack Port">Stack Port</span>
+            <span class="post-date" title="2023-12-21 19:31:00">2023/12/21</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2023/12/18/ESXI/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="ESXI">ESXI</span>
+            <span class="post-date" title="2023-12-18 17:05:00">2023/12/18</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2023/12/18/RouterOS/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="RouterOS">RouterOS</span>
+            <span class="post-date" title="2023-12-18 17:05:00">2023/12/18</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2023/12/18/GIT/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="GIT">GIT</span>
+            <span class="post-date" title="2023-12-18 17:00:00">2023/12/18</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2023/11/30/HelpDesk/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HelpDesk">HelpDesk</span>
+            <span class="post-date" title="2023-11-30 21:21:00">2023/11/30</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2023/11/18/OpenWrt/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OpenWrt">OpenWrt</span>
+            <span class="post-date" title="2023-11-18 17:03:00">2023/11/18</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/06/01/HCNP-Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="华为NP网络实验">华为NP网络实验</span>
+            <span class="post-date" title="2023-06-01 10:46:04">2023/06/01</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/06/01/CCNP-Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CCNP Lab">CCNP Lab</span>
+            <span class="post-date" title="2023-06-01 10:46:00">2023/06/01</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2023/05/13/IBMC/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="IBMC">IBMC</span>
+            <span class="post-date" title="2023-05-13 21:04:00">2023/05/13</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2023/04/26/1Panel/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1Panel">1Panel</span>
+            <span class="post-date" title="2023-04-26 14:09:00">2023/04/26</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2023/04/24/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="信息系统项目管理师">信息系统项目管理师</span>
+            <span class="post-date" title="2023-04-24 10:51:00">2023/04/24</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/09/EIGRP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="EIGRP">EIGRP</span>
+            <span class="post-date" title="2023-04-09 15:14:00">2023/04/09</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/09/FHPR/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="FHPR">FHPR</span>
+            <span class="post-date" title="2023-04-09 11:25:00">2023/04/09</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/08/HCNA-Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HCNA Lab">HCNA Lab</span>
+            <span class="post-date" title="2023-04-08 11:46:00">2023/04/08</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/07/CCNA-Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CCNA Lab">CCNA Lab</span>
+            <span class="post-date" title="2023-04-07 20:13:29">2023/04/07</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/07/OSPF/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OSPF">OSPF</span>
+            <span class="post-date" title="2023-04-07 19:19:00">2023/04/07</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2022/08/24/FRP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="FRP">FRP</span>
+            <span class="post-date" title="2022-08-24 12:47:00">2022/08/24</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2022/08/24/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="软件设计师">软件设计师</span>
+            <span class="post-date" title="2022-08-24 10:51:00">2022/08/24</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2022/08/23/Markdown/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Markdown">Markdown</span>
+            <span class="post-date" title="2022-08-23 19:54:00">2022/08/23</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2022/08/12/HomeLab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HomeLab">HomeLab</span>
+            <span class="post-date" title="2022-08-12 15:09:00">2022/08/12</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2022/07/28/WDS-MDT/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="WDS+MDT">WDS+MDT</span>
+            <span class="post-date" title="2022-07-28 21:33:00">2022/07/28</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2022/06/21/Anaconda/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Anaconda">Anaconda</span>
+            <span class="post-date" title="2022-06-21 20:56:00">2022/06/21</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2022/05/25/%E7%BD%91%E7%BB%9C%E8%A7%84%E5%88%92%E5%B8%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="网络规划师">网络规划师</span>
+            <span class="post-date" title="2022-05-25 11:57:00">2022/05/25</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2022/03/14/InfluxDB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="InfluxDB">InfluxDB</span>
+            <span class="post-date" title="2022-03-14 13:25:00">2022/03/14</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2022/03/06/MongoDB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="MongoDB">MongoDB</span>
+            <span class="post-date" title="2022-03-06 17:38:00">2022/03/06</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/12/27/VIM/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="VIM">VIM</span>
+            <span class="post-date" title="2021-12-27 09:15:00">2021/12/27</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/12/19/GITEA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="GITEA">GITEA</span>
+            <span class="post-date" title="2021-12-19 21:53:00">2021/12/19</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/12/16/VSFTPD/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="VSFTPD">VSFTPD</span>
+            <span class="post-date" title="2021-12-16 08:49:00">2021/12/16</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2021/10/06/REDIS/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="REDIS">REDIS</span>
+            <span class="post-date" title="2021-10-06 17:19:00">2021/10/06</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/20/K8s-lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="K8s_lab">K8s_lab</span>
+            <span class="post-date" title="2021-09-20 08:04:00">2021/09/20</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/15/K8s/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="K8s">K8s</span>
+            <span class="post-date" title="2021-09-15 20:48:00">2021/09/15</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/09/09/VMware/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="VMware">VMware</span>
+            <span class="post-date" title="2021-09-09 15:38:00">2021/09/09</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/08/Ingress/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Ingress">Ingress</span>
+            <span class="post-date" title="2021-09-08 23:56:00">2021/09/08</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/08/Harbor/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Harbor">Harbor</span>
+            <span class="post-date" title="2021-09-08 18:04:00">2021/09/08</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/08/28/Swarm/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Swarm">Swarm</span>
+            <span class="post-date" title="2021-08-28 20:46:00">2021/08/28</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/08/26/Go/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Go">Go</span>
+            <span class="post-date" title="2021-08-26 11:50:00">2021/08/26</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/08/15/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Java多线程">Java多线程</span>
+            <span class="post-date" title="2021-08-15 14:36:00">2021/08/15</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/08/11/Nginx/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Nginx">Nginx</span>
+            <span class="post-date" title="2021-08-11 23:28:00">2021/08/11</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/08/06/Maven/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Maven">Maven</span>
+            <span class="post-date" title="2021-08-06 09:38:00">2021/08/06</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/07/31/Springboot%E9%A1%B9%E7%9B%AE/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Springboot项目">Springboot项目</span>
+            <span class="post-date" title="2021-07-31 19:34:00">2021/07/31</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/07/22/GitLab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="GitLab">GitLab</span>
+            <span class="post-date" title="2021-07-22 21:41:00">2021/07/22</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/07/22/Docker/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Docker">Docker</span>
+            <span class="post-date" title="2021-07-22 14:53:00">2021/07/22</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/07/19/SpringSecurity/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SpringSecurity">SpringSecurity</span>
+            <span class="post-date" title="2021-07-19 20:58:00">2021/07/19</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/07/13/Mybatis/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Mybatis">Mybatis</span>
+            <span class="post-date" title="2021-07-13 10:38:00">2021/07/13</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/07/05/NVM/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="NVM">NVM</span>
+            <span class="post-date" title="2021-07-05 08:15:00">2021/07/05</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/06/26/Java-Project/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Java Project">Java Project</span>
+            <span class="post-date" title="2021-06-26 07:58:00">2021/06/26</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/06/23/Vue/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Vue">Vue</span>
+            <span class="post-date" title="2021-06-23 10:48:00">2021/06/23</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/06/08/SpringBoot2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SpringBoot2">SpringBoot2</span>
+            <span class="post-date" title="2021-06-08 16:51:00">2021/06/08</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/06/07/CentOS7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CentOS7">CentOS7</span>
+            <span class="post-date" title="2021-06-07 23:16:00">2021/06/07</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/06/02/Spring%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%BA%94%E7%89%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Spring实战(第五版)">Spring实战(第五版)</span>
+            <span class="post-date" title="2021-06-02 09:42:00">2021/06/02</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/04/25/Spring%E5%AE%9E%E6%88%98-%E7%AC%AC%E5%9B%9B%E7%89%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Spring实战(第四版)">Spring实战(第四版)</span>
+            <span class="post-date" title="2021-04-25 18:38:00">2021/04/25</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/04/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="设计模式">设计模式</span>
+            <span class="post-date" title="2021-04-18 22:19:00">2021/04/18</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2021/03/22/SQL/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SQL">SQL</span>
+            <span class="post-date" title="2021-03-22 18:33:00">2021/03/22</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/03/14/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="时间管理">时间管理</span>
+            <span class="post-date" title="2021-03-14 21:49:00">2021/03/14</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/03/14/Hexo/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hexo">Hexo</span>
+            <span class="post-date" title="2021-03-14 08:31:00">2021/03/14</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2020/09/12/UltraISO/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="UltraISO">UltraISO</span>
+            <span class="post-date" title="2020-09-12 11:42:00">2020/09/12</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2020/09/12/Ventoy/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Ventoy">Ventoy</span>
+            <span class="post-date" title="2020-09-12 11:42:00">2020/09/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-MySQL" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">MySQL</h1>
+    
+    <div class="article-meta">
+        
+        <span class="top"><a>置顶</a></span>
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="数据库">数据库</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2025-10-05 11:22:16'>2020-03-19 21:51</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:4.3k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Mysql"><span class="toc-text">Mysql</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#information-schema%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">information_schema数据库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL"><span class="toc-text">SQL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL%E9%80%9A%E7%94%A8%E8%AF%AD%E6%B3%95"><span class="toc-text">SQL通用语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL-%E5%88%86%E7%B1%BB"><span class="toc-text">SQL 分类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-1"><span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E7%B1%BB%E5%9E%8B"><span class="toc-text">字符类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4%E7%B1%BB%E5%9E%8B"><span class="toc-text">日期时间类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%83%E9%99%90"><span class="toc-text">权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text"></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">逻辑运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><span class="toc-text">聚合函数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker-%E5%AE%89%E8%A3%85-MySQL5-7"><span class="toc-text">Docker 安装 MySQL5.7</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%91%BD%E4%BB%A4"><span class="toc-text">安装命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker-%E5%AE%89%E8%A3%85-MySQL8"><span class="toc-text">Docker 安装 MySQL8</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%B6%E5%9C%BA%E7%8E%AF%E5%A2%83"><span class="toc-text">靶场环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#phpStudy"><span class="toc-text">phpStudy</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-text">使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8"><span class="toc-text">快速使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#database"><span class="toc-text">database</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#table"><span class="toc-text">table</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Data"><span class="toc-text">Data</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#user"><span class="toc-text">user</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%83%E9%99%90-1"><span class="toc-text">权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9host%E7%99%BB%E5%BD%95"><span class="toc-text">修改host登录</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2"><span class="toc-text">查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%9F%A5%E8%AF%A2-select"><span class="toc-text">基础查询 select</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0-count"><span class="toc-text">聚合函数 count</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%9F%A5%E8%AF%A2-where"><span class="toc-text">条件查询 where</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E6%9F%A5%E8%AF%A2-group-by"><span class="toc-text">分组查询 group by</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F%E6%9F%A5%E8%AF%A2-order-by-%E9%99%8D%E5%BA%8Fdesc"><span class="toc-text">排序查询 order by (降序desc)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2-limit"><span class="toc-text">分页查询 limit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2-union"><span class="toc-text">联合查询 union</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B6%E4%BB%96-1"><span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-text">MySQL 触发器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BC%95%E6%93%8E"><span class="toc-text">MySQL 数据库引擎</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E4%BA%8B%E5%8A%A1"><span class="toc-text">MySQL 事务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E5%88%86%E5%8C%BA%E5%88%86%E8%A1%A8"><span class="toc-text">MySQL 分区分表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E8%A7%86%E5%9B%BE"><span class="toc-text">MySQL 视图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E5%8F%8ASQL%E4%BC%98%E5%8C%96"><span class="toc-text">MySQL 数据库设计及SQL优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E8%BF%98%E5%8E%9F"><span class="toc-text">MySQL 数据备份还原</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SQL-%E6%B3%A8%E5%85%A5"><span class="toc-text">SQL 注入</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 数据库DB：存储数据的仓库，数据是有组织的进行存储；</span></span><br><span class="line"><span class="comment"># 数据库管理系统DBMS：操纵和管理数据库的大型软件；</span></span><br><span class="line"><span class="comment"># SQL：操作关系型数据库的编程语言，定义了一套操作；</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 常见数据库：Oracle、MySQL、SQL Server</span></span><br><span class="line"><span class="comment"># mysql，旧版本以5.7为主流，新版本是8</span></span><br><span class="line"></span><br><span class="line">database &gt; table (column | row)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="Mysql"><a href="#Mysql" class="headerlink" title="Mysql"></a>Mysql</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mysql库是mysql的核心数据库</span></span><br><span class="line"><span class="comment"># infomation_schema 是 SQL注入常见的数据库，提供对数据库元数据的只读访问，包括数据库、表、列、索引、权限等信息</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="information-schema数据库"><a href="#information-schema数据库" class="headerlink" title="information_schema数据库"></a>information_schema数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 常用表</span></span><br><span class="line">schemata: 列出所有数据库</span><br><span class="line">tables: 列出所有表及其属性</span><br><span class="line">columns: 列出所有列及其属性</span><br><span class="line">statistics: 列出索引信息</span><br><span class="line">user_privileges 和 schema_privileges: 列出用户权限</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查询所有数据库</span></span><br><span class="line"><span class="keyword">select</span> schema_name from information_schema.schemata;</span><br><span class="line"><span class="comment"># 查询所有表</span></span><br><span class="line"><span class="keyword">select</span> table_name from information_schema.tables;</span><br><span class="line"><span class="keyword">select</span> * from information_schema.tables <span class="built_in">where</span> table_name=<span class="string">&#x27;emp&#x27;</span>; <span class="comment"># 查找emp表的信息，所属用户等</span></span><br><span class="line"><span class="comment"># 查询所列</span></span><br><span class="line"><span class="keyword">select</span> column_name from information_schema.columns;</span><br><span class="line"><span class="keyword">select</span> column_name from information_schema.columns <span class="built_in">where</span> table_name=<span class="string">&#x27;emp&#x27;</span>; <span class="comment"># 查看emp表的字段</span></span><br><span class="line"><span class="comment"># </span></span><br><span class="line">use information_schema</span><br><span class="line">show tables;</span><br><span class="line"><span class="keyword">select</span> * from tables; <span class="comment"># 有table_name(表名), table_schema（库名）等</span></span><br><span class="line"><span class="keyword">select</span> * from columns; <span class="comment"># 有table_name(表名), table_schema（库名）, column_name(列名，字段)等</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h2><h3 id="SQL通用语法"><a href="#SQL通用语法" class="headerlink" title="SQL通用语法"></a>SQL通用语法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># SQL可以单行或者多行书写，以分号结尾</span></span><br><span class="line"><span class="comment"># SQL可以使用空格/缩进 来增强预计的可读性</span></span><br><span class="line"><span class="comment"># MySQL数据库的SQL语句不区分大小写，关键词建议使用大写</span></span><br><span class="line"><span class="comment"># 注释：单行注释: -- 注释内容 或者 # 注释内容； 多行注释：/* 注释内容 */</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="SQL-分类"><a href="#SQL-分类" class="headerlink" title="SQL 分类"></a>SQL 分类</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># DDL: 数据库定义语言，用于定义数据库对象（数据库、表、字段）；</span></span><br><span class="line"><span class="comment"># DML: 数据操作语言，用来对数据库表中的数据进行增删改；</span></span><br><span class="line"><span class="comment"># DQL: 数据查询语言，用来查询数据表中表的记录；</span></span><br><span class="line"><span class="comment"># DCL: 数据控制语言，用来创建数据库用户、控制数据库的访问权限；</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="数据类型-1"><a href="#数据类型-1" class="headerlink" title="数据类型"></a>数据类型</h3><table>
+<thead>
+<tr>
+<th align="left">类型</th>
+<th align="left">bytes</th>
+<th align="left">有符号范围(signed)</th>
+<th align="left">无符号(unsigned)范围</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">tinyint</td>
+<td align="left">1</td>
+<td align="left">(-128, 127)</td>
+<td align="left">(0, 255)</td>
+<td align="left">小整数值</td>
+</tr>
+<tr>
+<td align="left">smallint</td>
+<td align="left">2</td>
+<td align="left">(-32768, 32767)</td>
+<td align="left">(0, 65535)</td>
+<td align="left">大整数值</td>
+</tr>
+<tr>
+<td align="left">mediumint</td>
+<td align="left">3</td>
+<td align="left">(-8388608, 8388607)</td>
+<td align="left">(0, 16777215)</td>
+<td align="left">大整数值</td>
+</tr>
+<tr>
+<td align="left">int&#x2F;integer</td>
+<td align="left">4</td>
+<td align="left">(-2147483648, 2147483647)</td>
+<td align="left">(0, 4294967295)</td>
+<td align="left">大整数值</td>
+</tr>
+<tr>
+<td align="left">bigint</td>
+<td align="left">8</td>
+<td align="left">(-2^63, 2^63-1)</td>
+<td align="left">(0, 2^64-1)</td>
+<td align="left">极大整数值</td>
+</tr>
+<tr>
+<td align="left">float</td>
+<td align="left">4</td>
+<td align="left">(-3.402823466 E+38, 3.402823466351 E+38)</td>
+<td align="left">0 和 (1.175494351 E-38, 3.402823466 E+38)</td>
+<td align="left">单精度浮点数值</td>
+</tr>
+<tr>
+<td align="left">double</td>
+<td align="left">8</td>
+<td align="left">(-1.7976931348623157 E+308, 1.7976931348623157 E+308)</td>
+<td align="left">0 和 (2.2250738585072014 E-308, 1.7976931348623157 E+308)</td>
+<td align="left">双精度浮点数值</td>
+</tr>
+<tr>
+<td align="left">decimal</td>
+<td align="left"></td>
+<td align="left">依赖于 M (精度) 和 D (标度) 的值</td>
+<td align="left">依赖于 M (精度) 和 D (标度) 的值</td>
+<td align="left">小数值(精确点数)</td>
+</tr>
+</tbody></table>
+<h3 id="字符类型"><a href="#字符类型" class="headerlink" title="字符类型"></a>字符类型</h3><table>
+<thead>
+<tr>
+<th align="left">类型</th>
+<th align="left">大小 bytes</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">char</td>
+<td align="left">0-255</td>
+<td align="left">定长字符串（需要指定长度）</td>
+</tr>
+<tr>
+<td align="left">varchar</td>
+<td align="left">0-65535</td>
+<td align="left">变长字符串（需要指定长度）</td>
+</tr>
+<tr>
+<td align="left">tinyblob</td>
+<td align="left">0-255</td>
+<td align="left">不超过255个字符的二进制数据</td>
+</tr>
+<tr>
+<td align="left">tinytext</td>
+<td align="left">0-255</td>
+<td align="left">短文本字符串</td>
+</tr>
+<tr>
+<td align="left">blob</td>
+<td align="left">0-65535</td>
+<td align="left">二进制形式的长文本数据</td>
+</tr>
+<tr>
+<td align="left">text</td>
+<td align="left">0-65535</td>
+<td align="left">长文本数据</td>
+</tr>
+<tr>
+<td align="left">mediumblob</td>
+<td align="left">0-16777215</td>
+<td align="left">二进制形式的中等长度文本数据</td>
+</tr>
+<tr>
+<td align="left">mediumtext</td>
+<td align="left">0-16777215</td>
+<td align="left">中等长度文本数据</td>
+</tr>
+<tr>
+<td align="left">longblob</td>
+<td align="left">0-4294967295</td>
+<td align="left">二进制形式的极大文本数据</td>
+</tr>
+</tbody></table>
+<h3 id="日期时间类型"><a href="#日期时间类型" class="headerlink" title="日期时间类型"></a>日期时间类型</h3><table>
+<thead>
+<tr>
+<th align="left">类型</th>
+<th align="left">bytes</th>
+<th align="left">范围</th>
+<th align="left">格式</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">date</td>
+<td align="left">3</td>
+<td align="left">1000-01-01 至 9999-12-31</td>
+<td align="left">YYYY-MM-DD</td>
+<td align="left">日期值</td>
+</tr>
+<tr>
+<td align="left">time</td>
+<td align="left">3</td>
+<td align="left">-838:59:59 至 838:59:59</td>
+<td align="left">HH:MM:SS</td>
+<td align="left">时间值或者持续时间</td>
+</tr>
+<tr>
+<td align="left">year</td>
+<td align="left">1</td>
+<td align="left">1901 至 2155</td>
+<td align="left">YYYY</td>
+<td align="left">年份值</td>
+</tr>
+<tr>
+<td align="left">datetime</td>
+<td align="left">8</td>
+<td align="left">1000-01-01 00:00:00 至 9999-12-31 23:59:59</td>
+<td align="left">YYYY-MM-DD HH:MM:SS</td>
+<td align="left">混合日期和时间值</td>
+</tr>
+<tr>
+<td align="left">timestamp</td>
+<td align="left">4</td>
+<td align="left">1970-01-01 00:00:01 值 2038-01-19 03:14:07</td>
+<td align="left">YYYY-MM-DD HH:MM:SS</td>
+<td align="left">混合日期和时间值，时间戳</td>
+</tr>
+</tbody></table>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h3><table>
+<thead>
+<tr>
+<th align="left">权限</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">ALL,ALL PRIVILEGES</td>
+<td align="left">所有权限</td>
+</tr>
+<tr>
+<td align="left">select</td>
+<td align="left">查询数据</td>
+</tr>
+<tr>
+<td align="left">insert</td>
+<td align="left">插入数据</td>
+</tr>
+<tr>
+<td align="left">update</td>
+<td align="left">修改数据</td>
+</tr>
+<tr>
+<td align="left">delete</td>
+<td align="left">删除数据</td>
+</tr>
+<tr>
+<td align="left">alter</td>
+<td align="left">修改表</td>
+</tr>
+<tr>
+<td align="left">drop</td>
+<td align="left">删除数据库&#x2F;表&#x2F;视图</td>
+</tr>
+<tr>
+<td align="left">create</td>
+<td align="left">创建数据库&#x2F;表</td>
+</tr>
+</tbody></table>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><h3 id=""><a href="#" class="headerlink" title=""></a></h3><table>
+<thead>
+<tr>
+<th align="left">运算符</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">&gt;</td>
+<td align="left">大于</td>
+</tr>
+<tr>
+<td align="left">&gt;&#x3D;</td>
+<td align="left">大于等于</td>
+</tr>
+<tr>
+<td align="left">&lt;</td>
+<td align="left">小于</td>
+</tr>
+<tr>
+<td align="left">&lt;&#x3D;</td>
+<td align="left">小于等于</td>
+</tr>
+<tr>
+<td align="left">&#x3D;</td>
+<td align="left">等于</td>
+</tr>
+<tr>
+<td align="left">&lt;&gt; 或者 !&#x3D;</td>
+<td align="left">不等于</td>
+</tr>
+<tr>
+<td align="left">between … and …</td>
+<td align="left">在某个范围之内(含最小，最大值)</td>
+</tr>
+<tr>
+<td align="left">in (…)</td>
+<td align="left">在 in 之后的列表中的值，多旋一</td>
+</tr>
+<tr>
+<td align="left">like 占位符</td>
+<td align="left">模糊匹配 (_匹配单个字符，%匹配任意字符)</td>
+</tr>
+<tr>
+<td align="left">is NULL</td>
+<td align="left">是 NULL</td>
+</tr>
+</tbody></table>
+<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><table>
+<thead>
+<tr>
+<th align="left">逻辑运算符</th>
+<th align="left">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">AND 或 &amp;&amp;</td>
+<td align="left">并且（多个条件都成立）</td>
+</tr>
+<tr>
+<td align="left">OR 或 ||</td>
+<td align="left">或者（多个条件任意一个成立）</td>
+</tr>
+<tr>
+<td align="left">NOT 或 ！</td>
+<td align="left">非，不是</td>
+</tr>
+</tbody></table>
+<h3 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h3><p>将一列数据作为一个整体，进行纵向计算。</p>
+<table>
+<thead>
+<tr>
+<th align="left">聚合函数</th>
+<th align="left">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">count</td>
+<td align="left">统计数量</td>
+</tr>
+<tr>
+<td align="left">max</td>
+<td align="left">最大值</td>
+</tr>
+<tr>
+<td align="left">min</td>
+<td align="left">最小值</td>
+</tr>
+<tr>
+<td align="left">avg</td>
+<td align="left">平均值</td>
+</tr>
+<tr>
+<td align="left">sum</td>
+<td align="left">求和</td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="Docker-安装-MySQL5-7"><a href="#Docker-安装-MySQL5-7" class="headerlink" title="Docker 安装 MySQL5.7"></a>Docker 安装 MySQL5.7</h2><h3 id="安装命令"><a href="#安装命令" class="headerlink" title="安装命令"></a>安装命令</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 3306:3306 --privileged=true \</span><br><span class="line">-v /home/hjx/docker/mysql/conf/my.cnf:/etc/my.cnf \</span><br><span class="line">-v /home/hjx/docker/mysql/data:/var/lib/mysql \</span><br><span class="line">-e MYSQL_ROOT_PASSWORD=hadoop \</span><br><span class="line">--name mysql mysql:5.7 \</span><br><span class="line">--character-set-server=utf8mb4 \</span><br><span class="line">--collation-server=utf8mb4_general_ci</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>创建用户</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">先进入容器</span></span><br><span class="line">docker exec -it mysql bash</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">执行MySQL命令, 输入root密码, 连接MySQL</span></span><br><span class="line">mysql -uroot -p</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">输入密码后, 执行下面命令创建新用户 (用户名: <span class="built_in">test</span> , 密码: test123)</span></span><br><span class="line">GRANT ALL PRIVILEGES ON *.* TO &#x27;test&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;test123&#x27; WITH GRANT OPTION;</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+
+<h3 id="Docker-安装-MySQL8"><a href="#Docker-安装-MySQL8" class="headerlink" title="Docker 安装 MySQL8"></a>Docker 安装 MySQL8</h3><ol>
+<li>拉起镜像</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pull mysql:8.0.12</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>创建数据目录和配置文件</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /usr/mysql/conf /usr/mysql/data</span><br><span class="line">chmod -R 755 /usr/mysql/</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>创建配置文件</li>
+</ol>
+<blockquote>
+<p>vim &#x2F;usr&#x2F;mysql&#x2F;conf&#x2F;my.cnf</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[client]</span><br><span class="line"><span class="comment">#socket = /usr/mysql/mysqld.sock</span></span><br><span class="line">default-character-set = utf8mb4</span><br><span class="line"></span><br><span class="line">[mysqld]</span><br><span class="line"><span class="comment">#pid-file        = /var/run/mysqld/mysqld.pid</span></span><br><span class="line"><span class="comment">#socket          = /var/run/mysqld/mysqld.sock</span></span><br><span class="line"><span class="comment">#datadir         = /var/lib/mysql</span></span><br><span class="line"><span class="comment">#socket = /usr/mysql/mysqld.sock</span></span><br><span class="line"><span class="comment">#pid-file = /usr/mysql/mysqld.pid</span></span><br><span class="line">datadir = /usr/mysql/data</span><br><span class="line">character_set_server = utf8mb4</span><br><span class="line">collation_server = utf8mb4_bin</span><br><span class="line">secure-file-priv= NULL</span><br><span class="line"><span class="comment"># Disabling symbolic-links is recommended to prevent assorted security risks</span></span><br><span class="line">symbolic-links=0</span><br><span class="line"><span class="comment"># Custom config should go here</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>创建容器</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker run --restart=unless-stopped -d --name mysql8 \</span><br><span class="line">-v /usr/mysql/conf/my.cnf:/etc/mysql/my.cnf \</span><br><span class="line">-v /usr/mysql/data:/var/lib/mysql \</span><br><span class="line">-p 3306:3306 -e MYSQL_ROOT_PASSWORD=hadoop mysql</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>修改mysql密码以及可访问主机</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">use mysql</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">修改访问主机以及密码等，设置为所有主机可访问</span></span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;%&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;新密码&#x27;;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">刷新</span></span><br><span class="line">flush privileges;</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+
+<h2 id="靶场环境"><a href="#靶场环境" class="headerlink" title="靶场环境"></a>靶场环境</h2><h3 id="phpStudy"><a href="#phpStudy" class="headerlink" title="phpStudy"></a>phpStudy</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 解压安装后，配置环境变量</span></span><br><span class="line">在path中添加：D:\phpstudy_pro\Extensions\MySQL5.7.26\bin</span><br><span class="line"><span class="comment"># 连接, 默认密码 root</span></span><br><span class="line">mysql -u root -p </span><br><span class="line">mysql -h 192.168.16.2 -P 3396 -p</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><h2 id="快速使用"><a href="#快速使用" class="headerlink" title="快速使用"></a>快速使用</h2><h3 id="database"><a href="#database" class="headerlink" title="database"></a>database</h3><ol>
+<li>查看库</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">show databases;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>创建库</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">create database db_name; <span class="comment"># create database mz charset utf8mb4;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>删除库</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">drop database db_name;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>选择库</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">use db_name;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>查看表</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">show tables;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>查看创建库创建语句</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">show create database db_name;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>查看选中的数据库</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> database();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>修改数据库字符集</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alter database db_name default charset=utf8;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="table"><a href="#table" class="headerlink" title="table"></a>table</h3><ol>
+<li>查看表结构</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">desc table_name; <span class="comment"># 查看Type，Key等</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>查看创建表的语句</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">show create table table_name; <span class="comment"># 例如 show create table user;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>创建表</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">create table table_name(</span><br><span class="line">	字段1	字段类型	comment <span class="string">&#x27;字段1的注释&#x27;</span>,</span><br><span class="line">	字段2	字段类型	comment <span class="string">&#x27;字段2的注释&#x27;</span>,</span><br><span class="line">	...</span><br><span class="line">) comment <span class="string">&#x27;表注释&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例</span></span><br><span class="line">create table <span class="built_in">test</span>(</span><br><span class="line">	<span class="built_in">id</span> int comment <span class="string">&#x27;编号&#x27;</span>,</span><br><span class="line">	name varchar(50) comment <span class="string">&#x27;姓名&#x27;</span>,</span><br><span class="line">	age int comment <span class="string">&#x27;年龄&#x27;</span>,</span><br><span class="line">	gender varchar(1) comment <span class="string">&#x27;性别&#x27;</span></span><br><span class="line">) comment <span class="string">&#x27;用户表&#x27;</span>;</span><br><span class="line"><span class="comment"># 实例2</span></span><br><span class="line">create table emp(</span><br><span class="line"><span class="built_in">id</span> int comment <span class="string">&#x27;编号&#x27;</span>,</span><br><span class="line">workno varchar(10) comment <span class="string">&#x27;工号&#x27;</span>,</span><br><span class="line">name varchar(10) comment <span class="string">&#x27;姓名&#x27;</span>,</span><br><span class="line">gender char(1) comment <span class="string">&#x27;性别&#x27;</span>,</span><br><span class="line">age tinyint unsigned comment <span class="string">&#x27;年龄&#x27;</span>,</span><br><span class="line">idcard char(18) comment <span class="string">&#x27;身份证号&#x27;</span>,</span><br><span class="line">entrydate <span class="built_in">date</span> comment <span class="string">&#x27;入职时间&#x27;</span></span><br><span class="line">) comment <span class="string">&#x27;员工表&#x27;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>修改表</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加一个字段</span></span><br><span class="line">alter table emp add nickname varchar(20) comment <span class="string">&#x27;昵称&#x27;</span>;</span><br><span class="line"><span class="comment"># 修改数据类型</span></span><br><span class="line">alter table emp modify nickname varchar(30);</span><br><span class="line"><span class="comment"># 修改字段名字，将nickname字段修改为username</span></span><br><span class="line">alter table emp change nickname username varchar(50) comment <span class="string">&#x27;用户名&#x27;</span>;</span><br><span class="line"><span class="comment"># 删除字段，删除username字段</span></span><br><span class="line">alter table emp drop username;</span><br><span class="line"><span class="comment"># 修改表名，将emp修改为employee</span></span><br><span class="line">alter table emp rename to employee;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>删除表</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">drop table employee;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">create table employee(</span><br><span class="line"><span class="built_in">id</span> int comment <span class="string">&#x27;编号&#x27;</span>,</span><br><span class="line">workno varchar(10) comment <span class="string">&#x27;工号&#x27;</span>,</span><br><span class="line">name varchar(10) comment <span class="string">&#x27;姓名&#x27;</span>,</span><br><span class="line">gender char(1) comment <span class="string">&#x27;性别&#x27;</span>,</span><br><span class="line">age tinyint unsigned comment <span class="string">&#x27;年龄&#x27;</span>,</span><br><span class="line">idcard char(18) comment <span class="string">&#x27;身份证号&#x27;</span>,</span><br><span class="line">entrydate <span class="built_in">date</span> comment <span class="string">&#x27;入职时间&#x27;</span></span><br><span class="line">) comment <span class="string">&#x27;员工表&#x27;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>插入数据</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">insert into employee (<span class="built_in">id</span>, workno, name, gender, age, idcard, entrydate) values (1,<span class="string">&#x27;001&#x27;</span>,<span class="string">&#x27;mz&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,18,<span class="string">&#x27;000000000000110000&#x27;</span>,<span class="string">&#x27;2025-09-09&#x27;</span>);</span><br><span class="line"><span class="comment"># 不指定字段，需要按顺序</span></span><br><span class="line">insert into employee values (2,<span class="string">&#x27;002&#x27;</span>,<span class="string">&#x27;mzz&#x27;</span>,<span class="string">&#x27;女&#x27;</span>,19,<span class="string">&#x27;000000000000120000&#x27;</span>,<span class="string">&#x27;2025-09-10&#x27;</span>);</span><br><span class="line"><span class="comment"># 批量添加</span></span><br><span class="line">insert into employee values </span><br><span class="line">(3,<span class="string">&#x27;003&#x27;</span>,<span class="string">&#x27;mzz3&#x27;</span>,<span class="string">&#x27;女&#x27;</span>,19,<span class="string">&#x27;000000000000130000&#x27;</span>,<span class="string">&#x27;2025-09-13&#x27;</span>),</span><br><span class="line">(4,<span class="string">&#x27;004&#x27;</span>,<span class="string">&#x27;mzz4&#x27;</span>,<span class="string">&#x27;女&#x27;</span>,19,<span class="string">&#x27;000000000000140000&#x27;</span>,<span class="string">&#x27;2025-09-14&#x27;</span>),</span><br><span class="line">(5,<span class="string">&#x27;005&#x27;</span>,<span class="string">&#x27;mzz5&#x27;</span>,<span class="string">&#x27;女&#x27;</span>,19,<span class="string">&#x27;000000000000150000&#x27;</span>,<span class="string">&#x27;2025-09-15&#x27;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>修改数据</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">update employee <span class="built_in">set</span> name=<span class="string">&#x27;mzz6&#x27;</span> <span class="built_in">where</span> <span class="built_in">id</span>=4;</span><br><span class="line"><span class="comment"># 修改多个字段</span></span><br><span class="line">update employee <span class="built_in">set</span> <span class="built_in">id</span>=3,name=<span class="string">&#x27;mzz3&#x27;</span>,gender=<span class="string">&#x27;男&#x27;</span> <span class="built_in">where</span> <span class="built_in">id</span>=5;</span><br><span class="line"><span class="comment"># 多个条件</span></span><br><span class="line">update employee <span class="built_in">set</span> name=<span class="string">&#x27;mzz6&#x27;</span> <span class="built_in">where</span> <span class="built_in">id</span>=5 and </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>删除数据</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除符合条件的数据</span></span><br><span class="line">delete from employee <span class="built_in">where</span> <span class="built_in">id</span>=3;</span><br><span class="line"><span class="comment"># 清空表</span></span><br><span class="line">delete from employee;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="user"><a href="#user" class="headerlink" title="user"></a>user</h3><ol>
+<li>查看用户</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看所有用户</span></span><br><span class="line"><span class="keyword">select</span> * from mysql.user;</span><br><span class="line"><span class="keyword">select</span> user,host from mysql.user;</span><br><span class="line"><span class="comment"># 查看当前用户</span></span><br><span class="line"><span class="keyword">select</span> user();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>创建用户</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">create user <span class="string">&#x27;mz&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> identified by <span class="string">&#x27;123456&#x27;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>修改密码</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改用户密码为123</span></span><br><span class="line">alter user <span class="string">&#x27;mz&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> identified with mysql_native_password by <span class="string">&#x27;123&#x27;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>删除用户</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">drop user <span class="string">&#x27;mz&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="权限-1"><a href="#权限-1" class="headerlink" title="权限"></a>权限</h3><table>
+<thead>
+<tr>
+<th align="left">权限</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">ALL,ALL PRIVILEGES</td>
+<td align="left">所有权限</td>
+</tr>
+<tr>
+<td align="left">select</td>
+<td align="left">查询数据</td>
+</tr>
+<tr>
+<td align="left">insert</td>
+<td align="left">插入数据</td>
+</tr>
+<tr>
+<td align="left">update</td>
+<td align="left">修改数据</td>
+</tr>
+<tr>
+<td align="left">delete</td>
+<td align="left">删除数据</td>
+</tr>
+<tr>
+<td align="left">alter</td>
+<td align="left">修改表</td>
+</tr>
+<tr>
+<td align="left">drop</td>
+<td align="left">删除数据库&#x2F;表&#x2F;视图</td>
+</tr>
+<tr>
+<td align="left">create</td>
+<td align="left">创建数据库&#x2F;表</td>
+</tr>
+</tbody></table>
+<ol>
+<li>查看权限</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">show grants <span class="keyword">for</span> <span class="string">&#x27;用户名&#x27;</span>@<span class="string">&#x27;主机名&#x27;</span>;</span><br><span class="line"><span class="comment"># 查看 mz 用户的权限</span></span><br><span class="line">show grants <span class="keyword">for</span> <span class="string">&#x27;mz&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span>;</span><br><span class="line">use information_schema; <span class="comment"># 不需要权限</span></span><br><span class="line">show tables;</span><br><span class="line"><span class="keyword">select</span> * from tables;</span><br><span class="line"><span class="comment"># 查看 root 的权限</span></span><br><span class="line">show grants <span class="keyword">for</span> <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>添加权限</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">grant 权限列表 on 数据库名.表名 to <span class="string">&#x27;用户名&#x27;</span>@<span class="string">&#x27;主机名&#x27;</span>;</span><br><span class="line"><span class="comment">## 查询权限 select</span></span><br><span class="line"><span class="comment"># 将mz数据库的test表的查询权限给mz用户</span></span><br><span class="line">grant <span class="keyword">select</span> on mz.test to <span class="string">&#x27;mz&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span>;</span><br><span class="line"><span class="comment"># 将mz数据库的所有表的查询权限给mz用户</span></span><br><span class="line">grant <span class="keyword">select</span> on mz.* to <span class="string">&#x27;mz&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">## create,drop,alter</span></span><br><span class="line"><span class="comment"># 给mz库下的创建、删除、修改表的权限给mz</span></span><br><span class="line">grant create,drop,alter on mz.* to <span class="string">&#x27;mz&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span>;</span><br><span class="line"><span class="comment"># 给全部mz库下面的表权限给mz用户</span></span><br><span class="line">grant all on mz.* to <span class="string">&#x27;mz&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>撤销权限</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">revoke 权限列表 on 数据库名.表名 to <span class="string">&#x27;用户名&#x27;</span>@<span class="string">&#x27;主机名&#x27;</span>;</span><br><span class="line"><span class="comment"># 撤销 select 权限</span></span><br><span class="line">revoke <span class="keyword">select</span> no mz.* from <span class="string">&#x27;mz&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="修改host登录"><a href="#修改host登录" class="headerlink" title="修改host登录"></a>修改host登录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改Host是某IP登录</span></span><br><span class="line">update user <span class="built_in">set</span> host=<span class="string">&#x27;ip&#x27;</span> <span class="built_in">where</span> user=<span class="string">&#x27;root&#x27;</span>;</span><br><span class="line"><span class="comment"># 运行任意IP连接</span></span><br><span class="line">update user <span class="built_in">set</span> host=<span class="string">&#x27;%&#x27;</span> <span class="built_in">where</span> user=<span class="string">&#x27;root&#x27;</span>;</span><br><span class="line"><span class="comment"># h指定ip地址: mysql -u root -h ip -p </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改密码</span></span><br><span class="line">alter user <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;ip&#x27;</span> identified with mysql_native_password by <span class="string">&#x27;root&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 刷新配置</span></span><br><span class="line">flush privileges;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> </span><br><span class="line">	字段列表</span><br><span class="line">from </span><br><span class="line">	表名列表</span><br><span class="line"><span class="built_in">where</span></span><br><span class="line">	条件列表</span><br><span class="line">group by </span><br><span class="line">	分组字段列表</span><br><span class="line">having</span><br><span class="line">	分组后条件列表</span><br><span class="line">order by</span><br><span class="line">	排序字段列表</span><br><span class="line"><span class="built_in">limit</span></span><br><span class="line">	分页参数</span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据表准备</span></span><br><span class="line">create table emp(</span><br><span class="line"><span class="built_in">id</span> int comment <span class="string">&#x27;编号&#x27;</span>,</span><br><span class="line">workno varchar(10) comment <span class="string">&#x27;工号&#x27;</span>,</span><br><span class="line">name varchar(10) comment <span class="string">&#x27;姓名&#x27;</span>,</span><br><span class="line">gender char(1) comment <span class="string">&#x27;性别&#x27;</span>,</span><br><span class="line">age tinyint unsigned comment <span class="string">&#x27;年龄&#x27;</span>,</span><br><span class="line">idcard char(18) comment <span class="string">&#x27;身份证号&#x27;</span>,</span><br><span class="line">workaddress varchar(50) comment <span class="string">&#x27;工作地址&#x27;</span>,</span><br><span class="line">entrydate <span class="built_in">date</span> comment <span class="string">&#x27;入职时间&#x27;</span></span><br><span class="line">)comment <span class="string">&#x27;员工表&#x27;</span>;</span><br><span class="line"><span class="comment"># 数据准备</span></span><br><span class="line">INSERT INTO emp VALUES (1, <span class="string">&#x27;00001&#x27;</span>, <span class="string">&#x27;柳岩666&#x27;</span>, <span class="string">&#x27;女&#x27;</span>, 20, <span class="string">&#x27;123456789012345678&#x27;</span>, <span class="string">&#x27;北京&#x27;</span>, <span class="string">&#x27;2000-01-01&#x27;</span>),(2, <span class="string">&#x27;00002&#x27;</span>, <span class="string">&#x27;张无忌&#x27;</span>, <span class="string">&#x27;男&#x27;</span>, 18, <span class="string">&#x27;123456789012345670&#x27;</span>, <span class="string">&#x27;北京&#x27;</span>, <span class="string">&#x27;2005-09-01&#x27;</span>),(3, <span class="string">&#x27;00003&#x27;</span>, <span class="string">&#x27;韦一笑&#x27;</span>, <span class="string">&#x27;男&#x27;</span>, 38, <span class="string">&#x27;123456789712345670&#x27;</span>, <span class="string">&#x27;上海&#x27;</span>, <span class="string">&#x27;2005-08-01&#x27;</span>),(4, <span class="string">&#x27;00004&#x27;</span>, <span class="string">&#x27;赵敏&#x27;</span>, <span class="string">&#x27;女&#x27;</span>, 18, <span class="string">&#x27;123456757123845670&#x27;</span>, <span class="string">&#x27;北京&#x27;</span>, <span class="string">&#x27;2009-12-01&#x27;</span>),(5, <span class="string">&#x27;00005&#x27;</span>, <span class="string">&#x27;小昭&#x27;</span>, <span class="string">&#x27;女&#x27;</span>, 16, <span class="string">&#x27;123456769012345678&#x27;</span>, <span class="string">&#x27;上海&#x27;</span>, <span class="string">&#x27;2007-07-01&#x27;</span>),(6, <span class="string">&#x27;00006&#x27;</span>, <span class="string">&#x27;杨逍&#x27;</span>, <span class="string">&#x27;男&#x27;</span>, 28, <span class="string">&#x27;12345678931234567X&#x27;</span>, <span class="string">&#x27;北京&#x27;</span>, <span class="string">&#x27;2006-01-01&#x27;</span>),(7, <span class="string">&#x27;00007&#x27;</span>, <span class="string">&#x27;范瑶&#x27;</span>, <span class="string">&#x27;男&#x27;</span>, 40, <span class="string">&#x27;123456789212345670&#x27;</span>, <span class="string">&#x27;北京&#x27;</span>, <span class="string">&#x27;2005-05-01&#x27;</span>),(8, <span class="string">&#x27;00008&#x27;</span>, <span class="string">&#x27;黛绮丝&#x27;</span>, <span class="string">&#x27;女&#x27;</span>, 38, <span class="string">&#x27;123456157123645670&#x27;</span>, <span class="string">&#x27;天津&#x27;</span>, <span class="string">&#x27;2015-05-01&#x27;</span>),(9, <span class="string">&#x27;00009&#x27;</span>, <span class="string">&#x27;范凉凉&#x27;</span>, <span class="string">&#x27;女&#x27;</span>, 45, <span class="string">&#x27;123156789012345678&#x27;</span>, <span class="string">&#x27;北京&#x27;</span>, <span class="string">&#x27;2010-04-01&#x27;</span>),(10, <span class="string">&#x27;00010&#x27;</span>, <span class="string">&#x27;陈友谅&#x27;</span>, <span class="string">&#x27;男&#x27;</span>, 53, <span class="string">&#x27;123456789012345670&#x27;</span>, <span class="string">&#x27;上海&#x27;</span>, <span class="string">&#x27;2011-01-01&#x27;</span>),(11, <span class="string">&#x27;00011&#x27;</span>, <span class="string">&#x27;张士诚&#x27;</span>, <span class="string">&#x27;男&#x27;</span>, 55, <span class="string">&#x27;123567897123465670&#x27;</span>, <span class="string">&#x27;江苏&#x27;</span>, <span class="string">&#x27;2015-05-01&#x27;</span>),(12, <span class="string">&#x27;00012&#x27;</span>, <span class="string">&#x27;常遇春&#x27;</span>, <span class="string">&#x27;男&#x27;</span>, 32, <span class="string">&#x27;123446757152345670&#x27;</span>, <span class="string">&#x27;北京&#x27;</span>, <span class="string">&#x27;2004-02-01&#x27;</span>),(13, <span class="string">&#x27;00013&#x27;</span>, <span class="string">&#x27;张三丰&#x27;</span>, <span class="string">&#x27;男&#x27;</span>, 88, <span class="string">&#x27;123656789012345678&#x27;</span>, <span class="string">&#x27;江苏&#x27;</span>, <span class="string">&#x27;2020-11-01&#x27;</span>),(14, <span class="string">&#x27;00014&#x27;</span>, <span class="string">&#x27;灭绝&#x27;</span>, <span class="string">&#x27;女&#x27;</span>, 65, <span class="string">&#x27;123456719012345670&#x27;</span>, <span class="string">&#x27;西安&#x27;</span>, <span class="string">&#x27;2019-05-01&#x27;</span>),(15, <span class="string">&#x27;00015&#x27;</span>, <span class="string">&#x27;胡青牛&#x27;</span>, <span class="string">&#x27;男&#x27;</span>, 70, <span class="string">&#x27;12345674971234567X&#x27;</span>, <span class="string">&#x27;西安&#x27;</span>, <span class="string">&#x27;2018-04-01&#x27;</span>),(16, <span class="string">&#x27;00016&#x27;</span>, <span class="string">&#x27;周芷若&#x27;</span>, <span class="string">&#x27;女&#x27;</span>, 18, null, <span class="string">&#x27;北京&#x27;</span>, <span class="string">&#x27;2012-06-01&#x27;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="基础查询-select"><a href="#基础查询-select" class="headerlink" title="基础查询 select"></a>基础查询 select</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 全表查询</span></span><br><span class="line"><span class="keyword">select</span> * from emp;</span><br><span class="line"><span class="comment"># 查询某些字段</span></span><br><span class="line"><span class="keyword">select</span> name,gender from emp;</span><br><span class="line"><span class="comment"># 查询别名显示</span></span><br><span class="line"><span class="keyword">select</span> name as 姓名, gender as 性别 from emp;</span><br><span class="line"><span class="comment"># 去重查询</span></span><br><span class="line"><span class="keyword">select</span> distinct gender from emp;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## 练习</span></span><br><span class="line"><span class="comment"># A. 查询指定字段 name, workno, age 并返回</span></span><br><span class="line"><span class="keyword">select</span> name,workno,age from emp;</span><br><span class="line"><span class="comment"># B. 查询返回所有字段</span></span><br><span class="line"><span class="keyword">select</span> * from emp;</span><br><span class="line"><span class="comment"># C. 查询所有员工的工作地址,起别名</span></span><br><span class="line"><span class="keyword">select</span> workaddress as <span class="string">&#x27;工作地址&#x27;</span> from emp;</span><br><span class="line"><span class="comment"># D. 查询公司员工的上班地址有哪些(不要重复)</span></span><br><span class="line"><span class="keyword">select</span> distinct workaddress from emp;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="聚合函数-count"><a href="#聚合函数-count" class="headerlink" title="聚合函数 count"></a>聚合函数 count</h3><p>将一列数据作为一个整体，进行纵向计算。</p>
+<table>
+<thead>
+<tr>
+<th align="left">聚合函数</th>
+<th align="left">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">count</td>
+<td align="left">统计数量</td>
+</tr>
+<tr>
+<td align="left">max</td>
+<td align="left">最大值</td>
+</tr>
+<tr>
+<td align="left">min</td>
+<td align="left">最小值</td>
+</tr>
+<tr>
+<td align="left">avg</td>
+<td align="left">平均值</td>
+</tr>
+<tr>
+<td align="left">sum</td>
+<td align="left">求和</td>
+</tr>
+</tbody></table>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 语法：select 聚合函数(字段列表) from 表名;</span></span><br><span class="line"><span class="keyword">select</span> count(*) from emp;</span><br><span class="line"><span class="comment"># 统计表有多少行，*可以用1代替</span></span><br><span class="line"><span class="keyword">select</span> count(*) as total from emp;</span><br><span class="line"><span class="comment"># 统计idcard非空行数量</span></span><br><span class="line"><span class="keyword">select</span> count(idcard) as total from emp;</span><br><span class="line"></span><br><span class="line"><span class="comment">## 统计员工年龄</span></span><br><span class="line"><span class="comment"># 平均年龄</span></span><br><span class="line"><span class="keyword">select</span> avg(age) from emp;</span><br><span class="line"><span class="comment"># 最大年龄</span></span><br><span class="line"><span class="keyword">select</span> max(age) from emp;</span><br><span class="line"><span class="comment"># 最小年龄</span></span><br><span class="line"><span class="keyword">select</span> min(age) from emp;</span><br><span class="line"><span class="comment"># 全部年龄</span></span><br><span class="line"><span class="keyword">select</span> <span class="built_in">sum</span>(age) from emp;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 统计西安地区的平均年龄</span></span><br><span class="line"><span class="keyword">select</span> avg(age) from emp <span class="built_in">where</span> workaddress=<span class="string">&#x27;西安&#x27;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="条件查询-where"><a href="#条件查询-where" class="headerlink" title="条件查询 where"></a>条件查询 where</h3><table>
+<thead>
+<tr>
+<th align="left">运算符</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">&gt;</td>
+<td align="left">大于</td>
+</tr>
+<tr>
+<td align="left">&gt;&#x3D;</td>
+<td align="left">大于等于</td>
+</tr>
+<tr>
+<td align="left">&lt;</td>
+<td align="left">小于</td>
+</tr>
+<tr>
+<td align="left">&lt;&#x3D;</td>
+<td align="left">小于等于</td>
+</tr>
+<tr>
+<td align="left">&#x3D;</td>
+<td align="left">等于</td>
+</tr>
+<tr>
+<td align="left">&lt;&gt; 或者 !&#x3D;</td>
+<td align="left">不等于</td>
+</tr>
+<tr>
+<td align="left">between … and …</td>
+<td align="left">在某个范围之内(含最小，最大值)</td>
+</tr>
+<tr>
+<td align="left">in (…)</td>
+<td align="left">在 in 之后的列表中的值，多旋一</td>
+</tr>
+<tr>
+<td align="left">like 占位符</td>
+<td align="left">模糊匹配 (_匹配单个字符，%匹配任意字符)</td>
+</tr>
+<tr>
+<td align="left">is NULL</td>
+<td align="left">是 NULL</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">逻辑运算符</th>
+<th align="left">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">AND 或 &amp;&amp;</td>
+<td align="left">并且（多个条件都成立）</td>
+</tr>
+<tr>
+<td align="left">OR 或 ||</td>
+<td align="left">或者（多个条件任意一个成立）</td>
+</tr>
+<tr>
+<td align="left">NOT 或 ！</td>
+<td align="left">非，不是</td>
+</tr>
+</tbody></table>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 练习</span></span><br><span class="line"><span class="comment"># A. 查询年龄等于 88 的员工</span></span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> age=18;</span><br><span class="line"><span class="comment"># B. 查询年龄小于 20 的员工信息</span></span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> age&lt;20;</span><br><span class="line"><span class="comment"># C. 查询年龄小于等于 20 的员工信息</span></span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> age&lt;=20;</span><br><span class="line"><span class="comment"># D. 查询没有身份证号的员工信息</span></span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> idcard is null;</span><br><span class="line"><span class="comment"># E. 查询有身份证号的员工信息</span></span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> idcard is not null;</span><br><span class="line"><span class="comment"># F. 查询年龄不等于 88 的员工信息</span></span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> age!=88;</span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> age&lt;&gt;88;</span><br><span class="line"><span class="comment"># G. 查询年龄在15岁(包含) 到 20岁(包含)之间的员工信息</span></span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> age &gt;= 15 and age &lt;=20;</span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> age between 15 and 20;</span><br><span class="line"><span class="comment"># H. 查询性别为 女 且年龄小于 25岁的员工信息</span></span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> gender=<span class="string">&#x27;女&#x27;</span> and age&lt;25;</span><br><span class="line"><span class="comment"># I. 查询年龄等于18 或 20 或 40 的员工信息</span></span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> age=18 or age=20 or age=40;</span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> age <span class="keyword">in</span>(18,20,40);</span><br><span class="line"><span class="comment"># J. 查询姓名为两个字的员工信息 _ %</span></span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> name like <span class="string">&#x27;__&#x27;</span>;</span><br><span class="line"><span class="comment"># K. 查询身份证号最后一位是X的员工信息</span></span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> idcard like <span class="string">&#x27;_________________X&#x27;</span>;</span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> idcard list <span class="string">&#x27;%X&#x27;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="分组查询-group-by"><a href="#分组查询-group-by" class="headerlink" title="分组查询 group by"></a>分组查询 group by</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># where 是分组前过滤, having 是分组后的过滤条件</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据性别分组：统计男性和女性的数量</span></span><br><span class="line"><span class="keyword">select</span> gender,count(*) from emp group by gender;</span><br><span class="line"><span class="keyword">select</span> gender,count(*) total from emp group by gender;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据性别分组：统计男性和女性的数量</span></span><br><span class="line"><span class="keyword">select</span> gender,avg(age) from emp group by gender;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查询年龄小于45的员工，并根据工作地址分组，获取员工数量大于等于3的工作地点。</span></span><br><span class="line"><span class="keyword">select</span> workaddress,count(*) total from emp <span class="built_in">where</span> age &lt; 45 group by workaddress having total &gt;= 3;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据工作地址和性别统计人数</span></span><br><span class="line"><span class="keyword">select</span> workaddress,gender, count(*) <span class="string">&#x27;total&#x27;</span> from emp group by workaddress,gender;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="排序查询-order-by-降序desc"><a href="#排序查询-order-by-降序desc" class="headerlink" title="排序查询 order by (降序desc)"></a>排序查询 order by (降序desc)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 默认升序</span></span><br><span class="line"><span class="comment"># 按照年龄从小到大升序</span></span><br><span class="line"><span class="keyword">select</span> * from emp order by age;</span><br><span class="line"><span class="keyword">select</span> * from emp order by age asc;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 按照年龄从大到小，降序</span></span><br><span class="line"><span class="keyword">select</span> * from emp order by age desc;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据入职时间先降序，(同入职时间的)根据年龄升序</span></span><br><span class="line"><span class="keyword">select</span> * from emp order by entrydate desc, age asc;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="分页查询-limit"><a href="#分页查询-limit" class="headerlink" title="分页查询 limit"></a>分页查询 limit</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 对查询结果进行分页</span></span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">limit</span> 0,10;</span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">limit</span> 10,20;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="联合查询-union"><a href="#联合查询-union" class="headerlink" title="联合查询 union"></a>联合查询 union</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将多次查询结果联合在一起，形成一次查询结果</span></span><br><span class="line"><span class="comment"># 多表查询必须列数一样</span></span><br><span class="line"><span class="comment"># 会自动去重，不想去重可以使用 union all</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查询ID小于10和age=88</span></span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> <span class="built_in">id</span> &lt; 10</span><br><span class="line">union</span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> age = 88;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查询ID小于10和age=88，不去重</span></span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> <span class="built_in">id</span> &lt; 10</span><br><span class="line">union all</span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> age = 88;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="其他-1"><a href="#其他-1" class="headerlink" title="其他"></a>其他</h1><h2 id="MySQL-触发器"><a href="#MySQL-触发器" class="headerlink" title="MySQL 触发器"></a>MySQL 触发器</h2><h2 id="MySQL-数据库引擎"><a href="#MySQL-数据库引擎" class="headerlink" title="MySQL 数据库引擎"></a>MySQL 数据库引擎</h2><h2 id="MySQL-事务"><a href="#MySQL-事务" class="headerlink" title="MySQL 事务"></a>MySQL 事务</h2><h2 id="MySQL-分区分表"><a href="#MySQL-分区分表" class="headerlink" title="MySQL 分区分表"></a>MySQL 分区分表</h2><h2 id="MySQL-视图"><a href="#MySQL-视图" class="headerlink" title="MySQL 视图"></a>MySQL 视图</h2><h2 id="MySQL-数据库设计及SQL优化"><a href="#MySQL-数据库设计及SQL优化" class="headerlink" title="MySQL 数据库设计及SQL优化"></a>MySQL 数据库设计及SQL优化</h2><h2 id="MySQL-数据备份还原"><a href="#MySQL-数据备份还原" class="headerlink" title="MySQL 数据备份还原"></a>MySQL 数据备份还原</h2><h1 id="SQL-注入"><a href="#SQL-注入" class="headerlink" title="SQL 注入"></a>SQL 注入</h1><hr>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 hjxstart@126.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry"><span class="miit">
+                <img src="/img/gov.png" title="中华人民共和国工业和信息化部">
+                <a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">粤ICP备2021170625号-1</a>
+        </span>
+    
+    ©2019-2022 hjxstart
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("/img/article-list-bg-img.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

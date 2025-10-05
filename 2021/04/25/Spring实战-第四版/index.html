@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Spring实战(第四版) | 黄金贤的博客</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="Spring实战(第四版) | 黄金贤的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="黄金贤 hjxstart">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java">
+<meta property="og:url" content="https://hjxstart.github.io/2025/10/04/Java/index.html">
+<meta property="og:site_name" content="黄金贤的博客">
+<meta property="og:description" content="黄金贤 hjxstart">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-10-04T13:55:05.000Z">
+<meta property="article:modified_time" content="2025-10-05T05:11:02.573Z">
+<meta property="article:author" content="黄金贤">
+<meta property="article:tag" content="计算机网络 数据库 操作系统 数据结构 算法 Java Nodejs">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-dark.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 8.0.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>黄金贤</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="github"
+               href="https://github.com/hjxstart"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="email"
+               href="mailto:hjxstart@126.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=1726283687&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(81)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="读书">
+                        
+                        读书
+                        <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(13)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据库">
+                        
+                        数据库
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="网络">
+                        
+                        网络
+                        <small>(17)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="81">
+<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://github.com/hjxstart">hjxstart</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="全部文章 网络 "
+           href="/2024/05/06/HCIE%20Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HCIE Lab">HCIE Lab</span>
+            <span class="post-date" title="2024-05-06 19:42:00">2024/05/06</span>
+        </a>
+        
+        <a id="top" class="全部文章 安全 "
+           href="/2025/08/17/CISP-PTE/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CISP-PTE">CISP-PTE</span>
+            <span class="post-date" title="2025-08-17 11:12:00">2025/08/17</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2025/04/04/PXE-Kickstart/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PXE+Kickstart">PXE+Kickstart</span>
+            <span class="post-date" title="2025-04-04 10:45:00">2025/04/04</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2025/02/12/KylinOS/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="KylinOS">KylinOS</span>
+            <span class="post-date" title="2025-02-12 16:47:00">2025/02/12</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2025/08/24/KylinOS-FAQ/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="KylinOS FAQ">KylinOS FAQ</span>
+            <span class="post-date" title="2025-08-24 11:07:00">2025/08/24</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2025/08/24/Windows/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Windows">Windows</span>
+            <span class="post-date" title="2025-08-24 11:19:00">2025/08/24</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2022/03/24/Linux/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Linux">Linux</span>
+            <span class="post-date" title="2022-03-24 11:53:00">2022/03/24</span>
+        </a>
+        
+        <a id="top" class="全部文章 工具 "
+           href="/2024/07/28/NTLite/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="NTLite">NTLite</span>
+            <span class="post-date" title="2024-07-28 21:32:00">2024/07/28</span>
+        </a>
+        
+        <a id="top" class="全部文章 数据库 "
+           href="/2020/03/19/MySQL/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="MySQL">MySQL</span>
+            <span class="post-date" title="2020-03-19 21:51:00">2020/03/19</span>
+        </a>
+        
+        <a id="top" class="全部文章 开发 "
+           href="/2025/09/13/Php/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Php">Php</span>
+            <span class="post-date" title="2025-09-13 23:10:00">2025/09/13</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2025/10/04/Java/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Java">Java</span>
+            <span class="post-date" title="2025-10-04 21:55:05">2025/10/04</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2025/10/04/Wireshark/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Wireshark">Wireshark</span>
+            <span class="post-date" title="2025-10-04 21:31:59">2025/10/04</span>
+        </a>
+        
+        <a  class="全部文章 安全 "
+           href="/2025/08/21/cisp-practice/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="cisp-practice">cisp-practice</span>
+            <span class="post-date" title="2025-08-21 19:41:00">2025/08/21</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2025/04/24/OpenStack/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OpenStack">OpenStack</span>
+            <span class="post-date" title="2025-04-24 09:04:00">2025/04/24</span>
+        </a>
+        
+        <a  class="全部文章 安全 "
+           href="/2024/08/23/CISO/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CISO">CISO</span>
+            <span class="post-date" title="2024-08-23 19:29:00">2024/08/23</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/04/16/%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="网络工程师">网络工程师</span>
+            <span class="post-date" title="2024-04-16 22:14:00">2024/04/16</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2024/03/31/RHCE9/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="RHCE9">RHCE9</span>
+            <span class="post-date" title="2024-03-31 15:33:00">2024/03/31</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/28/BGP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="BGP">BGP</span>
+            <span class="post-date" title="2024-01-28 11:20:00">2024/01/28</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/STP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="STP">STP</span>
+            <span class="post-date" title="2024-01-27 14:01:00">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/VLAN/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="VLAN">VLAN</span>
+            <span class="post-date" title="2024-01-27 11:42:00">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/LLDP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="LLDP">LLDP</span>
+            <span class="post-date" title="2024-01-27 11:31:00">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/Telnet/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Telnet">Telnet</span>
+            <span class="post-date" title="2024-01-27 10:45:00">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/SSH/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SSH">SSH</span>
+            <span class="post-date" title="2024-01-27 10:44:00">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2023/12/22/WireGuard/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="WireGuard">WireGuard</span>
+            <span class="post-date" title="2023-12-22 07:40:00">2023/12/22</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/12/21/Stack-Port/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Stack Port">Stack Port</span>
+            <span class="post-date" title="2023-12-21 19:31:00">2023/12/21</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2023/12/18/ESXI/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="ESXI">ESXI</span>
+            <span class="post-date" title="2023-12-18 17:05:00">2023/12/18</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2023/12/18/RouterOS/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="RouterOS">RouterOS</span>
+            <span class="post-date" title="2023-12-18 17:05:00">2023/12/18</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2023/12/18/GIT/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="GIT">GIT</span>
+            <span class="post-date" title="2023-12-18 17:00:00">2023/12/18</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2023/11/30/HelpDesk/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HelpDesk">HelpDesk</span>
+            <span class="post-date" title="2023-11-30 21:21:00">2023/11/30</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2023/11/18/OpenWrt/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OpenWrt">OpenWrt</span>
+            <span class="post-date" title="2023-11-18 17:03:00">2023/11/18</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/06/01/HCNP-Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="华为NP网络实验">华为NP网络实验</span>
+            <span class="post-date" title="2023-06-01 10:46:04">2023/06/01</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/06/01/CCNP-Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CCNP Lab">CCNP Lab</span>
+            <span class="post-date" title="2023-06-01 10:46:00">2023/06/01</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2023/05/13/IBMC/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="IBMC">IBMC</span>
+            <span class="post-date" title="2023-05-13 21:04:00">2023/05/13</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2023/04/26/1Panel/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1Panel">1Panel</span>
+            <span class="post-date" title="2023-04-26 14:09:00">2023/04/26</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2023/04/24/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="信息系统项目管理师">信息系统项目管理师</span>
+            <span class="post-date" title="2023-04-24 10:51:00">2023/04/24</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/09/EIGRP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="EIGRP">EIGRP</span>
+            <span class="post-date" title="2023-04-09 15:14:00">2023/04/09</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/09/FHPR/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="FHPR">FHPR</span>
+            <span class="post-date" title="2023-04-09 11:25:00">2023/04/09</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/08/HCNA-Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HCNA Lab">HCNA Lab</span>
+            <span class="post-date" title="2023-04-08 11:46:00">2023/04/08</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/07/CCNA-Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CCNA Lab">CCNA Lab</span>
+            <span class="post-date" title="2023-04-07 20:13:29">2023/04/07</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/07/OSPF/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OSPF">OSPF</span>
+            <span class="post-date" title="2023-04-07 19:19:00">2023/04/07</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2022/08/24/FRP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="FRP">FRP</span>
+            <span class="post-date" title="2022-08-24 12:47:00">2022/08/24</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2022/08/24/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="软件设计师">软件设计师</span>
+            <span class="post-date" title="2022-08-24 10:51:00">2022/08/24</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2022/08/23/Markdown/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Markdown">Markdown</span>
+            <span class="post-date" title="2022-08-23 19:54:00">2022/08/23</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2022/08/12/HomeLab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HomeLab">HomeLab</span>
+            <span class="post-date" title="2022-08-12 15:09:00">2022/08/12</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2022/07/28/WDS-MDT/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="WDS+MDT">WDS+MDT</span>
+            <span class="post-date" title="2022-07-28 21:33:00">2022/07/28</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2022/06/21/Anaconda/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Anaconda">Anaconda</span>
+            <span class="post-date" title="2022-06-21 20:56:00">2022/06/21</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2022/05/25/%E7%BD%91%E7%BB%9C%E8%A7%84%E5%88%92%E5%B8%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="网络规划师">网络规划师</span>
+            <span class="post-date" title="2022-05-25 11:57:00">2022/05/25</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2022/03/14/InfluxDB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="InfluxDB">InfluxDB</span>
+            <span class="post-date" title="2022-03-14 13:25:00">2022/03/14</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2022/03/06/MongoDB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="MongoDB">MongoDB</span>
+            <span class="post-date" title="2022-03-06 17:38:00">2022/03/06</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/12/27/VIM/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="VIM">VIM</span>
+            <span class="post-date" title="2021-12-27 09:15:00">2021/12/27</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/12/19/GITEA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="GITEA">GITEA</span>
+            <span class="post-date" title="2021-12-19 21:53:00">2021/12/19</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/12/16/VSFTPD/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="VSFTPD">VSFTPD</span>
+            <span class="post-date" title="2021-12-16 08:49:00">2021/12/16</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2021/10/06/REDIS/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="REDIS">REDIS</span>
+            <span class="post-date" title="2021-10-06 17:19:00">2021/10/06</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/20/K8s-lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="K8s_lab">K8s_lab</span>
+            <span class="post-date" title="2021-09-20 08:04:00">2021/09/20</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/15/K8s/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="K8s">K8s</span>
+            <span class="post-date" title="2021-09-15 20:48:00">2021/09/15</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/09/09/VMware/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="VMware">VMware</span>
+            <span class="post-date" title="2021-09-09 15:38:00">2021/09/09</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/08/Ingress/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Ingress">Ingress</span>
+            <span class="post-date" title="2021-09-08 23:56:00">2021/09/08</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/08/Harbor/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Harbor">Harbor</span>
+            <span class="post-date" title="2021-09-08 18:04:00">2021/09/08</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/08/28/Swarm/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Swarm">Swarm</span>
+            <span class="post-date" title="2021-08-28 20:46:00">2021/08/28</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/08/26/Go/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Go">Go</span>
+            <span class="post-date" title="2021-08-26 11:50:00">2021/08/26</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/08/15/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Java多线程">Java多线程</span>
+            <span class="post-date" title="2021-08-15 14:36:00">2021/08/15</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/08/11/Nginx/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Nginx">Nginx</span>
+            <span class="post-date" title="2021-08-11 23:28:00">2021/08/11</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/08/06/Maven/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Maven">Maven</span>
+            <span class="post-date" title="2021-08-06 09:38:00">2021/08/06</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/07/31/Springboot%E9%A1%B9%E7%9B%AE/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Springboot项目">Springboot项目</span>
+            <span class="post-date" title="2021-07-31 19:34:00">2021/07/31</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/07/22/GitLab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="GitLab">GitLab</span>
+            <span class="post-date" title="2021-07-22 21:41:00">2021/07/22</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/07/22/Docker/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Docker">Docker</span>
+            <span class="post-date" title="2021-07-22 14:53:00">2021/07/22</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/07/19/SpringSecurity/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SpringSecurity">SpringSecurity</span>
+            <span class="post-date" title="2021-07-19 20:58:00">2021/07/19</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/07/13/Mybatis/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Mybatis">Mybatis</span>
+            <span class="post-date" title="2021-07-13 10:38:00">2021/07/13</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/07/05/NVM/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="NVM">NVM</span>
+            <span class="post-date" title="2021-07-05 08:15:00">2021/07/05</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/06/26/Java-Project/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Java Project">Java Project</span>
+            <span class="post-date" title="2021-06-26 07:58:00">2021/06/26</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/06/23/Vue/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Vue">Vue</span>
+            <span class="post-date" title="2021-06-23 10:48:00">2021/06/23</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/06/08/SpringBoot2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SpringBoot2">SpringBoot2</span>
+            <span class="post-date" title="2021-06-08 16:51:00">2021/06/08</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/06/07/CentOS7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CentOS7">CentOS7</span>
+            <span class="post-date" title="2021-06-07 23:16:00">2021/06/07</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/06/02/Spring%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%BA%94%E7%89%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Spring实战(第五版)">Spring实战(第五版)</span>
+            <span class="post-date" title="2021-06-02 09:42:00">2021/06/02</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/04/25/Spring%E5%AE%9E%E6%88%98-%E7%AC%AC%E5%9B%9B%E7%89%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Spring实战(第四版)">Spring实战(第四版)</span>
+            <span class="post-date" title="2021-04-25 18:38:00">2021/04/25</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/04/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="设计模式">设计模式</span>
+            <span class="post-date" title="2021-04-18 22:19:00">2021/04/18</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2021/03/22/SQL/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SQL">SQL</span>
+            <span class="post-date" title="2021-03-22 18:33:00">2021/03/22</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/03/14/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="时间管理">时间管理</span>
+            <span class="post-date" title="2021-03-14 21:49:00">2021/03/14</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/03/14/Hexo/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hexo">Hexo</span>
+            <span class="post-date" title="2021-03-14 08:31:00">2021/03/14</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2020/09/12/UltraISO/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="UltraISO">UltraISO</span>
+            <span class="post-date" title="2020-09-12 11:42:00">2020/09/12</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2020/09/12/Ventoy/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Ventoy">Ventoy</span>
+            <span class="post-date" title="2020-09-12 11:42:00">2020/09/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-Spring实战-第四版" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Spring实战(第四版)</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="读书">读书</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2025-10-04 23:13:18'>2021-04-25 18:38</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:403</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%A3%85%E9%85%8DBean"><span class="toc-text">1.装配Bean</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8DBean"><span class="toc-text">1.1自动装配Bean</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%AD%A5%E9%AA%A4"><span class="toc-text">使用步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BA%E7%BB%84%E4%BB%B6%E6%89%AB%E6%8F%8F%E7%9A%84bean%E5%91%BD%E5%90%8D"><span class="toc-text">为组件扫描的bean命名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E7%BB%84%E4%BB%B6%E6%89%AB%E6%8F%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E5%8C%85"><span class="toc-text">设置组件扫描的基础包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E4%B8%BAbean%E6%B7%BB%E5%8A%A0%E6%B3%A8%E8%A7%A3%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D"><span class="toc-text">通过为bean添加注解实现自动装配</span></a></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-装配Bean"><a href="#1-装配Bean" class="headerlink" title="1.装配Bean"></a>1.装配Bean</h2><ol>
+<li>创建应用对象之间协作关系的行为通常称为装配(Wiring)，这也是依赖注入(DI)的本质。</li>
+<li>Spring提供了三种主要的装配机制：在XML中进行显示配置；在Java中进行显示配置；隐式的bean发现机制和自动装配。</li>
+</ol>
+<hr>
+<h3 id="1-1自动装配Bean"><a href="#1-1自动装配Bean" class="headerlink" title="1.1自动装配Bean"></a>1.1自动装配Bean</h3><h4 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h4><ol>
+<li>使用（@Component）告知Spring要为这个类创建bean;</li>
+<li>使用（@Autowired）告知Spring要为这个类注入依赖;</li>
+<li>创建Config类，使用（@ComponentScan）自动扫描与配置类相同的包及其子包;</li>
+<li>也可以使用XML来启动组件自动扫描。</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">&quot;包路径&quot;</span>&gt;</span></span><br><span class="line">language-XML复制代码</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="为组件扫描的bean命名"><a href="#为组件扫描的bean命名" class="headerlink" title="为组件扫描的bean命名"></a>为组件扫描的bean命名</h4><ol>
+<li>Spring应用上下文中所有的bean都会给定一个ID。默认为类名的第一个字母变为小写，例如clasName;</li>
+<li>使用 @Component 自定义 bean ID（@Component(“idName”)）<strong>推荐使用</strong>;</li>
+<li>使用 @Named 自定义 bean ID（@Named(“idName”)）。</li>
+</ol>
+<hr>
+<h4 id="设置组件扫描的基础包"><a href="#设置组件扫描的基础包" class="headerlink" title="设置组件扫描的基础包"></a>设置组件扫描的基础包</h4><ol>
+<li>可以通过指定value来扫描特定的包，例如(@ComponentScan(“package.name”));</li>
+<li>可以通过basePackage属性进行配置基础包，例如(@ComponentScan(“base.package.name”))或者(@ComponentScan(“package1”, “package2”));</li>
+</ol>
+<hr>
+<h4 id="通过为bean添加注解实现自动装配"><a href="#通过为bean添加注解实现自动装配" class="headerlink" title="通过为bean添加注解实现自动装配"></a>通过为bean添加注解实现自动装配</h4><p>自动装配就是让Spring自动满足bean依赖的一种方法，在满足依赖过程中，会在Spring应用上下文中寻找匹配某个bean需求的其他bean。为了声明要进行自动装配，可以使用@AutoWired 或 @Inject注解。</p>
+<ol>
+<li>应用范围：构造器、Setter方法;</li>
+<li>没有匹配的bean异常：可以设置@Autowired(required&#x3D;false);</li>
+</ol>
+<hr>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 hjxstart@126.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry"><span class="miit">
+                <img src="/img/gov.png" title="中华人民共和国工业和信息化部">
+                <a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">粤ICP备2021170625号-1</a>
+        </span>
+    
+    ©2019-2022 hjxstart
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("/img/article-list-bg-img.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

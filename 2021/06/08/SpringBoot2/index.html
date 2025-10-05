@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SpringBoot2 | 黄金贤的博客</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="SpringBoot2 | 黄金贤的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="黄金贤 hjxstart">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java">
+<meta property="og:url" content="https://hjxstart.github.io/2025/10/04/Java/index.html">
+<meta property="og:site_name" content="黄金贤的博客">
+<meta property="og:description" content="黄金贤 hjxstart">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-10-04T13:55:05.000Z">
+<meta property="article:modified_time" content="2025-10-05T05:11:02.573Z">
+<meta property="article:author" content="黄金贤">
+<meta property="article:tag" content="计算机网络 数据库 操作系统 数据结构 算法 Java Nodejs">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-dark.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 8.0.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>黄金贤</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="github"
+               href="https://github.com/hjxstart"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="email"
+               href="mailto:hjxstart@126.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=1726283687&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(81)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="读书">
+                        
+                        读书
+                        <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(13)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据库">
+                        
+                        数据库
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="网络">
+                        
+                        网络
+                        <small>(17)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="81">
+<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://github.com/hjxstart">hjxstart</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="全部文章 网络 "
+           href="/2024/05/06/HCIE%20Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HCIE Lab">HCIE Lab</span>
+            <span class="post-date" title="2024-05-06 19:42:00">2024/05/06</span>
+        </a>
+        
+        <a id="top" class="全部文章 安全 "
+           href="/2025/08/17/CISP-PTE/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CISP-PTE">CISP-PTE</span>
+            <span class="post-date" title="2025-08-17 11:12:00">2025/08/17</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2025/04/04/PXE-Kickstart/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PXE+Kickstart">PXE+Kickstart</span>
+            <span class="post-date" title="2025-04-04 10:45:00">2025/04/04</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2025/02/12/KylinOS/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="KylinOS">KylinOS</span>
+            <span class="post-date" title="2025-02-12 16:47:00">2025/02/12</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2025/08/24/KylinOS-FAQ/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="KylinOS FAQ">KylinOS FAQ</span>
+            <span class="post-date" title="2025-08-24 11:07:00">2025/08/24</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2025/08/24/Windows/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Windows">Windows</span>
+            <span class="post-date" title="2025-08-24 11:19:00">2025/08/24</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2022/03/24/Linux/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Linux">Linux</span>
+            <span class="post-date" title="2022-03-24 11:53:00">2022/03/24</span>
+        </a>
+        
+        <a id="top" class="全部文章 工具 "
+           href="/2024/07/28/NTLite/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="NTLite">NTLite</span>
+            <span class="post-date" title="2024-07-28 21:32:00">2024/07/28</span>
+        </a>
+        
+        <a id="top" class="全部文章 数据库 "
+           href="/2020/03/19/MySQL/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="MySQL">MySQL</span>
+            <span class="post-date" title="2020-03-19 21:51:00">2020/03/19</span>
+        </a>
+        
+        <a id="top" class="全部文章 开发 "
+           href="/2025/09/13/Php/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Php">Php</span>
+            <span class="post-date" title="2025-09-13 23:10:00">2025/09/13</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2025/10/04/Java/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Java">Java</span>
+            <span class="post-date" title="2025-10-04 21:55:05">2025/10/04</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2025/10/04/Wireshark/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Wireshark">Wireshark</span>
+            <span class="post-date" title="2025-10-04 21:31:59">2025/10/04</span>
+        </a>
+        
+        <a  class="全部文章 安全 "
+           href="/2025/08/21/cisp-practice/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="cisp-practice">cisp-practice</span>
+            <span class="post-date" title="2025-08-21 19:41:00">2025/08/21</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2025/04/24/OpenStack/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OpenStack">OpenStack</span>
+            <span class="post-date" title="2025-04-24 09:04:00">2025/04/24</span>
+        </a>
+        
+        <a  class="全部文章 安全 "
+           href="/2024/08/23/CISO/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CISO">CISO</span>
+            <span class="post-date" title="2024-08-23 19:29:00">2024/08/23</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/04/16/%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="网络工程师">网络工程师</span>
+            <span class="post-date" title="2024-04-16 22:14:00">2024/04/16</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2024/03/31/RHCE9/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="RHCE9">RHCE9</span>
+            <span class="post-date" title="2024-03-31 15:33:00">2024/03/31</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/28/BGP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="BGP">BGP</span>
+            <span class="post-date" title="2024-01-28 11:20:00">2024/01/28</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/STP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="STP">STP</span>
+            <span class="post-date" title="2024-01-27 14:01:00">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/VLAN/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="VLAN">VLAN</span>
+            <span class="post-date" title="2024-01-27 11:42:00">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/LLDP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="LLDP">LLDP</span>
+            <span class="post-date" title="2024-01-27 11:31:00">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/Telnet/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Telnet">Telnet</span>
+            <span class="post-date" title="2024-01-27 10:45:00">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/SSH/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SSH">SSH</span>
+            <span class="post-date" title="2024-01-27 10:44:00">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2023/12/22/WireGuard/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="WireGuard">WireGuard</span>
+            <span class="post-date" title="2023-12-22 07:40:00">2023/12/22</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/12/21/Stack-Port/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Stack Port">Stack Port</span>
+            <span class="post-date" title="2023-12-21 19:31:00">2023/12/21</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2023/12/18/ESXI/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="ESXI">ESXI</span>
+            <span class="post-date" title="2023-12-18 17:05:00">2023/12/18</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2023/12/18/RouterOS/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="RouterOS">RouterOS</span>
+            <span class="post-date" title="2023-12-18 17:05:00">2023/12/18</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2023/12/18/GIT/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="GIT">GIT</span>
+            <span class="post-date" title="2023-12-18 17:00:00">2023/12/18</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2023/11/30/HelpDesk/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HelpDesk">HelpDesk</span>
+            <span class="post-date" title="2023-11-30 21:21:00">2023/11/30</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2023/11/18/OpenWrt/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OpenWrt">OpenWrt</span>
+            <span class="post-date" title="2023-11-18 17:03:00">2023/11/18</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/06/01/HCNP-Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="华为NP网络实验">华为NP网络实验</span>
+            <span class="post-date" title="2023-06-01 10:46:04">2023/06/01</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/06/01/CCNP-Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CCNP Lab">CCNP Lab</span>
+            <span class="post-date" title="2023-06-01 10:46:00">2023/06/01</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2023/05/13/IBMC/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="IBMC">IBMC</span>
+            <span class="post-date" title="2023-05-13 21:04:00">2023/05/13</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2023/04/26/1Panel/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1Panel">1Panel</span>
+            <span class="post-date" title="2023-04-26 14:09:00">2023/04/26</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2023/04/24/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="信息系统项目管理师">信息系统项目管理师</span>
+            <span class="post-date" title="2023-04-24 10:51:00">2023/04/24</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/09/EIGRP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="EIGRP">EIGRP</span>
+            <span class="post-date" title="2023-04-09 15:14:00">2023/04/09</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/09/FHPR/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="FHPR">FHPR</span>
+            <span class="post-date" title="2023-04-09 11:25:00">2023/04/09</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/08/HCNA-Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HCNA Lab">HCNA Lab</span>
+            <span class="post-date" title="2023-04-08 11:46:00">2023/04/08</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/07/CCNA-Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CCNA Lab">CCNA Lab</span>
+            <span class="post-date" title="2023-04-07 20:13:29">2023/04/07</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/07/OSPF/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OSPF">OSPF</span>
+            <span class="post-date" title="2023-04-07 19:19:00">2023/04/07</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2022/08/24/FRP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="FRP">FRP</span>
+            <span class="post-date" title="2022-08-24 12:47:00">2022/08/24</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2022/08/24/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="软件设计师">软件设计师</span>
+            <span class="post-date" title="2022-08-24 10:51:00">2022/08/24</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2022/08/23/Markdown/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Markdown">Markdown</span>
+            <span class="post-date" title="2022-08-23 19:54:00">2022/08/23</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2022/08/12/HomeLab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HomeLab">HomeLab</span>
+            <span class="post-date" title="2022-08-12 15:09:00">2022/08/12</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2022/07/28/WDS-MDT/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="WDS+MDT">WDS+MDT</span>
+            <span class="post-date" title="2022-07-28 21:33:00">2022/07/28</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2022/06/21/Anaconda/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Anaconda">Anaconda</span>
+            <span class="post-date" title="2022-06-21 20:56:00">2022/06/21</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2022/05/25/%E7%BD%91%E7%BB%9C%E8%A7%84%E5%88%92%E5%B8%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="网络规划师">网络规划师</span>
+            <span class="post-date" title="2022-05-25 11:57:00">2022/05/25</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2022/03/14/InfluxDB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="InfluxDB">InfluxDB</span>
+            <span class="post-date" title="2022-03-14 13:25:00">2022/03/14</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2022/03/06/MongoDB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="MongoDB">MongoDB</span>
+            <span class="post-date" title="2022-03-06 17:38:00">2022/03/06</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/12/27/VIM/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="VIM">VIM</span>
+            <span class="post-date" title="2021-12-27 09:15:00">2021/12/27</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/12/19/GITEA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="GITEA">GITEA</span>
+            <span class="post-date" title="2021-12-19 21:53:00">2021/12/19</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/12/16/VSFTPD/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="VSFTPD">VSFTPD</span>
+            <span class="post-date" title="2021-12-16 08:49:00">2021/12/16</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2021/10/06/REDIS/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="REDIS">REDIS</span>
+            <span class="post-date" title="2021-10-06 17:19:00">2021/10/06</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/20/K8s-lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="K8s_lab">K8s_lab</span>
+            <span class="post-date" title="2021-09-20 08:04:00">2021/09/20</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/15/K8s/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="K8s">K8s</span>
+            <span class="post-date" title="2021-09-15 20:48:00">2021/09/15</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/09/09/VMware/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="VMware">VMware</span>
+            <span class="post-date" title="2021-09-09 15:38:00">2021/09/09</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/08/Ingress/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Ingress">Ingress</span>
+            <span class="post-date" title="2021-09-08 23:56:00">2021/09/08</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/08/Harbor/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Harbor">Harbor</span>
+            <span class="post-date" title="2021-09-08 18:04:00">2021/09/08</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/08/28/Swarm/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Swarm">Swarm</span>
+            <span class="post-date" title="2021-08-28 20:46:00">2021/08/28</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/08/26/Go/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Go">Go</span>
+            <span class="post-date" title="2021-08-26 11:50:00">2021/08/26</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/08/15/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Java多线程">Java多线程</span>
+            <span class="post-date" title="2021-08-15 14:36:00">2021/08/15</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/08/11/Nginx/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Nginx">Nginx</span>
+            <span class="post-date" title="2021-08-11 23:28:00">2021/08/11</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/08/06/Maven/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Maven">Maven</span>
+            <span class="post-date" title="2021-08-06 09:38:00">2021/08/06</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/07/31/Springboot%E9%A1%B9%E7%9B%AE/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Springboot项目">Springboot项目</span>
+            <span class="post-date" title="2021-07-31 19:34:00">2021/07/31</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/07/22/GitLab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="GitLab">GitLab</span>
+            <span class="post-date" title="2021-07-22 21:41:00">2021/07/22</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/07/22/Docker/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Docker">Docker</span>
+            <span class="post-date" title="2021-07-22 14:53:00">2021/07/22</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/07/19/SpringSecurity/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SpringSecurity">SpringSecurity</span>
+            <span class="post-date" title="2021-07-19 20:58:00">2021/07/19</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/07/13/Mybatis/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Mybatis">Mybatis</span>
+            <span class="post-date" title="2021-07-13 10:38:00">2021/07/13</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/07/05/NVM/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="NVM">NVM</span>
+            <span class="post-date" title="2021-07-05 08:15:00">2021/07/05</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/06/26/Java-Project/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Java Project">Java Project</span>
+            <span class="post-date" title="2021-06-26 07:58:00">2021/06/26</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/06/23/Vue/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Vue">Vue</span>
+            <span class="post-date" title="2021-06-23 10:48:00">2021/06/23</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/06/08/SpringBoot2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SpringBoot2">SpringBoot2</span>
+            <span class="post-date" title="2021-06-08 16:51:00">2021/06/08</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/06/07/CentOS7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CentOS7">CentOS7</span>
+            <span class="post-date" title="2021-06-07 23:16:00">2021/06/07</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/06/02/Spring%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%BA%94%E7%89%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Spring实战(第五版)">Spring实战(第五版)</span>
+            <span class="post-date" title="2021-06-02 09:42:00">2021/06/02</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/04/25/Spring%E5%AE%9E%E6%88%98-%E7%AC%AC%E5%9B%9B%E7%89%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Spring实战(第四版)">Spring实战(第四版)</span>
+            <span class="post-date" title="2021-04-25 18:38:00">2021/04/25</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/04/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="设计模式">设计模式</span>
+            <span class="post-date" title="2021-04-18 22:19:00">2021/04/18</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2021/03/22/SQL/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SQL">SQL</span>
+            <span class="post-date" title="2021-03-22 18:33:00">2021/03/22</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/03/14/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="时间管理">时间管理</span>
+            <span class="post-date" title="2021-03-14 21:49:00">2021/03/14</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/03/14/Hexo/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hexo">Hexo</span>
+            <span class="post-date" title="2021-03-14 08:31:00">2021/03/14</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2020/09/12/UltraISO/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="UltraISO">UltraISO</span>
+            <span class="post-date" title="2020-09-12 11:42:00">2020/09/12</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2020/09/12/Ventoy/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Ventoy">Ventoy</span>
+            <span class="post-date" title="2020-09-12 11:42:00">2020/09/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-SpringBoot2" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">SpringBoot2</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="开发">开发</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2025-10-04 23:11:16'>2021-06-08 16:51</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:2.8k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SpringBoot2%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF-%E6%A0%B8%E5%BF%83%E5%8A%9F%E8%83%BD"><span class="toc-text">SpringBoot2核心技术-核心功能</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-text">1、配置文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1%E3%80%81yaml"><span class="toc-text">1.1、yaml</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-1%E3%80%81%E7%AE%80%E4%BB%8B"><span class="toc-text">1.1.1、简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-2%E3%80%81%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="toc-text">1.1.2、基本语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-3%E3%80%81%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">1.1.3、数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-4%E3%80%81%E7%A4%BA%E4%BE%8B"><span class="toc-text">1.1.4、示例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81web%E5%BC%80%E5%8F%91"><span class="toc-text">2、web开发</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E7%AE%80%E5%8D%95%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%90"><span class="toc-text">2.1 简单功能分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-1%E3%80%81%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E8%AE%BF%E9%97%AE"><span class="toc-text">2.1.1、静态资源访问</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-2%E3%80%81%E6%AC%A2%E8%BF%8E%E9%A1%B5%E6%94%AF%E6%8C%81"><span class="toc-text">2.1.2、欢迎页支持</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-3%E3%80%81%E8%87%AA%E5%AE%9A%E4%B9%89favicon"><span class="toc-text">2.1.3、自定义favicon</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-4%E3%80%81%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E9%85%8D%E7%BD%AE%E5%8E%9F%E7%90%86"><span class="toc-text">2.1.4、静态资源配置原理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0%E5%A4%84%E7%90%86"><span class="toc-text">2.2 请求参数处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1%E3%80%81%E8%AF%B7%E6%B1%82%E6%98%A0%E5%B0%84"><span class="toc-text">2.2.1、请求映射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2%E3%80%81%E6%99%AE%E9%80%9A%E5%8F%82%E6%95%B0%E4%B8%8E%E5%9F%BA%E6%9C%AC%E6%B3%A8%E8%A7%A3"><span class="toc-text">2.2.2、普通参数与基本注解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE"><span class="toc-text">3、数据访问</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%81%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95"><span class="toc-text">4、单元测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5%E3%80%81%E6%8C%87%E6%A0%87%E7%9B%91%E6%8E%A7"><span class="toc-text">5、指标监控</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6%E3%80%81%E5%8E%9F%E6%9D%A5%E8%A7%A3%E6%9E%90"><span class="toc-text">6、原来解析</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SpringBoot%E7%BB%9F%E4%B8%80%E8%BF%94%E5%9B%9E%E4%BF%A1%E6%81%AF%E6%A0%BC%E5%BC%8F"><span class="toc-text">SpringBoot统一返回信息格式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%88%9B%E5%BB%BA%E6%9E%9A%E4%B8%BE%E7%B1%BB"><span class="toc-text">1. 创建枚举类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%88%9B%E5%BB%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%82%E5%B8%B8%E7%B1%BB"><span class="toc-text">2. 创建自定义异常类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%88%9B%E5%BB%BA%E7%BB%9F%E4%B8%80%E8%BF%94%E5%9B%9E%E6%A0%BC%E5%BC%8F%E7%B1%BB"><span class="toc-text">3. 创建统一返回格式类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%88%9B%E5%BB%BA%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E7%B1%BB"><span class="toc-text">4. 创建异常处理类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%88%9B%E5%BB%BA%E7%BB%9F%E4%B8%80%E8%BF%94%E5%9B%9E%E6%A0%BC%E5%BC%8F%E5%A4%84%E7%90%86%E7%B1%BB"><span class="toc-text">5. 创建统一返回格式处理类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E7%BB%9F%E4%B8%80%E8%BF%94%E5%9B%9E%E6%A0%BC%E5%BC%8F"><span class="toc-text">1. 统一返回格式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%85%A8%E5%B1%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="toc-text">2. 全局异常处理</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="SpringBoot2核心技术-核心功能"><a href="#SpringBoot2核心技术-核心功能" class="headerlink" title="SpringBoot2核心技术-核心功能"></a>SpringBoot2核心技术-核心功能</h1><h2 id="1、配置文件"><a href="#1、配置文件" class="headerlink" title="1、配置文件"></a>1、配置文件</h2><h3 id="1-1、yaml"><a href="#1-1、yaml" class="headerlink" title="1.1、yaml"></a>1.1、yaml</h3><h4 id="1-1-1、简介"><a href="#1-1-1、简介" class="headerlink" title="1.1.1、简介"></a>1.1.1、简介</h4><p>YAML 是一种采用递归缩进表示层级关系的标记语言，非常适合用来以数据为中心的配置文件.<br>可以使用</p>
+<h4 id="1-1-2、基本语法"><a href="#1-1-2、基本语法" class="headerlink" title="1.1.2、基本语法"></a>1.1.2、基本语法</h4><ul>
+<li>key: value; kv之间有空格</li>
+<li>大小写敏感</li>
+<li>使用缩进表示层次关系</li>
+<li>缩进不允许使用tab，只允许空格</li>
+<li>缩进的空格数不重要，只要相同层级的元素左对齐即可</li>
+<li>‘#’表示注释</li>
+<li>“与”表示字符串内容会被 转义&#x2F;不转义</li>
+</ul>
+<h4 id="1-1-3、数据类型"><a href="#1-1-3、数据类型" class="headerlink" title="1.1.3、数据类型"></a>1.1.3、数据类型</h4><ul>
+<li>字面量：单个的，不可再分的值。date、boolean、string、number、null</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">k:</span> <span class="string">v</span></span><br><span class="line"><span class="string">language-yaml复制代码</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>对象：键值对的集合。map、hash、set、object</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">行内写法：k:</span> &#123;<span class="string">k1:v1</span>,<span class="string">k2:v2</span>,<span class="string">k3:v3</span>&#125;</span><br><span class="line"><span class="comment">#或</span></span><br><span class="line"><span class="attr">k:</span></span><br><span class="line">  <span class="attr">k1:</span> <span class="string">v1</span></span><br><span class="line">  <span class="attr">k2:</span> <span class="string">v2</span></span><br><span class="line">  <span class="attr">k3:</span> <span class="string">v3</span></span><br><span class="line">  <span class="attr">K4:</span> <span class="string">v4</span></span><br><span class="line"><span class="string">language-yaml复制代码</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>数组：一组按次序排列的值。array、list、queue</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">行内写法：k:</span> [<span class="string">v1</span>,<span class="string">v2</span>,<span class="string">v3</span>]</span><br><span class="line"><span class="comment">#或者</span></span><br><span class="line"><span class="attr">k:</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">v1</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">v2</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">v3</span></span><br><span class="line"><span class="string">language-yaml复制代码</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="1-1-4、示例"><a href="#1-1-4、示例" class="headerlink" title="1.1.4、示例"></a>1.1.4、示例</h4><ul>
+<li>Person.java &amp; Pet.java</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ConfigurationProperties(prefix = &quot;data.person&quot;)</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@ToString</span></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> String userName;</span><br><span class="line">    <span class="keyword">private</span> Boolean boss;</span><br><span class="line">    <span class="keyword">private</span> Date birth;</span><br><span class="line">    <span class="keyword">private</span> Integer age;</span><br><span class="line">    <span class="keyword">private</span> Pet pet;</span><br><span class="line">    <span class="keyword">private</span> String[] interests;</span><br><span class="line">    <span class="keyword">private</span> List&lt;String&gt; animal;</span><br><span class="line">    <span class="keyword">private</span> Map&lt;String, Object&gt; score;</span><br><span class="line">    <span class="keyword">private</span> Set&lt;Double&gt; salarys;</span><br><span class="line">    <span class="keyword">private</span> Map&lt;String, List&lt;Pet&gt;&gt; allPets;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@ToString</span></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Pet</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> Double weight;</span><br><span class="line">&#125;</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>application.yaml</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">data:</span></span><br><span class="line">  <span class="attr">person:</span></span><br><span class="line">    <span class="attr">userName:</span> <span class="string">hjxstart</span></span><br><span class="line">    <span class="attr">boss:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">birth:</span> <span class="number">1998</span><span class="string">/5/11</span></span><br><span class="line">    <span class="attr">age:</span> <span class="number">23</span></span><br><span class="line">    <span class="attr">interests:</span> [<span class="string">跑步</span>,<span class="string">游泳</span>]</span><br><span class="line">    <span class="attr">animal:</span> [<span class="string">猫</span>,<span class="string">狗</span>]</span><br><span class="line">    <span class="attr">socre:</span></span><br><span class="line">      <span class="attr">java:</span> <span class="number">80</span></span><br><span class="line">      <span class="attr">mysql:</span> <span class="number">90</span></span><br><span class="line">      <span class="attr">linux:</span> <span class="number">100</span></span><br><span class="line">    <span class="attr">salarys:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">9999.98</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">9999.99</span></span><br><span class="line">    <span class="attr">pet:</span></span><br><span class="line">      <span class="attr">name:</span> <span class="string">猫</span></span><br><span class="line">      <span class="attr">weight:</span> <span class="number">99.99</span></span><br><span class="line">    <span class="attr">allPets:</span></span><br><span class="line">      <span class="attr">sick:</span></span><br><span class="line">        <span class="bullet">-</span> &#123;<span class="attr">name:</span> <span class="string">阿狗</span>,<span class="attr">weight:</span> <span class="number">99.99</span>&#125;</span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">阿猫</span></span><br><span class="line">          <span class="attr">weight:</span> <span class="number">88.88</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">小鱼</span></span><br><span class="line">          <span class="attr">weight:</span> <span class="number">77.77</span></span><br><span class="line">      <span class="attr">health:</span> [&#123;<span class="attr">name:</span> <span class="string">阿花</span>, <span class="attr">weight:</span> <span class="number">19.99</span>&#125;,&#123;<span class="attr">name:</span> <span class="string">阿明</span>, <span class="attr">weight:</span> <span class="number">9.99</span>&#125;]</span><br><span class="line"><span class="string">language-yaml复制代码</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="2、web开发"><a href="#2、web开发" class="headerlink" title="2、web开发"></a>2、web开发</h2><p><a target="_blank" rel="noopener" href="https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/reference/html/spring-boot-features.html#boot-features-developing-web-applications">参考文档</a></p>
+<h3 id="2-1-简单功能分析"><a href="#2-1-简单功能分析" class="headerlink" title="2.1 简单功能分析"></a>2.1 简单功能分析</h3><h4 id="2-1-1、静态资源访问"><a href="#2-1-1、静态资源访问" class="headerlink" title="2.1.1、静态资源访问"></a>2.1.1、静态资源访问</h4><ul>
+<li>默认支持的静态资源的目录<br>&#x2F;static(or &#x2F;public or &#x2F;resources or &#x2F;META-INF&#x2F;resources)</li>
+<li>可以自定义静态资源访问前缀(默认为”&#x2F;**”)和静态资源目录<br><strong>注意</strong>：自定义静态资源访问前缀会导致对欢迎页和Favicon的支持失效</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">mvc:</span></span><br><span class="line">    <span class="attr">static-path-pattern:</span> <span class="string">/res/**</span> <span class="comment">#自定义静态资源访问前缀</span></span><br><span class="line">  <span class="attr">resources:</span></span><br><span class="line">    <span class="attr">static-locations:</span> [<span class="string">classpath:/staticfile</span>] <span class="comment"># 自定义静态资源目录</span></span><br><span class="line"><span class="string">language-yaml复制代码</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-1-2、欢迎页支持"><a href="#2-1-2、欢迎页支持" class="headerlink" title="2.1.2、欢迎页支持"></a>2.1.2、欢迎页支持</h4><ul>
+<li>把欢迎页(index.html)放在 &#x2F;static or &#x2F;template 目录下即可。</li>
+<li>如果在上面两个文件目录下找不到就处理 &#x2F; 的Controller。</li>
+</ul>
+<h4 id="2-1-3、自定义favicon"><a href="#2-1-3、自定义favicon" class="headerlink" title="2.1.3、自定义favicon"></a>2.1.3、自定义favicon</h4><ul>
+<li>把 favicon 放在静态资源目录下即可，默认放在(&#x2F;static)</li>
+</ul>
+<h4 id="2-1-4、静态资源配置原理"><a href="#2-1-4、静态资源配置原理" class="headerlink" title="2.1.4、静态资源配置原理"></a>2.1.4、静态资源配置原理</h4><ol>
+<li>补充：配置类只有一个有参构造器的情况</li>
+</ol>
+<ul>
+<li>示例</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 有参构造器所有参数的值都会从容器中确定</span></span><br><span class="line"><span class="comment">//ResourceProperties resourceProperties；获取和spring.resources绑定的所有的值的对象</span></span><br><span class="line"><span class="comment">//WebMvcProperties mvcProperties 获取和spring.mvc绑定的所有的值的对象</span></span><br><span class="line"><span class="comment">//ListableBeanFactory beanFactory Spring的beanFactory</span></span><br><span class="line"><span class="comment">//HttpMessageConverters 找到所有的HttpMessageConverters</span></span><br><span class="line"><span class="comment">//ResourceHandlerRegistrationCustomizer 找到 资源处理器的自定义器。=========</span></span><br><span class="line"><span class="comment">//DispatcherServletPath  </span></span><br><span class="line"><span class="comment">//ServletRegistrationBean   给应用注册Servlet、Filter....</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">WebMvcAutoConfigurationAdapter</span><span class="params">(ResourceProperties resourceProperties, WebMvcProperties mvcProperties,</span></span><br><span class="line"><span class="params">                ListableBeanFactory beanFactory, ObjectProvider&lt;HttpMessageConverters&gt; messageConvertersProvider,</span></span><br><span class="line"><span class="params">                ObjectProvider&lt;ResourceHandlerRegistrationCustomizer&gt; resourceHandlerRegistrationCustomizerProvider,</span></span><br><span class="line"><span class="params">                ObjectProvider&lt;DispatcherServletPath&gt; dispatcherServletPath,</span></span><br><span class="line"><span class="params">                ObjectProvider&lt;ServletRegistrationBean&lt;?&gt;&gt; servletRegistrations)</span> &#123;</span><br><span class="line">            <span class="built_in">this</span>.resourceProperties = resourceProperties;</span><br><span class="line">            <span class="built_in">this</span>.mvcProperties = mvcProperties;</span><br><span class="line">            <span class="built_in">this</span>.beanFactory = beanFactory;</span><br><span class="line">            <span class="built_in">this</span>.messageConvertersProvider = messageConvertersProvider;</span><br><span class="line">            <span class="built_in">this</span>.resourceHandlerRegistrationCustomizer = resourceHandlerRegistrationCustomizerProvider.getIfAvailable();</span><br><span class="line">            <span class="built_in">this</span>.dispatcherServletPath = dispatcherServletPath;</span><br><span class="line">            <span class="built_in">this</span>.servletRegistrations = servletRegistrations;</span><br><span class="line">        &#125;</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>资源处理的默认规则</li>
+<li>欢迎页的处理规则</li>
+<li>faivcon</li>
+</ol>
+<h3 id="2-2-请求参数处理"><a href="#2-2-请求参数处理" class="headerlink" title="2.2 请求参数处理"></a>2.2 请求参数处理</h3><h3 id="2-2-1、请求映射"><a href="#2-2-1、请求映射" class="headerlink" title="2.2.1、请求映射"></a>2.2.1、请求映射</h3><h3 id="2-2-2、普通参数与基本注解"><a href="#2-2-2、普通参数与基本注解" class="headerlink" title="2.2.2、普通参数与基本注解"></a>2.2.2、普通参数与基本注解</h3><ol>
+<li>常用注解<br>@PathVariable, @RequestHeader, @RequestParam, @CookieValue, @ModelAttribute, @MatriVariable, @RequestBody</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@PathVariable</span> <span class="comment">// 获取 url 路径变量(id, username)的值</span></span><br><span class="line"><span class="meta">@RequestHeader</span> <span class="comment">// 获取请求的Header的值</span></span><br><span class="line"><span class="meta">@RequestParam</span> <span class="comment">// 获取 url 的参数(age, inters)的值</span></span><br><span class="line"><span class="meta">@CookieValue</span> <span class="comment">// 获取 Cookie 的值</span></span><br><span class="line"><span class="meta">@ModelAttribute</span> <span class="comment">// 获取request域属性的值</span></span><br><span class="line">    <span class="comment">// /car/3/owner/lisi?age=18&amp;inters=basketball&amp;inters=game</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/car/&#123;id&#125;/owner/&#123;username&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> Map&lt;String, Object&gt; <span class="title function_">getCar</span><span class="params">(<span class="meta">@PathVariable(&quot;id&quot;)</span> Integer id,</span></span><br><span class="line"><span class="params">                                      <span class="meta">@PathVariable(&quot;username&quot;)</span> String name, //</span></span><br><span class="line"><span class="params">                                      <span class="meta">@PathVariable</span> Map&lt;String, String&gt; pv,</span></span><br><span class="line"><span class="params">                                      <span class="meta">@RequestHeader(&quot;User-Agent&quot;)</span> String userAgent,</span></span><br><span class="line"><span class="params">                                      <span class="meta">@RequestHeader</span> Map&lt;String, String&gt; rh,</span></span><br><span class="line"><span class="params">                                      <span class="meta">@RequestParam(&quot;age&quot;)</span> Integer age,</span></span><br><span class="line"><span class="params">                                      <span class="meta">@RequestParam(&quot;inters&quot;)</span> List&lt;String&gt; inters,</span></span><br><span class="line"><span class="params">                                      <span class="meta">@RequestParam</span> Map&lt;String,String&gt; rp,</span></span><br><span class="line"><span class="params">                                      <span class="meta">@CookieValue(&quot;Idea-b83d5636&quot;)</span> String idea,</span></span><br><span class="line"><span class="params">                                      <span class="meta">@CookieValue(&quot;testcookie&quot;)</span> Cookie cookie)</span> &#123;</span><br><span class="line">        Map&lt;String,Object&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        map.put(<span class="string">&quot;PV_Id&quot;</span>, id);</span><br><span class="line">        map.put(<span class="string">&quot;PV_Username&quot;</span>, name);</span><br><span class="line">        map.put(<span class="string">&quot;PV_Map&quot;</span>, pv);</span><br><span class="line">        map.put(<span class="string">&quot;RH_UserAgent&quot;</span>, userAgent);</span><br><span class="line">        map.put(<span class="string">&quot;RH_Map&quot;</span>, rh);</span><br><span class="line">        map.put(<span class="string">&quot;RP_age&quot;</span>, age);</span><br><span class="line">        map.put(<span class="string">&quot;RP_inters&quot;</span>, inters);</span><br><span class="line">        map.put(<span class="string">&quot;RP_Map&quot;</span>, rp);</span><br><span class="line">        map.put(<span class="string">&quot;CV_idea&quot;</span>, idea);</span><br><span class="line">        map.put(<span class="string">&quot;Cookie&quot;</span>, cookie);</span><br><span class="line">        <span class="keyword">return</span> map;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1.需要开启矩阵变量的配置（在Configuration类中配置）</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> WebMvcConfigurer <span class="title function_">webMvcConfigurer</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">WebMvcConfigurer</span>() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">configurePathMatch</span><span class="params">(PathMatchConfigurer configurer)</span> &#123;</span><br><span class="line">                <span class="type">UrlPathHelper</span> <span class="variable">urlPathHelper</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">UrlPathHelper</span>();</span><br><span class="line">                urlPathHelper.setRemoveSemicolonContent(<span class="literal">false</span>);</span><br><span class="line">                configurer.setUrlPathHelper(urlPathHelper);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="meta">@MatriVariable</span> <span class="comment">// 2.获取矩阵变量的值。(面试题：禁用cookie后如何传输sessionId)</span></span><br><span class="line">    <span class="comment">// /boss/1;age=20/2;age=10</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/boss/&#123;bossId&#125;/&#123;empId&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> Map <span class="title function_">boss</span><span class="params">(<span class="meta">@MatrixVariable(value = &quot;age&quot;, pathVar = &quot;bossId&quot;)</span> Integer bossAge,</span></span><br><span class="line"><span class="params">                    <span class="meta">@MatrixVariable(value = &quot;age&quot;, pathVar = &quot;empId&quot;)</span> Integer empAge)</span> &#123;</span><br><span class="line">        Map&lt;String, Object&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        map.put(<span class="string">&quot;bossAge&quot;</span>, bossAge);</span><br><span class="line">        map.put(<span class="string">&quot;empAge&quot;</span>, empAge);</span><br><span class="line">        <span class="keyword">return</span> map;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RequestBody</span> <span class="comment">// 获取请求体（只有POST请求才有）的值</span></span><br><span class="line">    <span class="meta">@PostMapping(&quot;/save&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> Map <span class="title function_">postMethod</span><span class="params">(<span class="meta">@RequestBody</span> String content)</span> &#123;</span><br><span class="line">        Map&lt;String, Object&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        map.put(<span class="string">&quot;RequestBody&quot;</span>, content);</span><br><span class="line">        <span class="keyword">return</span> map;</span><br><span class="line">    &#125;</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>原理：</li>
+</ul>
+<ol>
+<li>Servlet API:<br>WebRequest, ServletRequest, MultipartRequest, HttpSession、javax.servlet.http.PushBuilder, Principal, InputStream, Reader, HttpMethod, Locale, TimeZone, Zoneld</li>
+</ol>
+<ul>
+<li>ServletRequestMethodArgumentResolver 可以处理以上的部分参数</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">supportsParameter</span><span class="params">(MethodParameter parameter)</span> &#123;</span><br><span class="line">	Class&lt;?&gt; paramType = parameter.getParameterType();</span><br><span class="line">	<span class="keyword">return</span> (WebRequest.class.isAssignableFrom(paramType) ||</span><br><span class="line">		ServletRequest.class.isAssignableFrom(paramType) ||</span><br><span class="line">		MultipartRequest.class.isAssignableFrom(paramType) ||</span><br><span class="line">		HttpSession.class.isAssignableFrom(paramType) ||</span><br><span class="line">		(pushBuilder != <span class="literal">null</span> &amp;&amp; pushBuilder.isAssignableFrom(paramType)) ||</span><br><span class="line">		Principal.class.isAssignableFrom(paramType) ||</span><br><span class="line">		InputStream.class.isAssignableFrom(paramType) ||</span><br><span class="line">		Reader.class.isAssignableFrom(paramType) ||</span><br><span class="line">		HttpMethod.class == paramType ||</span><br><span class="line">		Locale.class == paramType ||</span><br><span class="line">		TimeZone.class == paramType ||</span><br><span class="line">		ZoneId.class == paramType);</span><br><span class="line">&#125;</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>复杂参数<br><strong>Map</strong>, <strong>Model</strong>, Errors&#x2F;BindingResult, <strong>RedirectAttributes</strong>, <strong>ServletResponse</strong>, SessionStatus, UriComponentsBuilder, ServletUriComponentsBuilder</li>
+</ol>
+<ul>
+<li>map, model里面的数据会被放在 request 的请求域 request.setAttribute</li>
+<li>RedirectAttributes 是重定向携带数据</li>
+<li>ServletResponse 拿到原生的Response能干什么</li>
+</ul>
+<ol>
+<li>自定义对象参数<br>可以自动类型与格式化，可以级联封装。</li>
+</ol>
+<hr>
+<h2 id="3、数据访问"><a href="#3、数据访问" class="headerlink" title="3、数据访问"></a>3、数据访问</h2><hr>
+<h2 id="4、单元测试"><a href="#4、单元测试" class="headerlink" title="4、单元测试"></a>4、单元测试</h2><hr>
+<h2 id="5、指标监控"><a href="#5、指标监控" class="headerlink" title="5、指标监控"></a>5、指标监控</h2><hr>
+<h2 id="6、原来解析"><a href="#6、原来解析" class="headerlink" title="6、原来解析"></a>6、原来解析</h2><hr>
+<h1 id="SpringBoot统一返回信息格式"><a href="#SpringBoot统一返回信息格式" class="headerlink" title="SpringBoot统一返回信息格式"></a>SpringBoot统一返回信息格式</h1><h2 id="1-创建枚举类"><a href="#1-创建枚举类" class="headerlink" title="1. 创建枚举类"></a>1. 创建枚举类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.demo2.v1.dto;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> jxh</span></span><br><span class="line"><span class="comment"> * 状态码和描述信息</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> <span class="title class_">RHttpStatusEnum</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*** 通用部分 100 - 599***/</span></span><br><span class="line">    <span class="comment">// 成功</span></span><br><span class="line">    SUCCESS(<span class="number">200</span>, <span class="string">&quot;success&quot;</span>),</span><br><span class="line">    <span class="comment">// 重定向</span></span><br><span class="line">    REDIRECT(<span class="number">301</span>, <span class="string">&quot;redirect&quot;</span>),</span><br><span class="line">    <span class="comment">// 资源未找到</span></span><br><span class="line">    NOT_FOUND(<span class="number">404</span>, <span class="string">&quot;not found&quot;</span>),</span><br><span class="line">    <span class="comment">// 服务器错误</span></span><br><span class="line">    SERVER_ERROR(<span class="number">500</span>,<span class="string">&quot;server error&quot;</span>),</span><br><span class="line">    <span class="comment">// 服务器忙</span></span><br><span class="line">    SERVER_BUSY(<span class="number">503</span>,<span class="string">&quot;服务器正忙，请稍后再试!&quot;</span>),</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*** 这里可以根据不同模块用不同的区级分开错误码，例如:  ***/</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 1000～1999 区间表示周报模块错误</span></span><br><span class="line">    DIARIES_ERROR(<span class="number">1999</span>, <span class="string">&quot;未知错误，请联系管理员&quot;</span>);</span><br><span class="line">    <span class="comment">// 2000～2999 区间表示任务模块错误</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="type">int</span> code;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String msg;</span><br><span class="line"></span><br><span class="line">    RHttpStatusEnum(Integer code, String message) &#123;</span><br><span class="line">        <span class="built_in">this</span>.code = code;</span><br><span class="line">        <span class="built_in">this</span>.msg = message;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getCode</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> code;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getMessage</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> msg;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="2-创建自定义异常类"><a href="#2-创建自定义异常类" class="headerlink" title="2. 创建自定义异常类"></a>2. 创建自定义异常类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.demo2.v1.dto.exception;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.example.demo2.v1.dto.RHttpStatusEnum;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 自定义异常类</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">DiariesException</span> <span class="keyword">extends</span> <span class="title class_">RuntimeException</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">long</span> <span class="variable">serialVersionUID</span> <span class="operator">=</span> <span class="number">132719492029L</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> RHttpStatusEnum rHttpStatusEnum;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">DiariesException</span><span class="params">(RHttpStatusEnum rHttpStatusEnum)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>(<span class="string">&quot;errorCode：&quot;</span>+rHttpStatusEnum.getCode()+<span class="string">&quot;; errorMsg：&quot;</span>+ rHttpStatusEnum.getMessage());</span><br><span class="line">        <span class="built_in">this</span>.rHttpStatusEnum = rHttpStatusEnum;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> RHttpStatusEnum <span class="title function_">getrHttpStatusEnum</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> rHttpStatusEnum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="3-创建统一返回格式类"><a href="#3-创建统一返回格式类" class="headerlink" title="3. 创建统一返回格式类"></a>3. 创建统一返回格式类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.demo2.v1.dto;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lombok.AllArgsConstructor;</span><br><span class="line"><span class="keyword">import</span> lombok.Data;</span><br><span class="line"><span class="keyword">import</span> lombok.NoArgsConstructor;</span><br><span class="line"><span class="keyword">import</span> lombok.ToString;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * REST API 返回结果</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> hjxstart</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> 2021/8/1</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@NoArgsConstructor</span></span><br><span class="line"><span class="meta">@AllArgsConstructor</span></span><br><span class="line"><span class="meta">@ToString</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">R</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 标识返回状态</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> Integer code;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 返回的成功或失败的一个消息</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span>  String msg;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 返回的数据类型，为什么用Ojbect,因为在开发中返回的结构的数据类型是不确定的</span></span><br><span class="line"><span class="comment">     * 后续可以考虑使用：泛型来解决</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> Object data;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 自定义构造函数</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">R</span><span class="params">(Integer code, String msg)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.code = code;</span><br><span class="line">        <span class="built_in">this</span>.msg = msg;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 成功返回无数据</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> R <span class="title function_">ok</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">R</span>(RHttpStatusEnum.SUCCESS.getCode(), RHttpStatusEnum.SUCCESS.getMessage(), <span class="string">&quot;&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 成功返回带数据</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> R <span class="title function_">ok</span><span class="params">(Object data)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">R</span>(RHttpStatusEnum.SUCCESS.getCode(), RHttpStatusEnum.SUCCESS.getMessage(), data);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 失败返回无数据</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> R <span class="title function_">error</span><span class="params">(RHttpStatusEnum rHttpStatusEnum)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">R</span>(rHttpStatusEnum.getCode(), rHttpStatusEnum.getMessage());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 失败返回带数据</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> R <span class="title function_">error</span><span class="params">(RHttpStatusEnum rHttpStatusEnum, Object data)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">R</span>(rHttpStatusEnum.getCode(), rHttpStatusEnum.getMessage(), data);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="4-创建异常处理类"><a href="#4-创建异常处理类" class="headerlink" title="4. 创建异常处理类"></a>4. 创建异常处理类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.demo2.v1.dto;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.example.demo2.v1.dto.exception.DiariesException;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.ExceptionHandler;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestControllerAdvice;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> jxh</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@RestControllerAdvice(&quot;com.example.demo2.v1.controller&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ControllerExceptionAdvice</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">static</span> <span class="type">Logger</span> <span class="variable">LOG</span> <span class="operator">=</span> LoggerFactory.getLogger(ControllerExceptionAdvice.class);</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ExceptionHandler(DiariesException.class)</span></span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">exceptionHandler</span><span class="params">(DiariesException e)</span> &#123;</span><br><span class="line">        LOG.error(<span class="string">&quot;errorMsg：&quot;</span> + e.getMessage() + <span class="string">&quot;，errorClass: &quot;</span> + Arrays.stream(e.getStackTrace()).findFirst() + <span class="string">&quot;，errorTime: &quot;</span> + System.currentTimeMillis());</span><br><span class="line">        <span class="keyword">return</span> e;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ExceptionHandler(Exception.class)</span></span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">exceptionHandler</span><span class="params">(Exception e)</span> &#123;</span><br><span class="line">        LOG.error(<span class="string">&quot;&quot;</span>, e);</span><br><span class="line">        <span class="keyword">return</span> e;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="5-创建统一返回格式处理类"><a href="#5-创建统一返回格式处理类" class="headerlink" title="5. 创建统一返回格式处理类"></a>5. 创建统一返回格式处理类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.demo2.v1.dto;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.example.demo2.v1.dto.exception.DiariesException;</span><br><span class="line"><span class="keyword">import</span> com.example.demo2.v1.util.JsonUtil;</span><br><span class="line"><span class="keyword">import</span> lombok.extern.slf4j.Slf4j;</span><br><span class="line"><span class="keyword">import</span> org.springframework.core.MethodParameter;</span><br><span class="line"><span class="keyword">import</span> org.springframework.http.MediaType;</span><br><span class="line"><span class="keyword">import</span> org.springframework.http.converter.HttpMessageConverter;</span><br><span class="line"><span class="keyword">import</span> org.springframework.http.server.ServerHttpRequest;</span><br><span class="line"><span class="keyword">import</span> org.springframework.http.server.ServerHttpResponse;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.ControllerAdvice;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 对返回结果处理，统一返回格式。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="meta">@ControllerAdvice(basePackages = &quot;com.example.demo2.v1&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ResultResponseHandler</span> <span class="keyword">implements</span> <span class="title class_">ResponseBodyAdvice</span>&lt;Object&gt; &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 是否对返回结果进行处理</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> methodParameter 方法的参数</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> aClass 类</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> true</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">supports</span><span class="params">(MethodParameter methodParameter, Class&lt;? extends HttpMessageConverter&lt;?&gt;&gt; aClass)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">beforeBodyWrite</span><span class="params">(Object o, MethodParameter methodParameter, MediaType mediaType, Class&lt;? extends HttpMessageConverter&lt;?&gt;&gt; aClass, ServerHttpRequest serverHttpRequest, ServerHttpResponse serverHttpResponse)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 日报异常返回处理</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="keyword">if</span> (o <span class="keyword">instanceof</span> DiariesException) &#123;</span><br><span class="line">            <span class="keyword">return</span> R.error(((DiariesException) o).getrHttpStatusEnum(), <span class="string">&quot;1&quot;</span> + System.currentTimeMillis());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 通用异常返回类型</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="keyword">if</span> (o <span class="keyword">instanceof</span> Exception) &#123;</span><br><span class="line">            <span class="keyword">return</span> R.error(RHttpStatusEnum.SERVER_ERROR);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 因为如果返回是string的话默认会调用string的处理器直接返回，所以要进行处理</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="keyword">if</span> (o <span class="keyword">instanceof</span> String) &#123;</span><br><span class="line">            <span class="keyword">return</span> JsonUtil.obj2String(R.ok(o));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 正常返回</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="keyword">return</span> R.ok(o);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="1-统一返回格式"><a href="#1-统一返回格式" class="headerlink" title="1. 统一返回格式"></a>1. 统一返回格式</h1><ol>
+<li>定义枚举类型</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> <span class="title class_">RHttpStatusEnum</span> &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 成功</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    SUCCESS(<span class="number">200</span>, <span class="string">&quot;success&quot;</span>),</span><br><span class="line">    ERROR(-<span class="number">1</span>, <span class="string">&quot;error&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="type">int</span> code;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String message;</span><br><span class="line"></span><br><span class="line">    RHttpStatusEnum(Integer code, String message) &#123;</span><br><span class="line">        <span class="built_in">this</span>.code = code;</span><br><span class="line">        <span class="built_in">this</span>.message = message;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getCode</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> code;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getMessage</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> message;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>定义 dto</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@NoArgsConstructor</span></span><br><span class="line"><span class="meta">@AllArgsConstructor</span></span><br><span class="line"><span class="meta">@ToString</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">R</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 标识返回状态</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> Integer code;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 返回的成功或失败的一个消息</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span>  String message;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 返回的数据类型，为什么用Ojbect,因为在开发中返回的结构的数据类型是不确定的</span></span><br><span class="line"><span class="comment">     * 后续可以考虑使用：泛型来解决</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> Object data;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 成功返回无数据</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> R <span class="title function_">ok</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">R</span>(RHttpStatusEnum.SUCCESS.getCode(), RHttpStatusEnum.SUCCESS.getMessage(), <span class="string">&quot;&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 成功返回带数据</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> R <span class="title function_">ok</span><span class="params">(Object data)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">R</span>(RHttpStatusEnum.SUCCESS.getCode(), RHttpStatusEnum.SUCCESS.getMessage(), data);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 失败返回</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> R <span class="title function_">error</span><span class="params">(RHttpStatusEnum rHttpStatusEnum,Integer code)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">R</span>(rHttpStatusEnum.getCode(), rHttpStatusEnum.getMessage(), <span class="string">&quot;&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>定义全局处理</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 对返回结果处理，统一返回格式。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@ControllerAdvice(basePackages = &quot;com.fh.java.internalsystemjava&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ResultResponseHandler</span> <span class="keyword">implements</span> <span class="title class_">ResponseBodyAdvice</span>&lt;Object&gt; &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 是否支持advice功能， true 是支持 false是不支持</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> methodParameter</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> aClass</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">supports</span><span class="params">(MethodParameter methodParameter, Class&lt;? extends HttpMessageConverter&lt;?&gt;&gt; aClass)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> o controller方法的返回值</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> methodParameter</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> mediaType</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> aClass</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> serverHttpRequest</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> serverHttpResponse</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">beforeBodyWrite</span><span class="params">(Object o, MethodParameter methodParameter, MediaType mediaType, Class&lt;? extends HttpMessageConverter&lt;?&gt;&gt; aClass, ServerHttpRequest serverHttpRequest, ServerHttpResponse serverHttpResponse)</span> &#123;</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 因为如果返回是string的话默认会调用string的处理器直接返回，所以要进行处理</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="keyword">if</span> (o <span class="keyword">instanceof</span> String) &#123;</span><br><span class="line">            <span class="keyword">return</span> JsonUtil.obj2String(R.ok(o));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> R.ok(o);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>只要在controller返回正常的数据即可。全局处理会自动加上code和messgae.</li>
+</ol>
+<hr>
+<h2 id="2-全局异常处理"><a href="#2-全局异常处理" class="headerlink" title="2. 全局异常处理"></a>2. 全局异常处理</h2><hr>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 hjxstart@126.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry"><span class="miit">
+                <img src="/img/gov.png" title="中华人民共和国工业和信息化部">
+                <a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">粤ICP备2021170625号-1</a>
+        </span>
+    
+    ©2019-2022 hjxstart
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("/img/article-list-bg-img.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

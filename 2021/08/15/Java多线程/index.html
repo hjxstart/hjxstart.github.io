@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Java多线程 | 黄金贤的博客</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="Java多线程 | 黄金贤的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="黄金贤 hjxstart">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java">
+<meta property="og:url" content="https://hjxstart.github.io/2025/10/04/Java/index.html">
+<meta property="og:site_name" content="黄金贤的博客">
+<meta property="og:description" content="黄金贤 hjxstart">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-10-04T13:55:05.000Z">
+<meta property="article:modified_time" content="2025-10-05T05:11:02.573Z">
+<meta property="article:author" content="黄金贤">
+<meta property="article:tag" content="计算机网络 数据库 操作系统 数据结构 算法 Java Nodejs">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-dark.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 8.0.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>黄金贤</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="github"
+               href="https://github.com/hjxstart"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="email"
+               href="mailto:hjxstart@126.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=1726283687&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(81)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="读书">
+                        
+                        读书
+                        <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(13)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据库">
+                        
+                        数据库
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="网络">
+                        
+                        网络
+                        <small>(17)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="81">
+<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://github.com/hjxstart">hjxstart</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="全部文章 网络 "
+           href="/2024/05/06/HCIE%20Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HCIE Lab">HCIE Lab</span>
+            <span class="post-date" title="2024-05-06 19:42:00">2024/05/06</span>
+        </a>
+        
+        <a id="top" class="全部文章 安全 "
+           href="/2025/08/17/CISP-PTE/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CISP-PTE">CISP-PTE</span>
+            <span class="post-date" title="2025-08-17 11:12:00">2025/08/17</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2025/04/04/PXE-Kickstart/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PXE+Kickstart">PXE+Kickstart</span>
+            <span class="post-date" title="2025-04-04 10:45:00">2025/04/04</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2025/02/12/KylinOS/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="KylinOS">KylinOS</span>
+            <span class="post-date" title="2025-02-12 16:47:00">2025/02/12</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2025/08/24/KylinOS-FAQ/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="KylinOS FAQ">KylinOS FAQ</span>
+            <span class="post-date" title="2025-08-24 11:07:00">2025/08/24</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2025/08/24/Windows/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Windows">Windows</span>
+            <span class="post-date" title="2025-08-24 11:19:00">2025/08/24</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2022/03/24/Linux/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Linux">Linux</span>
+            <span class="post-date" title="2022-03-24 11:53:00">2022/03/24</span>
+        </a>
+        
+        <a id="top" class="全部文章 工具 "
+           href="/2024/07/28/NTLite/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="NTLite">NTLite</span>
+            <span class="post-date" title="2024-07-28 21:32:00">2024/07/28</span>
+        </a>
+        
+        <a id="top" class="全部文章 数据库 "
+           href="/2020/03/19/MySQL/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="MySQL">MySQL</span>
+            <span class="post-date" title="2020-03-19 21:51:00">2020/03/19</span>
+        </a>
+        
+        <a id="top" class="全部文章 开发 "
+           href="/2025/09/13/Php/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Php">Php</span>
+            <span class="post-date" title="2025-09-13 23:10:00">2025/09/13</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2025/10/04/Java/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Java">Java</span>
+            <span class="post-date" title="2025-10-04 21:55:05">2025/10/04</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2025/10/04/Wireshark/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Wireshark">Wireshark</span>
+            <span class="post-date" title="2025-10-04 21:31:59">2025/10/04</span>
+        </a>
+        
+        <a  class="全部文章 安全 "
+           href="/2025/08/21/cisp-practice/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="cisp-practice">cisp-practice</span>
+            <span class="post-date" title="2025-08-21 19:41:00">2025/08/21</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2025/04/24/OpenStack/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OpenStack">OpenStack</span>
+            <span class="post-date" title="2025-04-24 09:04:00">2025/04/24</span>
+        </a>
+        
+        <a  class="全部文章 安全 "
+           href="/2024/08/23/CISO/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CISO">CISO</span>
+            <span class="post-date" title="2024-08-23 19:29:00">2024/08/23</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/04/16/%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="网络工程师">网络工程师</span>
+            <span class="post-date" title="2024-04-16 22:14:00">2024/04/16</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2024/03/31/RHCE9/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="RHCE9">RHCE9</span>
+            <span class="post-date" title="2024-03-31 15:33:00">2024/03/31</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/28/BGP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="BGP">BGP</span>
+            <span class="post-date" title="2024-01-28 11:20:00">2024/01/28</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/STP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="STP">STP</span>
+            <span class="post-date" title="2024-01-27 14:01:00">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/VLAN/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="VLAN">VLAN</span>
+            <span class="post-date" title="2024-01-27 11:42:00">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/LLDP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="LLDP">LLDP</span>
+            <span class="post-date" title="2024-01-27 11:31:00">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/Telnet/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Telnet">Telnet</span>
+            <span class="post-date" title="2024-01-27 10:45:00">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/SSH/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SSH">SSH</span>
+            <span class="post-date" title="2024-01-27 10:44:00">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2023/12/22/WireGuard/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="WireGuard">WireGuard</span>
+            <span class="post-date" title="2023-12-22 07:40:00">2023/12/22</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/12/21/Stack-Port/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Stack Port">Stack Port</span>
+            <span class="post-date" title="2023-12-21 19:31:00">2023/12/21</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2023/12/18/ESXI/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="ESXI">ESXI</span>
+            <span class="post-date" title="2023-12-18 17:05:00">2023/12/18</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2023/12/18/RouterOS/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="RouterOS">RouterOS</span>
+            <span class="post-date" title="2023-12-18 17:05:00">2023/12/18</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2023/12/18/GIT/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="GIT">GIT</span>
+            <span class="post-date" title="2023-12-18 17:00:00">2023/12/18</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2023/11/30/HelpDesk/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HelpDesk">HelpDesk</span>
+            <span class="post-date" title="2023-11-30 21:21:00">2023/11/30</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2023/11/18/OpenWrt/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OpenWrt">OpenWrt</span>
+            <span class="post-date" title="2023-11-18 17:03:00">2023/11/18</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/06/01/HCNP-Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="华为NP网络实验">华为NP网络实验</span>
+            <span class="post-date" title="2023-06-01 10:46:04">2023/06/01</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/06/01/CCNP-Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CCNP Lab">CCNP Lab</span>
+            <span class="post-date" title="2023-06-01 10:46:00">2023/06/01</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2023/05/13/IBMC/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="IBMC">IBMC</span>
+            <span class="post-date" title="2023-05-13 21:04:00">2023/05/13</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2023/04/26/1Panel/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1Panel">1Panel</span>
+            <span class="post-date" title="2023-04-26 14:09:00">2023/04/26</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2023/04/24/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="信息系统项目管理师">信息系统项目管理师</span>
+            <span class="post-date" title="2023-04-24 10:51:00">2023/04/24</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/09/EIGRP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="EIGRP">EIGRP</span>
+            <span class="post-date" title="2023-04-09 15:14:00">2023/04/09</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/09/FHPR/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="FHPR">FHPR</span>
+            <span class="post-date" title="2023-04-09 11:25:00">2023/04/09</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/08/HCNA-Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HCNA Lab">HCNA Lab</span>
+            <span class="post-date" title="2023-04-08 11:46:00">2023/04/08</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/07/CCNA-Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CCNA Lab">CCNA Lab</span>
+            <span class="post-date" title="2023-04-07 20:13:29">2023/04/07</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/07/OSPF/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OSPF">OSPF</span>
+            <span class="post-date" title="2023-04-07 19:19:00">2023/04/07</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2022/08/24/FRP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="FRP">FRP</span>
+            <span class="post-date" title="2022-08-24 12:47:00">2022/08/24</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2022/08/24/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="软件设计师">软件设计师</span>
+            <span class="post-date" title="2022-08-24 10:51:00">2022/08/24</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2022/08/23/Markdown/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Markdown">Markdown</span>
+            <span class="post-date" title="2022-08-23 19:54:00">2022/08/23</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2022/08/12/HomeLab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HomeLab">HomeLab</span>
+            <span class="post-date" title="2022-08-12 15:09:00">2022/08/12</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2022/07/28/WDS-MDT/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="WDS+MDT">WDS+MDT</span>
+            <span class="post-date" title="2022-07-28 21:33:00">2022/07/28</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2022/06/21/Anaconda/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Anaconda">Anaconda</span>
+            <span class="post-date" title="2022-06-21 20:56:00">2022/06/21</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2022/05/25/%E7%BD%91%E7%BB%9C%E8%A7%84%E5%88%92%E5%B8%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="网络规划师">网络规划师</span>
+            <span class="post-date" title="2022-05-25 11:57:00">2022/05/25</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2022/03/14/InfluxDB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="InfluxDB">InfluxDB</span>
+            <span class="post-date" title="2022-03-14 13:25:00">2022/03/14</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2022/03/06/MongoDB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="MongoDB">MongoDB</span>
+            <span class="post-date" title="2022-03-06 17:38:00">2022/03/06</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/12/27/VIM/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="VIM">VIM</span>
+            <span class="post-date" title="2021-12-27 09:15:00">2021/12/27</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/12/19/GITEA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="GITEA">GITEA</span>
+            <span class="post-date" title="2021-12-19 21:53:00">2021/12/19</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/12/16/VSFTPD/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="VSFTPD">VSFTPD</span>
+            <span class="post-date" title="2021-12-16 08:49:00">2021/12/16</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2021/10/06/REDIS/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="REDIS">REDIS</span>
+            <span class="post-date" title="2021-10-06 17:19:00">2021/10/06</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/20/K8s-lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="K8s_lab">K8s_lab</span>
+            <span class="post-date" title="2021-09-20 08:04:00">2021/09/20</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/15/K8s/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="K8s">K8s</span>
+            <span class="post-date" title="2021-09-15 20:48:00">2021/09/15</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/09/09/VMware/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="VMware">VMware</span>
+            <span class="post-date" title="2021-09-09 15:38:00">2021/09/09</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/08/Ingress/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Ingress">Ingress</span>
+            <span class="post-date" title="2021-09-08 23:56:00">2021/09/08</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/08/Harbor/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Harbor">Harbor</span>
+            <span class="post-date" title="2021-09-08 18:04:00">2021/09/08</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/08/28/Swarm/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Swarm">Swarm</span>
+            <span class="post-date" title="2021-08-28 20:46:00">2021/08/28</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/08/26/Go/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Go">Go</span>
+            <span class="post-date" title="2021-08-26 11:50:00">2021/08/26</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/08/15/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Java多线程">Java多线程</span>
+            <span class="post-date" title="2021-08-15 14:36:00">2021/08/15</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/08/11/Nginx/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Nginx">Nginx</span>
+            <span class="post-date" title="2021-08-11 23:28:00">2021/08/11</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/08/06/Maven/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Maven">Maven</span>
+            <span class="post-date" title="2021-08-06 09:38:00">2021/08/06</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/07/31/Springboot%E9%A1%B9%E7%9B%AE/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Springboot项目">Springboot项目</span>
+            <span class="post-date" title="2021-07-31 19:34:00">2021/07/31</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/07/22/GitLab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="GitLab">GitLab</span>
+            <span class="post-date" title="2021-07-22 21:41:00">2021/07/22</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/07/22/Docker/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Docker">Docker</span>
+            <span class="post-date" title="2021-07-22 14:53:00">2021/07/22</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/07/19/SpringSecurity/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SpringSecurity">SpringSecurity</span>
+            <span class="post-date" title="2021-07-19 20:58:00">2021/07/19</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/07/13/Mybatis/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Mybatis">Mybatis</span>
+            <span class="post-date" title="2021-07-13 10:38:00">2021/07/13</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/07/05/NVM/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="NVM">NVM</span>
+            <span class="post-date" title="2021-07-05 08:15:00">2021/07/05</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/06/26/Java-Project/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Java Project">Java Project</span>
+            <span class="post-date" title="2021-06-26 07:58:00">2021/06/26</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/06/23/Vue/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Vue">Vue</span>
+            <span class="post-date" title="2021-06-23 10:48:00">2021/06/23</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/06/08/SpringBoot2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SpringBoot2">SpringBoot2</span>
+            <span class="post-date" title="2021-06-08 16:51:00">2021/06/08</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/06/07/CentOS7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CentOS7">CentOS7</span>
+            <span class="post-date" title="2021-06-07 23:16:00">2021/06/07</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/06/02/Spring%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%BA%94%E7%89%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Spring实战(第五版)">Spring实战(第五版)</span>
+            <span class="post-date" title="2021-06-02 09:42:00">2021/06/02</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/04/25/Spring%E5%AE%9E%E6%88%98-%E7%AC%AC%E5%9B%9B%E7%89%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Spring实战(第四版)">Spring实战(第四版)</span>
+            <span class="post-date" title="2021-04-25 18:38:00">2021/04/25</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/04/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="设计模式">设计模式</span>
+            <span class="post-date" title="2021-04-18 22:19:00">2021/04/18</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2021/03/22/SQL/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SQL">SQL</span>
+            <span class="post-date" title="2021-03-22 18:33:00">2021/03/22</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/03/14/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="时间管理">时间管理</span>
+            <span class="post-date" title="2021-03-14 21:49:00">2021/03/14</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/03/14/Hexo/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hexo">Hexo</span>
+            <span class="post-date" title="2021-03-14 08:31:00">2021/03/14</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2020/09/12/UltraISO/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="UltraISO">UltraISO</span>
+            <span class="post-date" title="2020-09-12 11:42:00">2020/09/12</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2020/09/12/Ventoy/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Ventoy">Ventoy</span>
+            <span class="post-date" title="2020-09-12 11:42:00">2020/09/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-Java多线程" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Java多线程</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="开发">开发</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2025-10-04 23:02:28'>2021-08-15 14:36</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:3.2k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#JAVA-HOME"><span class="toc-text">JAVA_HOME</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E7%BA%BF%E7%A8%8B%E7%AE%80%E4%BB%8B"><span class="toc-text">第一章 线程简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%E8%BF%9B%E7%A8%8B-Process"><span class="toc-text">1.1 进程 Process</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%E7%BA%BF%E7%A8%8B-Thread"><span class="toc-text">1.2 线程 Thread</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5"><span class="toc-text">1.3 核心概念</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%BA%BF%E7%A8%8B%E5%AE%9E%E7%8E%B0%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89"><span class="toc-text">第二章 线程实现（重点）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E7%BB%A7%E6%89%BFThread%E7%B1%BB%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89"><span class="toc-text">2.1 继承Thread类（重点）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E5%AE%9E%E7%8E%B0Runnable%E6%8E%A5%E5%8F%A3%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89"><span class="toc-text">2.2 实现Runnable接口（重点）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%E5%AE%9E%E7%8E%B0Callable%E6%8E%A5%E5%8F%A3%EF%BC%88%E4%BA%86%E8%A7%A3%EF%BC%89"><span class="toc-text">2.3 实现Callable接口（了解）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81"><span class="toc-text">第三章 线程状态</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%E6%A6%82%E8%BF%B0"><span class="toc-text">3.1 概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-%E7%BA%BF%E7%A8%8B%E6%96%B9%E6%B3%95"><span class="toc-text">3.2 线程方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-1-%E7%BA%BF%E7%A8%8B%E5%81%9C%E6%AD%A2"><span class="toc-text">3.2.1 线程停止</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-2-%E7%BA%BF%E7%A8%8B%E4%BC%91%E7%9C%A0-sleep"><span class="toc-text">3.2.2 线程休眠(sleep)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-3-%E7%BA%BF%E7%A8%8B%E7%A4%BC%E8%AE%A9-yield"><span class="toc-text">3.2.3 线程礼让(yield)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-4-Join"><span class="toc-text">3.2.4 Join</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-5-%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81%E8%A7%82%E6%B5%8B-Thread-State"><span class="toc-text">3.2.5 线程状态观测(Thread.State)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-6-%E7%BA%BF%E7%A8%8B%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-text">3.2.6 线程优先级</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89"><span class="toc-text">第四章 线程同步（重点）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5"><span class="toc-text">4.1 线程同步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-%E5%90%8C%E6%AD%A5%E6%96%B9%E6%B3%95"><span class="toc-text">4.2 同步方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-%E5%90%8C%E6%AD%A5%E5%9D%97"><span class="toc-text">4.3 同步块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4-%E6%AD%BB%E9%94%81"><span class="toc-text">4.4 死锁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-5-%E6%AD%BB%E9%94%81%E7%9A%84%E9%81%BF%E5%85%8D%E6%96%B9%E6%B3%95"><span class="toc-text">4.5 死锁的避免方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-6Lock-%E9%94%81"><span class="toc-text">4.6Lock(锁)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4-%E5%B9%B6%E5%8F%91"><span class="toc-text">4.4 并发</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E7%BA%BF%E7%A8%8B%E9%80%9A%E4%BF%A1%E9%97%AE%E9%A2%98"><span class="toc-text">第五章 线程通信问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E9%AB%98%E7%BA%A7%E4%B8%BB%E9%A2%98"><span class="toc-text">第六章 高级主题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Java-Util"><span class="toc-text">Java Util</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%AF%B9%E8%B1%A1%E5%AF%BC%E8%AE%BA"><span class="toc-text">第一章 对象导论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%E6%8A%BD%E8%B1%A1%E8%BF%87%E7%A8%8B"><span class="toc-text">1.1 抽象过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%E6%AF%8F%E4%B8%AA%E5%AF%B9%E8%B1%A1%E9%83%BD%E6%9C%89%E4%B8%80%E4%B8%AA%E6%8E%A5%E5%8F%A3"><span class="toc-text">1.2 每个对象都有一个接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-%E6%AF%8F%E4%B8%AA%E5%AF%B9%E8%B1%A1%E9%83%BD%E6%8F%90%E4%BE%9B%E6%9C%8D%E5%8A%A1"><span class="toc-text">1.3 每个对象都提供服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-%E8%A2%AB%E9%9A%90%E8%97%8F%E7%9A%84%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0"><span class="toc-text">1.4 被隐藏的具体实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-%E5%A4%8D%E7%94%A8%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0"><span class="toc-text">1.5 复用具体实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-6-%E7%BB%A7%E6%89%BF"><span class="toc-text">1.6 继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-7-%E4%BC%B4%E9%9A%8F%E5%A4%9A%E6%80%81%E7%9A%84%E5%8F%AF%E4%BA%A4%E4%BA%92%E6%8D%A2%E5%AF%B9%E8%B1%A1"><span class="toc-text">1.7 伴随多态的可交互换对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-8-%E5%8D%95%E6%A0%B9%E7%BB%A7%E6%89%BF%E7%BB%93%E6%9E%84"><span class="toc-text">1.8 单根继承结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-9-%E5%AE%B9%E5%99%A8"><span class="toc-text">1.9 容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-10-%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E7%94%9F%E5%91%BD%E6%9C%9F"><span class="toc-text">1.10 对象的创建和生命期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-11-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%EF%BC%9A%E5%A4%84%E7%90%86%E9%94%99%E8%AF%AF"><span class="toc-text">1.11 异常处理：处理错误</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-12-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B"><span class="toc-text">1.12 并发编程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-13-Java%E4%B8%8EInternet"><span class="toc-text">1.13 Java与Internet</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-14-%E6%80%BB%E7%BB%93"><span class="toc-text">1.14 总结</span></a>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="JAVA-HOME"><a href="#JAVA-HOME" class="headerlink" title="JAVA_HOME"></a>JAVA_HOME</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">JAVA_HOME=C:\Program Files\Java\jdk1<span class="number">.8</span><span class="number">.0_131</span></span><br><span class="line">Path=%JAVA_HOME%\bin</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<h1 id="第一章-线程简介"><a href="#第一章-线程简介" class="headerlink" title="第一章 线程简介"></a>第一章 线程简介</h1><h2 id="1-1-进程-Process"><a href="#1-1-进程-Process" class="headerlink" title="1.1 进程 Process"></a>1.1 进程 Process</h2><p>进程是执行程序的一次执行过程，它是一个动态的概念。是系统资源分配的单位。</p>
+<h2 id="1-2-线程-Thread"><a href="#1-2-线程-Thread" class="headerlink" title="1.2 线程 Thread"></a>1.2 线程 Thread</h2><p>通过在一个进程中可以包含若干个线程，当然一个进程中至少有一个线程，不然没有存在的意义。线程是CPU调度和执行的单位。</p>
+<h2 id="1-3-核心概念"><a href="#1-3-核心概念" class="headerlink" title="1.3 核心概念"></a>1.3 核心概念</h2><ol>
+<li>线程就是独立的执行路径；</li>
+<li>在程序运行时，即使没有自己创建线程，后台也会有多个线程，如主线程，gc线程；</li>
+<li>main()称之为主线程，为系统的入口，用于执行整个程序；</li>
+<li>在一个进程中，如果开辟了多个线程，线程的运行由调度器安排调度，调度器是与操作系统紧密相关的，先后顺序是不能人为的干预的；</li>
+<li>对同一份资源操作时，会存在资源抢夺的问题，需要加入并发控制；</li>
+<li>线程会带来额外的开销，如cpu调度时间，并发控制开销；</li>
+<li>每个线程在自己的工作内存交互，内存控制不当会造成数据不一致。</li>
+</ol>
+<hr>
+<h1 id="第二章-线程实现（重点）"><a href="#第二章-线程实现（重点）" class="headerlink" title="第二章 线程实现（重点）"></a>第二章 线程实现（重点）</h1><h2 id="2-1-继承Thread类（重点）"><a href="#2-1-继承Thread类（重点）" class="headerlink" title="2.1 继承Thread类（重点）"></a>2.1 继承Thread类（重点）</h2><ol>
+<li>自定义线程类继承<strong>Thead类</strong>；</li>
+<li>重写<strong>run()方法</strong>，编写线程执行体；</li>
+<li>创建线程对象，调用start()方法启动线程，（调用run方法）。</li>
+</ol>
+<p>注意：线程开启不一定立即执行，有cpu调度执行。</p>
+<h2 id="2-2-实现Runnable接口（重点）"><a href="#2-2-实现Runnable接口（重点）" class="headerlink" title="2.2 实现Runnable接口（重点）"></a>2.2 实现Runnable接口（重点）</h2><ol>
+<li>自定义线程类实现<strong>Runnable</strong>接口；</li>
+<li>重写runn方法；</li>
+<li>执行线程需要丢入runnable接口实现类，调用start方法。</li>
+</ol>
+<h2 id="2-3-实现Callable接口（了解）"><a href="#2-3-实现Callable接口（了解）" class="headerlink" title="2.3 实现Callable接口（了解）"></a>2.3 实现Callable接口（了解）</h2><ol>
+<li>实现Callable接口，需要返回值类型；</li>
+<li>重写call方法，需要抛出异常；</li>
+<li>创建目标对象；</li>
+<li>创建执行服务：ExecutorService ser &#x3D; Executors.newFixedThreadPool(1);</li>
+<li>提交执行：Future result1 &#x3D; se.submit(t1);</li>
+<li>获取结果：boolean r1 &#x3D; result1.get();</li>
+<li>关闭服务：ser.shutdownNow();</li>
+</ol>
+<hr>
+<h1 id="第三章-线程状态"><a href="#第三章-线程状态" class="headerlink" title="第三章 线程状态"></a>第三章 线程状态</h1><h2 id="3-1-概述"><a href="#3-1-概述" class="headerlink" title="3.1 概述"></a>3.1 概述</h2><ol>
+<li>线程状态图1<br>创建状态、就绪状态、阻塞状态、运行状态、死亡状态</li>
+<li>线程状态图2<br>new、就绪状态、运行状态、阻塞状态、dead</li>
+</ol>
+<h2 id="3-2-线程方法"><a href="#3-2-线程方法" class="headerlink" title="3.2 线程方法"></a>3.2 线程方法</h2><h3 id="3-2-1-线程停止"><a href="#3-2-1-线程停止" class="headerlink" title="3.2.1 线程停止"></a>3.2.1 线程停止</h3><h3 id="3-2-2-线程休眠-sleep"><a href="#3-2-2-线程休眠-sleep" class="headerlink" title="3.2.2 线程休眠(sleep)"></a>3.2.2 线程休眠(sleep)</h3><ol>
+<li>sleep(时间)指定当前线程阻塞的毫秒数;</li>
+<li>sleep存在异常InterruptedException;</li>
+<li>sleep时间达到后线程进入就绪状态;</li>
+<li>sleep可以模拟网络延时，倒计时等;</li>
+<li><strong>每一个对象都有一个锁, sleep不会释放锁;</strong></li>
+</ol>
+<h3 id="3-2-3-线程礼让-yield"><a href="#3-2-3-线程礼让-yield" class="headerlink" title="3.2.3 线程礼让(yield)"></a>3.2.3 线程礼让(yield)</h3><ol>
+<li>礼让线程，让当前正在执行的线程暂停，但不阻塞；</li>
+<li>将线程从过年运行状态转为就绪状态；</li>
+<li><strong>让cpu重新调度，礼让不一定成功！看CPU心情</strong></li>
+</ol>
+<h3 id="3-2-4-Join"><a href="#3-2-4-Join" class="headerlink" title="3.2.4 Join"></a>3.2.4 Join</h3><ol>
+<li>Joio合并线程，待此线程执行完成后，再执行其他线程，其他线程阻塞；</li>
+<li>可以想象成插队</li>
+</ol>
+<h3 id="3-2-5-线程状态观测-Thread-State"><a href="#3-2-5-线程状态观测-Thread-State" class="headerlink" title="3.2.5 线程状态观测(Thread.State)"></a>3.2.5 线程状态观测(Thread.State)</h3><ol>
+<li>NEW 尚位启动的线程处于此状态；</li>
+<li>RUNNABLE 在Java虚拟机中执行的线程处于此状态；</li>
+<li>BLOCKED 被阻塞等待监视器锁定的线程处于此状态；</li>
+<li>WAITING 正在等待另一个线程执行待定动作的线程处于此状态；</li>
+<li>TIMED_WAITING 正在等待另一个线程执行动作达到指定等待时间的线程处于此状态；</li>
+<li>TERMINATED 已退出的线程处于此状态。</li>
+<li>一个线程可以在给定时间点处于一个状态。这些状态是不反映任何操作系统线程状态的虚拟机状态。</li>
+</ol>
+<h3 id="3-2-6-线程优先级"><a href="#3-2-6-线程优先级" class="headerlink" title="3.2.6 线程优先级"></a>3.2.6 线程优先级</h3><ol>
+<li>Java提供一个线程调度来监控程序中启动后进入就绪状态的所有线程，线程调度器按照优先级决定应该调度哪个线程来执行。</li>
+<li>线程的优先级用数字表示，范围从1~10<ul>
+<li>Thread.MIN_PRIORITY &#x3D; 1;</li>
+<li>Thread.MAX_PRIORITY &#x3D; 10;</li>
+<li>Thread.NORM_PRIORITY &#x3D; 5;</li>
+</ul>
+</li>
+<li>使用以下方式改变或获取优先级<ul>
+<li>getPriority() setPriority(int xxx)</li>
+</ul>
+</li>
+</ol>
+<p>###3.2.7 守护(daemon)线程</p>
+<ol>
+<li>线程分为<strong>用户线程</strong>和<strong>守护线程</strong></li>
+<li>虚拟机必须确保用户线程(main)执行完毕</li>
+<li>虚拟机不用等待守护线程(gc)执行完毕</li>
+<li>如，后台记录操作日志，监控内存，垃圾回收等待</li>
+</ol>
+<hr>
+<h1 id="第四章-线程同步（重点）"><a href="#第四章-线程同步（重点）" class="headerlink" title="第四章 线程同步（重点）"></a>第四章 线程同步（重点）</h1><ol>
+<li><strong>多个线程操作同一个资源</strong></li>
+<li>现实生活中，我们会遇到”同一个资源，多个人都想使用”的问题，比如，食堂排队打饭，每个人都想吃饭，最天然的解决方法就是，排队，一个个来；</li>
+<li>处理多线程问题时，多线程访问同一个对象，并且某些线程还想修改这个对象。这个时候我们就需要线程同步，线程同步其实就是一种等待机制，多个需要同时访问此对象的线程进入这个<strong>对象的等待池</strong>形成队列，等待前面线程使用完毕，下一个线程再使用。</li>
+<li>队列和锁：**每个对象都有一把锁。**队列+锁才可以保证线程的安全性。</li>
+</ol>
+<h2 id="4-1-线程同步"><a href="#4-1-线程同步" class="headerlink" title="4.1 线程同步"></a>4.1 线程同步</h2><ol>
+<li>由于同一个进程的多个线程共享同一块存储空间，在带来方便的同时，也带来了访问冲突问题，为了保证数据在方法中被访问时的正确性，在访问时加入<strong>锁机制synchronized</strong>，当一个线程获得对象的排他锁，独占资源，其他线程必须等待，使用后释放锁即可，存在以下问题：<ul>
+<li>一个线程持有锁会导致其他所有需要此锁的线程挂起；</li>
+<li>在多线程竞争下，加锁，释放锁会导致比较多的上下文切换和调度延时，引起性能问题；</li>
+<li>如果一个优先级高的线程等待一个优先级低的线程释放锁会导致优先级倒置，引起性能问题。</li>
+</ul>
+</li>
+</ol>
+<h2 id="4-2-同步方法"><a href="#4-2-同步方法" class="headerlink" title="4.2 同步方法"></a>4.2 同步方法</h2><ol>
+<li>由于我们可以通过private关键字来保证数据对象只能被方法访问，所有我们只需要针对方法提出一套机制，这套机制就是synchronized关键字，它包括两种方法：synchaonized方法和synchronized快<code>同步方法:public synchronized void method(int ages){}</code></li>
+<li>synchronized方法控制对“对象“的访问，每个对象对应一把锁，每个synchronized方法都必须获得调用该方法的对象的锁才能执行，否则线程会阻塞，方法一旦执行，就独占该锁，直到该方法返回才释放锁，后面被阻塞的线程才能获得这个锁，继续执行<code>缺陷:若将一个大的方法申明为synchronized将会影响效率</code></li>
+</ol>
+<h2 id="4-3-同步块"><a href="#4-3-同步块" class="headerlink" title="4.3 同步块"></a>4.3 同步块</h2><ol>
+<li>同步快：synchronized(Obj){}</li>
+<li>Obj称之为<strong>同步监视器</strong><ul>
+<li>Obj可以是任何对象，但是推荐使用共享资源作为同步监视器</li>
+<li>同步方法中无需指定同步监视器，因为同步方法的同步监视器就是this, 就是这个对象本身，活着是class[反射中讲解]</li>
+</ul>
+</li>
+<li>同步监视器的执行过程<ul>
+<li>第一个线程访问，锁定同步监视器，执行其中代码；</li>
+<li>第二个线程访问，发现同步监视器被锁定，无法访问；</li>
+<li>第一个线程访问完毕，解锁同步监视器；</li>
+<li>第二个线程访问，发现同步监视器没有锁，然后锁定并访问。</li>
+</ul>
+</li>
+</ol>
+<h2 id="4-4-死锁"><a href="#4-4-死锁" class="headerlink" title="4.4 死锁"></a>4.4 死锁</h2><ol>
+<li>多个线程各自占有一些共享资源，并且互相等待其他线程占有的资源才能进行，而导致两个或者多个线程都在等待对方释放资源，都停止执行的情形，某一个同步块同时拥有“两个以上对象的锁“时，就可能会发生“死锁“的问题。</li>
+</ol>
+<h2 id="4-5-死锁的避免方法"><a href="#4-5-死锁的避免方法" class="headerlink" title="4.5 死锁的避免方法"></a>4.5 死锁的避免方法</h2><p><strong>产生死锁的四个必要条件</strong></p>
+<ol>
+<li>互斥条件：一个资源每次只能被一个进程使用</li>
+<li>请求与保持条件：一个进程因请求资源而阻塞时，对已获得的资源保持不放</li>
+<li>不剥夺条件：进程以获得的资源，在未使用完之前，不能强行剥夺</li>
+<li>循环等待条件：若干进程之间形成一种头尾相接的循环等待资源关系。</li>
+</ol>
+<h2 id="4-6Lock-锁"><a href="#4-6Lock-锁" class="headerlink" title="4.6Lock(锁)"></a>4.6Lock(锁)</h2><ol>
+<li>从JDK5.0开始，Java提供了更强大的线程同步机制–通过显示定义锁对象来实现同步。同步锁使用Lock对象充当。</li>
+<li>Java.util.concurrenrt.locks.Lock接口是控制多个线程</li>
+</ol>
+<hr>
+<h2 id="4-4-并发"><a href="#4-4-并发" class="headerlink" title="4.4 并发"></a>4.4 并发</h2><p><strong>同一个对象被多个线程操作</strong></p>
+<hr>
+<h1 id="第五章-线程通信问题"><a href="#第五章-线程通信问题" class="headerlink" title="第五章 线程通信问题"></a>第五章 线程通信问题</h1><hr>
+<h1 id="第六章-高级主题"><a href="#第六章-高级主题" class="headerlink" title="第六章 高级主题"></a>第六章 高级主题</h1><hr>
+<h1 id="Java-Util"><a href="#Java-Util" class="headerlink" title="Java Util"></a>Java Util</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">本周周一</span><br><span class="line"><span class="type">LocalDateTime</span> <span class="variable">nowMonday</span> <span class="operator">=</span> LocalDateTime.of(LocalDate.now(), LocalTime.MIN).with(DayOfWeek.MONDAY);</span><br><span class="line">上周周一</span><br><span class="line"><span class="type">LocalDateTime</span> <span class="variable">lastMonday</span> <span class="operator">=</span> LocalDateTime.of(LocalDate.now(),LocalTime.MIN).minusWeeks(<span class="number">1</span>).with(DayOfWeek.MONDAY);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">计算时间差</span><br><span class="line"> <span class="type">LocalDateTime</span> <span class="variable">startTime</span> <span class="operator">=</span> LocalDateTime.now().plusDays(-<span class="number">7</span>);</span><br><span class="line"> <span class="type">LocalDateTime</span> <span class="variable">endTime</span> <span class="operator">=</span> LocalDateTime.now();</span><br><span class="line"></span><br><span class="line"> <span class="type">Duration</span> <span class="variable">duration</span> <span class="operator">=</span> Duration.between(startTime, endTime);</span><br><span class="line"> duration.toDays();  <span class="comment">// 获取相差天数</span></span><br><span class="line"> duration.toMillis();</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<h1 id="第一章-对象导论"><a href="#第一章-对象导论" class="headerlink" title="第一章 对象导论"></a>第一章 对象导论</h1><h2 id="1-1-抽象过程"><a href="#1-1-抽象过程" class="headerlink" title="1.1 抽象过程"></a>1.1 抽象过程</h2><p><strong>我们将问题空间中的元素及其在解空间中的表示称为“对象“。（你还需要一些无法类比为问题空间元素的对象。）这种思想的实质是：程序可以通过添加新类型的对象使自身适用于某个特定问题。</strong></p>
+<ol>
+<li>万物皆为对象。</li>
+<li>程序是对象的集合，它们通过发送消息来告知彼此所要做的。</li>
+<li>每个对象都有自己的由其他对于所构成的存储。</li>
+<li>每个对象都拥有其类型。</li>
+<li>某一特定类型的所有对象都可以接收同样的消息。</li>
+</ol>
+<h2 id="1-2-每个对象都有一个接口"><a href="#1-2-每个对象都有一个接口" class="headerlink" title="1.2 每个对象都有一个接口"></a>1.2 每个对象都有一个接口</h2><h2 id="1-3-每个对象都提供服务"><a href="#1-3-每个对象都提供服务" class="headerlink" title="1.3 每个对象都提供服务"></a>1.3 每个对象都提供服务</h2><h2 id="1-4-被隐藏的具体实现"><a href="#1-4-被隐藏的具体实现" class="headerlink" title="1.4 被隐藏的具体实现"></a>1.4 被隐藏的具体实现</h2><h2 id="1-5-复用具体实现"><a href="#1-5-复用具体实现" class="headerlink" title="1.5 复用具体实现"></a>1.5 复用具体实现</h2><h2 id="1-6-继承"><a href="#1-6-继承" class="headerlink" title="1.6 继承"></a>1.6 继承</h2><h2 id="1-7-伴随多态的可交互换对象"><a href="#1-7-伴随多态的可交互换对象" class="headerlink" title="1.7 伴随多态的可交互换对象"></a>1.7 伴随多态的可交互换对象</h2><h2 id="1-8-单根继承结构"><a href="#1-8-单根继承结构" class="headerlink" title="1.8 单根继承结构"></a>1.8 单根继承结构</h2><h2 id="1-9-容器"><a href="#1-9-容器" class="headerlink" title="1.9 容器"></a>1.9 容器</h2><h2 id="1-10-对象的创建和生命期"><a href="#1-10-对象的创建和生命期" class="headerlink" title="1.10 对象的创建和生命期"></a>1.10 对象的创建和生命期</h2><h2 id="1-11-异常处理：处理错误"><a href="#1-11-异常处理：处理错误" class="headerlink" title="1.11 异常处理：处理错误"></a>1.11 异常处理：处理错误</h2><h2 id="1-12-并发编程"><a href="#1-12-并发编程" class="headerlink" title="1.12 并发编程"></a>1.12 并发编程</h2><ol>
+<li>在计算机编程中有一个基本概念，就是在同一时刻处理多个任务的思想。许多程序设计问题都要求，程序能够停下正在做的工作，转而处理某个其他问题，然后再返回主进程。有许多方法可以实现这个目的。最初，程序员们用所掌握的有关机器底层的知识来编写中断服务程序，主进程的挂起是通过硬件中断来触发的。尽管这样做可以解决问题，但是其难度太大，而且不能移植，所以使得将程序移植到新型号的机器上时，即费时又费力。</li>
+<li>又是中断对于处理时间性强的任务是必需的，但是对于大量的其他问题，我们只是想把问题切分成多个可独立运行的部分（任务），从而提高程序的响应能力。在程序中，这些彼此独立运行的部分称之为线程，上述概念被成为“并发“。并发最常见的例子就是用户界面。通过使用任务，用户可以在掀起揿下按钮后快速得到一个响应，而不用被迫等待到程序完成当前任务为止。</li>
+<li>通常，线程只是一种为单一处理器分配执行时间的手段。但是如果操作系统支持多处理器，那么每个任务都可以被指派给不同的处理器，并且它们是在真正地并行执行。在语言级别上，多线程所带来的便利之一便是程序员不用再操心机器上是有多个处理器还是只有一个处理器。由于程序在逻辑上被分为线程，所以如果机器拥有多个处理器，那么程序不需要特殊调整也能执行得更快。</li>
+<li>所有这些都使得并发看起来相当简单，但是有一个隐患：共享资源。如果有多个并行任务都要访问同一项资源，那么就会出问题。例如，两个进程不能同时向一台打印机发送信息。为了解决这个问题，可以共享的资源，例如打印机，必须在使用期间被锁定。因此，整个过程是：某个任务锁定某项资源，完成其任务，然后释放资源锁，使其他任务可以使用这项资源。</li>
+<li>Java的并发是内置于语言中的，Java SE5已经增添来大量格外的库支持。</li>
+</ol>
+<h2 id="1-13-Java与Internet"><a href="#1-13-Java与Internet" class="headerlink" title="1.13 Java与Internet"></a>1.13 Java与Internet</h2><h2 id="1-14-总结"><a href="#1-14-总结" class="headerlink" title="1.14 总结"></a>1.14 总结</h2><hr>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 hjxstart@126.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry"><span class="miit">
+                <img src="/img/gov.png" title="中华人民共和国工业和信息化部">
+                <a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">粤ICP备2021170625号-1</a>
+        </span>
+    
+    ©2019-2022 hjxstart
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("/img/article-list-bg-img.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SpringSecurity | 黄金贤的博客</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="SpringSecurity | 黄金贤的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="黄金贤 hjxstart">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java">
+<meta property="og:url" content="https://hjxstart.github.io/2025/10/04/Java/index.html">
+<meta property="og:site_name" content="黄金贤的博客">
+<meta property="og:description" content="黄金贤 hjxstart">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-10-04T13:55:05.000Z">
+<meta property="article:modified_time" content="2025-10-05T05:11:02.573Z">
+<meta property="article:author" content="黄金贤">
+<meta property="article:tag" content="计算机网络 数据库 操作系统 数据结构 算法 Java Nodejs">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-dark.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 8.0.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>黄金贤</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="github"
+               href="https://github.com/hjxstart"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="email"
+               href="mailto:hjxstart@126.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=1726283687&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(81)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="读书">
+                        
+                        读书
+                        <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(13)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据库">
+                        
+                        数据库
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="网络">
+                        
+                        网络
+                        <small>(17)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="81">
+<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://github.com/hjxstart">hjxstart</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="全部文章 网络 "
+           href="/2024/05/06/HCIE%20Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HCIE Lab">HCIE Lab</span>
+            <span class="post-date" title="2024-05-06 19:42:00">2024/05/06</span>
+        </a>
+        
+        <a id="top" class="全部文章 安全 "
+           href="/2025/08/17/CISP-PTE/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CISP-PTE">CISP-PTE</span>
+            <span class="post-date" title="2025-08-17 11:12:00">2025/08/17</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2025/04/04/PXE-Kickstart/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PXE+Kickstart">PXE+Kickstart</span>
+            <span class="post-date" title="2025-04-04 10:45:00">2025/04/04</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2025/02/12/KylinOS/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="KylinOS">KylinOS</span>
+            <span class="post-date" title="2025-02-12 16:47:00">2025/02/12</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2025/08/24/KylinOS-FAQ/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="KylinOS FAQ">KylinOS FAQ</span>
+            <span class="post-date" title="2025-08-24 11:07:00">2025/08/24</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2025/08/24/Windows/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Windows">Windows</span>
+            <span class="post-date" title="2025-08-24 11:19:00">2025/08/24</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2022/03/24/Linux/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Linux">Linux</span>
+            <span class="post-date" title="2022-03-24 11:53:00">2022/03/24</span>
+        </a>
+        
+        <a id="top" class="全部文章 工具 "
+           href="/2024/07/28/NTLite/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="NTLite">NTLite</span>
+            <span class="post-date" title="2024-07-28 21:32:00">2024/07/28</span>
+        </a>
+        
+        <a id="top" class="全部文章 数据库 "
+           href="/2020/03/19/MySQL/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="MySQL">MySQL</span>
+            <span class="post-date" title="2020-03-19 21:51:00">2020/03/19</span>
+        </a>
+        
+        <a id="top" class="全部文章 开发 "
+           href="/2025/09/13/Php/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Php">Php</span>
+            <span class="post-date" title="2025-09-13 23:10:00">2025/09/13</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2025/10/04/Java/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Java">Java</span>
+            <span class="post-date" title="2025-10-04 21:55:05">2025/10/04</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2025/10/04/Wireshark/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Wireshark">Wireshark</span>
+            <span class="post-date" title="2025-10-04 21:31:59">2025/10/04</span>
+        </a>
+        
+        <a  class="全部文章 安全 "
+           href="/2025/08/21/cisp-practice/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="cisp-practice">cisp-practice</span>
+            <span class="post-date" title="2025-08-21 19:41:00">2025/08/21</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2025/04/24/OpenStack/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OpenStack">OpenStack</span>
+            <span class="post-date" title="2025-04-24 09:04:00">2025/04/24</span>
+        </a>
+        
+        <a  class="全部文章 安全 "
+           href="/2024/08/23/CISO/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CISO">CISO</span>
+            <span class="post-date" title="2024-08-23 19:29:00">2024/08/23</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/04/16/%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="网络工程师">网络工程师</span>
+            <span class="post-date" title="2024-04-16 22:14:00">2024/04/16</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2024/03/31/RHCE9/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="RHCE9">RHCE9</span>
+            <span class="post-date" title="2024-03-31 15:33:00">2024/03/31</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/28/BGP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="BGP">BGP</span>
+            <span class="post-date" title="2024-01-28 11:20:00">2024/01/28</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/STP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="STP">STP</span>
+            <span class="post-date" title="2024-01-27 14:01:00">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/VLAN/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="VLAN">VLAN</span>
+            <span class="post-date" title="2024-01-27 11:42:00">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/LLDP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="LLDP">LLDP</span>
+            <span class="post-date" title="2024-01-27 11:31:00">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/Telnet/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Telnet">Telnet</span>
+            <span class="post-date" title="2024-01-27 10:45:00">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/SSH/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SSH">SSH</span>
+            <span class="post-date" title="2024-01-27 10:44:00">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2023/12/22/WireGuard/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="WireGuard">WireGuard</span>
+            <span class="post-date" title="2023-12-22 07:40:00">2023/12/22</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/12/21/Stack-Port/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Stack Port">Stack Port</span>
+            <span class="post-date" title="2023-12-21 19:31:00">2023/12/21</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2023/12/18/ESXI/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="ESXI">ESXI</span>
+            <span class="post-date" title="2023-12-18 17:05:00">2023/12/18</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2023/12/18/RouterOS/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="RouterOS">RouterOS</span>
+            <span class="post-date" title="2023-12-18 17:05:00">2023/12/18</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2023/12/18/GIT/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="GIT">GIT</span>
+            <span class="post-date" title="2023-12-18 17:00:00">2023/12/18</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2023/11/30/HelpDesk/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HelpDesk">HelpDesk</span>
+            <span class="post-date" title="2023-11-30 21:21:00">2023/11/30</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2023/11/18/OpenWrt/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OpenWrt">OpenWrt</span>
+            <span class="post-date" title="2023-11-18 17:03:00">2023/11/18</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/06/01/HCNP-Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="华为NP网络实验">华为NP网络实验</span>
+            <span class="post-date" title="2023-06-01 10:46:04">2023/06/01</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/06/01/CCNP-Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CCNP Lab">CCNP Lab</span>
+            <span class="post-date" title="2023-06-01 10:46:00">2023/06/01</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2023/05/13/IBMC/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="IBMC">IBMC</span>
+            <span class="post-date" title="2023-05-13 21:04:00">2023/05/13</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2023/04/26/1Panel/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1Panel">1Panel</span>
+            <span class="post-date" title="2023-04-26 14:09:00">2023/04/26</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2023/04/24/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="信息系统项目管理师">信息系统项目管理师</span>
+            <span class="post-date" title="2023-04-24 10:51:00">2023/04/24</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/09/EIGRP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="EIGRP">EIGRP</span>
+            <span class="post-date" title="2023-04-09 15:14:00">2023/04/09</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/09/FHPR/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="FHPR">FHPR</span>
+            <span class="post-date" title="2023-04-09 11:25:00">2023/04/09</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/08/HCNA-Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HCNA Lab">HCNA Lab</span>
+            <span class="post-date" title="2023-04-08 11:46:00">2023/04/08</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/07/CCNA-Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CCNA Lab">CCNA Lab</span>
+            <span class="post-date" title="2023-04-07 20:13:29">2023/04/07</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/07/OSPF/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OSPF">OSPF</span>
+            <span class="post-date" title="2023-04-07 19:19:00">2023/04/07</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2022/08/24/FRP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="FRP">FRP</span>
+            <span class="post-date" title="2022-08-24 12:47:00">2022/08/24</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2022/08/24/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="软件设计师">软件设计师</span>
+            <span class="post-date" title="2022-08-24 10:51:00">2022/08/24</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2022/08/23/Markdown/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Markdown">Markdown</span>
+            <span class="post-date" title="2022-08-23 19:54:00">2022/08/23</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2022/08/12/HomeLab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HomeLab">HomeLab</span>
+            <span class="post-date" title="2022-08-12 15:09:00">2022/08/12</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2022/07/28/WDS-MDT/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="WDS+MDT">WDS+MDT</span>
+            <span class="post-date" title="2022-07-28 21:33:00">2022/07/28</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2022/06/21/Anaconda/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Anaconda">Anaconda</span>
+            <span class="post-date" title="2022-06-21 20:56:00">2022/06/21</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2022/05/25/%E7%BD%91%E7%BB%9C%E8%A7%84%E5%88%92%E5%B8%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="网络规划师">网络规划师</span>
+            <span class="post-date" title="2022-05-25 11:57:00">2022/05/25</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2022/03/14/InfluxDB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="InfluxDB">InfluxDB</span>
+            <span class="post-date" title="2022-03-14 13:25:00">2022/03/14</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2022/03/06/MongoDB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="MongoDB">MongoDB</span>
+            <span class="post-date" title="2022-03-06 17:38:00">2022/03/06</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/12/27/VIM/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="VIM">VIM</span>
+            <span class="post-date" title="2021-12-27 09:15:00">2021/12/27</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/12/19/GITEA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="GITEA">GITEA</span>
+            <span class="post-date" title="2021-12-19 21:53:00">2021/12/19</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/12/16/VSFTPD/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="VSFTPD">VSFTPD</span>
+            <span class="post-date" title="2021-12-16 08:49:00">2021/12/16</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2021/10/06/REDIS/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="REDIS">REDIS</span>
+            <span class="post-date" title="2021-10-06 17:19:00">2021/10/06</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/20/K8s-lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="K8s_lab">K8s_lab</span>
+            <span class="post-date" title="2021-09-20 08:04:00">2021/09/20</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/15/K8s/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="K8s">K8s</span>
+            <span class="post-date" title="2021-09-15 20:48:00">2021/09/15</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/09/09/VMware/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="VMware">VMware</span>
+            <span class="post-date" title="2021-09-09 15:38:00">2021/09/09</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/08/Ingress/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Ingress">Ingress</span>
+            <span class="post-date" title="2021-09-08 23:56:00">2021/09/08</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/08/Harbor/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Harbor">Harbor</span>
+            <span class="post-date" title="2021-09-08 18:04:00">2021/09/08</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/08/28/Swarm/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Swarm">Swarm</span>
+            <span class="post-date" title="2021-08-28 20:46:00">2021/08/28</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/08/26/Go/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Go">Go</span>
+            <span class="post-date" title="2021-08-26 11:50:00">2021/08/26</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/08/15/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Java多线程">Java多线程</span>
+            <span class="post-date" title="2021-08-15 14:36:00">2021/08/15</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/08/11/Nginx/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Nginx">Nginx</span>
+            <span class="post-date" title="2021-08-11 23:28:00">2021/08/11</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/08/06/Maven/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Maven">Maven</span>
+            <span class="post-date" title="2021-08-06 09:38:00">2021/08/06</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/07/31/Springboot%E9%A1%B9%E7%9B%AE/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Springboot项目">Springboot项目</span>
+            <span class="post-date" title="2021-07-31 19:34:00">2021/07/31</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/07/22/GitLab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="GitLab">GitLab</span>
+            <span class="post-date" title="2021-07-22 21:41:00">2021/07/22</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/07/22/Docker/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Docker">Docker</span>
+            <span class="post-date" title="2021-07-22 14:53:00">2021/07/22</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/07/19/SpringSecurity/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SpringSecurity">SpringSecurity</span>
+            <span class="post-date" title="2021-07-19 20:58:00">2021/07/19</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/07/13/Mybatis/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Mybatis">Mybatis</span>
+            <span class="post-date" title="2021-07-13 10:38:00">2021/07/13</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/07/05/NVM/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="NVM">NVM</span>
+            <span class="post-date" title="2021-07-05 08:15:00">2021/07/05</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/06/26/Java-Project/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Java Project">Java Project</span>
+            <span class="post-date" title="2021-06-26 07:58:00">2021/06/26</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/06/23/Vue/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Vue">Vue</span>
+            <span class="post-date" title="2021-06-23 10:48:00">2021/06/23</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/06/08/SpringBoot2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SpringBoot2">SpringBoot2</span>
+            <span class="post-date" title="2021-06-08 16:51:00">2021/06/08</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/06/07/CentOS7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CentOS7">CentOS7</span>
+            <span class="post-date" title="2021-06-07 23:16:00">2021/06/07</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/06/02/Spring%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%BA%94%E7%89%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Spring实战(第五版)">Spring实战(第五版)</span>
+            <span class="post-date" title="2021-06-02 09:42:00">2021/06/02</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/04/25/Spring%E5%AE%9E%E6%88%98-%E7%AC%AC%E5%9B%9B%E7%89%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Spring实战(第四版)">Spring实战(第四版)</span>
+            <span class="post-date" title="2021-04-25 18:38:00">2021/04/25</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/04/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="设计模式">设计模式</span>
+            <span class="post-date" title="2021-04-18 22:19:00">2021/04/18</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2021/03/22/SQL/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SQL">SQL</span>
+            <span class="post-date" title="2021-03-22 18:33:00">2021/03/22</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/03/14/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="时间管理">时间管理</span>
+            <span class="post-date" title="2021-03-14 21:49:00">2021/03/14</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/03/14/Hexo/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hexo">Hexo</span>
+            <span class="post-date" title="2021-03-14 08:31:00">2021/03/14</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2020/09/12/UltraISO/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="UltraISO">UltraISO</span>
+            <span class="post-date" title="2020-09-12 11:42:00">2020/09/12</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2020/09/12/Ventoy/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Ventoy">Ventoy</span>
+            <span class="post-date" title="2020-09-12 11:42:00">2020/09/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-SpringSecurity" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">SpringSecurity</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="开发">开发</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2025-10-04 23:07:20'>2021-07-19 20:58</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:2.6k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-dome"><span class="toc-text">第一章 dome</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%A6%82%E5%BF%B5"><span class="toc-text">第二章 概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="toc-text">2.1 过滤器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E8%BF%87%E6%BB%A4%E5%99%A8%E5%8A%A0%E8%BD%BD"><span class="toc-text">2.2 过滤器加载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-%E4%B8%A4%E4%B8%AA%E9%87%8D%E8%A6%81%E6%8E%A5%E5%8F%A3"><span class="toc-text">2.3 两个重要接口</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E8%AE%A4%E8%AF%81%E5%92%8C%E6%8E%88%E6%9D%83"><span class="toc-text">第三章 认证和授权</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E8%AE%A4%E8%AF%81"><span class="toc-text">3.1 认证</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-1-%E8%AE%BE%E7%BD%AE%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E5%AF%86%E7%A0%81-%E4%B8%89%E8%80%85%E9%80%89%E5%85%B6%E4%B8%80"><span class="toc-text">3.1.1 设置用户名和密码,三者选其一</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E6%8E%88%E6%9D%83"><span class="toc-text">3.2 授权</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0"><span class="toc-text">第四章</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E8%87%AA%E5%AE%9A%E4%B9%89%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2-%E4%B8%8D%E9%9C%80%E8%A6%81%E8%AE%A4%E8%AF%81%E4%B9%9F%E5%8F%AF%E4%BB%A5%E8%AE%BF%E9%97%AE"><span class="toc-text">4.1 自定义登录页面 &amp; 不需要认证也可以访问</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E5%9F%BA%E4%BA%8E%E8%A7%92%E8%89%B2%E6%88%96%E6%9D%83%E9%99%90%E8%BF%9B%E8%A1%8C%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6"><span class="toc-text">4.2 基于角色或权限进行访问控制</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0"><span class="toc-text">第五章</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-%E8%87%AA%E5%AE%9A%E4%B9%89403%E6%B2%A1%E6%9C%89%E6%9D%83%E9%99%90%E8%AE%BF%E9%97%AE%E9%A1%B5%E9%9D%A2"><span class="toc-text">5.1 自定义403没有权限访问页面</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E6%96%B9%E6%B3%95%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3%E4%BD%BF%E7%94%A8"><span class="toc-text">第六章 方法常用注解使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-EnableGlobalMethodSecurity-securedEnabled-true-prePostEnable-true"><span class="toc-text">6.1 @EnableGlobalMethodSecurity(securedEnabled &#x3D; true, prePostEnable&#x3D;true)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-Secured-%E7%94%A8%E6%88%B7%E5%85%B7%E6%9C%89%E6%9F%90%E4%B8%AA%E8%A7%92%E8%89%B2%EF%BC%8C%E5%8F%AF%E4%BB%A5%E8%AE%BF%E9%97%AE%E6%96%B9%E6%B3%95"><span class="toc-text">6.2 @Secured 用户具有某个角色，可以访问方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-3-PreAuthorize-%E6%96%B9%E6%B3%95%E6%89%A7%E8%A1%8C%E5%89%8D"><span class="toc-text">6.3 @PreAuthorize 方法执行前</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-4-PostAuthorize-%E6%96%B9%E6%B3%95%E6%89%A7%E8%A1%8C%E5%90%8E-%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="toc-text">6.4 @PostAuthorize 方法执行后,返回值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-5-PostFilter-%E5%AF%B9%E6%96%B9%E6%B3%95%E8%BF%94%E5%9B%9E%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E8%BF%87%E6%BB%A4"><span class="toc-text">6.5 @PostFilter 对方法返回数据进行过滤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-6-PreFilter-%E5%AF%B9-%E6%96%B9%E6%B3%95%E4%BC%A0%E5%85%A5%E7%9A%84%E5%8F%82%E6%95%B0%E5%81%9A%E8%BF%87%E6%BB%A4"><span class="toc-text">6.6 @PreFilter 对 方法传入的参数做过滤</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC7%E7%AB%A0-%E7%94%A8%E6%88%B7%E6%B3%A8%E9%94%80"><span class="toc-text">第7章 用户注销</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E6%B3%A8%E9%94%80"><span class="toc-text">用户注销</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC8%E7%AB%A0-%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95-RemeberMeService"><span class="toc-text">第8章 自动登录 RemeberMeService</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#8-1-%E5%8E%9F%E7%90%86"><span class="toc-text">8.1 原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-2-%E5%AE%9E%E7%8E%B0"><span class="toc-text">8.2 实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0-CSRF"><span class="toc-text">第九章 CSRF</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#9-1"><span class="toc-text">9.1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-2-%E5%BC%80%E5%90%AFCSRF-%E9%98%B2%E6%8A%A4"><span class="toc-text">9.2 开启CSRF 防护</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="第一章-dome"><a href="#第一章-dome" class="headerlink" title="第一章 dome"></a>第一章 dome</h3><ol>
+<li>pom.xml</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-security<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">language-xml复制代码</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>controller</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@RestController</span><br><span class="line">@RequestMapping(&quot;/test&quot;)</span><br><span class="line">public class TestController &#123;</span><br><span class="line"></span><br><span class="line">    @GetMapping(&quot;hello&quot;)</span><br><span class="line">    public String hello() &#123;</span><br><span class="line">        return &quot;hello security&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>运行项目即可</li>
+</ol>
+<hr>
+<h3 id="第二章-概念"><a href="#第二章-概念" class="headerlink" title="第二章 概念"></a>第二章 概念</h3><h4 id="2-1-过滤器"><a href="#2-1-过滤器" class="headerlink" title="2.1 过滤器"></a>2.1 过滤器</h4><ol>
+<li>FilterSecurityInterceptor 方法级过滤器</li>
+<li>ExceptionTranslationFilter 异常过滤器</li>
+<li>UsernamePasswordAuthenticationFilter 对&#x2F;login的post请求做拦截，校验表单中用户名，密码。</li>
+</ol>
+<h4 id="2-2-过滤器加载"><a href="#2-2-过滤器加载" class="headerlink" title="2.2 过滤器加载"></a>2.2 过滤器加载</h4><ol>
+<li>加载过程：DelegatingFilterProxy -&gt; initDelegate -&gt; targetBeanName -&gt; FilterChainProxy -&gt; doFilterInternal -&gt; List(存放要加载的过滤器)</li>
+</ol>
+<h4 id="2-3-两个重要接口"><a href="#2-3-两个重要接口" class="headerlink" title="2.3 两个重要接口"></a>2.3 两个重要接口</h4><ol>
+<li>UserDetailsService 接口，查询数据接口</li>
+</ol>
+<ul>
+<li>自定义一个类继承 UsernamePasswordAuthenticationFilter</li>
+<li>重写 attemptAuthentication 方法，得到用户名和密码做校验，查数据库需要单独去写，就需要写到 UserDetailsService接口中。</li>
+<li>重写 successfulAuthentication 方法，验证成功调用该方法</li>
+<li>重写 unsuccessfulAuthentication 方法，验证失败调用该方法</li>
+<li>自定义一个类实现 UserDetailsService接口，编写查询数据过程，返回User对象，这个User对象是安全框架提供的对象</li>
+</ul>
+<ol>
+<li>PasswordEncoder 接口，对用户和密码加密的接口</li>
+</ol>
+<hr>
+<h3 id="第三章-认证和授权"><a href="#第三章-认证和授权" class="headerlink" title="第三章 认证和授权"></a>第三章 认证和授权</h3><h4 id="3-1-认证"><a href="#3-1-认证" class="headerlink" title="3.1 认证"></a>3.1 认证</h4><h4 id="3-1-1-设置用户名和密码-三者选其一"><a href="#3-1-1-设置用户名和密码-三者选其一" class="headerlink" title="3.1.1 设置用户名和密码,三者选其一"></a>3.1.1 设置用户名和密码,三者选其一</h4><ol>
+<li>方法一：配置文件 application.properties</li>
+</ol>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 方式一：设置用户名和密码</span></span><br><span class="line"><span class="attr">spring.security.user.name</span>=<span class="string">admin</span></span><br><span class="line"><span class="attr">spring.security.user.password</span>=<span class="string">hadoop</span></span><br><span class="line"><span class="attr">language-properties复制代码</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>方式二：配置类</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SecurityConfig</span> <span class="keyword">extends</span> <span class="title class_">WebSecurityConfigurerAdapter</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">configure</span><span class="params">(AuthenticationManagerBuilder auth)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="comment">// 对密码加密接口，可以不加密</span></span><br><span class="line">        <span class="type">BCryptPasswordEncoder</span> <span class="variable">passwordEncoder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BCryptPasswordEncoder</span>();</span><br><span class="line">        <span class="type">String</span> <span class="variable">passwd</span> <span class="operator">=</span> passwordEncoder.encode(<span class="string">&quot;hadoop&quot;</span>);</span><br><span class="line">        <span class="comment">// 设置用户名，密码，角色</span></span><br><span class="line">        auth.inMemoryAuthentication().withUser(<span class="string">&quot;hjxstart&quot;</span>).password(passwd).roles(<span class="string">&quot;&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 加密需要用到 PasswordEncoder这个对象</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    PasswordEncoder <span class="title function_">passwd</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">BCryptPasswordEncoder</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>方式三：自定义编写实现类 UserDetailsService</li>
+</ol>
+<ul>
+<li>第一步：创建一个配置类，设置使用那个 userDetailsService 实现类；</li>
+<li>第二步：编写实现类，返回User对象，User对象有用户名密码和操作对象</li>
+<li>代码</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service(&quot;userDetailsService&quot;)</span> <span class="comment">// 自定义Service名字</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyUserDetailsService</span> <span class="keyword">implements</span> <span class="title class_">UserDetailsService</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UsersMapper usersMapper;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> UserDetails <span class="title function_">loadUserByUsername</span><span class="params">(String s)</span> <span class="keyword">throws</span> UsernameNotFoundException &#123;</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 1.1调用userMapper方法查询数据库，得到 用户名， 密码， 权限</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="comment">// 根据用户名查询数据库</span></span><br><span class="line">        QueryWrapper&lt;Users&gt; wrapper = <span class="keyword">new</span> <span class="title class_">QueryWrapper</span>&lt;&gt;();</span><br><span class="line">        wrapper.eq(<span class="string">&quot;username&quot;</span>, s);</span><br><span class="line">        <span class="type">Users</span> <span class="variable">users</span> <span class="operator">=</span> usersMapper.selectOne(wrapper);</span><br><span class="line">        <span class="comment">// 判断:数据库没有用户名，认证失败</span></span><br><span class="line">        <span class="keyword">if</span> (users == <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">UsernameNotFoundException</span>(<span class="string">&quot;用户名不存在！&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 1.2 返回一个冲数据库查询出来的 User(用户名，密码，权限集合)对象</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="comment">// 定义一个权限列表</span></span><br><span class="line">        List&lt;GrantedAuthority&gt; auths = AuthorityUtils.commaSeparatedStringToAuthorityList(<span class="string">&quot;role&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">User</span>(users.getUsername(), <span class="keyword">new</span> <span class="title class_">BCryptPasswordEncoder</span>().encode(users.getPassword()), auths);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-2-授权"><a href="#3-2-授权" class="headerlink" title="3.2 授权"></a>3.2 授权</h4><hr>
+<h3 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h3><h4 id="4-1-自定义登录页面-不需要认证也可以访问"><a href="#4-1-自定义登录页面-不需要认证也可以访问" class="headerlink" title="4.1 自定义登录页面 &amp; 不需要认证也可以访问"></a>4.1 自定义登录页面 &amp; 不需要认证也可以访问</h4><ol>
+<li>自定义 config</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SecurityConfigTest</span> <span class="keyword">extends</span> <span class="title class_">WebSecurityConfigurerAdapter</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">configure</span><span class="params">(HttpSecurity http)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="comment">// 登录页面设置.登录访问路径(Controller).登录成功之后跳着的路径</span></span><br><span class="line">        http.formLogin().loginPage(<span class="string">&quot;/login.html&quot;</span>).loginProcessingUrl(<span class="string">&quot;/user/login&quot;</span>).defaultSuccessUrl(<span class="string">&quot;/test/index&quot;</span>).permitAll()</span><br><span class="line">                <span class="comment">// 那些路径需要认证，那些不需要认证才可以访问.访问这些路径可以直接访问不需要认证</span></span><br><span class="line">                .and().authorizeRequests().antMatchers(<span class="string">&quot;/&quot;</span>, <span class="string">&quot;/test/hello&quot;</span>, <span class="string">&quot;/user/login&quot;</span>).permitAll()</span><br><span class="line">                <span class="comment">// 所有请求都可以访问.关闭csrf防护</span></span><br><span class="line">                .anyRequest().authenticated().and().csrf().disable();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>static目录下有login.html</li>
+</ol>
+<h4 id="4-2-基于角色或权限进行访问控制"><a href="#4-2-基于角色或权限进行访问控制" class="headerlink" title="4.2 基于角色或权限进行访问控制"></a>4.2 基于角色或权限进行访问控制</h4><ol>
+<li>hasAuthority 方法(单role控制，多个角色就不行)</li>
+</ol>
+<ul>
+<li>如果当前的主体具有指定的权限，则返回 true, 否则返回 false</li>
+<li>步骤一：在配置类设置当前访问地址有那些权限</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SecurityConfigTest</span> <span class="keyword">extends</span> <span class="title class_">WebSecurityConfigurerAdapter</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">configure</span><span class="params">(HttpSecurity http)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="comment">// 登录页面设置.登录访问路径(Controller).登录成功之后跳着的路径</span></span><br><span class="line">        http.formLogin().loginPage(<span class="string">&quot;/login.html&quot;</span>).loginProcessingUrl(<span class="string">&quot;/user/login&quot;</span>).defaultSuccessUrl(<span class="string">&quot;/test/index&quot;</span>).permitAll()</span><br><span class="line">                <span class="comment">// 那些路径需要认证，那些不需要认证才可以访问.访问这些路径可以直接访问不需要认证</span></span><br><span class="line">                .and().authorizeRequests()</span><br><span class="line">                    .antMatchers(<span class="string">&quot;/&quot;</span>, <span class="string">&quot;/test/hello&quot;</span>, <span class="string">&quot;/user/login&quot;</span>).permitAll()</span><br><span class="line"></span><br><span class="line">                    <span class="comment">// 当前登录用户，只有具有 admins 权限才可以访问这个路径</span></span><br><span class="line">                    .antMatchers(<span class="string">&quot;/test/index&quot;</span>).hasAuthority(<span class="string">&quot;admins&quot;</span>)</span><br><span class="line"></span><br><span class="line">                    <span class="comment">// 所有请求都可以访问.关闭csrf防护</span></span><br><span class="line">                    .anyRequest().authenticated()</span><br><span class="line">                .and().csrf().disable();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>步骤二：在UserDetailsService,把返回User对象设置权限</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service(&quot;userDetailsService&quot;)</span> <span class="comment">// 自定义Service名字</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyUserDetailsService</span> <span class="keyword">implements</span> <span class="title class_">UserDetailsService</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UsersMapper usersMapper;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> UserDetails <span class="title function_">loadUserByUsername</span><span class="params">(String s)</span> <span class="keyword">throws</span> UsernameNotFoundException &#123;</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 1.1调用userMapper方法查询数据库，得到 用户名， 密码， 权限</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="comment">// 根据用户名查询数据库</span></span><br><span class="line">        QueryWrapper&lt;Users&gt; wrapper = <span class="keyword">new</span> <span class="title class_">QueryWrapper</span>&lt;&gt;();</span><br><span class="line">        wrapper.eq(<span class="string">&quot;username&quot;</span>, s);</span><br><span class="line">        <span class="type">Users</span> <span class="variable">users</span> <span class="operator">=</span> usersMapper.selectOne(wrapper);</span><br><span class="line">        <span class="comment">// 判断:数据库没有用户名，认证失败</span></span><br><span class="line">        <span class="keyword">if</span> (users == <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">UsernameNotFoundException</span>(<span class="string">&quot;用户名不存在！&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 1.2 返回一个从数据库查询出来的 User(用户名，密码，权限集合)对象</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="comment">// 定义一个权限列表</span></span><br><span class="line">        List&lt;GrantedAuthority&gt; auths = AuthorityUtils.commaSeparatedStringToAuthorityList(<span class="string">&quot;admins，ROLE_sale&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">User</span>(users.getUsername(), <span class="keyword">new</span> <span class="title class_">BCryptPasswordEncoder</span>().encode(users.getPassword()), auths);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>没有访问权限提示:(type&#x3D;Forbidden,status&#x3D;403)</li>
+</ul>
+<ol>
+<li>hasAnyAuthority 方法 (多权限，多角色空)</li>
+</ol>
+<ul>
+<li>如果当前的主体有任何提供的角色(给定的作为一个逗号的字符串列表)的话，返回true</li>
+<li>步骤一</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Configuration</span></span><br><span class="line">.antMatchers(<span class="string">&quot;/test/index&quot;</span>).hasAnyAuthority(<span class="string">&quot;admins,manager&quot;</span>)</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>步骤二</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Service</span></span><br><span class="line"> List&lt;GrantedAuthority&gt; auths = AuthorityUtils.commaSeparatedStringToAuthorityList(<span class="string">&quot;admins&quot;</span>);</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>hasRole 方法</li>
+</ol>
+<ul>
+<li>如果当前祖逖具有指定的角色，则返回true, 否则出现403</li>
+<li>步骤一</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Configuration</span></span><br><span class="line">.antMatchers(<span class="string">&quot;/test/index&quot;</span>).hasRole(<span class="string">&quot;sale&quot;</span>)</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>步骤二</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Service //以ROLE_XXXXX</span></span><br><span class="line">List&lt;GrantedAuthority&gt; auths = AuthorityUtils.commaSeparatedStringToAuthorityList(<span class="string">&quot;admins，ROLE_sale&quot;</span>);</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>hasAnyRole 方法</li>
+</ol>
+<ul>
+<li>表示用户具备任何一个条件都可以访问</li>
+<li>修改配置文件</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 角色权限控制方法四：hasAnyRole</span></span><br><span class="line">.antMatchers(<span class="string">&quot;/test/index&quot;</span>).hasAnyRole(<span class="string">&quot;admins,sale&quot;</span>)</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>给用户添加角色</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个权限列表</span></span><br><span class="line">List&lt;GrantedAuthority&gt; auths = AuthorityUtils.commaSeparatedStringToAuthorityList(<span class="string">&quot;ROLE_admins,ROLE_sale&quot;</span>);</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">User</span>(users.getUsername(), <span class="keyword">new</span> <span class="title class_">BCryptPasswordEncoder</span>().encode(users.getPassword()), auths);</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<h3 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a>第五章</h3><h4 id="5-1-自定义403没有权限访问页面"><a href="#5-1-自定义403没有权限访问页面" class="headerlink" title="5.1 自定义403没有权限访问页面"></a>5.1 自定义403没有权限访问页面</h4><ol>
+<li>在配置类进行配置就可以了</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 配置没有权限访问跳转自定义页面</span></span><br><span class="line">        http.exceptionHandling().accessDeniedPage(<span class="string">&quot;/unauth.html&quot;</span>);</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<h3 id="第六章-方法常用注解使用"><a href="#第六章-方法常用注解使用" class="headerlink" title="第六章 方法常用注解使用"></a>第六章 方法常用注解使用</h3><h4 id="6-1-EnableGlobalMethodSecurity-securedEnabled-true-prePostEnable-true"><a href="#6-1-EnableGlobalMethodSecurity-securedEnabled-true-prePostEnable-true" class="headerlink" title="6.1 @EnableGlobalMethodSecurity(securedEnabled &#x3D; true, prePostEnable&#x3D;true)"></a>6.1 @EnableGlobalMethodSecurity(securedEnabled &#x3D; true, prePostEnable&#x3D;true)</h4><ol>
+<li>使用注解先要在启动类里面开启注解功能！</li>
+</ol>
+<h4 id="6-2-Secured-用户具有某个角色，可以访问方法"><a href="#6-2-Secured-用户具有某个角色，可以访问方法" class="headerlink" title="6.2 @Secured 用户具有某个角色，可以访问方法"></a>6.2 @Secured 用户具有某个角色，可以访问方法</h4><ol>
+<li>步骤一：在启动类(配置类)开启注解 @EnableGlobalMethodSecurity(securedEnabled &#x3D; true)</li>
+<li>步骤二：在controller的方法上面使用注解，设置角色</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    <span class="meta">@Secured(&#123;&quot;ROLE_sale&quot;, &quot;ROLE_manager&quot;&#125;)</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;update&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">update</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;hello update&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>步骤三：在config添加角色</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;GrantedAuthority&gt; auths = AuthorityUtils.commaSeparatedStringToAuthorityList(<span class="string">&quot;ROLE_admins,ROLE_sale&quot;</span>);</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-3-PreAuthorize-方法执行前"><a href="#6-3-PreAuthorize-方法执行前" class="headerlink" title="6.3 @PreAuthorize 方法执行前"></a>6.3 @PreAuthorize 方法执行前</h4><ol>
+<li>@PreAuthorize 注解适合进入方法前的权限验证；</li>
+<li>步骤一：在启动类(配置类)开启注解</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true)</span></span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>步骤二：在方法添加注解 @preAuthorize</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">    <span class="meta">@GetMapping(&quot;update&quot;)</span></span><br><span class="line">    <span class="comment">//@Secured(&#123;&quot;ROLE_sale&quot;,&quot;ROLE_manager&quot;&#125;)</span></span><br><span class="line">    <span class="meta">@PreAuthorize(&quot;hasAnyAuthority(&#x27;admins&#x27;)&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">update</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;hello update&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-4-PostAuthorize-方法执行后-返回值"><a href="#6-4-PostAuthorize-方法执行后-返回值" class="headerlink" title="6.4 @PostAuthorize 方法执行后,返回值"></a>6.4 @PostAuthorize 方法执行后,返回值</h4><ol>
+<li>@PostAuthorize 在方法执行完后验证</li>
+<li>步骤一：在启动类(配置类)添加注解</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true)</span></span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>步骤二：在方法添加注解</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">    <span class="meta">@GetMapping(&quot;update&quot;)</span></span><br><span class="line">    <span class="comment">//@Secured(&#123;&quot;ROLE_sale&quot;,&quot;ROLE_manager&quot;&#125;)</span></span><br><span class="line">    <span class="comment">//@PreAuthorize(&quot;hasAnyAuthority(&#x27;admins&#x27;)&quot;)</span></span><br><span class="line">    <span class="comment">//@PostAuthorize(&quot;hasAnyAuthority(&#x27;admins&#x27;)&quot;) // 没有权限也可以执行方法</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">update</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;update.........&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;hello update&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-5-PostFilter-对方法返回数据进行过滤"><a href="#6-5-PostFilter-对方法返回数据进行过滤" class="headerlink" title="6.5 @PostFilter 对方法返回数据进行过滤"></a>6.5 @PostFilter 对方法返回数据进行过滤</h4><ol>
+<li>@PostFilter 权限验证之后对数据进行过滤，留下用户名是admin1的数据</li>
+<li>controller</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">    <span class="meta">@GetMapping(&quot;getAll&quot;)</span></span><br><span class="line">    <span class="meta">@PreAuthorize(&quot;hasAnyAuthority(&#x27;admins&#x27;)&quot;)</span></span><br><span class="line">    <span class="meta">@PostFilter(&quot;filterObject.username == &#x27;admin1&#x27;&quot;)</span> <span class="comment">// 对返回对象的username进行过滤</span></span><br><span class="line">    <span class="keyword">public</span> List&lt;Users&gt; <span class="title function_">getAllUser</span><span class="params">()</span> &#123;</span><br><span class="line">        ArrayList&lt;Users&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        list.add(<span class="keyword">new</span> <span class="title class_">Users</span>(<span class="number">11</span>, <span class="string">&quot;admin1&quot;</span>, <span class="string">&quot;hadoop&quot;</span>));</span><br><span class="line">        list.add(<span class="keyword">new</span> <span class="title class_">Users</span>(<span class="number">21</span>, <span class="string">&quot;admin2&quot;</span>, <span class="string">&quot;hadoop&quot;</span>));</span><br><span class="line">        System.out.println(list);</span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    &#125;</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-6-PreFilter-对-方法传入的参数做过滤"><a href="#6-6-PreFilter-对-方法传入的参数做过滤" class="headerlink" title="6.6 @PreFilter 对 方法传入的参数做过滤"></a>6.6 @PreFilter 对 方法传入的参数做过滤</h4><ol>
+<li>@PreFilter 进入控制器之前对数据进行过滤</li>
+<li>在controller中</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">    <span class="meta">@RequestMapping(&quot;getTestPreFilter&quot;)</span></span><br><span class="line">    <span class="meta">@PreAuthorize(&quot;hasRole(&#x27;ROLE_admins&#x27;)&quot;)</span></span><br><span class="line">    <span class="meta">@PreFilter(value = &quot;filterObject.id%2==0&quot;)</span></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="keyword">public</span> List&lt;Users&gt; <span class="title function_">getTestPreFilter</span><span class="params">(<span class="meta">@RequestBody</span> List&lt;Users&gt; list)</span> &#123;</span><br><span class="line">        list.forEach(t -&gt; &#123;</span><br><span class="line">            System.out.println(t.getId() + <span class="string">&quot;\t&quot;</span> + t.getUsername());</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    &#125;</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<h3 id="第7章-用户注销"><a href="#第7章-用户注销" class="headerlink" title="第7章 用户注销"></a>第7章 用户注销</h3><h4 id="用户注销"><a href="#用户注销" class="headerlink" title="用户注销"></a>用户注销</h4><ol>
+<li>在配置类中添加退出映射地址</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 退出，注销配置, 退出地址，退出后的跳转地址</span></span><br><span class="line">        http.logout().logoutUrl(<span class="string">&quot;/logout&quot;</span>).logoutSuccessUrl(<span class="string">&quot;/test/hello&quot;</span>).permitAll();</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>在成功页面添加超链接，写设置退出路径 success.html</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>登录成功！<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;/logout&quot;</span>&gt;</span>退出<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">language-html复制代码</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>登录成功之后，在成功页面点击退出，再去访问其他controller不能进行访问的</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">        http.formLogin()</span><br><span class="line">                .loginPage(<span class="string">&quot;/login.html&quot;</span>)</span><br><span class="line">                .loginProcessingUrl(<span class="string">&quot;/user/login&quot;</span>)</span><br><span class="line">                .defaultSuccessUrl(<span class="string">&quot;/success.html&quot;</span>).permitAll()</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<h3 id="第8章-自动登录-RemeberMeService"><a href="#第8章-自动登录-RemeberMeService" class="headerlink" title="第8章 自动登录 RemeberMeService"></a>第8章 自动登录 RemeberMeService</h3><h4 id="8-1-原理"><a href="#8-1-原理" class="headerlink" title="8.1 原理"></a>8.1 原理</h4><h4 id="8-2-实现"><a href="#8-2-实现" class="headerlink" title="8.2 实现"></a>8.2 实现</h4><ol>
+<li>创建表(可选)</li>
+<li>配置类，注入数据源，配置操作数据库对象</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 自动登录第二步:2.1</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> auth</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> DataSource dataSource;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 自动登录第二步:2.2</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> PersistentTokenRepository <span class="title function_">persistentTokenRepository</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">JdbcTokenRepositoryImpl</span> <span class="variable">jdbcTokenRepository</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JdbcTokenRepositoryImpl</span>();</span><br><span class="line">        jdbcTokenRepository.setDataSource(dataSource);</span><br><span class="line">        <span class="comment">// 自动生成表,这样就不用自己创建表类</span></span><br><span class="line">        jdbcTokenRepository.setCreateTableOnStartup(<span class="literal">true</span>);</span><br><span class="line">        <span class="keyword">return</span> jdbcTokenRepository;</span><br><span class="line">    &#125;</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>配置类中，配置自动登录</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.and().rememberMe().tokenRepository(persistentTokenRepository())</span><br><span class="line">                    <span class="comment">// 设置有效时长</span></span><br><span class="line">                    .tokenValiditySeconds(<span class="number">60</span>)</span><br><span class="line">                    <span class="comment">// 使用userDetailsService对象对数据库的操作</span></span><br><span class="line">                    .userDetailsService(userDetailsService)</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>在登录页面添加复选框</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;remember-me&quot;</span>&gt;</span>自动登录</span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">language-html复制代码</span><br></pre></td></tr></table></figure>
+
+<h3 id="第九章-CSRF"><a href="#第九章-CSRF" class="headerlink" title="第九章 CSRF"></a>第九章 CSRF</h3><h4 id="9-1"><a href="#9-1" class="headerlink" title="9.1"></a>9.1</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">&quot;hidden&quot;</span> th:name=<span class="string">&quot;$&#123;_csrf.parameterName&#125;&quot;</span> th:value=<span class="string">&quot;$&#123;_csrf.token&#125;&quot;</span>/&gt;</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+
+<h4 id="9-2-开启CSRF-防护"><a href="#9-2-开启CSRF-防护" class="headerlink" title="9.2 开启CSRF 防护"></a>9.2 开启CSRF 防护</h4><hr>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 hjxstart@126.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry"><span class="miit">
+                <img src="/img/gov.png" title="中华人民共和国工业和信息化部">
+                <a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">粤ICP备2021170625号-1</a>
+        </span>
+    
+    ©2019-2022 hjxstart
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("/img/article-list-bg-img.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
