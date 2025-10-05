@@ -122,10 +122,52 @@
         
             
                 <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
                     <div data-rel="读书">
                         
                         读书
                         <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -154,48 +196,6 @@
                         
                         数据库
                         <small>(5)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="运维">
-                        
-                        运维
-                        <small>(25)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="安全">
-                        
-                        安全
-                        <small>(3)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="开发">
-                        
-                        开发
-                        <small>(14)</small>
                         
                     </div>
                     
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<input type="hidden" id="yelog_site_word_count" value="243.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -983,7 +983,7 @@
     </div>
     <div class="article-meta">
         
-        <span>字数:385</span>
+        <span>字数:386</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1021,9 +1021,12 @@
         <blockquote>
 <p>本文介绍在 Moc, Windows10 和 Centos7.9 环境下安装 Node 版本管理工具NVM</p>
 </blockquote>
-<h1 id="一、Mac"><a href="#一、Mac" class="headerlink" title="一、Mac"></a>一、Mac</h1><h2 id="1-1-安装"><a href="#1-1-安装" class="headerlink" title="1.1 安装"></a>1.1 安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="一、Mac"><a href="#一、Mac" class="headerlink" title="一、Mac"></a>一、Mac</h1><h2 id="1-1-安装"><a href="#1-1-安装" class="headerlink" title="1.1 安装"></a>1.1 安装</h2><pre><code class="hljs bash">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+</code></pre>
 
-<h2 id="1-2-配置-bashrc"><a href="#1-2-配置-bashrc" class="headerlink" title="1.2 配置 ~/.bashrc"></a>1.2 配置 <code>~/.bashrc</code></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> NVM_DIR=<span class="string">&quot;<span class="subst">$([ -z <span class="string">&quot;<span class="variable">$&#123;XDG_CONFIG_HOME-&#125;</span>&quot;</span> ] &amp;&amp; printf %s <span class="string">&quot;<span class="variable">$&#123;HOME&#125;</span>/.nvm&quot;</span> || printf %s <span class="string">&quot;<span class="variable">$&#123;XDG_CONFIG_HOME&#125;</span>/nvm&quot;</span>)</span>&quot;</span></span><br><span class="line">[ -s <span class="string">&quot;<span class="variable">$NVM_DIR</span>/nvm.sh&quot;</span> ] &amp;&amp; \. <span class="string">&quot;<span class="variable">$NVM_DIR</span>/nvm.sh&quot;</span> <span class="comment"># This loads nvm</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="1-2-配置-bashrc"><a href="#1-2-配置-bashrc" class="headerlink" title="1.2 配置 ~/.bashrc"></a>1.2 配置 <code>~/.bashrc</code></h2><pre><code class="hljs bash"><span class="hljs-built_in">export</span> NVM_DIR=<span class="hljs-string">&quot;<span class="hljs-subst">$([ -z <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;XDG_CONFIG_HOME-&#125;</span>&quot;</span> ] &amp;&amp; printf %s <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;HOME&#125;</span>/.nvm&quot;</span> || printf %s <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;XDG_CONFIG_HOME&#125;</span>/nvm&quot;</span>)</span>&quot;</span>
+[ -s <span class="hljs-string">&quot;<span class="hljs-variable">$NVM_DIR</span>/nvm.sh&quot;</span> ] &amp;&amp; \. <span class="hljs-string">&quot;<span class="hljs-variable">$NVM_DIR</span>/nvm.sh&quot;</span> <span class="hljs-comment"># This loads nvm</span>
+</code></pre>
 
 <blockquote>
 <p>启用配置：source ~&#x2F;.bashrc</p>
@@ -1031,83 +1034,104 @@
 <h2 id="1-3-安装-Node"><a href="#1-3-安装-Node" class="headerlink" title="1.3 安装 Node"></a>1.3 安装 Node</h2><ol>
 <li>查看远端版本</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvm ls-remote </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">nvm ls-remote 
+</code></pre>
 
 <ol>
 <li>安装指定的版本</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvm install 16.14.0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">nvm install 16.14.0
+</code></pre>
 
 <ol>
 <li>安装指定版本</li>
 </ol>
 <p>安装指定版本直接在后面加上版本号即可</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvm use 16.14.0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">nvm use 16.14.0
+</code></pre>
 
 <hr>
 <h1 id="二、Win10"><a href="#二、Win10" class="headerlink" title="二、Win10"></a>二、Win10</h1><h2 id="2-1-nvm-安装"><a href="#2-1-nvm-安装" class="headerlink" title="2.1 nvm 安装"></a>2.1 nvm 安装</h2><p>*<strong>注意：如果本地已经安装了 node，要先卸载 node 再安装 nvm*</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvm -v // 检查nvm是否安装成功</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">nvm -v // 检查nvm是否安装成功
+</code></pre>
 
 <h2 id="2-2-使用-nvm-安装-node"><a href="#2-2-使用-nvm-安装-node" class="headerlink" title="2.2 使用 nvm 安装 node"></a>2.2 使用 nvm 安装 node</h2><ol>
 <li>查看 nvm 的指令</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvm -h</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">nvm -h
+</code></pre>
 
 <ol>
 <li>查看本地已经安装的 node 版本列表</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvm list</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">nvm list
+</code></pre>
 
 <ol>
 <li>查看可以安装的 node 版本</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvm list available</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">nvm list available
+</code></pre>
 
 <ol>
 <li>安装最新版本的 node</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvm install latest</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">nvm install latest
+</code></pre>
 
 <ol>
 <li>安装指定版本的 node. 例如安装 10.16.0 版本</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvm install 10.16.0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">nvm install 10.16.0
+</code></pre>
 
 <ol>
 <li>使用对应版本的 node</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvm use 10.16.0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">nvm use 10.16.0
+</code></pre>
 
 <ol>
 <li>卸载对应版本的 node</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvm uninstall 10.16.0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">nvm uninstall 10.16.0
+</code></pre>
 
 <hr>
-<h1 id="三、Centos7-9"><a href="#三、Centos7-9" class="headerlink" title="三、Centos7.9"></a>三、Centos7.9</h1><h2 id="2-1-安装-git"><a href="#2-1-安装-git" class="headerlink" title="2.1 安装 git"></a>2.1 安装 git</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install git</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="三、Centos7-9"><a href="#三、Centos7-9" class="headerlink" title="三、Centos7.9"></a>三、Centos7.9</h1><h2 id="2-1-安装-git"><a href="#2-1-安装-git" class="headerlink" title="2.1 安装 git"></a>2.1 安装 git</h2><pre><code class="hljs bash">yum install git
+</code></pre>
 
 <p>查看 git 版本</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git --version</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">git --version
+</code></pre>
 
-<h2 id="2-2-安装-nvm"><a href="#2-2-安装-nvm" class="headerlink" title="2.2 安装 nvm"></a>2.2 安装 nvm</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git://github.com/creationix/nvm.git ~/nvm</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="2-2-安装-nvm"><a href="#2-2-安装-nvm" class="headerlink" title="2.2 安装 nvm"></a>2.2 安装 nvm</h2><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> git://github.com/creationix/nvm.git ~/nvm
+</code></pre>
 
 <p>验证安装</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">command</span> -v nvm</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-built_in">command</span> -v nvm
+</code></pre>
 
 <p>设置 nvm 自动运行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;source ~/nvm/nvm.sh&quot;</span> &gt;&gt; ~/.bashrc</span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;source ~/nvm/nvm.sh&quot;</span> &gt;&gt; ~/.bashrc
+<span class="hljs-built_in">source</span> ~/.bashrc
+</code></pre>
 
 <p>查询 Node.js 版本</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvm list-remote</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">nvm list-remote
+</code></pre>
 
 <p>安装 Node.js 版本</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvm install v16.14.0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">nvm install v16.14.0
+</code></pre>
 
 <p>切换 Node.js 版本</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvm use v16.14.0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">nvm use v16.14.0
+</code></pre>
 
 <p>升级 npm</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm -g</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">npm -g
+</code></pre>
 
 <hr>
 

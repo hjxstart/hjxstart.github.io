@@ -122,10 +122,52 @@
         
             
                 <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
                     <div data-rel="读书">
                         
                         读书
                         <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -154,48 +196,6 @@
                         
                         数据库
                         <small>(5)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="运维">
-                        
-                        运维
-                        <small>(25)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="安全">
-                        
-                        安全
-                        <small>(3)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="开发">
-                        
-                        开发
-                        <small>(14)</small>
                         
                     </div>
                     
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<input type="hidden" id="yelog_site_word_count" value="243.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -983,7 +983,7 @@
     </div>
     <div class="article-meta">
         
-        <span>字数:87</span>
+        <span>字数:89</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1018,7 +1018,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改主机名</span></span><br><span class="line">hostnamectl set-hostname homelab_01</span><br><span class="line"><span class="comment"># Centos7 更换腾讯源</span></span><br><span class="line">curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.cloud.tencent.com/repo/centos7_base.repo</span><br><span class="line">yum install -y net-tools vim wget gcc</span><br><span class="line">yum -y install openssl openssl-devel patch</span><br><span class="line">systemctl start sshd</span><br><span class="line"><span class="comment"># 安装1Panel. http://目标服务器 IP 地址:目标端口/安全入口</span></span><br><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -sSL https://resource.fit2cloud.com/1panel/package/v2/quick_start.sh)</span>&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><pre><code class="hljs bash"><span class="hljs-comment"># 修改主机名</span>
+hostnamectl set-hostname homelab_01
+<span class="hljs-comment"># Centos7 更换腾讯源</span>
+curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.cloud.tencent.com/repo/centos7_base.repo
+yum install -y net-tools vim wget gcc
+yum -y install openssl openssl-devel patch
+systemctl start sshd
+<span class="hljs-comment"># 安装1Panel. http://目标服务器 IP 地址:目标端口/安全入口</span>
+bash -c <span class="hljs-string">&quot;<span class="hljs-subst">$(curl -sSL https://resource.fit2cloud.com/1panel/package/v2/quick_start.sh)</span>&quot;</span>
+</code></pre>
 
 <hr>
 

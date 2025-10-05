@@ -122,10 +122,52 @@
         
             
                 <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
                     <div data-rel="读书">
                         
                         读书
                         <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -154,48 +196,6 @@
                         
                         数据库
                         <small>(5)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="运维">
-                        
-                        运维
-                        <small>(25)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="安全">
-                        
-                        安全
-                        <small>(3)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="开发">
-                        
-                        开发
-                        <small>(14)</small>
                         
                     </div>
                     
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<input type="hidden" id="yelog_site_word_count" value="243.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1018,11 +1018,48 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="第一章-Docker-安装-gitlab"><a href="#第一章-Docker-安装-gitlab" class="headerlink" title="第一章 Docker 安装 gitlab"></a>第一章 Docker 安装 gitlab</h1><h3 id="1-运行-gitlab"><a href="#1-运行-gitlab" class="headerlink" title="1. 运行 gitlab"></a>1. 运行 gitlab</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run --detach \</span><br><span class="line">  --hostname 192.168.18.199 \</span><br><span class="line">  --publish 20443:443 --publish 20080:80 --publish 20022:22 \</span><br><span class="line">  --name gitlab \</span><br><span class="line">  --restart always \</span><br><span class="line">  --volume /home/hjx/docker/gitlab/config:/etc/gitlab \</span><br><span class="line">  --volume /home/hjx/docker/gitlab/logs:/var/log/gitlab \</span><br><span class="line">  --volume /home/hjx/docker/gitlab/data:/var/opt/gitlab \</span><br><span class="line">  gitlab/gitlab-ce:latest</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+        <h1 id="第一章-Docker-安装-gitlab"><a href="#第一章-Docker-安装-gitlab" class="headerlink" title="第一章 Docker 安装 gitlab"></a>第一章 Docker 安装 gitlab</h1><h3 id="1-运行-gitlab"><a href="#1-运行-gitlab" class="headerlink" title="1. 运行 gitlab"></a>1. 运行 gitlab</h3><pre><code class="hljs shell">sudo docker run --detach \
+  --hostname 192.168.18.199 \
+  --publish 20443:443 --publish 20080:80 --publish 20022:22 \
+  --name gitlab \
+  --restart always \
+  --volume /home/hjx/docker/gitlab/config:/etc/gitlab \
+  --volume /home/hjx/docker/gitlab/logs:/var/log/gitlab \
+  --volume /home/hjx/docker/gitlab/data:/var/opt/gitlab \
+  gitlab/gitlab-ce:latest
+language-shell复制代码</code></pre>
 
-<h3 id="2-gitlab-重置密码"><a href="#2-gitlab-重置密码" class="headerlink" title="2. gitlab 重置密码"></a>2. gitlab 重置密码</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it gitlab /bin/bash</span><br><span class="line">gitlab-rails console -e production</span><br><span class="line">user = User.where(id: 1).first</span><br><span class="line">user.password = &#x27;密码&#x27;</span><br><span class="line">user.password_confirmation = &#x27;密码&#x27;</span><br><span class="line">user.save!</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="2-gitlab-重置密码"><a href="#2-gitlab-重置密码" class="headerlink" title="2. gitlab 重置密码"></a>2. gitlab 重置密码</h3><pre><code class="hljs shell">docker exec -it gitlab /bin/bash
+gitlab-rails console -e production
+user = User.where(id: 1).first
+user.password = &#x27;密码&#x27;
+user.password_confirmation = &#x27;密码&#x27;
+user.save!
+language-shell复制代码</code></pre>
 
-<h3 id="3-配置邮件和修改clone地址"><a href="#3-配置邮件和修改clone地址" class="headerlink" title="3. 配置邮件和修改clone地址"></a>3. 配置邮件和修改clone地址</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/gitlab/gitlab.rb</span><br><span class="line"></span><br><span class="line">gitlab_rails[&#x27;time_zone&#x27;] = &#x27;Asia/Shanghai&#x27;</span><br><span class="line">gitlab_rails[&#x27;gitlab_email_display_name&#x27;] = &#x27;gitlab&#x27;</span><br><span class="line">gitlab_rails[&#x27;gitlab_email_from&#x27;] = &#x27;xiangjiandev@163.com&#x27;</span><br><span class="line">gitlab_rails[&#x27;smtp_enable&#x27;] = true</span><br><span class="line">gitlab_rails[&#x27;smtp_address&#x27;] = &quot;smtp.163.com&quot;</span><br><span class="line">gitlab_rails[&#x27;smtp_port&#x27;] = 465</span><br><span class="line">gitlab_rails[&#x27;smtp_user_name&#x27;] = &quot;xiangjiandev@163.com&quot;</span><br><span class="line">gitlab_rails[&#x27;smtp_password&#x27;] = &quot;授权码&quot;</span><br><span class="line">gitlab_rails[&#x27;smtp_domain&#x27;] = &quot;smtp.163.com&quot;</span><br><span class="line">gitlab_rails[&#x27;smtp_authentication&#x27;] = &quot;login&quot;</span><br><span class="line">gitlab_rails[&#x27;smtp_enable_starttls_auto&#x27;] = true</span><br><span class="line">gitlab_rails[&#x27;smtp_tls&#x27;] = true</span><br><span class="line">user[&quot;git_user_email&quot;] = &quot;xiangjiandev@163.com&quot;</span><br><span class="line"></span><br><span class="line">gitlab_rails[&#x27;gitlab_ssh_host&#x27;] = &#x27;192.168.52.129&#x27;</span><br><span class="line">gitlab_rails[&#x27;gitlab_shell_ssh_port&#x27;] = 8022</span><br><span class="line"></span><br><span class="line">docker exec -it gitlab /bin/bash</span><br><span class="line">gitlab-ctl reconfigure</span><br><span class="line">gitlab-ctl restart</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="3-配置邮件和修改clone地址"><a href="#3-配置邮件和修改clone地址" class="headerlink" title="3. 配置邮件和修改clone地址"></a>3. 配置邮件和修改clone地址</h3><pre><code class="hljs shell">vim /etc/gitlab/gitlab.rb
+
+gitlab_rails[&#x27;time_zone&#x27;] = &#x27;Asia/Shanghai&#x27;
+gitlab_rails[&#x27;gitlab_email_display_name&#x27;] = &#x27;gitlab&#x27;
+gitlab_rails[&#x27;gitlab_email_from&#x27;] = &#x27;xiangjiandev@163.com&#x27;
+gitlab_rails[&#x27;smtp_enable&#x27;] = true
+gitlab_rails[&#x27;smtp_address&#x27;] = &quot;smtp.163.com&quot;
+gitlab_rails[&#x27;smtp_port&#x27;] = 465
+gitlab_rails[&#x27;smtp_user_name&#x27;] = &quot;xiangjiandev@163.com&quot;
+gitlab_rails[&#x27;smtp_password&#x27;] = &quot;授权码&quot;
+gitlab_rails[&#x27;smtp_domain&#x27;] = &quot;smtp.163.com&quot;
+gitlab_rails[&#x27;smtp_authentication&#x27;] = &quot;login&quot;
+gitlab_rails[&#x27;smtp_enable_starttls_auto&#x27;] = true
+gitlab_rails[&#x27;smtp_tls&#x27;] = true
+user[&quot;git_user_email&quot;] = &quot;xiangjiandev@163.com&quot;
+
+gitlab_rails[&#x27;gitlab_ssh_host&#x27;] = &#x27;192.168.52.129&#x27;
+gitlab_rails[&#x27;gitlab_shell_ssh_port&#x27;] = 8022
+
+docker exec -it gitlab /bin/bash
+gitlab-ctl reconfigure
+gitlab-ctl restart
+language-shell复制代码</code></pre>
 
 <h1 id="第一章-概述"><a href="#第一章-概述" class="headerlink" title="第一章 概述"></a>第一章 概述</h1><h2 id="一、业务要求"><a href="#一、业务要求" class="headerlink" title="一、业务要求"></a>一、业务要求</h2><ol>
 <li>使用docker部署gitlab.</li>
@@ -1035,12 +1072,22 @@
 <h1 id="第二章-步骤"><a href="#第二章-步骤" class="headerlink" title="第二章 步骤"></a>第二章 步骤</h1><h2 id="一、docker安装gitlab镜像"><a href="#一、docker安装gitlab镜像" class="headerlink" title="一、docker安装gitlab镜像"></a>一、docker安装gitlab镜像</h2><ol>
 <li>下载gitlab镜像</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pull gitlab/gitlab-ce</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">docker pull gitlab/gitlab-ce
+复制代码</code></pre>
 
 <ol>
 <li>启动镜像</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">docker run --detach \</span><br><span class="line">--hostname gitlab.xj.com \</span><br><span class="line">--publish 20080:80 --publish 20022:22 \</span><br><span class="line">--name gitlab \</span><br><span class="line">--restart always \</span><br><span class="line">--volume /data/gitlab/config:/etc/gitlab \</span><br><span class="line">--volume /data/gitlab/logs:/var/log/gitlab \</span><br><span class="line">--volume /data/gitlab/data:/var/opt/gitlab \</span><br><span class="line">gitlab/gitlab-ce:latest</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs jboss-cli">docker run <span class="hljs-params">--detach</span> \
+<span class="hljs-params">--hostname</span> gitlab.xj.com \
+<span class="hljs-params">--publish</span> 20080<span class="hljs-function">:80</span> <span class="hljs-params">--publish</span> 20022<span class="hljs-function">:22</span> \
+<span class="hljs-params">--name</span> gitlab \
+<span class="hljs-params">--restart</span> always \
+<span class="hljs-params">--volume</span> <span class="hljs-string">/data/gitlab/config</span>:<span class="hljs-string">/etc/gitlab</span> \
+<span class="hljs-params">--volume</span> <span class="hljs-string">/data/gitlab/logs</span>:<span class="hljs-string">/var/log/gitlab</span> \
+<span class="hljs-params">--volume</span> <span class="hljs-string">/data/gitlab/data</span>:<span class="hljs-string">/var/opt/gitlab</span> \
+gitlab/gitlab-ce<span class="hljs-function">:latest</span>
+复制代码</code></pre>
 
 <ol>
 <li>测试本机安装的gitlab <code>http://192.168.18.125:20080</code></li>
@@ -1048,33 +1095,124 @@
 <h2 id="二、配置使用外部的nginx服务器"><a href="#二、配置使用外部的nginx服务器" class="headerlink" title="二、配置使用外部的nginx服务器"></a>二、配置使用外部的nginx服务器</h2><ol>
 <li>关闭gitlab内部的nginx服务<a target="_blank" rel="noopener" href="https://docs.gitlab.com/omnibus/settings/nginx.html#using-a-non-bundled-web-server">官网</a></li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim /data/gitlab/config/gitlab.rb</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs awk">vim <span class="hljs-regexp">/data/gi</span>tlab<span class="hljs-regexp">/config/gi</span>tlab.rb
+复制代码</code></pre>
 
 <p>在配置文件最末尾加上配置</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nginx[&#x27;enable&#x27;] = false </span><br><span class="line">web_server[&#x27;external_users&#x27;] = [&#x27;www-data&#x27;]</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs prolog">nginx[<span class="hljs-string">&#x27;enable&#x27;</span>] = false 
+web_server[<span class="hljs-string">&#x27;external_users&#x27;</span>] = [<span class="hljs-string">&#x27;www-data&#x27;</span>]
+复制代码</code></pre>
 
 <p>使配置生效</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker exec gitlab gitlab-ctl reconfigure</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">docker <span class="hljs-built_in">exec</span> gitlab gitlab-ctl reconfigure
+复制代码</code></pre>
 
 <ol>
 <li>配置本机上的nginx.新nginx虚拟机配置文件，我的虚拟机配置文件在&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;conf&#x2F;vhost</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">touch /usr/local/nginx/conf/vhost/gitlab.xj.com.conf</span><br><span class="line">vim /usr/local/nginx/conf/vhost/gitlab.xj.com.conf</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs vim">touch /usr/local/nginx/<span class="hljs-keyword">conf</span>/vhost/gitlab.xj.<span class="hljs-keyword">com</span>.<span class="hljs-keyword">conf</span>
+<span class="hljs-keyword">vim</span> /usr/local/nginx/<span class="hljs-keyword">conf</span>/vhost/gitlab.xj.<span class="hljs-keyword">com</span>.<span class="hljs-keyword">conf</span>
+复制代码</code></pre>
 
 <p>下载官方的配置文件<a target="_blank" rel="noopener" href="https://gitlab.com/gitlab-org/gitlab-recipes/-/blob/master/web-server/nginx/gitlab-omnibus-nginx.conf">官网</a>.配置文件有http 和 https两个版本，这里我选择了http第一个</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">## GitLab 8.3+</span><br><span class="line">##</span><br><span class="line">## Lines starting with two hashes (##) are comments with information.</span><br><span class="line">## Lines starting with one hash (#) are configuration parameters that can be uncommented.</span><br><span class="line">##</span><br><span class="line">##################################</span><br><span class="line">##        CONTRIBUTING          ##</span><br><span class="line">##################################</span><br><span class="line">##</span><br><span class="line">## If you change this file in a Merge Request, please also create</span><br><span class="line">## a Merge Request on https://gitlab.com/gitlab-org/omnibus-gitlab/merge_requests</span><br><span class="line">##</span><br><span class="line">###################################</span><br><span class="line">##         configuration         ##</span><br><span class="line">###################################</span><br><span class="line">##</span><br><span class="line">## See installation.md#using-https for additional HTTPS configuration details.</span><br><span class="line"></span><br><span class="line">upstream gitlab-workhorse &#123;</span><br><span class="line">  # On GitLab versions before 13.5, the location is</span><br><span class="line">  # `/var/opt/gitlab/gitlab-workhorse/socket`. Change the following line</span><br><span class="line">  # accordingly.</span><br><span class="line">  # 修改这里==================1</span><br><span class="line">  server unix:/data/gitlab/data/gitlab-workhorse/sockets/socket;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">## Normal HTTP host</span><br><span class="line">server &#123;</span><br><span class="line">  ## Either remove &quot;default_server&quot; from the listen line below,</span><br><span class="line">  ## or delete the /etc/nginx/sites-enabled/default file. This will cause gitlab</span><br><span class="line">  ## to be served if you visit any address that your server responds to, eg.</span><br><span class="line">  ## the ip address of the server (http://x.x.x.x/)n 0.0.0.0:80 default_server;</span><br><span class="line">  listen 0.0.0.0:80 default_server;</span><br><span class="line">  listen [::]:80 default_server;</span><br><span class="line">  # 修改这里==================2</span><br><span class="line">  server_name gitlab.xj.com; ## Replace this with something like gitlab.example.com</span><br><span class="line">  server_tokens off; ## Don&#x27;t show the nginx version number, a security best practice</span><br><span class="line">  root /opt/gitlab/embedded/service/gitlab-rails/public;</span><br><span class="line"></span><br><span class="line">  ## See app/controllers/application_controller.rb for headers set</span><br><span class="line"></span><br><span class="line">  ## Individual nginx logs for this GitLab vhost</span><br><span class="line">  access_log  /var/log/nginx/gitlab_access.log;</span><br><span class="line">  error_log   /var/log/nginx/gitlab_error.log;</span><br><span class="line"></span><br><span class="line">  location / &#123;</span><br><span class="line">    client_max_body_size 0;</span><br><span class="line">    gzip off;</span><br><span class="line"></span><br><span class="line">    ## https://github.com/gitlabhq/gitlabhq/issues/694</span><br><span class="line">    ## Some requests take more than 30 seconds.</span><br><span class="line">    proxy_read_timeout      300;</span><br><span class="line">    proxy_connect_timeout   300;</span><br><span class="line">    proxy_redirect          off;</span><br><span class="line"></span><br><span class="line">    proxy_http_version 1.1;</span><br><span class="line"></span><br><span class="line">    proxy_set_header    Host                $http_host;</span><br><span class="line">    proxy_set_header    X-Real-IP           $remote_addr;</span><br><span class="line">    proxy_set_header    X-Forwarded-For     $proxy_add_x_forwarded_for;</span><br><span class="line">    proxy_set_header    X-Forwarded-Proto   $scheme;</span><br><span class="line"></span><br><span class="line">    proxy_pass http://gitlab-workhorse;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs coffeescript"><span class="hljs-comment">## GitLab 8.3+</span>
+<span class="hljs-comment">##</span>
+<span class="hljs-comment">## Lines starting with two hashes (##) are comments with information.</span>
+<span class="hljs-comment">## Lines starting with one hash (#) are configuration parameters that can be uncommented.</span>
+<span class="hljs-comment">##</span>
+<span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">####</span>
+<span class="hljs-comment">##        CONTRIBUTING          ##</span>
+<span class="hljs-comment">###</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">#</span>
+<span class="hljs-comment">##</span>
+<span class="hljs-comment">## If you change this file in a Merge Request, please also create</span>
+<span class="hljs-comment">## a Merge Request on https://gitlab.com/gitlab-org/omnibus-gitlab/merge_requests</span>
+<span class="hljs-comment">##</span>
+<span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">#####</span>
+<span class="hljs-comment">##         configuration         ##</span>
+<span class="hljs-comment">###</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">######</span><span class="hljs-comment">##</span>
+<span class="hljs-comment">##</span>
+<span class="hljs-comment">## See installation.md#using-https for additional HTTPS configuration details.</span>
+
+upstream gitlab-workhorse &#123;
+  <span class="hljs-comment"># On GitLab versions before 13.5, the location is</span>
+  <span class="hljs-comment"># `/var/opt/gitlab/gitlab-workhorse/socket`. Change the following line</span>
+  <span class="hljs-comment"># accordingly.</span>
+  <span class="hljs-comment"># 修改这里==================1</span>
+  server unix:/data/gitlab/data/gitlab-workhorse/sockets/socket;
+&#125;
+
+<span class="hljs-comment">## Normal HTTP host</span>
+server &#123;
+  <span class="hljs-comment">## Either remove &quot;default_server&quot; from the listen line below,</span>
+  <span class="hljs-comment">## or delete the /etc/nginx/sites-enabled/default file. This will cause gitlab</span>
+  <span class="hljs-comment">## to be served if you visit any address that your server responds to, eg.</span>
+  <span class="hljs-comment">## the ip address of the server (http://x.x.x.x/)n 0.0.0.0:80 default_server;</span>
+  listen <span class="hljs-number">0.0</span><span class="hljs-number">.0</span><span class="hljs-number">.0</span>:<span class="hljs-number">80</span> default_server;
+  listen [::]:<span class="hljs-number">80</span> default_server;
+  <span class="hljs-comment"># 修改这里==================2</span>
+  server_name gitlab.xj.com; <span class="hljs-comment">## Replace this with something like gitlab.example.com</span>
+  server_tokens <span class="hljs-literal">off</span>; <span class="hljs-comment">## Don&#x27;t show the nginx version number, a security best practice</span>
+  root /opt/gitlab/embedded/service/gitlab-rails/public;
+
+  <span class="hljs-comment">## See app/controllers/application_controller.rb for headers set</span>
+
+  <span class="hljs-comment">## Individual nginx logs for this GitLab vhost</span>
+  access_log  /var/log/nginx/gitlab_access.log;
+  error_log   /var/log/nginx/gitlab_error.log;
+
+  location / &#123;
+    client_max_body_size <span class="hljs-number">0</span>;
+    gzip <span class="hljs-literal">off</span>;
+
+    <span class="hljs-comment">## https://github.com/gitlabhq/gitlabhq/issues/694</span>
+    <span class="hljs-comment">## Some requests take more than 30 seconds.</span>
+    proxy_read_timeout      <span class="hljs-number">300</span>;
+    proxy_connect_timeout   <span class="hljs-number">300</span>;
+    proxy_redirect          <span class="hljs-literal">off</span>;
+
+    proxy_http_version <span class="hljs-number">1.1</span>;
+
+    proxy_set_header    Host                $http_host;
+    proxy_set_header    X-Real-IP           $remote_addr;
+    proxy_set_header    X-Forwarded-For     $proxy_add_x_forwarded_for;
+    proxy_set_header    X-Forwarded-Proto   $scheme;
+
+    proxy_pass http://gitlab-workhorse;
+  &#125;
+&#125;
+复制代码</code></pre>
 
 <ol>
 <li>在nginx.conf上添加上</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/local/nginx/conf/nginx.conf</span><br><span class="line"># 1.配置成root用户，gitlab代理权限问题</span><br><span class="line">user root;</span><br><span class="line"></span><br><span class="line">worker_processes  1</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">    ...</span><br><span class="line">    # g zip</span><br><span class="line">    # 2.把配置文件包含进了</span><br><span class="line">    include      /usr/local/nginx/conf/vhost/gitlab.xj.com.conf;</span><br><span class="line">....</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs dts">vim <span class="hljs-keyword">/usr/</span>local<span class="hljs-keyword">/nginx/</span>conf/nginx.conf
+<span class="hljs-meta"># 1.配置成root用户，gitlab代理权限问题</span>
+user <span class="hljs-attr">root</span><span class="hljs-punctuation">;</span>
+
+worker_processes  <span class="hljs-number">1</span>
+...
+
+<span class="hljs-title class_">http</span> <span class="hljs-punctuation">&#123;</span>
+    ...
+    <span class="hljs-meta"># g zip</span>
+    <span class="hljs-meta"># 2.把配置文件包含进了</span>
+    include      <span class="hljs-keyword">/usr/</span>local<span class="hljs-keyword">/nginx/</span>conf<span class="hljs-keyword">/vhost/</span>gitlab.xj.com.<span class="hljs-attr">conf</span><span class="hljs-punctuation">;</span>
+....
+</code></pre>
 
 <ol>
 <li>配置完成后检查<code>./nginx -t</code> 是否正常，没问题重新载入配置即可。</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/nginx/sbin/</span><br><span class="line">./nginx  启动</span><br><span class="line">./nginx -s stop  停止</span><br><span class="line">./nginx -s quit  安全退出</span><br><span class="line">./nginx -s reload  重新加载配置文件</span><br><span class="line">ps aux|grep nginx  查看nginx进程</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs jboss-cli"><span class="hljs-keyword">cd</span> <span class="hljs-string">/usr/local/nginx/sbin/</span>
+<span class="hljs-string">./nginx</span>  启动
+<span class="hljs-string">./nginx</span> -s stop  停止
+<span class="hljs-string">./nginx</span> -s <span class="hljs-keyword">quit</span>  安全退出
+<span class="hljs-string">./nginx</span> -s <span class="hljs-keyword">reload</span>  重新加载配置文件
+ps aux|grep nginx  查看nginx进程
+复制代码</code></pre>
 
-<h2 id="三、修改目录权限"><a href="#三、修改目录权限" class="headerlink" title="三、修改目录权限"></a>三、修改目录权限</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chown -R 777 /data/gitlab/data/gitlab-workhorse/</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h2 id="三、修改目录权限"><a href="#三、修改目录权限" class="headerlink" title="三、修改目录权限"></a>三、修改目录权限</h2><pre><code class="hljs haskell"><span class="hljs-title">chown</span> -<span class="hljs-type">R</span> <span class="hljs-number">777</span> /<span class="hljs-class"><span class="hljs-keyword">data</span>/gitlab/<span class="hljs-keyword">data</span>/gitlab-workhorse/</span>
+复制代码</code></pre>
 
 <h1 id="主要参考资料"><a href="#主要参考资料" class="headerlink" title="主要参考资料"></a>主要参考资料</h1><ol>
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/aouoy/article/details/109798929">docker安装gitlab后的配置修改</a></li>
@@ -1087,7 +1225,8 @@
 <li>gitlab-ce-12.5.2-ce.0.el7.x86_64.rpm</li>
 </ol>
 <hr>
-<h3 id="第二章-安装GitLab"><a href="#第二章-安装GitLab" class="headerlink" title="第二章 安装GitLab"></a>第二章 安装GitLab</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum localinstall gitlab-ce-12.5.2-ce.0.el7.x86_64.rpm</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="第二章-安装GitLab"><a href="#第二章-安装GitLab" class="headerlink" title="第二章 安装GitLab"></a>第二章 安装GitLab</h3><pre><code class="hljs bash">yum localinstall gitlab-ce-12.5.2-ce.0.el7.x86_64.rpm
+</code></pre>
 
 <hr>
 <ol>
@@ -1096,7 +1235,38 @@
 <h3 id="第三章-修改配置"><a href="#第三章-修改配置" class="headerlink" title="第三章 修改配置"></a>第三章 修改配置</h3><ol>
 <li>Gitlab 邮箱配置</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/gitlab/gitlab.rb</span><br><span class="line"><span class="comment"># 将external_url 变量的地址修改为gitlab 所在centos 的ip 地址。</span></span><br><span class="line">external_url <span class="string">&#x27;http://gitlab.example.com&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 因为修改了配置文件，故需要重新加载配置内容</span></span><br><span class="line">gitlab-ctl reconfigure</span><br><span class="line">gitlab-ctl restart</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改配置文件</span></span><br><span class="line">vim /etc/gitlab/gitlab.rb</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加以下配置</span></span><br><span class="line">gitlab_rails[<span class="string">&#x27;time_zone&#x27;</span>] = <span class="string">&#x27;Asia/Shanghai&#x27;</span></span><br><span class="line">gitlab_rails[<span class="string">&#x27;gitlab_email_display_name&#x27;</span>] = <span class="string">&#x27;gitlab&#x27;</span></span><br><span class="line">gitlab_rails[<span class="string">&#x27;gitlab_email_from&#x27;</span>] = <span class="string">&#x27;hjxstart@163.com&#x27;</span></span><br><span class="line">gitlab_rails[<span class="string">&#x27;smtp_enable&#x27;</span>] = <span class="literal">true</span></span><br><span class="line">gitlab_rails[<span class="string">&#x27;smtp_address&#x27;</span>] = <span class="string">&quot;smtp.163.com&quot;</span></span><br><span class="line">gitlab_rails[<span class="string">&#x27;smtp_port&#x27;</span>] = 465</span><br><span class="line">gitlab_rails[<span class="string">&#x27;smtp_user_name&#x27;</span>] = <span class="string">&quot;hjxstart@163.com&quot;</span></span><br><span class="line">gitlab_rails[<span class="string">&#x27;smtp_password&#x27;</span>] = <span class="string">&quot;授权码&quot;</span></span><br><span class="line">gitlab_rails[<span class="string">&#x27;smtp_domain&#x27;</span>] = <span class="string">&quot;smtp.163.com&quot;</span></span><br><span class="line">gitlab_rails[<span class="string">&#x27;smtp_authentication&#x27;</span>] = <span class="string">&quot;login&quot;</span></span><br><span class="line">gitlab_rails[<span class="string">&#x27;smtp_enable_starttls_auto&#x27;</span>] = <span class="literal">true</span></span><br><span class="line">gitlab_rails[<span class="string">&#x27;smtp_tls&#x27;</span>] = <span class="literal">true</span></span><br><span class="line">user[<span class="string">&quot;git_user_email&quot;</span>] = <span class="string">&quot;hjxstart@163.com&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试配置是否成功</span></span><br><span class="line">gitlab-rails console</span><br><span class="line"></span><br><span class="line"><span class="comment"># 发送邮箱</span></span><br><span class="line">Notify.test_email(<span class="string">&#x27;hjxstart@163.com&#x27;</span>,<span class="string">&#x27;test mail&#x27;</span>, <span class="string">&#x27;test mail&#x27;</span>).deliver_now</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">vim /etc/gitlab/gitlab.rb
+<span class="hljs-comment"># 将external_url 变量的地址修改为gitlab 所在centos 的ip 地址。</span>
+external_url <span class="hljs-string">&#x27;http://gitlab.example.com&#x27;</span>
+
+<span class="hljs-comment"># 因为修改了配置文件，故需要重新加载配置内容</span>
+gitlab-ctl reconfigure
+gitlab-ctl restart
+
+<span class="hljs-comment"># 修改配置文件</span>
+vim /etc/gitlab/gitlab.rb
+
+<span class="hljs-comment"># 添加以下配置</span>
+gitlab_rails[<span class="hljs-string">&#x27;time_zone&#x27;</span>] = <span class="hljs-string">&#x27;Asia/Shanghai&#x27;</span>
+gitlab_rails[<span class="hljs-string">&#x27;gitlab_email_display_name&#x27;</span>] = <span class="hljs-string">&#x27;gitlab&#x27;</span>
+gitlab_rails[<span class="hljs-string">&#x27;gitlab_email_from&#x27;</span>] = <span class="hljs-string">&#x27;hjxstart@163.com&#x27;</span>
+gitlab_rails[<span class="hljs-string">&#x27;smtp_enable&#x27;</span>] = <span class="hljs-literal">true</span>
+gitlab_rails[<span class="hljs-string">&#x27;smtp_address&#x27;</span>] = <span class="hljs-string">&quot;smtp.163.com&quot;</span>
+gitlab_rails[<span class="hljs-string">&#x27;smtp_port&#x27;</span>] = 465
+gitlab_rails[<span class="hljs-string">&#x27;smtp_user_name&#x27;</span>] = <span class="hljs-string">&quot;hjxstart@163.com&quot;</span>
+gitlab_rails[<span class="hljs-string">&#x27;smtp_password&#x27;</span>] = <span class="hljs-string">&quot;授权码&quot;</span>
+gitlab_rails[<span class="hljs-string">&#x27;smtp_domain&#x27;</span>] = <span class="hljs-string">&quot;smtp.163.com&quot;</span>
+gitlab_rails[<span class="hljs-string">&#x27;smtp_authentication&#x27;</span>] = <span class="hljs-string">&quot;login&quot;</span>
+gitlab_rails[<span class="hljs-string">&#x27;smtp_enable_starttls_auto&#x27;</span>] = <span class="hljs-literal">true</span>
+gitlab_rails[<span class="hljs-string">&#x27;smtp_tls&#x27;</span>] = <span class="hljs-literal">true</span>
+user[<span class="hljs-string">&quot;git_user_email&quot;</span>] = <span class="hljs-string">&quot;hjxstart@163.com&quot;</span>
+
+<span class="hljs-comment"># 测试配置是否成功</span>
+gitlab-rails console
+
+<span class="hljs-comment"># 发送邮箱</span>
+Notify.test_email(<span class="hljs-string">&#x27;hjxstart@163.com&#x27;</span>,<span class="hljs-string">&#x27;test mail&#x27;</span>, <span class="hljs-string">&#x27;test mail&#x27;</span>).deliver_now
+</code></pre>
 
 <ol>
 <li>第一次使用root 登陆</li>
@@ -1123,12 +1293,20 @@
 <li>方法一：可视化创建ssh key, 在任意文件夹下点击右键，选择 Git GUI Here。在弹出的程序中选择主菜单的[Help] -&gt; [Show SSH Key]</li>
 <li>方法二：命令行方式创建ssh key</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># linux</span></span><br><span class="line"><span class="comment"># 默认为rsa加密算法</span></span><br><span class="line">ssh-keygen -C <span class="string">&quot;hjxstart@126.com&quot;</span> -f ~/.ssh/id_rsa -N <span class="string">&#x27;&#x27;</span> -q</span><br><span class="line"><span class="comment"># -t: 指定为dsa加密算法; -f: 指定存放的位置; -C: 邮箱；-P 密码; -q: 静默模式</span></span><br><span class="line">ssh-keygen -t dsa -f ~/.ssh/id_dsa -C <span class="string">&quot;hjxstart@126.com&quot;</span> -P <span class="string">&#x27;&#x27;</span> -q</span><br><span class="line"><span class="comment"># windows</span></span><br><span class="line">ssh-keygen.exe -f ~/.ssh/id_rsa -C <span class="string">&quot;hjxstart@126.com&quot;</span> -N <span class="string">&#x27;&#x27;</span> -q</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment"># linux</span>
+<span class="hljs-comment"># 默认为rsa加密算法</span>
+ssh-keygen -C <span class="hljs-string">&quot;hjxstart@126.com&quot;</span> -f ~/.ssh/id_rsa -N <span class="hljs-string">&#x27;&#x27;</span> -q
+<span class="hljs-comment"># -t: 指定为dsa加密算法; -f: 指定存放的位置; -C: 邮箱；-P 密码; -q: 静默模式</span>
+ssh-keygen -t dsa -f ~/.ssh/id_dsa -C <span class="hljs-string">&quot;hjxstart@126.com&quot;</span> -P <span class="hljs-string">&#x27;&#x27;</span> -q
+<span class="hljs-comment"># windows</span>
+ssh-keygen.exe -f ~/.ssh/id_rsa -C <span class="hljs-string">&quot;hjxstart@126.com&quot;</span> -N <span class="hljs-string">&#x27;&#x27;</span> -q
+</code></pre>
 
 <ol>
 <li>查看 SSH key</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> ~/.sshid_rsa.pub</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-built_in">cat</span> ~/.sshid_rsa.pub
+</code></pre>
 
 <ol>
 <li>添加 SSH key。</li>
@@ -1150,47 +1328,103 @@
 <li>创建里程碑 lssues &gt; Miletones &gt; new Miletones (Title: v1.0; Description: 官网v1.0)</li>
 <li>分配任务 lssues &gt; new lssues（Title:首页; Descripiton: 首页开发；Assignce(指派): dev1；Miletones: v1.0;结束时间）</li>
 </ul>
-<h4 id="4-5-项目检出check"><a href="#4-5-项目检出check" class="headerlink" title="4.5 项目检出check"></a>4.5 项目检出check</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 克隆项目</span></span><br><span class="line">git <span class="built_in">clone</span> </span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 配置用户信息</span></span><br><span class="line">git config --gloabl user.name dev1</span><br><span class="line">git config --gloabl user.email dev1@126.com</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 创建分支branch</span></span><br><span class="line">git branch branchName</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 代码提交Commit</span></span><br><span class="line">git commit -m <span class="string">&quot;我是提交描述&quot;</span></span><br><span class="line"><span class="comment"># 提交时可以带上需要关闭的任务编号，确认请求会自动关闭问题</span></span><br><span class="line">git commit -m <span class="string">&quot;close #2&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 5. 代码拉取Pull</span></span><br><span class="line">git Pull</span><br><span class="line"></span><br><span class="line"><span class="comment"># 6. 代码推送Push</span></span><br><span class="line">git push</span><br><span class="line"></span><br><span class="line"><span class="comment"># 7. 代码标签tag</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 8. 代码冲突解决</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 9. 创建忽略文件</span></span><br><span class="line">.gitignore</span><br><span class="line"></span><br><span class="line"><span class="comment"># 10. 发出合并请求,先登录 dev1， Merge Requests &gt; new merge request （选择 index分支）。</span></span><br><span class="line"><span class="comment"># Assignee: pm(指派给项目经理合并，权限)； 里程碑 Mileestone（V1.0）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 11. 项目经理登录确认合并请求</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 12. 项目经理可以去 issues 手动关闭任务</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="4-5-项目检出check"><a href="#4-5-项目检出check" class="headerlink" title="4.5 项目检出check"></a>4.5 项目检出check</h4><pre><code class="hljs bash"><span class="hljs-comment"># 1. 克隆项目</span>
+git <span class="hljs-built_in">clone</span> 
+
+<span class="hljs-comment"># 2. 配置用户信息</span>
+git config --gloabl user.name dev1
+git config --gloabl user.email dev1@126.com
+
+<span class="hljs-comment"># 3. 创建分支branch</span>
+git branch branchName
+
+<span class="hljs-comment"># 4. 代码提交Commit</span>
+git commit -m <span class="hljs-string">&quot;我是提交描述&quot;</span>
+<span class="hljs-comment"># 提交时可以带上需要关闭的任务编号，确认请求会自动关闭问题</span>
+git commit -m <span class="hljs-string">&quot;close #2&quot;</span>
+
+<span class="hljs-comment"># 5. 代码拉取Pull</span>
+git Pull
+
+<span class="hljs-comment"># 6. 代码推送Push</span>
+git push
+
+<span class="hljs-comment"># 7. 代码标签tag</span>
+
+<span class="hljs-comment"># 8. 代码冲突解决</span>
+
+<span class="hljs-comment"># 9. 创建忽略文件</span>
+.gitignore
+
+<span class="hljs-comment"># 10. 发出合并请求,先登录 dev1， Merge Requests &gt; new merge request （选择 index分支）。</span>
+<span class="hljs-comment"># Assignee: pm(指派给项目经理合并，权限)； 里程碑 Mileestone（V1.0）</span>
+
+<span class="hljs-comment"># 11. 项目经理登录确认合并请求</span>
+
+<span class="hljs-comment"># 12. 项目经理可以去 issues 手动关闭任务</span>
+</code></pre>
 
 <hr>
 <h3 id="第五章-Gitlab备份与回复"><a href="#第五章-Gitlab备份与回复" class="headerlink" title="第五章 Gitlab备份与回复"></a>第五章 Gitlab备份与回复</h3><h4 id="5-1-备份管理"><a href="#5-1-备份管理" class="headerlink" title="5.1 备份管理"></a>5.1 备份管理</h4><ol>
 <li>配置文件中加入 # vim &#x2F;etc&#x2F;gitlab&#x2F;gitlab.rb</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gitlab_rails[<span class="string">&#x27;backup_path&#x27;</span>] = <span class="string">&#x27;/data/backup/gitlab&#x27;</span></span><br><span class="line">gitlab_rails[<span class="string">&#x27;backup_keep_time&#x27;</span>] = 604800</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">gitlab_rails[<span class="hljs-string">&#x27;backup_path&#x27;</span>] = <span class="hljs-string">&#x27;/data/backup/gitlab&#x27;</span>
+gitlab_rails[<span class="hljs-string">&#x27;backup_keep_time&#x27;</span>] = 604800
+</code></pre>
 
 <ol>
 <li>重置配置: gitlab-ctl reconfigure</li>
 <li>如果自定义备份目录需要赋予git权限</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> /data/backup/gitlab -p</span><br><span class="line"><span class="built_in">chown</span> -R git.git /data/backup/gitlab</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-built_in">mkdir</span> /data/backup/gitlab -p
+<span class="hljs-built_in">chown</span> -R git.git /data/backup/gitlab
+</code></pre>
 
 <ol>
 <li>重置配置: gitlab-ctl reconfigure</li>
 <li>手动备份</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gitlab-rake gitlab:backup:create</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">gitlab-rake gitlab:backup:create
+</code></pre>
 
 <ol>
 <li>查看备份</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> /data/backup/gitlab -ps</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-built_in">ls</span> /data/backup/gitlab -ps
+</code></pre>
 
 <hr>
 <h4 id="5-2-恢复管理"><a href="#5-2-恢复管理" class="headerlink" title="5.2 恢复管理"></a>5.2 恢复管理</h4><p>恢复是删除原有数据，恢复备份tar包中的数据。</p>
 <ol>
 <li>先停止数据写入服务</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gitlab-ctl stop unicorn</span><br><span class="line">gitlab-ctl stop sidekiq</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">gitlab-ctl stop unicorn
+gitlab-ctl stop sidekiq
+</code></pre>
 
 <ol>
 <li>还原</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 查看要还原的文件</span></span><br><span class="line"><span class="built_in">ls</span> /data/backup/gitlab -p</span><br><span class="line"><span class="comment"># 2. 还原，只需要写到时间戳就可以了1625903798_2021_07_10_12.5.2_gitlab_backup.tar</span></span><br><span class="line">gitlab-rake gitlab:backup:restore BACKUP=1625903798_2021_07_10_12.5.2</span><br><span class="line"><span class="comment"># 3. 查看时间戳的时间</span></span><br><span class="line"><span class="built_in">date</span> -d @1625903798</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment"># 1. 查看要还原的文件</span>
+<span class="hljs-built_in">ls</span> /data/backup/gitlab -p
+<span class="hljs-comment"># 2. 还原，只需要写到时间戳就可以了1625903798_2021_07_10_12.5.2_gitlab_backup.tar</span>
+gitlab-rake gitlab:backup:restore BACKUP=1625903798_2021_07_10_12.5.2
+<span class="hljs-comment"># 3. 查看时间戳的时间</span>
+<span class="hljs-built_in">date</span> -d @1625903798
+</code></pre>
 
 <ol>
 <li>设定计划划任务</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">定时任务Crontab中加入</span><br><span class="line">0 2 * * * /usr/bin/gitlab-rake gitlab:backup:create</span><br><span class="line">策略建议: 本地保留三到七天 在异地备份永久保存</span><br><span class="line">手动备份测试: gitlab-rake gitlab:backup:create</span><br><span class="line"><span class="comment"># ls /data/backup/gitlab/</span></span><br><span class="line">1576053273_2019_12_11_12.5.2_gitlab_backup.tar</span><br><span class="line">注意 gitlab.rb 和 gitlab-secrets.json 两个文件包含敏感信息。</span><br><span class="line">未被备份到备份文件中。需要手动备份</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">定时任务Crontab中加入
+0 2 * * * /usr/bin/gitlab-rake gitlab:backup:create
+策略建议: 本地保留三到七天 在异地备份永久保存
+手动备份测试: gitlab-rake gitlab:backup:create
+<span class="hljs-comment"># ls /data/backup/gitlab/</span>
+1576053273_2019_12_11_12.5.2_gitlab_backup.tar
+注意 gitlab.rb 和 gitlab-secrets.json 两个文件包含敏感信息。
+未被备份到备份文件中。需要手动备份
+</code></pre>
 
 <hr>
 <h3 id="第六章-基于Jenkins-实现持续集成"><a href="#第六章-基于Jenkins-实现持续集成" class="headerlink" title="第六章 基于Jenkins 实现持续集成"></a>第六章 基于Jenkins 实现持续集成</h3><h4 id="6-1-持续集成-Continuous-integration"><a href="#6-1-持续集成-Continuous-integration" class="headerlink" title="6.1 持续集成(Continuous integration)"></a>6.1 持续集成(Continuous integration)</h4><ol>
@@ -1203,7 +1437,18 @@
 <h3 id="第七章-常用命令"><a href="#第七章-常用命令" class="headerlink" title="第七章 常用命令"></a>第七章 常用命令</h3><ol>
 <li>gitlab-ctl command</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">gitlab-ctl start <span class="comment"># 启动所有服务</span></span><br><span class="line">gitlab-ctl restart <span class="comment"># 重启所有服务</span></span><br><span class="line">gitlab-ctl stop <span class="comment"># 关闭所有服务</span></span><br><span class="line">gitlab-ctl status <span class="comment"># 查看所有服务状态</span></span><br><span class="line">gitlab-ctl <span class="built_in">tail</span>	<span class="comment"># 查看日志信息</span></span><br><span class="line">gitlab-ctl service-list <span class="comment"># 列举所有启动服务</span></span><br><span class="line">gitlab-ctl  graceful-kill <span class="comment"># 平稳停止一个服务</span></span><br><span class="line">gitlab-ctl reconfigure <span class="comment"># 修改配置文件之后，需要重新加载下</span></span><br><span class="line">gitlab-ctl show-config <span class="comment"># 查看所有服务配置文件信息</span></span><br><span class="line">gitlab-ctl uninstall <span class="comment"># 卸载这个软件</span></span><br><span class="line">gitlab-ctl cleanse <span class="comment"># 删除gitlab 数据，重新白手起家</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">gitlab-ctl start <span class="hljs-comment"># 启动所有服务</span>
+gitlab-ctl restart <span class="hljs-comment"># 重启所有服务</span>
+gitlab-ctl stop <span class="hljs-comment"># 关闭所有服务</span>
+gitlab-ctl status <span class="hljs-comment"># 查看所有服务状态</span>
+gitlab-ctl <span class="hljs-built_in">tail</span>	<span class="hljs-comment"># 查看日志信息</span>
+gitlab-ctl service-list <span class="hljs-comment"># 列举所有启动服务</span>
+gitlab-ctl  graceful-kill <span class="hljs-comment"># 平稳停止一个服务</span>
+gitlab-ctl reconfigure <span class="hljs-comment"># 修改配置文件之后，需要重新加载下</span>
+gitlab-ctl show-config <span class="hljs-comment"># 查看所有服务配置文件信息</span>
+gitlab-ctl uninstall <span class="hljs-comment"># 卸载这个软件</span>
+gitlab-ctl cleanse <span class="hljs-comment"># 删除gitlab 数据，重新白手起家</span>
+</code></pre>
 
 <hr>
 <h3 id="第八章-目录"><a href="#第八章-目录" class="headerlink" title="第八章 目录"></a>第八章 目录</h3><ol>

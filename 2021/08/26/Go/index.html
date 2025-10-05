@@ -122,10 +122,52 @@
         
             
                 <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
                     <div data-rel="读书">
                         
                         读书
                         <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -154,48 +196,6 @@
                         
                         数据库
                         <small>(5)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="运维">
-                        
-                        运维
-                        <small>(25)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="安全">
-                        
-                        安全
-                        <small>(3)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="开发">
-                        
-                        开发
-                        <small>(14)</small>
                         
                     </div>
                     
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<input type="hidden" id="yelog_site_word_count" value="243.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1019,22 +1019,86 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="1-类型在变量名"><a href="#1-类型在变量名" class="headerlink" title="1. 类型在变量名"></a>1. 类型在变量名</h2><p>函数参数声明变量<code>x, y int</code><br>其他地方都是 var x, y int</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">add</span><span class="params">(x <span class="type">int</span>, y <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> x + y</span><br><span class="line">&#125;</span><br><span class="line">language-<span class="keyword">go</span>复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">add</span><span class="hljs-params">(x <span class="hljs-type">int</span>, y <span class="hljs-type">int</span>)</span></span> <span class="hljs-type">int</span> &#123;
+	<span class="hljs-keyword">return</span> x + y
+&#125;
+language-<span class="hljs-keyword">go</span>复制代码</code></pre>
 
 <h2 id="2-多值返回"><a href="#2-多值返回" class="headerlink" title="2. 多值返回"></a>2. 多值返回</h2><p>可以在函数声明多个返回值</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">swap</span><span class="params">(x, y <span class="type">string</span>)</span></span> (<span class="type">string</span>, <span class="type">string</span>) &#123;</span><br><span class="line">	<span class="keyword">return</span> y, x</span><br><span class="line">&#125;</span><br><span class="line">language-<span class="keyword">go</span>复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">swap</span><span class="hljs-params">(x, y <span class="hljs-type">string</span>)</span></span> (<span class="hljs-type">string</span>, <span class="hljs-type">string</span>) &#123;
+	<span class="hljs-keyword">return</span> y, x
+&#125;
+language-<span class="hljs-keyword">go</span>复制代码</code></pre>
 
 <h2 id="3-命名返回值"><a href="#3-命名返回值" class="headerlink" title="3. 命名返回值"></a>3. 命名返回值</h2><p>命名返回值，相当于在函数顶部命名一个变量并赋值</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Go 的返回值可被命名，它们会被视作定义在函数顶部的变量。</span></span><br><span class="line"><span class="comment">// 没有参数的 `return` 语句返回已命名的返回值。</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">split</span><span class="params">(sum <span class="type">int</span>)</span></span> (x, y <span class="type">int</span>) &#123;</span><br><span class="line">	x = sum * <span class="number">4</span> / <span class="number">9</span></span><br><span class="line">	y = sum - x</span><br><span class="line">	<span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line">language-<span class="keyword">go</span>复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs go"><span class="hljs-comment">// Go 的返回值可被命名，它们会被视作定义在函数顶部的变量。</span>
+<span class="hljs-comment">// 没有参数的 `return` 语句返回已命名的返回值。</span>
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">split</span><span class="hljs-params">(sum <span class="hljs-type">int</span>)</span></span> (x, y <span class="hljs-type">int</span>) &#123;
+	x = sum * <span class="hljs-number">4</span> / <span class="hljs-number">9</span>
+	y = sum - x
+	<span class="hljs-keyword">return</span>
+&#125;
+language-<span class="hljs-keyword">go</span>复制代码</code></pre>
 
-<h2 id="4-变量-var"><a href="#4-变量-var" class="headerlink" title="4.变量 var"></a>4.变量 var</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// `var` 语句用于声明一个变量列表，跟函数的参数列表一样，类型在最后。</span></span><br><span class="line"><span class="keyword">var</span> c, python, java <span class="type">bool</span></span><br><span class="line">language-<span class="keyword">go</span>复制代码</span><br></pre></td></tr></table></figure>
+<h2 id="4-变量-var"><a href="#4-变量-var" class="headerlink" title="4.变量 var"></a>4.变量 var</h2><pre><code class="hljs go"><span class="hljs-comment">// `var` 语句用于声明一个变量列表，跟函数的参数列表一样，类型在最后。</span>
+<span class="hljs-keyword">var</span> c, python, java <span class="hljs-type">bool</span>
+language-<span class="hljs-keyword">go</span>复制代码</code></pre>
 
-<h2 id="5-变量的初始化"><a href="#5-变量的初始化" class="headerlink" title="5.变量的初始化"></a>5.变量的初始化</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 变量声明可以包含初始值，每个变量对应一个。</span></span><br><span class="line"><span class="comment">// 如果初始化值已存在，则可以省略类型；变量会从初始值中获得类型。</span></span><br><span class="line"><span class="keyword">var</span> i, j <span class="type">int</span> = <span class="number">1</span>, <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;	<span class="keyword">var</span> c, python, java = <span class="literal">true</span>, <span class="literal">false</span>, <span class="string">&quot;no!&quot;</span></span><br><span class="line">	fmt.Println(i, j, c, python, java) <span class="comment">// 1 2 true false no!</span></span><br><span class="line">&#125;</span><br><span class="line">language-<span class="keyword">go</span>复制代码</span><br></pre></td></tr></table></figure>
+<h2 id="5-变量的初始化"><a href="#5-变量的初始化" class="headerlink" title="5.变量的初始化"></a>5.变量的初始化</h2><pre><code class="hljs go"><span class="hljs-comment">// 变量声明可以包含初始值，每个变量对应一个。</span>
+<span class="hljs-comment">// 如果初始化值已存在，则可以省略类型；变量会从初始值中获得类型。</span>
+<span class="hljs-keyword">var</span> i, j <span class="hljs-type">int</span> = <span class="hljs-number">1</span>, <span class="hljs-number">2</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;	<span class="hljs-keyword">var</span> c, python, java = <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">&quot;no!&quot;</span>
+	fmt.Println(i, j, c, python, java) <span class="hljs-comment">// 1 2 true false no!</span>
+&#125;
+language-<span class="hljs-keyword">go</span>复制代码</code></pre>
 
 <h2 id="6-短变量声明"><a href="#6-短变量声明" class="headerlink" title="6.短变量声明"></a>6.短变量声明</h2><p>在函数中，简洁赋值语句 <code>:=</code> 可在类型明确的地方代替 <code>var</code> 声明。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> i, j <span class="type">int</span> = <span class="number">1</span>, <span class="number">2</span></span><br><span class="line">	k := <span class="number">3</span></span><br><span class="line">	c, python, java := <span class="literal">true</span>, <span class="literal">false</span>, <span class="string">&quot;no!&quot;</span></span><br><span class="line"></span><br><span class="line">	fmt.Println(i, j, k, c, python, java) <span class="comment">// 1 2 3 true false no!</span></span><br><span class="line">&#125;</span><br><span class="line">language-<span class="keyword">go</span>复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+	<span class="hljs-keyword">var</span> i, j <span class="hljs-type">int</span> = <span class="hljs-number">1</span>, <span class="hljs-number">2</span>
+	k := <span class="hljs-number">3</span>
+	c, python, java := <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">&quot;no!&quot;</span>
 
-<h2 id="7-基本类型"><a href="#7-基本类型" class="headerlink" title="7.基本类型"></a>7.基本类型</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">bool</span><br><span class="line"></span><br><span class="line">string</span><br><span class="line"></span><br><span class="line">int  int8  int16  int32  int64</span><br><span class="line">uint uint8 uint16 uint32 uint64 uintptr</span><br><span class="line"></span><br><span class="line">byte // uint8 的别名</span><br><span class="line"></span><br><span class="line">rune // int32 的别名</span><br><span class="line">    // 表示一个 Unicode 码点</span><br><span class="line"></span><br><span class="line">float32 float64</span><br><span class="line"></span><br><span class="line">complex64 complex128</span><br><span class="line">复制代码</span><br><span class="line">import (</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">	&quot;math/cmplx&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">var (</span><br><span class="line">	ToBe   bool       = false</span><br><span class="line">	MaxInt uint64     = 1&lt;&lt;64 - 1</span><br><span class="line">	z      complex128 = cmplx.Sqrt(-5 + 12i)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">        // Type: bool Value: false</span><br><span class="line">	fmt.Printf(&quot;Type: %T Value: %v\n&quot;, ToBe, ToBe)</span><br><span class="line">        // Type: uint64 Value: 18446744073709551615</span><br><span class="line">	fmt.Printf(&quot;Type: %T Value: %v\n&quot;, MaxInt, MaxInt)</span><br><span class="line">        // Type: complex128 Value: (2+3i)</span><br><span class="line">	fmt.Printf(&quot;Type: %T Value: %v\n&quot;, z, z)</span><br><span class="line">&#125;</span><br><span class="line">language-go复制代码</span><br></pre></td></tr></table></figure>
+	fmt.Println(i, j, k, c, python, java) <span class="hljs-comment">// 1 2 3 true false no!</span>
+&#125;
+language-<span class="hljs-keyword">go</span>复制代码</code></pre>
+
+<h2 id="7-基本类型"><a href="#7-基本类型" class="headerlink" title="7.基本类型"></a>7.基本类型</h2><pre><code class="hljs go"><span class="hljs-type">bool</span>
+
+<span class="hljs-type">string</span>
+
+<span class="hljs-type">int</span>  <span class="hljs-type">int8</span>  <span class="hljs-type">int16</span>  <span class="hljs-type">int32</span>  <span class="hljs-type">int64</span>
+<span class="hljs-type">uint</span> <span class="hljs-type">uint8</span> <span class="hljs-type">uint16</span> <span class="hljs-type">uint32</span> <span class="hljs-type">uint64</span> <span class="hljs-type">uintptr</span>
+
+<span class="hljs-type">byte</span> <span class="hljs-comment">// uint8 的别名</span>
+
+<span class="hljs-type">rune</span> <span class="hljs-comment">// int32 的别名</span>
+    <span class="hljs-comment">// 表示一个 Unicode 码点</span>
+
+<span class="hljs-type">float32</span> <span class="hljs-type">float64</span>
+
+<span class="hljs-type">complex64</span> <span class="hljs-type">complex128</span>
+复制代码
+<span class="hljs-keyword">import</span> (
+	<span class="hljs-string">&quot;fmt&quot;</span>
+	<span class="hljs-string">&quot;math/cmplx&quot;</span>
+)
+
+<span class="hljs-keyword">var</span> (
+	ToBe   <span class="hljs-type">bool</span>       = <span class="hljs-literal">false</span>
+	MaxInt <span class="hljs-type">uint64</span>     = <span class="hljs-number">1</span>&lt;&lt;<span class="hljs-number">64</span> - <span class="hljs-number">1</span>
+	z      <span class="hljs-type">complex128</span> = cmplx.Sqrt(<span class="hljs-number">-5</span> + <span class="hljs-number">12i</span>)
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+        <span class="hljs-comment">// Type: bool Value: false</span>
+	fmt.Printf(<span class="hljs-string">&quot;Type: %T Value: %v\n&quot;</span>, ToBe, ToBe)
+        <span class="hljs-comment">// Type: uint64 Value: 18446744073709551615</span>
+	fmt.Printf(<span class="hljs-string">&quot;Type: %T Value: %v\n&quot;</span>, MaxInt, MaxInt)
+        <span class="hljs-comment">// Type: complex128 Value: (2+3i)</span>
+	fmt.Printf(<span class="hljs-string">&quot;Type: %T Value: %v\n&quot;</span>, z, z)
+&#125;
+language-<span class="hljs-keyword">go</span>复制代码</code></pre>
 
 <h2 id="8-零值"><a href="#8-零值" class="headerlink" title="8.零值"></a>8.零值</h2><p>没有明确初始值的变量声明会被赋予它们的 <strong>零值</strong>。</p>
 <p>零值是：</p>
@@ -1044,10 +1108,21 @@
 <li>字符串为 <code>&quot;&quot;</code>（空字符串）。</li>
 </ul>
 <h2 id="9-类型转换"><a href="#9-类型转换" class="headerlink" title="9.类型转换"></a>9.类型转换</h2><p>Go 在不同类型的项之间赋值时需要显式转换。类型(值)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 一些关于数值的转换：</span><br><span class="line">var i int = 42</span><br><span class="line">var f float64 = float64(i)</span><br><span class="line">var u uint = uint(f)</span><br><span class="line">// 或者，更加简单的形式：</span><br><span class="line">i := 42</span><br><span class="line">f := float64(i)</span><br><span class="line">u := uint(f)&lt;/pre&gt;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs stylus"><span class="hljs-comment">// 一些关于数值的转换：</span>
+<span class="hljs-selector-tag">var</span> <span class="hljs-selector-tag">i</span> int = <span class="hljs-number">42</span>
+<span class="hljs-selector-tag">var</span> f float64 = <span class="hljs-built_in">float64</span>(i)
+<span class="hljs-selector-tag">var</span> u uint = <span class="hljs-built_in">uint</span>(f)
+<span class="hljs-comment">// 或者，更加简单的形式：</span>
+<span class="hljs-selector-tag">i</span> := <span class="hljs-number">42</span>
+f := <span class="hljs-built_in">float64</span>(i)
+u := <span class="hljs-built_in">uint</span>(f)&lt;/pre&gt;
+复制代码</code></pre>
 
 <h2 id="10-类型推导"><a href="#10-类型推导" class="headerlink" title="10.类型推导"></a>10.类型推导</h2><p>可以省略类型，自动推导出类型</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">i := 42           // int</span><br><span class="line">f := 3.142        // float64</span><br><span class="line">g := 0.867 + 0.5i // complex128</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs go">i := <span class="hljs-number">42</span>           <span class="hljs-comment">// int</span>
+f := <span class="hljs-number">3.142</span>        <span class="hljs-comment">// float64</span>
+g := <span class="hljs-number">0.867</span> + <span class="hljs-number">0.5i</span> <span class="hljs-comment">// complex128</span>
+复制代码</code></pre>
 
 <h2 id="11-常量"><a href="#11-常量" class="headerlink" title="11.常量"></a>11.常量</h2><p>常量的声明与变量类似，只不过是使用 <code>const</code> 关键字。</p>
 <p>常量可以是字符、字符串、布尔值或数值。</p>
@@ -1056,14 +1131,72 @@
 <p>Go 的 for 语句后面的三个构成部分外没有小括号， 大括号 <code>{ }</code> 则是必须的。</p>
 <p>for 是 Go 中的 “while”</p>
 <p>无限循环</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	sum := <span class="number">0</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">10</span>; i++ &#123;</span><br><span class="line">		sum += i</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println(sum)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 初始化语句和后置语句是可选的。</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	sum := <span class="number">1</span></span><br><span class="line">	<span class="keyword">for</span> ; sum &lt; <span class="number">1000</span>; &#123;</span><br><span class="line">		sum += sum</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println(sum)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 此时你可以去掉分号，因为 C 的 `while` 在 Go 中叫做 `for`。</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	sum := <span class="number">1</span></span><br><span class="line">	<span class="keyword">for</span> sum &lt; <span class="number">1000</span> &#123;</span><br><span class="line">		sum += sum</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println(sum)</span><br><span class="line">&#125;</span><br><span class="line">如果省略循环条件，该循环就不会结束，因此无限循环可以写得很紧凑。</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">for</span> &#123;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">language-<span class="keyword">go</span>复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+	sum := <span class="hljs-number">0</span>
+	<span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++ &#123;
+		sum += i
+	&#125;
+	fmt.Println(sum)
+&#125;
+<span class="hljs-comment">// 初始化语句和后置语句是可选的。</span>
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+	sum := <span class="hljs-number">1</span>
+	<span class="hljs-keyword">for</span> ; sum &lt; <span class="hljs-number">1000</span>; &#123;
+		sum += sum
+	&#125;
+	fmt.Println(sum)
+&#125;
+<span class="hljs-comment">// 此时你可以去掉分号，因为 C 的 `while` 在 Go 中叫做 `for`。</span>
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+	sum := <span class="hljs-number">1</span>
+	<span class="hljs-keyword">for</span> sum &lt; <span class="hljs-number">1000</span> &#123;
+		sum += sum
+	&#125;
+	fmt.Println(sum)
+&#125;
+如果省略循环条件，该循环就不会结束，因此无限循环可以写得很紧凑。
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+	<span class="hljs-keyword">for</span> &#123;
+	&#125;
+&#125;
+language-<span class="hljs-keyword">go</span>复制代码</code></pre>
 
 <h2 id="13-if"><a href="#13-if" class="headerlink" title="13.if"></a>13.if</h2><p>Go 的 <code>if</code> 语句与 <code>for</code> 循环类似，表达式外无需小括号 <code>( )</code> ，而大括号 <code>{ }</code> 则是必须的。</p>
 <p>if 的简短语句</p>
 <p>if 和 else</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">sqrt</span><span class="params">(x <span class="type">float64</span>)</span></span> <span class="type">string</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> x &lt; <span class="number">0</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> sqrt(-x) + <span class="string">&quot;i&quot;</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> fmt.Sprint(math.Sqrt(x))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 同 `for` 一样， `if` 语句可以在条件表达式前执行一个简单的语句。</span></span><br><span class="line"><span class="comment">// 该语句声明的变量作用域仅在 `if` 之内。</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">pow</span><span class="params">(x, n, lim <span class="type">float64</span>)</span></span> <span class="type">float64</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> v := math.Pow(x, n); v &lt; lim &#123;</span><br><span class="line">		<span class="keyword">return</span> v</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> lim</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在 `if` 的简短语句中声明的变量同样可以在任何对应的 `else` 块中使用。</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">pow</span><span class="params">(x, n, lim <span class="type">float64</span>)</span></span> <span class="type">float64</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> v := math.Pow(x, n); v &lt; lim &#123;</span><br><span class="line">		<span class="keyword">return</span> v</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		fmt.Printf(<span class="string">&quot;%g &gt;= %g\n&quot;</span>, v, lim)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 这里开始就不能使用 v 了</span></span><br><span class="line">	<span class="keyword">return</span> lim</span><br><span class="line">&#125;</span><br><span class="line">language-<span class="keyword">go</span>复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">sqrt</span><span class="hljs-params">(x <span class="hljs-type">float64</span>)</span></span> <span class="hljs-type">string</span> &#123;
+	<span class="hljs-keyword">if</span> x &lt; <span class="hljs-number">0</span> &#123;
+		<span class="hljs-keyword">return</span> sqrt(-x) + <span class="hljs-string">&quot;i&quot;</span>
+	&#125;
+	<span class="hljs-keyword">return</span> fmt.Sprint(math.Sqrt(x))
+&#125;
 
-<h1 id="GO语言环境配置"><a href="#GO语言环境配置" class="headerlink" title="GO语言环境配置"></a>GO语言环境配置</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">go env -w GO111MODULE=on</span><br><span class="line">go env -w GOPROXY=https://goproxy.cn,direct</span><br><span class="line">go get golang.org/x/tools/gopls@latest</span><br><span class="line">go env -w GO111MODULE=auto</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<span class="hljs-comment">// 同 `for` 一样， `if` 语句可以在条件表达式前执行一个简单的语句。</span>
+<span class="hljs-comment">// 该语句声明的变量作用域仅在 `if` 之内。</span>
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">pow</span><span class="hljs-params">(x, n, lim <span class="hljs-type">float64</span>)</span></span> <span class="hljs-type">float64</span> &#123;
+	<span class="hljs-keyword">if</span> v := math.Pow(x, n); v &lt; lim &#123;
+		<span class="hljs-keyword">return</span> v
+	&#125;
+	<span class="hljs-keyword">return</span> lim
+&#125;
+
+<span class="hljs-comment">// 在 `if` 的简短语句中声明的变量同样可以在任何对应的 `else` 块中使用。</span>
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">pow</span><span class="hljs-params">(x, n, lim <span class="hljs-type">float64</span>)</span></span> <span class="hljs-type">float64</span> &#123;
+	<span class="hljs-keyword">if</span> v := math.Pow(x, n); v &lt; lim &#123;
+		<span class="hljs-keyword">return</span> v
+	&#125; <span class="hljs-keyword">else</span> &#123;
+		fmt.Printf(<span class="hljs-string">&quot;%g &gt;= %g\n&quot;</span>, v, lim)
+	&#125;
+	<span class="hljs-comment">// 这里开始就不能使用 v 了</span>
+	<span class="hljs-keyword">return</span> lim
+&#125;
+language-<span class="hljs-keyword">go</span>复制代码</code></pre>
+
+<h1 id="GO语言环境配置"><a href="#GO语言环境配置" class="headerlink" title="GO语言环境配置"></a>GO语言环境配置</h1><pre><code class="hljs shell">go env -w GO111MODULE=on
+go env -w GOPROXY=https://goproxy.cn,direct
+go get golang.org/x/tools/gopls@latest
+go env -w GO111MODULE=auto
+language-shell复制代码</code></pre>
 
 <hr>
 

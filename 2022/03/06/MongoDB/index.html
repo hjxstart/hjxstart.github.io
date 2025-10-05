@@ -122,10 +122,52 @@
         
             
                 <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
                     <div data-rel="读书">
                         
                         读书
                         <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -154,48 +196,6 @@
                         
                         数据库
                         <small>(5)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="运维">
-                        
-                        运维
-                        <small>(25)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="安全">
-                        
-                        安全
-                        <small>(3)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="开发">
-                        
-                        开发
-                        <small>(14)</small>
                         
                     </div>
                     
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<input type="hidden" id="yelog_site_word_count" value="243.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -983,7 +983,7 @@
     </div>
     <div class="article-meta">
         
-        <span>字数:626</span>
+        <span>字数:635</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1033,12 +1033,27 @@
 <blockquote>
 <p>文件中创建三个文件夹分别为：data、etc、logs，完整目录为：</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mongodb <span class="comment">#主文件夹</span></span><br><span class="line">      data <span class="comment">#用来存在数据库</span></span><br><span class="line">      etc  <span class="comment">#用来存储配置文件</span></span><br><span class="line">      logs <span class="comment">#存在mongodb 日志文件</span></span><br><span class="line">      bin <span class="comment"># mongodb的执行文件</span></span><br><span class="line">      LICENSE-Community.text</span><br><span class="line">      MPL-2</span><br><span class="line">      README</span><br><span class="line">      THIRD-PARTY-NOTICES</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">mongodb <span class="hljs-comment">#主文件夹</span>
+      data <span class="hljs-comment">#用来存在数据库</span>
+      etc  <span class="hljs-comment">#用来存储配置文件</span>
+      logs <span class="hljs-comment">#存在mongodb 日志文件</span>
+      bin <span class="hljs-comment"># mongodb的执行文件</span>
+      LICENSE-Community.text
+      MPL-2
+      README
+      THIRD-PARTY-NOTICES
+</code></pre>
 
 <blockquote>
 <p>etc 目录下编写配置文件 mongo.conf，在文件中添加内容：</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dbpath=D:\mongodb\data <span class="comment">#数据库路径  </span></span><br><span class="line">logpath=D:\mongodb\logs\mongo.log <span class="comment">#日志输出文件路径  </span></span><br><span class="line">logappend=<span class="literal">true</span> <span class="comment">#错误日志采用追加模式  </span></span><br><span class="line">journal=<span class="literal">true</span> <span class="comment">#启用日志文件，默认启用  </span></span><br><span class="line">quiet=<span class="literal">true</span> <span class="comment">#这个选项可以过滤掉一些无用的日志信息，若需要调试使用请设置为false  </span></span><br><span class="line">port=27017 <span class="comment">#端口号 默认为27017</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">dbpath=D:\mongodb\data <span class="hljs-comment">#数据库路径  </span>
+logpath=D:\mongodb\logs\mongo.log <span class="hljs-comment">#日志输出文件路径  </span>
+logappend=<span class="hljs-literal">true</span> <span class="hljs-comment">#错误日志采用追加模式  </span>
+journal=<span class="hljs-literal">true</span> <span class="hljs-comment">#启用日志文件，默认启用  </span>
+quiet=<span class="hljs-literal">true</span> <span class="hljs-comment">#这个选项可以过滤掉一些无用的日志信息，若需要调试使用请设置为false  </span>
+port=27017 <span class="hljs-comment">#端口号 默认为27017</span>
+</code></pre>
 
 <blockquote>
 <p><code>注意</code>：dbpath 和 logpath。根据实际的路径填写。</p>
@@ -1046,12 +1061,17 @@
 <ol>
 <li>配置系统环境变量</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">变量名：MONGODB_HOME</span><br><span class="line">变量值：D:\mongodb\bin</span><br><span class="line"></span><br><span class="line">在PATH添加 %MONGODB_HOME%</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs dos">变量名：MONGODB_HOME
+变量值：D:\mongodb\bin
+
+在<span class="hljs-built_in">PATH</span>添加 <span class="hljs-variable">%MONGODB_HOME%</span>
+复制代码</code></pre>
 
 <ol>
 <li>添加 MongoDB 服务</li>
 </ol>
-<figure class="highlight ps1"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mongod <span class="literal">--dbpath</span> <span class="string">&quot;D:\mongodb\data\db&quot;</span> <span class="literal">--logpath</span> <span class="string">&quot;D:\mongodb\logs\mongo.log&quot;</span> <span class="literal">--install</span> <span class="literal">--serviceName</span> <span class="string">&quot;MongoDB&quot;</span></span><br><span class="line">language<span class="literal">-ps1</span>复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs ps1">mongod <span class="hljs-literal">--dbpath</span> <span class="hljs-string">&quot;D:\mongodb\data\db&quot;</span> <span class="hljs-literal">--logpath</span> <span class="hljs-string">&quot;D:\mongodb\logs\mongo.log&quot;</span> <span class="hljs-literal">--install</span> <span class="hljs-literal">--serviceName</span> <span class="hljs-string">&quot;MongoDB&quot;</span>
+language<span class="hljs-literal">-ps1</span>复制代码</code></pre>
 
 <blockquote>
 <p><code>注意</code>：需要在 data 目录下创建 db 文件。不然启动服务的时候可能会报错</p>
@@ -1059,7 +1079,8 @@
 <ol>
 <li>启动服务</li>
 </ol>
-<figure class="highlight ps1"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">net <span class="built_in">start</span> MongoDB</span><br><span class="line">language<span class="literal">-ps1</span>复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs ps1">net <span class="hljs-built_in">start</span> MongoDB
+language<span class="hljs-literal">-ps1</span>复制代码</code></pre>
 
 <hr>
 <h2 id="1-2-Docker-安装方式"><a href="#1-2-Docker-安装方式" class="headerlink" title="1.2 Docker 安装方式"></a>1.2 Docker 安装方式</h2><ol>
@@ -1071,61 +1092,101 @@
 <ol>
 <li>安装</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 27017:27017 -v /home/docker-data/mongo:/data/db --name mongodb -d mongo</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs shell">docker run -p 27017:27017 -v /home/docker-data/mongo:/data/db --name mongodb -d mongo
+language-shell复制代码</code></pre>
 
 <ol>
 <li>代码连接</li>
 </ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mongoose = <span class="built_in">require</span>(<span class="string">&#x27;mongoose&#x27;</span>);</span><br><span class="line"></span><br><span class="line">mongoose.<span class="title function_">set</span>(<span class="string">&#x27;userCreateIndex&#x27;</span>, <span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Database</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">connect</span>();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">connect</span>(<span class="params"></span>) &#123;</span><br><span class="line">    mongoose</span><br><span class="line">      .<span class="title function_">connect</span>(<span class="string">&#x27;mongodb://47.241.104.103:27017/blog&#x27;</span>)</span><br><span class="line">      .<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;database connection successful&#x27;</span>);</span><br><span class="line">      &#125;)</span><br><span class="line">      .<span class="title function_">catch</span>(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;database connection error: &#x27;</span> + err);</span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = <span class="keyword">new</span> <span class="title class_">Database</span>();</span><br><span class="line">language-js复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js"><span class="hljs-keyword">const</span> mongoose = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;mongoose&#x27;</span>);
+
+mongoose.<span class="hljs-title function_">set</span>(<span class="hljs-string">&#x27;userCreateIndex&#x27;</span>, <span class="hljs-literal">true</span>);
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Database</span> &#123;
+  <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span>) &#123;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">connect</span>();
+  &#125;
+  <span class="hljs-title function_">connect</span>(<span class="hljs-params"></span>) &#123;
+    mongoose
+      .<span class="hljs-title function_">connect</span>(<span class="hljs-string">&#x27;mongodb://47.241.104.103:27017/blog&#x27;</span>)
+      .<span class="hljs-title function_">then</span>(<span class="hljs-function">() =&gt;</span> &#123;
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;database connection successful&#x27;</span>);
+      &#125;)
+      .<span class="hljs-title function_">catch</span>(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> &#123;
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;database connection error: &#x27;</span> + err);
+      &#125;);
+  &#125;
+&#125;
+
+<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Database</span>();
+language-js复制代码</code></pre>
 
 <h2 id="1-3-Mac-安装"><a href="#1-3-Mac-安装" class="headerlink" title="1.3 Mac 安装"></a>1.3 Mac 安装</h2><ol>
 <li>下载 tgz 包和创建目录</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mongodb-macos-x86_64-5.0.6.tgz</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">mongodb-macos-x86_64-5.0.6.tgz
+</code></pre>
 
 <ol>
 <li>解压安装包</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> tar xf mongodb-macos-x86_64-4.4.3.tgz</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> tar xf mongodb-macos-x86_64-4.4.3.tgz
+</code></pre>
 
 <ol>
 <li>修改文件名为’mongodb’</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">mv</span> xf mongodb-macos-x86_64-4.4.3 mongodb\</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">mv</span> xf mongodb-macos-x86_64-4.4.3 mongodb\
+</code></pre>
 
 <ol>
 <li>创建数据和日志目录</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">mkdir</span> -pv ./mongodb/data/&#123;mongodb_data,mongodb_log&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">mkdir</span> -pv ./mongodb/data/&#123;mongodb_data,mongodb_log&#125;
+</code></pre>
 
 <ol>
 <li>新建mongodb.log文件</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> vim ./mongodb/data/mongodb_log/mongodb.log</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> vim ./mongodb/data/mongodb_log/mongodb.log
+</code></pre>
 
 <ol>
 <li>创建配置文件 mongodb.conf</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> vim ./mongodb/data/mongodb.conf</span><br><span class="line"></span><br><span class="line">port=27017</span><br><span class="line">dbpath=./mongodb/data/mongodb_data/</span><br><span class="line">logpath=./mongodb/data/mongodb_log/mongodb.log</span><br><span class="line">fork=<span class="literal">true</span></span><br><span class="line">logappend=<span class="literal">true</span></span><br><span class="line">noauth=<span class="literal">true</span></span><br><span class="line">language-conf复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> vim ./mongodb/data/mongodb.conf
+
+port=27017
+dbpath=./mongodb/data/mongodb_data/
+logpath=./mongodb/data/mongodb_log/mongodb.log
+fork=<span class="hljs-literal">true</span>
+logappend=<span class="hljs-literal">true</span>
+noauth=<span class="hljs-literal">true</span>
+language-conf复制代码</code></pre>
 
 <ol>
 <li>启动mongodb服务</li>
 </ol>
 <p>后台启动</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> /Users/admin/software/mongodb/bin/mongod --port 27017 --fork --dbpath=/Users/admin/software/mongodb/data/mongodb_data/ --logpath=/Users/admin/software/mongodb/data/mongodb_log/mongodb.log --logappend</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> /Users/admin/software/mongodb/bin/mongod --port 27017 --fork --dbpath=/Users/admin/software/mongodb/data/mongodb_data/ --logpath=/Users/admin/software/mongodb/data/mongodb_log/mongodb.log --logappend
+</code></pre>
 
 <p>前台启动</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> /Users/admin/software/mongodb/bin/mongod --port 27017  --dbpath=/Users/admin/software/mongodb/data/mongodb_data/ --logpath=/Users/admin/software/mongodb/data/mongodb_log/mongodb.log --logappend</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> /Users/admin/software/mongodb/bin/mongod --port 27017  --dbpath=/Users/admin/software/mongodb/data/mongodb_data/ --logpath=/Users/admin/software/mongodb/data/mongodb_log/mongodb.log --logappend
+</code></pre>
 
 <ol>
 <li>使用mongo</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> ./mongodb/bin/mongo</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> ./mongodb/bin/mongo
+</code></pre>
 
 <ol>
 <li>停止服务</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">use admin</span><br><span class="line">db.shutdownServer();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">use admin
+db.shutdownServer();
+</code></pre>
 
 <hr>
 

@@ -122,10 +122,52 @@
         
             
                 <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
                     <div data-rel="读书">
                         
                         读书
                         <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -154,48 +196,6 @@
                         
                         数据库
                         <small>(5)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="运维">
-                        
-                        运维
-                        <small>(25)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="安全">
-                        
-                        安全
-                        <small>(3)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="开发">
-                        
-                        开发
-                        <small>(14)</small>
                         
                     </div>
                     
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<input type="hidden" id="yelog_site_word_count" value="243.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -983,7 +983,7 @@
     </div>
     <div class="article-meta">
         
-        <span>字数:1.8k</span>
+        <span>字数:1.9k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1029,19 +1029,99 @@
 </ol>
 <hr>
 <h3 id="1-2-上🦆UML"><a href="#1-2-上🦆UML" class="headerlink" title="1.2 上🦆UML"></a>1.2 上🦆UML</h3><h2 id="DuckUML-png"><a href="#DuckUML-png" class="headerlink" title="DuckUML.png"></a><img src="https://hjxstart.github.io/images/2021/04/18/7291c4c4-aec5-4d0c-8883-bdd2e4a4f5fe.png" alt="DuckUML.png">DuckUML.png</h2><h3 id="1-3-上🦆代码"><a href="#1-3-上🦆代码" class="headerlink" title="1.3 上🦆代码"></a>1.3 上🦆代码</h3><p><strong>封装飞行行为</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">FlyBehavior</span> &#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">fly</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">FlyWithWings</span> <span class="keyword">implements</span> <span class="title class_">FlyBehavior</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">fly</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;鸭子的飞行了&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">FlyNoWay</span> <span class="keyword">implements</span> <span class="title class_">FlyBehavior</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">fly</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;鸭子不会飞&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">language-Java复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs Java"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">FlyBehavior</span> &#123;
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">fly</span><span class="hljs-params">()</span>;
+&#125;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">FlyWithWings</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">FlyBehavior</span> &#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">fly</span><span class="hljs-params">()</span> &#123;
+        System.out.println(<span class="hljs-string">&quot;鸭子的飞行了&quot;</span>);
+    &#125;
+&#125;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">FlyNoWay</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">FlyBehavior</span> &#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">fly</span><span class="hljs-params">()</span> &#123;
+        System.out.println(<span class="hljs-string">&quot;鸭子不会飞&quot;</span>);
+    &#125;
+&#125;
+language-Java复制代码</code></pre>
 
 <p><strong>封装呱呱叫行为</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">QuackBehavior</span> &#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">quack</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Qucak</span> <span class="keyword">implements</span> <span class="title class_">QuackBehavior</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">quack</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;鸭子呱呱叫&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Squeak</span> <span class="keyword">implements</span> <span class="title class_">QuackBehavior</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">quack</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;鸭子吱吱叫&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MuteQuack</span> <span class="keyword">implements</span> <span class="title class_">QuackBehavior</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">quack</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;不会叫&quot;</span>)；</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">language-Java复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs Java"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">QuackBehavior</span> &#123;
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">quack</span><span class="hljs-params">()</span>;
+&#125;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Qucak</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">QuackBehavior</span> &#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">quack</span><span class="hljs-params">()</span> &#123;
+        System.out.println(<span class="hljs-string">&quot;鸭子呱呱叫&quot;</span>);
+    &#125;
+&#125;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Squeak</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">QuackBehavior</span> &#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">quack</span><span class="hljs-params">()</span> &#123;
+        System.out.println(<span class="hljs-string">&quot;鸭子吱吱叫&quot;</span>);
+    &#125;
+&#125;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MuteQuack</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">QuackBehavior</span> &#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">quack</span><span class="hljs-params">()</span> &#123;
+        System.out.println(<span class="hljs-string">&quot;不会叫&quot;</span>)；
+    &#125;
+&#125;
+language-Java复制代码</code></pre>
 
 <p><strong>客户使用封装好的飞行和呱呱叫算法族</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">Duck</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> FlyBehavior flyBehavior;</span><br><span class="line">    <span class="keyword">private</span> QuackBehavior quackBehavior;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">swim</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;鸭子会游泳&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title function_">display</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">performQuack</span><span class="params">()</span> &#123;</span><br><span class="line">        quackBehavior.quack();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">performFly</span><span class="params">()</span> &#123;</span><br><span class="line">        flyBehavior.fly();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setFlyBehavior</span><span class="params">(FlyBehavior flyBehavior)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.flyBehavior = flyBehavior;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setQuackBehavior</span><span class="params">(QuackBehavior quackBehavior)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.quackBehavior = quackBehavior;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MallardDuck</span> <span class="keyword">extends</span> <span class="title class_">Duck</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">display</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;gree duck&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">language-Java复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs Java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Duck</span>&#123;
+    <span class="hljs-keyword">private</span> FlyBehavior flyBehavior;
+    <span class="hljs-keyword">private</span> QuackBehavior quackBehavior;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">swim</span><span class="hljs-params">()</span> &#123;
+        System.out.println(<span class="hljs-string">&quot;鸭子会游泳&quot;</span>);
+    &#125;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">display</span><span class="hljs-params">()</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">performQuack</span><span class="hljs-params">()</span> &#123;
+        quackBehavior.quack();
+    &#125;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">performFly</span><span class="hljs-params">()</span> &#123;
+        flyBehavior.fly();
+    &#125;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setFlyBehavior</span><span class="hljs-params">(FlyBehavior flyBehavior)</span> &#123;
+        <span class="hljs-built_in">this</span>.flyBehavior = flyBehavior;
+    &#125;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setQuackBehavior</span><span class="hljs-params">(QuackBehavior quackBehavior)</span> &#123;
+        <span class="hljs-built_in">this</span>.quackBehavior = quackBehavior;
+    &#125;
+&#125;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MallardDuck</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Duck</span> &#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">display</span><span class="hljs-params">()</span> &#123;
+        System.out.println(<span class="hljs-string">&quot;gree duck&quot;</span>);
+    &#125;
+&#125;
+language-Java复制代码</code></pre>
 
 <p><strong>Test类</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">StrategymodeTest</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String [] args)</span> &#123;</span><br><span class="line">        <span class="type">Duck</span> <span class="variable">d1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MallardDuck</span>();</span><br><span class="line">        d1.setFlyBehavior(<span class="keyword">new</span> <span class="title class_">FlyWithWings</span>());</span><br><span class="line">        d1.performFly();</span><br><span class="line">        d1.setQuackBehavior(<span class="keyword">new</span> <span class="title class_">Qucak</span>());</span><br><span class="line">        d1.performQuack();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">language-Java复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs Java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">StrategymodeTest</span> &#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String [] args)</span> &#123;
+        <span class="hljs-type">Duck</span> <span class="hljs-variable">d1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">MallardDuck</span>();
+        d1.setFlyBehavior(<span class="hljs-keyword">new</span> <span class="hljs-title class_">FlyWithWings</span>());
+        d1.performFly();
+        d1.setQuackBehavior(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Qucak</span>());
+        d1.performQuack();
+    &#125;
+&#125;
+language-Java复制代码</code></pre>
 
 <p>输入结果</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ java StrategymodeTest</span><br><span class="line">鸭子的飞行了</span><br><span class="line">鸭子呱呱叫</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">$ java StrategymodeTest
+鸭子的飞行了
+鸭子呱呱叫
+</code></pre>
 
 <hr>
 <h2 id="第二招-观察者模式"><a href="#第二招-观察者模式" class="headerlink" title="第二招 观察者模式"></a>第二招 观察者模式</h2><h3 id="2-1-设计原则"><a href="#2-1-设计原则" class="headerlink" title="2.1 设计原则"></a>2.1 设计原则</h3><ol>
@@ -1057,42 +1137,187 @@
 <h3 id="2-3-上代码"><a href="#2-3-上代码" class="headerlink" title="2.3 上代码"></a>2.3 上代码</h3><ol>
 <li>主题和观察者的接口</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 主题接口</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">Subject</span> &#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">registerObserver</span><span class="params">(Observer o)</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">removeObserver</span><span class="params">(Observer o)</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">notifyObserver</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 观察者接口</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">Observer</span> &#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">update</span><span class="params">(Subject o, Object arg)</span>;</span><br><span class="line">&#125;</span><br><span class="line">language-Java复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs Java"><span class="hljs-comment">// 主题接口</span>
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">Subject</span> &#123;
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">registerObserver</span><span class="hljs-params">(Observer o)</span>;
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">removeObserver</span><span class="hljs-params">(Observer o)</span>;
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">notifyObserver</span><span class="hljs-params">()</span>;
+&#125;
+<span class="hljs-comment">// 观察者接口</span>
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">Observer</span> &#123;
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">update</span><span class="hljs-params">(Subject o, Object arg)</span>;
+&#125;
+language-Java复制代码</code></pre>
 
 <ol>
 <li>具体主题1</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ConcreteSubject1</span> <span class="keyword">implements</span> <span class="title class_">Subject</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> ArrayList&lt;Observer&gt; observers;</span><br><span class="line">    <span class="keyword">private</span> ArrayList&lt;String&gt; arg;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">boolean</span> <span class="variable">changed</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">ConcreteSubject1</span><span class="params">()</span> &#123;</span><br><span class="line">        observers = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;Observer&gt;();</span><br><span class="line">        arg = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">registerObserver</span><span class="params">(Observer o)</span> &#123;</span><br><span class="line">        observers.add(o);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">removeObserver</span><span class="params">(Observer o)</span> &#123;</span><br><span class="line">        observers.remove(o);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">notifyObserver</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (changed) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; observers.size(); i++) &#123;</span><br><span class="line">                <span class="type">Observer</span> <span class="variable">observer</span> <span class="operator">=</span> (Observer)observers.get(i);</span><br><span class="line">                observer.update(<span class="built_in">this</span>, arg);</span><br><span class="line">            &#125;</span><br><span class="line">            changed = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">setChanged</span><span class="params">()</span> &#123;</span><br><span class="line">        changed = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setMeasurements</span><span class="params">(String data)</span> &#123;</span><br><span class="line">        arg.add(data);</span><br><span class="line">        notifyObserver();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">language-Java复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs Java"><span class="hljs-keyword">import</span> java.util.ArrayList;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ConcreteSubject1</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Subject</span>&#123;
+    <span class="hljs-keyword">private</span> ArrayList&lt;Observer&gt; observers;
+    <span class="hljs-keyword">private</span> ArrayList&lt;String&gt; arg;
+    <span class="hljs-keyword">private</span> <span class="hljs-type">boolean</span> <span class="hljs-variable">changed</span> <span class="hljs-operator">=</span> <span class="hljs-literal">false</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">ConcreteSubject1</span><span class="hljs-params">()</span> &#123;
+        observers = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;Observer&gt;();
+        arg = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;String&gt;();
+    &#125;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">registerObserver</span><span class="hljs-params">(Observer o)</span> &#123;
+        observers.add(o);
+    &#125;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">removeObserver</span><span class="hljs-params">(Observer o)</span> &#123;
+        observers.remove(o);
+    &#125;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">notifyObserver</span><span class="hljs-params">()</span> &#123;
+        <span class="hljs-keyword">if</span> (changed) &#123;
+            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; observers.size(); i++) &#123;
+                <span class="hljs-type">Observer</span> <span class="hljs-variable">observer</span> <span class="hljs-operator">=</span> (Observer)observers.get(i);
+                observer.update(<span class="hljs-built_in">this</span>, arg);
+            &#125;
+            changed = <span class="hljs-literal">false</span>;
+        &#125;
+    &#125;
+
+    <span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setChanged</span><span class="hljs-params">()</span> &#123;
+        changed = <span class="hljs-literal">true</span>;
+    &#125;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setMeasurements</span><span class="hljs-params">(String data)</span> &#123;
+        arg.add(data);
+        notifyObserver();
+    &#125;
+&#125;
+language-Java复制代码</code></pre>
 
 <ol>
 <li>具体主题2</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ConcreteSubject2</span> <span class="keyword">implements</span> <span class="title class_">Subject</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> ArrayList&lt;Observer&gt; observers;</span><br><span class="line">    <span class="keyword">private</span> ArrayList&lt;String&gt; arg;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">boolean</span> <span class="variable">changed</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">ConcreteSubject2</span><span class="params">()</span> &#123;</span><br><span class="line">        observers = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;Observer&gt;();</span><br><span class="line">        arg = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">registerObserver</span><span class="params">(Observer o)</span> &#123;</span><br><span class="line">        observers.add(o);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">removeObserver</span><span class="params">(Observer o)</span> &#123;</span><br><span class="line">        observers.remove(o);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">notifyObserver</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (changed) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; observers.size(); i++) &#123;</span><br><span class="line">                <span class="type">Observer</span> <span class="variable">observer</span> <span class="operator">=</span> (Observer)observers.get(i);</span><br><span class="line">                observer.update(<span class="built_in">this</span>, arg);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">setChanged</span><span class="params">()</span> &#123;</span><br><span class="line">        changed = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setMeasurements</span><span class="params">(String data)</span> &#123;</span><br><span class="line">        arg.add(data);</span><br><span class="line">        notifyObserver();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">language-Java复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs Java"><span class="hljs-keyword">import</span> java.util.ArrayList;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ConcreteSubject2</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Subject</span>&#123;
+    <span class="hljs-keyword">private</span> ArrayList&lt;Observer&gt; observers;
+    <span class="hljs-keyword">private</span> ArrayList&lt;String&gt; arg;
+    <span class="hljs-keyword">private</span> <span class="hljs-type">boolean</span> <span class="hljs-variable">changed</span> <span class="hljs-operator">=</span> <span class="hljs-literal">false</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">ConcreteSubject2</span><span class="hljs-params">()</span> &#123;
+        observers = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;Observer&gt;();
+        arg = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;String&gt;();
+    &#125;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">registerObserver</span><span class="hljs-params">(Observer o)</span> &#123;
+        observers.add(o);
+    &#125;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">removeObserver</span><span class="hljs-params">(Observer o)</span> &#123;
+        observers.remove(o);
+    &#125;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">notifyObserver</span><span class="hljs-params">()</span> &#123;
+        <span class="hljs-keyword">if</span> (changed) &#123;
+            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; observers.size(); i++) &#123;
+                <span class="hljs-type">Observer</span> <span class="hljs-variable">observer</span> <span class="hljs-operator">=</span> (Observer)observers.get(i);
+                observer.update(<span class="hljs-built_in">this</span>, arg);
+            &#125;
+        &#125;
+    &#125;
+
+    <span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setChanged</span><span class="hljs-params">()</span> &#123;
+        changed = <span class="hljs-literal">true</span>;
+    &#125;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setMeasurements</span><span class="hljs-params">(String data)</span> &#123;
+        arg.add(data);
+        notifyObserver();
+    &#125;
+&#125;
+language-Java复制代码</code></pre>
 
 <ol>
 <li>关注具体主题1的具体观察者1</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ConcreteObserver1</span> <span class="keyword">implements</span> <span class="title class_">Observer</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> Subject subject;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">ConcreteObserver1</span><span class="params">(Subject subject)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.subject = subject;</span><br><span class="line">        subject.registerObserver(<span class="built_in">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">update</span><span class="params">(Subject o, Object arg)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我是观察者1，我的主题1更新了&quot;</span>);</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line">language-Java复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs Java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ConcreteObserver1</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Observer</span> &#123;
+    <span class="hljs-keyword">private</span> Subject subject;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">ConcreteObserver1</span><span class="hljs-params">(Subject subject)</span> &#123;
+        <span class="hljs-built_in">this</span>.subject = subject;
+        subject.registerObserver(<span class="hljs-built_in">this</span>);
+    &#125;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">update</span><span class="hljs-params">(Subject o, Object arg)</span> &#123;
+        System.out.println(<span class="hljs-string">&quot;我是观察者1，我的主题1更新了&quot;</span>);
+    &#125; 
+&#125;
+language-Java复制代码</code></pre>
 
 <ol>
 <li>关注具体主题1，2的具体观察者2</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ConcreteObserver2</span> <span class="keyword">implements</span> <span class="title class_">Observer</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> Subject subject1;</span><br><span class="line">    <span class="keyword">private</span> Subject subject2;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">ConcreteObserver2</span><span class="params">(Subject subject1, Subject subject2)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.subject1 = (Subject)subject1;</span><br><span class="line">        <span class="built_in">this</span>.subject2 = (Subject)subject2;</span><br><span class="line">        subject1.registerObserver(<span class="built_in">this</span>);</span><br><span class="line">        subject2.registerObserver(<span class="built_in">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">update</span><span class="params">(Subject o, Object arg)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (o <span class="keyword">instanceof</span> ConcreteSubject1) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;我是观察者2，我的主题1更新了&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (o <span class="keyword">instanceof</span> ConcreteSubject2) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;我是观察者2，我的主题2更新了&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">language-Java复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs Java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ConcreteObserver2</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Observer</span> &#123;
+    <span class="hljs-keyword">private</span> Subject subject1;
+    <span class="hljs-keyword">private</span> Subject subject2;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">ConcreteObserver2</span><span class="hljs-params">(Subject subject1, Subject subject2)</span> &#123;
+        <span class="hljs-built_in">this</span>.subject1 = (Subject)subject1;
+        <span class="hljs-built_in">this</span>.subject2 = (Subject)subject2;
+        subject1.registerObserver(<span class="hljs-built_in">this</span>);
+        subject2.registerObserver(<span class="hljs-built_in">this</span>);
+    &#125;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">update</span><span class="hljs-params">(Subject o, Object arg)</span> &#123;
+        <span class="hljs-keyword">if</span> (o <span class="hljs-keyword">instanceof</span> ConcreteSubject1) &#123;
+            System.out.println(<span class="hljs-string">&quot;我是观察者2，我的主题1更新了&quot;</span>);
+        &#125;
+        <span class="hljs-keyword">if</span> (o <span class="hljs-keyword">instanceof</span> ConcreteSubject2) &#123;
+            System.out.println(<span class="hljs-string">&quot;我是观察者2，我的主题2更新了&quot;</span>);
+        &#125;
+    &#125;
+&#125;
+language-Java复制代码</code></pre>
 
 <ol>
 <li>关注具体主题2的具体观察者3</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ConcreteObserver3</span> <span class="keyword">implements</span> <span class="title class_">Observer</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> Subject subject;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">ConcreteObserver3</span><span class="params">(Subject subject)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.subject = subject;</span><br><span class="line">        subject.registerObserver(<span class="built_in">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">update</span><span class="params">(Subject o, Object arg)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我是观察者3, 我的主题2更新了&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">language-Java复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs Java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ConcreteObserver3</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Observer</span> &#123;
+    <span class="hljs-keyword">private</span> Subject subject;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">ConcreteObserver3</span><span class="hljs-params">(Subject subject)</span> &#123;
+        <span class="hljs-built_in">this</span>.subject = subject;
+        subject.registerObserver(<span class="hljs-built_in">this</span>);
+    &#125;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">update</span><span class="hljs-params">(Subject o, Object arg)</span> &#123;
+        System.out.println(<span class="hljs-string">&quot;我是观察者3, 我的主题2更新了&quot;</span>);
+    &#125;
+&#125;
+language-Java复制代码</code></pre>
 
 <ol>
 <li>测试代码</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ObserverTest</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">ConcreteSubject1</span> <span class="variable">subject1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ConcreteSubject1</span>();</span><br><span class="line">        <span class="type">ConcreteSubject2</span> <span class="variable">subject2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ConcreteSubject2</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">ConcreteObserver1</span>(subject1);</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">ConcreteObserver2</span>(subject1, subject2);</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">ConcreteObserver3</span>(subject2);</span><br><span class="line">        subject1.setChanged();</span><br><span class="line">        subject1.setMeasurements(<span class="string">&quot;test&quot;</span>);</span><br><span class="line">        subject2.setMeasurements(<span class="string">&quot;test2&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">language-Java复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs Java"><span class="hljs-keyword">import</span> java.util.ArrayList;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ObserverTest</span> &#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;
+        <span class="hljs-type">ConcreteSubject1</span> <span class="hljs-variable">subject1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ConcreteSubject1</span>();
+        <span class="hljs-type">ConcreteSubject2</span> <span class="hljs-variable">subject2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ConcreteSubject2</span>();
+
+        <span class="hljs-keyword">new</span> <span class="hljs-title class_">ConcreteObserver1</span>(subject1);
+        <span class="hljs-keyword">new</span> <span class="hljs-title class_">ConcreteObserver2</span>(subject1, subject2);
+        <span class="hljs-keyword">new</span> <span class="hljs-title class_">ConcreteObserver3</span>(subject2);
+        subject1.setChanged();
+        subject1.setMeasurements(<span class="hljs-string">&quot;test&quot;</span>);
+        subject2.setMeasurements(<span class="hljs-string">&quot;test2&quot;</span>);
+    &#125;
+&#125;
+language-Java复制代码</code></pre>
 
 <ol>
 <li>测试结果</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ java ObserverTest</span><br><span class="line">我是观察者1，我的主题1更新了</span><br><span class="line">我是观察者2，我的主题1更新了</span><br><span class="line">我是观察者2，我的主题2更新了</span><br><span class="line">我是观察者3, 我的主题2更新了</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">$ java ObserverTest
+我是观察者1，我的主题1更新了
+我是观察者2，我的主题1更新了
+我是观察者2，我的主题2更新了
+我是观察者3, 我的主题2更新了
+</code></pre>
 
 <ol>
 <li>java.util包实现了Observable类，也可以满足一些观察者的情况。首先，因为没有Observer接口，所以无法建立自己的实现，和Java内置的Observer API搭配使用。</li>
@@ -1115,43 +1340,100 @@
 <h3 id="3-3上代码"><a href="#3-3上代码" class="headerlink" title="3.3上代码"></a>3.3上代码</h3><ol>
 <li>定义饮料类，必须设置一个抽象方法。</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">Beverage</span> &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">description</span> <span class="operator">=</span> <span class="string">&quot;Unknown Beverage&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getDescription</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> description;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="type">double</span> <span class="title function_">cost</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br><span class="line">language-Java复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs Java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Beverage</span> &#123;
+    <span class="hljs-type">String</span> <span class="hljs-variable">description</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Unknown Beverage&quot;</span>;
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getDescription</span><span class="hljs-params">()</span> &#123;
+        <span class="hljs-keyword">return</span> description;
+    &#125;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-type">double</span> <span class="hljs-title function_">cost</span><span class="hljs-params">()</span>;
+&#125;
+language-Java复制代码</code></pre>
 
 <hr>
 <ol>
 <li>深烘咖啡，实现夫类的抽象方法。</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">DarkRoast</span> <span class="keyword">extends</span> <span class="title class_">Beverage</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">DarkRoast</span><span class="params">()</span> &#123;</span><br><span class="line">        description = <span class="string">&quot;DarkRoast Coffee&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">double</span> <span class="title function_">cost</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1.19</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">language-Java复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs Java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">DarkRoast</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Beverage</span> &#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">DarkRoast</span><span class="hljs-params">()</span> &#123;
+        description = <span class="hljs-string">&quot;DarkRoast Coffee&quot;</span>;
+    &#125;
+    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">cost</span><span class="hljs-params">()</span> &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-number">1.19</span>;
+    &#125;
+&#125;
+language-Java复制代码</code></pre>
 
 <hr>
 <ol>
 <li>定义装饰者。调味装饰者</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">CondimentDecorator</span> <span class="keyword">extends</span> <span class="title class_">Beverage</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">abstract</span> String <span class="title function_">getDescription</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br><span class="line">language-Java复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs Java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">CondimentDecorator</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Beverage</span> &#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> String <span class="hljs-title function_">getDescription</span><span class="hljs-params">()</span>;
+&#125;
+language-Java复制代码</code></pre>
 
 <hr>
 <ol>
 <li>实现第一个一个装饰者。牛奶配料</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Milk</span> <span class="keyword">extends</span> <span class="title class_">CondimentDecorator</span>&#123;</span><br><span class="line">    Beverage beverage;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Milk</span><span class="params">(Beverage beverage)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.beverage = beverage;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getDescription</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> beverage.getDescription() + <span class="string">&quot;, Milk&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">double</span> <span class="title function_">cost</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">.10</span> + beverage.cost();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">language-Java复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs Java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Milk</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">CondimentDecorator</span>&#123;
+    Beverage beverage;
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Milk</span><span class="hljs-params">(Beverage beverage)</span> &#123;
+        <span class="hljs-built_in">this</span>.beverage = beverage;
+    &#125;
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getDescription</span><span class="hljs-params">()</span> &#123;
+        <span class="hljs-keyword">return</span> beverage.getDescription() + <span class="hljs-string">&quot;, Milk&quot;</span>;
+    &#125;
+    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">cost</span><span class="hljs-params">()</span> &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-number">.10</span> + beverage.cost();
+    &#125;
+&#125;
+language-Java复制代码</code></pre>
 
 <hr>
 <ol>
 <li>实现第二个装饰者。摩卡配料</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Mocha</span> <span class="keyword">extends</span> <span class="title class_">CondimentDecorator</span> &#123;</span><br><span class="line">    Beverage beverage;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Mocha</span><span class="params">(Beverage beverage)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.beverage = beverage;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getDescription</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> beverage.getDescription() + <span class="string">&quot;, Mocha&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">double</span> <span class="title function_">cost</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">.20</span> + beverage.cost();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">language-Java复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs Java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Mocha</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">CondimentDecorator</span> &#123;
+    Beverage beverage;
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Mocha</span><span class="hljs-params">(Beverage beverage)</span> &#123;
+        <span class="hljs-built_in">this</span>.beverage = beverage;
+    &#125;
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getDescription</span><span class="hljs-params">()</span> &#123;
+        <span class="hljs-keyword">return</span> beverage.getDescription() + <span class="hljs-string">&quot;, Mocha&quot;</span>;
+    &#125;
+    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">cost</span><span class="hljs-params">()</span> &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-number">.20</span> + beverage.cost();
+    &#125;
+&#125;
+language-Java复制代码</code></pre>
 
 <hr>
 <ol>
 <li>测试代码</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">StarbuzzCoffee</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// 没有配料的拿铁咖啡</span></span><br><span class="line">        <span class="type">Beverage</span> <span class="variable">beverage</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">DarkRoast</span>();</span><br><span class="line">        System.out.println(beverage.getDescription() + <span class="string">&quot; $&quot;</span> + beverage.cost());</span><br><span class="line">        <span class="comment">// 摩卡， 牛奶， 拿铁咖啡(DarkRoast)</span></span><br><span class="line">        <span class="type">Beverage</span> <span class="variable">beverage2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">DarkRoast</span>();</span><br><span class="line">        beverage2 = <span class="keyword">new</span> <span class="title class_">Mocha</span>(beverage2);</span><br><span class="line">        beverage2 = <span class="keyword">new</span> <span class="title class_">Milk</span>(beverage2);</span><br><span class="line">        System.out.println(beverage2.getDescription() + <span class="string">&quot; $&quot;</span> + beverage2.cost());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">language-Java复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs Java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">StarbuzzCoffee</span> &#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;
+        <span class="hljs-comment">// 没有配料的拿铁咖啡</span>
+        <span class="hljs-type">Beverage</span> <span class="hljs-variable">beverage</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">DarkRoast</span>();
+        System.out.println(beverage.getDescription() + <span class="hljs-string">&quot; $&quot;</span> + beverage.cost());
+        <span class="hljs-comment">// 摩卡， 牛奶， 拿铁咖啡(DarkRoast)</span>
+        <span class="hljs-type">Beverage</span> <span class="hljs-variable">beverage2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">DarkRoast</span>();
+        beverage2 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Mocha</span>(beverage2);
+        beverage2 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Milk</span>(beverage2);
+        System.out.println(beverage2.getDescription() + <span class="hljs-string">&quot; $&quot;</span> + beverage2.cost());
+    &#125;
+&#125;
+language-Java复制代码</code></pre>
 
 <hr>
 <ol>
 <li>运行结果</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">java StarbuzzCoffee</span><br><span class="line">DarkRoast Coffee <span class="variable">$1</span>.19</span><br><span class="line">DarkRoast Coffee, Mocha, Milk <span class="variable">$1</span>.49</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">java StarbuzzCoffee
+DarkRoast Coffee <span class="hljs-variable">$1</span>.19
+DarkRoast Coffee, Mocha, Milk <span class="hljs-variable">$1</span>.49
+</code></pre>
 
 <hr>
 <h2 id="第四招-工厂模式"><a href="#第四招-工厂模式" class="headerlink" title="第四招 工厂模式"></a>第四招 工厂模式</h2><p><strong>工厂方法模式</strong>：定义了一个创建对象的接口，但由子类决定要实例化的类是哪一个。工厂方法让类把实例化推迟到子类。</p>

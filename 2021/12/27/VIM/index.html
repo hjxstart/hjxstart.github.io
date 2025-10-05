@@ -122,10 +122,52 @@
         
             
                 <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
                     <div data-rel="读书">
                         
                         读书
                         <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -154,48 +196,6 @@
                         
                         数据库
                         <small>(5)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="运维">
-                        
-                        运维
-                        <small>(25)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="安全">
-                        
-                        安全
-                        <small>(3)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="开发">
-                        
-                        开发
-                        <small>(14)</small>
                         
                     </div>
                     
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<input type="hidden" id="yelog_site_word_count" value="243.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -983,7 +983,7 @@
     </div>
     <div class="article-meta">
         
-        <span>字数:979</span>
+        <span>字数:1k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1025,12 +1025,150 @@
 <p><a target="_blank" rel="noopener" href="https://github.com/junegunn/vim-plug">参考连接</a></p>
 </blockquote>
 <p>可以修改 hosts 文件解决访问不了 github 的问题</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># github</span></span><br><span class="line">199.232.68.133 raw.githubusercontent.com</span><br><span class="line">199.232.68.133 user-images.githubusercontent.com</span><br><span class="line">199.232.68.133 avatars2.githubusercontent.com</span><br><span class="line">199.232.68.133 avatars1.githubusercontent.com</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment"># github</span>
+199.232.68.133 raw.githubusercontent.com
+199.232.68.133 user-images.githubusercontent.com
+199.232.68.133 avatars2.githubusercontent.com
+199.232.68.133 avatars1.githubusercontent.com
+</code></pre>
 
 <h2 id="3-vimrc-配置文件"><a href="#3-vimrc-配置文件" class="headerlink" title="3. vimrc 配置文件"></a>3. vimrc 配置文件</h2><blockquote>
 <p>vim ~&#x2F;.vimrc</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> mapleader=<span class="string">&quot; &quot;</span></span><br><span class="line">syntax on</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;显示行号</span></span><br><span class="line"><span class="string">set number</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&quot;</span>显示鼠标线</span><br><span class="line"><span class="built_in">set</span> cursorline</span><br><span class="line"><span class="string">&quot;字体不会超出视野</span></span><br><span class="line"><span class="string">set wrap</span></span><br><span class="line"><span class="string">&quot;</span>在底线显示当前命令</span><br><span class="line"><span class="built_in">set</span> showcmd</span><br><span class="line"><span class="string">&quot;命令提示</span></span><br><span class="line"><span class="string">set wildmenu</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&quot;</span>兼容vi</span><br><span class="line"><span class="built_in">set</span> nocompatible</span><br><span class="line"><span class="string">&quot;识别不同的文件模式</span></span><br><span class="line"><span class="string">filetype on</span></span><br><span class="line"><span class="string">filetype indent on</span></span><br><span class="line"><span class="string">filetype plugin on</span></span><br><span class="line"><span class="string">filetype plugin indent on</span></span><br><span class="line"><span class="string">&quot;</span>编辑器可以使用鼠标</span><br><span class="line"><span class="built_in">set</span> mouse=a</span><br><span class="line"><span class="built_in">set</span> encoding=utf-8</span><br><span class="line"><span class="string">&quot;兼容终端配色问题</span></span><br><span class="line"><span class="string">&quot;</span><span class="built_in">let</span> &amp;t_ut=<span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="string">&quot;缩进</span></span><br><span class="line"><span class="string">set expandtab</span></span><br><span class="line"><span class="string">set tabstop=2</span></span><br><span class="line"><span class="string">set shiftwidth=2</span></span><br><span class="line"><span class="string">set softtabstop=2</span></span><br><span class="line"><span class="string">&quot;</span>行尾</span><br><span class="line"><span class="string">&quot;set list</span></span><br><span class="line"><span class="string">&quot;</span>保持预览在上下5行之间</span><br><span class="line"><span class="built_in">set</span> scrolloff=5</span><br><span class="line"><span class="string">&quot;退格键可以回到行首</span></span><br><span class="line"><span class="string">set backspace=indent,eol,start</span></span><br><span class="line"><span class="string">&quot;</span>收起代码</span><br><span class="line"><span class="built_in">set</span> foldmethod=indent</span><br><span class="line"><span class="built_in">set</span> foldlevel=99</span><br><span class="line"><span class="string">&quot;底下状态栏等于2</span></span><br><span class="line"><span class="string">set laststatus=2</span></span><br><span class="line"><span class="string">set autochdir</span></span><br><span class="line"><span class="string">&quot;</span>重新打开文件光标会显示上一次打开的位置</span><br><span class="line">au BufReadPost * <span class="keyword">if</span> line(<span class="string">&quot;&#x27;\&quot;&quot;</span>) &gt; 1 &amp;&amp; line(<span class="string">&quot;&#x27;\&quot;&quot;</span>) &lt;= line(<span class="string">&quot;$&quot;</span>) | exe <span class="string">&quot;normal! g&#x27;\&quot;&quot;</span> | endif</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;1. noremap a b | 改键位,a 键 替换 b键盘</span></span><br><span class="line"><span class="string">&quot;</span>加快上下左右浏览的速度</span><br><span class="line">noremap J 5j</span><br><span class="line">noremap K 5k</span><br><span class="line">noremap H 5h</span><br><span class="line">noremap L 5l</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;查看上/下一个搜索接口并显示在中间</span></span><br><span class="line"><span class="string">noremap n nzz</span></span><br><span class="line"><span class="string">noremap n nzz</span></span><br><span class="line"><span class="string">&quot;</span>空格回车:去除搜索高亮</span><br><span class="line">noremap &lt;leader&gt;&lt;cr&gt; :nohlsearch&lt;cr&gt;</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;搜索高亮</span></span><br><span class="line"><span class="string">set hlsearch</span></span><br><span class="line"><span class="string">&quot;</span>重新打开文件不会显示搜索高亮</span><br><span class="line"><span class="built_in">exec</span> <span class="string">&quot;nohlsearch&quot;</span></span><br><span class="line"><span class="built_in">set</span> incsearch</span><br><span class="line"><span class="string">&quot;忽略大小写</span></span><br><span class="line"><span class="string">set ignorecase</span></span><br><span class="line"><span class="string">&quot;</span>智能大小写</span><br><span class="line"><span class="built_in">set</span> smartcase</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;2. map s :w&lt;cr&gt; | 快捷键</span></span><br><span class="line"><span class="string">map s &lt;nop&gt;</span></span><br><span class="line"><span class="string">&quot;</span>保存</span><br><span class="line">map S :w&lt;cr&gt;</span><br><span class="line"><span class="string">&quot;退出</span></span><br><span class="line"><span class="string">map Q :q&lt;cr&gt;</span></span><br><span class="line"><span class="string">&quot;</span>更新配置文件</span><br><span class="line">map R :<span class="built_in">source</span> <span class="variable">$MYVIMRC</span>&lt;cr&gt;</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;3. &lt;operation&gt; &lt;motion&gt;</span></span><br><span class="line"><span class="string">&quot;</span>x : 删除当前字符</span><br><span class="line"><span class="string">&quot;d + 方向键 + number 删除方向上的 number 个字符</span></span><br><span class="line"><span class="string">&quot;</span>y + 方向键 + number 复制方向上的 number 个字符</span><br><span class="line"><span class="string">&quot;c + 方向键 + number 删除并进入写入模式</span></span><br><span class="line"><span class="string">&quot;</span>w : 移动一个词。</span><br><span class="line"><span class="string">&quot;ciw : 修改当前词；ci&quot;</span> : 将<span class="string">&quot;符号内的词全部修改；</span></span><br><span class="line"><span class="string">&quot;</span>yi<span class="string">&quot; : 将&quot;</span>符号内的词全部复制; di<span class="string">&quot; : 将&quot;</span>符号内的词全部删除。</span><br><span class="line"><span class="string">&quot;f&quot;</span> : 查找下一个<span class="string">&quot;符号。</span></span><br><span class="line"><span class="string">&quot;</span><span class="built_in">df</span><span class="string">&quot; : 删除到下一个&quot;</span>符号的内容；yf<span class="string">&quot; : 复制到下一个&quot;</span>符号的内容；</span><br><span class="line"><span class="string">&quot;cf&quot;</span> : 删除到下一个<span class="string">&quot;符号的内容并进入写入模式</span></span><br><span class="line"><span class="string">&quot;</span>zz : 将当前行显示在中间</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;4. :命令模式</span></span><br><span class="line"><span class="string">&quot;</span><span class="built_in">split</span> : 上下分屏；vsplit : 左右分屏</span><br><span class="line">map sk :<span class="built_in">set</span> nosplitbelow&lt;CR&gt;:<span class="built_in">split</span>&lt;CR&gt;</span><br><span class="line">map sj :<span class="built_in">set</span> splitbelow&lt;CR&gt;:<span class="built_in">split</span>&lt;CR&gt;</span><br><span class="line">map sh :<span class="built_in">set</span> nosplitright&lt;CR&gt;:vsplit&lt;CR&gt;</span><br><span class="line">map sl :<span class="built_in">set</span> splitright&lt;CR&gt;:vsplit&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;7. ctrl + w + 方向 : 分屏间光标切换</span></span><br><span class="line"><span class="string">&quot;</span>空格 + 方向 : 来切切换屏幕</span><br><span class="line"><span class="string">&quot;上下左右屏幕切换</span></span><br><span class="line"><span class="string">map &lt;LEADER&gt;k &lt;C-w&gt;k</span></span><br><span class="line"><span class="string">map &lt;LEADER&gt;j &lt;C-w&gt;j</span></span><br><span class="line"><span class="string">map &lt;LEADER&gt;h &lt;C-w&gt;h</span></span><br><span class="line"><span class="string">map &lt;LEADER&gt;l &lt;C-w&gt;l</span></span><br><span class="line"><span class="string">&quot;</span>8. :vertical resize-5 设置当前分屏大小</span><br><span class="line">map wk :res +5&lt;CR&gt;</span><br><span class="line">map wj :res -5&lt;CR&gt;</span><br><span class="line">map wh :vertical resize-5&lt;CR&gt;</span><br><span class="line">map wl :vertical resize+5&lt;CR&gt;</span><br><span class="line"><span class="string">&quot;9. :tabe 打开新的标签</span></span><br><span class="line"><span class="string">map tt :tabe&lt;CR&gt;</span></span><br><span class="line"><span class="string">&quot;</span>切换标签页</span><br><span class="line">map tl :+tabnext&lt;CR&gt;</span><br><span class="line">map th :-tabnext&lt;CR&gt;</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;6. 打开文件</span></span><br><span class="line"><span class="string">&quot;</span>:e path : 打开路径下的文件</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;5. v 模式：鼠标单击. shift + v : 行模式.</span></span><br><span class="line"><span class="string">&quot;</span>control + v : 可视块模式(禅模式); 选择后按 <span class="built_in">shift</span> + i 修改内容；再esc生效</span><br><span class="line"><span class="string">&quot; v 模式选择后，可以输入:normal I&quot;</span>，进行统一注释</span><br><span class="line"></span><br><span class="line">call plug#begin(<span class="string">&#x27;~/.vim/plugged&#x27;</span>)</span><br><span class="line"></span><br><span class="line">Plug <span class="string">&#x27;vim-airline/vim-airline&#x27;</span></span><br><span class="line">Plug <span class="string">&#x27;connorholyday/vim-snazzy&#x27;</span></span><br><span class="line"></span><br><span class="line">call plug#end()</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;设置颜色</span></span><br><span class="line"><span class="string">colorscheme snazzy</span></span><br><span class="line"><span class="string">let g:SnazzyTransparent = 1</span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-built_in">let</span> mapleader=<span class="hljs-string">&quot; &quot;</span>
+syntax on
+
+<span class="hljs-string">&quot;显示行号</span>
+<span class="hljs-string">set number</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">&quot;</span>显示鼠标线
+<span class="hljs-built_in">set</span> cursorline
+<span class="hljs-string">&quot;字体不会超出视野</span>
+<span class="hljs-string">set wrap</span>
+<span class="hljs-string">&quot;</span>在底线显示当前命令
+<span class="hljs-built_in">set</span> showcmd
+<span class="hljs-string">&quot;命令提示</span>
+<span class="hljs-string">set wildmenu</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">&quot;</span>兼容vi
+<span class="hljs-built_in">set</span> nocompatible
+<span class="hljs-string">&quot;识别不同的文件模式</span>
+<span class="hljs-string">filetype on</span>
+<span class="hljs-string">filetype indent on</span>
+<span class="hljs-string">filetype plugin on</span>
+<span class="hljs-string">filetype plugin indent on</span>
+<span class="hljs-string">&quot;</span>编辑器可以使用鼠标
+<span class="hljs-built_in">set</span> mouse=a
+<span class="hljs-built_in">set</span> encoding=utf-8
+<span class="hljs-string">&quot;兼容终端配色问题</span>
+<span class="hljs-string">&quot;</span><span class="hljs-built_in">let</span> &amp;t_ut=<span class="hljs-string">&#x27;&#x27;</span>
+<span class="hljs-string">&quot;缩进</span>
+<span class="hljs-string">set expandtab</span>
+<span class="hljs-string">set tabstop=2</span>
+<span class="hljs-string">set shiftwidth=2</span>
+<span class="hljs-string">set softtabstop=2</span>
+<span class="hljs-string">&quot;</span>行尾
+<span class="hljs-string">&quot;set list</span>
+<span class="hljs-string">&quot;</span>保持预览在上下5行之间
+<span class="hljs-built_in">set</span> scrolloff=5
+<span class="hljs-string">&quot;退格键可以回到行首</span>
+<span class="hljs-string">set backspace=indent,eol,start</span>
+<span class="hljs-string">&quot;</span>收起代码
+<span class="hljs-built_in">set</span> foldmethod=indent
+<span class="hljs-built_in">set</span> foldlevel=99
+<span class="hljs-string">&quot;底下状态栏等于2</span>
+<span class="hljs-string">set laststatus=2</span>
+<span class="hljs-string">set autochdir</span>
+<span class="hljs-string">&quot;</span>重新打开文件光标会显示上一次打开的位置
+au BufReadPost * <span class="hljs-keyword">if</span> line(<span class="hljs-string">&quot;&#x27;\&quot;&quot;</span>) &gt; 1 &amp;&amp; line(<span class="hljs-string">&quot;&#x27;\&quot;&quot;</span>) &lt;= line(<span class="hljs-string">&quot;$&quot;</span>) | exe <span class="hljs-string">&quot;normal! g&#x27;\&quot;&quot;</span> | endif
+
+<span class="hljs-string">&quot;1. noremap a b | 改键位,a 键 替换 b键盘</span>
+<span class="hljs-string">&quot;</span>加快上下左右浏览的速度
+noremap J 5j
+noremap K 5k
+noremap H 5h
+noremap L 5l
+
+<span class="hljs-string">&quot;查看上/下一个搜索接口并显示在中间</span>
+<span class="hljs-string">noremap n nzz</span>
+<span class="hljs-string">noremap n nzz</span>
+<span class="hljs-string">&quot;</span>空格回车:去除搜索高亮
+noremap &lt;leader&gt;&lt;cr&gt; :nohlsearch&lt;cr&gt;
+
+<span class="hljs-string">&quot;搜索高亮</span>
+<span class="hljs-string">set hlsearch</span>
+<span class="hljs-string">&quot;</span>重新打开文件不会显示搜索高亮
+<span class="hljs-built_in">exec</span> <span class="hljs-string">&quot;nohlsearch&quot;</span>
+<span class="hljs-built_in">set</span> incsearch
+<span class="hljs-string">&quot;忽略大小写</span>
+<span class="hljs-string">set ignorecase</span>
+<span class="hljs-string">&quot;</span>智能大小写
+<span class="hljs-built_in">set</span> smartcase
+
+<span class="hljs-string">&quot;2. map s :w&lt;cr&gt; | 快捷键</span>
+<span class="hljs-string">map s &lt;nop&gt;</span>
+<span class="hljs-string">&quot;</span>保存
+map S :w&lt;cr&gt;
+<span class="hljs-string">&quot;退出</span>
+<span class="hljs-string">map Q :q&lt;cr&gt;</span>
+<span class="hljs-string">&quot;</span>更新配置文件
+map R :<span class="hljs-built_in">source</span> <span class="hljs-variable">$MYVIMRC</span>&lt;cr&gt;
+
+<span class="hljs-string">&quot;3. &lt;operation&gt; &lt;motion&gt;</span>
+<span class="hljs-string">&quot;</span>x : 删除当前字符
+<span class="hljs-string">&quot;d + 方向键 + number 删除方向上的 number 个字符</span>
+<span class="hljs-string">&quot;</span>y + 方向键 + number 复制方向上的 number 个字符
+<span class="hljs-string">&quot;c + 方向键 + number 删除并进入写入模式</span>
+<span class="hljs-string">&quot;</span>w : 移动一个词。
+<span class="hljs-string">&quot;ciw : 修改当前词；ci&quot;</span> : 将<span class="hljs-string">&quot;符号内的词全部修改；</span>
+<span class="hljs-string">&quot;</span>yi<span class="hljs-string">&quot; : 将&quot;</span>符号内的词全部复制; di<span class="hljs-string">&quot; : 将&quot;</span>符号内的词全部删除。
+<span class="hljs-string">&quot;f&quot;</span> : 查找下一个<span class="hljs-string">&quot;符号。</span>
+<span class="hljs-string">&quot;</span><span class="hljs-built_in">df</span><span class="hljs-string">&quot; : 删除到下一个&quot;</span>符号的内容；yf<span class="hljs-string">&quot; : 复制到下一个&quot;</span>符号的内容；
+<span class="hljs-string">&quot;cf&quot;</span> : 删除到下一个<span class="hljs-string">&quot;符号的内容并进入写入模式</span>
+<span class="hljs-string">&quot;</span>zz : 将当前行显示在中间
+
+<span class="hljs-string">&quot;4. :命令模式</span>
+<span class="hljs-string">&quot;</span><span class="hljs-built_in">split</span> : 上下分屏；vsplit : 左右分屏
+map sk :<span class="hljs-built_in">set</span> nosplitbelow&lt;CR&gt;:<span class="hljs-built_in">split</span>&lt;CR&gt;
+map sj :<span class="hljs-built_in">set</span> splitbelow&lt;CR&gt;:<span class="hljs-built_in">split</span>&lt;CR&gt;
+map sh :<span class="hljs-built_in">set</span> nosplitright&lt;CR&gt;:vsplit&lt;CR&gt;
+map sl :<span class="hljs-built_in">set</span> splitright&lt;CR&gt;:vsplit&lt;CR&gt;
+<span class="hljs-string">&quot;7. ctrl + w + 方向 : 分屏间光标切换</span>
+<span class="hljs-string">&quot;</span>空格 + 方向 : 来切切换屏幕
+<span class="hljs-string">&quot;上下左右屏幕切换</span>
+<span class="hljs-string">map &lt;LEADER&gt;k &lt;C-w&gt;k</span>
+<span class="hljs-string">map &lt;LEADER&gt;j &lt;C-w&gt;j</span>
+<span class="hljs-string">map &lt;LEADER&gt;h &lt;C-w&gt;h</span>
+<span class="hljs-string">map &lt;LEADER&gt;l &lt;C-w&gt;l</span>
+<span class="hljs-string">&quot;</span>8. :vertical resize-5 设置当前分屏大小
+map wk :res +5&lt;CR&gt;
+map wj :res -5&lt;CR&gt;
+map wh :vertical resize-5&lt;CR&gt;
+map wl :vertical resize+5&lt;CR&gt;
+<span class="hljs-string">&quot;9. :tabe 打开新的标签</span>
+<span class="hljs-string">map tt :tabe&lt;CR&gt;</span>
+<span class="hljs-string">&quot;</span>切换标签页
+map tl :+tabnext&lt;CR&gt;
+map th :-tabnext&lt;CR&gt;
+
+<span class="hljs-string">&quot;6. 打开文件</span>
+<span class="hljs-string">&quot;</span>:e path : 打开路径下的文件
+
+<span class="hljs-string">&quot;5. v 模式：鼠标单击. shift + v : 行模式.</span>
+<span class="hljs-string">&quot;</span>control + v : 可视块模式(禅模式); 选择后按 <span class="hljs-built_in">shift</span> + i 修改内容；再esc生效
+<span class="hljs-string">&quot; v 模式选择后，可以输入:normal I&quot;</span>，进行统一注释
+
+call plug#begin(<span class="hljs-string">&#x27;~/.vim/plugged&#x27;</span>)
+
+Plug <span class="hljs-string">&#x27;vim-airline/vim-airline&#x27;</span>
+Plug <span class="hljs-string">&#x27;connorholyday/vim-snazzy&#x27;</span>
+
+call plug#end()
+
+<span class="hljs-string">&quot;设置颜色</span>
+<span class="hljs-string">colorscheme snazzy</span>
+<span class="hljs-string">let g:SnazzyTransparent = 1</span>
+<span class="hljs-string"></span></code></pre>
 
 <h2 id="4-安装插件"><a href="#4-安装插件" class="headerlink" title="4.安装插件"></a>4.安装插件</h2><blockquote>
 <p>:PlugInstall</p>

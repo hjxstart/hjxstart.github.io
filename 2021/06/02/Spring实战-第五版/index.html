@@ -122,10 +122,52 @@
         
             
                 <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
                     <div data-rel="读书">
                         
                         读书
                         <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -154,48 +196,6 @@
                         
                         数据库
                         <small>(5)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="运维">
-                        
-                        运维
-                        <small>(25)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="安全">
-                        
-                        安全
-                        <small>(3)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="开发">
-                        
-                        开发
-                        <small>(14)</small>
                         
                     </div>
                     
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<input type="hidden" id="yelog_site_word_count" value="243.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1022,17 +1022,69 @@
 <li>使用 Spring Initializr 创建初始的项目结构；</li>
 <li>编写控制器类处理针对主页的请求；</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> tacos;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.GetMapping;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HomeController</span> &#123;</span><br><span class="line">    <span class="meta">@GetMapping(&quot;/&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">home</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;home&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">language-Java复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs Java"><span class="hljs-keyword">package</span> tacos;
+
+<span class="hljs-keyword">import</span> org.springframework.stereotype.Controller;
+<span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.GetMapping;
+
+<span class="hljs-meta">@Controller</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">HomeController</span> &#123;
+    <span class="hljs-meta">@GetMapping(&quot;/&quot;)</span>
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">home</span><span class="hljs-params">()</span> &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;home&quot;</span>;
+    &#125;
+&#125;
+language-Java复制代码</code></pre>
 
 <ol>
 <li>定义一个视图模版来渲染主页；</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">&quot;en&quot;</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">    &lt;title&gt;Taco Cloud&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;h1&gt;Welcome to...&lt;/h1&gt;</span><br><span class="line">  &lt;img th:src=<span class="string">&quot;@&#123;/images/TacoCloud.png&#125;&quot;</span> /&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line">language-Java复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs Java">&lt;!DOCTYPE html&gt;
+&lt;html lang=<span class="hljs-string">&quot;en&quot;</span>&gt;
+&lt;head&gt;
+    &lt;meta charset=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;
+    &lt;title&gt;Taco Cloud&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Welcome to...&lt;/h1&gt;
+  &lt;img th:src=<span class="hljs-string">&quot;@&#123;/images/TacoCloud.png&#125;&quot;</span> /&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+language-Java复制代码</code></pre>
 
 <ol>
 <li>编写了一个简单的测试类来验证工作符合预期。</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> tacos;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.hamcrest.Matchers.containsString;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.RunWith;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.context.junit4.SpringRunner;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.web.servlet.MockMvc;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RunWith(SpringRunner.class)</span></span><br><span class="line"><span class="meta">@WebMvcTest(HomeController.class)</span>   <span class="comment">// &lt;1&gt;</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HomeControllerTest</span> &#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> MockMvc mockMvc;   <span class="comment">// &lt;2&gt;</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testHomePage</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        mockMvc.perform(get(<span class="string">&quot;/&quot;</span>))    <span class="comment">// &lt;3&gt;</span></span><br><span class="line">                .andExpect(status().isOk())  <span class="comment">// &lt;4&gt;</span></span><br><span class="line">                .andExpect(view().name(<span class="string">&quot;home&quot;</span>))  <span class="comment">// &lt;5&gt;</span></span><br><span class="line">                .andExpect(content().string(           <span class="comment">// &lt;6&gt;</span></span><br><span class="line">                        containsString(<span class="string">&quot;Welcome to...&quot;</span>)));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">language-Java复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs Java"><span class="hljs-keyword">package</span> tacos;
+
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.hamcrest.Matchers.containsString;
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
+
+<span class="hljs-keyword">import</span> org.junit.Test;
+<span class="hljs-keyword">import</span> org.junit.runner.RunWith;
+<span class="hljs-keyword">import</span> org.springframework.beans.factory.annotation.Autowired;
+<span class="hljs-keyword">import</span> org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+<span class="hljs-keyword">import</span> org.springframework.test.context.junit4.SpringRunner;
+<span class="hljs-keyword">import</span> org.springframework.test.web.servlet.MockMvc;
+
+<span class="hljs-meta">@RunWith(SpringRunner.class)</span>
+<span class="hljs-meta">@WebMvcTest(HomeController.class)</span>   <span class="hljs-comment">// &lt;1&gt;</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">HomeControllerTest</span> &#123;
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-keyword">private</span> MockMvc mockMvc;   <span class="hljs-comment">// &lt;2&gt;</span>
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">testHomePage</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception &#123;
+        mockMvc.perform(get(<span class="hljs-string">&quot;/&quot;</span>))    <span class="hljs-comment">// &lt;3&gt;</span>
+                .andExpect(status().isOk())  <span class="hljs-comment">// &lt;4&gt;</span>
+                .andExpect(view().name(<span class="hljs-string">&quot;home&quot;</span>))  <span class="hljs-comment">// &lt;5&gt;</span>
+                .andExpect(content().string(           <span class="hljs-comment">// &lt;6&gt;</span>
+                        containsString(<span class="hljs-string">&quot;Welcome to...&quot;</span>)));
+    &#125;
+&#125;
+language-Java复制代码</code></pre>
 
 <hr>
 

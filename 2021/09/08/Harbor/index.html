@@ -122,10 +122,52 @@
         
             
                 <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
                     <div data-rel="读书">
                         
                         读书
                         <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -154,48 +196,6 @@
                         
                         数据库
                         <small>(5)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="运维">
-                        
-                        运维
-                        <small>(25)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="安全">
-                        
-                        安全
-                        <small>(3)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="开发">
-                        
-                        开发
-                        <small>(14)</small>
                         
                     </div>
                     
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<input type="hidden" id="yelog_site_word_count" value="243.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -983,7 +983,7 @@
     </div>
     <div class="article-meta">
         
-        <span>字数:752</span>
+        <span>字数:758</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1025,7 +1025,7 @@
 <li>解压 <code>tar -zxvf harbor-xxx.tar</code></li>
 <li>移动harbor <code>mv harbor /usr/local</code></li>
 <li>生成openssl证书: <code>openssl genrsa -des3 -out server.key 2048</code>(密码123456)</li>
-<li>创建证书请求：<code>openssl req -new -key server.key -out server.csr</code>(密码:123456, 国家：CN, 省会:GD, 市:ZJ, 机构:XJ, 单位：XJ，域名 hub.xj.com, 邮箱: <a href="mailto:&#x68;&#x6a;&#120;&#x73;&#116;&#x61;&#114;&#116;&#64;&#49;&#x32;&#54;&#x2e;&#99;&#111;&#109;">hjxstart@126.com</a>, 密码：123456,公司名字:XJ).中途输入错误可以<code>Ctr+C</code>退出.</li>
+<li>创建证书请求：<code>openssl req -new -key server.key -out server.csr</code>(密码:123456, 国家：CN, 省会:GD, 市:ZJ, 机构:XJ, 单位：XJ，域名 hub.xj.com, 邮箱: <a href="mailto:&#x68;&#x6a;&#x78;&#x73;&#116;&#x61;&#x72;&#x74;&#x40;&#49;&#x32;&#54;&#x2e;&#99;&#x6f;&#109;">hjxstart@126.com</a>, 密码：123456,公司名字:XJ).中途输入错误可以<code>Ctr+C</code>退出.</li>
 <li>复制文件：cp server.key server.key.org</li>
 <li>取消密码认证：<code>openssl rsa -in server.key.org -out server.key</code>(密码123456)</li>
 <li>创建证书（类型:x509,有效期：365天）：<code>openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt</code></li>
@@ -1038,7 +1038,10 @@
 <li>重启docker: <code>systemctl restart docker</code></li>
 <li>harbor的使用</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker tag nginx:latest hub.xj.com/harborProject/nginx:v1</span><br><span class="line"></span><br><span class="line">docker push </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">docker tag nginx:latest hub.xj.com/harborProject/nginx:v1
+
+docker push 
+</code></pre>
 
 <h2 id="Harbor部署"><a href="#Harbor部署" class="headerlink" title="Harbor部署"></a>Harbor部署</h2><h3 id="1-环境说明"><a href="#1-环境说明" class="headerlink" title="1. 环境说明"></a>1. 环境说明</h3><ol>
 <li>系统版本Centos7.9最小安装</li>
@@ -1047,37 +1050,83 @@
 <h3 id="2-安装步骤"><a href="#2-安装步骤" class="headerlink" title="2. 安装步骤"></a>2. 安装步骤</h3><ol>
 <li>创建目录及下载harbor离线包</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 创建并进入相应目录</span><br><span class="line">mkdir /data &amp;&amp; cd /data</span><br><span class="line"># 下载离线包，也可以直接通过连接下载</span><br><span class="line">wget https://github.com/goharbor/harbor/releases/download/v2.2.0/harbor-offline-installer-v2.2.0.tgz</span><br><span class="line"># 解压并删除离线包</span><br><span class="line">tar xf harbor-offline-installer-v2.2.0.tgz &amp;&amp; rm harbor-offline-installer-v2.2.0.tgz</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment"># 创建并进入相应目录</span>
+<span class="hljs-built_in">mkdir</span> /data &amp;&amp; <span class="hljs-built_in">cd</span> /data
+<span class="hljs-comment"># 下载离线包，也可以直接通过连接下载</span>
+wget https://github.com/goharbor/harbor/releases/download/v2.2.0/harbor-offline-installer-v2.2.0.tgz
+<span class="hljs-comment"># 解压并删除离线包</span>
+tar xf harbor-offline-installer-v2.2.0.tgz &amp;&amp; <span class="hljs-built_in">rm</span> harbor-offline-installer-v2.2.0.tgz
+复制代码</code></pre>
 
 <ol>
 <li>修改harbro配置</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 进入harbor目录</span><br><span class="line">cd harbor</span><br><span class="line"># 负责harbor配置文件</span><br><span class="line">cp harbor.yml.tmpl harbor.yml</span><br><span class="line"># 修改harbor配置</span><br><span class="line">vi harbor.yml</span><br><span class="line">    5 hostname: harbor.xj.com</span><br><span class="line">    17   certificate: /data/harbor/ssl/tls.cert</span><br><span class="line">    18   private_key: /data/harbor/ssl/tls.key</span><br><span class="line">    34 harbor_admin_password: boge666</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs nix"><span class="hljs-comment"># 进入harbor目录</span>
+cd harbor
+<span class="hljs-comment"># 负责harbor配置文件</span>
+cp harbor.yml.tmpl harbor.yml
+<span class="hljs-comment"># 修改harbor配置</span>
+vi harbor.yml
+    <span class="hljs-number">5</span> <span class="hljs-params">hostname:</span> harbor.xj.com
+    <span class="hljs-number">17</span>   <span class="hljs-params">certificate:</span> <span class="hljs-symbol">/data/harbor/ssl/tls.cert</span>
+    <span class="hljs-number">18</span>   <span class="hljs-params">private_key:</span> <span class="hljs-symbol">/data/harbor/ssl/tls.key</span>
+    <span class="hljs-number">34</span> <span class="hljs-params">harbor_admin_password:</span> boge666
+复制代码</code></pre>
 
 <ol>
 <li>创建harbor访问域名证书</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir /data/harbor/ssl &amp;&amp; cd /data/harbor/ssl</span><br><span class="line">openssl genrsa -out tls.key 2048</span><br><span class="line">openssl req -new -x509 -key tls.key -out tls.cert -days 360 -subj /CN=*.xj.com</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs sas">mkdir /data/harbor/ssl <span class="hljs-variable">&amp;&amp;</span> cd /data/harbor/ssl
+openssl genrsa -<span class="hljs-keyword">out</span> tls.<span class="hljs-keyword">key</span> 2048
+openssl req -new -x509 -<span class="hljs-keyword">key</span> tls.<span class="hljs-keyword">key</span> -<span class="hljs-keyword">out</span> tls.cert -days 360 -subj /CN=<span class="hljs-comment">*.xj.com</span>
+<span class="hljs-comment">复制代码</span></code></pre>
 
 <ol>
 <li>准备好单机编排工具<code>docker-compose</code></li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; 从二进制安装k8s项目的bin目录拷贝过来</span><br><span class="line">scp /etc/kubeasz/bin/docker-compose 192.168.18.200:/usr/bin/</span><br><span class="line"></span><br><span class="line">&gt; 也可以在docker官方进行下载</span><br><span class="line">https://docs.docker.com/compose/install/</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs ruby">&gt; 从二进制安装k8s项目的bin目录拷贝过来
+scp /etc/kubeasz/bin/docker-compose <span class="hljs-number">192.168</span>.<span class="hljs-number">18.200</span><span class="hljs-symbol">:/usr/bin/</span>
+
+&gt; 也可以在docker官方进行下载
+<span class="hljs-symbol">https:</span>/<span class="hljs-regexp">/docs.docker.com/compose</span><span class="hljs-regexp">/install/</span>
+复制代码</code></pre>
 
 <ol>
 <li>开始安装</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 回到harbor目录</span><br><span class="line">cd /data/harbor</span><br><span class="line"># 安装harbor</span><br><span class="line">./install.sh</span><br><span class="line"># 安装成功后可以配置hosts文件进行域名访问了</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment"># 回到harbor目录</span>
+<span class="hljs-built_in">cd</span> /data/harbor
+<span class="hljs-comment"># 安装harbor</span>
+./install.sh
+<span class="hljs-comment"># 安装成功后可以配置hosts文件进行域名访问了</span>
+复制代码</code></pre>
 
 <ol>
 <li>推送镜像到harbor</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 添加hosts文件</span><br><span class="line">echo &#x27;192.168.18.200 harbor.xj.com&#x27; &gt;&gt; /etc/hosts</span><br><span class="line"># 登录</span><br><span class="line">docker login harbor.xj.com</span><br><span class="line"># 打标签</span><br><span class="line">docker tag nginx:latest  harbor.xj.com/library/nginx:latest</span><br><span class="line"># 推送镜像到harbor</span><br><span class="line">docker push harbor.boge.com/library/nginx:1.18.0-alpine</span><br><span class="line"># 登出</span><br><span class="line">docker logout harbor.xj.com</span><br><span class="line"># 查看登录信息，不退出会存在隐患</span><br><span class="line">cat ~/.docker/config.json</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment"># 添加hosts文件</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;192.168.18.200 harbor.xj.com&#x27;</span> &gt;&gt; /etc/hosts
+<span class="hljs-comment"># 登录</span>
+docker login harbor.xj.com
+<span class="hljs-comment"># 打标签</span>
+docker tag nginx:latest  harbor.xj.com/library/nginx:latest
+<span class="hljs-comment"># 推送镜像到harbor</span>
+docker push harbor.boge.com/library/nginx:1.18.0-alpine
+<span class="hljs-comment"># 登出</span>
+docker <span class="hljs-built_in">logout</span> harbor.xj.com
+<span class="hljs-comment"># 查看登录信息，不退出会存在隐患</span>
+<span class="hljs-built_in">cat</span> ~/.docker/config.json
+复制代码</code></pre>
 
 <ol>
 <li>在其他节点上面拉取harbor镜像</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; 在集群每个 node 节点进行如下配置</span><br><span class="line">&gt; ssh to 192.168.18.199(centos7)</span><br><span class="line"></span><br><span class="line">mkdir -p /etc/docker/certs.d/harbor.xj.com</span><br><span class="line">scp 192.168.18.200:/data/harbor/ssl/tls.cert /etc/docker/certs.d/harbor.xj.com/ca.crt</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs elixir">&gt; 在集群每个 node 节点进行如下配置
+&gt; ssh to <span class="hljs-number">192.168</span>.<span class="hljs-number">18.199</span>(centos7)
+
+mkdir -p /etc/docker/certs.d/harbor.xj.com
+scp <span class="hljs-number">192.168</span>.<span class="hljs-number">18.200</span><span class="hljs-symbol">:/data/harbor/ssl/tls</span>.cert /etc/docker/certs.d/harbor.xj.com/ca.crt
+复制代码</code></pre>
 
 <hr>
 

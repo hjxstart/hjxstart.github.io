@@ -122,10 +122,52 @@
         
             
                 <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
                     <div data-rel="读书">
                         
                         读书
                         <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -154,48 +196,6 @@
                         
                         数据库
                         <small>(5)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="运维">
-                        
-                        运维
-                        <small>(25)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="安全">
-                        
-                        安全
-                        <small>(3)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="开发">
-                        
-                        开发
-                        <small>(14)</small>
                         
                     </div>
                     
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<input type="hidden" id="yelog_site_word_count" value="243.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -983,7 +983,7 @@
     </div>
     <div class="article-meta">
         
-        <span>字数:1.6k</span>
+        <span>字数:1.8k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1024,7 +1024,10 @@
   <summary>配置概述</summary>
 
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 交换机：在SW1~3都创建2个vlan；</span><br><span class="line">2. 交换机-交换机：在交换机之间的连接接口配置中继，并且放行相应的VLAN；</span><br><span class="line">3. 交换机-PC：在交换机与PC连接的接口配置Access接口，并且方通相应的VLAN；</span><br><span class="line">4. PC：配置对于VLAN的IP。</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">1. 交换机：在SW1~3都创建2个vlan；
+2. 交换机-交换机：在交换机之间的连接接口配置中继，并且放行相应的VLAN；
+3. 交换机-PC：在交换机与PC连接的接口配置Access接口，并且方通相应的VLAN；
+4. PC：配置对于VLAN的IP。</code></pre>
 
 </details>
 
@@ -1032,7 +1035,24 @@
   <summary>SW1</summary>
 
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="built_in">enable</span></span><br><span class="line">configure terminal</span><br><span class="line">vlan 10</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line">vlan 20</span><br><span class="line">end</span><br><span class="line">show vlan brief</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">configure terminal</span><br><span class="line">interface range ethernet 0/0 - 1</span><br><span class="line">shutdown</span><br><span class="line">switchport trunk encapsulation dot1q</span><br><span class="line">switchport mode trunk</span><br><span class="line">no shutdown</span><br><span class="line">end</span><br><span class="line">show interface trunk</span><br><span class="line">write</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment">#</span>
+<span class="hljs-built_in">enable</span>
+configure terminal
+vlan 10
+<span class="hljs-built_in">exit</span>
+vlan 20
+end
+show vlan brief
+<span class="hljs-comment">#</span>
+configure terminal
+interface range ethernet 0/0 - 1
+shutdown
+switchport trunk encapsulation dot1q
+switchport mode trunk
+no shutdown
+end
+show interface trunk
+write</code></pre>
 
 </details>
 
@@ -1040,7 +1060,37 @@
   <summary>SW2</summary>
 
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="built_in">enable</span></span><br><span class="line">configure terminal</span><br><span class="line">vlan 10</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line">vlan 20</span><br><span class="line">end</span><br><span class="line">show vlan brief</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">configure terminal</span><br><span class="line">interface ethernet 0/0</span><br><span class="line">shutdown</span><br><span class="line">switchport trunk encapsulation dot1q</span><br><span class="line">switchport mode trunk</span><br><span class="line">no shutdown</span><br><span class="line">end</span><br><span class="line">show interface trunk</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">configure terminal</span><br><span class="line">interface ethernet 0/1</span><br><span class="line">switchport mode access</span><br><span class="line">switchport access vlan 10</span><br><span class="line">spanning-tree portfast <span class="built_in">disable</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line">interface ethernet 0/2</span><br><span class="line">switchport mode access</span><br><span class="line">switchport access vlan 20</span><br><span class="line">spanning-tree portfast <span class="built_in">disable</span></span><br><span class="line">end</span><br><span class="line">show vlan brief</span><br><span class="line">write</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment">#</span>
+<span class="hljs-built_in">enable</span>
+configure terminal
+vlan 10
+<span class="hljs-built_in">exit</span>
+vlan 20
+end
+show vlan brief
+<span class="hljs-comment">#</span>
+configure terminal
+interface ethernet 0/0
+shutdown
+switchport trunk encapsulation dot1q
+switchport mode trunk
+no shutdown
+end
+show interface trunk
+<span class="hljs-comment">#</span>
+configure terminal
+interface ethernet 0/1
+switchport mode access
+switchport access vlan 10
+spanning-tree portfast <span class="hljs-built_in">disable</span>
+<span class="hljs-built_in">exit</span>
+interface ethernet 0/2
+switchport mode access
+switchport access vlan 20
+spanning-tree portfast <span class="hljs-built_in">disable</span>
+end
+show vlan brief
+write</code></pre>
 
 </details>
 
@@ -1048,7 +1098,37 @@
   <summary>SW3</summary>
 
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="built_in">enable</span></span><br><span class="line">configure terminal</span><br><span class="line">vlan 10</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line">vlan 20</span><br><span class="line">end</span><br><span class="line">show vlan brief</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">configure terminal</span><br><span class="line">interface ethernet 0/0</span><br><span class="line">shutdown</span><br><span class="line">switchport trunk encapsulation dot1q</span><br><span class="line">switchport mode trunk</span><br><span class="line">no shutdown</span><br><span class="line">end</span><br><span class="line">show interface trunk</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">configure terminal</span><br><span class="line">interface ethernet 0/1</span><br><span class="line">switchport mode access</span><br><span class="line">switchport access vlan 10</span><br><span class="line">spanning-tree portfast <span class="built_in">disable</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line">interface ethernet 0/2</span><br><span class="line">switchport mode access</span><br><span class="line">switchport access vlan 20</span><br><span class="line">spanning-tree portfast <span class="built_in">disable</span></span><br><span class="line">end</span><br><span class="line">show vlan brief</span><br><span class="line">write</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment">#</span>
+<span class="hljs-built_in">enable</span>
+configure terminal
+vlan 10
+<span class="hljs-built_in">exit</span>
+vlan 20
+end
+show vlan brief
+<span class="hljs-comment">#</span>
+configure terminal
+interface ethernet 0/0
+shutdown
+switchport trunk encapsulation dot1q
+switchport mode trunk
+no shutdown
+end
+show interface trunk
+<span class="hljs-comment">#</span>
+configure terminal
+interface ethernet 0/1
+switchport mode access
+switchport access vlan 10
+spanning-tree portfast <span class="hljs-built_in">disable</span>
+<span class="hljs-built_in">exit</span>
+interface ethernet 0/2
+switchport mode access
+switchport access vlan 20
+spanning-tree portfast <span class="hljs-built_in">disable</span>
+end
+show vlan brief
+write</code></pre>
 
 </details>
 
@@ -1056,7 +1136,14 @@
   <summary>PC</summary>
 
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># PC1</span></span><br><span class="line">ip 13.1.1.1 255.255.255.0</span><br><span class="line"><span class="comment"># PC2</span></span><br><span class="line">ip 24.1.1.2 255.255.255.0</span><br><span class="line"><span class="comment"># PC3</span></span><br><span class="line">ip 13.1.1.3 255.255.255.0</span><br><span class="line"><span class="comment"># PC4</span></span><br><span class="line">ip 24.1.1.4 255.255.255.0</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment"># PC1</span>
+ip 13.1.1.1 255.255.255.0
+<span class="hljs-comment"># PC2</span>
+ip 24.1.1.2 255.255.255.0
+<span class="hljs-comment"># PC3</span>
+ip 13.1.1.3 255.255.255.0
+<span class="hljs-comment"># PC4</span>
+ip 24.1.1.4 255.255.255.0</code></pre>
 
 </details>
 
@@ -1064,7 +1151,10 @@
   <summary>实验验证</summary>
 
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># PC1 ping PC3</span></span><br><span class="line">ping 13.1.1.3</span><br><span class="line"><span class="comment"># PC2 ping PC4</span></span><br><span class="line">ping 24.1.1.4</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment"># PC1 ping PC3</span>
+ping 13.1.1.3
+<span class="hljs-comment"># PC2 ping PC4</span>
+ping 24.1.1.4</code></pre>
 
 </details>
 
@@ -1075,7 +1165,10 @@
   <summary>配置概述</summary>
 
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 给设备命名</span><br><span class="line">2. 配置路由器之间的接口IP地址</span><br><span class="line">3. 添加静态路由</span><br><span class="line">4. 测试Loopback0口之间的网络</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">1. 给设备命名
+2. 配置路由器之间的接口IP地址
+3. 添加静态路由
+4. 测试Loopback0口之间的网络</code></pre>
 
 </details>
 
@@ -1083,7 +1176,28 @@
   <summary>R1</summary>
 
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="built_in">enable</span></span><br><span class="line">configure terminal</span><br><span class="line">hostname R1</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface ethernet 0/0</span><br><span class="line">no shutdown</span><br><span class="line">ip address 12.1.1.1 255.255.255.0</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line">interface ethernet 0/1</span><br><span class="line">no shutdown</span><br><span class="line">ip address 13.1.1.1 255.255.255.0</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line">interface loopback 0</span><br><span class="line">ip address 1.1.1.1 255.255.255.255</span><br><span class="line">end</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">show ip interface brief</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">configure terminal</span><br><span class="line">ip route 2.2.2.2 255.255.255.255 ethernet 0/0 12.1.1.2</span><br><span class="line">ip route 3.3.3.3 255.255.255.255 ethernet 0/1 13.1.1.3</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment">#</span>
+<span class="hljs-built_in">enable</span>
+configure terminal
+hostname R1
+<span class="hljs-comment">#</span>
+interface ethernet 0/0
+no shutdown
+ip address 12.1.1.1 255.255.255.0
+<span class="hljs-built_in">exit</span>
+interface ethernet 0/1
+no shutdown
+ip address 13.1.1.1 255.255.255.0
+<span class="hljs-built_in">exit</span>
+interface loopback 0
+ip address 1.1.1.1 255.255.255.255
+end
+<span class="hljs-comment">#</span>
+show ip interface brief
+<span class="hljs-comment">#</span>
+configure terminal
+ip route 2.2.2.2 255.255.255.255 ethernet 0/0 12.1.1.2
+ip route 3.3.3.3 255.255.255.255 ethernet 0/1 13.1.1.3</code></pre>
 
 </details>
 
@@ -1091,7 +1205,24 @@
   <summary>R2</summary>
 
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="built_in">enable</span></span><br><span class="line">configure terminal</span><br><span class="line">hostname R2</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface ethernet 0/1</span><br><span class="line">no shutdown</span><br><span class="line">ip address 12.1.1.2 255.255.255.0</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line">interface loopback 0</span><br><span class="line">ip address 2.2.2.2 255.255.255.255</span><br><span class="line">end</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">show ip interface brief</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">configure terminal</span><br><span class="line">ip route 1.1.1.1 255.255.255.255 ethernet 0/1 12.1.1.1</span><br><span class="line">ip route 3.3.3.3 255.255.255.255 ethernet 0/1 12.1.1.1</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment">#</span>
+<span class="hljs-built_in">enable</span>
+configure terminal
+hostname R2
+<span class="hljs-comment">#</span>
+interface ethernet 0/1
+no shutdown
+ip address 12.1.1.2 255.255.255.0
+<span class="hljs-built_in">exit</span>
+interface loopback 0
+ip address 2.2.2.2 255.255.255.255
+end
+<span class="hljs-comment">#</span>
+show ip interface brief
+<span class="hljs-comment">#</span>
+configure terminal
+ip route 1.1.1.1 255.255.255.255 ethernet 0/1 12.1.1.1
+ip route 3.3.3.3 255.255.255.255 ethernet 0/1 12.1.1.1</code></pre>
 
 </details>
 
@@ -1099,7 +1230,24 @@
   <summary>R3</summary>
 
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="built_in">enable</span></span><br><span class="line">configure terminal</span><br><span class="line">hostname R2</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface ethernet 0/0</span><br><span class="line">no shutdown</span><br><span class="line">ip address 13.1.1.3 255.255.255.0</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line">interface loopback 0</span><br><span class="line">ip address 3.3.3.3 255.255.255.255</span><br><span class="line">end</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">show ip interface brief</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">configure terminal</span><br><span class="line">ip route 1.1.1.1 255.255.255.255 ethernet 0/0 13.1.1.1</span><br><span class="line">ip route 2.2.2.2 255.255.255.255 ethernet 0/0 13.1.1.1</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment">#</span>
+<span class="hljs-built_in">enable</span>
+configure terminal
+hostname R2
+<span class="hljs-comment">#</span>
+interface ethernet 0/0
+no shutdown
+ip address 13.1.1.3 255.255.255.0
+<span class="hljs-built_in">exit</span>
+interface loopback 0
+ip address 3.3.3.3 255.255.255.255
+end
+<span class="hljs-comment">#</span>
+show ip interface brief
+<span class="hljs-comment">#</span>
+configure terminal
+ip route 1.1.1.1 255.255.255.255 ethernet 0/0 13.1.1.1
+ip route 2.2.2.2 255.255.255.255 ethernet 0/0 13.1.1.1</code></pre>
 
 </details>
 
@@ -1122,7 +1270,10 @@
   <summary>配置概述</summary>
 
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 路由器启用OSPF进程</span><br><span class="line">2. 设置路由器ID</span><br><span class="line">3. 路由器之间的直连接口宣告到同一个区域</span><br><span class="line">4. 路由器与非路由的接口也需要宣告一个区域</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">1. 路由器启用OSPF进程
+2. 设置路由器ID
+3. 路由器之间的直连接口宣告到同一个区域
+4. 路由器与非路由的接口也需要宣告一个区域</code></pre>
 
 </details>
 
@@ -1130,7 +1281,32 @@
   <summary>R1</summary>
 
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="built_in">enable</span></span><br><span class="line">configure terminal</span><br><span class="line">hostname R1</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface ethernet 0/0</span><br><span class="line">no shutdown</span><br><span class="line">ip address 12.1.1.1 255.255.255.0</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface ethernet 0/1</span><br><span class="line">no shutdown</span><br><span class="line">ip address 13.1.1.1 255.255.255.0</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">router ospf 110</span><br><span class="line">router-id 1.1.1.1</span><br><span class="line">network 12.1.1.1 0.0.0.0 area 0</span><br><span class="line">network 13.1.1.1 0.0.0.0 area 0</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">end</span><br><span class="line">show ip ospf neighbor</span><br><span class="line">show ip ospf database</span><br><span class="line">show ip route ospf</span><br><span class="line"><span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment">#</span>
+<span class="hljs-built_in">enable</span>
+configure terminal
+hostname R1
+<span class="hljs-comment">#</span>
+interface ethernet 0/0
+no shutdown
+ip address 12.1.1.1 255.255.255.0
+<span class="hljs-built_in">exit</span>
+<span class="hljs-comment">#</span>
+interface ethernet 0/1
+no shutdown
+ip address 13.1.1.1 255.255.255.0
+<span class="hljs-built_in">exit</span>
+<span class="hljs-comment">#</span>
+router ospf 110
+router-id 1.1.1.1
+network 12.1.1.1 0.0.0.0 area 0
+network 13.1.1.1 0.0.0.0 area 0
+<span class="hljs-built_in">exit</span>
+<span class="hljs-comment">#</span>
+end
+show ip ospf neighbor
+show ip ospf database
+show ip route ospf
+<span class="hljs-comment">#</span></code></pre>
 
 </details>
 
@@ -1138,7 +1314,35 @@
   <summary>R2</summary>
 
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="built_in">enable</span></span><br><span class="line">configure terminal</span><br><span class="line">hostname R2</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface ethernet 0/0</span><br><span class="line">no shutdown</span><br><span class="line">ip address 12.1.1.2 255.255.255.0</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface ethernet 0/1</span><br><span class="line">no shutdown</span><br><span class="line">ip address 2.2.2.254 255.255.255.0</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">router ospf 110</span><br><span class="line">router-id 2.2.2.2</span><br><span class="line">network 12.1.1.2 0.0.0.0 area 0</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface ethernet 0/1</span><br><span class="line">ip ospf 110 area 0</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">end</span><br><span class="line">show ip ospf neighbor</span><br><span class="line">show ip ospf database</span><br><span class="line">show ip route ospf</span><br><span class="line"><span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment">#</span>
+<span class="hljs-built_in">enable</span>
+configure terminal
+hostname R2
+<span class="hljs-comment">#</span>
+interface ethernet 0/0
+no shutdown
+ip address 12.1.1.2 255.255.255.0
+<span class="hljs-built_in">exit</span>
+<span class="hljs-comment">#</span>
+interface ethernet 0/1
+no shutdown
+ip address 2.2.2.254 255.255.255.0
+<span class="hljs-built_in">exit</span>
+<span class="hljs-comment">#</span>
+router ospf 110
+router-id 2.2.2.2
+network 12.1.1.2 0.0.0.0 area 0
+<span class="hljs-built_in">exit</span>
+<span class="hljs-comment">#</span>
+interface ethernet 0/1
+ip ospf 110 area 0
+<span class="hljs-built_in">exit</span>
+<span class="hljs-comment">#</span>
+end
+show ip ospf neighbor
+show ip ospf database
+show ip route ospf
+<span class="hljs-comment">#</span></code></pre>
 
 </details>
 
@@ -1146,7 +1350,35 @@
   <summary>R3</summary>
 
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="built_in">enable</span></span><br><span class="line">configure terminal</span><br><span class="line">hostname R3</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface ethernet 0/0</span><br><span class="line">no shutdown</span><br><span class="line">ip address 13.1.1.3 255.255.255.0</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface ethernet 0/1</span><br><span class="line">no shutdown</span><br><span class="line">ip address 3.3.3.254 255.255.255.0</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">router ospf 110</span><br><span class="line">router-id 3.3.3.3</span><br><span class="line">network 13.1.1.3 0.0.0.0 area 0</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface ethernet 0/1</span><br><span class="line">ip ospf 110 area 0</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">end</span><br><span class="line">show ip ospf neighbor</span><br><span class="line">show ip ospf database</span><br><span class="line">show ip route ospf</span><br><span class="line"><span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment">#</span>
+<span class="hljs-built_in">enable</span>
+configure terminal
+hostname R3
+<span class="hljs-comment">#</span>
+interface ethernet 0/0
+no shutdown
+ip address 13.1.1.3 255.255.255.0
+<span class="hljs-built_in">exit</span>
+<span class="hljs-comment">#</span>
+interface ethernet 0/1
+no shutdown
+ip address 3.3.3.254 255.255.255.0
+<span class="hljs-built_in">exit</span>
+<span class="hljs-comment">#</span>
+router ospf 110
+router-id 3.3.3.3
+network 13.1.1.3 0.0.0.0 area 0
+<span class="hljs-built_in">exit</span>
+<span class="hljs-comment">#</span>
+interface ethernet 0/1
+ip ospf 110 area 0
+<span class="hljs-built_in">exit</span>
+<span class="hljs-comment">#</span>
+end
+show ip ospf neighbor
+show ip ospf database
+show ip route ospf
+<span class="hljs-comment">#</span></code></pre>
 
 </details>
 
@@ -1156,7 +1388,10 @@
   <summary>PC</summary>
 
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># PC1</span></span><br><span class="line">ip 2.2.2.1 255.255.255.0 2.2.2.254</span><br><span class="line"><span class="comment"># PC2</span></span><br><span class="line">ip 3.3.3.2 255.255.255.0 3.3.3.254</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment"># PC1</span>
+ip 2.2.2.1 255.255.255.0 2.2.2.254
+<span class="hljs-comment"># PC2</span>
+ip 3.3.3.2 255.255.255.0 3.3.3.254</code></pre>
 
 </details>
 
@@ -1174,7 +1409,8 @@
   <summary>配置概述</summary>
 
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. 配置对于的接口IP地址和路由协议</span><br><span class="line">2. 在可能的网关设备的网关接口上配置FHRP的Virtual IP 和 优先级</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">1. 配置对于的接口IP地址和路由协议
+2. 在可能的网关设备的网关接口上配置FHRP的Virtual IP 和 优先级</code></pre>
 
 </details>
 
@@ -1182,7 +1418,35 @@
   <summary>R1</summary>
 
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="built_in">enable</span></span><br><span class="line">configure terminal</span><br><span class="line">hostname R1</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface ethernet 0/0</span><br><span class="line">no shutdown</span><br><span class="line">ip address 12.1.1.1 255.255.255.0</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface ethernet 0/1</span><br><span class="line">no shutdown</span><br><span class="line">ip address 13.1.1.1 255.255.255.0</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface loopback 0</span><br><span class="line">ip address 1.1.1.1 255.255.255.255</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">router eigrp 90</span><br><span class="line">eigrp router-id 1.1.1.1</span><br><span class="line">network 12.1.1.1 0.0.0.0</span><br><span class="line">network 13.1.1.1 0.0.0.0</span><br><span class="line">network 1.1.1.1 0.0.0.0</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">end</span><br><span class="line">show ip route eigrp</span><br><span class="line"><span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment">#</span>
+<span class="hljs-built_in">enable</span>
+configure terminal
+hostname R1
+<span class="hljs-comment">#</span>
+interface ethernet 0/0
+no shutdown
+ip address 12.1.1.1 255.255.255.0
+<span class="hljs-built_in">exit</span>
+<span class="hljs-comment">#</span>
+interface ethernet 0/1
+no shutdown
+ip address 13.1.1.1 255.255.255.0
+<span class="hljs-built_in">exit</span>
+<span class="hljs-comment">#</span>
+interface loopback 0
+ip address 1.1.1.1 255.255.255.255
+<span class="hljs-built_in">exit</span>
+<span class="hljs-comment">#</span>
+router eigrp 90
+eigrp router-id 1.1.1.1
+network 12.1.1.1 0.0.0.0
+network 13.1.1.1 0.0.0.0
+network 1.1.1.1 0.0.0.0
+<span class="hljs-built_in">exit</span>
+<span class="hljs-comment">#</span>
+end
+show ip route eigrp
+<span class="hljs-comment">#</span></code></pre>
 
 </details>
 
@@ -1190,7 +1454,39 @@
   <summary>R2</summary>
 
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="built_in">enable</span></span><br><span class="line">configure terminal</span><br><span class="line">hostname R2</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface ethernet 0/0</span><br><span class="line">no shutdown</span><br><span class="line">ip address 12.1.1.2 255.255.255.0</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface ethernet 0/1</span><br><span class="line">no shutdown</span><br><span class="line">ip address 100.1.1.252 255.255.255.0</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">router eigrp 90</span><br><span class="line">eigrp router-id 2.2.2.2</span><br><span class="line">network 12.1.1.2 0.0.0.0</span><br><span class="line">network 100.1.1.252 0.0.0.0</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">end</span><br><span class="line">show ip route eigrp</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">configure terminal</span><br><span class="line">interface ethernet 0/1</span><br><span class="line">standby 100 ip 100.1.1.254</span><br><span class="line">standby 100 priority 105</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">end</span><br><span class="line">show standby brief</span><br><span class="line"><span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment">#</span>
+<span class="hljs-built_in">enable</span>
+configure terminal
+hostname R2
+<span class="hljs-comment">#</span>
+interface ethernet 0/0
+no shutdown
+ip address 12.1.1.2 255.255.255.0
+<span class="hljs-built_in">exit</span>
+<span class="hljs-comment">#</span>
+interface ethernet 0/1
+no shutdown
+ip address 100.1.1.252 255.255.255.0
+<span class="hljs-built_in">exit</span>
+<span class="hljs-comment">#</span>
+router eigrp 90
+eigrp router-id 2.2.2.2
+network 12.1.1.2 0.0.0.0
+network 100.1.1.252 0.0.0.0
+<span class="hljs-built_in">exit</span>
+<span class="hljs-comment">#</span>
+end
+show ip route eigrp
+<span class="hljs-comment">#</span>
+configure terminal
+interface ethernet 0/1
+standby 100 ip 100.1.1.254
+standby 100 priority 105
+<span class="hljs-built_in">exit</span>
+<span class="hljs-comment">#</span>
+end
+show standby brief
+<span class="hljs-comment">#</span></code></pre>
 
 </details>
 
@@ -1198,7 +1494,38 @@
   <summary>R3</summary>
 
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="built_in">enable</span></span><br><span class="line">configure terminal</span><br><span class="line">hostname R3</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface ethernet 0/0</span><br><span class="line">no shutdown</span><br><span class="line">ip address 13.1.1.3 255.255.255.0</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface ethernet 0/1</span><br><span class="line">no shutdown</span><br><span class="line">ip address 100.1.1.253 255.255.255.0</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">router eigrp 90</span><br><span class="line">eigrp router-id 3.3.3.3</span><br><span class="line">network 13.1.1.3 0.0.0.0</span><br><span class="line">network 100.1.1.253 0.0.0.0</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">end</span><br><span class="line">show ip route eigrp</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">configure terminal</span><br><span class="line">interface ethernet 0/1</span><br><span class="line">standby 100 ip 100.1.1.254</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">end</span><br><span class="line">show standby brief</span><br><span class="line"><span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment">#</span>
+<span class="hljs-built_in">enable</span>
+configure terminal
+hostname R3
+<span class="hljs-comment">#</span>
+interface ethernet 0/0
+no shutdown
+ip address 13.1.1.3 255.255.255.0
+<span class="hljs-built_in">exit</span>
+<span class="hljs-comment">#</span>
+interface ethernet 0/1
+no shutdown
+ip address 100.1.1.253 255.255.255.0
+<span class="hljs-built_in">exit</span>
+<span class="hljs-comment">#</span>
+router eigrp 90
+eigrp router-id 3.3.3.3
+network 13.1.1.3 0.0.0.0
+network 100.1.1.253 0.0.0.0
+<span class="hljs-built_in">exit</span>
+<span class="hljs-comment">#</span>
+end
+show ip route eigrp
+<span class="hljs-comment">#</span>
+configure terminal
+interface ethernet 0/1
+standby 100 ip 100.1.1.254
+<span class="hljs-built_in">exit</span>
+<span class="hljs-comment">#</span>
+end
+show standby brief
+<span class="hljs-comment">#</span></code></pre>
 
 </details>
 
@@ -1222,7 +1549,7 @@
   <summary>配置概述</summary>
 
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1.</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">1.</code></pre>
 
 </details>
 
@@ -1230,7 +1557,39 @@
   <summary>R1</summary>
 
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="built_in">enable</span></span><br><span class="line">configure terminal</span><br><span class="line">hostname R1</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface ethernet 0/0</span><br><span class="line">no shutdown</span><br><span class="line">ip address 12.1.1.1 255.255.255.0</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line">interface ethernet 0/1</span><br><span class="line">no shutdown</span><br><span class="line">ip address 13.1.1.1 255.255.255.0</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line">interface loopback 0</span><br><span class="line">ip address 1.1.1.1 255.255.255.255</span><br><span class="line">end</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">show ip interface brief</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">configure terminal</span><br><span class="line">router eigrp 90</span><br><span class="line">no auto-summary</span><br><span class="line">eigrp router-id 1.1.1.1</span><br><span class="line">network 1.1.1.1 0.0.0.0</span><br><span class="line">network 12.1.1.1 0.0.0.0</span><br><span class="line">network 13.1.1.1 0.0.0.0</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">end</span><br><span class="line">show ip eigrp interfaces</span><br><span class="line">show ip eigrp neighbors</span><br><span class="line">show ip route eigrp</span><br><span class="line"><span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment">#</span>
+<span class="hljs-built_in">enable</span>
+configure terminal
+hostname R1
+<span class="hljs-comment">#</span>
+interface ethernet 0/0
+no shutdown
+ip address 12.1.1.1 255.255.255.0
+<span class="hljs-built_in">exit</span>
+interface ethernet 0/1
+no shutdown
+ip address 13.1.1.1 255.255.255.0
+<span class="hljs-built_in">exit</span>
+interface loopback 0
+ip address 1.1.1.1 255.255.255.255
+end
+<span class="hljs-comment">#</span>
+show ip interface brief
+<span class="hljs-comment">#</span>
+configure terminal
+router eigrp 90
+no auto-summary
+eigrp router-id 1.1.1.1
+network 1.1.1.1 0.0.0.0
+network 12.1.1.1 0.0.0.0
+network 13.1.1.1 0.0.0.0
+<span class="hljs-built_in">exit</span>
+<span class="hljs-comment">#</span>
+end
+show ip eigrp interfaces
+show ip eigrp neighbors
+show ip route eigrp
+<span class="hljs-comment">#</span></code></pre>
 
 </details>
 
@@ -1238,7 +1597,34 @@
   <summary>R2</summary>
 
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="built_in">enable</span></span><br><span class="line">configure terminal</span><br><span class="line">hostname R2</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface ethernet 0/0</span><br><span class="line">no shutdown</span><br><span class="line">ip address 12.1.1.2 255.255.255.0</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line">interface loopback 0</span><br><span class="line">ip address 2.2.2.2 255.255.255.255</span><br><span class="line">end</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">show ip interface brief</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">configure terminal</span><br><span class="line">router eigrp 90</span><br><span class="line">no auto-summary</span><br><span class="line">eigrp router-id 2.2.2.2</span><br><span class="line">network 2.2.2.2 0.0.0.0</span><br><span class="line">network 12.1.1.2 0.0.0.0</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">end</span><br><span class="line">show ip eigrp interfaces</span><br><span class="line">show ip eigrp neighbors</span><br><span class="line">show ip route eigrp</span><br><span class="line"><span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment">#</span>
+<span class="hljs-built_in">enable</span>
+configure terminal
+hostname R2
+<span class="hljs-comment">#</span>
+interface ethernet 0/0
+no shutdown
+ip address 12.1.1.2 255.255.255.0
+<span class="hljs-built_in">exit</span>
+interface loopback 0
+ip address 2.2.2.2 255.255.255.255
+end
+<span class="hljs-comment">#</span>
+show ip interface brief
+<span class="hljs-comment">#</span>
+configure terminal
+router eigrp 90
+no auto-summary
+eigrp router-id 2.2.2.2
+network 2.2.2.2 0.0.0.0
+network 12.1.1.2 0.0.0.0
+<span class="hljs-built_in">exit</span>
+<span class="hljs-comment">#</span>
+end
+show ip eigrp interfaces
+show ip eigrp neighbors
+show ip route eigrp
+<span class="hljs-comment">#</span></code></pre>
 
 </details>
 
@@ -1246,7 +1632,34 @@
   <summary>R3</summary>
 
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="built_in">enable</span></span><br><span class="line">configure terminal</span><br><span class="line">hostname R3</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface ethernet 0/0</span><br><span class="line">no shutdown</span><br><span class="line">ip address 13.1.1.3 255.255.255.0</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line">interface loopback 0</span><br><span class="line">ip address 3.3.3.3 255.255.255.255</span><br><span class="line">end</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">show ip interface brief</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">configure terminal</span><br><span class="line">router eigrp 90</span><br><span class="line">no auto-summary</span><br><span class="line">eigrp router-id 3.3.3.3</span><br><span class="line">network 3.3.3.3 0.0.0.0</span><br><span class="line">network 13.1.1.3 0.0.0.0</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">end</span><br><span class="line">show ip eigrp interfaces</span><br><span class="line">show ip eigrp neighbors</span><br><span class="line">show ip route eigrp</span><br><span class="line"><span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment">#</span>
+<span class="hljs-built_in">enable</span>
+configure terminal
+hostname R3
+<span class="hljs-comment">#</span>
+interface ethernet 0/0
+no shutdown
+ip address 13.1.1.3 255.255.255.0
+<span class="hljs-built_in">exit</span>
+interface loopback 0
+ip address 3.3.3.3 255.255.255.255
+end
+<span class="hljs-comment">#</span>
+show ip interface brief
+<span class="hljs-comment">#</span>
+configure terminal
+router eigrp 90
+no auto-summary
+eigrp router-id 3.3.3.3
+network 3.3.3.3 0.0.0.0
+network 13.1.1.3 0.0.0.0
+<span class="hljs-built_in">exit</span>
+<span class="hljs-comment">#</span>
+end
+show ip eigrp interfaces
+show ip eigrp neighbors
+show ip route eigrp
+<span class="hljs-comment">#</span></code></pre>
 
 </details>
 
@@ -1264,7 +1677,7 @@
   <summary>配置概述</summary>
 
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1.</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">1.</code></pre>
 
 </details>
 
@@ -1272,7 +1685,10 @@
   <summary>R1</summary>
 
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="built_in">enable</span></span><br><span class="line">configure terminal</span><br><span class="line">hostname R1</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment">#</span>
+<span class="hljs-built_in">enable</span>
+configure terminal
+hostname R1</code></pre>
 
 </details>
 

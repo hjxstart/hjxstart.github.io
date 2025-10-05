@@ -122,10 +122,52 @@
         
             
                 <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
                     <div data-rel="读书">
                         
                         读书
                         <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -154,48 +196,6 @@
                         
                         数据库
                         <small>(5)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="运维">
-                        
-                        运维
-                        <small>(25)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="安全">
-                        
-                        安全
-                        <small>(3)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="开发">
-                        
-                        开发
-                        <small>(14)</small>
                         
                     </div>
                     
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<input type="hidden" id="yelog_site_word_count" value="243.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1018,7 +1018,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="JAVA-HOME"><a href="#JAVA-HOME" class="headerlink" title="JAVA_HOME"></a>JAVA_HOME</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">JAVA_HOME=C:\Program Files\Java\jdk1<span class="number">.8</span><span class="number">.0_131</span></span><br><span class="line">Path=%JAVA_HOME%\bin</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+        <h3 id="JAVA-HOME"><a href="#JAVA-HOME" class="headerlink" title="JAVA_HOME"></a>JAVA_HOME</h3><pre><code class="hljs java">JAVA_HOME=C:\Program Files\Java\jdk1<span class="hljs-number">.8</span><span class="hljs-number">.0_131</span>
+Path=%JAVA_HOME%\bin
+language-java复制代码</code></pre>
 
 <h1 id="第一章-线程简介"><a href="#第一章-线程简介" class="headerlink" title="第一章 线程简介"></a>第一章 线程简介</h1><h2 id="1-1-进程-Process"><a href="#1-1-进程-Process" class="headerlink" title="1.1 进程 Process"></a>1.1 进程 Process</h2><p>进程是执行程序的一次执行过程，它是一个动态的概念。是系统资源分配的单位。</p>
 <h2 id="1-2-线程-Thread"><a href="#1-2-线程-Thread" class="headerlink" title="1.2 线程 Thread"></a>1.2 线程 Thread</h2><p>通过在一个进程中可以包含若干个线程，当然一个进程中至少有一个线程，不然没有存在的意义。线程是CPU调度和执行的单位。</p>
@@ -1155,7 +1157,20 @@
 <hr>
 <h1 id="第五章-线程通信问题"><a href="#第五章-线程通信问题" class="headerlink" title="第五章 线程通信问题"></a>第五章 线程通信问题</h1><hr>
 <h1 id="第六章-高级主题"><a href="#第六章-高级主题" class="headerlink" title="第六章 高级主题"></a>第六章 高级主题</h1><hr>
-<h1 id="Java-Util"><a href="#Java-Util" class="headerlink" title="Java Util"></a>Java Util</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">本周周一</span><br><span class="line"><span class="type">LocalDateTime</span> <span class="variable">nowMonday</span> <span class="operator">=</span> LocalDateTime.of(LocalDate.now(), LocalTime.MIN).with(DayOfWeek.MONDAY);</span><br><span class="line">上周周一</span><br><span class="line"><span class="type">LocalDateTime</span> <span class="variable">lastMonday</span> <span class="operator">=</span> LocalDateTime.of(LocalDate.now(),LocalTime.MIN).minusWeeks(<span class="number">1</span>).with(DayOfWeek.MONDAY);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">计算时间差</span><br><span class="line"> <span class="type">LocalDateTime</span> <span class="variable">startTime</span> <span class="operator">=</span> LocalDateTime.now().plusDays(-<span class="number">7</span>);</span><br><span class="line"> <span class="type">LocalDateTime</span> <span class="variable">endTime</span> <span class="operator">=</span> LocalDateTime.now();</span><br><span class="line"></span><br><span class="line"> <span class="type">Duration</span> <span class="variable">duration</span> <span class="operator">=</span> Duration.between(startTime, endTime);</span><br><span class="line"> duration.toDays();  <span class="comment">// 获取相差天数</span></span><br><span class="line"> duration.toMillis();</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+<h1 id="Java-Util"><a href="#Java-Util" class="headerlink" title="Java Util"></a>Java Util</h1><pre><code class="hljs java">本周周一
+<span class="hljs-type">LocalDateTime</span> <span class="hljs-variable">nowMonday</span> <span class="hljs-operator">=</span> LocalDateTime.of(LocalDate.now(), LocalTime.MIN).with(DayOfWeek.MONDAY);
+上周周一
+<span class="hljs-type">LocalDateTime</span> <span class="hljs-variable">lastMonday</span> <span class="hljs-operator">=</span> LocalDateTime.of(LocalDate.now(),LocalTime.MIN).minusWeeks(<span class="hljs-number">1</span>).with(DayOfWeek.MONDAY);
+
+
+计算时间差
+ <span class="hljs-type">LocalDateTime</span> <span class="hljs-variable">startTime</span> <span class="hljs-operator">=</span> LocalDateTime.now().plusDays(-<span class="hljs-number">7</span>);
+ <span class="hljs-type">LocalDateTime</span> <span class="hljs-variable">endTime</span> <span class="hljs-operator">=</span> LocalDateTime.now();
+
+ <span class="hljs-type">Duration</span> <span class="hljs-variable">duration</span> <span class="hljs-operator">=</span> Duration.between(startTime, endTime);
+ duration.toDays();  <span class="hljs-comment">// 获取相差天数</span>
+ duration.toMillis();
+language-java复制代码</code></pre>
 
 <h1 id="第一章-对象导论"><a href="#第一章-对象导论" class="headerlink" title="第一章 对象导论"></a>第一章 对象导论</h1><h2 id="1-1-抽象过程"><a href="#1-1-抽象过程" class="headerlink" title="1.1 抽象过程"></a>1.1 抽象过程</h2><p><strong>我们将问题空间中的元素及其在解空间中的表示称为“对象“。（你还需要一些无法类比为问题空间元素的对象。）这种思想的实质是：程序可以通过添加新类型的对象使自身适用于某个特定问题。</strong></p>
 <ol>

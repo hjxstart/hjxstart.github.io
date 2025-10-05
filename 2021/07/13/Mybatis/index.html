@@ -122,10 +122,52 @@
         
             
                 <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
                     <div data-rel="读书">
                         
                         读书
                         <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -154,48 +196,6 @@
                         
                         数据库
                         <small>(5)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="运维">
-                        
-                        运维
-                        <small>(25)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="安全">
-                        
-                        安全
-                        <small>(3)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="开发">
-                        
-                        开发
-                        <small>(14)</small>
                         
                     </div>
                     
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<input type="hidden" id="yelog_site_word_count" value="243.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -983,7 +983,7 @@
     </div>
     <div class="article-meta">
         
-        <span>字数:1.5k</span>
+        <span>字数:1.6k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1018,74 +1018,292 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Mybatis配置代码"><a href="#Mybatis配置代码" class="headerlink" title="Mybatis配置代码"></a>Mybatis配置代码</h1><h2 id="1-Log4j的配置"><a href="#1-Log4j的配置" class="headerlink" title="1. Log4j的配置"></a>1. Log4j的配置</h2><h3 id="步骤1-导入包"><a href="#步骤1-导入包" class="headerlink" title="步骤1 导入包"></a>步骤1 导入包</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- https://mvnrepository.com/artifact/log4j/log4j --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;log4j&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;log4j&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.2.17&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">language-pom复制代码</span><br></pre></td></tr></table></figure>
+        <h1 id="Mybatis配置代码"><a href="#Mybatis配置代码" class="headerlink" title="Mybatis配置代码"></a>Mybatis配置代码</h1><h2 id="1-Log4j的配置"><a href="#1-Log4j的配置" class="headerlink" title="1. Log4j的配置"></a>1. Log4j的配置</h2><h3 id="步骤1-导入包"><a href="#步骤1-导入包" class="headerlink" title="步骤1 导入包"></a>步骤1 导入包</h3><pre><code class="hljs pom">&lt;!-- https://mvnrepository.com/artifact/log4j/log4j --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;log4j&lt;/groupId&gt;
+    &lt;artifactId&gt;log4j&lt;/artifactId&gt;
+    &lt;version&gt;1.2.17&lt;/version&gt;
+&lt;/dependency&gt;
+language-pom复制代码</code></pre>
 
 <hr>
-<h3 id="步骤2-log4j-properties"><a href="#步骤2-log4j-properties" class="headerlink" title="步骤2 log4j.properties"></a>步骤2 log4j.properties</h3><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#将等级为DEBUG的日志信息输出到console和file两个目的地</span></span><br><span class="line"><span class="attr">log4j.rootLogger</span>=<span class="string">DEBUG,console,file</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">#控制台输出的相关设置</span></span><br><span class="line"><span class="attr">log4j.appender.console</span>=<span class="string">org.apache.log4j.ConsoleAppender</span></span><br><span class="line"><span class="attr">log4j.appender.console.Target</span>=<span class="string">System.out</span></span><br><span class="line"><span class="attr">log4j.appender.console.Threshold</span>=<span class="string">DEBUG</span></span><br><span class="line"><span class="attr">log4j.appender.console.layout</span>=<span class="string">org.apache.log4j.PatternLayout</span></span><br><span class="line"><span class="attr">log4j.appender.console.layout.ConversionPattern</span>=<span class="string">【%c】-%m%n</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">#文件输出的相关配置</span></span><br><span class="line"><span class="attr">log4j.appender.file</span>=<span class="string">org.apache.log4j.RollingFileAppender</span></span><br><span class="line"><span class="attr">log4j.appender.file.File</span>=<span class="string">./log/kuang.log</span></span><br><span class="line"><span class="attr">log4j.appender.file.MaxFileSize</span>=<span class="string">10mb</span></span><br><span class="line"><span class="attr">log4j.appender.file.Threshold</span>=<span class="string">DEBUG</span></span><br><span class="line"><span class="attr">log4j.appender.file.layout</span>=<span class="string">org.apache.log4j.PatternLayout</span></span><br><span class="line"><span class="attr">log4j.appender.file.layout.ConversionPattern</span>=<span class="string">【%p】[%d&#123;yy-MM-dd&#125;【%c】%m%n</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">#日志输出级别</span></span><br><span class="line"><span class="attr">log4j.logger.org.mybatis</span>=<span class="string">DEBUG</span></span><br><span class="line"><span class="attr">log4j.logger.java.sql</span>=<span class="string">DEBUG</span></span><br><span class="line"><span class="attr">log4j.logger.java.sql.Statement</span>=<span class="string">DEBUG</span></span><br><span class="line"><span class="attr">log4j.logger.java.sql.ResultSet</span>=<span class="string">DEBUG</span></span><br><span class="line"><span class="attr">log4j.logger.java.sql.PreparedStatement</span>=<span class="string">DEBUG</span></span><br><span class="line"><span class="attr">language-properties复制代码</span></span><br></pre></td></tr></table></figure>
+<h3 id="步骤2-log4j-properties"><a href="#步骤2-log4j-properties" class="headerlink" title="步骤2 log4j.properties"></a>步骤2 log4j.properties</h3><pre><code class="hljs properties"><span class="hljs-comment">#将等级为DEBUG的日志信息输出到console和file两个目的地</span>
+<span class="hljs-attr">log4j.rootLogger</span>=<span class="hljs-string">DEBUG,console,file</span>
+<span class="hljs-comment"></span>
+<span class="hljs-comment">#控制台输出的相关设置</span>
+<span class="hljs-attr">log4j.appender.console</span>=<span class="hljs-string">org.apache.log4j.ConsoleAppender</span>
+<span class="hljs-attr">log4j.appender.console.Target</span>=<span class="hljs-string">System.out</span>
+<span class="hljs-attr">log4j.appender.console.Threshold</span>=<span class="hljs-string">DEBUG</span>
+<span class="hljs-attr">log4j.appender.console.layout</span>=<span class="hljs-string">org.apache.log4j.PatternLayout</span>
+<span class="hljs-attr">log4j.appender.console.layout.ConversionPattern</span>=<span class="hljs-string">【%c】-%m%n</span>
+<span class="hljs-comment"></span>
+<span class="hljs-comment">#文件输出的相关配置</span>
+<span class="hljs-attr">log4j.appender.file</span>=<span class="hljs-string">org.apache.log4j.RollingFileAppender</span>
+<span class="hljs-attr">log4j.appender.file.File</span>=<span class="hljs-string">./log/kuang.log</span>
+<span class="hljs-attr">log4j.appender.file.MaxFileSize</span>=<span class="hljs-string">10mb</span>
+<span class="hljs-attr">log4j.appender.file.Threshold</span>=<span class="hljs-string">DEBUG</span>
+<span class="hljs-attr">log4j.appender.file.layout</span>=<span class="hljs-string">org.apache.log4j.PatternLayout</span>
+<span class="hljs-attr">log4j.appender.file.layout.ConversionPattern</span>=<span class="hljs-string">【%p】[%d&#123;yy-MM-dd&#125;【%c】%m%n</span>
+<span class="hljs-comment"></span>
+<span class="hljs-comment">#日志输出级别</span>
+<span class="hljs-attr">log4j.logger.org.mybatis</span>=<span class="hljs-string">DEBUG</span>
+<span class="hljs-attr">log4j.logger.java.sql</span>=<span class="hljs-string">DEBUG</span>
+<span class="hljs-attr">log4j.logger.java.sql.Statement</span>=<span class="hljs-string">DEBUG</span>
+<span class="hljs-attr">log4j.logger.java.sql.ResultSet</span>=<span class="hljs-string">DEBUG</span>
+<span class="hljs-attr">log4j.logger.java.sql.PreparedStatement</span>=<span class="hljs-string">DEBUG</span>
+<span class="hljs-attr">language-properties复制代码</span></code></pre>
 
 <hr>
-<h3 id="步骤3-设置使用log4j"><a href="#步骤3-设置使用log4j" class="headerlink" title="步骤3 设置使用log4j"></a>步骤3 设置使用log4j</h3><h3 id="4-使用log4j"><a href="#4-使用log4j" class="headerlink" title="4 使用log4j"></a>4 使用log4j</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="type">Logger</span> <span class="variable">logger</span> <span class="operator">=</span> Logger.getLogger(xx.class)</span><br><span class="line">logger.info(<span class="string">&quot;进入到了log4j&quot;</span>);</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="步骤3-设置使用log4j"><a href="#步骤3-设置使用log4j" class="headerlink" title="步骤3 设置使用log4j"></a>步骤3 设置使用log4j</h3><h3 id="4-使用log4j"><a href="#4-使用log4j" class="headerlink" title="4 使用log4j"></a>4 使用log4j</h3><pre><code class="hljs java"><span class="hljs-keyword">static</span> <span class="hljs-type">Logger</span> <span class="hljs-variable">logger</span> <span class="hljs-operator">=</span> Logger.getLogger(xx.class)
+logger.info(<span class="hljs-string">&quot;进入到了log4j&quot;</span>);
+language-java复制代码</code></pre>
 
-<h2 id="1-Log4j的配置-1"><a href="#1-Log4j的配置-1" class="headerlink" title="1. Log4j的配置"></a>1. Log4j的配置</h2><h3 id="步骤1-导入包-1"><a href="#步骤1-导入包-1" class="headerlink" title="步骤1 导入包"></a>步骤1 导入包</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- https://mvnrepository.com/artifact/log4j/log4j --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;log4j&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;log4j&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.2.17&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">language-pom复制代码</span><br></pre></td></tr></table></figure>
+<h2 id="1-Log4j的配置-1"><a href="#1-Log4j的配置-1" class="headerlink" title="1. Log4j的配置"></a>1. Log4j的配置</h2><h3 id="步骤1-导入包-1"><a href="#步骤1-导入包-1" class="headerlink" title="步骤1 导入包"></a>步骤1 导入包</h3><pre><code class="hljs pom">&lt;!-- https://mvnrepository.com/artifact/log4j/log4j --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;log4j&lt;/groupId&gt;
+    &lt;artifactId&gt;log4j&lt;/artifactId&gt;
+    &lt;version&gt;1.2.17&lt;/version&gt;
+&lt;/dependency&gt;
+language-pom复制代码</code></pre>
 
 <hr>
-<h3 id="步骤2-log4j-properties-1"><a href="#步骤2-log4j-properties-1" class="headerlink" title="步骤2 log4j.properties"></a>步骤2 log4j.properties</h3><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#将等级为DEBUG的日志信息输出到console和file两个目的地</span></span><br><span class="line"><span class="attr">log4j.rootLogger</span>=<span class="string">DEBUG,console,file</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">#控制台输出的相关设置</span></span><br><span class="line"><span class="attr">log4j.appender.console</span>=<span class="string">org.apache.log4j.ConsoleAppender</span></span><br><span class="line"><span class="attr">log4j.appender.console.Target</span>=<span class="string">System.out</span></span><br><span class="line"><span class="attr">log4j.appender.console.Threshold</span>=<span class="string">DEBUG</span></span><br><span class="line"><span class="attr">log4j.appender.console.layout</span>=<span class="string">org.apache.log4j.PatternLayout</span></span><br><span class="line"><span class="attr">log4j.appender.console.layout.ConversionPattern</span>=<span class="string">【%c】-%m%n</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">#文件输出的相关配置</span></span><br><span class="line"><span class="attr">log4j.appender.file</span>=<span class="string">org.apache.log4j.RollingFileAppender</span></span><br><span class="line"><span class="attr">log4j.appender.file.File</span>=<span class="string">./log/kuang.log</span></span><br><span class="line"><span class="attr">log4j.appender.file.MaxFileSize</span>=<span class="string">10mb</span></span><br><span class="line"><span class="attr">log4j.appender.file.Threshold</span>=<span class="string">DEBUG</span></span><br><span class="line"><span class="attr">log4j.appender.file.layout</span>=<span class="string">org.apache.log4j.PatternLayout</span></span><br><span class="line"><span class="attr">log4j.appender.file.layout.ConversionPattern</span>=<span class="string">【%p】[%d&#123;yy-MM-dd&#125;【%c】%m%n</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">#日志输出级别</span></span><br><span class="line"><span class="attr">log4j.logger.org.mybatis</span>=<span class="string">DEBUG</span></span><br><span class="line"><span class="attr">log4j.logger.java.sql</span>=<span class="string">DEBUG</span></span><br><span class="line"><span class="attr">log4j.logger.java.sql.Statement</span>=<span class="string">DEBUG</span></span><br><span class="line"><span class="attr">log4j.logger.java.sql.ResultSet</span>=<span class="string">DEBUG</span></span><br><span class="line"><span class="attr">log4j.logger.java.sql.PreparedStatement</span>=<span class="string">DEBUG</span></span><br><span class="line"><span class="attr">language-properties复制代码</span></span><br></pre></td></tr></table></figure>
+<h3 id="步骤2-log4j-properties-1"><a href="#步骤2-log4j-properties-1" class="headerlink" title="步骤2 log4j.properties"></a>步骤2 log4j.properties</h3><pre><code class="hljs properties"><span class="hljs-comment">#将等级为DEBUG的日志信息输出到console和file两个目的地</span>
+<span class="hljs-attr">log4j.rootLogger</span>=<span class="hljs-string">DEBUG,console,file</span>
+<span class="hljs-comment"></span>
+<span class="hljs-comment">#控制台输出的相关设置</span>
+<span class="hljs-attr">log4j.appender.console</span>=<span class="hljs-string">org.apache.log4j.ConsoleAppender</span>
+<span class="hljs-attr">log4j.appender.console.Target</span>=<span class="hljs-string">System.out</span>
+<span class="hljs-attr">log4j.appender.console.Threshold</span>=<span class="hljs-string">DEBUG</span>
+<span class="hljs-attr">log4j.appender.console.layout</span>=<span class="hljs-string">org.apache.log4j.PatternLayout</span>
+<span class="hljs-attr">log4j.appender.console.layout.ConversionPattern</span>=<span class="hljs-string">【%c】-%m%n</span>
+<span class="hljs-comment"></span>
+<span class="hljs-comment">#文件输出的相关配置</span>
+<span class="hljs-attr">log4j.appender.file</span>=<span class="hljs-string">org.apache.log4j.RollingFileAppender</span>
+<span class="hljs-attr">log4j.appender.file.File</span>=<span class="hljs-string">./log/kuang.log</span>
+<span class="hljs-attr">log4j.appender.file.MaxFileSize</span>=<span class="hljs-string">10mb</span>
+<span class="hljs-attr">log4j.appender.file.Threshold</span>=<span class="hljs-string">DEBUG</span>
+<span class="hljs-attr">log4j.appender.file.layout</span>=<span class="hljs-string">org.apache.log4j.PatternLayout</span>
+<span class="hljs-attr">log4j.appender.file.layout.ConversionPattern</span>=<span class="hljs-string">【%p】[%d&#123;yy-MM-dd&#125;【%c】%m%n</span>
+<span class="hljs-comment"></span>
+<span class="hljs-comment">#日志输出级别</span>
+<span class="hljs-attr">log4j.logger.org.mybatis</span>=<span class="hljs-string">DEBUG</span>
+<span class="hljs-attr">log4j.logger.java.sql</span>=<span class="hljs-string">DEBUG</span>
+<span class="hljs-attr">log4j.logger.java.sql.Statement</span>=<span class="hljs-string">DEBUG</span>
+<span class="hljs-attr">log4j.logger.java.sql.ResultSet</span>=<span class="hljs-string">DEBUG</span>
+<span class="hljs-attr">log4j.logger.java.sql.PreparedStatement</span>=<span class="hljs-string">DEBUG</span>
+<span class="hljs-attr">language-properties复制代码</span></code></pre>
 
 <hr>
-<h3 id="步骤3-设置使用log4j-1"><a href="#步骤3-设置使用log4j-1" class="headerlink" title="步骤3 设置使用log4j"></a>步骤3 设置使用log4j</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">language-xml复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="步骤3-设置使用log4j-1"><a href="#步骤3-设置使用log4j-1" class="headerlink" title="步骤3 设置使用log4j"></a>步骤3 设置使用log4j</h3><pre><code class="hljs xml">language-xml复制代码</code></pre>
 
 <p>— ###4 使用log4j</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="type">Logger</span> <span class="variable">logger</span> <span class="operator">=</span> Logger.getLogger(xx.class)</span><br><span class="line">logger.info(<span class="string">&quot;进入到了log4j&quot;</span>);</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs java"><span class="hljs-keyword">static</span> <span class="hljs-type">Logger</span> <span class="hljs-variable">logger</span> <span class="hljs-operator">=</span> Logger.getLogger(xx.class)
+logger.info(<span class="hljs-string">&quot;进入到了log4j&quot;</span>);
+language-java复制代码</code></pre>
 
 <h2 id="第二章-配置模式"><a href="#第二章-配置模式" class="headerlink" title="第二章 配置模式"></a>第二章 配置模式</h2><h3 id="1-1-配置"><a href="#1-1-配置" class="headerlink" title="1.1 配置"></a>1.1 配置</h3><ol>
 <li>application.yaml</li>
 <li>全局配置文件</li>
 </ol>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span> ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">configuration</span></span></span><br><span class="line"><span class="meta">        <span class="keyword">PUBLIC</span> <span class="string">&quot;-//mybatis.org//DTD Config 3.0//EN&quot;</span></span></span><br><span class="line"><span class="meta">        <span class="string">&quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">language-xml复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span> ?&gt;</span>
+<span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">configuration</span></span>
+<span class="hljs-meta">        <span class="hljs-keyword">PUBLIC</span> <span class="hljs-string">&quot;-//mybatis.org//DTD Config 3.0//EN&quot;</span></span>
+<span class="hljs-meta">        <span class="hljs-string">&quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span>
+language-xml复制代码</code></pre>
 
 <ol>
 <li>mapper 映射文件</li>
 </ol>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">language-xml复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs xml">language-xml复制代码</code></pre>
 
 <h3 id="1-2-使用"><a href="#1-2-使用" class="headerlink" title="1.2 使用"></a>1.2 使用</h3><ol>
 <li>定义实体类</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.fh.oa.entity;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lombok.Data;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Account</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line">    <span class="keyword">private</span> String userId;</span><br><span class="line">    <span class="keyword">private</span> Integer money;</span><br><span class="line">&#125;</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs java"><span class="hljs-keyword">package</span> com.fh.oa.entity;
+
+<span class="hljs-keyword">import</span> lombok.Data;
+
+<span class="hljs-meta">@Data</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Account</span> &#123;
+    <span class="hljs-keyword">private</span> Long id;
+    <span class="hljs-keyword">private</span> String userId;
+    <span class="hljs-keyword">private</span> Integer money;
+&#125;
+language-java复制代码</code></pre>
 
 <ol>
 <li>定义接口</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.fh.oa.dao;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.fh.oa.entity.Account;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">AccountDao</span> &#123;</span><br><span class="line">    <span class="comment">// 根据 id 获取用户</span></span><br><span class="line">    <span class="keyword">public</span> Account <span class="title function_">getAcct</span><span class="params">(Long id)</span>;</span><br><span class="line">&#125;</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs java"><span class="hljs-keyword">package</span> com.fh.oa.dao;
+
+<span class="hljs-keyword">import</span> com.fh.oa.entity.Account;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">AccountDao</span> &#123;
+    <span class="hljs-comment">// 根据 id 获取用户</span>
+    <span class="hljs-keyword">public</span> Account <span class="hljs-title function_">getAcct</span><span class="hljs-params">(Long id)</span>;
+&#125;
+language-java复制代码</code></pre>
 
 <ol>
 <li>mapper</li>
 </ol>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span> ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">mapper</span></span></span><br><span class="line"><span class="meta">        <span class="keyword">PUBLIC</span> <span class="string">&quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</span></span></span><br><span class="line"><span class="meta">        <span class="string">&quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">&quot;com/fh/oa/dao/AccountDao&quot;</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--  查询账号，根据ID  --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;getAcct&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;com/fh/oa/entity/Account&quot;</span>&gt;</span></span><br><span class="line">        select * from account_tab where id=#&#123;id&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br><span class="line">language-xml复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span> ?&gt;</span>
+<span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">mapper</span></span>
+<span class="hljs-meta">        <span class="hljs-keyword">PUBLIC</span> <span class="hljs-string">&quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</span></span>
+<span class="hljs-meta">        <span class="hljs-string">&quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">mapper</span> <span class="hljs-attr">namespace</span>=<span class="hljs-string">&quot;com/fh/oa/dao/AccountDao&quot;</span>&gt;</span>
+<span class="hljs-comment">&lt;!--  查询账号，根据ID  --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;getAcct&quot;</span> <span class="hljs-attr">resultType</span>=<span class="hljs-string">&quot;com/fh/oa/entity/Account&quot;</span>&gt;</span>
+        select * from account_tab where id=#&#123;id&#125;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">mapper</span>&gt;</span>
+language-xml复制代码</code></pre>
 
 <hr>
-<h2 id="第三章-MyBatis-Plus简单使用"><a href="#第三章-MyBatis-Plus简单使用" class="headerlink" title="第三章 MyBatis-Plus简单使用"></a>第三章 MyBatis-Plus简单使用</h2><h3 id="1-pom-xml"><a href="#1-pom-xml" class="headerlink" title="1. pom.xml"></a>1. pom.xml</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">	<span class="comment">&lt;!--MyBatis Plus--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.baomidou<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-plus-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.4.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--代码生成器依赖--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.baomidou<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-plus-generator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.4.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--模版引擎--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.velocity<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>velocity-engine-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--MySql--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>8.0.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">scope</span>&gt;</span>runtime<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">language-xml复制代码</span><br></pre></td></tr></table></figure>
+<h2 id="第三章-MyBatis-Plus简单使用"><a href="#第三章-MyBatis-Plus简单使用" class="headerlink" title="第三章 MyBatis-Plus简单使用"></a>第三章 MyBatis-Plus简单使用</h2><h3 id="1-pom-xml"><a href="#1-pom-xml" class="headerlink" title="1. pom.xml"></a>1. pom.xml</h3><pre><code class="hljs xml">	<span class="hljs-comment">&lt;!--MyBatis Plus--&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.baomidou<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>mybatis-plus-boot-starter<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.4.1<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+        <span class="hljs-comment">&lt;!--代码生成器依赖--&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.baomidou<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>mybatis-plus-generator<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.4.1<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+        <span class="hljs-comment">&lt;!--模版引擎--&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.apache.velocity<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>velocity-engine-core<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>2.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+        <span class="hljs-comment">&lt;!--MySql--&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>mysql<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>mysql-connector-java<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>8.0.12<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>runtime<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+language-xml复制代码</code></pre>
 
 <hr>
-<h3 id="2-自动代码生成类"><a href="#2-自动代码生成类" class="headerlink" title="2. 自动代码生成类"></a>2. 自动代码生成类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.fh.oateat;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.annotation.IdType;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.AutoGenerator;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.config.DataSourceConfig;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.config.GlobalConfig;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.config.PackageConfig;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.config.StrategyConfig;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AutoMapper</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// 创建 AutoGenerator, MP中对象</span></span><br><span class="line">        <span class="type">AutoGenerator</span> <span class="variable">ag</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AutoGenerator</span>();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 设置全局配置</span></span><br><span class="line">        <span class="type">GlobalConfig</span> <span class="variable">gc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">GlobalConfig</span>();</span><br><span class="line">        <span class="comment">// 设置代码的生成位置，磁盘的目录</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">path</span> <span class="operator">=</span> System.getProperty(<span class="string">&quot;user.dir&quot;</span>);</span><br><span class="line">        gc.setOutputDir(path + <span class="string">&quot;/src/main/java&quot;</span>);</span><br><span class="line">        <span class="comment">// 设置生成的类的名称 （命名规则）所有的Dao类都是Mapper结尾的，例如UserMapp;</span></span><br><span class="line">        gc.setMapperName(<span class="string">&quot;%sMapper&quot;</span>);</span><br><span class="line">        gc.setServiceName(<span class="string">&quot;%sService&quot;</span>);</span><br><span class="line">        gc.setServiceImplName(<span class="string">&quot;%sServiceImple&quot;</span>);</span><br><span class="line">        gc.setControllerName(<span class="string">&quot;%sController&quot;</span>);</span><br><span class="line">        <span class="comment">// 设置作者</span></span><br><span class="line">        gc.setAuthor(<span class="string">&quot;hjxstart&quot;</span>);</span><br><span class="line">        <span class="comment">// 设置主键id 的设置，可能需要安装数据情况进行更改</span></span><br><span class="line">        gc.setIdType(IdType.AUTO);</span><br><span class="line">        <span class="comment">// 把GlobalConfig 复制给 AutoGenerator</span></span><br><span class="line">        ag.setGlobalConfig(gc);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 设置数据源 DataSource</span></span><br><span class="line">        <span class="type">DataSourceConfig</span> <span class="variable">ds</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">DataSourceConfig</span>();</span><br><span class="line">        <span class="comment">// 设置驱动</span></span><br><span class="line">        ds.setDriverName(<span class="string">&quot;com.mysql.cj.jdbc.Driver&quot;</span>);</span><br><span class="line">        <span class="comment">// 设置url</span></span><br><span class="line">        ds.setUrl(<span class="string">&quot;jdbc:mysql://localhost:3306/oa?serverTimezone=UTC&amp;characterEncoding=utf8&amp;useUnicode=true&amp;useSSL=false&amp;allowPublicKeyRetrieval=true&quot;</span>);</span><br><span class="line">        <span class="comment">// 设置数据库的用户名</span></span><br><span class="line">        ds.setUsername(<span class="string">&quot;root&quot;</span>);</span><br><span class="line">        <span class="comment">// 设置密码</span></span><br><span class="line">        ds.setPassword(<span class="string">&quot;hadoop&quot;</span>);</span><br><span class="line">        <span class="comment">// 把 DataSourceConfig 赋值给 AutoGenerator</span></span><br><span class="line">        ag.setDataSource(ds);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 设置Package信息</span></span><br><span class="line">        <span class="type">PackageConfig</span> <span class="variable">pc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">PackageConfig</span>();</span><br><span class="line">        <span class="comment">// 设置模块名称，相当于包名，在这个包的下面有 mapper, service, controller</span></span><br><span class="line">        pc.setModuleName(<span class="string">&quot;v1&quot;</span>);</span><br><span class="line">        <span class="comment">// 设置夫包名,order 就在父包的下面生成</span></span><br><span class="line">        pc.setParent(<span class="string">&quot;com.fh.oateat&quot;</span>);</span><br><span class="line">        ag.setPackageInfo(pc);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 设置策略</span></span><br><span class="line">        <span class="type">StrategyConfig</span> <span class="variable">sc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StrategyConfig</span>();</span><br><span class="line">        <span class="comment">// 设置支持驼峰的命名规则</span></span><br><span class="line">        sc.setNaming(NamingStrategy.underline_to_camel);</span><br><span class="line">        sc.setColumnNaming(NamingStrategy.underline_to_camel);</span><br><span class="line">        ag.setStrategy(sc);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 执行代码的生成</span></span><br><span class="line">        ag.execute();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="2-自动代码生成类"><a href="#2-自动代码生成类" class="headerlink" title="2. 自动代码生成类"></a>2. 自动代码生成类</h3><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.fh.oateat;
+
+
+<span class="hljs-keyword">import</span> com.baomidou.mybatisplus.annotation.IdType;
+<span class="hljs-keyword">import</span> com.baomidou.mybatisplus.generator.AutoGenerator;
+<span class="hljs-keyword">import</span> com.baomidou.mybatisplus.generator.config.DataSourceConfig;
+<span class="hljs-keyword">import</span> com.baomidou.mybatisplus.generator.config.GlobalConfig;
+<span class="hljs-keyword">import</span> com.baomidou.mybatisplus.generator.config.PackageConfig;
+<span class="hljs-keyword">import</span> com.baomidou.mybatisplus.generator.config.StrategyConfig;
+<span class="hljs-keyword">import</span> com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">AutoMapper</span> &#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;
+        <span class="hljs-comment">// 创建 AutoGenerator, MP中对象</span>
+        <span class="hljs-type">AutoGenerator</span> <span class="hljs-variable">ag</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">AutoGenerator</span>();
+
+        <span class="hljs-comment">// 设置全局配置</span>
+        <span class="hljs-type">GlobalConfig</span> <span class="hljs-variable">gc</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">GlobalConfig</span>();
+        <span class="hljs-comment">// 设置代码的生成位置，磁盘的目录</span>
+        <span class="hljs-type">String</span> <span class="hljs-variable">path</span> <span class="hljs-operator">=</span> System.getProperty(<span class="hljs-string">&quot;user.dir&quot;</span>);
+        gc.setOutputDir(path + <span class="hljs-string">&quot;/src/main/java&quot;</span>);
+        <span class="hljs-comment">// 设置生成的类的名称 （命名规则）所有的Dao类都是Mapper结尾的，例如UserMapp;</span>
+        gc.setMapperName(<span class="hljs-string">&quot;%sMapper&quot;</span>);
+        gc.setServiceName(<span class="hljs-string">&quot;%sService&quot;</span>);
+        gc.setServiceImplName(<span class="hljs-string">&quot;%sServiceImple&quot;</span>);
+        gc.setControllerName(<span class="hljs-string">&quot;%sController&quot;</span>);
+        <span class="hljs-comment">// 设置作者</span>
+        gc.setAuthor(<span class="hljs-string">&quot;hjxstart&quot;</span>);
+        <span class="hljs-comment">// 设置主键id 的设置，可能需要安装数据情况进行更改</span>
+        gc.setIdType(IdType.AUTO);
+        <span class="hljs-comment">// 把GlobalConfig 复制给 AutoGenerator</span>
+        ag.setGlobalConfig(gc);
+
+        <span class="hljs-comment">// 设置数据源 DataSource</span>
+        <span class="hljs-type">DataSourceConfig</span> <span class="hljs-variable">ds</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">DataSourceConfig</span>();
+        <span class="hljs-comment">// 设置驱动</span>
+        ds.setDriverName(<span class="hljs-string">&quot;com.mysql.cj.jdbc.Driver&quot;</span>);
+        <span class="hljs-comment">// 设置url</span>
+        ds.setUrl(<span class="hljs-string">&quot;jdbc:mysql://localhost:3306/oa?serverTimezone=UTC&amp;characterEncoding=utf8&amp;useUnicode=true&amp;useSSL=false&amp;allowPublicKeyRetrieval=true&quot;</span>);
+        <span class="hljs-comment">// 设置数据库的用户名</span>
+        ds.setUsername(<span class="hljs-string">&quot;root&quot;</span>);
+        <span class="hljs-comment">// 设置密码</span>
+        ds.setPassword(<span class="hljs-string">&quot;hadoop&quot;</span>);
+        <span class="hljs-comment">// 把 DataSourceConfig 赋值给 AutoGenerator</span>
+        ag.setDataSource(ds);
+
+        <span class="hljs-comment">// 设置Package信息</span>
+        <span class="hljs-type">PackageConfig</span> <span class="hljs-variable">pc</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">PackageConfig</span>();
+        <span class="hljs-comment">// 设置模块名称，相当于包名，在这个包的下面有 mapper, service, controller</span>
+        pc.setModuleName(<span class="hljs-string">&quot;v1&quot;</span>);
+        <span class="hljs-comment">// 设置夫包名,order 就在父包的下面生成</span>
+        pc.setParent(<span class="hljs-string">&quot;com.fh.oateat&quot;</span>);
+        ag.setPackageInfo(pc);
+
+        <span class="hljs-comment">// 设置策略</span>
+        <span class="hljs-type">StrategyConfig</span> <span class="hljs-variable">sc</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StrategyConfig</span>();
+        <span class="hljs-comment">// 设置支持驼峰的命名规则</span>
+        sc.setNaming(NamingStrategy.underline_to_camel);
+        sc.setColumnNaming(NamingStrategy.underline_to_camel);
+        ag.setStrategy(sc);
+
+        <span class="hljs-comment">// 执行代码的生成</span>
+        ag.execute();
+    &#125;
+&#125;
+language-java复制代码</code></pre>
 
 <hr>
-<h3 id="3-Application"><a href="#3-Application" class="headerlink" title="3. Application"></a>3. Application</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@MapperScan(&quot;com.fh.oateat.v1.mapper&quot;)</span> <span class="comment">// 该注解可以省略在每个mapper接口的注解</span></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="3-Application"><a href="#3-Application" class="headerlink" title="3. Application"></a>3. Application</h3><pre><code class="hljs java"><span class="hljs-meta">@MapperScan(&quot;com.fh.oateat.v1.mapper&quot;)</span> <span class="hljs-comment">// 该注解可以省略在每个mapper接口的注解</span>
+<span class="hljs-meta">@SpringBootApplication</span>
+language-java复制代码</code></pre>
 
 <hr>
-<h3 id="4-application-yaml"><a href="#4-application-yaml" class="headerlink" title="4. application.yaml"></a>4. application.yaml</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">datasource:</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">jdbc:mysql://localhost:3306/oa?serverTimezone=UTC&amp;characterEncoding=utf8&amp;useUnicode=true&amp;useSSL=false&amp;allowPublicKeyRetrieval=true</span></span><br><span class="line">    <span class="attr">username:</span> <span class="string">root</span></span><br><span class="line">    <span class="attr">password:</span> <span class="string">hadoop</span> <span class="comment"># hadoop service</span></span><br><span class="line">    <span class="attr">driver-class-name:</span> <span class="string">com.mysql.cj.jdbc.Driver</span></span><br><span class="line"></span><br><span class="line"><span class="attr">mybatis-plus:</span></span><br><span class="line">  <span class="attr">configuration:</span></span><br><span class="line">    <span class="string">//</span> <span class="string">控制台输出对数据库的操作</span></span><br><span class="line">    <span class="attr">log-impl:</span> <span class="string">org.apache.ibatis.logging.stdout.StdOutImpl</span></span><br><span class="line"><span class="string">language-yaml复制代码</span></span><br></pre></td></tr></table></figure>
+<h3 id="4-application-yaml"><a href="#4-application-yaml" class="headerlink" title="4. application.yaml"></a>4. application.yaml</h3><pre><code class="hljs yaml"><span class="hljs-attr">spring:</span>
+  <span class="hljs-attr">datasource:</span>
+    <span class="hljs-attr">url:</span> <span class="hljs-string">jdbc:mysql://localhost:3306/oa?serverTimezone=UTC&amp;characterEncoding=utf8&amp;useUnicode=true&amp;useSSL=false&amp;allowPublicKeyRetrieval=true</span>
+    <span class="hljs-attr">username:</span> <span class="hljs-string">root</span>
+    <span class="hljs-attr">password:</span> <span class="hljs-string">hadoop</span> <span class="hljs-comment"># hadoop service</span>
+    <span class="hljs-attr">driver-class-name:</span> <span class="hljs-string">com.mysql.cj.jdbc.Driver</span>
+
+<span class="hljs-attr">mybatis-plus:</span>
+  <span class="hljs-attr">configuration:</span>
+    <span class="hljs-string">//</span> <span class="hljs-string">控制台输出对数据库的操作</span>
+    <span class="hljs-attr">log-impl:</span> <span class="hljs-string">org.apache.ibatis.logging.stdout.StdOutImpl</span>
+<span class="hljs-string">language-yaml复制代码</span></code></pre>
 
 <hr>
-<h3 id="5-分页插件"><a href="#5-分页插件" class="headerlink" title="5. 分页插件"></a>5. 分页插件</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MybatisPlusConfig</span> &#123;</span><br><span class="line">    <span class="comment">//分页查询 mybatis-plus</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> MybatisPlusInterceptor <span class="title function_">mybatisPlusInterceptor</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">MybatisPlusInterceptor</span> <span class="variable">interceptor</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MybatisPlusInterceptor</span>();</span><br><span class="line">        <span class="type">PaginationInnerInterceptor</span> <span class="variable">paginationInnerInterceptor</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">PaginationInnerInterceptor</span>();</span><br><span class="line">        paginationInnerInterceptor.setDbType(DbType.MYSQL);</span><br><span class="line">        paginationInnerInterceptor.setOverflow(<span class="literal">true</span>);</span><br><span class="line">        interceptor.addInnerInterceptor(paginationInnerInterceptor);</span><br><span class="line">        <span class="keyword">return</span> interceptor;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="5-分页插件"><a href="#5-分页插件" class="headerlink" title="5. 分页插件"></a>5. 分页插件</h3><pre><code class="hljs java"><span class="hljs-meta">@Configuration</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MybatisPlusConfig</span> &#123;
+    <span class="hljs-comment">//分页查询 mybatis-plus</span>
+    <span class="hljs-meta">@Bean</span>
+    <span class="hljs-keyword">public</span> MybatisPlusInterceptor <span class="hljs-title function_">mybatisPlusInterceptor</span><span class="hljs-params">()</span> &#123;
+        <span class="hljs-type">MybatisPlusInterceptor</span> <span class="hljs-variable">interceptor</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">MybatisPlusInterceptor</span>();
+        <span class="hljs-type">PaginationInnerInterceptor</span> <span class="hljs-variable">paginationInnerInterceptor</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">PaginationInnerInterceptor</span>();
+        paginationInnerInterceptor.setDbType(DbType.MYSQL);
+        paginationInnerInterceptor.setOverflow(<span class="hljs-literal">true</span>);
+        interceptor.addInnerInterceptor(paginationInnerInterceptor);
+        <span class="hljs-keyword">return</span> interceptor;
+    &#125;
+&#125;
+language-java复制代码</code></pre>
 
 <hr>
 <h3 id="6-创建好数据库即可"><a href="#6-创建好数据库即可" class="headerlink" title="6. 创建好数据库即可"></a>6. 创建好数据库即可</h3><ol>
 <li>会根据数据库的表自动生成entity,mapper,service,controller</li>
 </ol>
 <hr>
-<h3 id="7-Controller测试"><a href="#7-Controller测试" class="headerlink" title="7. Controller测试"></a>7. Controller测试</h3><h2 id="第二章-逻辑删除"><a href="#第二章-逻辑删除" class="headerlink" title="第二章 逻辑删除"></a>第二章 逻辑删除</h2><h3 id="1-在实体类和数据库添加enable字段"><a href="#1-在实体类和数据库添加enable字段" class="headerlink" title="1. 在实体类和数据库添加enable字段"></a>1. 在实体类和数据库添加enable字段</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> Integer enabled;</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="7-Controller测试"><a href="#7-Controller测试" class="headerlink" title="7. Controller测试"></a>7. Controller测试</h3><h2 id="第二章-逻辑删除"><a href="#第二章-逻辑删除" class="headerlink" title="第二章 逻辑删除"></a>第二章 逻辑删除</h2><h3 id="1-在实体类和数据库添加enable字段"><a href="#1-在实体类和数据库添加enable字段" class="headerlink" title="1. 在实体类和数据库添加enable字段"></a>1. 在实体类和数据库添加enable字段</h3><pre><code class="hljs java"><span class="hljs-keyword">private</span> Integer enabled;
+language-java复制代码</code></pre>
 
-<h3 id="2-添加注解，实现局部逻辑删除"><a href="#2-添加注解，实现局部逻辑删除" class="headerlink" title="2. 添加注解，实现局部逻辑删除"></a>2. 添加注解，实现局部逻辑删除</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@TableLogic</span></span><br><span class="line">    <span class="keyword">private</span> Integer enabled;</span><br><span class="line">language-java复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="2-添加注解，实现局部逻辑删除"><a href="#2-添加注解，实现局部逻辑删除" class="headerlink" title="2. 添加注解，实现局部逻辑删除"></a>2. 添加注解，实现局部逻辑删除</h3><pre><code class="hljs java"><span class="hljs-meta">@TableLogic</span>
+    <span class="hljs-keyword">private</span> Integer enabled;
+language-java复制代码</code></pre>
 
 
       

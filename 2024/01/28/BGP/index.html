@@ -122,10 +122,52 @@
         
             
                 <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
                     <div data-rel="读书">
                         
                         读书
                         <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -154,48 +196,6 @@
                         
                         数据库
                         <small>(5)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="运维">
-                        
-                        运维
-                        <small>(25)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="安全">
-                        
-                        安全
-                        <small>(3)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="开发">
-                        
-                        开发
-                        <small>(14)</small>
                         
                     </div>
                     
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<input type="hidden" id="yelog_site_word_count" value="243.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -983,7 +983,7 @@
     </div>
     <div class="article-meta">
         
-        <span>字数:463</span>
+        <span>字数:485</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1018,11 +1018,84 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">BGP进程AS号</span></span><br><span class="line">bgp 4</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">路由器ID</span></span><br><span class="line">router-id 4.4.4.4</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">关闭自动汇总, 默认关闭</span></span><br><span class="line">undo summary automatic</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">关闭自动同步</span></span><br><span class="line">undo synchronization</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">关闭IPv4, BPGv4+, 支持地址簇</span></span><br><span class="line">undo default ipv4-unicast</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">建立邻居</span></span><br><span class="line">peer 24.1.1.2 as-number 10</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">使用ipv4 单波地址簇</span></span><br><span class="line">ipv4-family unicast</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">激活peer</span></span><br><span class="line">peer 24.1.1.2 enable</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># Group</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建命名internalGP的 IBGP Peer Group</span></span><br><span class="line">group internalGP internal</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">使用环回口0与IBGP建立邻居</span></span><br><span class="line">peer internalGP connect-interface LoopBack 0</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">将这个3.3.3.3 Peer添加到组中</span></span><br><span class="line">peer 3.3.3.3 group interna</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">进入ipv4-family</span></span><br><span class="line">ipv4-family unicast</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">激活这个IBGP Peer Group，不用每个Peer都激活</span></span><br><span class="line">peer internalGP enable</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">发送路由时，修改路由的下一跳, 由于bug原因，不生效，需要单独为peer指定next-hop-local</span></span><br><span class="line">peer internal next-hop-local</span><br><span class="line">peer 3.3.3.3 next-hop-local</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">bgp 10</span><br><span class="line"> router-id 3.3.3.3</span><br><span class="line"> undo default ipv4-unicast</span><br><span class="line"> peer 2.2.2.2 as-number 10</span><br><span class="line"> peer 2.2.2.2 connect-interface LoopBack0</span><br><span class="line"><span class="meta prompt_"> #</span><span class="language-bash"></span></span><br><span class="line"><span class="language-bash"> ipv4-family unicast</span></span><br><span class="line">  undo synchronization</span><br><span class="line">  peer 2.2.2.2 enable</span><br><span class="line">  peer 2.2.2.2 next-hop-local</span><br><span class="line"></span><br><span class="line">bgp 10</span><br><span class="line"> router-id 3.3.3.3</span><br><span class="line"> undo default ipv4-unicast</span><br><span class="line"> peer 2.2.2.2 as-number 10</span><br><span class="line"> peer 2.2.2.2 connect-interface LoopBack0</span><br><span class="line"><span class="meta prompt_"> #</span><span class="language-bash"></span></span><br><span class="line"><span class="language-bash"> ipv4-family unicast</span></span><br><span class="line">  undo synchronization</span><br><span class="line">  peer 2.2.2.2 enable</span><br><span class="line">  peer 2.2.2.2 next-hop-local</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+        <pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">BGP进程AS号</span>
+bgp 4
+<span class="hljs-meta prompt_"># </span><span class="language-bash">路由器ID</span>
+router-id 4.4.4.4
+<span class="hljs-meta prompt_"># </span><span class="language-bash">关闭自动汇总, 默认关闭</span>
+undo summary automatic
+<span class="hljs-meta prompt_"># </span><span class="language-bash">关闭自动同步</span>
+undo synchronization
+<span class="hljs-meta prompt_"># </span><span class="language-bash">关闭IPv4, BPGv4+, 支持地址簇</span>
+undo default ipv4-unicast
+<span class="hljs-meta prompt_"># </span><span class="language-bash">建立邻居</span>
+peer 24.1.1.2 as-number 10
+<span class="hljs-meta prompt_"># </span><span class="language-bash">使用ipv4 单波地址簇</span>
+ipv4-family unicast
+<span class="hljs-meta prompt_"># </span><span class="language-bash">激活peer</span>
+peer 24.1.1.2 enable
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment"># Group</span></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">创建命名internalGP的 IBGP Peer Group</span>
+group internalGP internal
+<span class="hljs-meta prompt_"># </span><span class="language-bash">使用环回口0与IBGP建立邻居</span>
+peer internalGP connect-interface LoopBack 0
+<span class="hljs-meta prompt_"># </span><span class="language-bash">将这个3.3.3.3 Peer添加到组中</span>
+peer 3.3.3.3 group interna
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">进入ipv4-family</span>
+ipv4-family unicast
+<span class="hljs-meta prompt_"># </span><span class="language-bash">激活这个IBGP Peer Group，不用每个Peer都激活</span>
+peer internalGP enable
+<span class="hljs-meta prompt_"># </span><span class="language-bash">发送路由时，修改路由的下一跳, 由于bug原因，不生效，需要单独为peer指定next-hop-local</span>
+peer internal next-hop-local
+peer 3.3.3.3 next-hop-local
 
-<h3 id="路由的说明"><a href="#路由的说明" class="headerlink" title="路由的说明"></a>路由的说明</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*&gt;: *改路由经过的防环审核,&gt;最优符号; r&gt;: r由于管理距离的原因无法加入路由表,可以传递给邻居,&gt;最优; s:抑制路由,不会加入路由表和传递路由.</span><br><span class="line">Ogn: i: IGBP路由, e: EGBP路由, ?: 其他路由.</span><br><span class="line">Path: AS Path (IGBP水平分割, EGBP水平分割)</span><br><span class="line">MED</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
 
-<h3 id="MPLS"><a href="#MPLS" class="headerlink" title="MPLS"></a>MPLS</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">mpls lsr-id 1.1.1.1</span><br><span class="line">mpls</span><br><span class="line">mpls ld</span><br><span class="line">quit</span><br><span class="line">int g0/0/0</span><br><span class="line">mpls</span><br><span class="line">mpls ldp</span><br><span class="line">int g0/0/1</span><br><span class="line">mpls</span><br><span class="line">mpls ldp</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">R2 &amp; R3, 让MPLS和BGP联动，让BGP通过MPLS 转发报文的时候，如果是BGP路由，可以递归到BGP的下一跳地址，查找对于的标签来封装报文</span></span><br><span class="line">route recursive-lookup  tunnel</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+bgp 10
+ router-id 3.3.3.3
+ undo default ipv4-unicast
+ peer 2.2.2.2 as-number 10
+ peer 2.2.2.2 connect-interface LoopBack0
+<span class="hljs-meta prompt_"> #</span><span class="language-bash"></span>
+<span class="language-bash"> ipv4-family unicast</span>
+  undo synchronization
+  peer 2.2.2.2 enable
+  peer 2.2.2.2 next-hop-local
+
+bgp 10
+ router-id 3.3.3.3
+ undo default ipv4-unicast
+ peer 2.2.2.2 as-number 10
+ peer 2.2.2.2 connect-interface LoopBack0
+<span class="hljs-meta prompt_"> #</span><span class="language-bash"></span>
+<span class="language-bash"> ipv4-family unicast</span>
+  undo synchronization
+  peer 2.2.2.2 enable
+  peer 2.2.2.2 next-hop-local
+language-shell复制代码</code></pre>
+
+<h3 id="路由的说明"><a href="#路由的说明" class="headerlink" title="路由的说明"></a>路由的说明</h3><pre><code class="hljs shell">*&gt;: *改路由经过的防环审核,&gt;最优符号; r&gt;: r由于管理距离的原因无法加入路由表,可以传递给邻居,&gt;最优; s:抑制路由,不会加入路由表和传递路由.
+Ogn: i: IGBP路由, e: EGBP路由, ?: 其他路由.
+Path: AS Path (IGBP水平分割, EGBP水平分割)
+MED
+language-shell复制代码</code></pre>
+
+<h3 id="MPLS"><a href="#MPLS" class="headerlink" title="MPLS"></a>MPLS</h3><pre><code class="hljs shell">mpls lsr-id 1.1.1.1
+mpls
+mpls ld
+quit
+int g0/0/0
+mpls
+mpls ldp
+int g0/0/1
+mpls
+mpls ldp
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">R2 &amp; R3, 让MPLS和BGP联动，让BGP通过MPLS 转发报文的时候，如果是BGP路由，可以递归到BGP的下一跳地址，查找对于的标签来封装报文</span>
+route recursive-lookup  tunnel
+language-shell复制代码</code></pre>
 
 <hr>
 

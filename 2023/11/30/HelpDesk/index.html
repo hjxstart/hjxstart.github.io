@@ -122,10 +122,52 @@
         
             
                 <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
                     <div data-rel="读书">
                         
                         读书
                         <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -154,48 +196,6 @@
                         
                         数据库
                         <small>(5)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="运维">
-                        
-                        运维
-                        <small>(25)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="安全">
-                        
-                        安全
-                        <small>(3)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="开发">
-                        
-                        开发
-                        <small>(14)</small>
                         
                     </div>
                     
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<input type="hidden" id="yelog_site_word_count" value="243.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1018,39 +1018,74 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><h2 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 快速打开win10高级设置的run命令</span></span><br><span class="line">sysdm.cpl</span><br><span class="line"><span class="comment"># 快速打开remote desktop connect</span></span><br><span class="line">mstsc</span><br><span class="line"><span class="comment"># 键盘管理员打开CMD</span></span><br><span class="line">运行 Win + R, 输入 CMD 后，按 Ctrl + Shift + Enter回车</span><br><span class="line"><span class="comment"># 查看用户账号状态命令</span></span><br><span class="line">net user usernamexxx /domain</span><br><span class="line"><span class="comment"># 激活win10</span></span><br><span class="line">wmic path softwarelicensingservice get OA3xOriginalProductKey</span><br><span class="line">slmgr -ipk XXXX-XXXXX</span><br><span class="line">slmgr -ato</span><br><span class="line"><span class="comment"># 普通用户视图下提权安装软件 需要知道administrator 的密码</span></span><br><span class="line">runas /user:%computername%\administrator /profile <span class="string">&quot;full_pathxxx.exe&quot;</span></span><br><span class="line"><span class="comment"># 重新注册DNS</span></span><br><span class="line">ipconfig /registerdns</span><br><span class="line"><span class="comment"># 刷新当前DNS</span></span><br><span class="line">ipconfig /flushdns </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><h2 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h2><pre><code class="hljs bash"><span class="hljs-comment"># 快速打开win10高级设置的run命令</span>
+sysdm.cpl
+<span class="hljs-comment"># 快速打开remote desktop connect</span>
+mstsc
+<span class="hljs-comment"># 键盘管理员打开CMD</span>
+运行 Win + R, 输入 CMD 后，按 Ctrl + Shift + Enter回车
+<span class="hljs-comment"># 查看用户账号状态命令</span>
+net user usernamexxx /domain
+<span class="hljs-comment"># 激活win10</span>
+wmic path softwarelicensingservice get OA3xOriginalProductKey
+slmgr -ipk XXXX-XXXXX
+slmgr -ato
+<span class="hljs-comment"># 普通用户视图下提权安装软件 需要知道administrator 的密码</span>
+runas /user:%computername%\administrator /profile <span class="hljs-string">&quot;full_pathxxx.exe&quot;</span>
+<span class="hljs-comment"># 重新注册DNS</span>
+ipconfig /registerdns
+<span class="hljs-comment"># 刷新当前DNS</span>
+ipconfig /flushdns 
+</code></pre>
 
 <h3 id="常用命令-1"><a href="#常用命令-1" class="headerlink" title="常用命令"></a>常用命令</h3><ol>
 <li>查看被占用端口对应的 PID</li>
 </ol>
-<figure class="highlight ps1"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">netstat <span class="literal">-aon</span>|findstr <span class="string">&quot;8081&quot;</span></span><br><span class="line">language<span class="literal">-ps1</span>复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs ps1">netstat <span class="hljs-literal">-aon</span>|findstr <span class="hljs-string">&quot;8081&quot;</span>
+language<span class="hljs-literal">-ps1</span>复制代码</code></pre>
 
 <ol>
 <li>查看指定 PID 的进程</li>
 </ol>
-<figure class="highlight ps1"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tasklist|findstr <span class="string">&quot;9088&quot;</span></span><br><span class="line">language<span class="literal">-ps1</span>复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs ps1">tasklist|findstr <span class="hljs-string">&quot;9088&quot;</span>
+language<span class="hljs-literal">-ps1</span>复制代码</code></pre>
 
 <ol>
 <li>结束进程</li>
 </ol>
-<figure class="highlight ps1"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">taskkill /T /F /PID <span class="number">9088</span></span><br><span class="line">language<span class="literal">-ps1</span>复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs ps1">taskkill /T /F /PID <span class="hljs-number">9088</span>
+language<span class="hljs-literal">-ps1</span>复制代码</code></pre>
 
 <h2 id="PsTools"><a href="#PsTools" class="headerlink" title="PsTools"></a>PsTools</h2><blockquote>
 <p><strong><a target="_blank" rel="noopener" href="https://download.sysinternals.com/files/PSTools.zip">PsTools下载链接</a></strong></p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 管理员权限打开CMD，并且进入PsTools解压目录</span></span><br><span class="line"><span class="comment"># 运行PsExec.exe \\IP cmd 进入目标主机的CMD试图</span></span><br><span class="line"><span class="comment"># 使用ipconfig和hostname命令查询当前试图下的IP地址和主机名是否是目标用户的</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment"># 管理员权限打开CMD，并且进入PsTools解压目录</span>
+<span class="hljs-comment"># 运行PsExec.exe \\IP cmd 进入目标主机的CMD试图</span>
+<span class="hljs-comment"># 使用ipconfig和hostname命令查询当前试图下的IP地址和主机名是否是目标用户的</span>
+</code></pre>
 
 <h2 id="Remote-Server-Administration-Tools-for-Windows"><a href="#Remote-Server-Administration-Tools-for-Windows" class="headerlink" title="Remote Server Administration Tools for Windows"></a>Remote Server Administration Tools for Windows</h2><blockquote>
 <p><strong><a target="_blank" rel="noopener" href="https://www.microsoft.com/en-hk/download/details.aspx?id=45520">AD管理工具下载</a></strong></p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可以执行AD的一些操作，例如用户和电脑的权限</span></span><br><span class="line"><span class="comment"># 用户的账号解锁，密码重置和组的增删查改等</span></span><br><span class="line"><span class="comment"># 电脑的查询</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment"># 可以执行AD的一些操作，例如用户和电脑的权限</span>
+<span class="hljs-comment"># 用户的账号解锁，密码重置和组的增删查改等</span>
+<span class="hljs-comment"># 电脑的查询</span>
+</code></pre>
 
-<h2 id="AD"><a href="#AD" class="headerlink" title="AD"></a>AD</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 同步AD策略，打开CMD执行以下命令可以同步AD策略。</span></span><br><span class="line">gpupdate</span><br><span class="line"><span class="comment"># 查询用户的状态</span></span><br><span class="line">net user usernameXXX /domain</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="AD"><a href="#AD" class="headerlink" title="AD"></a>AD</h2><pre><code class="hljs bash"><span class="hljs-comment"># 同步AD策略，打开CMD执行以下命令可以同步AD策略。</span>
+gpupdate
+<span class="hljs-comment"># 查询用户的状态</span>
+net user usernameXXX /domain
+</code></pre>
 
 <hr>
-<h1 id="常用软件"><a href="#常用软件" class="headerlink" title="常用软件"></a>常用软件</h1><h2 id="Chrome"><a href="#Chrome" class="headerlink" title="Chrome"></a>Chrome</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 优化</span></span><br><span class="line">关闭显卡，关闭后台运行，关闭预加载</span><br><span class="line"><span class="comment"># 网站排查</span></span><br><span class="line">开启调试模式，关闭缓存，清理缓存数据</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="常用软件"><a href="#常用软件" class="headerlink" title="常用软件"></a>常用软件</h1><h2 id="Chrome"><a href="#Chrome" class="headerlink" title="Chrome"></a>Chrome</h2><pre><code class="hljs bash"><span class="hljs-comment"># 优化</span>
+关闭显卡，关闭后台运行，关闭预加载
+<span class="hljs-comment"># 网站排查</span>
+开启调试模式，关闭缓存，清理缓存数据
+</code></pre>
 
-<h3 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">language-bashe复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h3><pre><code class="hljs bashe">language-bashe复制代码</code></pre>
 
 <h3 id="浏览器崩溃"><a href="#浏览器崩溃" class="headerlink" title="浏览器崩溃"></a>浏览器崩溃</h3><h3 id="清除缓存"><a href="#清除缓存" class="headerlink" title="清除缓存"></a>清除缓存</h3><h3 id="页面不安全"><a href="#页面不安全" class="headerlink" title="页面不安全"></a>页面不安全</h3><hr>
 <h2 id="会议软件"><a href="#会议软件" class="headerlink" title="会议软件"></a>会议软件</h2><h3 id="腾讯"><a href="#腾讯" class="headerlink" title="腾讯"></a>腾讯</h3><h3 id="Zoom"><a href="#Zoom" class="headerlink" title="Zoom"></a>Zoom</h3><h3 id="Teams"><a href="#Teams" class="headerlink" title="Teams"></a>Teams</h3><hr>
@@ -1122,7 +1157,38 @@
 <blockquote>
 <p>16G 24576 - 40960<br>32G 49152 - 81920</p>
 </blockquote>
-<h3 id="12-从信息系统项目管理师的角度看工作"><a href="#12-从信息系统项目管理师的角度看工作" class="headerlink" title="12. 从信息系统项目管理师的角度看工作"></a>12. 从信息系统项目管理师的角度看工作</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">1. 项目立项</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">2. 项目整体管理</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">3. 项目范围管理</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">4. 项目进度管理</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">5. 项目成本管理</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">6. 项目质量管理</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">7. 项目沟通管理</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">8. 项目干系人管理</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">9. 项目风险管理</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">10. 项目采购管理</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">11. 信息系统项目管理</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="12-从信息系统项目管理师的角度看工作"><a href="#12-从信息系统项目管理师的角度看工作" class="headerlink" title="12. 从信息系统项目管理师的角度看工作"></a>12. 从信息系统项目管理师的角度看工作</h3><pre><code class="hljs bash">1. 项目立项
+
+
+2. 项目整体管理
+
+
+3. 项目范围管理
+
+
+4. 项目进度管理
+
+
+5. 项目成本管理
+
+
+6. 项目质量管理
+
+
+7. 项目沟通管理
+
+
+8. 项目干系人管理
+
+
+9. 项目风险管理
+
+
+10. 项目采购管理
+
+
+11. 信息系统项目管理
+</code></pre>
 
 <hr>
 

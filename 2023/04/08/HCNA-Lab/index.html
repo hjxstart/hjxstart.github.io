@@ -122,10 +122,52 @@
         
             
                 <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
                     <div data-rel="读书">
                         
                         读书
                         <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -154,48 +196,6 @@
                         
                         数据库
                         <small>(5)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="运维">
-                        
-                        运维
-                        <small>(25)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="安全">
-                        
-                        安全
-                        <small>(3)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="开发">
-                        
-                        开发
-                        <small>(14)</small>
                         
                     </div>
                     
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<input type="hidden" id="yelog_site_word_count" value="243.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -983,7 +983,7 @@
     </div>
     <div class="article-meta">
         
-        <span>字数:928</span>
+        <span>字数:1k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1024,7 +1024,10 @@
   <summary>配置概述</summary>
 
 
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 交换机：在SW1~3都创建2个vlan；</span><br><span class="line">2. 交换机-交换机：在交换机之间的连接接口配置中继，并且放行相应的VLAN；</span><br><span class="line">3. 交换机-PC：在交换机与PC连接的接口配置Access接口，并且方通相应的VLAN；</span><br><span class="line">4. PC：配置对于VLAN的IP。</span><br></pre></td></tr></table></figure>
+  <pre><code class="hljs bash">1. 交换机：在SW1~3都创建2个vlan；
+2. 交换机-交换机：在交换机之间的连接接口配置中继，并且放行相应的VLAN；
+3. 交换机-PC：在交换机与PC连接的接口配置Access接口，并且方通相应的VLAN；
+4. PC：配置对于VLAN的IP。</code></pre>
 
 </details>
 
@@ -1032,7 +1035,22 @@
   <summary>SW1</summary>
 
 
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># </span></span><br><span class="line">system-view</span><br><span class="line">sysname SW1</span><br><span class="line">vlan batch 13 24</span><br><span class="line">display vlan</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">interface GigabitEthernet 0/0/1</span><br><span class="line">port link-type trunk</span><br><span class="line">port trunk allow-pass vlan 13 24</span><br><span class="line">quit</span><br><span class="line">interface GigabitEthernet 0/0/2</span><br><span class="line">port link-type trunk</span><br><span class="line">port trunk allow-pass vlan 13 24</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">display port vlan</span><br><span class="line"><span class="comment"># </span></span><br></pre></td></tr></table></figure>
+  <pre><code class="hljs bash"><span class="hljs-comment"># </span>
+system-view
+sysname SW1
+vlan batch 13 24
+display vlan
+<span class="hljs-comment"># </span>
+interface GigabitEthernet 0/0/1
+port link-type trunk
+port trunk allow-pass vlan 13 24
+quit
+interface GigabitEthernet 0/0/2
+port link-type trunk
+port trunk allow-pass vlan 13 24
+<span class="hljs-comment"># </span>
+display port vlan
+<span class="hljs-comment"># </span></code></pre>
 
 </details>
 
@@ -1040,7 +1058,28 @@
   <summary>SW2</summary>
 
 
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># </span></span><br><span class="line">system-view</span><br><span class="line">sysname SW2</span><br><span class="line">vlan batch 13 24</span><br><span class="line">display vlan</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">interface Ethernet 0/0/1</span><br><span class="line">port link-type trunk</span><br><span class="line">port trunk allow-pass vlan 13 24</span><br><span class="line">quit</span><br><span class="line">display port vlan</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">interface Ethernet 0/0/2</span><br><span class="line">port link-type access</span><br><span class="line">port default vlan 13</span><br><span class="line">stp edged-port <span class="built_in">enable</span></span><br><span class="line">interface Ethernet 0/0/3</span><br><span class="line">port link-type access</span><br><span class="line">port default vlan 24</span><br><span class="line">stp edged-port <span class="built_in">enable</span></span><br><span class="line">quit</span><br><span class="line">display port vlan</span><br></pre></td></tr></table></figure>
+  <pre><code class="hljs bash"><span class="hljs-comment"># </span>
+system-view
+sysname SW2
+vlan batch 13 24
+display vlan
+<span class="hljs-comment"># </span>
+interface Ethernet 0/0/1
+port link-type trunk
+port trunk allow-pass vlan 13 24
+quit
+display port vlan
+<span class="hljs-comment"># </span>
+interface Ethernet 0/0/2
+port link-type access
+port default vlan 13
+stp edged-port <span class="hljs-built_in">enable</span>
+interface Ethernet 0/0/3
+port link-type access
+port default vlan 24
+stp edged-port <span class="hljs-built_in">enable</span>
+quit
+display port vlan</code></pre>
 
 </details>
 
@@ -1048,7 +1087,28 @@
   <summary>SW3</summary>
 
 
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># </span></span><br><span class="line">system-view</span><br><span class="line">sysname SW3 </span><br><span class="line">vlan batch 13 24 </span><br><span class="line">display vlan</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">interface Ethernet 0/0/1</span><br><span class="line">port link-type trunk</span><br><span class="line">port trunk allow-pass vlan 13 24</span><br><span class="line">quit </span><br><span class="line">display port vlan</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">interface Ethernet 0/0/2</span><br><span class="line">port link-type access</span><br><span class="line">port default vlan 13</span><br><span class="line">stp edged-port <span class="built_in">enable</span></span><br><span class="line">interface Ethernet 0/0/3</span><br><span class="line">port link-type access</span><br><span class="line">port default vlan 24</span><br><span class="line">stp edged-port <span class="built_in">enable</span></span><br><span class="line">quit</span><br><span class="line">display port vlan</span><br></pre></td></tr></table></figure>
+  <pre><code class="hljs bash"><span class="hljs-comment"># </span>
+system-view
+sysname SW3 
+vlan batch 13 24 
+display vlan
+<span class="hljs-comment"># </span>
+interface Ethernet 0/0/1
+port link-type trunk
+port trunk allow-pass vlan 13 24
+quit 
+display port vlan
+<span class="hljs-comment"># </span>
+interface Ethernet 0/0/2
+port link-type access
+port default vlan 13
+stp edged-port <span class="hljs-built_in">enable</span>
+interface Ethernet 0/0/3
+port link-type access
+port default vlan 24
+stp edged-port <span class="hljs-built_in">enable</span>
+quit
+display port vlan</code></pre>
 
 </details>
 
@@ -1056,7 +1116,10 @@
   <summary>实验验证</summary>
 
 
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># PC1 ping PC3</span></span><br><span class="line">ping 13.1.1.3</span><br><span class="line"><span class="comment"># PC2 ping PC4</span></span><br><span class="line">ping 24.1.1.4</span><br></pre></td></tr></table></figure>
+  <pre><code class="hljs bash"><span class="hljs-comment"># PC1 ping PC3</span>
+ping 13.1.1.3
+<span class="hljs-comment"># PC2 ping PC4</span>
+ping 24.1.1.4</code></pre>
 
 </details>
 
@@ -1067,7 +1130,10 @@
   <summary>配置概述</summary>
 
 
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 给设备命名</span><br><span class="line">2. 配置路由器之间的接口IP地址</span><br><span class="line">3. 添加静态路由</span><br><span class="line">4. 测试Loopback0口之间的网络</span><br></pre></td></tr></table></figure>
+  <pre><code class="hljs bash">1. 给设备命名
+2. 配置路由器之间的接口IP地址
+3. 添加静态路由
+4. 测试Loopback0口之间的网络</code></pre>
 
 </details>
 
@@ -1075,7 +1141,28 @@
   <summary>R1</summary>
 
 
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># </span></span><br><span class="line">system-view</span><br><span class="line">sysname R1</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">interface GigabitEthernet 0/0/0</span><br><span class="line">ip address 12.1.1.1 255.255.255.0</span><br><span class="line">quit</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">interface GigabitEthernet 0/0/1</span><br><span class="line">ip address 13.1.1.1 255.255.255.0</span><br><span class="line">quit</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">interface LoopBack 0</span><br><span class="line">ip address 1.1.1.1 255.255.255.255</span><br><span class="line">quit</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">display ip interface brief</span><br><span class="line">display ip routing-table</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">ip route-static 2.2.2.2 32 GigabitEthernet 0/0/0 12.1.1.2</span><br><span class="line">ip route-static 3.3.3.3 32 GigabitEthernet 0/0/1 13.1.1.3</span><br><span class="line">display ip routing-table</span><br></pre></td></tr></table></figure>
+  <pre><code class="hljs bash"><span class="hljs-comment"># </span>
+system-view
+sysname R1
+<span class="hljs-comment"># </span>
+interface GigabitEthernet 0/0/0
+ip address 12.1.1.1 255.255.255.0
+quit
+<span class="hljs-comment"># </span>
+interface GigabitEthernet 0/0/1
+ip address 13.1.1.1 255.255.255.0
+quit
+<span class="hljs-comment"># </span>
+interface LoopBack 0
+ip address 1.1.1.1 255.255.255.255
+quit
+<span class="hljs-comment"># </span>
+display ip interface brief
+display ip routing-table
+<span class="hljs-comment">#</span>
+ip route-static 2.2.2.2 32 GigabitEthernet 0/0/0 12.1.1.2
+ip route-static 3.3.3.3 32 GigabitEthernet 0/0/1 13.1.1.3
+display ip routing-table</code></pre>
 
 </details>
 
@@ -1083,7 +1170,24 @@
   <summary>R2</summary>
 
 
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># </span></span><br><span class="line">system-view</span><br><span class="line">sysname R2</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">interface GigabitEthernet 0/0/1</span><br><span class="line">ip address 12.1.1.2 255.255.255.0</span><br><span class="line">quit</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">interface LoopBack 0</span><br><span class="line">ip address 2.2.2.2 255.255.255.255</span><br><span class="line">quit</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">display ip interface brief</span><br><span class="line">display ip routing-table</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">ip route-static 1.1.1.1 32 GigabitEthernet 0/0/1 12.1.1.1</span><br><span class="line">ip route-static 3.3.3.3 32 GigabitEthernet 0/0/1 12.1.1.1</span><br><span class="line">display ip routing-table</span><br></pre></td></tr></table></figure>
+  <pre><code class="hljs bash"><span class="hljs-comment"># </span>
+system-view
+sysname R2
+<span class="hljs-comment"># </span>
+interface GigabitEthernet 0/0/1
+ip address 12.1.1.2 255.255.255.0
+quit
+<span class="hljs-comment"># </span>
+interface LoopBack 0
+ip address 2.2.2.2 255.255.255.255
+quit
+<span class="hljs-comment"># </span>
+display ip interface brief
+display ip routing-table
+<span class="hljs-comment">#</span>
+ip route-static 1.1.1.1 32 GigabitEthernet 0/0/1 12.1.1.1
+ip route-static 3.3.3.3 32 GigabitEthernet 0/0/1 12.1.1.1
+display ip routing-table</code></pre>
 
 </details>
 
@@ -1091,7 +1195,24 @@
   <summary>R3</summary>
 
 
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># </span></span><br><span class="line">system-view</span><br><span class="line">sysname R3</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">interface GigabitEthernet 0/0/0</span><br><span class="line">ip address 13.1.1.3 255.255.255.0</span><br><span class="line">quit</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">interface LoopBack 0</span><br><span class="line">ip address 3.3.3.3 255.255.255.255</span><br><span class="line">quit</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">display ip interface brief</span><br><span class="line">display ip routing-table</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">ip route-static 1.1.1.1 32 GigabitEthernet 0/0/0 13.1.1.1</span><br><span class="line">ip route-static 2.2.2.2 32 GigabitEthernet 0/0/0 13.1.1.1</span><br><span class="line">display ip routing-table</span><br></pre></td></tr></table></figure>
+  <pre><code class="hljs bash"><span class="hljs-comment"># </span>
+system-view
+sysname R3
+<span class="hljs-comment"># </span>
+interface GigabitEthernet 0/0/0
+ip address 13.1.1.3 255.255.255.0
+quit
+<span class="hljs-comment"># </span>
+interface LoopBack 0
+ip address 3.3.3.3 255.255.255.255
+quit
+<span class="hljs-comment"># </span>
+display ip interface brief
+display ip routing-table
+<span class="hljs-comment">#</span>
+ip route-static 1.1.1.1 32 GigabitEthernet 0/0/0 13.1.1.1
+ip route-static 2.2.2.2 32 GigabitEthernet 0/0/0 13.1.1.1
+display ip routing-table</code></pre>
 
 </details>
 
@@ -1116,7 +1237,10 @@
   <summary>配置概述</summary>
 
 
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 路由器启用OSPF进程</span><br><span class="line">2. 设置路由器ID</span><br><span class="line">3. 路由器之间的直连接口宣告到同一个区域</span><br><span class="line">4. 路由器与非路由的接口也需要宣告一个区域</span><br></pre></td></tr></table></figure>
+  <pre><code class="hljs bash">1. 路由器启用OSPF进程
+2. 设置路由器ID
+3. 路由器之间的直连接口宣告到同一个区域
+4. 路由器与非路由的接口也需要宣告一个区域</code></pre>
 
 </details>
 
@@ -1124,7 +1248,30 @@
   <summary>R1</summary>
 
 
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># </span></span><br><span class="line">system-view</span><br><span class="line">sysname R1</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">interface GigabitEthernet 0/0/0</span><br><span class="line">ip address 12.1.1.1 255.255.255.0</span><br><span class="line">quit</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">interface GigabitEthernet 0/0/1</span><br><span class="line">ip address 13.1.1.1 255.255.255.0</span><br><span class="line">quit</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">display ip interface brief</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">ospf 10 router-id 1.1.1.1</span><br><span class="line">area 0</span><br><span class="line">network 12.1.1.1 0.0.0.0</span><br><span class="line">network 13.1.1.1 0.0.0.0</span><br><span class="line">quit</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">display ospf peer brief</span><br><span class="line">display ospf lsdb</span><br><span class="line">display ip routing-table protocol ospf</span><br><span class="line"><span class="comment"># </span></span><br></pre></td></tr></table></figure>
+  <pre><code class="hljs bash"><span class="hljs-comment"># </span>
+system-view
+sysname R1
+<span class="hljs-comment"># </span>
+interface GigabitEthernet 0/0/0
+ip address 12.1.1.1 255.255.255.0
+quit
+<span class="hljs-comment"># </span>
+interface GigabitEthernet 0/0/1
+ip address 13.1.1.1 255.255.255.0
+quit
+<span class="hljs-comment"># </span>
+display ip interface brief
+<span class="hljs-comment"># </span>
+ospf 10 router-id 1.1.1.1
+area 0
+network 12.1.1.1 0.0.0.0
+network 13.1.1.1 0.0.0.0
+quit
+<span class="hljs-comment"># </span>
+display ospf peer brief
+display ospf lsdb
+display ip routing-table protocol ospf
+<span class="hljs-comment"># </span></code></pre>
 
 </details>
 
@@ -1132,7 +1279,33 @@
   <summary>R2</summary>
 
 
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># </span></span><br><span class="line">system-view</span><br><span class="line">sysname R2</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">interface GigabitEthernet 0/0/0</span><br><span class="line">ip address 12.1.1.2 255.255.255.0</span><br><span class="line">quit</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">interface GigabitEthernet 0/0/1</span><br><span class="line">ip address 2.2.2.254 255.255.255.0</span><br><span class="line">quit</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">display ip interface brief</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">ospf 10 router-id 2.2.2.2</span><br><span class="line">area 0</span><br><span class="line">network 2.2.2.254 0.0.0.0</span><br><span class="line">quit</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">interface GigabitEthernet 0/0/0</span><br><span class="line">ospf <span class="built_in">enable</span> 10 area 0</span><br><span class="line">quit</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">display ospf peer brief</span><br><span class="line">display ospf lsdb</span><br><span class="line">display ip routing-table protocol ospf</span><br><span class="line"><span class="comment"># </span></span><br></pre></td></tr></table></figure>
+  <pre><code class="hljs bash"><span class="hljs-comment"># </span>
+system-view
+sysname R2
+<span class="hljs-comment"># </span>
+interface GigabitEthernet 0/0/0
+ip address 12.1.1.2 255.255.255.0
+quit
+<span class="hljs-comment"># </span>
+interface GigabitEthernet 0/0/1
+ip address 2.2.2.254 255.255.255.0
+quit
+<span class="hljs-comment"># </span>
+display ip interface brief
+<span class="hljs-comment"># </span>
+ospf 10 router-id 2.2.2.2
+area 0
+network 2.2.2.254 0.0.0.0
+quit
+<span class="hljs-comment"># </span>
+interface GigabitEthernet 0/0/0
+ospf <span class="hljs-built_in">enable</span> 10 area 0
+quit
+<span class="hljs-comment"># </span>
+display ospf peer brief
+display ospf lsdb
+display ip routing-table protocol ospf
+<span class="hljs-comment"># </span></code></pre>
 
 </details>
 
@@ -1140,7 +1313,30 @@
   <summary>R3</summary>
 
 
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># </span></span><br><span class="line">system-view</span><br><span class="line">sysname R3</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">interface GigabitEthernet 0/0/0</span><br><span class="line">ip address 13.1.1.3 255.255.255.0</span><br><span class="line">quit</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">interface GigabitEthernet 0/0/1</span><br><span class="line">ip address 3.3.3.254 255.255.255.0</span><br><span class="line">quit</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">display ip interface brief</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">ospf 10 router-id 3.3.3.3</span><br><span class="line">area 0</span><br><span class="line">network 13.1.1.3 0.0.0.0</span><br><span class="line">network 3.3.3.254 0.0.0.0</span><br><span class="line">quit</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">display ospf peer brief</span><br><span class="line">display ospf lsdb</span><br><span class="line">display ip routing-table protocol ospf</span><br><span class="line"><span class="comment"># </span></span><br></pre></td></tr></table></figure>
+  <pre><code class="hljs bash"><span class="hljs-comment"># </span>
+system-view
+sysname R3
+<span class="hljs-comment"># </span>
+interface GigabitEthernet 0/0/0
+ip address 13.1.1.3 255.255.255.0
+quit
+<span class="hljs-comment"># </span>
+interface GigabitEthernet 0/0/1
+ip address 3.3.3.254 255.255.255.0
+quit
+<span class="hljs-comment">#</span>
+display ip interface brief
+<span class="hljs-comment"># </span>
+ospf 10 router-id 3.3.3.3
+area 0
+network 13.1.1.3 0.0.0.0
+network 3.3.3.254 0.0.0.0
+quit
+<span class="hljs-comment"># </span>
+display ospf peer brief
+display ospf lsdb
+display ip routing-table protocol ospf
+<span class="hljs-comment"># </span></code></pre>
 
 </details>
 
@@ -1158,7 +1354,7 @@
   <summary>配置概述</summary>
 
 
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1. </span><br></pre></td></tr></table></figure>
+  <pre><code class="hljs bash">1.</code></pre>
 
 </details>
 
@@ -1166,7 +1362,9 @@
   <summary>R1</summary>
 
 
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># </span></span><br><span class="line">system-view</span><br><span class="line">sysname R1</span><br></pre></td></tr></table></figure>
+  <pre><code class="hljs bash"><span class="hljs-comment"># </span>
+system-view
+sysname R1</code></pre>
 
 </details>
 

@@ -122,10 +122,52 @@
         
             
                 <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
                     <div data-rel="读书">
                         
                         读书
                         <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -154,48 +196,6 @@
                         
                         数据库
                         <small>(5)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="运维">
-                        
-                        运维
-                        <small>(25)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="安全">
-                        
-                        安全
-                        <small>(3)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="开发">
-                        
-                        开发
-                        <small>(14)</small>
                         
                     </div>
                     
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<input type="hidden" id="yelog_site_word_count" value="243.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -983,7 +983,7 @@
     </div>
     <div class="article-meta">
         
-        <span>字数:3.6k</span>
+        <span>字数:4.5k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1031,7 +1031,16 @@
 <li>保证代码简洁明了、没有多余的 SQL —— 比如非必要的引号或括号，或者可以推导出的 <code>WHERE</code> 子句。</li>
 <li>必要时在 SQL 代码中加入注释。优先使用 C 语言式的以 <code>/*</code> 开始以 <code>*/</code> 结束的块注释，或使用以 <code>--</code> 开始的行注释，并在末尾换行。</li>
 </ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> file_hash  <span class="comment">-- stored ssdeep hash</span></span><br><span class="line">  <span class="keyword">FROM</span> file_system</span><br><span class="line"> <span class="keyword">WHERE</span> file_name <span class="operator">=</span> <span class="string">&#x27;.vimrc&#x27;</span>;</span><br><span class="line"><span class="keyword">language</span><span class="operator">-</span><span class="keyword">sql</span>复制代码</span><br><span class="line"><span class="comment">/* Updating the file record after writing to the file */</span></span><br><span class="line"><span class="keyword">UPDATE</span> file_system</span><br><span class="line">   <span class="keyword">SET</span> file_modified_date <span class="operator">=</span> <span class="string">&#x27;1980-02-22 13:19:01.00000&#x27;</span>,</span><br><span class="line">       file_size <span class="operator">=</span> <span class="number">209732</span></span><br><span class="line"> <span class="keyword">WHERE</span> file_name <span class="operator">=</span> <span class="string">&#x27;.vimrc&#x27;</span>;</span><br><span class="line"><span class="keyword">language</span><span class="operator">-</span><span class="keyword">sql</span>复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> file_hash  <span class="hljs-comment">-- stored ssdeep hash</span>
+  <span class="hljs-keyword">FROM</span> file_system
+ <span class="hljs-keyword">WHERE</span> file_name <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;.vimrc&#x27;</span>;
+<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>复制代码
+<span class="hljs-comment">/* Updating the file record after writing to the file */</span>
+<span class="hljs-keyword">UPDATE</span> file_system
+   <span class="hljs-keyword">SET</span> file_modified_date <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;1980-02-22 13:19:01.00000&#x27;</span>,
+       file_size <span class="hljs-operator">=</span> <span class="hljs-number">209732</span>
+ <span class="hljs-keyword">WHERE</span> file_name <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;.vimrc&#x27;</span>;
+<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>复制代码</code></pre>
 
 <h3 id="Avoid-应避免的事情"><a href="#Avoid-应避免的事情" class="headerlink" title="Avoid 应避免的事情"></a>Avoid 应避免的事情</h3><ul>
 <li>驼峰命名法 —— 它不适合快速扫读。</li>
@@ -1049,7 +1058,9 @@
 <li>在名字中需要空格的地方用下划线代替（<code>first name</code> 变为 <code>first_name</code>）。</li>
 <li>尽量避免使用缩写词。使用时一定确定这个缩写简明易懂。</li>
 </ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> first_name</span><br><span class="line">  <span class="keyword">FROM</span> staff;</span><br><span class="line"><span class="keyword">language</span><span class="operator">-</span><span class="keyword">sql</span>复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> first_name
+  <span class="hljs-keyword">FROM</span> staff;
+<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>复制代码</code></pre>
 
 <h3 id="Tables-表名"><a href="#Tables-表名" class="headerlink" title="Tables 表名"></a>Tables 表名</h3><ul>
 <li>使用集合名称，或在不那么理想的情况下使用复数形式。如 <code>staff</code>（建议使用）和 <code>employees</code>。</li>
@@ -1070,7 +1081,14 @@
 <li>总是加上 <code>AS</code> 关键字，因为这样的明确声明易于阅读。</li>
 <li>为计算出的数据（<code>SUM()</code> 或 <code>AVG()</code>）命名时，用一个将这条数据存在表中时会使用的列名。</li>
 </ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> first_name <span class="keyword">AS</span> fn</span><br><span class="line">  <span class="keyword">FROM</span> staff <span class="keyword">AS</span> s1</span><br><span class="line">  <span class="keyword">JOIN</span> students <span class="keyword">AS</span> s2</span><br><span class="line">    <span class="keyword">ON</span> s2.mentor_id <span class="operator">=</span> s1.staff_num;</span><br><span class="line"><span class="keyword">language</span><span class="operator">-</span><span class="keyword">sql</span>复制代码</span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">SUM</span>(s.monitor_tally) <span class="keyword">AS</span> monitor_total</span><br><span class="line">  <span class="keyword">FROM</span> staff <span class="keyword">AS</span> s;</span><br><span class="line"><span class="keyword">language</span><span class="operator">-</span><span class="keyword">sql</span>复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> first_name <span class="hljs-keyword">AS</span> fn
+  <span class="hljs-keyword">FROM</span> staff <span class="hljs-keyword">AS</span> s1
+  <span class="hljs-keyword">JOIN</span> students <span class="hljs-keyword">AS</span> s2
+    <span class="hljs-keyword">ON</span> s2.mentor_id <span class="hljs-operator">=</span> s1.staff_num;
+<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>复制代码
+<span class="hljs-keyword">SELECT</span> <span class="hljs-built_in">SUM</span>(s.monitor_tally) <span class="hljs-keyword">AS</span> monitor_total
+  <span class="hljs-keyword">FROM</span> staff <span class="hljs-keyword">AS</span> s;
+<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>复制代码</code></pre>
 
 <h3 id="Stored-procedures-存储过程名"><a href="#Stored-procedures-存储过程名" class="headerlink" title="Stored procedures 存储过程名"></a>Stored procedures 存储过程名</h3><ul>
 <li>名字一定要包含动词。</li>
@@ -1092,11 +1110,31 @@
 <h2 id="Query-syntax-查询语句"><a href="#Query-syntax-查询语句" class="headerlink" title="Query syntax 查询语句"></a>Query syntax 查询语句</h2><h3 id="Reserved-words-保留字"><a href="#Reserved-words-保留字" class="headerlink" title="Reserved words 保留字"></a>Reserved words 保留字</h3><p>关键字总是大写，如 <code>SELECT</code> 和 <code>WHERE</code>。</p>
 <p>最好使用关键字的全称而不是简写，用 <code>ABSOLUTE</code> 而不用 <code>ABS</code>。</p>
 <p>当标准 ANSI SQL 关键字能完成相同的事情时，不要使用数据库服务器特定的关键字，这样能增强可移植性。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> model_num</span><br><span class="line">  <span class="keyword">FROM</span> phones <span class="keyword">AS</span> p</span><br><span class="line"> <span class="keyword">WHERE</span> p.release_date <span class="operator">&gt;</span> <span class="string">&#x27;2014-09-30&#x27;</span>;</span><br><span class="line"><span class="keyword">language</span><span class="operator">-</span><span class="keyword">sql</span>复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> model_num
+  <span class="hljs-keyword">FROM</span> phones <span class="hljs-keyword">AS</span> p
+ <span class="hljs-keyword">WHERE</span> p.release_date <span class="hljs-operator">&gt;</span> <span class="hljs-string">&#x27;2014-09-30&#x27;</span>;
+<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>复制代码</code></pre>
 
 <h3 id="White-space-空白字符"><a href="#White-space-空白字符" class="headerlink" title="White space 空白字符"></a>White space 空白字符</h3><p>正确地使用空白字符对清晰的代码十分重要。不要把代码堆在一起或移除自然语言中的空格。</p>
 <h4 id="Spaces-空格"><a href="#Spaces-空格" class="headerlink" title="Spaces 空格"></a>Spaces 空格</h4><p>用空格使根关键字都结束在同一列上。在代码中间形成一个从上到下的“川流”，这样帮助读者快速扫视代码并将关键字和实现细节分开。川流在排版时应该避免，但是对阅读 SQL 语句是有帮助的。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">SELECT</span> f.species_name,</span><br><span class="line">        <span class="built_in">AVG</span>(f.height) <span class="keyword">AS</span> average_height, <span class="built_in">AVG</span>(f.diameter) <span class="keyword">AS</span> average_diameter</span><br><span class="line">   <span class="keyword">FROM</span> flora <span class="keyword">AS</span> f</span><br><span class="line">  <span class="keyword">WHERE</span> f.species_name <span class="operator">=</span> <span class="string">&#x27;Banksia&#x27;</span></span><br><span class="line">     <span class="keyword">OR</span> f.species_name <span class="operator">=</span> <span class="string">&#x27;Sheoak&#x27;</span></span><br><span class="line">     <span class="keyword">OR</span> f.species_name <span class="operator">=</span> <span class="string">&#x27;Wattle&#x27;</span></span><br><span class="line">  <span class="keyword">GROUP</span> <span class="keyword">BY</span> f.species_name, f.observation_date)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">UNION</span> <span class="keyword">ALL</span></span><br><span class="line"></span><br><span class="line">(<span class="keyword">SELECT</span> b.species_name,</span><br><span class="line">        <span class="built_in">AVG</span>(b.height) <span class="keyword">AS</span> average_height, <span class="built_in">AVG</span>(b.diameter) <span class="keyword">AS</span> average_diameter</span><br><span class="line">   <span class="keyword">FROM</span> botanic_garden_flora <span class="keyword">AS</span> b</span><br><span class="line">  <span class="keyword">WHERE</span> b.species_name <span class="operator">=</span> <span class="string">&#x27;Banksia&#x27;</span></span><br><span class="line">     <span class="keyword">OR</span> b.species_name <span class="operator">=</span> <span class="string">&#x27;Sheoak&#x27;</span></span><br><span class="line">     <span class="keyword">OR</span> b.species_name <span class="operator">=</span> <span class="string">&#x27;Wattle&#x27;</span></span><br><span class="line">  <span class="keyword">GROUP</span> <span class="keyword">BY</span> b.species_name, b.observation_date);</span><br><span class="line"><span class="keyword">language</span><span class="operator">-</span><span class="keyword">sql</span>复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs sql">(<span class="hljs-keyword">SELECT</span> f.species_name,
+        <span class="hljs-built_in">AVG</span>(f.height) <span class="hljs-keyword">AS</span> average_height, <span class="hljs-built_in">AVG</span>(f.diameter) <span class="hljs-keyword">AS</span> average_diameter
+   <span class="hljs-keyword">FROM</span> flora <span class="hljs-keyword">AS</span> f
+  <span class="hljs-keyword">WHERE</span> f.species_name <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;Banksia&#x27;</span>
+     <span class="hljs-keyword">OR</span> f.species_name <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;Sheoak&#x27;</span>
+     <span class="hljs-keyword">OR</span> f.species_name <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;Wattle&#x27;</span>
+  <span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> f.species_name, f.observation_date)
+
+  <span class="hljs-keyword">UNION</span> <span class="hljs-keyword">ALL</span>
+
+(<span class="hljs-keyword">SELECT</span> b.species_name,
+        <span class="hljs-built_in">AVG</span>(b.height) <span class="hljs-keyword">AS</span> average_height, <span class="hljs-built_in">AVG</span>(b.diameter) <span class="hljs-keyword">AS</span> average_diameter
+   <span class="hljs-keyword">FROM</span> botanic_garden_flora <span class="hljs-keyword">AS</span> b
+  <span class="hljs-keyword">WHERE</span> b.species_name <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;Banksia&#x27;</span>
+     <span class="hljs-keyword">OR</span> b.species_name <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;Sheoak&#x27;</span>
+     <span class="hljs-keyword">OR</span> b.species_name <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;Wattle&#x27;</span>
+  <span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> b.species_name, b.observation_date);
+<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>复制代码</code></pre>
 
 <p>注意 <code>SELECT</code> 和 <code>FROM</code> 等关键字，都右对齐，而实际的列名和实现细节都左对齐。</p>
 <p>注意下列情况总是加入空格：</p>
@@ -1105,7 +1143,11 @@
 <li>在逗号（<code>,</code>）后</li>
 <li>成对的单引号（<code>&#39;</code>）前后，除非在括号中或后面是逗号 &#x2F; 分号</li>
 </ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> a.title, a.release_date, a.recording_date</span><br><span class="line">  <span class="keyword">FROM</span> albums <span class="keyword">AS</span> a</span><br><span class="line"> <span class="keyword">WHERE</span> a.title <span class="operator">=</span> <span class="string">&#x27;Charcoal Lane&#x27;</span></span><br><span class="line">    <span class="keyword">OR</span> a.title <span class="operator">=</span> <span class="string">&#x27;The New Danger&#x27;</span>;</span><br><span class="line"><span class="keyword">language</span><span class="operator">-</span><span class="keyword">sql</span>复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> a.title, a.release_date, a.recording_date
+  <span class="hljs-keyword">FROM</span> albums <span class="hljs-keyword">AS</span> a
+ <span class="hljs-keyword">WHERE</span> a.title <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;Charcoal Lane&#x27;</span>
+    <span class="hljs-keyword">OR</span> a.title <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;The New Danger&#x27;</span>;
+<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>复制代码</code></pre>
 
 <h4 id="Line-spacing-换行"><a href="#Line-spacing-换行" class="headerlink" title="Line spacing 换行"></a>Line spacing 换行</h4><p>总是换行的情况：</p>
 <ul>
@@ -1116,14 +1158,47 @@
 <li>将代码分隔成相关联的多个部分，帮助提高大段代码的可读性</li>
 </ul>
 <p>让所有的关键字右对齐、所有的值左对齐，这样就能在查询语句中间留出一个空隙，有助于快速扫读整个查询的定义。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT INTO</span> albums (title, release_date, recording_date)</span><br><span class="line"><span class="keyword">VALUES</span> (<span class="string">&#x27;Charcoal Lane&#x27;</span>, <span class="string">&#x27;1990-01-01 01:01:01.00000&#x27;</span>, <span class="string">&#x27;1990-01-01 01:01:01.00000&#x27;</span>),</span><br><span class="line">       (<span class="string">&#x27;The New Danger&#x27;</span>, <span class="string">&#x27;2008-01-01 01:01:01.00000&#x27;</span>, <span class="string">&#x27;1990-01-01 01:01:01.00000&#x27;</span>);</span><br><span class="line"><span class="keyword">language</span><span class="operator">-</span><span class="keyword">sql</span>复制代码</span><br><span class="line"><span class="keyword">UPDATE</span> albums</span><br><span class="line">   <span class="keyword">SET</span> release_date <span class="operator">=</span> <span class="string">&#x27;1990-01-01 01:01:01.00000&#x27;</span></span><br><span class="line"> <span class="keyword">WHERE</span> title <span class="operator">=</span> <span class="string">&#x27;The New Danger&#x27;</span>;</span><br><span class="line"><span class="keyword">language</span><span class="operator">-</span><span class="keyword">sql</span>复制代码</span><br><span class="line"><span class="keyword">SELECT</span> a.title,</span><br><span class="line">       a.release_date, a.recording_date, a.production_date <span class="comment">-- 将所有的日期放在一起</span></span><br><span class="line">  <span class="keyword">FROM</span> albums <span class="keyword">AS</span> a</span><br><span class="line"> <span class="keyword">WHERE</span> a.title <span class="operator">=</span> <span class="string">&#x27;Charcoal Lane&#x27;</span></span><br><span class="line">    <span class="keyword">OR</span> a.title <span class="operator">=</span> <span class="string">&#x27;The New Danger&#x27;</span>;</span><br><span class="line"><span class="keyword">language</span><span class="operator">-</span><span class="keyword">sql</span>复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs sql"><span class="hljs-keyword">INSERT INTO</span> albums (title, release_date, recording_date)
+<span class="hljs-keyword">VALUES</span> (<span class="hljs-string">&#x27;Charcoal Lane&#x27;</span>, <span class="hljs-string">&#x27;1990-01-01 01:01:01.00000&#x27;</span>, <span class="hljs-string">&#x27;1990-01-01 01:01:01.00000&#x27;</span>),
+       (<span class="hljs-string">&#x27;The New Danger&#x27;</span>, <span class="hljs-string">&#x27;2008-01-01 01:01:01.00000&#x27;</span>, <span class="hljs-string">&#x27;1990-01-01 01:01:01.00000&#x27;</span>);
+<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>复制代码
+<span class="hljs-keyword">UPDATE</span> albums
+   <span class="hljs-keyword">SET</span> release_date <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;1990-01-01 01:01:01.00000&#x27;</span>
+ <span class="hljs-keyword">WHERE</span> title <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;The New Danger&#x27;</span>;
+<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>复制代码
+<span class="hljs-keyword">SELECT</span> a.title,
+       a.release_date, a.recording_date, a.production_date <span class="hljs-comment">-- 将所有的日期放在一起</span>
+  <span class="hljs-keyword">FROM</span> albums <span class="hljs-keyword">AS</span> a
+ <span class="hljs-keyword">WHERE</span> a.title <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;Charcoal Lane&#x27;</span>
+    <span class="hljs-keyword">OR</span> a.title <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;The New Danger&#x27;</span>;
+<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>复制代码</code></pre>
 
 <h3 id="Indentation-缩进"><a href="#Indentation-缩进" class="headerlink" title="Indentation 缩进"></a>Indentation 缩进</h3><p>为确保 SQL 的可读性，一定要遵守下列规则。</p>
 <h4 id="Joins-Join-语句"><a href="#Joins-Join-语句" class="headerlink" title="Joins Join 语句"></a>Joins Join 语句</h4><p>Join 语句应该缩进到川流的另一侧并在必要的时候添加一个换行。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> r.last_name</span><br><span class="line">  <span class="keyword">FROM</span> riders <span class="keyword">AS</span> r</span><br><span class="line">       <span class="keyword">INNER</span> <span class="keyword">JOIN</span> bikes <span class="keyword">AS</span> b</span><br><span class="line">       <span class="keyword">ON</span> r.bike_vin_num <span class="operator">=</span> b.vin_num</span><br><span class="line">          <span class="keyword">AND</span> b.engine_tally <span class="operator">&gt;</span> <span class="number">2</span></span><br><span class="line"></span><br><span class="line">       <span class="keyword">INNER</span> <span class="keyword">JOIN</span> crew <span class="keyword">AS</span> c</span><br><span class="line">       <span class="keyword">ON</span> r.crew_chief_last_name <span class="operator">=</span> c.last_name</span><br><span class="line">          <span class="keyword">AND</span> c.chief <span class="operator">=</span> <span class="string">&#x27;Y&#x27;</span>;</span><br><span class="line"><span class="keyword">language</span><span class="operator">-</span><span class="keyword">sql</span>复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> r.last_name
+  <span class="hljs-keyword">FROM</span> riders <span class="hljs-keyword">AS</span> r
+       <span class="hljs-keyword">INNER</span> <span class="hljs-keyword">JOIN</span> bikes <span class="hljs-keyword">AS</span> b
+       <span class="hljs-keyword">ON</span> r.bike_vin_num <span class="hljs-operator">=</span> b.vin_num
+          <span class="hljs-keyword">AND</span> b.engine_tally <span class="hljs-operator">&gt;</span> <span class="hljs-number">2</span>
+
+       <span class="hljs-keyword">INNER</span> <span class="hljs-keyword">JOIN</span> crew <span class="hljs-keyword">AS</span> c
+       <span class="hljs-keyword">ON</span> r.crew_chief_last_name <span class="hljs-operator">=</span> c.last_name
+          <span class="hljs-keyword">AND</span> c.chief <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;Y&#x27;</span>;
+<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>复制代码</code></pre>
 
 <h4 id="Subqueries-子查询"><a href="#Subqueries-子查询" class="headerlink" title="Subqueries 子查询"></a>Subqueries 子查询</h4><p>子查询应该在川流的右侧对齐并使用其他查询相同的样式。有时候将右括号单独置于一行并同与它配对的左括号对齐是有意义的 —— 尤其是当存在嵌套子查询的时候。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> r.last_name,</span><br><span class="line">       (<span class="keyword">SELECT</span> <span class="built_in">MAX</span>(<span class="keyword">YEAR</span>(championship_date))</span><br><span class="line">          <span class="keyword">FROM</span> champions <span class="keyword">AS</span> c</span><br><span class="line">         <span class="keyword">WHERE</span> c.last_name <span class="operator">=</span> r.last_name</span><br><span class="line">           <span class="keyword">AND</span> c.confirmed <span class="operator">=</span> <span class="string">&#x27;Y&#x27;</span>) <span class="keyword">AS</span> last_championship_year</span><br><span class="line">  <span class="keyword">FROM</span> riders <span class="keyword">AS</span> r</span><br><span class="line"> <span class="keyword">WHERE</span> r.last_name <span class="keyword">IN</span></span><br><span class="line">       (<span class="keyword">SELECT</span> c.last_name</span><br><span class="line">          <span class="keyword">FROM</span> champions <span class="keyword">AS</span> c</span><br><span class="line">         <span class="keyword">WHERE</span> <span class="keyword">YEAR</span>(championship_date) <span class="operator">&gt;</span> <span class="string">&#x27;2008&#x27;</span></span><br><span class="line">           <span class="keyword">AND</span> c.confirmed <span class="operator">=</span> <span class="string">&#x27;Y&#x27;</span>);</span><br><span class="line"><span class="keyword">language</span><span class="operator">-</span><span class="keyword">sql</span>复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> r.last_name,
+       (<span class="hljs-keyword">SELECT</span> <span class="hljs-built_in">MAX</span>(<span class="hljs-keyword">YEAR</span>(championship_date))
+          <span class="hljs-keyword">FROM</span> champions <span class="hljs-keyword">AS</span> c
+         <span class="hljs-keyword">WHERE</span> c.last_name <span class="hljs-operator">=</span> r.last_name
+           <span class="hljs-keyword">AND</span> c.confirmed <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;Y&#x27;</span>) <span class="hljs-keyword">AS</span> last_championship_year
+  <span class="hljs-keyword">FROM</span> riders <span class="hljs-keyword">AS</span> r
+ <span class="hljs-keyword">WHERE</span> r.last_name <span class="hljs-keyword">IN</span>
+       (<span class="hljs-keyword">SELECT</span> c.last_name
+          <span class="hljs-keyword">FROM</span> champions <span class="hljs-keyword">AS</span> c
+         <span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">YEAR</span>(championship_date) <span class="hljs-operator">&gt;</span> <span class="hljs-string">&#x27;2008&#x27;</span>
+           <span class="hljs-keyword">AND</span> c.confirmed <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;Y&#x27;</span>);
+<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>复制代码</code></pre>
 
 <h3 id="Preferred-formalisms-推荐的形式"><a href="#Preferred-formalisms-推荐的形式" class="headerlink" title="Preferred formalisms 推荐的形式"></a>Preferred formalisms 推荐的形式</h3><ul>
 <li>尽量使用 <code>BETWEEN</code> 而不是多个 <code>AND</code> 语句。</li>
@@ -1131,7 +1206,15 @@
 <li>当数据输出数据库时需要处理时，使用 <code>CASE</code> 表达式。<code>CASE</code> 语句能嵌套形成更复杂的逻辑结构。</li>
 <li>尽量避免 <code>UNION</code> 语句和临时表。如果数据库架构能够不靠这些语句运行，那么多数情况下它就不应该依靠这些语句。</li>
 </ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CASE</span> postcode</span><br><span class="line">       <span class="keyword">WHEN</span> <span class="string">&#x27;BN1&#x27;</span> <span class="keyword">THEN</span> <span class="string">&#x27;Brighton&#x27;</span></span><br><span class="line">       <span class="keyword">WHEN</span> <span class="string">&#x27;EH1&#x27;</span> <span class="keyword">THEN</span> <span class="string">&#x27;Edinburgh&#x27;</span></span><br><span class="line">       <span class="keyword">END</span> <span class="keyword">AS</span> city</span><br><span class="line">  <span class="keyword">FROM</span> office_locations</span><br><span class="line"> <span class="keyword">WHERE</span> country <span class="operator">=</span> <span class="string">&#x27;United Kingdom&#x27;</span></span><br><span class="line">   <span class="keyword">AND</span> opening_time <span class="keyword">BETWEEN</span> <span class="number">8</span> <span class="keyword">AND</span> <span class="number">9</span></span><br><span class="line">   <span class="keyword">AND</span> postcode <span class="keyword">IN</span> (<span class="string">&#x27;EH1&#x27;</span>, <span class="string">&#x27;BN1&#x27;</span>, <span class="string">&#x27;NN1&#x27;</span>, <span class="string">&#x27;KW1&#x27;</span>);</span><br><span class="line"><span class="keyword">language</span><span class="operator">-</span><span class="keyword">sql</span>复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">CASE</span> postcode
+       <span class="hljs-keyword">WHEN</span> <span class="hljs-string">&#x27;BN1&#x27;</span> <span class="hljs-keyword">THEN</span> <span class="hljs-string">&#x27;Brighton&#x27;</span>
+       <span class="hljs-keyword">WHEN</span> <span class="hljs-string">&#x27;EH1&#x27;</span> <span class="hljs-keyword">THEN</span> <span class="hljs-string">&#x27;Edinburgh&#x27;</span>
+       <span class="hljs-keyword">END</span> <span class="hljs-keyword">AS</span> city
+  <span class="hljs-keyword">FROM</span> office_locations
+ <span class="hljs-keyword">WHERE</span> country <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;United Kingdom&#x27;</span>
+   <span class="hljs-keyword">AND</span> opening_time <span class="hljs-keyword">BETWEEN</span> <span class="hljs-number">8</span> <span class="hljs-keyword">AND</span> <span class="hljs-number">9</span>
+   <span class="hljs-keyword">AND</span> postcode <span class="hljs-keyword">IN</span> (<span class="hljs-string">&#x27;EH1&#x27;</span>, <span class="hljs-string">&#x27;BN1&#x27;</span>, <span class="hljs-string">&#x27;NN1&#x27;</span>, <span class="hljs-string">&#x27;KW1&#x27;</span>);
+<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>复制代码</code></pre>
 
 <h2 id="Create-syntax-创建语句"><a href="#Create-syntax-创建语句" class="headerlink" title="Create syntax 创建语句"></a>Create syntax 创建语句</h2><p>声明模式信息时维护可读代码也很重要。所以列定义的顺序和分组一定要有意义。</p>
 <p>在 <code>CREATE</code> 定义中，每个列定义要缩进 4 个空格。</p>
@@ -1170,7 +1253,15 @@
 <li>当数值的范围可以确定时，用范围 <code>CHECK()</code> 来防止错误的值进入数据库或在没有提示的情况下截断。大部分情况下至少要确认数值大于零。</li>
 <li><code>CHECK()</code> 约束应该在单独的子句中以便 debug。</li>
 </ul>
-<h5 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE TABLE</span> staff (</span><br><span class="line">    <span class="keyword">PRIMARY KEY</span> (staff_num),</span><br><span class="line">    staff_num      <span class="type">INT</span>(<span class="number">5</span>)       <span class="keyword">NOT NULL</span>,</span><br><span class="line">    first_name     <span class="type">VARCHAR</span>(<span class="number">100</span>) <span class="keyword">NOT NULL</span>,</span><br><span class="line">    pens_in_drawer <span class="type">INT</span>(<span class="number">2</span>)       <span class="keyword">NOT NULL</span>,</span><br><span class="line">                   <span class="keyword">CONSTRAINT</span> pens_in_drawer_range</span><br><span class="line">                   <span class="keyword">CHECK</span>(pens_in_drawer <span class="keyword">BETWEEN</span> <span class="number">1</span> <span class="keyword">AND</span> <span class="number">99</span>)</span><br><span class="line">);</span><br><span class="line"><span class="keyword">language</span><span class="operator">-</span><span class="keyword">sql</span>复制代码</span><br></pre></td></tr></table></figure>
+<h5 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h5><pre><code class="hljs sql"><span class="hljs-keyword">CREATE TABLE</span> staff (
+    <span class="hljs-keyword">PRIMARY KEY</span> (staff_num),
+    staff_num      <span class="hljs-type">INT</span>(<span class="hljs-number">5</span>)       <span class="hljs-keyword">NOT NULL</span>,
+    first_name     <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">100</span>) <span class="hljs-keyword">NOT NULL</span>,
+    pens_in_drawer <span class="hljs-type">INT</span>(<span class="hljs-number">2</span>)       <span class="hljs-keyword">NOT NULL</span>,
+                   <span class="hljs-keyword">CONSTRAINT</span> pens_in_drawer_range
+                   <span class="hljs-keyword">CHECK</span>(pens_in_drawer <span class="hljs-keyword">BETWEEN</span> <span class="hljs-number">1</span> <span class="hljs-keyword">AND</span> <span class="hljs-number">99</span>)
+);
+<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>复制代码</code></pre>
 
 <h3 id="Design-to-avoid-应该避免的设计"><a href="#Design-to-avoid-应该避免的设计" class="headerlink" title="Design to avoid 应该避免的设计"></a>Design to avoid 应该避免的设计</h3><ul>
 <li>在关系型数据库的设计中应用面向对象设计思想（原则）—— 面向对象设计思想（原则）并不能很好地适用于关系型数据库的设计，避免这个陷阱。</li>
@@ -1179,7 +1270,832 @@
 <li>因为某些原因（如为了根据时间归档、为了划分跨国组织的区域）将本应该放在一个表中的数据分到多个表中 —— 这样的设计导致以后必须使用 <code>UNION</code> 操作而不能直接查询一个表。</li>
 </ul>
 <h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><h3 id="保留字参考"><a href="#保留字参考" class="headerlink" title="保留字参考"></a>保留字参考</h3><p>下表包含了 ANSI SQL（92，99 和 2003)、MySQL 3 到 5.x、PostgreSQL 8.1、MS SQL Server 2000、MS ODBC 和 Oracle 10.2 中的关键字。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br><span class="line">455</span><br><span class="line">456</span><br><span class="line">457</span><br><span class="line">458</span><br><span class="line">459</span><br><span class="line">460</span><br><span class="line">461</span><br><span class="line">462</span><br><span class="line">463</span><br><span class="line">464</span><br><span class="line">465</span><br><span class="line">466</span><br><span class="line">467</span><br><span class="line">468</span><br><span class="line">469</span><br><span class="line">470</span><br><span class="line">471</span><br><span class="line">472</span><br><span class="line">473</span><br><span class="line">474</span><br><span class="line">475</span><br><span class="line">476</span><br><span class="line">477</span><br><span class="line">478</span><br><span class="line">479</span><br><span class="line">480</span><br><span class="line">481</span><br><span class="line">482</span><br><span class="line">483</span><br><span class="line">484</span><br><span class="line">485</span><br><span class="line">486</span><br><span class="line">487</span><br><span class="line">488</span><br><span class="line">489</span><br><span class="line">490</span><br><span class="line">491</span><br><span class="line">492</span><br><span class="line">493</span><br><span class="line">494</span><br><span class="line">495</span><br><span class="line">496</span><br><span class="line">497</span><br><span class="line">498</span><br><span class="line">499</span><br><span class="line">500</span><br><span class="line">501</span><br><span class="line">502</span><br><span class="line">503</span><br><span class="line">504</span><br><span class="line">505</span><br><span class="line">506</span><br><span class="line">507</span><br><span class="line">508</span><br><span class="line">509</span><br><span class="line">510</span><br><span class="line">511</span><br><span class="line">512</span><br><span class="line">513</span><br><span class="line">514</span><br><span class="line">515</span><br><span class="line">516</span><br><span class="line">517</span><br><span class="line">518</span><br><span class="line">519</span><br><span class="line">520</span><br><span class="line">521</span><br><span class="line">522</span><br><span class="line">523</span><br><span class="line">524</span><br><span class="line">525</span><br><span class="line">526</span><br><span class="line">527</span><br><span class="line">528</span><br><span class="line">529</span><br><span class="line">530</span><br><span class="line">531</span><br><span class="line">532</span><br><span class="line">533</span><br><span class="line">534</span><br><span class="line">535</span><br><span class="line">536</span><br><span class="line">537</span><br><span class="line">538</span><br><span class="line">539</span><br><span class="line">540</span><br><span class="line">541</span><br><span class="line">542</span><br><span class="line">543</span><br><span class="line">544</span><br><span class="line">545</span><br><span class="line">546</span><br><span class="line">547</span><br><span class="line">548</span><br><span class="line">549</span><br><span class="line">550</span><br><span class="line">551</span><br><span class="line">552</span><br><span class="line">553</span><br><span class="line">554</span><br><span class="line">555</span><br><span class="line">556</span><br><span class="line">557</span><br><span class="line">558</span><br><span class="line">559</span><br><span class="line">560</span><br><span class="line">561</span><br><span class="line">562</span><br><span class="line">563</span><br><span class="line">564</span><br><span class="line">565</span><br><span class="line">566</span><br><span class="line">567</span><br><span class="line">568</span><br><span class="line">569</span><br><span class="line">570</span><br><span class="line">571</span><br><span class="line">572</span><br><span class="line">573</span><br><span class="line">574</span><br><span class="line">575</span><br><span class="line">576</span><br><span class="line">577</span><br><span class="line">578</span><br><span class="line">579</span><br><span class="line">580</span><br><span class="line">581</span><br><span class="line">582</span><br><span class="line">583</span><br><span class="line">584</span><br><span class="line">585</span><br><span class="line">586</span><br><span class="line">587</span><br><span class="line">588</span><br><span class="line">589</span><br><span class="line">590</span><br><span class="line">591</span><br><span class="line">592</span><br><span class="line">593</span><br><span class="line">594</span><br><span class="line">595</span><br><span class="line">596</span><br><span class="line">597</span><br><span class="line">598</span><br><span class="line">599</span><br><span class="line">600</span><br><span class="line">601</span><br><span class="line">602</span><br><span class="line">603</span><br><span class="line">604</span><br><span class="line">605</span><br><span class="line">606</span><br><span class="line">607</span><br><span class="line">608</span><br><span class="line">609</span><br><span class="line">610</span><br><span class="line">611</span><br><span class="line">612</span><br><span class="line">613</span><br><span class="line">614</span><br><span class="line">615</span><br><span class="line">616</span><br><span class="line">617</span><br><span class="line">618</span><br><span class="line">619</span><br><span class="line">620</span><br><span class="line">621</span><br><span class="line">622</span><br><span class="line">623</span><br><span class="line">624</span><br><span class="line">625</span><br><span class="line">626</span><br><span class="line">627</span><br><span class="line">628</span><br><span class="line">629</span><br><span class="line">630</span><br><span class="line">631</span><br><span class="line">632</span><br><span class="line">633</span><br><span class="line">634</span><br><span class="line">635</span><br><span class="line">636</span><br><span class="line">637</span><br><span class="line">638</span><br><span class="line">639</span><br><span class="line">640</span><br><span class="line">641</span><br><span class="line">642</span><br><span class="line">643</span><br><span class="line">644</span><br><span class="line">645</span><br><span class="line">646</span><br><span class="line">647</span><br><span class="line">648</span><br><span class="line">649</span><br><span class="line">650</span><br><span class="line">651</span><br><span class="line">652</span><br><span class="line">653</span><br><span class="line">654</span><br><span class="line">655</span><br><span class="line">656</span><br><span class="line">657</span><br><span class="line">658</span><br><span class="line">659</span><br><span class="line">660</span><br><span class="line">661</span><br><span class="line">662</span><br><span class="line">663</span><br><span class="line">664</span><br><span class="line">665</span><br><span class="line">666</span><br><span class="line">667</span><br><span class="line">668</span><br><span class="line">669</span><br><span class="line">670</span><br><span class="line">671</span><br><span class="line">672</span><br><span class="line">673</span><br><span class="line">674</span><br><span class="line">675</span><br><span class="line">676</span><br><span class="line">677</span><br><span class="line">678</span><br><span class="line">679</span><br><span class="line">680</span><br><span class="line">681</span><br><span class="line">682</span><br><span class="line">683</span><br><span class="line">684</span><br><span class="line">685</span><br><span class="line">686</span><br><span class="line">687</span><br><span class="line">688</span><br><span class="line">689</span><br><span class="line">690</span><br><span class="line">691</span><br><span class="line">692</span><br><span class="line">693</span><br><span class="line">694</span><br><span class="line">695</span><br><span class="line">696</span><br><span class="line">697</span><br><span class="line">698</span><br><span class="line">699</span><br><span class="line">700</span><br><span class="line">701</span><br><span class="line">702</span><br><span class="line">703</span><br><span class="line">704</span><br><span class="line">705</span><br><span class="line">706</span><br><span class="line">707</span><br><span class="line">708</span><br><span class="line">709</span><br><span class="line">710</span><br><span class="line">711</span><br><span class="line">712</span><br><span class="line">713</span><br><span class="line">714</span><br><span class="line">715</span><br><span class="line">716</span><br><span class="line">717</span><br><span class="line">718</span><br><span class="line">719</span><br><span class="line">720</span><br><span class="line">721</span><br><span class="line">722</span><br><span class="line">723</span><br><span class="line">724</span><br><span class="line">725</span><br><span class="line">726</span><br><span class="line">727</span><br><span class="line">728</span><br><span class="line">729</span><br><span class="line">730</span><br><span class="line">731</span><br><span class="line">732</span><br><span class="line">733</span><br><span class="line">734</span><br><span class="line">735</span><br><span class="line">736</span><br><span class="line">737</span><br><span class="line">738</span><br><span class="line">739</span><br><span class="line">740</span><br><span class="line">741</span><br><span class="line">742</span><br><span class="line">743</span><br><span class="line">744</span><br><span class="line">745</span><br><span class="line">746</span><br><span class="line">747</span><br><span class="line">748</span><br><span class="line">749</span><br><span class="line">750</span><br><span class="line">751</span><br><span class="line">752</span><br><span class="line">753</span><br><span class="line">754</span><br><span class="line">755</span><br><span class="line">756</span><br><span class="line">757</span><br><span class="line">758</span><br><span class="line">759</span><br><span class="line">760</span><br><span class="line">761</span><br><span class="line">762</span><br><span class="line">763</span><br><span class="line">764</span><br><span class="line">765</span><br><span class="line">766</span><br><span class="line">767</span><br><span class="line">768</span><br><span class="line">769</span><br><span class="line">770</span><br><span class="line">771</span><br><span class="line">772</span><br><span class="line">773</span><br><span class="line">774</span><br><span class="line">775</span><br><span class="line">776</span><br><span class="line">777</span><br><span class="line">778</span><br><span class="line">779</span><br><span class="line">780</span><br><span class="line">781</span><br><span class="line">782</span><br><span class="line">783</span><br><span class="line">784</span><br><span class="line">785</span><br><span class="line">786</span><br><span class="line">787</span><br><span class="line">788</span><br><span class="line">789</span><br><span class="line">790</span><br><span class="line">791</span><br><span class="line">792</span><br><span class="line">793</span><br><span class="line">794</span><br><span class="line">795</span><br><span class="line">796</span><br><span class="line">797</span><br><span class="line">798</span><br><span class="line">799</span><br><span class="line">800</span><br><span class="line">801</span><br><span class="line">802</span><br><span class="line">803</span><br><span class="line">804</span><br><span class="line">805</span><br><span class="line">806</span><br><span class="line">807</span><br><span class="line">808</span><br><span class="line">809</span><br><span class="line">810</span><br><span class="line">811</span><br><span class="line">812</span><br><span class="line">813</span><br><span class="line">814</span><br><span class="line">815</span><br><span class="line">816</span><br><span class="line">817</span><br><span class="line">818</span><br><span class="line">819</span><br><span class="line">820</span><br><span class="line">821</span><br><span class="line">822</span><br><span class="line">823</span><br><span class="line">824</span><br><span class="line">825</span><br><span class="line">826</span><br></pre></td><td class="code"><pre><span class="line">A</span><br><span class="line">ABORT</span><br><span class="line">ABS</span><br><span class="line">ABSOLUTE</span><br><span class="line">ACCESS</span><br><span class="line">ACTION</span><br><span class="line">ADA</span><br><span class="line"><span class="keyword">ADD</span></span><br><span class="line">ADMIN</span><br><span class="line">AFTER</span><br><span class="line">AGGREGATE</span><br><span class="line">ALIAS</span><br><span class="line"><span class="keyword">ALL</span></span><br><span class="line"><span class="keyword">ALLOCATE</span></span><br><span class="line">ALSO</span><br><span class="line"><span class="keyword">ALTER</span></span><br><span class="line">ALWAYS</span><br><span class="line">ANALYSE</span><br><span class="line">ANALYZE</span><br><span class="line"><span class="keyword">AND</span></span><br><span class="line"><span class="keyword">ANY</span></span><br><span class="line"><span class="keyword">ARE</span></span><br><span class="line"><span class="keyword">ARRAY</span></span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">ASC</span></span><br><span class="line"><span class="keyword">ASENSITIVE</span></span><br><span class="line">ASSERTION</span><br><span class="line">ASSIGNMENT</span><br><span class="line"><span class="keyword">ASYMMETRIC</span></span><br><span class="line"><span class="keyword">AT</span></span><br><span class="line"><span class="keyword">ATOMIC</span></span><br><span class="line">ATTRIBUTE</span><br><span class="line">ATTRIBUTES</span><br><span class="line">AUDIT</span><br><span class="line"><span class="keyword">AUTHORIZATION</span></span><br><span class="line">AUTO_INCREMENT</span><br><span class="line">AVG</span><br><span class="line">AVG_ROW_LENGTH</span><br><span class="line">BACKUP</span><br><span class="line">BACKWARD</span><br><span class="line">BEFORE</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">BERNOULLI</span><br><span class="line"><span class="keyword">BETWEEN</span></span><br><span class="line"><span class="type">BIGINT</span></span><br><span class="line"><span class="type">BINARY</span></span><br><span class="line">BIT</span><br><span class="line">BIT_LENGTH</span><br><span class="line">BITVAR</span><br><span class="line"><span class="type">BLOB</span></span><br><span class="line">BOOL</span><br><span class="line"><span class="type">BOOLEAN</span></span><br><span class="line"><span class="keyword">BOTH</span></span><br><span class="line">BREADTH</span><br><span class="line">BREAK</span><br><span class="line">BROWSE</span><br><span class="line">BULK</span><br><span class="line"><span class="keyword">BY</span></span><br><span class="line">C</span><br><span class="line">CACHE</span><br><span class="line"><span class="keyword">CALL</span></span><br><span class="line"><span class="keyword">CALLED</span></span><br><span class="line"><span class="keyword">CARDINALITY</span></span><br><span class="line">CASCADE</span><br><span class="line"><span class="keyword">CASCADED</span></span><br><span class="line"><span class="keyword">CASE</span></span><br><span class="line">CAST</span><br><span class="line">CATALOG</span><br><span class="line">CATALOG_NAME</span><br><span class="line">CEIL</span><br><span class="line">CEILING</span><br><span class="line">CHAIN</span><br><span class="line">CHANGE</span><br><span class="line"><span class="type">CHAR</span></span><br><span class="line"><span class="keyword">CHAR_LENGTH</span></span><br><span class="line"><span class="type">CHARACTER</span></span><br><span class="line"><span class="keyword">CHARACTER_LENGTH</span></span><br><span class="line">CHARACTER_SET_CATALOG</span><br><span class="line">CHARACTER_SET_NAME</span><br><span class="line">CHARACTER_SET_SCHEMA</span><br><span class="line">CHARACTERISTICS</span><br><span class="line">CHARACTERS</span><br><span class="line"><span class="keyword">CHECK</span></span><br><span class="line">CHECKED</span><br><span class="line">CHECKPOINT</span><br><span class="line">CHECKSUM</span><br><span class="line">CLASS</span><br><span class="line">CLASS_ORIGIN</span><br><span class="line"><span class="type">CLOB</span></span><br><span class="line"><span class="keyword">CLOSE</span></span><br><span class="line">CLUSTER</span><br><span class="line">CLUSTERED</span><br><span class="line">COALESCE</span><br><span class="line">COBOL</span><br><span class="line"><span class="keyword">COLLATE</span></span><br><span class="line"><span class="keyword">COLLATION</span></span><br><span class="line">COLLATION_CATALOG</span><br><span class="line">COLLATION_NAME</span><br><span class="line">COLLATION_SCHEMA</span><br><span class="line"><span class="keyword">COLLECT</span></span><br><span class="line"><span class="keyword">COLUMN</span></span><br><span class="line">COLUMN_NAME</span><br><span class="line">COLUMNS</span><br><span class="line">COMMAND_FUNCTION</span><br><span class="line">COMMAND_FUNCTION_CODE</span><br><span class="line">COMMENT</span><br><span class="line"><span class="keyword">COMMIT</span></span><br><span class="line">COMMITTED</span><br><span class="line">COMPLETION</span><br><span class="line">COMPRESS</span><br><span class="line">COMPUTE</span><br><span class="line"><span class="keyword">CONDITION</span></span><br><span class="line">CONDITION_NUMBER</span><br><span class="line"><span class="keyword">CONNECT</span></span><br><span class="line">CONNECTION</span><br><span class="line">CONNECTION_NAME</span><br><span class="line"><span class="keyword">CONSTRAINT</span></span><br><span class="line">CONSTRAINT_CATALOG</span><br><span class="line">CONSTRAINT_NAME</span><br><span class="line">CONSTRAINT_SCHEMA</span><br><span class="line">CONSTRAINTS</span><br><span class="line">CONSTRUCTOR</span><br><span class="line"><span class="keyword">CONTAINS</span></span><br><span class="line">CONTAINSTABLE</span><br><span class="line">CONTINUE</span><br><span class="line">CONVERSION</span><br><span class="line"><span class="keyword">CONVERT</span></span><br><span class="line"><span class="keyword">COPY</span></span><br><span class="line">CORR</span><br><span class="line"><span class="keyword">CORRESPONDING</span></span><br><span class="line">COUNT</span><br><span class="line">COVAR_POP</span><br><span class="line">COVAR_SAMP</span><br><span class="line"><span class="keyword">CREATE</span></span><br><span class="line">CREATEDB</span><br><span class="line">CREATEROLE</span><br><span class="line">CREATEUSER</span><br><span class="line"><span class="keyword">CROSS</span></span><br><span class="line">CSV</span><br><span class="line"><span class="keyword">CUBE</span></span><br><span class="line">CUME_DIST</span><br><span class="line"><span class="keyword">CURRENT</span></span><br><span class="line"><span class="built_in">CURRENT_DATE</span></span><br><span class="line"><span class="built_in">CURRENT_DEFAULT_TRANSFORM_GROUP</span></span><br><span class="line"><span class="built_in">CURRENT_PATH</span></span><br><span class="line"><span class="built_in">CURRENT_ROLE</span></span><br><span class="line"><span class="built_in">CURRENT_TIME</span></span><br><span class="line"><span class="built_in">CURRENT_TIMESTAMP</span></span><br><span class="line"><span class="built_in">CURRENT_TRANSFORM_GROUP_FOR_TYPE</span></span><br><span class="line"><span class="built_in">CURRENT_USER</span></span><br><span class="line"><span class="keyword">CURSOR</span></span><br><span class="line">CURSOR_NAME</span><br><span class="line"><span class="keyword">CYCLE</span></span><br><span class="line">DATA</span><br><span class="line">DATABASE</span><br><span class="line">DATABASES</span><br><span class="line"><span class="type">DATE</span></span><br><span class="line">DATETIME</span><br><span class="line">DATETIME_INTERVAL_CODE</span><br><span class="line">DATETIME_INTERVAL_PRECISION</span><br><span class="line"><span class="keyword">DAY</span></span><br><span class="line">DAY_HOUR</span><br><span class="line">DAY_MICROSECOND</span><br><span class="line">DAY_MINUTE</span><br><span class="line">DAY_SECOND</span><br><span class="line">DAYOFMONTH</span><br><span class="line">DAYOFWEEK</span><br><span class="line">DAYOFYEAR</span><br><span class="line">DBCC</span><br><span class="line"><span class="keyword">DEALLOCATE</span></span><br><span class="line"><span class="type">DEC</span></span><br><span class="line"><span class="type">DECIMAL</span></span><br><span class="line"><span class="keyword">DECLARE</span></span><br><span class="line"><span class="keyword">DEFAULT</span></span><br><span class="line">DEFAULTS</span><br><span class="line">DEFERRABLE</span><br><span class="line">DEFERRED</span><br><span class="line">DEFINED</span><br><span class="line">DEFINER</span><br><span class="line">DEGREE</span><br><span class="line">DELAY_KEY_WRITE</span><br><span class="line">DELAYED</span><br><span class="line"><span class="keyword">DELETE</span></span><br><span class="line">DELIMITER</span><br><span class="line">DELIMITERS</span><br><span class="line">DENSE_RANK</span><br><span class="line">DENY</span><br><span class="line">DEPTH</span><br><span class="line">DEREF</span><br><span class="line">DERIVED</span><br><span class="line"><span class="keyword">DESC</span></span><br><span class="line"><span class="keyword">DESCRIBE</span></span><br><span class="line">DESCRIPTOR</span><br><span class="line">DESTROY</span><br><span class="line">DESTRUCTOR</span><br><span class="line"><span class="keyword">DETERMINISTIC</span></span><br><span class="line">DIAGNOSTICS</span><br><span class="line">DICTIONARY</span><br><span class="line">DISABLE</span><br><span class="line"><span class="keyword">DISCONNECT</span></span><br><span class="line">DISK</span><br><span class="line">DISPATCH</span><br><span class="line"><span class="keyword">DISTINCT</span></span><br><span class="line">DISTINCTROW</span><br><span class="line">DISTRIBUTED</span><br><span class="line">DIV</span><br><span class="line">DO</span><br><span class="line">DOMAIN</span><br><span class="line"><span class="keyword">DOUBLE</span></span><br><span class="line"><span class="keyword">DROP</span></span><br><span class="line">DUAL</span><br><span class="line">DUMMY</span><br><span class="line">DUMP</span><br><span class="line"><span class="keyword">DYNAMIC</span></span><br><span class="line">DYNAMIC_FUNCTION</span><br><span class="line">DYNAMIC_FUNCTION_CODE</span><br><span class="line"><span class="keyword">EACH</span></span><br><span class="line">ELEMENT</span><br><span class="line"><span class="keyword">ELSE</span></span><br><span class="line">ELSEIF</span><br><span class="line">ENABLE</span><br><span class="line">ENCLOSED</span><br><span class="line">ENCODING</span><br><span class="line">ENCRYPTED</span><br><span class="line"><span class="keyword">END</span></span><br><span class="line"><span class="keyword">END</span><span class="operator">-</span><span class="keyword">EXEC</span></span><br><span class="line">ENUM</span><br><span class="line"><span class="keyword">EQUALS</span></span><br><span class="line">ERRLVL</span><br><span class="line"><span class="keyword">ESCAPE</span></span><br><span class="line">ESCAPED</span><br><span class="line"><span class="keyword">EVERY</span></span><br><span class="line"><span class="keyword">EXCEPT</span></span><br><span class="line">EXCEPTION</span><br><span class="line">EXCLUDE</span><br><span class="line">EXCLUDING</span><br><span class="line">EXCLUSIVE</span><br><span class="line"><span class="keyword">EXEC</span></span><br><span class="line"><span class="keyword">EXECUTE</span></span><br><span class="line">EXISTING</span><br><span class="line"><span class="keyword">EXISTS</span></span><br><span class="line">EXIT</span><br><span class="line">EXP</span><br><span class="line">EXPLAIN</span><br><span class="line"><span class="keyword">EXTERNAL</span></span><br><span class="line">EXTRACT</span><br><span class="line"><span class="literal">FALSE</span></span><br><span class="line"><span class="keyword">FETCH</span></span><br><span class="line">FIELDS</span><br><span class="line">FILE</span><br><span class="line">FILLFACTOR</span><br><span class="line"><span class="keyword">FILTER</span></span><br><span class="line"><span class="keyword">FINAL</span></span><br><span class="line"><span class="keyword">FIRST</span></span><br><span class="line"><span class="type">FLOAT</span></span><br><span class="line">FLOAT4</span><br><span class="line">FLOAT8</span><br><span class="line">FLOOR</span><br><span class="line">FLUSH</span><br><span class="line">FOLLOWING</span><br><span class="line"><span class="keyword">FOR</span></span><br><span class="line">FORCE</span><br><span class="line"><span class="keyword">FOREIGN</span></span><br><span class="line">FORTRAN</span><br><span class="line">FORWARD</span><br><span class="line">FOUND</span><br><span class="line"><span class="keyword">FREE</span></span><br><span class="line">FREETEXT</span><br><span class="line">FREETEXTTABLE</span><br><span class="line">FREEZE</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line"><span class="keyword">FULL</span></span><br><span class="line">FULLTEXT</span><br><span class="line"><span class="keyword">FUNCTION</span></span><br><span class="line"><span class="keyword">FUSION</span></span><br><span class="line">G</span><br><span class="line">GENERAL</span><br><span class="line">GENERATED</span><br><span class="line"><span class="keyword">GET</span></span><br><span class="line"><span class="keyword">GLOBAL</span></span><br><span class="line">GO</span><br><span class="line">GOTO</span><br><span class="line"><span class="keyword">GRANT</span></span><br><span class="line">GRANTED</span><br><span class="line">GRANTS</span><br><span class="line">GREATEST</span><br><span class="line"><span class="keyword">GROUP</span></span><br><span class="line"><span class="keyword">GROUPING</span></span><br><span class="line">HANDLER</span><br><span class="line"><span class="keyword">HAVING</span></span><br><span class="line">HEADER</span><br><span class="line">HEAP</span><br><span class="line">HIERARCHY</span><br><span class="line">HIGH_PRIORITY</span><br><span class="line"><span class="keyword">HOLD</span></span><br><span class="line">HOLDLOCK</span><br><span class="line">HOST</span><br><span class="line">HOSTS</span><br><span class="line"><span class="keyword">HOUR</span></span><br><span class="line">HOUR_MICROSECOND</span><br><span class="line">HOUR_MINUTE</span><br><span class="line">HOUR_SECOND</span><br><span class="line">IDENTIFIED</span><br><span class="line"><span class="keyword">IDENTITY</span></span><br><span class="line">IDENTITY_INSERT</span><br><span class="line">IDENTITYCOL</span><br><span class="line">IF</span><br><span class="line">IGNORE</span><br><span class="line">ILIKE</span><br><span class="line">IMMEDIATE</span><br><span class="line">IMMUTABLE</span><br><span class="line">IMPLEMENTATION</span><br><span class="line">IMPLICIT</span><br><span class="line"><span class="keyword">IN</span></span><br><span class="line">INCLUDE</span><br><span class="line">INCLUDING</span><br><span class="line">INCREMENT</span><br><span class="line">INDEX</span><br><span class="line"><span class="keyword">INDICATOR</span></span><br><span class="line">INFILE</span><br><span class="line">INFIX</span><br><span class="line">INHERIT</span><br><span class="line">INHERITS</span><br><span class="line"><span class="keyword">INITIAL</span></span><br><span class="line">INITIALIZE</span><br><span class="line">INITIALLY</span><br><span class="line"><span class="keyword">INNER</span></span><br><span class="line"><span class="keyword">INOUT</span></span><br><span class="line">INPUT</span><br><span class="line"><span class="keyword">INSENSITIVE</span></span><br><span class="line"><span class="keyword">INSERT</span></span><br><span class="line">INSERT_ID</span><br><span class="line">INSTANCE</span><br><span class="line">INSTANTIABLE</span><br><span class="line">INSTEAD</span><br><span class="line"><span class="type">INT</span></span><br><span class="line">INT1</span><br><span class="line">INT2</span><br><span class="line">INT3</span><br><span class="line">INT4</span><br><span class="line">INT8</span><br><span class="line"><span class="type">INTEGER</span></span><br><span class="line"><span class="keyword">INTERSECT</span></span><br><span class="line"><span class="keyword">INTERSECTION</span></span><br><span class="line"><span class="type">INTERVAL</span></span><br><span class="line"><span class="keyword">INTO</span></span><br><span class="line">INVOKER</span><br><span class="line"><span class="keyword">IS</span></span><br><span class="line">ISAM</span><br><span class="line">ISNULL</span><br><span class="line">ISOLATION</span><br><span class="line">ITERATE</span><br><span class="line"><span class="keyword">JOIN</span></span><br><span class="line">K</span><br><span class="line">KEY</span><br><span class="line">KEY_MEMBER</span><br><span class="line">KEY_TYPE</span><br><span class="line">KEYS</span><br><span class="line">KILL</span><br><span class="line">LANCOMPILER</span><br><span class="line"><span class="keyword">LANGUAGE</span></span><br><span class="line"><span class="keyword">LARGE</span></span><br><span class="line"><span class="keyword">LAST</span></span><br><span class="line">LAST_INSERT_ID</span><br><span class="line"><span class="keyword">LATERAL</span></span><br><span class="line"><span class="keyword">LEADING</span></span><br><span class="line">LEAST</span><br><span class="line">LEAVE</span><br><span class="line"><span class="keyword">LEFT</span></span><br><span class="line">LENGTH</span><br><span class="line">LESS</span><br><span class="line">LEVEL</span><br><span class="line"><span class="keyword">LIKE</span></span><br><span class="line">LIMIT</span><br><span class="line">LINENO</span><br><span class="line">LINES</span><br><span class="line">LISTEN</span><br><span class="line">LN</span><br><span class="line">LOAD</span><br><span class="line"><span class="keyword">LOCAL</span></span><br><span class="line"><span class="built_in">LOCALTIME</span></span><br><span class="line"><span class="built_in">LOCALTIMESTAMP</span></span><br><span class="line">LOCATION</span><br><span class="line">LOCATOR</span><br><span class="line">LOCK</span><br><span class="line">LOGIN</span><br><span class="line">LOGS</span><br><span class="line">LONG</span><br><span class="line">LONGBLOB</span><br><span class="line">LONGTEXT</span><br><span class="line">LOOP</span><br><span class="line">LOW_PRIORITY</span><br><span class="line">LOWER</span><br><span class="line">M</span><br><span class="line">MAP</span><br><span class="line"><span class="keyword">MATCH</span></span><br><span class="line">MATCHED</span><br><span class="line">MAX</span><br><span class="line">MAX_ROWS</span><br><span class="line">MAXEXTENTS</span><br><span class="line">MAXVALUE</span><br><span class="line">MEDIUMBLOB</span><br><span class="line">MEDIUMINT</span><br><span class="line">MEDIUMTEXT</span><br><span class="line"><span class="keyword">MEMBER</span></span><br><span class="line"><span class="keyword">MERGE</span></span><br><span class="line">MESSAGE_LENGTH</span><br><span class="line">MESSAGE_OCTET_LENGTH</span><br><span class="line">MESSAGE_TEXT</span><br><span class="line"><span class="keyword">METHOD</span></span><br><span class="line">MIDDLEINT</span><br><span class="line">MIN</span><br><span class="line">MIN_ROWS</span><br><span class="line">MINUS</span><br><span class="line"><span class="keyword">MINUTE</span></span><br><span class="line">MINUTE_MICROSECOND</span><br><span class="line">MINUTE_SECOND</span><br><span class="line">MINVALUE</span><br><span class="line">MLSLABEL</span><br><span class="line">MOD</span><br><span class="line">MODE</span><br><span class="line"><span class="keyword">MODIFIES</span></span><br><span class="line">MODIFY</span><br><span class="line"><span class="keyword">MODULE</span></span><br><span class="line"><span class="keyword">MONTH</span></span><br><span class="line">MONTHNAME</span><br><span class="line">MORE</span><br><span class="line">MOVE</span><br><span class="line"><span class="keyword">MULTISET</span></span><br><span class="line">MUMPS</span><br><span class="line">MYISAM</span><br><span class="line">NAME</span><br><span class="line">NAMES</span><br><span class="line"><span class="type">NATIONAL</span></span><br><span class="line"><span class="keyword">NATURAL</span></span><br><span class="line"><span class="type">NCHAR</span></span><br><span class="line"><span class="type">NCLOB</span></span><br><span class="line">NESTING</span><br><span class="line"><span class="keyword">NEW</span></span><br><span class="line">NEXT</span><br><span class="line"><span class="keyword">NO</span></span><br><span class="line">NO_WRITE_TO_BINLOG</span><br><span class="line">NOAUDIT</span><br><span class="line">NOCHECK</span><br><span class="line">NOCOMPRESS</span><br><span class="line">NOCREATEDB</span><br><span class="line">NOCREATEROLE</span><br><span class="line">NOCREATEUSER</span><br><span class="line">NOINHERIT</span><br><span class="line">NOLOGIN</span><br><span class="line">NONCLUSTERED</span><br><span class="line"><span class="keyword">NONE</span></span><br><span class="line"><span class="keyword">NORMALIZE</span></span><br><span class="line">NORMALIZED</span><br><span class="line">NOSUPERUSER</span><br><span class="line"><span class="keyword">NOT</span></span><br><span class="line">NOTHING</span><br><span class="line">NOTIFY</span><br><span class="line">NOTNULL</span><br><span class="line">NOWAIT</span><br><span class="line"><span class="keyword">NULL</span></span><br><span class="line">NULLABLE</span><br><span class="line">NULLIF</span><br><span class="line">NULLS</span><br><span class="line">NUMBER</span><br><span class="line"><span class="type">NUMERIC</span></span><br><span class="line">OBJECT</span><br><span class="line"><span class="keyword">OCTET_LENGTH</span></span><br><span class="line">OCTETS</span><br><span class="line"><span class="keyword">OF</span></span><br><span class="line">OFF</span><br><span class="line">OFFLINE</span><br><span class="line"><span class="keyword">OFFSET</span></span><br><span class="line">OFFSETS</span><br><span class="line">OIDS</span><br><span class="line"><span class="keyword">OLD</span></span><br><span class="line"><span class="keyword">ON</span></span><br><span class="line">ONLINE</span><br><span class="line"><span class="keyword">ONLY</span></span><br><span class="line"><span class="keyword">OPEN</span></span><br><span class="line">OPENDATASOURCE</span><br><span class="line">OPENQUERY</span><br><span class="line">OPENROWSET</span><br><span class="line">OPENXML</span><br><span class="line">OPERATION</span><br><span class="line">OPERATOR</span><br><span class="line">OPTIMIZE</span><br><span class="line">OPTION</span><br><span class="line">OPTIONALLY</span><br><span class="line">OPTIONS</span><br><span class="line"><span class="keyword">OR</span></span><br><span class="line"><span class="keyword">ORDER</span></span><br><span class="line">ORDERING</span><br><span class="line">ORDINALITY</span><br><span class="line">OTHERS</span><br><span class="line"><span class="keyword">OUT</span></span><br><span class="line"><span class="keyword">OUTER</span></span><br><span class="line">OUTFILE</span><br><span class="line">OUTPUT</span><br><span class="line"><span class="keyword">OVER</span></span><br><span class="line"><span class="keyword">OVERLAPS</span></span><br><span class="line"><span class="keyword">OVERLAY</span></span><br><span class="line">OVERRIDING</span><br><span class="line">OWNER</span><br><span class="line">PACK_KEYS</span><br><span class="line">PAD</span><br><span class="line"><span class="keyword">PARAMETER</span></span><br><span class="line">PARAMETER_MODE</span><br><span class="line">PARAMETER_NAME</span><br><span class="line">PARAMETER_ORDINAL_POSITION</span><br><span class="line">PARAMETER_SPECIFIC_CATALOG</span><br><span class="line">PARAMETER_SPECIFIC_NAME</span><br><span class="line">PARAMETER_SPECIFIC_SCHEMA</span><br><span class="line">PARAMETERS</span><br><span class="line">PARTIAL</span><br><span class="line"><span class="keyword">PARTITION</span></span><br><span class="line">PASCAL</span><br><span class="line">PASSWORD</span><br><span class="line">PATH</span><br><span class="line">PCTFREE</span><br><span class="line"><span class="keyword">PERCENT</span></span><br><span class="line">PERCENT_RANK</span><br><span class="line">PERCENTILE_CONT</span><br><span class="line">PERCENTILE_DISC</span><br><span class="line">PLACING</span><br><span class="line">PLAN</span><br><span class="line">PLI</span><br><span class="line">POSITION</span><br><span class="line">POSTFIX</span><br><span class="line">POWER</span><br><span class="line">PRECEDING</span><br><span class="line"><span class="keyword">PRECISION</span></span><br><span class="line">PREFIX</span><br><span class="line">PREORDER</span><br><span class="line"><span class="keyword">PREPARE</span></span><br><span class="line">PREPARED</span><br><span class="line">PRESERVE</span><br><span class="line"><span class="keyword">PRIMARY</span></span><br><span class="line">PRINT</span><br><span class="line">PRIOR</span><br><span class="line">PRIVILEGES</span><br><span class="line">PROC</span><br><span class="line">PROCEDURAL</span><br><span class="line"><span class="keyword">PROCEDURE</span></span><br><span class="line">PROCESS</span><br><span class="line">PROCESSLIST</span><br><span class="line">PUBLIC</span><br><span class="line">PURGE</span><br><span class="line">QUOTE</span><br><span class="line">RAID0</span><br><span class="line">RAISERROR</span><br><span class="line"><span class="keyword">RANGE</span></span><br><span class="line">RANK</span><br><span class="line">RAW</span><br><span class="line">READ</span><br><span class="line"><span class="keyword">READS</span></span><br><span class="line">READTEXT</span><br><span class="line"><span class="type">REAL</span></span><br><span class="line">RECHECK</span><br><span class="line">RECONFIGURE</span><br><span class="line"><span class="keyword">RECURSIVE</span></span><br><span class="line"><span class="keyword">REF</span></span><br><span class="line"><span class="keyword">REFERENCES</span></span><br><span class="line"><span class="keyword">REFERENCING</span></span><br><span class="line">REGEXP</span><br><span class="line">REGR_AVGX</span><br><span class="line">REGR_AVGY</span><br><span class="line">REGR_COUNT</span><br><span class="line">REGR_INTERCEPT</span><br><span class="line">REGR_R2</span><br><span class="line">REGR_SLOPE</span><br><span class="line">REGR_SXX</span><br><span class="line">REGR_SXY</span><br><span class="line">REGR_SYY</span><br><span class="line">REINDEX</span><br><span class="line">RELATIVE</span><br><span class="line"><span class="keyword">RELEASE</span></span><br><span class="line">RELOAD</span><br><span class="line">RENAME</span><br><span class="line">REPEAT</span><br><span class="line">REPEATABLE</span><br><span class="line">REPLACE</span><br><span class="line">REPLICATION</span><br><span class="line">REQUIRE</span><br><span class="line">RESET</span><br><span class="line">RESIGNAL</span><br><span class="line">RESOURCE</span><br><span class="line">RESTART</span><br><span class="line">RESTORE</span><br><span class="line">RESTRICT</span><br><span class="line"><span class="keyword">RESULT</span></span><br><span class="line"><span class="keyword">RETURN</span></span><br><span class="line">RETURNED_CARDINALITY</span><br><span class="line">RETURNED_LENGTH</span><br><span class="line">RETURNED_OCTET_LENGTH</span><br><span class="line">RETURNED_SQLSTATE</span><br><span class="line"><span class="keyword">RETURNS</span></span><br><span class="line"><span class="keyword">REVOKE</span></span><br><span class="line"><span class="keyword">RIGHT</span></span><br><span class="line">RLIKE</span><br><span class="line">ROLE</span><br><span class="line"><span class="keyword">ROLLBACK</span></span><br><span class="line"><span class="keyword">ROLLUP</span></span><br><span class="line">ROUTINE</span><br><span class="line">ROUTINE_CATALOG</span><br><span class="line">ROUTINE_NAME</span><br><span class="line">ROUTINE_SCHEMA</span><br><span class="line"><span class="type">ROW</span></span><br><span class="line">ROW_COUNT</span><br><span class="line">ROW_NUMBER</span><br><span class="line">ROWCOUNT</span><br><span class="line">ROWGUIDCOL</span><br><span class="line">ROWID</span><br><span class="line">ROWNUM</span><br><span class="line"><span class="keyword">ROWS</span></span><br><span class="line">RULE</span><br><span class="line">SAVE</span><br><span class="line"><span class="keyword">SAVEPOINT</span></span><br><span class="line">SCALE</span><br><span class="line">SCHEMA</span><br><span class="line">SCHEMA_NAME</span><br><span class="line">SCHEMAS</span><br><span class="line"><span class="keyword">SCOPE</span></span><br><span class="line">SCOPE_CATALOG</span><br><span class="line">SCOPE_NAME</span><br><span class="line">SCOPE_SCHEMA</span><br><span class="line"><span class="keyword">SCROLL</span></span><br><span class="line"><span class="keyword">SEARCH</span></span><br><span class="line"><span class="keyword">SECOND</span></span><br><span class="line">SECOND_MICROSECOND</span><br><span class="line">SECTION</span><br><span class="line">SECURITY</span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">SELF</span><br><span class="line"><span class="keyword">SENSITIVE</span></span><br><span class="line">SEPARATOR</span><br><span class="line">SEQUENCE</span><br><span class="line">SERIALIZABLE</span><br><span class="line">SERVER_NAME</span><br><span class="line">SESSION</span><br><span class="line"><span class="built_in">SESSION_USER</span></span><br><span class="line"><span class="keyword">SET</span></span><br><span class="line">SETOF</span><br><span class="line">SETS</span><br><span class="line">SETUSER</span><br><span class="line">SHARE</span><br><span class="line"><span class="keyword">SHOW</span></span><br><span class="line">SHUTDOWN</span><br><span class="line">SIGNAL</span><br><span class="line"><span class="keyword">SIMILAR</span></span><br><span class="line">SIMPLE</span><br><span class="line">SIZE</span><br><span class="line"><span class="type">SMALLINT</span></span><br><span class="line"><span class="keyword">SOME</span></span><br><span class="line">SONAME</span><br><span class="line">SOURCE</span><br><span class="line">SPACE</span><br><span class="line">SPATIAL</span><br><span class="line"><span class="keyword">SPECIFIC</span></span><br><span class="line">SPECIFIC_NAME</span><br><span class="line"><span class="keyword">SPECIFICTYPE</span></span><br><span class="line"><span class="keyword">SQL</span></span><br><span class="line">SQL_BIG_RESULT</span><br><span class="line">SQL_BIG_SELECTS</span><br><span class="line">SQL_BIG_TABLES</span><br><span class="line">SQL_CALC_FOUND_ROWS</span><br><span class="line">SQL_LOG_OFF</span><br><span class="line">SQL_LOG_UPDATE</span><br><span class="line">SQL_LOW_PRIORITY_UPDATES</span><br><span class="line">SQL_SELECT_LIMIT</span><br><span class="line">SQL_SMALL_RESULT</span><br><span class="line">SQL_WARNINGS</span><br><span class="line">SQLCA</span><br><span class="line">SQLCODE</span><br><span class="line">SQLERROR</span><br><span class="line"><span class="keyword">SQLEXCEPTION</span></span><br><span class="line"><span class="keyword">SQLSTATE</span></span><br><span class="line"><span class="keyword">SQLWARNING</span></span><br><span class="line">SQRT</span><br><span class="line">SSL</span><br><span class="line">STABLE</span><br><span class="line"><span class="keyword">START</span></span><br><span class="line">STARTING</span><br><span class="line">STATE</span><br><span class="line">STATEMENT</span><br><span class="line"><span class="keyword">STATIC</span></span><br><span class="line">STATISTICS</span><br><span class="line">STATUS</span><br><span class="line">STDDEV_POP</span><br><span class="line">STDDEV_SAMP</span><br><span class="line">STDIN</span><br><span class="line">STDOUT</span><br><span class="line">STORAGE</span><br><span class="line">STRAIGHT_JOIN</span><br><span class="line">STRICT</span><br><span class="line">STRING</span><br><span class="line">STRUCTURE</span><br><span class="line">STYLE</span><br><span class="line">SUBCLASS_ORIGIN</span><br><span class="line">SUBLIST</span><br><span class="line"><span class="keyword">SUBMULTISET</span></span><br><span class="line">SUBSTRING</span><br><span class="line">SUCCESSFUL</span><br><span class="line">SUM</span><br><span class="line">SUPERUSER</span><br><span class="line"><span class="keyword">SYMMETRIC</span></span><br><span class="line">SYNONYM</span><br><span class="line">SYSDATE</span><br><span class="line">SYSID</span><br><span class="line"><span class="keyword">SYSTEM</span></span><br><span class="line"><span class="built_in">SYSTEM_USER</span></span><br><span class="line"><span class="keyword">TABLE</span></span><br><span class="line">TABLE_NAME</span><br><span class="line">TABLES</span><br><span class="line"><span class="keyword">TABLESAMPLE</span></span><br><span class="line">TABLESPACE</span><br><span class="line">TEMP</span><br><span class="line">TEMPLATE</span><br><span class="line">TEMPORARY</span><br><span class="line">TERMINATE</span><br><span class="line">TERMINATED</span><br><span class="line">TEXT</span><br><span class="line">TEXTSIZE</span><br><span class="line">THAN</span><br><span class="line"><span class="keyword">THEN</span></span><br><span class="line">TIES</span><br><span class="line"><span class="type">TIME</span></span><br><span class="line"><span class="type">TIMESTAMP</span></span><br><span class="line"><span class="keyword">TIMEZONE_HOUR</span></span><br><span class="line"><span class="keyword">TIMEZONE_MINUTE</span></span><br><span class="line">TINYBLOB</span><br><span class="line">TINYINT</span><br><span class="line">TINYTEXT</span><br><span class="line"><span class="keyword">TO</span></span><br><span class="line">TOAST</span><br><span class="line">TOP</span><br><span class="line">TOP_LEVEL_COUNT</span><br><span class="line"><span class="keyword">TRAILING</span></span><br><span class="line">TRAN</span><br><span class="line">TRANSACTION</span><br><span class="line">TRANSACTION_ACTIVE</span><br><span class="line">TRANSACTIONS_COMMITTED</span><br><span class="line">TRANSACTIONS_ROLLED_BACK</span><br><span class="line">TRANSFORM</span><br><span class="line">TRANSFORMS</span><br><span class="line">TRANSLATE</span><br><span class="line"><span class="keyword">TRANSLATION</span></span><br><span class="line">TREAT</span><br><span class="line"><span class="keyword">TRIGGER</span></span><br><span class="line">TRIGGER_CATALOG</span><br><span class="line">TRIGGER_NAME</span><br><span class="line">TRIGGER_SCHEMA</span><br><span class="line">TRIM</span><br><span class="line"><span class="literal">TRUE</span></span><br><span class="line"><span class="keyword">TRUNCATE</span></span><br><span class="line">TRUSTED</span><br><span class="line">TSEQUAL</span><br><span class="line">TYPE</span><br><span class="line"><span class="keyword">UESCAPE</span></span><br><span class="line">UID</span><br><span class="line">UNBOUNDED</span><br><span class="line">UNCOMMITTED</span><br><span class="line">UNDER</span><br><span class="line">UNDO</span><br><span class="line">UNENCRYPTED</span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">UNIQUE</span></span><br><span class="line"><span class="literal">UNKNOWN</span></span><br><span class="line">UNLISTEN</span><br><span class="line">UNLOCK</span><br><span class="line">UNNAMED</span><br><span class="line">UNNEST</span><br><span class="line">UNSIGNED</span><br><span class="line">UNTIL</span><br><span class="line"><span class="keyword">UPDATE</span></span><br><span class="line">UPDATETEXT</span><br><span class="line">UPPER</span><br><span class="line">USAGE</span><br><span class="line">USE</span><br><span class="line"><span class="keyword">USER</span></span><br><span class="line">USER_DEFINED_TYPE_CATALOG</span><br><span class="line">USER_DEFINED_TYPE_CODE</span><br><span class="line">USER_DEFINED_TYPE_NAME</span><br><span class="line">USER_DEFINED_TYPE_SCHEMA</span><br><span class="line"><span class="keyword">USING</span></span><br><span class="line">UTC_DATE</span><br><span class="line">UTC_TIME</span><br><span class="line">UTC_TIMESTAMP</span><br><span class="line">VACUUM</span><br><span class="line">VALID</span><br><span class="line">VALIDATE</span><br><span class="line">VALIDATOR</span><br><span class="line"><span class="keyword">VALUE</span></span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">VAR_POP</span><br><span class="line">VAR_SAMP</span><br><span class="line"><span class="type">VARBINARY</span></span><br><span class="line"><span class="type">VARCHAR</span></span><br><span class="line">VARCHAR2</span><br><span class="line">VARCHARACTER</span><br><span class="line">VARIABLE</span><br><span class="line">VARIABLES</span><br><span class="line"><span class="type">VARYING</span></span><br><span class="line">VERBOSE</span><br><span class="line"><span class="keyword">VIEW</span></span><br><span class="line">VOLATILE</span><br><span class="line">WAITFOR</span><br><span class="line"><span class="keyword">WHEN</span></span><br><span class="line"><span class="keyword">WHENEVER</span></span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">WHILE</span><br><span class="line">WIDTH_BUCKET</span><br><span class="line"><span class="keyword">WINDOW</span></span><br><span class="line"><span class="keyword">WITH</span></span><br><span class="line"><span class="keyword">WITHIN</span></span><br><span class="line"><span class="keyword">WITHOUT</span></span><br><span class="line">WORK</span><br><span class="line">WRITE</span><br><span class="line">WRITETEXT</span><br><span class="line">X509</span><br><span class="line">XOR</span><br><span class="line"><span class="keyword">YEAR</span></span><br><span class="line">YEAR_MONTH</span><br><span class="line">ZEROFILL</span><br><span class="line">ZONE</span><br><span class="line"><span class="keyword">language</span><span class="operator">-</span><span class="keyword">sql</span>复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs sql">A
+ABORT
+ABS
+ABSOLUTE
+ACCESS
+ACTION
+ADA
+<span class="hljs-keyword">ADD</span>
+ADMIN
+AFTER
+AGGREGATE
+ALIAS
+<span class="hljs-keyword">ALL</span>
+<span class="hljs-keyword">ALLOCATE</span>
+ALSO
+<span class="hljs-keyword">ALTER</span>
+ALWAYS
+ANALYSE
+ANALYZE
+<span class="hljs-keyword">AND</span>
+<span class="hljs-keyword">ANY</span>
+<span class="hljs-keyword">ARE</span>
+<span class="hljs-keyword">ARRAY</span>
+<span class="hljs-keyword">AS</span>
+<span class="hljs-keyword">ASC</span>
+<span class="hljs-keyword">ASENSITIVE</span>
+ASSERTION
+ASSIGNMENT
+<span class="hljs-keyword">ASYMMETRIC</span>
+<span class="hljs-keyword">AT</span>
+<span class="hljs-keyword">ATOMIC</span>
+ATTRIBUTE
+ATTRIBUTES
+AUDIT
+<span class="hljs-keyword">AUTHORIZATION</span>
+AUTO_INCREMENT
+AVG
+AVG_ROW_LENGTH
+BACKUP
+BACKWARD
+BEFORE
+<span class="hljs-keyword">BEGIN</span>
+BERNOULLI
+<span class="hljs-keyword">BETWEEN</span>
+<span class="hljs-type">BIGINT</span>
+<span class="hljs-type">BINARY</span>
+BIT
+BIT_LENGTH
+BITVAR
+<span class="hljs-type">BLOB</span>
+BOOL
+<span class="hljs-type">BOOLEAN</span>
+<span class="hljs-keyword">BOTH</span>
+BREADTH
+BREAK
+BROWSE
+BULK
+<span class="hljs-keyword">BY</span>
+C
+CACHE
+<span class="hljs-keyword">CALL</span>
+<span class="hljs-keyword">CALLED</span>
+<span class="hljs-keyword">CARDINALITY</span>
+CASCADE
+<span class="hljs-keyword">CASCADED</span>
+<span class="hljs-keyword">CASE</span>
+CAST
+CATALOG
+CATALOG_NAME
+CEIL
+CEILING
+CHAIN
+CHANGE
+<span class="hljs-type">CHAR</span>
+<span class="hljs-keyword">CHAR_LENGTH</span>
+<span class="hljs-type">CHARACTER</span>
+<span class="hljs-keyword">CHARACTER_LENGTH</span>
+CHARACTER_SET_CATALOG
+CHARACTER_SET_NAME
+CHARACTER_SET_SCHEMA
+CHARACTERISTICS
+CHARACTERS
+<span class="hljs-keyword">CHECK</span>
+CHECKED
+CHECKPOINT
+CHECKSUM
+CLASS
+CLASS_ORIGIN
+<span class="hljs-type">CLOB</span>
+<span class="hljs-keyword">CLOSE</span>
+CLUSTER
+CLUSTERED
+COALESCE
+COBOL
+<span class="hljs-keyword">COLLATE</span>
+<span class="hljs-keyword">COLLATION</span>
+COLLATION_CATALOG
+COLLATION_NAME
+COLLATION_SCHEMA
+<span class="hljs-keyword">COLLECT</span>
+<span class="hljs-keyword">COLUMN</span>
+COLUMN_NAME
+COLUMNS
+COMMAND_FUNCTION
+COMMAND_FUNCTION_CODE
+COMMENT
+<span class="hljs-keyword">COMMIT</span>
+COMMITTED
+COMPLETION
+COMPRESS
+COMPUTE
+<span class="hljs-keyword">CONDITION</span>
+CONDITION_NUMBER
+<span class="hljs-keyword">CONNECT</span>
+CONNECTION
+CONNECTION_NAME
+<span class="hljs-keyword">CONSTRAINT</span>
+CONSTRAINT_CATALOG
+CONSTRAINT_NAME
+CONSTRAINT_SCHEMA
+CONSTRAINTS
+CONSTRUCTOR
+<span class="hljs-keyword">CONTAINS</span>
+CONTAINSTABLE
+CONTINUE
+CONVERSION
+<span class="hljs-keyword">CONVERT</span>
+<span class="hljs-keyword">COPY</span>
+CORR
+<span class="hljs-keyword">CORRESPONDING</span>
+COUNT
+COVAR_POP
+COVAR_SAMP
+<span class="hljs-keyword">CREATE</span>
+CREATEDB
+CREATEROLE
+CREATEUSER
+<span class="hljs-keyword">CROSS</span>
+CSV
+<span class="hljs-keyword">CUBE</span>
+CUME_DIST
+<span class="hljs-keyword">CURRENT</span>
+<span class="hljs-built_in">CURRENT_DATE</span>
+<span class="hljs-built_in">CURRENT_DEFAULT_TRANSFORM_GROUP</span>
+<span class="hljs-built_in">CURRENT_PATH</span>
+<span class="hljs-built_in">CURRENT_ROLE</span>
+<span class="hljs-built_in">CURRENT_TIME</span>
+<span class="hljs-built_in">CURRENT_TIMESTAMP</span>
+<span class="hljs-built_in">CURRENT_TRANSFORM_GROUP_FOR_TYPE</span>
+<span class="hljs-built_in">CURRENT_USER</span>
+<span class="hljs-keyword">CURSOR</span>
+CURSOR_NAME
+<span class="hljs-keyword">CYCLE</span>
+DATA
+DATABASE
+DATABASES
+<span class="hljs-type">DATE</span>
+DATETIME
+DATETIME_INTERVAL_CODE
+DATETIME_INTERVAL_PRECISION
+<span class="hljs-keyword">DAY</span>
+DAY_HOUR
+DAY_MICROSECOND
+DAY_MINUTE
+DAY_SECOND
+DAYOFMONTH
+DAYOFWEEK
+DAYOFYEAR
+DBCC
+<span class="hljs-keyword">DEALLOCATE</span>
+<span class="hljs-type">DEC</span>
+<span class="hljs-type">DECIMAL</span>
+<span class="hljs-keyword">DECLARE</span>
+<span class="hljs-keyword">DEFAULT</span>
+DEFAULTS
+DEFERRABLE
+DEFERRED
+DEFINED
+DEFINER
+DEGREE
+DELAY_KEY_WRITE
+DELAYED
+<span class="hljs-keyword">DELETE</span>
+DELIMITER
+DELIMITERS
+DENSE_RANK
+DENY
+DEPTH
+DEREF
+DERIVED
+<span class="hljs-keyword">DESC</span>
+<span class="hljs-keyword">DESCRIBE</span>
+DESCRIPTOR
+DESTROY
+DESTRUCTOR
+<span class="hljs-keyword">DETERMINISTIC</span>
+DIAGNOSTICS
+DICTIONARY
+DISABLE
+<span class="hljs-keyword">DISCONNECT</span>
+DISK
+DISPATCH
+<span class="hljs-keyword">DISTINCT</span>
+DISTINCTROW
+DISTRIBUTED
+DIV
+DO
+DOMAIN
+<span class="hljs-keyword">DOUBLE</span>
+<span class="hljs-keyword">DROP</span>
+DUAL
+DUMMY
+DUMP
+<span class="hljs-keyword">DYNAMIC</span>
+DYNAMIC_FUNCTION
+DYNAMIC_FUNCTION_CODE
+<span class="hljs-keyword">EACH</span>
+ELEMENT
+<span class="hljs-keyword">ELSE</span>
+ELSEIF
+ENABLE
+ENCLOSED
+ENCODING
+ENCRYPTED
+<span class="hljs-keyword">END</span>
+<span class="hljs-keyword">END</span><span class="hljs-operator">-</span><span class="hljs-keyword">EXEC</span>
+ENUM
+<span class="hljs-keyword">EQUALS</span>
+ERRLVL
+<span class="hljs-keyword">ESCAPE</span>
+ESCAPED
+<span class="hljs-keyword">EVERY</span>
+<span class="hljs-keyword">EXCEPT</span>
+EXCEPTION
+EXCLUDE
+EXCLUDING
+EXCLUSIVE
+<span class="hljs-keyword">EXEC</span>
+<span class="hljs-keyword">EXECUTE</span>
+EXISTING
+<span class="hljs-keyword">EXISTS</span>
+EXIT
+EXP
+EXPLAIN
+<span class="hljs-keyword">EXTERNAL</span>
+EXTRACT
+<span class="hljs-literal">FALSE</span>
+<span class="hljs-keyword">FETCH</span>
+FIELDS
+FILE
+FILLFACTOR
+<span class="hljs-keyword">FILTER</span>
+<span class="hljs-keyword">FINAL</span>
+<span class="hljs-keyword">FIRST</span>
+<span class="hljs-type">FLOAT</span>
+FLOAT4
+FLOAT8
+FLOOR
+FLUSH
+FOLLOWING
+<span class="hljs-keyword">FOR</span>
+FORCE
+<span class="hljs-keyword">FOREIGN</span>
+FORTRAN
+FORWARD
+FOUND
+<span class="hljs-keyword">FREE</span>
+FREETEXT
+FREETEXTTABLE
+FREEZE
+<span class="hljs-keyword">FROM</span>
+<span class="hljs-keyword">FULL</span>
+FULLTEXT
+<span class="hljs-keyword">FUNCTION</span>
+<span class="hljs-keyword">FUSION</span>
+G
+GENERAL
+GENERATED
+<span class="hljs-keyword">GET</span>
+<span class="hljs-keyword">GLOBAL</span>
+GO
+GOTO
+<span class="hljs-keyword">GRANT</span>
+GRANTED
+GRANTS
+GREATEST
+<span class="hljs-keyword">GROUP</span>
+<span class="hljs-keyword">GROUPING</span>
+HANDLER
+<span class="hljs-keyword">HAVING</span>
+HEADER
+HEAP
+HIERARCHY
+HIGH_PRIORITY
+<span class="hljs-keyword">HOLD</span>
+HOLDLOCK
+HOST
+HOSTS
+<span class="hljs-keyword">HOUR</span>
+HOUR_MICROSECOND
+HOUR_MINUTE
+HOUR_SECOND
+IDENTIFIED
+<span class="hljs-keyword">IDENTITY</span>
+IDENTITY_INSERT
+IDENTITYCOL
+IF
+IGNORE
+ILIKE
+IMMEDIATE
+IMMUTABLE
+IMPLEMENTATION
+IMPLICIT
+<span class="hljs-keyword">IN</span>
+INCLUDE
+INCLUDING
+INCREMENT
+INDEX
+<span class="hljs-keyword">INDICATOR</span>
+INFILE
+INFIX
+INHERIT
+INHERITS
+<span class="hljs-keyword">INITIAL</span>
+INITIALIZE
+INITIALLY
+<span class="hljs-keyword">INNER</span>
+<span class="hljs-keyword">INOUT</span>
+INPUT
+<span class="hljs-keyword">INSENSITIVE</span>
+<span class="hljs-keyword">INSERT</span>
+INSERT_ID
+INSTANCE
+INSTANTIABLE
+INSTEAD
+<span class="hljs-type">INT</span>
+INT1
+INT2
+INT3
+INT4
+INT8
+<span class="hljs-type">INTEGER</span>
+<span class="hljs-keyword">INTERSECT</span>
+<span class="hljs-keyword">INTERSECTION</span>
+<span class="hljs-type">INTERVAL</span>
+<span class="hljs-keyword">INTO</span>
+INVOKER
+<span class="hljs-keyword">IS</span>
+ISAM
+ISNULL
+ISOLATION
+ITERATE
+<span class="hljs-keyword">JOIN</span>
+K
+KEY
+KEY_MEMBER
+KEY_TYPE
+KEYS
+KILL
+LANCOMPILER
+<span class="hljs-keyword">LANGUAGE</span>
+<span class="hljs-keyword">LARGE</span>
+<span class="hljs-keyword">LAST</span>
+LAST_INSERT_ID
+<span class="hljs-keyword">LATERAL</span>
+<span class="hljs-keyword">LEADING</span>
+LEAST
+LEAVE
+<span class="hljs-keyword">LEFT</span>
+LENGTH
+LESS
+LEVEL
+<span class="hljs-keyword">LIKE</span>
+LIMIT
+LINENO
+LINES
+LISTEN
+LN
+LOAD
+<span class="hljs-keyword">LOCAL</span>
+<span class="hljs-built_in">LOCALTIME</span>
+<span class="hljs-built_in">LOCALTIMESTAMP</span>
+LOCATION
+LOCATOR
+LOCK
+LOGIN
+LOGS
+LONG
+LONGBLOB
+LONGTEXT
+LOOP
+LOW_PRIORITY
+LOWER
+M
+MAP
+<span class="hljs-keyword">MATCH</span>
+MATCHED
+MAX
+MAX_ROWS
+MAXEXTENTS
+MAXVALUE
+MEDIUMBLOB
+MEDIUMINT
+MEDIUMTEXT
+<span class="hljs-keyword">MEMBER</span>
+<span class="hljs-keyword">MERGE</span>
+MESSAGE_LENGTH
+MESSAGE_OCTET_LENGTH
+MESSAGE_TEXT
+<span class="hljs-keyword">METHOD</span>
+MIDDLEINT
+MIN
+MIN_ROWS
+MINUS
+<span class="hljs-keyword">MINUTE</span>
+MINUTE_MICROSECOND
+MINUTE_SECOND
+MINVALUE
+MLSLABEL
+MOD
+MODE
+<span class="hljs-keyword">MODIFIES</span>
+MODIFY
+<span class="hljs-keyword">MODULE</span>
+<span class="hljs-keyword">MONTH</span>
+MONTHNAME
+MORE
+MOVE
+<span class="hljs-keyword">MULTISET</span>
+MUMPS
+MYISAM
+NAME
+NAMES
+<span class="hljs-type">NATIONAL</span>
+<span class="hljs-keyword">NATURAL</span>
+<span class="hljs-type">NCHAR</span>
+<span class="hljs-type">NCLOB</span>
+NESTING
+<span class="hljs-keyword">NEW</span>
+NEXT
+<span class="hljs-keyword">NO</span>
+NO_WRITE_TO_BINLOG
+NOAUDIT
+NOCHECK
+NOCOMPRESS
+NOCREATEDB
+NOCREATEROLE
+NOCREATEUSER
+NOINHERIT
+NOLOGIN
+NONCLUSTERED
+<span class="hljs-keyword">NONE</span>
+<span class="hljs-keyword">NORMALIZE</span>
+NORMALIZED
+NOSUPERUSER
+<span class="hljs-keyword">NOT</span>
+NOTHING
+NOTIFY
+NOTNULL
+NOWAIT
+<span class="hljs-keyword">NULL</span>
+NULLABLE
+NULLIF
+NULLS
+NUMBER
+<span class="hljs-type">NUMERIC</span>
+OBJECT
+<span class="hljs-keyword">OCTET_LENGTH</span>
+OCTETS
+<span class="hljs-keyword">OF</span>
+OFF
+OFFLINE
+<span class="hljs-keyword">OFFSET</span>
+OFFSETS
+OIDS
+<span class="hljs-keyword">OLD</span>
+<span class="hljs-keyword">ON</span>
+ONLINE
+<span class="hljs-keyword">ONLY</span>
+<span class="hljs-keyword">OPEN</span>
+OPENDATASOURCE
+OPENQUERY
+OPENROWSET
+OPENXML
+OPERATION
+OPERATOR
+OPTIMIZE
+OPTION
+OPTIONALLY
+OPTIONS
+<span class="hljs-keyword">OR</span>
+<span class="hljs-keyword">ORDER</span>
+ORDERING
+ORDINALITY
+OTHERS
+<span class="hljs-keyword">OUT</span>
+<span class="hljs-keyword">OUTER</span>
+OUTFILE
+OUTPUT
+<span class="hljs-keyword">OVER</span>
+<span class="hljs-keyword">OVERLAPS</span>
+<span class="hljs-keyword">OVERLAY</span>
+OVERRIDING
+OWNER
+PACK_KEYS
+PAD
+<span class="hljs-keyword">PARAMETER</span>
+PARAMETER_MODE
+PARAMETER_NAME
+PARAMETER_ORDINAL_POSITION
+PARAMETER_SPECIFIC_CATALOG
+PARAMETER_SPECIFIC_NAME
+PARAMETER_SPECIFIC_SCHEMA
+PARAMETERS
+PARTIAL
+<span class="hljs-keyword">PARTITION</span>
+PASCAL
+PASSWORD
+PATH
+PCTFREE
+<span class="hljs-keyword">PERCENT</span>
+PERCENT_RANK
+PERCENTILE_CONT
+PERCENTILE_DISC
+PLACING
+PLAN
+PLI
+POSITION
+POSTFIX
+POWER
+PRECEDING
+<span class="hljs-keyword">PRECISION</span>
+PREFIX
+PREORDER
+<span class="hljs-keyword">PREPARE</span>
+PREPARED
+PRESERVE
+<span class="hljs-keyword">PRIMARY</span>
+PRINT
+PRIOR
+PRIVILEGES
+PROC
+PROCEDURAL
+<span class="hljs-keyword">PROCEDURE</span>
+PROCESS
+PROCESSLIST
+PUBLIC
+PURGE
+QUOTE
+RAID0
+RAISERROR
+<span class="hljs-keyword">RANGE</span>
+RANK
+RAW
+READ
+<span class="hljs-keyword">READS</span>
+READTEXT
+<span class="hljs-type">REAL</span>
+RECHECK
+RECONFIGURE
+<span class="hljs-keyword">RECURSIVE</span>
+<span class="hljs-keyword">REF</span>
+<span class="hljs-keyword">REFERENCES</span>
+<span class="hljs-keyword">REFERENCING</span>
+REGEXP
+REGR_AVGX
+REGR_AVGY
+REGR_COUNT
+REGR_INTERCEPT
+REGR_R2
+REGR_SLOPE
+REGR_SXX
+REGR_SXY
+REGR_SYY
+REINDEX
+RELATIVE
+<span class="hljs-keyword">RELEASE</span>
+RELOAD
+RENAME
+REPEAT
+REPEATABLE
+REPLACE
+REPLICATION
+REQUIRE
+RESET
+RESIGNAL
+RESOURCE
+RESTART
+RESTORE
+RESTRICT
+<span class="hljs-keyword">RESULT</span>
+<span class="hljs-keyword">RETURN</span>
+RETURNED_CARDINALITY
+RETURNED_LENGTH
+RETURNED_OCTET_LENGTH
+RETURNED_SQLSTATE
+<span class="hljs-keyword">RETURNS</span>
+<span class="hljs-keyword">REVOKE</span>
+<span class="hljs-keyword">RIGHT</span>
+RLIKE
+ROLE
+<span class="hljs-keyword">ROLLBACK</span>
+<span class="hljs-keyword">ROLLUP</span>
+ROUTINE
+ROUTINE_CATALOG
+ROUTINE_NAME
+ROUTINE_SCHEMA
+<span class="hljs-type">ROW</span>
+ROW_COUNT
+ROW_NUMBER
+ROWCOUNT
+ROWGUIDCOL
+ROWID
+ROWNUM
+<span class="hljs-keyword">ROWS</span>
+RULE
+SAVE
+<span class="hljs-keyword">SAVEPOINT</span>
+SCALE
+SCHEMA
+SCHEMA_NAME
+SCHEMAS
+<span class="hljs-keyword">SCOPE</span>
+SCOPE_CATALOG
+SCOPE_NAME
+SCOPE_SCHEMA
+<span class="hljs-keyword">SCROLL</span>
+<span class="hljs-keyword">SEARCH</span>
+<span class="hljs-keyword">SECOND</span>
+SECOND_MICROSECOND
+SECTION
+SECURITY
+<span class="hljs-keyword">SELECT</span>
+SELF
+<span class="hljs-keyword">SENSITIVE</span>
+SEPARATOR
+SEQUENCE
+SERIALIZABLE
+SERVER_NAME
+SESSION
+<span class="hljs-built_in">SESSION_USER</span>
+<span class="hljs-keyword">SET</span>
+SETOF
+SETS
+SETUSER
+SHARE
+<span class="hljs-keyword">SHOW</span>
+SHUTDOWN
+SIGNAL
+<span class="hljs-keyword">SIMILAR</span>
+SIMPLE
+SIZE
+<span class="hljs-type">SMALLINT</span>
+<span class="hljs-keyword">SOME</span>
+SONAME
+SOURCE
+SPACE
+SPATIAL
+<span class="hljs-keyword">SPECIFIC</span>
+SPECIFIC_NAME
+<span class="hljs-keyword">SPECIFICTYPE</span>
+<span class="hljs-keyword">SQL</span>
+SQL_BIG_RESULT
+SQL_BIG_SELECTS
+SQL_BIG_TABLES
+SQL_CALC_FOUND_ROWS
+SQL_LOG_OFF
+SQL_LOG_UPDATE
+SQL_LOW_PRIORITY_UPDATES
+SQL_SELECT_LIMIT
+SQL_SMALL_RESULT
+SQL_WARNINGS
+SQLCA
+SQLCODE
+SQLERROR
+<span class="hljs-keyword">SQLEXCEPTION</span>
+<span class="hljs-keyword">SQLSTATE</span>
+<span class="hljs-keyword">SQLWARNING</span>
+SQRT
+SSL
+STABLE
+<span class="hljs-keyword">START</span>
+STARTING
+STATE
+STATEMENT
+<span class="hljs-keyword">STATIC</span>
+STATISTICS
+STATUS
+STDDEV_POP
+STDDEV_SAMP
+STDIN
+STDOUT
+STORAGE
+STRAIGHT_JOIN
+STRICT
+STRING
+STRUCTURE
+STYLE
+SUBCLASS_ORIGIN
+SUBLIST
+<span class="hljs-keyword">SUBMULTISET</span>
+SUBSTRING
+SUCCESSFUL
+SUM
+SUPERUSER
+<span class="hljs-keyword">SYMMETRIC</span>
+SYNONYM
+SYSDATE
+SYSID
+<span class="hljs-keyword">SYSTEM</span>
+<span class="hljs-built_in">SYSTEM_USER</span>
+<span class="hljs-keyword">TABLE</span>
+TABLE_NAME
+TABLES
+<span class="hljs-keyword">TABLESAMPLE</span>
+TABLESPACE
+TEMP
+TEMPLATE
+TEMPORARY
+TERMINATE
+TERMINATED
+TEXT
+TEXTSIZE
+THAN
+<span class="hljs-keyword">THEN</span>
+TIES
+<span class="hljs-type">TIME</span>
+<span class="hljs-type">TIMESTAMP</span>
+<span class="hljs-keyword">TIMEZONE_HOUR</span>
+<span class="hljs-keyword">TIMEZONE_MINUTE</span>
+TINYBLOB
+TINYINT
+TINYTEXT
+<span class="hljs-keyword">TO</span>
+TOAST
+TOP
+TOP_LEVEL_COUNT
+<span class="hljs-keyword">TRAILING</span>
+TRAN
+TRANSACTION
+TRANSACTION_ACTIVE
+TRANSACTIONS_COMMITTED
+TRANSACTIONS_ROLLED_BACK
+TRANSFORM
+TRANSFORMS
+TRANSLATE
+<span class="hljs-keyword">TRANSLATION</span>
+TREAT
+<span class="hljs-keyword">TRIGGER</span>
+TRIGGER_CATALOG
+TRIGGER_NAME
+TRIGGER_SCHEMA
+TRIM
+<span class="hljs-literal">TRUE</span>
+<span class="hljs-keyword">TRUNCATE</span>
+TRUSTED
+TSEQUAL
+TYPE
+<span class="hljs-keyword">UESCAPE</span>
+UID
+UNBOUNDED
+UNCOMMITTED
+UNDER
+UNDO
+UNENCRYPTED
+<span class="hljs-keyword">UNION</span>
+<span class="hljs-keyword">UNIQUE</span>
+<span class="hljs-literal">UNKNOWN</span>
+UNLISTEN
+UNLOCK
+UNNAMED
+UNNEST
+UNSIGNED
+UNTIL
+<span class="hljs-keyword">UPDATE</span>
+UPDATETEXT
+UPPER
+USAGE
+USE
+<span class="hljs-keyword">USER</span>
+USER_DEFINED_TYPE_CATALOG
+USER_DEFINED_TYPE_CODE
+USER_DEFINED_TYPE_NAME
+USER_DEFINED_TYPE_SCHEMA
+<span class="hljs-keyword">USING</span>
+UTC_DATE
+UTC_TIME
+UTC_TIMESTAMP
+VACUUM
+VALID
+VALIDATE
+VALIDATOR
+<span class="hljs-keyword">VALUE</span>
+<span class="hljs-keyword">VALUES</span>
+VAR_POP
+VAR_SAMP
+<span class="hljs-type">VARBINARY</span>
+<span class="hljs-type">VARCHAR</span>
+VARCHAR2
+VARCHARACTER
+VARIABLE
+VARIABLES
+<span class="hljs-type">VARYING</span>
+VERBOSE
+<span class="hljs-keyword">VIEW</span>
+VOLATILE
+WAITFOR
+<span class="hljs-keyword">WHEN</span>
+<span class="hljs-keyword">WHENEVER</span>
+<span class="hljs-keyword">WHERE</span>
+WHILE
+WIDTH_BUCKET
+<span class="hljs-keyword">WINDOW</span>
+<span class="hljs-keyword">WITH</span>
+<span class="hljs-keyword">WITHIN</span>
+<span class="hljs-keyword">WITHOUT</span>
+WORK
+WRITE
+WRITETEXT
+X509
+XOR
+<span class="hljs-keyword">YEAR</span>
+YEAR_MONTH
+ZEROFILL
+ZONE
+<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>复制代码</code></pre>
 
 <h3 id="Column-data-types-列的数据类型"><a href="#Column-data-types-列的数据类型" class="headerlink" title="Column data types 列的数据类型"></a>Column data types 列的数据类型</h3><p>出于在数据库引擎之间达到最大程度兼容的目的，下面是一些建议使用的列数据类型。</p>
 <h4 id="Character-types-字符型"><a href="#Character-types-字符型" class="headerlink" title="Character types 字符型"></a>Character types 字符型</h4><ul>

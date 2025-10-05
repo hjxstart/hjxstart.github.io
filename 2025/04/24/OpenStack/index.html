@@ -122,10 +122,52 @@
         
             
                 <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
                     <div data-rel="读书">
                         
                         读书
                         <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -154,48 +196,6 @@
                         
                         数据库
                         <small>(5)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="运维">
-                        
-                        运维
-                        <small>(25)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="安全">
-                        
-                        安全
-                        <small>(3)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="开发">
-                        
-                        开发
-                        <small>(14)</small>
                         
                     </div>
                     
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<input type="hidden" id="yelog_site_word_count" value="243.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1018,15 +1018,100 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">RHOPS13（红帽-商业版 V13）</span><br><span class="line">内容：Openstack的运维（基于原生的Q版）</span><br><span class="line">环境：配套环境的文件夹 -&gt; RHSOP13 -&gt; RHOSP13.wmx</span><br><span class="line">硬件：内存32G以上，开启CPU虚拟化</span><br><span class="line">网络：仅主机，172.25.254.0/24,关闭DHCP</span><br><span class="line">打开虚拟机: 选择我已经复制虚拟机</span><br><span class="line">账号信息: kiosk/redhat  root/Asimov</span><br><span class="line">切换到root设置时间: su - root</span><br><span class="line">    <span class="built_in">date</span> -s <span class="string">&quot;20220909 11:01&quot;</span> <span class="comment"># 设置2022年1月以后</span></span><br><span class="line">    hwclock -w</span><br><span class="line">环境调整：(关机后调整)</span><br><span class="line">    controller/director: 调整为CPU 6C,内存12G（12288）</span><br><span class="line">    utility: 6C/6G (6144)</span><br><span class="line">    验证环境：ssh student@workstation后</span><br><span class="line">        ssh director</span><br><span class="line">        <span class="built_in">source</span> overcloudrc</span><br><span class="line">        openstack service list</span><br><span class="line">环境初始化：</span><br><span class="line">    virt-manager <span class="comment"># 查看虚拟机</span></span><br><span class="line">    rht-f0finish <span class="comment"># 启动环境</span></span><br><span class="line">常用命令: </span><br><span class="line">    rht-vmctl restart all -y <span class="comment"># 开启所有</span></span><br><span class="line">    rht-vmctl fullreset all -y <span class="comment"># 完整恢复</span></span><br><span class="line">    rht-vmctl reset 节点名称</span><br><span class="line">    其他：如果无法启动就手动启动</span><br><span class="line">关闭OpenStack课堂环境集群</span><br><span class="line">    生产环境：不需要关闭</span><br><span class="line">    课堂环境：不使用后要关闭，因为不关闭内存里面会产生脏数据，影响后面学习使用</span><br><span class="line">    步骤1: 停止OpenStack平台中所有的虚拟机(关机)</span><br><span class="line">    步骤2: 到director运行脚本做各个物流节点的下单处理: ssh director</span><br><span class="line">    步骤3：切换到student/student: ssh student@workstation</span><br><span class="line">    步骤4:：rht-overcloud.sh start</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><pre><code class="hljs bash">RHOPS13（红帽-商业版 V13）
+内容：Openstack的运维（基于原生的Q版）
+环境：配套环境的文件夹 -&gt; RHSOP13 -&gt; RHOSP13.wmx
+硬件：内存32G以上，开启CPU虚拟化
+网络：仅主机，172.25.254.0/24,关闭DHCP
+打开虚拟机: 选择我已经复制虚拟机
+账号信息: kiosk/redhat  root/Asimov
+切换到root设置时间: su - root
+    <span class="hljs-built_in">date</span> -s <span class="hljs-string">&quot;20220909 11:01&quot;</span> <span class="hljs-comment"># 设置2022年1月以后</span>
+    hwclock -w
+环境调整：(关机后调整)
+    controller/director: 调整为CPU 6C,内存12G（12288）
+    utility: 6C/6G (6144)
+    验证环境：ssh student@workstation后
+        ssh director
+        <span class="hljs-built_in">source</span> overcloudrc
+        openstack service list
+环境初始化：
+    virt-manager <span class="hljs-comment"># 查看虚拟机</span>
+    rht-f0finish <span class="hljs-comment"># 启动环境</span>
+常用命令: 
+    rht-vmctl restart all -y <span class="hljs-comment"># 开启所有</span>
+    rht-vmctl fullreset all -y <span class="hljs-comment"># 完整恢复</span>
+    rht-vmctl reset 节点名称
+    其他：如果无法启动就手动启动
+关闭OpenStack课堂环境集群
+    生产环境：不需要关闭
+    课堂环境：不使用后要关闭，因为不关闭内存里面会产生脏数据，影响后面学习使用
+    步骤1: 停止OpenStack平台中所有的虚拟机(关机)
+    步骤2: 到director运行脚本做各个物流节点的下单处理: ssh director
+    步骤3：切换到student/student: ssh student@workstation
+    步骤4:：rht-overcloud.sh start
+</code></pre>
 
 <h2 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h2><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250424093017420.png" alt="课堂环境"></p>
 <p>课堂环境</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">Undercloud(云下环境): director: 存储OpenStack中各种组件的应用程序，便于节点安装（All <span class="keyword">in</span> One）</span><br><span class="line">Overcloud(云上环境): 实际作用:模拟生产环境节点</span><br><span class="line">    controller: 控制节点，安装有各种API，网络的组件，身份验证API，Keystone等</span><br><span class="line">    compute: 计算节点（一般不止一个）：做虚拟机迁移，资源不够网其他节点去迁移等</span><br><span class="line">    computehci：超融合节点，</span><br><span class="line">    ceph: 存储节点</span><br><span class="line">power(电源管理)：实际生产环境没有这个节点，模拟的带外管理口，IPMI协议.</span><br><span class="line">utility：实质是模拟IDM集成身份验证的机器（有点类似于Windows基础架构中的AD服务器的作用，实际这个在生产环境中根据需要配置）</span><br><span class="line">网络介绍:</span><br><span class="line">    调配网络(director): 172.25.249.X/24；控制各个物理机开关，如果想安装各个物理机，可以将物理机的网络连接到director，进行安装。</span><br><span class="line">    管理网络(Managerment)：172.24.X.0/24；多VLAN角色，细化各个角色的流量。</span><br><span class="line">    外部网络(External): 使用workstation登录到各个节点去做使用的网络</span><br><span class="line">    实例网络(): 在OpenStack虚拟机创建后分配的浮动IP地址</span><br><span class="line">课堂中的网络拓扑：</span><br><span class="line">    openstack service api: Internal API (Vlan 10)</span><br><span class="line">    租户网络: Tenant (vlan 20)</span><br><span class="line">    存储数据网络: Storage (vlan 30)</span><br><span class="line">    存储管理网络: Storage Mgmt (vlan 40)</span><br><span class="line">    管理网络：Management (vlan 50)</span><br><span class="line">classroom服务器：充当时间同步服务器使用</span><br><span class="line">    在openstack中，一定要加载时间同步服务器，一定要保证各个节点的时间0误差，因为会涉及到keystone认证时间戳问题。</span><br><span class="line">身份认证服务器(IDM): IPMI协议 623端口；root@power，执行 netstat -uln | grep 623</span><br><span class="line">    随时对设备进行上电和下单的处理-模拟带外管理口</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">Undercloud(云下环境): director: 存储OpenStack中各种组件的应用程序，便于节点安装（All <span class="hljs-keyword">in</span> One）
+Overcloud(云上环境): 实际作用:模拟生产环境节点
+    controller: 控制节点，安装有各种API，网络的组件，身份验证API，Keystone等
+    compute: 计算节点（一般不止一个）：做虚拟机迁移，资源不够网其他节点去迁移等
+    computehci：超融合节点，
+    ceph: 存储节点
+power(电源管理)：实际生产环境没有这个节点，模拟的带外管理口，IPMI协议.
+utility：实质是模拟IDM集成身份验证的机器（有点类似于Windows基础架构中的AD服务器的作用，实际这个在生产环境中根据需要配置）
+网络介绍:
+    调配网络(director): 172.25.249.X/24；控制各个物理机开关，如果想安装各个物理机，可以将物理机的网络连接到director，进行安装。
+    管理网络(Managerment)：172.24.X.0/24；多VLAN角色，细化各个角色的流量。
+    外部网络(External): 使用workstation登录到各个节点去做使用的网络
+    实例网络(): 在OpenStack虚拟机创建后分配的浮动IP地址
+课堂中的网络拓扑：
+    openstack service api: Internal API (Vlan 10)
+    租户网络: Tenant (vlan 20)
+    存储数据网络: Storage (vlan 30)
+    存储管理网络: Storage Mgmt (vlan 40)
+    管理网络：Management (vlan 50)
+classroom服务器：充当时间同步服务器使用
+    在openstack中，一定要加载时间同步服务器，一定要保证各个节点的时间0误差，因为会涉及到keystone认证时间戳问题。
+身份认证服务器(IDM): IPMI协议 623端口；root@power，执行 netstat -uln | grep 623
+    随时对设备进行上电和下单的处理-模拟带外管理口
+</code></pre>
 
-<h2 id="OpenStack介绍"><a href="#OpenStack介绍" class="headerlink" title="OpenStack介绍"></a>OpenStack介绍</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 什么是OpenStack</span></span><br><span class="line">    开源的云计算管理平台项目</span><br><span class="line">    官网(原生平台): https://www.openstack.org/</span><br><span class="line">    官方文档: https://docs.openstack.org/</span><br><span class="line">    发行列表: https://releases.openstack.org/</span><br><span class="line">    提供一个企业级云环境</span><br><span class="line">    NASA和Rackspace合作研发</span><br><span class="line">    最终目的是为了构建和管理企业的公有云、私有云、混合云环境</span><br><span class="line">    注意：OpenStack是云管平台，不是虚拟化平台，OpenStack创建虚拟机底层使用的是KVM</span><br><span class="line"><span class="comment"># RHOSP</span></span><br><span class="line">    Red Hat OpenStack Platform</span><br><span class="line">    提供企业级OpenStack发行版</span><br><span class="line">    优点：</span><br><span class="line">        针对企业环境优化，如果有漏洞，有重大问题—&gt;可以打补丁来保证平台的稳定性</span><br><span class="line">        可以和容器podman、OpenShift、RHEL Linux、红帽卫星去集成等</span><br><span class="line">        与各个服务器、软件服务商、云服务商达成战略合作并形成生态圈</span><br><span class="line">    国内：华为HCS、阿里飞天等</span><br><span class="line"><span class="comment"># 描述UnderCloud</span></span><br><span class="line">    介绍UnderCloud</span><br><span class="line">        是在RHOSP平台的Director的节点上单独安装的All <span class="keyword">in</span> One的Openstack</span><br><span class="line">        原生的Openstack的All <span class="keyword">in</span> one：</span><br><span class="line">            https://www.rdoproject.org/install/packstack</span><br><span class="line">            相当于吧OpenStack中所有的东西部署在一个节点上，仅能测试，不建议生产使用</span><br><span class="line">        想构建UnderCloud需要哪些功能？</span><br><span class="line">            身份服务: ketstone, 提供UnderCloud组件用户身份认证和授权</span><br><span class="line">            镜像服务: glance, 存储在裸机上安装操作系统和KVM已经各种需要的软件 (针对于不是Openstack裸机镜像)</span><br><span class="line">            技术服务: nova, 根据glance提供的镜像，配合IPMI来安装虚拟机和物理机</span><br><span class="line">            编排服务: heat，一组yaml魔板，根据定义好的代码来配置合适的OverCloud节点</span><br><span class="line">            对象存储服务: swift, 用于存储undercloud的用户镜像和日志</span><br><span class="line">            网络服务: 提供undercloud的调配网络访问，在调配网络中</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="OpenStack介绍"><a href="#OpenStack介绍" class="headerlink" title="OpenStack介绍"></a>OpenStack介绍</h2><pre><code class="hljs bash"><span class="hljs-comment"># 什么是OpenStack</span>
+    开源的云计算管理平台项目
+    官网(原生平台): https://www.openstack.org/
+    官方文档: https://docs.openstack.org/
+    发行列表: https://releases.openstack.org/
+    提供一个企业级云环境
+    NASA和Rackspace合作研发
+    最终目的是为了构建和管理企业的公有云、私有云、混合云环境
+    注意：OpenStack是云管平台，不是虚拟化平台，OpenStack创建虚拟机底层使用的是KVM
+<span class="hljs-comment"># RHOSP</span>
+    Red Hat OpenStack Platform
+    提供企业级OpenStack发行版
+    优点：
+        针对企业环境优化，如果有漏洞，有重大问题—&gt;可以打补丁来保证平台的稳定性
+        可以和容器podman、OpenShift、RHEL Linux、红帽卫星去集成等
+        与各个服务器、软件服务商、云服务商达成战略合作并形成生态圈
+    国内：华为HCS、阿里飞天等
+<span class="hljs-comment"># 描述UnderCloud</span>
+    介绍UnderCloud
+        是在RHOSP平台的Director的节点上单独安装的All <span class="hljs-keyword">in</span> One的Openstack
+        原生的Openstack的All <span class="hljs-keyword">in</span> one：
+            https://www.rdoproject.org/install/packstack
+            相当于吧OpenStack中所有的东西部署在一个节点上，仅能测试，不建议生产使用
+        想构建UnderCloud需要哪些功能？
+            身份服务: ketstone, 提供UnderCloud组件用户身份认证和授权
+            镜像服务: glance, 存储在裸机上安装操作系统和KVM已经各种需要的软件 (针对于不是Openstack裸机镜像)
+            技术服务: nova, 根据glance提供的镜像，配合IPMI来安装虚拟机和物理机
+            编排服务: heat，一组yaml魔板，根据定义好的代码来配置合适的OverCloud节点
+            对象存储服务: swift, 用于存储undercloud的用户镜像和日志
+            网络服务: 提供undercloud的调配网络访问，在调配网络中
+</code></pre>
 
-<h2 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h2><pre><code class="hljs bash"></code></pre>
 
 <hr>
 

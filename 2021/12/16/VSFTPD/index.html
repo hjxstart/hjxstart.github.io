@@ -122,10 +122,52 @@
         
             
                 <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
                     <div data-rel="读书">
                         
                         读书
                         <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -154,48 +196,6 @@
                         
                         数据库
                         <small>(5)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="运维">
-                        
-                        运维
-                        <small>(25)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="安全">
-                        
-                        安全
-                        <small>(3)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="开发">
-                        
-                        开发
-                        <small>(14)</small>
                         
                     </div>
                     
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<input type="hidden" id="yelog_site_word_count" value="243.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -983,7 +983,7 @@
     </div>
     <div class="article-meta">
         
-        <span>字数:731</span>
+        <span>字数:753</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1029,7 +1029,11 @@
 <h2 id="1-更新下载源"><a href="#1-更新下载源" class="headerlink" title="1. 更新下载源"></a>1. 更新下载源</h2><ol>
 <li>编辑下载源</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">备份源文件</span></span><br><span class="line">sudo cp -rfv /etc/apt/sources.list /etc/apt/sources.list.back</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">编辑source.list文件</span></span><br><span class="line">sudo vi /etc/apt/sources.list</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">备份源文件</span>
+sudo cp -rfv /etc/apt/sources.list /etc/apt/sources.list.back
+<span class="hljs-meta prompt_"># </span><span class="language-bash">编辑source.list文件</span>
+sudo vi /etc/apt/sources.list
+language-shell复制代码</code></pre>
 
 <ol>
 <li>修改下载源</li>
@@ -1037,60 +1041,103 @@
 <blockquote>
 <p>全选快捷键：shift+v 选中一行，shift+g 调到结尾实现全选<br>删除所选择的内容：dd<br>按 i 进入插入模式，复制如下内容：</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">deb http://mirrors.163.com/ubuntu/ trusty main restricted universe multiverse</span><br><span class="line">deb http://mirrors.163.com/ubuntu/ trusty-security main restricted universe multiverse</span><br><span class="line">deb http://mirrors.163.com/ubuntu/ trusty-updates main restricted universe multiverse</span><br><span class="line">deb http://mirrors.163.com/ubuntu/ trusty-proposed main restricted universe multiverse</span><br><span class="line">deb http://mirrors.163.com/ubuntu/ trusty-backports main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.163.com/ubuntu/ trusty main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.163.com/ubuntu/ trusty-security main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.163.com/ubuntu/ trusty-updates main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.163.com/ubuntu/ trusty-proposed main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.163.com/ubuntu/ trusty-backports main restricted universe multiverse</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs shell">deb http://mirrors.163.com/ubuntu/ trusty main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ trusty-security main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ trusty-updates main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ trusty-proposed main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ trusty-backports main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ trusty main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ trusty-security main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ trusty-updates main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ trusty-proposed main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ trusty-backports main restricted universe multiverse
+language-shell复制代码</code></pre>
 
-<h2 id="2-安装-vsftpd"><a href="#2-安装-vsftpd" class="headerlink" title="2. 安装 vsftpd"></a>2. 安装 vsftpd</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update &amp;&amp; <span class="built_in">sudo</span> apt install vsftpd</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="2-安装-vsftpd"><a href="#2-安装-vsftpd" class="headerlink" title="2. 安装 vsftpd"></a>2. 安装 vsftpd</h2><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> apt update &amp;&amp; <span class="hljs-built_in">sudo</span> apt install vsftpd
+</code></pre>
 
 <blockquote>
 <p>安装之后，检查 vsftpd 的状态</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> service vsftpd status</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> service vsftpd status
+</code></pre>
 
-<h2 id="3-配置防火墙"><a href="#3-配置防火墙" class="headerlink" title="3. 配置防火墙"></a>3. 配置防火墙</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> ufw allow OpenSSH</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="3-配置防火墙"><a href="#3-配置防火墙" class="headerlink" title="3. 配置防火墙"></a>3. 配置防火墙</h2><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> ufw allow OpenSSH
+</code></pre>
 
 <p>让我们为 FTP 打开端口 20 和 21，为被动 FTP 打开端口 40000-50000。我们还将为 TLS 打开端口 990，稍后将设置这个端口。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> ufw allow 20/tcp</span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> ufw allow 21/tcp</span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> ufw allow 40000:50000/tcp</span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> ufw allow 990/tcp</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> ufw allow 20/tcp
+
+<span class="hljs-built_in">sudo</span> ufw allow 21/tcp
+
+<span class="hljs-built_in">sudo</span> ufw allow 40000:50000/tcp
+
+<span class="hljs-built_in">sudo</span> ufw allow 990/tcp
+</code></pre>
 
 <p>现在，如果还没有启用防火墙，就启用它。如果有关于破坏 SSH 连接的警告，请按 y 和 ENTER。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> ufw <span class="built_in">enable</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> ufw <span class="hljs-built_in">enable</span>
+</code></pre>
 
 <p>要检查防火墙的状态，请运行:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> ufw status</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> ufw status
+</code></pre>
 
-<h2 id="4-创建-FTP-用户"><a href="#4-创建-FTP-用户" class="headerlink" title="4. 创建 FTP 用户"></a>4. 创建 FTP 用户</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> adduser ftpuser</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="4-创建-FTP-用户"><a href="#4-创建-FTP-用户" class="headerlink" title="4. 创建 FTP 用户"></a>4. 创建 FTP 用户</h2><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> adduser ftpuser
+</code></pre>
 
 <p>在 nano 中打开 SSH 配置。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nano /etc/ssh/sshd_config</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> nano /etc/ssh/sshd_config
+</code></pre>
 
 <p>将以下代码添加到文件底部，用要拒绝 SSH 和 SFTP 访问的用户替换 ftpuser。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DenyUsers ftpuser</span><br><span class="line">language-none复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs none">DenyUsers ftpuser
+language-none复制代码</code></pre>
 
 <p>要保存文件并退出，请按 CTRL + x，按 y，然后按 ENTER。<br>重新启动 SSH 服务。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> service sshd restart</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> service sshd restart
+</code></pre>
 
-<h2 id="5-上传到主文件夹"><a href="#5-上传到主文件夹" class="headerlink" title="5. 上传到主文件夹"></a>5. 上传到主文件夹</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 自定义ftp上传目录</span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">mkdir</span> /vagrant/ftpdata</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="5-上传到主文件夹"><a href="#5-上传到主文件夹" class="headerlink" title="5. 上传到主文件夹"></a>5. 上传到主文件夹</h2><pre><code class="hljs bash"><span class="hljs-comment"># 自定义ftp上传目录</span>
+<span class="hljs-built_in">sudo</span> <span class="hljs-built_in">mkdir</span> /vagrant/ftpdata
+</code></pre>
 
 <p>将此目录的所有权分配给新的 FTP 用户</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 自定义ftp上传目录</span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">chown</span> ftpuser:ftpuser /vagrant/ftpdata</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment"># 自定义ftp上传目录</span>
+<span class="hljs-built_in">sudo</span> <span class="hljs-built_in">chown</span> ftpuser:ftpuser /vagrant/ftpdata
+</code></pre>
 
 <h2 id="6-配置-vsftpd"><a href="#6-配置-vsftpd" class="headerlink" title="6. 配置 vsftpd"></a>6. 配置 vsftpd</h2><p>在编辑配置文件之前，创建一个备份。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">cp</span> /etc/vsftpd.conf /etc/vsftpd.conf.bak</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">cp</span> /etc/vsftpd.conf /etc/vsftpd.conf.bak
+</code></pre>
 
 <p>现在，在 nano 编辑器中打开配置文件。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nano /etc/vsftpd.conf</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> nano /etc/vsftpd.conf
+</code></pre>
 
 <p>你需要去下面的文件，并确保设置匹配那些下面。注意: 你可以使用 CTRL + w 来搜索 nano</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">write_enable=YES</span><br><span class="line">chroot_local_user=YES</span><br><span class="line">local_umask=022</span><br><span class="line">language-none复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs none">write_enable=YES
+chroot_local_user=YES
+local_umask=022
+language-none复制代码</code></pre>
 
 <p>将以下内容粘贴到文件底部。(粘贴 nano，按下鼠标右键)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">force_dot_files=YES</span><br><span class="line">pasv_min_port=40000</span><br><span class="line">pasv_max_port=50000</span><br><span class="line"><span class="comment"># 自定义ftp上传目录</span></span><br><span class="line">local_root=/vagrant/ftpdata</span><br><span class="line">allow_writeable_chroot=YES</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">force_dot_files=YES
+pasv_min_port=40000
+pasv_max_port=50000
+<span class="hljs-comment"># 自定义ftp上传目录</span>
+local_root=/vagrant/ftpdata
+allow_writeable_chroot=YES
+</code></pre>
 
 <p>要保存文件并退出，请按 CTRL + x，按 y，然后按 ENTER。</p>
 <p>重新启动 vsftpd。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl restart vsftpd</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl restart vsftpd
+</code></pre>
 
 <h2 id="7-测试-FTP"><a href="#7-测试-FTP" class="headerlink" title="7. 测试 FTP"></a>7. 测试 FTP</h2><p>查看日志</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">tail</span> /var/log/vsftpd.log -n 200</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">tail</span> /var/log/vsftpd.log -n 200
+</code></pre>
 
 <hr>
 

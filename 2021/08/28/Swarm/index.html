@@ -122,10 +122,52 @@
         
             
                 <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
                     <div data-rel="读书">
                         
                         读书
                         <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -154,48 +196,6 @@
                         
                         数据库
                         <small>(5)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="运维">
-                        
-                        运维
-                        <small>(25)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="安全">
-                        
-                        安全
-                        <small>(3)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="开发">
-                        
-                        开发
-                        <small>(14)</small>
                         
                     </div>
                     
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<input type="hidden" id="yelog_site_word_count" value="243.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -983,7 +983,7 @@
     </div>
     <div class="article-meta">
         
-        <span>字数:153</span>
+        <span>字数:155</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1018,7 +1018,44 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">生成 manager(manager)</span></span><br><span class="line">docker swarm init --advertise-addr 192.168.18.241</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看主机</span></span><br><span class="line">hostnamectl status</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">设置主机名称</span></span><br><span class="line">hostnamectl set-hostname swarmmanager01</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看网络</span></span><br><span class="line"> docker network ls</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">加入节点(node)</span></span><br><span class="line">docker swarm join --token SWMTKN-1-5018bftvba3fa2c0eake86ks6kcr8kq9dup6kd0xxtwdz1z8h6-34u6mlskhlkkk8hid7ncklx77 192.168.18.241:2377</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看所有节点</span></span><br><span class="line">docker node ls</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看服务列表(manager)</span></span><br><span class="line"> docker service ls</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看test1服务(manager)</span></span><br><span class="line">docker service ps test1</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建服务(manager)</span></span><br><span class="line">docker service create --name test1 alpine ping www.baidu.com</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">复制服务副本</span></span><br><span class="line">docker service scale nginx=3</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建服务和更新服务(manage)</span></span><br><span class="line">docker service create --name nginx nginx</span><br><span class="line">docker service update --publish-add 8080:80 nginx</span><br><span class="line">docker service inspect nginx</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">删除服务</span></span><br><span class="line">docker service rm nginx</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+        <h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">生成 manager(manager)</span>
+docker swarm init --advertise-addr 192.168.18.241
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">查看主机</span>
+hostnamectl status
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">设置主机名称</span>
+hostnamectl set-hostname swarmmanager01
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">查看网络</span>
+ docker network ls
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">加入节点(node)</span>
+docker swarm join --token SWMTKN-1-5018bftvba3fa2c0eake86ks6kcr8kq9dup6kd0xxtwdz1z8h6-34u6mlskhlkkk8hid7ncklx77 192.168.18.241:2377
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">查看所有节点</span>
+docker node ls
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">查看服务列表(manager)</span>
+ docker service ls
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">查看test1服务(manager)</span>
+docker service ps test1
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">创建服务(manager)</span>
+docker service create --name test1 alpine ping www.baidu.com
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">复制服务副本</span>
+docker service scale nginx=3
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">创建服务和更新服务(manage)</span>
+docker service create --name nginx nginx
+docker service update --publish-add 8080:80 nginx
+docker service inspect nginx
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">删除服务</span>
+docker service rm nginx
+language-shell复制代码</code></pre>
 
 <hr>
 

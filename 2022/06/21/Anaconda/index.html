@@ -122,10 +122,52 @@
         
             
                 <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
                     <div data-rel="读书">
                         
                         读书
                         <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -154,48 +196,6 @@
                         
                         数据库
                         <small>(5)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="运维">
-                        
-                        运维
-                        <small>(25)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="安全">
-                        
-                        安全
-                        <small>(3)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="开发">
-                        
-                        开发
-                        <small>(14)</small>
                         
                     </div>
                     
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<input type="hidden" id="yelog_site_word_count" value="243.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1018,7 +1018,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="创建Python环境"><a href="#创建Python环境" class="headerlink" title="创建Python环境"></a>创建Python环境</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看虚拟环境</span></span><br><span class="line">conda <span class="built_in">env</span> list</span><br><span class="line"><span class="comment"># 创建虚拟机环境</span></span><br><span class="line">conda create -n hcie python=3.8.3</span><br><span class="line"><span class="comment"># 激活虚拟环境</span></span><br><span class="line">conda activate hcie</span><br><span class="line"><span class="comment"># 退出虚拟环境</span></span><br><span class="line">conda deactivate</span><br><span class="line"><span class="comment"># 删除虚拟环境</span></span><br><span class="line">conda remove -n hcie --all</span><br><span class="line"><span class="comment"># 查看配置文件路径</span></span><br><span class="line">pip -v config list</span><br><span class="line"><span class="comment"># 添加代理 pip.ini</span></span><br><span class="line">[global]</span><br><span class="line">proxy= http://127.0.0.1:7890</span><br></pre></td></tr></table></figure>
+        <h1 id="创建Python环境"><a href="#创建Python环境" class="headerlink" title="创建Python环境"></a>创建Python环境</h1><pre><code class="hljs bash"><span class="hljs-comment"># 查看虚拟环境</span>
+conda <span class="hljs-built_in">env</span> list
+<span class="hljs-comment"># 创建虚拟机环境</span>
+conda create -n hcie python=3.8.3
+<span class="hljs-comment"># 激活虚拟环境</span>
+conda activate hcie
+<span class="hljs-comment"># 退出虚拟环境</span>
+conda deactivate
+<span class="hljs-comment"># 删除虚拟环境</span>
+conda remove -n hcie --all
+<span class="hljs-comment"># 查看配置文件路径</span>
+pip -v config list
+<span class="hljs-comment"># 添加代理 pip.ini</span>
+[global]
+proxy= http://127.0.0.1:7890</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 hjxstart@126.com </span>

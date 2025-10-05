@@ -122,10 +122,52 @@
         
             
                 <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
                     <div data-rel="读书">
                         
                         读书
                         <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -154,48 +196,6 @@
                         
                         数据库
                         <small>(5)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="运维">
-                        
-                        运维
-                        <small>(25)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="安全">
-                        
-                        安全
-                        <small>(3)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="开发">
-                        
-                        开发
-                        <small>(14)</small>
                         
                     </div>
                     
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<input type="hidden" id="yelog_site_word_count" value="243.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1022,282 +1022,648 @@
       
         <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><p>1、<a target="_blank" rel="noopener" href="https://www.kdocs.cn/wo/sl/v329iVmr?app_id=3dZYNT1xersQT3xulOIsPs&R=L1MvMTI=">https://www.kdocs.cn/wo/sl/v329iVmr?app_id=3dZYNT1xersQT3xulOIsPs&amp;R=L1MvMTI=</a></p>
 <p>2、打印机驱动查询连接 <a target="_blank" rel="noopener" href="https://www.kdocs.cn/wo/sl/v329iVmr?app_id=3dZYNT1xersQT3xulOIsPs&R=L1MvMTI=">打印机驱动查询</a></p>
-<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x1000: FAQ</span><br><span class="line">x2000: 操作方法</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><pre><code class="hljs avrasm"><span class="hljs-symbol">x1000:</span> FAQ
+<span class="hljs-symbol">x2000:</span> 操作方法
+复制代码</code></pre>
 
 <h2 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h2><hr>
-<h1 id="一、桌面"><a href="#一、桌面" class="headerlink" title="一、桌面"></a>一、桌面</h1><h2 id="11000-系统激活失败"><a href="#11000-系统激活失败" class="headerlink" title="11000 系统激活失败"></a>11000 系统激活失败</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 激活二维码无法生成问题，导致系统无法激活</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="一、桌面"><a href="#一、桌面" class="headerlink" title="一、桌面"></a>一、桌面</h1><h2 id="11000-系统激活失败"><a href="#11000-系统激活失败" class="headerlink" title="11000 系统激活失败"></a>11000 系统激活失败</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><pre><code class="hljs bash"><span class="hljs-comment"># 激活二维码无法生成问题，导致系统无法激活</span>
+</code></pre>
 
-<h3 id="问题解决方法"><a href="#问题解决方法" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 绑定授权权限：</span></span><br><span class="line"><span class="comment"># 1、微信搜索并关注公众号“麒麟软件”，聊天记录有一个“全链服务”，选产品激活</span></span><br><span class="line"><span class="comment"># 2、点开以后选“扫码激活权限管理”，使用产品授权证书里面的‘服务序列号’和‘验证码’以及其余的自定义信息进行权限绑定</span></span><br><span class="line"><span class="comment"># 3、此时微信已具有扫码激活权限</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 替换许可文件重新激活</span></span><br><span class="line"><span class="comment"># 1. 根据服务序列号导出 许可文件 &quot;info-xxxx.zip&quot; 【麒麟售后人员操作】；</span></span><br><span class="line"><span class="comment"># 2. 将许可文件解压到桌面，并在文件系统选项中勾选“显示隐藏文件”选项；</span></span><br><span class="line"><span class="comment"># 3. 在电脑属性的激活选项中，导入许可文件(LICENSE和.kyinfo文件)；</span></span><br><span class="line"><span class="comment"># 4. 重新打开电脑属性中的二维码激活，重新激活即可。</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="问题解决方法"><a href="#问题解决方法" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><pre><code class="hljs bash"><span class="hljs-comment">## 绑定授权权限：</span>
+<span class="hljs-comment"># 1、微信搜索并关注公众号“麒麟软件”，聊天记录有一个“全链服务”，选产品激活</span>
+<span class="hljs-comment"># 2、点开以后选“扫码激活权限管理”，使用产品授权证书里面的‘服务序列号’和‘验证码’以及其余的自定义信息进行权限绑定</span>
+<span class="hljs-comment"># 3、此时微信已具有扫码激活权限</span>
+
+<span class="hljs-comment">## 替换许可文件重新激活</span>
+<span class="hljs-comment"># 1. 根据服务序列号导出 许可文件 &quot;info-xxxx.zip&quot; 【麒麟售后人员操作】；</span>
+<span class="hljs-comment"># 2. 将许可文件解压到桌面，并在文件系统选项中勾选“显示隐藏文件”选项；</span>
+<span class="hljs-comment"># 3. 在电脑属性的激活选项中，导入许可文件(LICENSE和.kyinfo文件)；</span>
+<span class="hljs-comment"># 4. 重新打开电脑属性中的二维码激活，重新激活即可。</span>
+</code></pre>
 
 <h3 id="相关截图"><a href="#相关截图" class="headerlink" title="相关截图"></a>相关截图</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250911102124802.png" alt="11000-1"></p>
 <p>11000-1</p>
-<h2 id="11001-微信登录1203问题"><a href="#11001-微信登录1203问题" class="headerlink" title="11001 微信登录1203问题"></a>11001 微信登录1203问题</h2><h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 桌面系统联网情况下，安装了微信，扫码登录提示 1203 登录错误问题。</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="11001-微信登录1203问题"><a href="#11001-微信登录1203问题" class="headerlink" title="11001 微信登录1203问题"></a>11001 微信登录1203问题</h2><h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h3><pre><code class="hljs bash"><span class="hljs-comment"># 桌面系统联网情况下，安装了微信，扫码登录提示 1203 登录错误问题。</span>
+</code></pre>
 
-<h3 id="问题解决方法-1"><a href="#问题解决方法-1" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 重装激活相关组件，系统可以不激活。</span></span><br><span class="line"><span class="comment"># 联网情况下：更新源后执行下列命令重装激活相关组件</span></span><br><span class="line"><span class="built_in">sudo</span> apt install kylin-activation libkylin-activation</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="问题解决方法-1"><a href="#问题解决方法-1" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><pre><code class="hljs bash"><span class="hljs-comment"># 重装激活相关组件，系统可以不激活。</span>
+<span class="hljs-comment"># 联网情况下：更新源后执行下列命令重装激活相关组件</span>
+<span class="hljs-built_in">sudo</span> apt install kylin-activation libkylin-activation
+</code></pre>
 
 <h3 id="相关截图-1"><a href="#相关截图-1" class="headerlink" title="相关截图"></a>相关截图</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250824180723019.png" alt="微信1203登录失败"></p>
 <p>微信1203登录失败</p>
-<h2 id="11002-忘记密码"><a href="#11002-忘记密码" class="headerlink" title="11002 忘记密码"></a>11002 忘记密码</h2><h3 id="问题描述-2"><a href="#问题描述-2" class="headerlink" title="问题描述"></a>问题描述</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="11002-忘记密码"><a href="#11002-忘记密码" class="headerlink" title="11002 忘记密码"></a>11002 忘记密码</h2><h3 id="问题描述-2"><a href="#问题描述-2" class="headerlink" title="问题描述"></a>问题描述</h3><pre><code class="hljs bash"><span class="hljs-comment"># </span>
+</code></pre>
 
-<h3 id="问题分析过程"><a href="#问题分析过程" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="问题分析过程"><a href="#问题分析过程" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="问题解决方法-2"><a href="#问题解决方法-2" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">single console=tty0 /sysroot/bin/sh rw rd.break</span><br><span class="line"></span><br><span class="line"><span class="comment">## Kylin 服务器忘记 root 密码</span></span><br><span class="line"><span class="comment"># 进主机单用户，修改root密码或者是开机用户的密码</span></span><br><span class="line">1、重启主机，在选择界面按：e</span><br><span class="line">2、输入用户名：root    密码：Kylin123123</span><br><span class="line">3、然后找到linux或linux16行，ro改成rw，在audit=0后面或者security之前加：init=/bin/bash</span><br><span class="line">（注：如果是SP1需要多加一个 console=tty0 ）</span><br><span class="line">4、没有audit=0就在security之前加；然后：F10 或者 ctrl+x</span><br><span class="line">5、进入以后是命令行的模式，默认是root用户</span><br><span class="line">6、执行修改密码：passwd  root</span><br><span class="line">7、第一次输入密码回车（注：密码不显示，输入正确即可）</span><br><span class="line">8、第二次输入密码回车（注：密码跟第一次对不上会回到第一次输密码的情况。然后重新输两次）</span><br><span class="line">9、会显示成功的界面，显示这个单词了表示更改成功 Successfully</span><br><span class="line">9、然后输入 /sbin/reboot  -f 重启即可退出单用户</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="问题解决方法-2"><a href="#问题解决方法-2" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><pre><code class="hljs bash">single console=tty0 /sysroot/bin/sh rw rd.break
+
+<span class="hljs-comment">## Kylin 服务器忘记 root 密码</span>
+<span class="hljs-comment"># 进主机单用户，修改root密码或者是开机用户的密码</span>
+1、重启主机，在选择界面按：e
+2、输入用户名：root    密码：Kylin123123
+3、然后找到linux或linux16行，ro改成rw，在audit=0后面或者security之前加：init=/bin/bash
+（注：如果是SP1需要多加一个 console=tty0 ）
+4、没有audit=0就在security之前加；然后：F10 或者 ctrl+x
+5、进入以后是命令行的模式，默认是root用户
+6、执行修改密码：passwd  root
+7、第一次输入密码回车（注：密码不显示，输入正确即可）
+8、第二次输入密码回车（注：密码跟第一次对不上会回到第一次输密码的情况。然后重新输两次）
+9、会显示成功的界面，显示这个单词了表示更改成功 Successfully
+9、然后输入 /sbin/reboot  -f 重启即可退出单用户
+</code></pre>
 
 <h3 id="相关截图-2"><a href="#相关截图-2" class="headerlink" title="相关截图"></a>相关截图</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250911105610084.png" alt="中标V7桌面"></p>
 <p>中标V7桌面</p>
-<h2 id="11003-微信安装失败"><a href="#11003-微信安装失败" class="headerlink" title="11003 微信安装失败"></a>11003 微信安装失败</h2><h3 id="问题描述-3"><a href="#问题描述-3" class="headerlink" title="问题描述"></a>问题描述</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h2 id="11003-微信安装失败"><a href="#11003-微信安装失败" class="headerlink" title="11003 微信安装失败"></a>11003 微信安装失败</h2><h3 id="问题描述-3"><a href="#问题描述-3" class="headerlink" title="问题描述"></a>问题描述</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="问题分析过程-1"><a href="#问题分析过程-1" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="问题分析过程-1"><a href="#问题分析过程-1" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="问题解决方法-3"><a href="#问题解决方法-3" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="问题解决方法-3"><a href="#问题解决方法-3" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h2 id="11004光驱无法识别"><a href="#11004光驱无法识别" class="headerlink" title="11004光驱无法识别"></a>11004光驱无法识别</h2><h3 id="问题描述-4"><a href="#问题描述-4" class="headerlink" title="问题描述"></a>问题描述</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h2 id="11004光驱无法识别"><a href="#11004光驱无法识别" class="headerlink" title="11004光驱无法识别"></a>11004光驱无法识别</h2><h3 id="问题描述-4"><a href="#问题描述-4" class="headerlink" title="问题描述"></a>问题描述</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="问题分析过程-2"><a href="#问题分析过程-2" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="问题分析过程-2"><a href="#问题分析过程-2" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="问题解决方法-4"><a href="#问题解决方法-4" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看 cups服务和cups.socket</span></span><br><span class="line"><span class="comment"># 打印服务不可用：</span></span><br><span class="line">systemctl <span class="built_in">enable</span> cups.socket --now</span><br><span class="line">systemctl <span class="built_in">enable</span> cups --now</span><br><span class="line"><span class="comment"># 查看状态:</span></span><br><span class="line">systemctl status cups</span><br><span class="line">systemctl <span class="built_in">enable</span> cups --now</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="问题解决方法-4"><a href="#问题解决方法-4" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><pre><code class="hljs bash"><span class="hljs-comment"># 查看 cups服务和cups.socket</span>
+<span class="hljs-comment"># 打印服务不可用：</span>
+systemctl <span class="hljs-built_in">enable</span> cups.socket --now
+systemctl <span class="hljs-built_in">enable</span> cups --now
+<span class="hljs-comment"># 查看状态:</span>
+systemctl status cups
+systemctl <span class="hljs-built_in">enable</span> cups --now
+</code></pre>
 
-<h2 id="11005-USB挂载只读"><a href="#11005-USB挂载只读" class="headerlink" title="11005 USB挂载只读"></a>11005 USB挂载只读</h2><h3 id="问题描述-5"><a href="#问题描述-5" class="headerlink" title="问题描述"></a>问题描述</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h2 id="11005-USB挂载只读"><a href="#11005-USB挂载只读" class="headerlink" title="11005 USB挂载只读"></a>11005 USB挂载只读</h2><h3 id="问题描述-5"><a href="#问题描述-5" class="headerlink" title="问题描述"></a>问题描述</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="问题分析过程-3"><a href="#问题分析过程-3" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="问题分析过程-3"><a href="#问题分析过程-3" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="问题解决方法-5"><a href="#问题解决方法-5" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="问题解决方法-5"><a href="#问题解决方法-5" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h2 id="11006-安装安全套件网卡掉"><a href="#11006-安装安全套件网卡掉" class="headerlink" title="11006 安装安全套件网卡掉"></a>11006 安装安全套件网卡掉</h2><h3 id="问题描述-6"><a href="#问题描述-6" class="headerlink" title="问题描述"></a>问题描述</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h2 id="11006-安装安全套件网卡掉"><a href="#11006-安装安全套件网卡掉" class="headerlink" title="11006 安装安全套件网卡掉"></a>11006 安装安全套件网卡掉</h2><h3 id="问题描述-6"><a href="#问题描述-6" class="headerlink" title="问题描述"></a>问题描述</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="问题分析过程-4"><a href="#问题分析过程-4" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="问题分析过程-4"><a href="#问题分析过程-4" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="问题解决方法-6"><a href="#问题解决方法-6" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="问题解决方法-6"><a href="#问题解决方法-6" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h2 id="11007-触屏双屏显示错误"><a href="#11007-触屏双屏显示错误" class="headerlink" title="11007 触屏双屏显示错误"></a>11007 触屏双屏显示错误</h2><h3 id="问题描述-7"><a href="#问题描述-7" class="headerlink" title="问题描述"></a>问题描述</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h2 id="11007-触屏双屏显示错误"><a href="#11007-触屏双屏显示错误" class="headerlink" title="11007 触屏双屏显示错误"></a>11007 触屏双屏显示错误</h2><h3 id="问题描述-7"><a href="#问题描述-7" class="headerlink" title="问题描述"></a>问题描述</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="问题分析过程-5"><a href="#问题分析过程-5" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="问题分析过程-5"><a href="#问题分析过程-5" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="问题解决方法-7"><a href="#问题解决方法-7" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="问题解决方法-7"><a href="#问题解决方法-7" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><pre><code class="hljs">复制代码</code></pre>
 
 <h3 id="相关截图-3"><a href="#相关截图-3" class="headerlink" title="相关截图"></a>相关截图</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250911103437245.png" alt="img"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250911103536430.png" alt="img"></p>
-<h2 id="11008-突然英文显示"><a href="#11008-突然英文显示" class="headerlink" title="11008 突然英文显示"></a>11008 突然英文显示</h2><h3 id="问题描述-8"><a href="#问题描述-8" class="headerlink" title="问题描述"></a>问题描述</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h2 id="11008-突然英文显示"><a href="#11008-突然英文显示" class="headerlink" title="11008 突然英文显示"></a>11008 突然英文显示</h2><h3 id="问题描述-8"><a href="#问题描述-8" class="headerlink" title="问题描述"></a>问题描述</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="问题分析过程-6"><a href="#问题分析过程-6" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="问题分析过程-6"><a href="#问题分析过程-6" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="问题解决方法-8"><a href="#问题解决方法-8" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 服务器英文改中文：vi /etc/locale.conf，LANG的参数改成zh_CN.UTF-8</span></span><br><span class="line"><span class="comment"># 桌面系统英文改中文</span></span><br><span class="line"><span class="built_in">sudo</span> vim /etc/profile <span class="comment"># 添加以下内容</span></span><br><span class="line"><span class="built_in">export</span> LANG=zh_CN.UTF-8</span><br><span class="line"><span class="built_in">export</span> GDM_LANG=zh_CN</span><br><span class="line"><span class="built_in">export</span> LANGUAGE=zh_CN</span><br><span class="line"><span class="comment"># reboot 重启主机即可</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="问题解决方法-8"><a href="#问题解决方法-8" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><pre><code class="hljs bash"><span class="hljs-comment"># 服务器英文改中文：vi /etc/locale.conf，LANG的参数改成zh_CN.UTF-8</span>
+<span class="hljs-comment"># 桌面系统英文改中文</span>
+<span class="hljs-built_in">sudo</span> vim /etc/profile <span class="hljs-comment"># 添加以下内容</span>
+<span class="hljs-built_in">export</span> LANG=zh_CN.UTF-8
+<span class="hljs-built_in">export</span> GDM_LANG=zh_CN
+<span class="hljs-built_in">export</span> LANGUAGE=zh_CN
+<span class="hljs-comment"># reboot 重启主机即可</span>
+</code></pre>
 
-<h2 id="11009-无法识别USB"><a href="#11009-无法识别USB" class="headerlink" title="11009 无法识别USB"></a>11009 无法识别USB</h2><h3 id="问题描述-9"><a href="#问题描述-9" class="headerlink" title="问题描述"></a>问题描述</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h2 id="11009-无法识别USB"><a href="#11009-无法识别USB" class="headerlink" title="11009 无法识别USB"></a>11009 无法识别USB</h2><h3 id="问题描述-9"><a href="#问题描述-9" class="headerlink" title="问题描述"></a>问题描述</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="问题分析过程-7"><a href="#问题分析过程-7" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="问题分析过程-7"><a href="#问题分析过程-7" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="问题解决方法-9"><a href="#问题解决方法-9" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="问题解决方法-9"><a href="#问题解决方法-9" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h2 id="11010-系统启动慢问题"><a href="#11010-系统启动慢问题" class="headerlink" title="11010 系统启动慢问题"></a>11010 系统启动慢问题</h2><h3 id="问题描述-10"><a href="#问题描述-10" class="headerlink" title="问题描述"></a>问题描述</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 有光驱</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="11010-系统启动慢问题"><a href="#11010-系统启动慢问题" class="headerlink" title="11010 系统启动慢问题"></a>11010 系统启动慢问题</h2><h3 id="问题描述-10"><a href="#问题描述-10" class="headerlink" title="问题描述"></a>问题描述</h3><pre><code class="hljs bash"><span class="hljs-comment"># 有光驱</span>
+</code></pre>
 
-<h3 id="问题分析过程-8"><a href="#问题分析过程-8" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="问题分析过程-8"><a href="#问题分析过程-8" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="x-bash"><a href="#x-bash" class="headerlink" title="x bash"></a>x bash</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="x-bash"><a href="#x-bash" class="headerlink" title="x bash"></a>x bash</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h2 id="11011-屏幕分辨率无法设置"><a href="#11011-屏幕分辨率无法设置" class="headerlink" title="11011 屏幕分辨率无法设置"></a>11011 屏幕分辨率无法设置</h2><h3 id="问题描述-11"><a href="#问题描述-11" class="headerlink" title="问题描述"></a>问题描述</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="11011-屏幕分辨率无法设置"><a href="#11011-屏幕分辨率无法设置" class="headerlink" title="11011 屏幕分辨率无法设置"></a>11011 屏幕分辨率无法设置</h2><h3 id="问题描述-11"><a href="#问题描述-11" class="headerlink" title="问题描述"></a>问题描述</h3><pre><code class="hljs bash"><span class="hljs-comment"># </span>
+</code></pre>
 
-<h3 id="问题分析过程-9"><a href="#问题分析过程-9" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="问题分析过程-9"><a href="#问题分析过程-9" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="问题解决方法-10"><a href="#问题解决方法-10" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="问题解决方法-10"><a href="#问题解决方法-10" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h2 id="11012-搜狗输入法无法输入"><a href="#11012-搜狗输入法无法输入" class="headerlink" title="11012 搜狗输入法无法输入"></a>11012 搜狗输入法无法输入</h2><h3 id="问题描述-12"><a href="#问题描述-12" class="headerlink" title="问题描述"></a>问题描述</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h2 id="11012-搜狗输入法无法输入"><a href="#11012-搜狗输入法无法输入" class="headerlink" title="11012 搜狗输入法无法输入"></a>11012 搜狗输入法无法输入</h2><h3 id="问题描述-12"><a href="#问题描述-12" class="headerlink" title="问题描述"></a>问题描述</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="问题分析过程-10"><a href="#问题分析过程-10" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="问题分析过程-10"><a href="#问题分析过程-10" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="问题解决方法-11"><a href="#问题解决方法-11" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="问题解决方法-11"><a href="#问题解决方法-11" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h2 id="11013-凯大师导致磁盘空间满"><a href="#11013-凯大师导致磁盘空间满" class="headerlink" title="11013 凯大师导致磁盘空间满"></a>11013 凯大师导致磁盘空间满</h2><h3 id="问题描述-13"><a href="#问题描述-13" class="headerlink" title="问题描述"></a>问题描述</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h2 id="11013-凯大师导致磁盘空间满"><a href="#11013-凯大师导致磁盘空间满" class="headerlink" title="11013 凯大师导致磁盘空间满"></a>11013 凯大师导致磁盘空间满</h2><h3 id="问题描述-13"><a href="#问题描述-13" class="headerlink" title="问题描述"></a>问题描述</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="问题分析过程-11"><a href="#问题分析过程-11" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="问题分析过程-11"><a href="#问题分析过程-11" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="问题解决方法-12"><a href="#问题解决方法-12" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="问题解决方法-12"><a href="#问题解决方法-12" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h2 id="11014-系统使用中频繁突然锁屏"><a href="#11014-系统使用中频繁突然锁屏" class="headerlink" title="11014 系统使用中频繁突然锁屏"></a>11014 系统使用中频繁突然锁屏</h2><h3 id="问题描述-14"><a href="#问题描述-14" class="headerlink" title="问题描述"></a>问题描述</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h2 id="11014-系统使用中频繁突然锁屏"><a href="#11014-系统使用中频繁突然锁屏" class="headerlink" title="11014 系统使用中频繁突然锁屏"></a>11014 系统使用中频繁突然锁屏</h2><h3 id="问题描述-14"><a href="#问题描述-14" class="headerlink" title="问题描述"></a>问题描述</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="问题分析过程-12"><a href="#问题分析过程-12" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="问题分析过程-12"><a href="#问题分析过程-12" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="问题解决方法-13"><a href="#问题解决方法-13" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="问题解决方法-13"><a href="#问题解决方法-13" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h2 id="11015-磁盘空间满导致无法登录"><a href="#11015-磁盘空间满导致无法登录" class="headerlink" title="11015 磁盘空间满导致无法登录"></a>11015 磁盘空间满导致无法登录</h2><h3 id="问题描述-15"><a href="#问题描述-15" class="headerlink" title="问题描述"></a>问题描述</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h2 id="11015-磁盘空间满导致无法登录"><a href="#11015-磁盘空间满导致无法登录" class="headerlink" title="11015 磁盘空间满导致无法登录"></a>11015 磁盘空间满导致无法登录</h2><h3 id="问题描述-15"><a href="#问题描述-15" class="headerlink" title="问题描述"></a>问题描述</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="问题分析过程-13"><a href="#问题分析过程-13" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ctrl+alt+f1进入tty1，使用以下查看空间利用情况</span></span><br><span class="line"><span class="built_in">df</span> -h</span><br><span class="line"><span class="comment"># 打开终端并进入 /var/log 目录下</span></span><br><span class="line"><span class="built_in">cd</span> /var/log</span><br><span class="line"><span class="comment"># 查看什么文件比较大</span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">du</span> -sh *</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="问题分析过程-13"><a href="#问题分析过程-13" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><pre><code class="hljs bash"><span class="hljs-comment"># ctrl+alt+f1进入tty1，使用以下查看空间利用情况</span>
+<span class="hljs-built_in">df</span> -h
+<span class="hljs-comment"># 打开终端并进入 /var/log 目录下</span>
+<span class="hljs-built_in">cd</span> /var/log
+<span class="hljs-comment"># 查看什么文件比较大</span>
+<span class="hljs-built_in">sudo</span> <span class="hljs-built_in">du</span> -sh *
+</code></pre>
 
-<h3 id="问题解决方法-14"><a href="#问题解决方法-14" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将相关文件（日志）被删了</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 空间未释放，可以执行以下命令</span></span><br><span class="line">systemctl restart rsyslog</span><br><span class="line"><span class="comment"># 备注：可能需要重启一下电脑</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="问题解决方法-14"><a href="#问题解决方法-14" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><pre><code class="hljs bash"><span class="hljs-comment"># 将相关文件（日志）被删了</span>
+
+<span class="hljs-comment"># 空间未释放，可以执行以下命令</span>
+systemctl restart rsyslog
+<span class="hljs-comment"># 备注：可能需要重启一下电脑</span>
+</code></pre>
 
 <h3 id="相关截图如下"><a href="#相关截图如下" class="headerlink" title="相关截图如下"></a>相关截图如下</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250911101036233.png" alt="img"></p>
-<h2 id="11016-开启审计的方法"><a href="#11016-开启审计的方法" class="headerlink" title="11016 开启审计的方法"></a>11016 开启审计的方法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">一、检查内核是否开启审计功能：grep  <span class="string">&quot;audit&quot;</span>  /etc/default/grub  ，audit=0表示未开启</span><br><span class="line">二、编辑文件：vi  /etc/default/grub ，将audit=0改成audit=1</span><br><span class="line">三、查找grub配置所在位置：find  /  -name  grub.cfg（结果应该为 /boot/grub2/grub.cfg）  （注：查出来是什么结果就是什么结果）</span><br><span class="line">四、备份：<span class="built_in">cp</span>  /boot/grub2/grub.cfg  /boot/grub2/grub.cfg-bak</span><br><span class="line">五、更新grub配置：grub2-mkconfig  -o  /boot/grub2/grub.cfg</span><br><span class="line">六、重启主机</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="11016-开启审计的方法"><a href="#11016-开启审计的方法" class="headerlink" title="11016 开启审计的方法"></a>11016 开启审计的方法</h2><pre><code class="hljs bash">一、检查内核是否开启审计功能：grep  <span class="hljs-string">&quot;audit&quot;</span>  /etc/default/grub  ，audit=0表示未开启
+二、编辑文件：vi  /etc/default/grub ，将audit=0改成audit=1
+三、查找grub配置所在位置：find  /  -name  grub.cfg（结果应该为 /boot/grub2/grub.cfg）  （注：查出来是什么结果就是什么结果）
+四、备份：<span class="hljs-built_in">cp</span>  /boot/grub2/grub.cfg  /boot/grub2/grub.cfg-bak
+五、更新grub配置：grub2-mkconfig  -o  /boot/grub2/grub.cfg
+六、重启主机
+</code></pre>
 
-<h2 id="11017-软件商店问题"><a href="#11017-软件商店问题" class="headerlink" title="11017 软件商店问题"></a>11017 软件商店问题</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">sudo</span> apt update</span><br><span class="line"><span class="built_in">sudo</span> apt install --fix-broken</span><br><span class="line"><span class="built_in">sudo</span> apt install -f</span><br><span class="line"><span class="built_in">sudo</span> apt install -y kylin-software-center --reinstall</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">rm</span> /var/lib/dpkg/updates/*</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">rm</span> -rf /var/lib/apt/lists/*</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">rm</span> /var/lib/dpkg/lock</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">rm</span> /var/lib/dpkg/lock-frontend</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">rm</span> /var/cache/apt/archives/lock</span><br><span class="line"><span class="built_in">sudo</span> dpkg --configure -a</span><br><span class="line"><span class="built_in">sudo</span> apt update</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="11017-软件商店问题"><a href="#11017-软件商店问题" class="headerlink" title="11017 软件商店问题"></a>11017 软件商店问题</h2><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span>
+<span class="hljs-built_in">sudo</span> apt update
+<span class="hljs-built_in">sudo</span> apt install --fix-broken
+<span class="hljs-built_in">sudo</span> apt install -f
+<span class="hljs-built_in">sudo</span> apt install -y kylin-software-center --reinstall
+<span class="hljs-built_in">sudo</span> <span class="hljs-built_in">rm</span> /var/lib/dpkg/updates/*
+<span class="hljs-built_in">sudo</span> <span class="hljs-built_in">rm</span> -rf /var/lib/apt/lists/*
+<span class="hljs-built_in">sudo</span> <span class="hljs-built_in">rm</span> /var/lib/dpkg/lock
+<span class="hljs-built_in">sudo</span> <span class="hljs-built_in">rm</span> /var/lib/dpkg/lock-frontend
+<span class="hljs-built_in">sudo</span> <span class="hljs-built_in">rm</span> /var/cache/apt/archives/lock
+<span class="hljs-built_in">sudo</span> dpkg --configure -a
+<span class="hljs-built_in">sudo</span> apt update
+</code></pre>
 
-<h2 id="桌面开机密码锁定问题"><a href="#桌面开机密码锁定问题" class="headerlink" title="桌面开机密码锁定问题"></a>桌面开机密码锁定问题</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">进主机单用户，修改root密码或者是开机用户的密码</span><br><span class="line">1、重启主机，在选择界面按：e</span><br><span class="line">2、然后找到linux或linux16行，ro改成rw，在audit=0后面或者security之前加：init=/bin/bash console=tty0</span><br><span class="line">3、没有audit=0就在security之前加；然后：F10 或者 ctrl+x</span><br><span class="line">4、进入以后是命令行的模式，默认是root用户</span><br><span class="line">5、删除缓存文件<span class="built_in">rm</span>   /var/log/tallylog.d/.*</span><br><span class="line">6、解锁用户pam_tally2    --user=[用户名]    --reset</span><br><span class="line">7、然后修改密码执行：<span class="built_in">echo</span>  <span class="string">&quot;用户名:密码&quot;</span>  |  chpasswd</span><br><span class="line">8、输入新的密码即可（输入两遍，密码是看不到字符显示的，必须两次输入正确）</span><br><span class="line">9、改完会看到一个成功的英文单词界面</span><br><span class="line">10、改完后输入：reboot  -f      就OK了</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">注：改密码passwd  [用户名]，密码要有一定复杂度，注意大小写及不要用小键盘，建议先改xz123123</span><br><span class="line">然后进系统图形化再修改再执行passwd修改密码时一直显示账户锁定，需要su到那个普通用户直接执行passwd修改本身密码</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="桌面开机密码锁定问题"><a href="#桌面开机密码锁定问题" class="headerlink" title="桌面开机密码锁定问题"></a>桌面开机密码锁定问题</h2><pre><code class="hljs bash">进主机单用户，修改root密码或者是开机用户的密码
+1、重启主机，在选择界面按：e
+2、然后找到linux或linux16行，ro改成rw，在audit=0后面或者security之前加：init=/bin/bash console=tty0
+3、没有audit=0就在security之前加；然后：F10 或者 ctrl+x
+4、进入以后是命令行的模式，默认是root用户
+5、删除缓存文件<span class="hljs-built_in">rm</span>   /var/log/tallylog.d/.*
+6、解锁用户pam_tally2    --user=[用户名]    --reset
+7、然后修改密码执行：<span class="hljs-built_in">echo</span>  <span class="hljs-string">&quot;用户名:密码&quot;</span>  |  chpasswd
+8、输入新的密码即可（输入两遍，密码是看不到字符显示的，必须两次输入正确）
+9、改完会看到一个成功的英文单词界面
+10、改完后输入：reboot  -f      就OK了
+
+
+注：改密码passwd  [用户名]，密码要有一定复杂度，注意大小写及不要用小键盘，建议先改xz123123
+然后进系统图形化再修改再执行passwd修改密码时一直显示账户锁定，需要su到那个普通用户直接执行passwd修改本身密码
+</code></pre>
 
 <h2 id="输入法消失问题"><a href="#输入法消失问题" class="headerlink" title="输入法消失问题"></a>输入法消失问题</h2><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250911111448594.png" alt="img"></p>
-<h2 id="共享文件夹永久挂载"><a href="#共享文件夹永久挂载" class="headerlink" title="共享文件夹永久挂载"></a>共享文件夹永久挂载</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mount.cifs  -o  username=用户名,password=密码,rw,uid=1000,gid=1000,dir_mode=0777,file_mode=0777,iocharset=utf8,vers=1.0  //共享IP/路径  /data/mount_point</span><br><span class="line">3、永久挂载</span><br><span class="line">vi  /etc/fstab</span><br><span class="line">//共享IP/路径  /data/mount_point  cifs  defaults,username=用户名,password=密码,rw,uid=1000,gid=1000,dir_mode=0777,file_mode=0777,iocharset=utf8,vers=1.0,_netdev  0 0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="共享文件夹永久挂载"><a href="#共享文件夹永久挂载" class="headerlink" title="共享文件夹永久挂载"></a>共享文件夹永久挂载</h2><pre><code class="hljs bash">mount.cifs  -o  username=用户名,password=密码,rw,uid=1000,gid=1000,dir_mode=0777,file_mode=0777,iocharset=utf8,vers=1.0  //共享IP/路径  /data/mount_point
+3、永久挂载
+vi  /etc/fstab
+//共享IP/路径  /data/mount_point  cifs  defaults,username=用户名,password=密码,rw,uid=1000,gid=1000,dir_mode=0777,file_mode=0777,iocharset=utf8,vers=1.0,_netdev  0 0
+</code></pre>
 
-<h2 id="桌面自动休眠唤醒异常卡顿"><a href="#桌面自动休眠唤醒异常卡顿" class="headerlink" title="桌面自动休眠唤醒异常卡顿"></a>桌面自动休眠唤醒异常卡顿</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.在桌面空白处鼠标右键，选择打开终端选项，打开终端窗口。</span><br><span class="line">2.在终端中执行如下命令来修复 .viminfo 文件权限：</span><br><span class="line"><span class="built_in">sudo</span>  <span class="built_in">chown</span>  <span class="variable">$USER</span>:<span class="variable">$USER</span>  /home/<span class="variable">$USER</span>/.viminfo</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="桌面自动休眠唤醒异常卡顿"><a href="#桌面自动休眠唤醒异常卡顿" class="headerlink" title="桌面自动休眠唤醒异常卡顿"></a>桌面自动休眠唤醒异常卡顿</h2><pre><code class="hljs bash">1.在桌面空白处鼠标右键，选择打开终端选项，打开终端窗口。
+2.在终端中执行如下命令来修复 .viminfo 文件权限：
+<span class="hljs-built_in">sudo</span>  <span class="hljs-built_in">chown</span>  <span class="hljs-variable">$USER</span>:<span class="hljs-variable">$USER</span>  /home/<span class="hljs-variable">$USER</span>/.viminfo
+</code></pre>
 
-<h2 id="任务栏消失、桌面黑屏、鼠标跳动、图标异常、控制面板打不开等问题"><a href="#任务栏消失、桌面黑屏、鼠标跳动、图标异常、控制面板打不开等问题" class="headerlink" title="任务栏消失、桌面黑屏、鼠标跳动、图标异常、控制面板打不开等问题"></a>任务栏消失、桌面黑屏、鼠标跳动、图标异常、控制面板打不开等问题</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">###此步骤可以解决：任务栏消失、桌面黑屏、鼠标跳动、图标异常、控制面板打不开等问题###注：次步骤需要主机能访问互联网</span></span><br><span class="line">1、开机进入用户登录界面（注：此时记住登录的用户名）</span><br><span class="line">2、按键盘的 ctrl+alt+F1 ，切换到命令登录模式</span><br><span class="line">3、依次输入用户名（输完按回车），密码（输完按回车）（注：输密码的时候不显示，实际输成功的）</span><br><span class="line">4、输入命令：<span class="built_in">sudo</span>  su ，再次输入开机密码（输完按回车）进入到root模式，（注：输密码的时候不显示，实际输成功的）</span><br><span class="line">5、输入命令：<span class="built_in">cd</span>  /home/用户名 ，此时进入用户的家目录</span><br><span class="line">6、删除缓存，输入命令：<span class="built_in">rm</span>  -rf  .cache  .config  .<span class="built_in">local</span></span><br><span class="line">7、更新源，与修复系统，依次输入三个命令：apt  update，apt  install  -f，apt  autoremove(遇到确认输入y)</span><br><span class="line">8、重装桌面服务，老V10重装命令：apt  install  --reinstall  caja ，新V10-SP1重装命令：apt  install  --reinstall  peony</span><br><span class="line">9、重启桌面服务：systemctl  restart  lightdm</span><br><span class="line">10、登录即可解决问题</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="任务栏消失、桌面黑屏、鼠标跳动、图标异常、控制面板打不开等问题"><a href="#任务栏消失、桌面黑屏、鼠标跳动、图标异常、控制面板打不开等问题" class="headerlink" title="任务栏消失、桌面黑屏、鼠标跳动、图标异常、控制面板打不开等问题"></a>任务栏消失、桌面黑屏、鼠标跳动、图标异常、控制面板打不开等问题</h2><pre><code class="hljs bash"><span class="hljs-comment">###此步骤可以解决：任务栏消失、桌面黑屏、鼠标跳动、图标异常、控制面板打不开等问题###注：次步骤需要主机能访问互联网</span>
+1、开机进入用户登录界面（注：此时记住登录的用户名）
+2、按键盘的 ctrl+alt+F1 ，切换到命令登录模式
+3、依次输入用户名（输完按回车），密码（输完按回车）（注：输密码的时候不显示，实际输成功的）
+4、输入命令：<span class="hljs-built_in">sudo</span>  su ，再次输入开机密码（输完按回车）进入到root模式，（注：输密码的时候不显示，实际输成功的）
+5、输入命令：<span class="hljs-built_in">cd</span>  /home/用户名 ，此时进入用户的家目录
+6、删除缓存，输入命令：<span class="hljs-built_in">rm</span>  -rf  .cache  .config  .<span class="hljs-built_in">local</span>
+7、更新源，与修复系统，依次输入三个命令：apt  update，apt  install  -f，apt  autoremove(遇到确认输入y)
+8、重装桌面服务，老V10重装命令：apt  install  --reinstall  caja ，新V10-SP1重装命令：apt  install  --reinstall  peony
+9、重启桌面服务：systemctl  restart  lightdm
+10、登录即可解决问题
+</code></pre>
 
-<h2 id="W515-L410-L420-990-9006c-忘记密码"><a href="#W515-L410-L420-990-9006c-忘记密码" class="headerlink" title="W515&#x2F;L410&#x2F;L420(990&#x2F;9006c)忘记密码"></a>W515&#x2F;L410&#x2F;L420(990&#x2F;9006c)忘记密码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># # https://www.xckfsq.com/question/show.html?id=35537</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在第一个进入系统默认选项上面按一下英文字母 “ e”键(不要按多次) 进入grub 配置界面，进入界面后找到Linux 开头的那一行,从 security= 那里开始往前删,删到 ro 那里,打一个空格加上内容rw single console=tty init=/bin/bash</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="W515-L410-L420-990-9006c-忘记密码"><a href="#W515-L410-L420-990-9006c-忘记密码" class="headerlink" title="W515&#x2F;L410&#x2F;L420(990&#x2F;9006c)忘记密码"></a>W515&#x2F;L410&#x2F;L420(990&#x2F;9006c)忘记密码</h2><pre><code class="hljs bash"><span class="hljs-comment"># # https://www.xckfsq.com/question/show.html?id=35537</span>
+
+<span class="hljs-comment"># 在第一个进入系统默认选项上面按一下英文字母 “ e”键(不要按多次) 进入grub 配置界面，进入界面后找到Linux 开头的那一行,从 security= 那里开始往前删,删到 ro 那里,打一个空格加上内容rw single console=tty init=/bin/bash</span>
+</code></pre>
 
 
 
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250915121813452.png" alt="img"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250915121750229.png" alt="img"></p>
-<h2 id="开机进入BusyBox"><a href="#开机进入BusyBox" class="headerlink" title="开机进入BusyBox"></a>开机进入BusyBox</h2><h3 id="问题解决方法-15"><a href="#问题解决方法-15" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 步骤一：输入exit检查回显结果</span></span><br><span class="line"><span class="comment"># 显示/dev/sdax 或者 /dev/mapper/kylin-vg-root 可以尝试使用步骤一的 fsck 修复</span></span><br><span class="line"><span class="comment"># 显示 alter! uuid 类似的错误，可能是硬盘物理错误（坏了/线松了）等，可能需要尝试进入开发盘，使用“系统修复助手”修复。</span></span><br><span class="line"><span class="comment"># 系统修复助手使用说明：https://docs.qq.com/doc/DTmVKbmxRbEpLd1Nx，</span></span><br><span class="line"><span class="comment"># 开发盘地址或使用下面地址进行下载 https://pan.baidu.com/s/1N1BgzN6Nqz2pRD4WvW9rOA?pwd=ufwl </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 步骤一：在此界面输入exit，如图二显示/dev/sda2，则执行以下修复命令。</span></span><br><span class="line">fsck -y /dev/sda2</span><br><span class="line"><span class="comment"># 有些提示是/dev/mapper/kylin-vg-root，则执行以下修复命令。</span></span><br><span class="line">fsck -y /dev/mapper/kylin-vg-root</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="开机进入BusyBox"><a href="#开机进入BusyBox" class="headerlink" title="开机进入BusyBox"></a>开机进入BusyBox</h2><h3 id="问题解决方法-15"><a href="#问题解决方法-15" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><pre><code class="hljs bash"><span class="hljs-comment">## 步骤一：输入exit检查回显结果</span>
+<span class="hljs-comment"># 显示/dev/sdax 或者 /dev/mapper/kylin-vg-root 可以尝试使用步骤一的 fsck 修复</span>
+<span class="hljs-comment"># 显示 alter! uuid 类似的错误，可能是硬盘物理错误（坏了/线松了）等，可能需要尝试进入开发盘，使用“系统修复助手”修复。</span>
+<span class="hljs-comment"># 系统修复助手使用说明：https://docs.qq.com/doc/DTmVKbmxRbEpLd1Nx，</span>
+<span class="hljs-comment"># 开发盘地址或使用下面地址进行下载 https://pan.baidu.com/s/1N1BgzN6Nqz2pRD4WvW9rOA?pwd=ufwl </span>
+
+<span class="hljs-comment"># 步骤一：在此界面输入exit，如图二显示/dev/sda2，则执行以下修复命令。</span>
+fsck -y /dev/sda2
+<span class="hljs-comment"># 有些提示是/dev/mapper/kylin-vg-root，则执行以下修复命令。</span>
+fsck -y /dev/mapper/kylin-vg-root
+</code></pre>
 
 <h3 id="相关截图-4"><a href="#相关截图-4" class="headerlink" title="相关截图"></a>相关截图</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250912110442433.png" alt="img"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250912110610379.png" alt="img"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250912111124800.png" alt="img"></p>
-<h2 id="桌面锁-清除"><a href="#桌面锁-清除" class="headerlink" title="桌面锁 清除"></a>桌面锁 清除</h2><h3 id="问题描述-16"><a href="#问题描述-16" class="headerlink" title="问题描述"></a>问题描述</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.问题：做什么都要输入密码</span><br><span class="line">2.安装seahorse软件，可通过以上2-3-1脚本进行安装.</span><br><span class="line">3.安装完会打开如下图片</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="桌面锁-清除"><a href="#桌面锁-清除" class="headerlink" title="桌面锁 清除"></a>桌面锁 清除</h2><h3 id="问题描述-16"><a href="#问题描述-16" class="headerlink" title="问题描述"></a>问题描述</h3><pre><code class="hljs bash">1.问题：做什么都要输入密码
+2.安装seahorse软件，可通过以上2-3-1脚本进行安装.
+3.安装完会打开如下图片
+</code></pre>
 
 <h3 id="相关截图-5"><a href="#相关截图-5" class="headerlink" title="相关截图"></a>相关截图</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250912113526395.png" alt="img"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250912113622019.png" alt="img"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250912113645513.png" alt="img"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250912113704247.png" alt="img"></p>
 <hr>
-<h2 id="12000-系统激活"><a href="#12000-系统激活" class="headerlink" title="12000 系统激活"></a>12000 系统激活</h2><h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h2 id="12000-系统激活"><a href="#12000-系统激活" class="headerlink" title="12000 系统激活"></a>12000 系统激活</h2><h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h2 id="12001-软件商店安装软件"><a href="#12001-软件商店安装软件" class="headerlink" title="12001 软件商店安装软件"></a>12001 软件商店安装软件</h2><h3 id="使用场景-1"><a href="#使用场景-1" class="headerlink" title="使用场景"></a>使用场景</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h2 id="12001-软件商店安装软件"><a href="#12001-软件商店安装软件" class="headerlink" title="12001 软件商店安装软件"></a>12001 软件商店安装软件</h2><h3 id="使用场景-1"><a href="#使用场景-1" class="headerlink" title="使用场景"></a>使用场景</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="操作步骤-1"><a href="#操作步骤-1" class="headerlink" title="操作步骤"></a>操作步骤</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="操作步骤-1"><a href="#操作步骤-1" class="headerlink" title="操作步骤"></a>操作步骤</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h2 id="12002-打印机驱动-配置"><a href="#12002-打印机驱动-配置" class="headerlink" title="12002 打印机驱动&amp;配置"></a>12002 打印机驱动&amp;配置</h2><h3 id="使用场景-2"><a href="#使用场景-2" class="headerlink" title="使用场景"></a>使用场景</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h2 id="12002-打印机驱动-配置"><a href="#12002-打印机驱动-配置" class="headerlink" title="12002 打印机驱动&amp;配置"></a>12002 打印机驱动&amp;配置</h2><h3 id="使用场景-2"><a href="#使用场景-2" class="headerlink" title="使用场景"></a>使用场景</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="操作步骤-2"><a href="#操作步骤-2" class="headerlink" title="操作步骤"></a>操作步骤</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="操作步骤-2"><a href="#操作步骤-2" class="headerlink" title="操作步骤"></a>操作步骤</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h2 id="12003-字体安装"><a href="#12003-字体安装" class="headerlink" title="12003 字体安装"></a>12003 字体安装</h2><h3 id="使用场景-3"><a href="#使用场景-3" class="headerlink" title="使用场景"></a>使用场景</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h2 id="12003-字体安装"><a href="#12003-字体安装" class="headerlink" title="12003 字体安装"></a>12003 字体安装</h2><h3 id="使用场景-3"><a href="#使用场景-3" class="headerlink" title="使用场景"></a>使用场景</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="操作步骤-3"><a href="#操作步骤-3" class="headerlink" title="操作步骤"></a>操作步骤</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="操作步骤-3"><a href="#操作步骤-3" class="headerlink" title="操作步骤"></a>操作步骤</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h2 id="12004-下载其他架构的组件离线包"><a href="#12004-下载其他架构的组件离线包" class="headerlink" title="12004 下载其他架构的组件离线包"></a>12004 下载其他架构的组件离线包</h2><h3 id="使用场景-4"><a href="#使用场景-4" class="headerlink" title="使用场景"></a>使用场景</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h2 id="12004-下载其他架构的组件离线包"><a href="#12004-下载其他架构的组件离线包" class="headerlink" title="12004 下载其他架构的组件离线包"></a>12004 下载其他架构的组件离线包</h2><h3 id="使用场景-4"><a href="#使用场景-4" class="headerlink" title="使用场景"></a>使用场景</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="操作步骤-4"><a href="#操作步骤-4" class="headerlink" title="操作步骤"></a>操作步骤</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.使用一台可以联网的麒麟系统，更新源后；</span><br><span class="line">2.使用命令apt-cache madison hplip:arm64 查看ARM架构的所有版本包；</span><br><span class="line">3.使用命令apt-get download --print-uris hilip=3.25.2.2查看对于版本的软件包下载地址；</span><br><span class="line">4.使用显示后的下载地址在浏览器上下载即可。</span><br><span class="line"># 其他架构</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="操作步骤-4"><a href="#操作步骤-4" class="headerlink" title="操作步骤"></a>操作步骤</h3><pre><code class="hljs routeros">1.使用一台可以联网的麒麟系统，更新源后；
+2.使用命令apt-cache madison hplip:arm64 查看ARM架构的所有版本包；
+3.使用命令apt-<span class="hljs-built_in">get</span> download --print-uris <span class="hljs-attribute">hilip</span>=3.25.2.2查看对于版本的软件包下载地址；
+4.使用显示后的下载地址在浏览器上下载即可。
+<span class="hljs-comment"># 其他架构</span>
+复制代码</code></pre>
 
-<h2 id="12005-打印Excel保留标题"><a href="#12005-打印Excel保留标题" class="headerlink" title="12005 打印Excel保留标题"></a>12005 打印Excel保留标题</h2><h3 id="使用场景-5"><a href="#使用场景-5" class="headerlink" title="使用场景"></a>使用场景</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h2 id="12005-打印Excel保留标题"><a href="#12005-打印Excel保留标题" class="headerlink" title="12005 打印Excel保留标题"></a>12005 打印Excel保留标题</h2><h3 id="使用场景-5"><a href="#使用场景-5" class="headerlink" title="使用场景"></a>使用场景</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="操作步骤-5"><a href="#操作步骤-5" class="headerlink" title="操作步骤"></a>操作步骤</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="操作步骤-5"><a href="#操作步骤-5" class="headerlink" title="操作步骤"></a>操作步骤</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h2 id="12006-消防融合通信"><a href="#12006-消防融合通信" class="headerlink" title="12006 消防融合通信"></a>12006 消防融合通信</h2><h3 id="使用场景-6"><a href="#使用场景-6" class="headerlink" title="使用场景"></a>使用场景</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h2 id="12006-消防融合通信"><a href="#12006-消防融合通信" class="headerlink" title="12006 消防融合通信"></a>12006 消防融合通信</h2><h3 id="使用场景-6"><a href="#使用场景-6" class="headerlink" title="使用场景"></a>使用场景</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="操作步骤-6"><a href="#操作步骤-6" class="headerlink" title="操作步骤"></a>操作步骤</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="操作步骤-6"><a href="#操作步骤-6" class="headerlink" title="操作步骤"></a>操作步骤</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h2 id="12007-进入单用户"><a href="#12007-进入单用户" class="headerlink" title="12007 进入单用户"></a>12007 进入单用户</h2><h3 id="使用场景-7"><a href="#使用场景-7" class="headerlink" title="使用场景"></a>使用场景</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h2 id="12007-进入单用户"><a href="#12007-进入单用户" class="headerlink" title="12007 进入单用户"></a>12007 进入单用户</h2><h3 id="使用场景-7"><a href="#使用场景-7" class="headerlink" title="使用场景"></a>使用场景</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="操作步骤-7"><a href="#操作步骤-7" class="headerlink" title="操作步骤"></a>操作步骤</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="操作步骤-7"><a href="#操作步骤-7" class="headerlink" title="操作步骤"></a>操作步骤</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h2 id="虚拟机调用GPU独显配置"><a href="#虚拟机调用GPU独显配置" class="headerlink" title="虚拟机调用GPU独显配置"></a>虚拟机调用GPU独显配置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">虚拟机读取不到独显的图形渲染</span><br><span class="line">在lightdm.conf文件添加以下配置</span><br><span class="line">autologin-guest=<span class="literal">false</span></span><br><span class="line">autologin-user=root</span><br><span class="line">autologin-user-timeout=0</span><br><span class="line">以及在greeter.conf文件添加以下配置</span><br><span class="line">autologin-user=root重启lightdm服务，解决了此问题 </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="虚拟机调用GPU独显配置"><a href="#虚拟机调用GPU独显配置" class="headerlink" title="虚拟机调用GPU独显配置"></a>虚拟机调用GPU独显配置</h2><pre><code class="hljs bash">虚拟机读取不到独显的图形渲染
+在lightdm.conf文件添加以下配置
+autologin-guest=<span class="hljs-literal">false</span>
+autologin-user=root
+autologin-user-timeout=0
+以及在greeter.conf文件添加以下配置
+autologin-user=root重启lightdm服务，解决了此问题 
+</code></pre>
 
-<h2 id="误删除boot根分区恢复操作"><a href="#误删除boot根分区恢复操作" class="headerlink" title="误删除boot根分区恢复操作"></a>误删除boot根分区恢复操作</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">1、制作启动盘，随机进入liveCD模式</span><br><span class="line">2、lsblk查看根分区，通常SYSROOT就是根分区，假设是/dev/sda5</span><br><span class="line">3、挂载：<span class="built_in">sudo</span>  mount  /dev/sda5  /mnt</span><br><span class="line">4、挂载必要文件系统:</span><br><span class="line"><span class="built_in">sudo</span>  mount  --<span class="built_in">bind</span>  /dev  /mnt/dev</span><br><span class="line"><span class="built_in">sudo</span>  mount  --<span class="built_in">bind</span>  /proc  /mnt/proc</span><br><span class="line"><span class="built_in">sudo</span>  mount  --<span class="built_in">bind</span>  /sys  /mnt/sys</span><br><span class="line"><span class="built_in">sudo</span>  mount  --<span class="built_in">bind</span>  /run  /mnt/run</span><br><span class="line">5、切换到跟文件系统：<span class="built_in">sudo</span>  <span class="built_in">chroot</span>  /mnt</span><br><span class="line">6、重装内核和Grub：</span><br><span class="line">apt  update</span><br><span class="line">apt  install  --reinstall  linux-image-$(<span class="built_in">uname</span> -r)</span><br><span class="line">apt  install  --reinstall  grub-pc</span><br><span class="line">7、更新Grub配置：</span><br><span class="line">update-grub</span><br><span class="line">grub-install  /dev/sda</span><br><span class="line">检查 <span class="built_in">cat</span>  /boot/grub/grub.cfg</span><br><span class="line">8、退出<span class="built_in">chroot</span>、解挂、重启：</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="built_in">sudo</span>  umount  /mnt/dev</span><br><span class="line"><span class="built_in">sudo</span>  umount  /mnt/proc</span><br><span class="line"><span class="built_in">sudo</span>  umount  /mnt/sys</span><br><span class="line"><span class="built_in">sudo</span>  umount  /mnt/run</span><br><span class="line"><span class="built_in">sudo</span>  umount  /mnt</span><br><span class="line"><span class="built_in">sudo</span>  reboot</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h1 id="二、服务器"><a href="#二、服务器" class="headerlink" title="二、服务器"></a>二、服务器</h1><h2 id="21001-SSH登录错误"><a href="#21001-SSH登录错误" class="headerlink" title="21001 SSH登录错误"></a>21001 SSH登录错误</h2><h3 id="问题描述-17"><a href="#问题描述-17" class="headerlink" title="问题描述"></a>问题描述</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
-
-<h3 id="问题分析过程-14"><a href="#问题分析过程-14" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
-
-<h3 id="问题解决方法-16"><a href="#问题解决方法-16" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
-
-<h2 id="21002-fstab-UUID错误无法进入系统"><a href="#21002-fstab-UUID错误无法进入系统" class="headerlink" title="21002 fstab UUID错误无法进入系统"></a>21002 fstab UUID错误无法进入系统</h2><h3 id="问题描述-18"><a href="#问题描述-18" class="headerlink" title="问题描述"></a>问题描述</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
-
-<h3 id="问题分析过程-15"><a href="#问题分析过程-15" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
-
-<h3 id="问题解决方法-17"><a href="#问题解决方法-17" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
-
-<h2 id="21003-无法配置Raid1"><a href="#21003-无法配置Raid1" class="headerlink" title="21003 无法配置Raid1"></a>21003 无法配置Raid1</h2><h3 id="问题描述-19"><a href="#问题描述-19" class="headerlink" title="问题描述"></a>问题描述</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
-
-<h3 id="问题分析过程-16"><a href="#问题分析过程-16" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
-
-<h3 id="问题解决方法-18"><a href="#问题解决方法-18" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="22000-系统激活"><a href="#22000-系统激活" class="headerlink" title="22000 系统激活"></a>22000 系统激活</h2><h3 id="使用场景-8"><a href="#使用场景-8" class="headerlink" title="使用场景"></a>使用场景</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
-
-<h3 id="操作步骤-8"><a href="#操作步骤-8" class="headerlink" title="操作步骤"></a>操作步骤</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
-
-<h2 id="22001-重装系统保留非系统盘数据"><a href="#22001-重装系统保留非系统盘数据" class="headerlink" title="22001 重装系统保留非系统盘数据"></a>22001 重装系统保留非系统盘数据</h2><h3 id="使用场景-9"><a href="#使用场景-9" class="headerlink" title="使用场景"></a>使用场景</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">服务器无法正常进入系统，需重装系统且保留非系统盘数据。</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
-
-<h3 id="操作步骤-9"><a href="#操作步骤-9" class="headerlink" title="操作步骤"></a>操作步骤</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">步骤1.使用安装介质正常启动服务器，直至进入系统安装界面。</span><br><span class="line">步骤2.在安装界面中，选择“硬盘”选项，接着点击“自定义分区”。</span><br><span class="line">步骤3.先对 boot、efi、swap、/ 等系统分区，重新输入对应的挂载点，并勾选“格式化”选项，完成设置后点击“Update Settings”。</span><br><span class="line">步骤4.再对其他非系统分区的数据分区，重新输入挂载点，然后点击“Update Settings”。</span><br><span class="line">步骤5.仔细检查所有分区设置无误后，点击“完成”，按照安装程序的其他要求完成系统安装配置即可。</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
-
-<h3 id="22002-磁盘修复问题"><a href="#22002-磁盘修复问题" class="headerlink" title="22002 磁盘修复问题"></a>22002 磁盘修复问题</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">系统启动不起来，挂iso镜像启动查看情况</span><br><span class="line">有时候是磁盘满了导致，需要清理，还可能是selinux没关闭导致</span><br><span class="line">服务器突然断电，导致系统进不去：</span><br><span class="line">Troubleshooting</span><br><span class="line">rescue a Kylin linux advanced server system</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">先用同镜像的启动盘或光盘进入安装系统的界面（注：不要安装系统，进安装到界面就行）</span><br><span class="line">然后按 ctrl+alt+F2（可以进到一个root的命令界面，按照下面操作）</span><br><span class="line">vgs <span class="comment"># 查看VG</span></span><br><span class="line">vgchange  -ay  klas <span class="comment"># 激活根分区VG</span></span><br><span class="line"><span class="built_in">mkdir</span>  /test <span class="comment"># 创建挂载点</span></span><br><span class="line">mount  /dev/klas/root  /test <span class="comment"># 挂载根分区，此时挂载失败</span></span><br><span class="line">xfs_repair  /dev/klas/root <span class="comment"># 尝试修复根分区</span></span><br><span class="line">mount  /dev/klas/root  /test <span class="comment"># 再次挂载根分区，如果还是挂载失败继续执行下面的命令</span></span><br><span class="line">强制修复：xfs_repair  -L  /dev/klas/root </span><br><span class="line">mount  /dev/klas/root  /test <span class="comment"># 再次挂载根分区，此时成功挂载的话就可以重启进入系统了</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="22002-ethtool-工具识别物理网卡"><a href="#22002-ethtool-工具识别物理网卡" class="headerlink" title="22002 ethtool 工具识别物理网卡"></a>22002 ethtool 工具识别物理网卡</h2><h3 id="使用场景-10"><a href="#使用场景-10" class="headerlink" title="使用场景"></a>使用场景</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在物理机上配置网络时，需要确认逻辑网卡和物理网卡的映射关系。</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
-
-<h3 id="操作步骤-10"><a href="#操作步骤-10" class="headerlink" title="操作步骤"></a>操作步骤</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">步骤1.查看逻辑网卡名称</span><br><span class="line">执行命令：ifconfig -a 或者 ip link show</span><br><span class="line">步骤2.使用 ethtool 标识网卡</span><br><span class="line">执行命令：ethtool -p &lt;逻辑网卡名&gt; &lt;闪烁时长（秒）&gt;   # 例如：ethtool -p eth0 10</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
-
-<h2 id="22003-说动配置网络"><a href="#22003-说动配置网络" class="headerlink" title="22003 说动配置网络"></a>22003 说动配置网络</h2><h3 id="使用场景-11"><a href="#使用场景-11" class="headerlink" title="使用场景"></a>使用场景</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
-
-<h3 id="操作步骤-11"><a href="#操作步骤-11" class="headerlink" title="操作步骤"></a>操作步骤</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
-
-<h2 id="22004-配置Bond网络"><a href="#22004-配置Bond网络" class="headerlink" title="22004 配置Bond网络"></a>22004 配置Bond网络</h2><h3 id="使用场景-12"><a href="#使用场景-12" class="headerlink" title="使用场景"></a>使用场景</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
-
-<h3 id="操作步骤-12"><a href="#操作步骤-12" class="headerlink" title="操作步骤"></a>操作步骤</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
-
-<h2 id="22005-重装用户密码"><a href="#22005-重装用户密码" class="headerlink" title="22005 重装用户密码"></a>22005 重装用户密码</h2><h3 id="使用场景-13"><a href="#使用场景-13" class="headerlink" title="使用场景"></a>使用场景</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
-
-<h3 id="操作步骤-13"><a href="#操作步骤-13" class="headerlink" title="操作步骤"></a>操作步骤</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
-
-<h2 id="22006-磁盘修复"><a href="#22006-磁盘修复" class="headerlink" title="22006 磁盘修复"></a>22006 磁盘修复</h2><h3 id="使用场景-14"><a href="#使用场景-14" class="headerlink" title="使用场景"></a>使用场景</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
-
-<h3 id="操作步骤-14"><a href="#操作步骤-14" class="headerlink" title="操作步骤"></a>操作步骤</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
-
-<h2 id="22007-VNC安装和配置"><a href="#22007-VNC安装和配置" class="headerlink" title="22007 VNC安装和配置"></a>22007 VNC安装和配置</h2><h3 id="使用场景-15"><a href="#使用场景-15" class="headerlink" title="使用场景"></a>使用场景</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
-
-<h3 id="操作步骤-15"><a href="#操作步骤-15" class="headerlink" title="操作步骤"></a>操作步骤</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
-
-<h2 id="22008-Deepseek调优"><a href="#22008-Deepseek调优" class="headerlink" title="22008 Deepseek调优"></a>22008 Deepseek调优</h2><h3 id="使用场景-16"><a href="#使用场景-16" class="headerlink" title="使用场景"></a>使用场景</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
-
-<h3 id="操作步骤-16"><a href="#操作步骤-16" class="headerlink" title="操作步骤"></a>操作步骤</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
-
-<h2 id="22009-SNMP-安装和配置"><a href="#22009-SNMP-安装和配置" class="headerlink" title="22009 SNMP 安装和配置"></a>22009 SNMP 安装和配置</h2><h3 id="使用场景-17"><a href="#使用场景-17" class="headerlink" title="使用场景"></a>使用场景</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
-
-<h3 id="操作步骤-17"><a href="#操作步骤-17" class="headerlink" title="操作步骤"></a>操作步骤</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
-
-<h2 id="22010-vsftpd安装和配置"><a href="#22010-vsftpd安装和配置" class="headerlink" title="22010 vsftpd安装和配置"></a>22010 vsftpd安装和配置</h2><h3 id="使用场景-18"><a href="#使用场景-18" class="headerlink" title="使用场景"></a>使用场景</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
-
-<h3 id="操作步骤-18"><a href="#操作步骤-18" class="headerlink" title="操作步骤"></a>操作步骤</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">一、首先服务器得有公网或者本地源</span><br><span class="line"></span><br><span class="line">二、执行安装命令：<span class="built_in">sudo</span>  yum  install  vsftpd</span><br><span class="line"></span><br><span class="line">三、启动服务：<span class="built_in">sudo</span>  systemctl  start  vsftpd</span><br><span class="line"></span><br><span class="line">四、vsftpd的配置文件：/etc/vsftpd/vsftpd.conf</span><br><span class="line"></span><br><span class="line">五、如果需要配置被动模式：</span><br><span class="line">1、vi  /etc/vsftpd/vsftpd.conf，在最后面添加以下配置</span><br><span class="line">pasv_enable=YES   <span class="comment"># 开启被动模式</span></span><br><span class="line">pasv_min_port=30000   <span class="comment"># 被动模式端口范围最小端口</span></span><br><span class="line">pasv_max_port=30100   <span class="comment"># 被动模式端口范围最大端口</span></span><br><span class="line">listen_port=30099   <span class="comment"># 指定端口不是21，改用其余端口。此端口必须在上面的最大最小范围内</span></span><br><span class="line">2、改完保存重启：systemctl  restart  vsftpd</span><br><span class="line"></span><br><span class="line">六、跟vsftpd.conf同级有两个文件，</span><br><span class="line">1、一个是ftpuser（绝对黑名单文件）</span><br><span class="line">2、一个是user_list（动态名单，优先级低于ftpuser）</span><br><span class="line">当vsftpd.conf配置userlist_enable=YES+ userlist_deny=YES（默认），user_list是黑名单</span><br><span class="line">当vsftpd.conf配置userlist_enable=YES+ userlist_deny=NO，user_list是白名单</span><br><span class="line">当vsftpd.conf配置userlist_enable=NO，user_list无效</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">chroot_local_user=YES   <span class="comment"># 限制用户只能在自己的主目录</span></span><br><span class="line">chroot_list_enable=YES   <span class="comment"># 在conf文件平级创建一个chroot_list文件，里面添加的用户不受chroot_local_user=YES的限制</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">注：安装vsftpd以后，默认的vsftpd.conf配置文件就可以使用（目前测试只支持普通用户使用vsftpd）</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="SNMP设置"><a href="#SNMP设置" class="headerlink" title="SNMP设置"></a>SNMP设置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">（1）yum install net-snmp,yum install net-snmp-utils</span><br><span class="line">（2）vi /etc/snmp/snmpd.conf，改团体名（recommunity 参数就是团体名）</span><br><span class="line">（3）关闭内核防火墙。</span><br><span class="line">vi /etc/selinux/config   把SELINUX=enforcing设置成disabled，并重启生效，否则会拦住SNMP数据包；</span><br><span class="line">（或使用setenforce 0命令，重启其他应用后临时生效）</span><br><span class="line">（4）重启 systemctl restart snmpd</span><br><span class="line">（5）设置为开机启动  systemctl <span class="built_in">enable</span> snmpd</span><br><span class="line">（6）允许进入的连接衍生端口能进行后续操作：iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT</span><br><span class="line"></span><br><span class="line">测试：snmpwalk -v 2c -c yjww@2023r 127.0.0.1</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="服务器修改网络名为-eth"><a href="#服务器修改网络名为-eth" class="headerlink" title="服务器修改网络名为 eth"></a>服务器修改网络名为 eth</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">1、<span class="built_in">cd</span>  /etc/udev/rules.d/</span><br><span class="line">2、vi  76-netnames.rules</span><br><span class="line"><span class="comment"># 改网卡名为eth</span></span><br><span class="line">SUBSYSTEM==<span class="string">&quot;net&quot;</span>, KERNEL==<span class="string">&quot;eth*.*&quot;</span> ACTION==<span class="string">&quot;add&quot;</span>, NAME=<span class="string">&quot;<span class="variable">$kernel</span>&quot;</span></span><br><span class="line"><span class="comment"># 改网卡名为bond</span></span><br><span class="line"><span class="comment">#SUBSYSTEM==&quot;net&quot;, KERNEL==&quot;bond*.*&quot; ACTION==&quot;add&quot;, NAME=&quot;$kernel&quot;</span></span><br><span class="line"><span class="comment"># 改网卡名为clan</span></span><br><span class="line"><span class="comment">#SUBSYSTEM==&quot;net&quot;, KERNEL==&quot;vlan*.*&quot; ACTION==&quot;add&quot;, NAME=&quot;$kernel&quot;</span></span><br><span class="line">3、vi  75-network.rules</span><br><span class="line"><span class="comment"># address是网卡的MAC地址，name是自己自定义的网卡名</span></span><br><span class="line">SUBSYSTEM==<span class="string">&quot;net&quot;</span>, ACTION==<span class="string">&quot;add&quot;</span>, ATTR&#123;address&#125;==<span class="string">&quot;00:0c:29:ba:f3:61&quot;</span>, NAME=<span class="string">&quot;eth4&quot;</span></span><br><span class="line">SUBSYSTEM==<span class="string">&quot;net&quot;</span>, ACTION==<span class="string">&quot;add&quot;</span>, ATTR&#123;address&#125;==<span class="string">&quot;00:0c:29:ba:f3:61&quot;</span>, NAME=<span class="string">&quot;eth4&quot;</span></span><br><span class="line">4、重启系统生效</span><br><span class="line">5、添加网卡 nmcli connection add <span class="built_in">type</span> ethernet con-name <span class="string">&quot;eth4&quot;</span> ifname eth4</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">备注：安装系统的时候直接改成eth</span><br><span class="line">1、在安装引导的界面，选择“Install KylinLinux Advanced Server V10”然后按 e （注：有的可能按 tab）</span><br><span class="line">2、在那个有 quiet 的后面加上 net.ifnames=0  biosdevname=0 （注：装好操作系统grub加前面的配置也可以）</span><br><span class="line">3、然后ctrl+x继续，安装完电口和光口的网卡就全是eth开头的名字了</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">4、如果保持光口名称不变</span><br><span class="line">1.在 /etc/udev/rules.d/ 目录下创建一个新的规则文件，例如 70-custom-net-names.rules</span><br><span class="line">SUBSYSTEM==<span class="string">&quot;net&quot;</span>, ACTION==<span class="string">&quot;add&quot;</span>, ATTR&#123;address&#125;==<span class="string">&quot;00:11:22:33:44:57&quot;</span>, NAME=<span class="string">&quot;enp1s0f0&quot;</span></span><br><span class="line">SUBSYSTEM==<span class="string">&quot;net&quot;</span>, ACTION==<span class="string">&quot;add&quot;</span>, ATTR&#123;address&#125;==<span class="string">&quot;00:11:22:33:44:58&quot;</span>, NAME=<span class="string">&quot;enp1s0f1&quot;</span></span><br><span class="line">2.重启生效</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="单网络配置多IP地址"><a href="#单网络配置多IP地址" class="headerlink" title="单网络配置多IP地址"></a>单网络配置多IP地址</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一张网卡配置多个IP，必须要是同网段的，不然默认网关会出问题</span></span><br><span class="line">HWADDR=00:0C:29:66:7F:44</span><br><span class="line">TYPE=Ethernet</span><br><span class="line">PROXY_METHOD=none</span><br><span class="line">BROWSER_ONLY=no</span><br><span class="line">BOOTPROTO=none</span><br><span class="line">DEFROUTE=<span class="built_in">yes</span></span><br><span class="line">IPV4_FAILURE_FATAL=no</span><br><span class="line">IPV6INIT=<span class="built_in">yes</span></span><br><span class="line">IPV6_AUTOCONF=<span class="built_in">yes</span></span><br><span class="line">IPV6_DEFROUTE=<span class="built_in">yes</span></span><br><span class="line">IPV6_FAILURE_FATAL=no</span><br><span class="line">IPV6_PRIVACY=no</span><br><span class="line">IPV6_ADDR_GEN_MODE=stable-privacy</span><br><span class="line">NAME=ens40</span><br><span class="line">UUID=40c0a17c-2191-4391-99bc-144640779684</span><br><span class="line">DEVICE=ens40</span><br><span class="line">ONBOOT=<span class="built_in">yes</span></span><br><span class="line">GATEWAY=10.10.14.1   <span class="comment"># 网关</span></span><br><span class="line">IPADDR=10.10.14.138   <span class="comment"># 第一个IP地址</span></span><br><span class="line">PREFIX=24   <span class="comment"># 第一个IP地址掩码位</span></span><br><span class="line">IPADDR1=10.10.14.238   <span class="comment"># 第二个IP地址</span></span><br><span class="line">PREFIX1=24   <span class="comment"># 第二个IP地址掩码位</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="禁用SSH登录"><a href="#禁用SSH登录" class="headerlink" title="禁用SSH登录"></a>禁用SSH登录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">一、禁止使用ssh远程登录</span><br><span class="line">1、禁止root用户：vi  /etc/ssh/sshd_config，添加 【PermitRootLogin no】 或者将 【PermitRootLogin <span class="built_in">yes</span> 改成 PermitRootLogin no】</span><br><span class="line">2、禁止普通用户：vi  /etc/ssh/sshd_config，添加 【DenyUsers user1 user2 user3】，可以是多个用户，也可以是一个用户</span><br><span class="line">3、禁止用户组：vi  /etc/ssh/sshd_config，添加 【DenyGroups group1 group2 group3】，可以是多个用户组，也可以是一个用户组</span><br><span class="line">二、重启sshd服务：systemctl  restart  sshd</span><br><span class="line">DenyUsers user1 user2   <span class="comment"># 禁止用户使用ssh，空格可以跟多个用户</span></span><br><span class="line">DenyGroups group1 group2   <span class="comment"># 禁止用户组使用ssh，空格可以跟多个用户组</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="22017-配置永久静态路由"><a href="#22017-配置永久静态路由" class="headerlink" title="22017 配置永久静态路由"></a>22017 配置永久静态路由</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">route  add  -net  10.0.0.0  netmask  255.0.0.0  gw  192.168.0.1  dev  ens33</span><br><span class="line">ip  route  add  10.0.0.0/16  via  192.168.0.1  dev  ens33</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="服务器进入单用户"><a href="#服务器进入单用户" class="headerlink" title="服务器进入单用户"></a>服务器进入单用户</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">进主机单用户，修改root密码或者是开机用户的密码</span><br><span class="line">1、重启主机，在选择界面按：e</span><br><span class="line">2、输入用户名：root    密码：Kylin123123</span><br><span class="line">3、然后找到linux或linux16行，ro改成rw，在audit=0后面或者security之前加：init=/bin/bash</span><br><span class="line">（注：如果是SP1需要多加一个 console=tty0 ）</span><br><span class="line">4、没有audit=0就在security之前加；然后：F10 或者 ctrl+x</span><br><span class="line">5、进入以后是命令行的模式，默认是root用户</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="挂载本地源"><a href="#挂载本地源" class="headerlink" title="挂载本地源"></a>挂载本地源</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Kylin：</span><br><span class="line">1、首先将镜像包传入服务器，要ISO全量</span><br><span class="line">2、然后执行 <span class="built_in">mkdir</span> -p /mnt/cdrom</span><br><span class="line">3、执行镜像挂载：mount -o loop /home/Kylin-Server-V10-SP3-2403-Release-20240426-x86_64.iso /mnt/cdrom</span><br><span class="line">vi /etc/fstab</span><br><span class="line">/home/Kylin-Server-V10-SP3-2403-Release-20240426-x86_64.iso   /mnt/cdrom iso9660 loop 0 0</span><br><span class="line">4、在/etc/yum.repos.d路径下，创建一个bak目录：<span class="built_in">mkdir</span> bak   ,然后移动所有到bak：<span class="built_in">mv</span> *.repo bak/</span><br><span class="line">再创建一个Kylin-base.repo的文件编辑下面的进去，保存；文件里面的备注不需要</span><br><span class="line">[base]</span><br><span class="line">name=Kylin-os</span><br><span class="line">baseurl=file:///mnt/cdrom/</span><br><span class="line">enabled=1</span><br><span class="line">gpgcheck=0</span><br><span class="line">5、执行 yum clean all &amp;&amp; yum makecache</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="误删除boot根分区恢复操作"><a href="#误删除boot根分区恢复操作" class="headerlink" title="误删除boot根分区恢复操作"></a>误删除boot根分区恢复操作</h2><pre><code class="hljs bash">1、制作启动盘，随机进入liveCD模式
+2、lsblk查看根分区，通常SYSROOT就是根分区，假设是/dev/sda5
+3、挂载：<span class="hljs-built_in">sudo</span>  mount  /dev/sda5  /mnt
+4、挂载必要文件系统:
+<span class="hljs-built_in">sudo</span>  mount  --<span class="hljs-built_in">bind</span>  /dev  /mnt/dev
+<span class="hljs-built_in">sudo</span>  mount  --<span class="hljs-built_in">bind</span>  /proc  /mnt/proc
+<span class="hljs-built_in">sudo</span>  mount  --<span class="hljs-built_in">bind</span>  /sys  /mnt/sys
+<span class="hljs-built_in">sudo</span>  mount  --<span class="hljs-built_in">bind</span>  /run  /mnt/run
+5、切换到跟文件系统：<span class="hljs-built_in">sudo</span>  <span class="hljs-built_in">chroot</span>  /mnt
+6、重装内核和Grub：
+apt  update
+apt  install  --reinstall  linux-image-$(<span class="hljs-built_in">uname</span> -r)
+apt  install  --reinstall  grub-pc
+7、更新Grub配置：
+update-grub
+grub-install  /dev/sda
+检查 <span class="hljs-built_in">cat</span>  /boot/grub/grub.cfg
+8、退出<span class="hljs-built_in">chroot</span>、解挂、重启：
+<span class="hljs-built_in">exit</span>
+<span class="hljs-built_in">sudo</span>  umount  /mnt/dev
+<span class="hljs-built_in">sudo</span>  umount  /mnt/proc
+<span class="hljs-built_in">sudo</span>  umount  /mnt/sys
+<span class="hljs-built_in">sudo</span>  umount  /mnt/run
+<span class="hljs-built_in">sudo</span>  umount  /mnt
+<span class="hljs-built_in">sudo</span>  reboot
+</code></pre>
 
 <hr>
-<h1 id="三、软件商店"><a href="#三、软件商店" class="headerlink" title="三、软件商店"></a>三、软件商店</h1><h2 id="31000-配置后台强制更新"><a href="#31000-配置后台强制更新" class="headerlink" title="31000 配置后台强制更新"></a>31000 配置后台强制更新</h2><h3 id="问题描述-20"><a href="#问题描述-20" class="headerlink" title="问题描述"></a>问题描述</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h1 id="二、服务器"><a href="#二、服务器" class="headerlink" title="二、服务器"></a>二、服务器</h1><h2 id="21001-SSH登录错误"><a href="#21001-SSH登录错误" class="headerlink" title="21001 SSH登录错误"></a>21001 SSH登录错误</h2><h3 id="问题描述-17"><a href="#问题描述-17" class="headerlink" title="问题描述"></a>问题描述</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="问题分析过程-17"><a href="#问题分析过程-17" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="问题分析过程-14"><a href="#问题分析过程-14" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="问题解决方法-19"><a href="#问题解决方法-19" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="问题解决方法-16"><a href="#问题解决方法-16" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h2 id="admin-密码恢复问题"><a href="#admin-密码恢复问题" class="headerlink" title="admin 密码恢复问题"></a>admin 密码恢复问题</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1、查看服务是否正常：docker  ps  -a</span><br><span class="line">2、进入容器：docker  <span class="built_in">exec</span>  -it  kylinSoft  bash</span><br><span class="line">3、进入数据库：mysql  -u  root  -p</span><br><span class="line">4、切换指定数据库：use  kylin_soft_shop;</span><br><span class="line">6、恢复默认密码：update t_user <span class="built_in">set</span> PASSWORD= <span class="string">&#x27;690d74d4976760a73ee84c3fa6bef3e6&#x27;</span> <span class="built_in">where</span> USERNAME=<span class="string">&#x27;admin&#x27;</span>;</span><br><span class="line">7、退出mysql数据库：<span class="built_in">exit</span> 或者 q;（回到容器内）</span><br><span class="line">8、清楚redis缓存：redis-cli  -a  kylin@123  flushall</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="21002-fstab-UUID错误无法进入系统"><a href="#21002-fstab-UUID错误无法进入系统" class="headerlink" title="21002 fstab UUID错误无法进入系统"></a>21002 fstab UUID错误无法进入系统</h2><h3 id="问题描述-18"><a href="#问题描述-18" class="headerlink" title="问题描述"></a>问题描述</h3><pre><code class="hljs">复制代码</code></pre>
+
+<h3 id="问题分析过程-15"><a href="#问题分析过程-15" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><pre><code class="hljs">复制代码</code></pre>
+
+<h3 id="问题解决方法-17"><a href="#问题解决方法-17" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><pre><code class="hljs">复制代码</code></pre>
+
+<h2 id="21003-无法配置Raid1"><a href="#21003-无法配置Raid1" class="headerlink" title="21003 无法配置Raid1"></a>21003 无法配置Raid1</h2><h3 id="问题描述-19"><a href="#问题描述-19" class="headerlink" title="问题描述"></a>问题描述</h3><pre><code class="hljs">复制代码</code></pre>
+
+<h3 id="问题分析过程-16"><a href="#问题分析过程-16" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><pre><code class="hljs">复制代码</code></pre>
+
+<h3 id="问题解决方法-18"><a href="#问题解决方法-18" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><pre><code class="hljs">复制代码</code></pre>
 
 <hr>
-<h1 id="四、安全域控"><a href="#四、安全域控" class="headerlink" title="四、安全域控"></a>四、安全域控</h1><h2 id="41000-域控同步AD域数据问题"><a href="#41000-域控同步AD域数据问题" class="headerlink" title="41000 域控同步AD域数据问题"></a>41000 域控同步AD域数据问题</h2><h3 id="问题描述-21"><a href="#问题描述-21" class="headerlink" title="问题描述"></a>问题描述</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h2 id="22000-系统激活"><a href="#22000-系统激活" class="headerlink" title="22000 系统激活"></a>22000 系统激活</h2><h3 id="使用场景-8"><a href="#使用场景-8" class="headerlink" title="使用场景"></a>使用场景</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="问题分析过程-18"><a href="#问题分析过程-18" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="操作步骤-8"><a href="#操作步骤-8" class="headerlink" title="操作步骤"></a>操作步骤</h3><pre><code class="hljs">复制代码</code></pre>
 
-<h3 id="问题解决方法-20"><a href="#问题解决方法-20" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h2 id="22001-重装系统保留非系统盘数据"><a href="#22001-重装系统保留非系统盘数据" class="headerlink" title="22001 重装系统保留非系统盘数据"></a>22001 重装系统保留非系统盘数据</h2><h3 id="使用场景-9"><a href="#使用场景-9" class="headerlink" title="使用场景"></a>使用场景</h3><pre><code class="hljs">服务器无法正常进入系统，需重装系统且保留非系统盘数据。
+复制代码</code></pre>
+
+<h3 id="操作步骤-9"><a href="#操作步骤-9" class="headerlink" title="操作步骤"></a>操作步骤</h3><pre><code class="hljs stata">步骤1.使用安装介质正常启动服务器，直至进入系统安装界面。
+步骤2.在安装界面中，选择“硬盘”选项，接着点击“自定义分区”。
+步骤3.先对 <span class="hljs-keyword">boot</span>、efi、swap、/ 等系统分区，重新输入对应的挂载点，并勾选“格式化”选项，完成设置后点击“<span class="hljs-keyword">Update</span> Settings”。
+步骤4.再对其他非系统分区的数据分区，重新输入挂载点，然后点击“<span class="hljs-keyword">Update</span> Settings”。
+步骤5.仔细检查所有分区设置无误后，点击“完成”，按照安装程序的其他要求完成系统安装配置即可。
+复制代码</code></pre>
+
+<h3 id="22002-磁盘修复问题"><a href="#22002-磁盘修复问题" class="headerlink" title="22002 磁盘修复问题"></a>22002 磁盘修复问题</h3><pre><code class="hljs bash">系统启动不起来，挂iso镜像启动查看情况
+有时候是磁盘满了导致，需要清理，还可能是selinux没关闭导致
+服务器突然断电，导致系统进不去：
+Troubleshooting
+rescue a Kylin linux advanced server system
+
+
+先用同镜像的启动盘或光盘进入安装系统的界面（注：不要安装系统，进安装到界面就行）
+然后按 ctrl+alt+F2（可以进到一个root的命令界面，按照下面操作）
+vgs <span class="hljs-comment"># 查看VG</span>
+vgchange  -ay  klas <span class="hljs-comment"># 激活根分区VG</span>
+<span class="hljs-built_in">mkdir</span>  /test <span class="hljs-comment"># 创建挂载点</span>
+mount  /dev/klas/root  /test <span class="hljs-comment"># 挂载根分区，此时挂载失败</span>
+xfs_repair  /dev/klas/root <span class="hljs-comment"># 尝试修复根分区</span>
+mount  /dev/klas/root  /test <span class="hljs-comment"># 再次挂载根分区，如果还是挂载失败继续执行下面的命令</span>
+强制修复：xfs_repair  -L  /dev/klas/root 
+mount  /dev/klas/root  /test <span class="hljs-comment"># 再次挂载根分区，此时成功挂载的话就可以重启进入系统了</span>
+</code></pre>
+
+<h2 id="22002-ethtool-工具识别物理网卡"><a href="#22002-ethtool-工具识别物理网卡" class="headerlink" title="22002 ethtool 工具识别物理网卡"></a>22002 ethtool 工具识别物理网卡</h2><h3 id="使用场景-10"><a href="#使用场景-10" class="headerlink" title="使用场景"></a>使用场景</h3><pre><code class="hljs">在物理机上配置网络时，需要确认逻辑网卡和物理网卡的映射关系。
+复制代码</code></pre>
+
+<h3 id="操作步骤-10"><a href="#操作步骤-10" class="headerlink" title="操作步骤"></a>操作步骤</h3><pre><code class="hljs css">步骤<span class="hljs-number">1</span>.查看逻辑网卡名称
+执行命令：ifconfig -<span class="hljs-selector-tag">a</span> 或者 ip link show
+步骤<span class="hljs-number">2</span>.使用 ethtool 标识网卡
+执行命令：ethtool -<span class="hljs-selector-tag">p</span> &lt;逻辑网卡名&gt; &lt;闪烁时长（秒）&gt;   # 例如：ethtool -<span class="hljs-selector-tag">p</span> eth0 <span class="hljs-number">10</span>
+复制代码</code></pre>
+
+<h2 id="22003-说动配置网络"><a href="#22003-说动配置网络" class="headerlink" title="22003 说动配置网络"></a>22003 说动配置网络</h2><h3 id="使用场景-11"><a href="#使用场景-11" class="headerlink" title="使用场景"></a>使用场景</h3><pre><code class="hljs">复制代码</code></pre>
+
+<h3 id="操作步骤-11"><a href="#操作步骤-11" class="headerlink" title="操作步骤"></a>操作步骤</h3><pre><code class="hljs">复制代码</code></pre>
+
+<h2 id="22004-配置Bond网络"><a href="#22004-配置Bond网络" class="headerlink" title="22004 配置Bond网络"></a>22004 配置Bond网络</h2><h3 id="使用场景-12"><a href="#使用场景-12" class="headerlink" title="使用场景"></a>使用场景</h3><pre><code class="hljs">复制代码</code></pre>
+
+<h3 id="操作步骤-12"><a href="#操作步骤-12" class="headerlink" title="操作步骤"></a>操作步骤</h3><pre><code class="hljs">复制代码</code></pre>
+
+<h2 id="22005-重装用户密码"><a href="#22005-重装用户密码" class="headerlink" title="22005 重装用户密码"></a>22005 重装用户密码</h2><h3 id="使用场景-13"><a href="#使用场景-13" class="headerlink" title="使用场景"></a>使用场景</h3><pre><code class="hljs">复制代码</code></pre>
+
+<h3 id="操作步骤-13"><a href="#操作步骤-13" class="headerlink" title="操作步骤"></a>操作步骤</h3><pre><code class="hljs">复制代码</code></pre>
+
+<h2 id="22006-磁盘修复"><a href="#22006-磁盘修复" class="headerlink" title="22006 磁盘修复"></a>22006 磁盘修复</h2><h3 id="使用场景-14"><a href="#使用场景-14" class="headerlink" title="使用场景"></a>使用场景</h3><pre><code class="hljs">复制代码</code></pre>
+
+<h3 id="操作步骤-14"><a href="#操作步骤-14" class="headerlink" title="操作步骤"></a>操作步骤</h3><pre><code class="hljs">复制代码</code></pre>
+
+<h2 id="22007-VNC安装和配置"><a href="#22007-VNC安装和配置" class="headerlink" title="22007 VNC安装和配置"></a>22007 VNC安装和配置</h2><h3 id="使用场景-15"><a href="#使用场景-15" class="headerlink" title="使用场景"></a>使用场景</h3><pre><code class="hljs">复制代码</code></pre>
+
+<h3 id="操作步骤-15"><a href="#操作步骤-15" class="headerlink" title="操作步骤"></a>操作步骤</h3><pre><code class="hljs">复制代码</code></pre>
+
+<h2 id="22008-Deepseek调优"><a href="#22008-Deepseek调优" class="headerlink" title="22008 Deepseek调优"></a>22008 Deepseek调优</h2><h3 id="使用场景-16"><a href="#使用场景-16" class="headerlink" title="使用场景"></a>使用场景</h3><pre><code class="hljs">复制代码</code></pre>
+
+<h3 id="操作步骤-16"><a href="#操作步骤-16" class="headerlink" title="操作步骤"></a>操作步骤</h3><pre><code class="hljs">复制代码</code></pre>
+
+<h2 id="22009-SNMP-安装和配置"><a href="#22009-SNMP-安装和配置" class="headerlink" title="22009 SNMP 安装和配置"></a>22009 SNMP 安装和配置</h2><h3 id="使用场景-17"><a href="#使用场景-17" class="headerlink" title="使用场景"></a>使用场景</h3><pre><code class="hljs">复制代码</code></pre>
+
+<h3 id="操作步骤-17"><a href="#操作步骤-17" class="headerlink" title="操作步骤"></a>操作步骤</h3><pre><code class="hljs">复制代码</code></pre>
+
+<h2 id="22010-vsftpd安装和配置"><a href="#22010-vsftpd安装和配置" class="headerlink" title="22010 vsftpd安装和配置"></a>22010 vsftpd安装和配置</h2><h3 id="使用场景-18"><a href="#使用场景-18" class="headerlink" title="使用场景"></a>使用场景</h3><pre><code class="hljs">复制代码</code></pre>
+
+<h3 id="操作步骤-18"><a href="#操作步骤-18" class="headerlink" title="操作步骤"></a>操作步骤</h3><pre><code class="hljs bash">一、首先服务器得有公网或者本地源
+
+二、执行安装命令：<span class="hljs-built_in">sudo</span>  yum  install  vsftpd
+
+三、启动服务：<span class="hljs-built_in">sudo</span>  systemctl  start  vsftpd
+
+四、vsftpd的配置文件：/etc/vsftpd/vsftpd.conf
+
+五、如果需要配置被动模式：
+1、vi  /etc/vsftpd/vsftpd.conf，在最后面添加以下配置
+pasv_enable=YES   <span class="hljs-comment"># 开启被动模式</span>
+pasv_min_port=30000   <span class="hljs-comment"># 被动模式端口范围最小端口</span>
+pasv_max_port=30100   <span class="hljs-comment"># 被动模式端口范围最大端口</span>
+listen_port=30099   <span class="hljs-comment"># 指定端口不是21，改用其余端口。此端口必须在上面的最大最小范围内</span>
+2、改完保存重启：systemctl  restart  vsftpd
+
+六、跟vsftpd.conf同级有两个文件，
+1、一个是ftpuser（绝对黑名单文件）
+2、一个是user_list（动态名单，优先级低于ftpuser）
+当vsftpd.conf配置userlist_enable=YES+ userlist_deny=YES（默认），user_list是黑名单
+当vsftpd.conf配置userlist_enable=YES+ userlist_deny=NO，user_list是白名单
+当vsftpd.conf配置userlist_enable=NO，user_list无效
+
+
+chroot_local_user=YES   <span class="hljs-comment"># 限制用户只能在自己的主目录</span>
+chroot_list_enable=YES   <span class="hljs-comment"># 在conf文件平级创建一个chroot_list文件，里面添加的用户不受chroot_local_user=YES的限制</span>
+
+
+注：安装vsftpd以后，默认的vsftpd.conf配置文件就可以使用（目前测试只支持普通用户使用vsftpd）
+</code></pre>
+
+<h3 id="SNMP设置"><a href="#SNMP设置" class="headerlink" title="SNMP设置"></a>SNMP设置</h3><pre><code class="hljs bash">（1）yum install net-snmp,yum install net-snmp-utils
+（2）vi /etc/snmp/snmpd.conf，改团体名（recommunity 参数就是团体名）
+（3）关闭内核防火墙。
+vi /etc/selinux/config   把SELINUX=enforcing设置成disabled，并重启生效，否则会拦住SNMP数据包；
+（或使用setenforce 0命令，重启其他应用后临时生效）
+（4）重启 systemctl restart snmpd
+（5）设置为开机启动  systemctl <span class="hljs-built_in">enable</span> snmpd
+（6）允许进入的连接衍生端口能进行后续操作：iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+测试：snmpwalk -v 2c -c yjww@2023r 127.0.0.1
+</code></pre>
+
+<h3 id="服务器修改网络名为-eth"><a href="#服务器修改网络名为-eth" class="headerlink" title="服务器修改网络名为 eth"></a>服务器修改网络名为 eth</h3><pre><code class="hljs bash">1、<span class="hljs-built_in">cd</span>  /etc/udev/rules.d/
+2、vi  76-netnames.rules
+<span class="hljs-comment"># 改网卡名为eth</span>
+SUBSYSTEM==<span class="hljs-string">&quot;net&quot;</span>, KERNEL==<span class="hljs-string">&quot;eth*.*&quot;</span> ACTION==<span class="hljs-string">&quot;add&quot;</span>, NAME=<span class="hljs-string">&quot;<span class="hljs-variable">$kernel</span>&quot;</span>
+<span class="hljs-comment"># 改网卡名为bond</span>
+<span class="hljs-comment">#SUBSYSTEM==&quot;net&quot;, KERNEL==&quot;bond*.*&quot; ACTION==&quot;add&quot;, NAME=&quot;$kernel&quot;</span>
+<span class="hljs-comment"># 改网卡名为clan</span>
+<span class="hljs-comment">#SUBSYSTEM==&quot;net&quot;, KERNEL==&quot;vlan*.*&quot; ACTION==&quot;add&quot;, NAME=&quot;$kernel&quot;</span>
+3、vi  75-network.rules
+<span class="hljs-comment"># address是网卡的MAC地址，name是自己自定义的网卡名</span>
+SUBSYSTEM==<span class="hljs-string">&quot;net&quot;</span>, ACTION==<span class="hljs-string">&quot;add&quot;</span>, ATTR&#123;address&#125;==<span class="hljs-string">&quot;00:0c:29:ba:f3:61&quot;</span>, NAME=<span class="hljs-string">&quot;eth4&quot;</span>
+SUBSYSTEM==<span class="hljs-string">&quot;net&quot;</span>, ACTION==<span class="hljs-string">&quot;add&quot;</span>, ATTR&#123;address&#125;==<span class="hljs-string">&quot;00:0c:29:ba:f3:61&quot;</span>, NAME=<span class="hljs-string">&quot;eth4&quot;</span>
+4、重启系统生效
+5、添加网卡 nmcli connection add <span class="hljs-built_in">type</span> ethernet con-name <span class="hljs-string">&quot;eth4&quot;</span> ifname eth4
+
+
+
+备注：安装系统的时候直接改成eth
+1、在安装引导的界面，选择“Install KylinLinux Advanced Server V10”然后按 e （注：有的可能按 tab）
+2、在那个有 quiet 的后面加上 net.ifnames=0  biosdevname=0 （注：装好操作系统grub加前面的配置也可以）
+3、然后ctrl+x继续，安装完电口和光口的网卡就全是eth开头的名字了
+
+
+4、如果保持光口名称不变
+1.在 /etc/udev/rules.d/ 目录下创建一个新的规则文件，例如 70-custom-net-names.rules
+SUBSYSTEM==<span class="hljs-string">&quot;net&quot;</span>, ACTION==<span class="hljs-string">&quot;add&quot;</span>, ATTR&#123;address&#125;==<span class="hljs-string">&quot;00:11:22:33:44:57&quot;</span>, NAME=<span class="hljs-string">&quot;enp1s0f0&quot;</span>
+SUBSYSTEM==<span class="hljs-string">&quot;net&quot;</span>, ACTION==<span class="hljs-string">&quot;add&quot;</span>, ATTR&#123;address&#125;==<span class="hljs-string">&quot;00:11:22:33:44:58&quot;</span>, NAME=<span class="hljs-string">&quot;enp1s0f1&quot;</span>
+2.重启生效
+</code></pre>
+
+<h3 id="单网络配置多IP地址"><a href="#单网络配置多IP地址" class="headerlink" title="单网络配置多IP地址"></a>单网络配置多IP地址</h3><pre><code class="hljs bash"><span class="hljs-comment"># 一张网卡配置多个IP，必须要是同网段的，不然默认网关会出问题</span>
+HWADDR=00:0C:29:66:7F:44
+TYPE=Ethernet
+PROXY_METHOD=none
+BROWSER_ONLY=no
+BOOTPROTO=none
+DEFROUTE=<span class="hljs-built_in">yes</span>
+IPV4_FAILURE_FATAL=no
+IPV6INIT=<span class="hljs-built_in">yes</span>
+IPV6_AUTOCONF=<span class="hljs-built_in">yes</span>
+IPV6_DEFROUTE=<span class="hljs-built_in">yes</span>
+IPV6_FAILURE_FATAL=no
+IPV6_PRIVACY=no
+IPV6_ADDR_GEN_MODE=stable-privacy
+NAME=ens40
+UUID=40c0a17c-2191-4391-99bc-144640779684
+DEVICE=ens40
+ONBOOT=<span class="hljs-built_in">yes</span>
+GATEWAY=10.10.14.1   <span class="hljs-comment"># 网关</span>
+IPADDR=10.10.14.138   <span class="hljs-comment"># 第一个IP地址</span>
+PREFIX=24   <span class="hljs-comment"># 第一个IP地址掩码位</span>
+IPADDR1=10.10.14.238   <span class="hljs-comment"># 第二个IP地址</span>
+PREFIX1=24   <span class="hljs-comment"># 第二个IP地址掩码位</span>
+</code></pre>
+
+<h3 id="禁用SSH登录"><a href="#禁用SSH登录" class="headerlink" title="禁用SSH登录"></a>禁用SSH登录</h3><pre><code class="hljs bash">一、禁止使用ssh远程登录
+1、禁止root用户：vi  /etc/ssh/sshd_config，添加 【PermitRootLogin no】 或者将 【PermitRootLogin <span class="hljs-built_in">yes</span> 改成 PermitRootLogin no】
+2、禁止普通用户：vi  /etc/ssh/sshd_config，添加 【DenyUsers user1 user2 user3】，可以是多个用户，也可以是一个用户
+3、禁止用户组：vi  /etc/ssh/sshd_config，添加 【DenyGroups group1 group2 group3】，可以是多个用户组，也可以是一个用户组
+二、重启sshd服务：systemctl  restart  sshd
+DenyUsers user1 user2   <span class="hljs-comment"># 禁止用户使用ssh，空格可以跟多个用户</span>
+DenyGroups group1 group2   <span class="hljs-comment"># 禁止用户组使用ssh，空格可以跟多个用户组</span>
+</code></pre>
+
+<h2 id="22017-配置永久静态路由"><a href="#22017-配置永久静态路由" class="headerlink" title="22017 配置永久静态路由"></a>22017 配置永久静态路由</h2><pre><code class="hljs bash">route  add  -net  10.0.0.0  netmask  255.0.0.0  gw  192.168.0.1  dev  ens33
+ip  route  add  10.0.0.0/16  via  192.168.0.1  dev  ens33
+</code></pre>
+
+<h2 id="服务器进入单用户"><a href="#服务器进入单用户" class="headerlink" title="服务器进入单用户"></a>服务器进入单用户</h2><pre><code class="hljs bash">进主机单用户，修改root密码或者是开机用户的密码
+1、重启主机，在选择界面按：e
+2、输入用户名：root    密码：Kylin123123
+3、然后找到linux或linux16行，ro改成rw，在audit=0后面或者security之前加：init=/bin/bash
+（注：如果是SP1需要多加一个 console=tty0 ）
+4、没有audit=0就在security之前加；然后：F10 或者 ctrl+x
+5、进入以后是命令行的模式，默认是root用户
+</code></pre>
+
+<h2 id="挂载本地源"><a href="#挂载本地源" class="headerlink" title="挂载本地源"></a>挂载本地源</h2><pre><code class="hljs bash">Kylin：
+1、首先将镜像包传入服务器，要ISO全量
+2、然后执行 <span class="hljs-built_in">mkdir</span> -p /mnt/cdrom
+3、执行镜像挂载：mount -o loop /home/Kylin-Server-V10-SP3-2403-Release-20240426-x86_64.iso /mnt/cdrom
+vi /etc/fstab
+/home/Kylin-Server-V10-SP3-2403-Release-20240426-x86_64.iso   /mnt/cdrom iso9660 loop 0 0
+4、在/etc/yum.repos.d路径下，创建一个bak目录：<span class="hljs-built_in">mkdir</span> bak   ,然后移动所有到bak：<span class="hljs-built_in">mv</span> *.repo bak/
+再创建一个Kylin-base.repo的文件编辑下面的进去，保存；文件里面的备注不需要
+[base]
+name=Kylin-os
+baseurl=file:///mnt/cdrom/
+enabled=1
+gpgcheck=0
+5、执行 yum clean all &amp;&amp; yum makecache
+</code></pre>
+
+<hr>
+<h1 id="三、软件商店"><a href="#三、软件商店" class="headerlink" title="三、软件商店"></a>三、软件商店</h1><h2 id="31000-配置后台强制更新"><a href="#31000-配置后台强制更新" class="headerlink" title="31000 配置后台强制更新"></a>31000 配置后台强制更新</h2><h3 id="问题描述-20"><a href="#问题描述-20" class="headerlink" title="问题描述"></a>问题描述</h3><pre><code class="hljs">复制代码</code></pre>
+
+<h3 id="问题分析过程-17"><a href="#问题分析过程-17" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><pre><code class="hljs">复制代码</code></pre>
+
+<h3 id="问题解决方法-19"><a href="#问题解决方法-19" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><pre><code class="hljs">复制代码</code></pre>
+
+<h2 id="admin-密码恢复问题"><a href="#admin-密码恢复问题" class="headerlink" title="admin 密码恢复问题"></a>admin 密码恢复问题</h2><pre><code class="hljs bash">1、查看服务是否正常：docker  ps  -a
+2、进入容器：docker  <span class="hljs-built_in">exec</span>  -it  kylinSoft  bash
+3、进入数据库：mysql  -u  root  -p
+4、切换指定数据库：use  kylin_soft_shop;
+6、恢复默认密码：update t_user <span class="hljs-built_in">set</span> PASSWORD= <span class="hljs-string">&#x27;690d74d4976760a73ee84c3fa6bef3e6&#x27;</span> <span class="hljs-built_in">where</span> USERNAME=<span class="hljs-string">&#x27;admin&#x27;</span>;
+7、退出mysql数据库：<span class="hljs-built_in">exit</span> 或者 q;（回到容器内）
+8、清楚redis缓存：redis-cli  -a  kylin@123  flushall
+</code></pre>
+
+<hr>
+<h1 id="四、安全域控"><a href="#四、安全域控" class="headerlink" title="四、安全域控"></a>四、安全域控</h1><h2 id="41000-域控同步AD域数据问题"><a href="#41000-域控同步AD域数据问题" class="headerlink" title="41000 域控同步AD域数据问题"></a>41000 域控同步AD域数据问题</h2><h3 id="问题描述-21"><a href="#问题描述-21" class="headerlink" title="问题描述"></a>问题描述</h3><pre><code class="hljs">复制代码</code></pre>
+
+<h3 id="问题分析过程-18"><a href="#问题分析过程-18" class="headerlink" title="问题分析过程"></a>问题分析过程</h3><pre><code class="hljs">复制代码</code></pre>
+
+<h3 id="问题解决方法-20"><a href="#问题解决方法-20" class="headerlink" title="问题解决方法"></a>问题解决方法</h3><pre><code class="hljs">复制代码</code></pre>
 
 <hr>
 <h1 id="五、KMS"><a href="#五、KMS" class="headerlink" title="五、KMS"></a>五、KMS</h1><hr>
 <h1 id="六、邮件"><a href="#六、邮件" class="headerlink" title="六、邮件"></a>六、邮件</h1><hr>
 <h1 id="七、云平台"><a href="#七、云平台" class="headerlink" title="七、云平台"></a>七、云平台</h1><h1 id="九、问题-解决方法-待删除"><a href="#九、问题-解决方法-待删除" class="headerlink" title="九、问题&amp;解决方法-待删除"></a>九、问题&amp;解决方法-待删除</h1><h2 id="通用"><a href="#通用" class="headerlink" title="通用"></a>通用</h2><p><a target="_blank" rel="noopener" href="https://askubuntu.com/questions/47311/how-do-i-disable-my-system-from-going-to-sleep">命令行关闭息屏|休眠|睡眠</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 关闭</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target</span><br><span class="line"><span class="comment"># 开启</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl unmask sleep.target suspend.target hibernate.target hybrid-sleep.target</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment"># 关闭</span>
+<span class="hljs-built_in">sudo</span> systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+<span class="hljs-comment"># 开启</span>
+<span class="hljs-built_in">sudo</span> systemctl unmask sleep.target suspend.target hibernate.target hybrid-sleep.target
+</code></pre>
 
-<h3 id="sftp"><a href="#sftp" class="headerlink" title="sftp"></a>sftp</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 安装SSH服务</span></span><br><span class="line"><span class="built_in">sudo</span> yum install openssh-server</span><br><span class="line"><span class="comment"># 2. 配置防火墙</span></span><br><span class="line"><span class="comment"># firewalld</span></span><br><span class="line"><span class="built_in">sudo</span> firewall-cmd --permanent --zone=public --add-service=ssh</span><br><span class="line"><span class="built_in">sudo</span> firewall-cmd --reload</span><br><span class="line"><span class="comment"># iptables</span></span><br><span class="line"><span class="built_in">sudo</span> iptables -A INPUT -p tcp --dport 22 -j ACCEPT</span><br><span class="line"><span class="built_in">sudo</span> iptables -A OUTPUT -p tcp --sport 22 -j ACCEPT</span><br><span class="line"><span class="comment"># 3. </span></span><br><span class="line"><span class="built_in">sudo</span> systemctl restart sshd</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="sftp"><a href="#sftp" class="headerlink" title="sftp"></a>sftp</h3><pre><code class="hljs bash"><span class="hljs-comment"># 1. 安装SSH服务</span>
+<span class="hljs-built_in">sudo</span> yum install openssh-server
+<span class="hljs-comment"># 2. 配置防火墙</span>
+<span class="hljs-comment"># firewalld</span>
+<span class="hljs-built_in">sudo</span> firewall-cmd --permanent --zone=public --add-service=ssh
+<span class="hljs-built_in">sudo</span> firewall-cmd --reload
+<span class="hljs-comment"># iptables</span>
+<span class="hljs-built_in">sudo</span> iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+<span class="hljs-built_in">sudo</span> iptables -A OUTPUT -p tcp --sport 22 -j ACCEPT
+<span class="hljs-comment"># 3. </span>
+<span class="hljs-built_in">sudo</span> systemctl restart sshd
+</code></pre>
 
-<h3 id="wireguard"><a href="#wireguard" class="headerlink" title="wireguard"></a>wireguard</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 安装WireGuard</span></span><br><span class="line"><span class="built_in">sudo</span> add-apt-repository ppa:wireguard/wireguard</span><br><span class="line"><span class="built_in">sudo</span> apt-get update</span><br><span class="line"><span class="built_in">sudo</span> apt-get install wireguard wireguard-tools</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 启用IP转发</span></span><br><span class="line"><span class="built_in">sudo</span> vi /etc/sysctl.conf</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">net.ipv4.ip_forward=1</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="built_in">sudo</span> sysctl -p</span><br><span class="line"></span><br><span class="line"><span class="comment">## 3. 创建WireGuard接口</span></span><br><span class="line"><span class="comment"># 生成密钥对</span></span><br><span class="line">wg genkey | <span class="built_in">sudo</span> <span class="built_in">tee</span> /etc/wireguard/privatekey | wg pubkey | <span class="built_in">sudo</span> <span class="built_in">tee</span> /etc/wireguard/publickey &gt; /dev/null</span><br><span class="line"></span><br><span class="line"><span class="comment">## 4. 创建配置文件</span></span><br><span class="line"><span class="built_in">sudo</span> vi /etc/wireguard/wg0.conf</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">[Interface]</span><br><span class="line">Address = 10.0.0.2/24</span><br><span class="line">PrivateKey = &lt;客户端私钥&gt;</span><br><span class="line">DNS = 10.0.70.1</span><br><span class="line"> </span><br><span class="line">[Peer]</span><br><span class="line">PublicKey = &lt;服务器公钥&gt;</span><br><span class="line">AllowedIPs = 0.0.0.0/0, ::/0  <span class="comment"># 允许所有IP流量通过VPN隧道（谨慎使用）</span></span><br><span class="line">Endpoint = &lt;服务器IP&gt;:51820  <span class="comment"># 服务器的公网IP和端口号</span></span><br><span class="line">PersistentKeepalive = 30  <span class="comment"># 保持连接活跃的频率（秒）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 5. 启动WireGuard服务</span></span><br><span class="line"><span class="built_in">sudo</span> wg-quick up wg0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="wireguard"><a href="#wireguard" class="headerlink" title="wireguard"></a>wireguard</h3><pre><code class="hljs bash"><span class="hljs-comment"># 1. 安装WireGuard</span>
+<span class="hljs-built_in">sudo</span> add-apt-repository ppa:wireguard/wireguard
+<span class="hljs-built_in">sudo</span> apt-get update
+<span class="hljs-built_in">sudo</span> apt-get install wireguard wireguard-tools
+
+<span class="hljs-comment"># 2. 启用IP转发</span>
+<span class="hljs-built_in">sudo</span> vi /etc/sysctl.conf
+<span class="hljs-comment">#</span>
+net.ipv4.ip_forward=1
+<span class="hljs-comment">#</span>
+<span class="hljs-built_in">sudo</span> sysctl -p
+
+<span class="hljs-comment">## 3. 创建WireGuard接口</span>
+<span class="hljs-comment"># 生成密钥对</span>
+wg genkey | <span class="hljs-built_in">sudo</span> <span class="hljs-built_in">tee</span> /etc/wireguard/privatekey | wg pubkey | <span class="hljs-built_in">sudo</span> <span class="hljs-built_in">tee</span> /etc/wireguard/publickey &gt; /dev/null
+
+<span class="hljs-comment">## 4. 创建配置文件</span>
+<span class="hljs-built_in">sudo</span> vi /etc/wireguard/wg0.conf
+<span class="hljs-comment">#</span>
+[Interface]
+Address = 10.0.0.2/24
+PrivateKey = &lt;客户端私钥&gt;
+DNS = 10.0.70.1
+ 
+[Peer]
+PublicKey = &lt;服务器公钥&gt;
+AllowedIPs = 0.0.0.0/0, ::/0  <span class="hljs-comment"># 允许所有IP流量通过VPN隧道（谨慎使用）</span>
+Endpoint = &lt;服务器IP&gt;:51820  <span class="hljs-comment"># 服务器的公网IP和端口号</span>
+PersistentKeepalive = 30  <span class="hljs-comment"># 保持连接活跃的频率（秒）</span>
+
+<span class="hljs-comment"># 5. 启动WireGuard服务</span>
+<span class="hljs-built_in">sudo</span> wg-quick up wg0
+</code></pre>
 
 
       

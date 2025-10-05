@@ -122,10 +122,52 @@
         
             
                 <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
                     <div data-rel="读书">
                         
                         读书
                         <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -154,48 +196,6 @@
                         
                         数据库
                         <small>(5)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="运维">
-                        
-                        运维
-                        <small>(25)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="安全">
-                        
-                        安全
-                        <small>(3)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="开发">
-                        
-                        开发
-                        <small>(14)</small>
                         
                     </div>
                     
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<input type="hidden" id="yelog_site_word_count" value="243.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1024,57 +1024,229 @@
 <li>场景：实现可以域名通过公网的 IP 地址访问内网的访问</li>
 </ol>
 </blockquote>
-<h3 id="Centos7最小化安装-优化"><a href="#Centos7最小化安装-优化" class="headerlink" title="Centos7最小化安装&amp;优化"></a>Centos7最小化安装&amp;优化</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 更换阿里源</span></span><br><span class="line">curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo</span><br><span class="line"><span class="comment"># 清理yum缓存</span></span><br><span class="line">yum clean all</span><br><span class="line"><span class="comment"># 重新生成缓存</span></span><br><span class="line">yum makecache</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="Centos7最小化安装-优化"><a href="#Centos7最小化安装-优化" class="headerlink" title="Centos7最小化安装&amp;优化"></a>Centos7最小化安装&amp;优化</h3><pre><code class="hljs bash"><span class="hljs-comment"># 更换阿里源</span>
+curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo
+<span class="hljs-comment"># 清理yum缓存</span>
+yum clean all
+<span class="hljs-comment"># 重新生成缓存</span>
+yum makecache
+</code></pre>
 
-<h3 id="Centos7安装FRP"><a href="#Centos7安装FRP" class="headerlink" title="Centos7安装FRP"></a>Centos7安装FRP</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">yum -y install wget</span><br><span class="line">wget https://github.com/fatedier/frp/releases/download/v0.64.0/frp_0.64.0_linux_amd64.tar.gz</span><br><span class="line">tar -xvf frp_0.64.0_linux_amd64.tar.gz</span><br><span class="line"><span class="comment"># C:\frp_0.61.2\frpc.exe -c C:\frp_0.61.2\frpc.toml</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="Centos7安装FRP"><a href="#Centos7安装FRP" class="headerlink" title="Centos7安装FRP"></a>Centos7安装FRP</h3><pre><code class="hljs bash">yum -y install wget
+wget https://github.com/fatedier/frp/releases/download/v0.64.0/frp_0.64.0_linux_amd64.tar.gz
+tar -xvf frp_0.64.0_linux_amd64.tar.gz
+<span class="hljs-comment"># C:\frp_0.61.2\frpc.exe -c C:\frp_0.61.2\frpc.toml</span>
+</code></pre>
 
-<h3 id="Centos7配置FRPS"><a href="#Centos7配置FRPS" class="headerlink" title="Centos7配置FRPS"></a>Centos7配置FRPS</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">bindAddr = <span class="string">&quot;0.0.0.0&quot;</span></span><br><span class="line">bindPort = 47000</span><br><span class="line"></span><br><span class="line">auth.method = <span class="string">&quot;token&quot;</span></span><br><span class="line">auth.token = <span class="string">&quot;XXX_TOKEN&quot;</span></span><br><span class="line"></span><br><span class="line">webServer.addr = <span class="string">&quot;0.0.0.0&quot;</span></span><br><span class="line">webServer.port = 47500</span><br><span class="line">webServer.user = <span class="string">&quot;XXX_USER&quot;</span></span><br><span class="line">webServer.password = <span class="string">&quot;XXX_PASSWORD&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="Centos7配置FRPS"><a href="#Centos7配置FRPS" class="headerlink" title="Centos7配置FRPS"></a>Centos7配置FRPS</h3><pre><code class="hljs bash">bindAddr = <span class="hljs-string">&quot;0.0.0.0&quot;</span>
+bindPort = 47000
 
-<h3 id="Centos7配置一个FRPS服务器"><a href="#Centos7配置一个FRPS服务器" class="headerlink" title="Centos7配置一个FRPS服务器"></a>Centos7配置一个FRPS服务器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vim /lib/systemd/system/frps.service</span></span><br><span class="line">[Unit]</span><br><span class="line">Description=fraps Service</span><br><span class="line">After=network.target syslog.target</span><br><span class="line">Wants=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">ExecStart=/root/frp/frps -c /root/frp/frps.toml</span><br><span class="line">Restart=on-failure</span><br><span class="line">StandardOutput=file:/root/frp/frps.log</span><br><span class="line">StandardError=file:/root/frp/frps.log</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用</span></span><br><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl <span class="built_in">enable</span> frps --now</span><br><span class="line">systemctl status frps</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+auth.method = <span class="hljs-string">&quot;token&quot;</span>
+auth.token = <span class="hljs-string">&quot;XXX_TOKEN&quot;</span>
 
-<h3 id="Centos7放通对应端口"><a href="#Centos7放通对应端口" class="headerlink" title="Centos7放通对应端口"></a>Centos7放通对应端口</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=47000/tcp --permanent</span><br><span class="line">firewall-cmd --zone=public --add-port=47500/tcp --permanent</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+webServer.addr = <span class="hljs-string">&quot;0.0.0.0&quot;</span>
+webServer.port = 47500
+webServer.user = <span class="hljs-string">&quot;XXX_USER&quot;</span>
+webServer.password = <span class="hljs-string">&quot;XXX_PASSWORD&quot;</span>
+</code></pre>
 
-<h3 id="Centos7查看服务端口"><a href="#Centos7查看服务端口" class="headerlink" title="Centos7查看服务端口"></a>Centos7查看服务端口</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ps -aux|grep frp| grep -v grep</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="Centos7配置一个FRPS服务器"><a href="#Centos7配置一个FRPS服务器" class="headerlink" title="Centos7配置一个FRPS服务器"></a>Centos7配置一个FRPS服务器</h3><pre><code class="hljs bash"><span class="hljs-comment"># vim /lib/systemd/system/frps.service</span>
+[Unit]
+Description=fraps Service
+After=network.target syslog.target
+Wants=network.target
+
+[Service]
+Type=simple
+ExecStart=/root/frp/frps -c /root/frp/frps.toml
+Restart=on-failure
+StandardOutput=file:/root/frp/frps.log
+StandardError=file:/root/frp/frps.log
+
+[Install]
+WantedBy=multi-user.target
+
+
+<span class="hljs-comment"># 使用</span>
+systemctl daemon-reload
+systemctl <span class="hljs-built_in">enable</span> frps --now
+systemctl status frps
+</code></pre>
+
+<h3 id="Centos7放通对应端口"><a href="#Centos7放通对应端口" class="headerlink" title="Centos7放通对应端口"></a>Centos7放通对应端口</h3><pre><code class="hljs bash">firewall-cmd --zone=public --add-port=47000/tcp --permanent
+firewall-cmd --zone=public --add-port=47500/tcp --permanent
+</code></pre>
+
+<h3 id="Centos7查看服务端口"><a href="#Centos7查看服务端口" class="headerlink" title="Centos7查看服务端口"></a>Centos7查看服务端口</h3><pre><code class="hljs bash">ps -aux|grep frp| grep -v grep
+</code></pre>
 
 <h2 id="xxxxxxxxxx-bash"><a href="#xxxxxxxxxx-bash" class="headerlink" title="xxxxxxxxxx bash"></a>xxxxxxxxxx bash</h2><ol>
 <li>域名申请</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">本次使用的域名是 huangfamily.cn</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs shell">本次使用的域名是 huangfamily.cn
+language-shell复制代码</code></pre>
 
 <ol>
 <li>SSL 证书申请</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">腾讯云[申请链接](https://console.cloud.tencent.com/ssl)</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs shell">腾讯云[申请链接](https://console.cloud.tencent.com/ssl)
+language-shell复制代码</code></pre>
 
 <ol>
 <li>DNS 解析</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">腾讯云[DNSPod](https://console.cloud.tencent.com/cns/detail/huangfamily.cn/records/0)</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs shell">腾讯云[DNSPod](https://console.cloud.tencent.com/cns/detail/huangfamily.cn/records/0)
+language-shell复制代码</code></pre>
 
 <h2 id="三、公网服务器"><a href="#三、公网服务器" class="headerlink" title="三、公网服务器"></a>三、公网服务器</h2><h3 id="3-1-frps-配置"><a href="#3-1-frps-配置" class="headerlink" title="3.1 frps 配置"></a>3.1 frps 配置</h3><ol>
 <li>启动命令</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nohup ./frps -c frps.ini &amp;</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs shell">nohup ./frps -c frps.ini &amp;
+language-shell复制代码</code></pre>
 
 <ol>
 <li>frps.ini 配置文件</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">frp监听的端口，用作服务端和客户端通信</span></span><br><span class="line">bind_port = 4000</span><br><span class="line">token = XXX</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">服务端通过此端口接监听和接收公网用户的https请求</span></span><br><span class="line">vhost_https_port = 4499</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">服务端通过此端口接监听和接收公网用户的http请求</span></span><br><span class="line">vhost_http_port = 4498</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">frp提供了一个控制台，可以通过这个端口访问到控制台。可查看frp当前有多少代理连接以及对应的状态</span></span><br><span class="line">dashboard_port = 4500</span><br><span class="line">dashboard_user = username</span><br><span class="line">dashboard_pwd = password</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">服务端的subdomain_host需要和客户端配置文件中的subdomain、local_port配合使用，</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">可通过&#123;subdomain&#125;.&#123;subdomain_host&#125; 的域名格式来访问自己本地的 web 服务。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">假如服务端的subdomain_host为dev.msh.com，客户端某个配置组中的</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">subdomain为a,local_port为8585，</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">则：</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">访问 a.dev.msh.com ，等同于访问本地的localhost:8585</span></span><br><span class="line"></span><br><span class="line">subdomain_host = huangfamily.cn</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs shell">[common]
+<span class="hljs-meta prompt_"># </span><span class="language-bash">frp监听的端口，用作服务端和客户端通信</span>
+bind_port = 4000
+token = XXX
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">服务端通过此端口接监听和接收公网用户的https请求</span>
+vhost_https_port = 4499
+<span class="hljs-meta prompt_"># </span><span class="language-bash">服务端通过此端口接监听和接收公网用户的http请求</span>
+vhost_http_port = 4498
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">frp提供了一个控制台，可以通过这个端口访问到控制台。可查看frp当前有多少代理连接以及对应的状态</span>
+dashboard_port = 4500
+dashboard_user = username
+dashboard_pwd = password
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">服务端的subdomain_host需要和客户端配置文件中的subdomain、local_port配合使用，</span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">可通过&#123;subdomain&#125;.&#123;subdomain_host&#125; 的域名格式来访问自己本地的 web 服务。</span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">假如服务端的subdomain_host为dev.msh.com，客户端某个配置组中的</span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">subdomain为a,local_port为8585，</span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">则：</span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">访问 a.dev.msh.com ，等同于访问本地的localhost:8585</span>
+
+subdomain_host = huangfamily.cn
+language-shell复制代码</code></pre>
 
 <h3 id="3-2-nginx-配置"><a href="#3-2-nginx-配置" class="headerlink" title="3.2 nginx 配置"></a>3.2 nginx 配置</h3><ol>
 <li>frp.conf</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    server_name huangfamily.cn home.huangfamily.cn dev.huangfamily.cn staging.huangfamily.cn git.huangfamily.cn;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">        # 7071端口即为frp监听的http端口</span><br><span class="line">        proxy_pass http://127.0.0.1:4498;</span><br><span class="line">        proxy_set_header Host $host:80;</span><br><span class="line">        proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line"></span><br><span class="line">        proxy_set_header Upgrade $http_upgrade;</span><br><span class="line">        proxy_set_header Connection &quot;upgrade&quot;;</span><br><span class="line"></span><br><span class="line">        proxy_connect_timeout 7d;</span><br><span class="line">        proxy_send_timeout 7d;</span><br><span class="line">        proxy_read_timeout 7d;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    # 防止爬虫抓取</span><br><span class="line">    if ($http_user_agent ~* &quot;360Spider|JikeSpider|Spider|spider|bot|Bot|2345Explorer|curl|wget|webZIP|qihoobot|Baiduspider|Googlebot|Googlebot-Mobile|Googlebot-Image|Mediapartners-Google|Adsbot-Google|Feedfetcher-Google|Yahoo! Slurp|Yahoo! Slurp China|YoudaoBot|Sosospider|Sogou spider|Sogou web spider|MSNBot|ia_archiver|Tomato Bot|NSPlayer|bingbot&quot;)</span><br><span class="line">        &#123;</span><br><span class="line">            return 403;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs shell">server &#123;
+    listen 80;
+    server_name huangfamily.cn home.huangfamily.cn dev.huangfamily.cn staging.huangfamily.cn git.huangfamily.cn;
+
+    location / &#123;
+        # 7071端口即为frp监听的http端口
+        proxy_pass http://127.0.0.1:4498;
+        proxy_set_header Host $host:80;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection &quot;upgrade&quot;;
+
+        proxy_connect_timeout 7d;
+        proxy_send_timeout 7d;
+        proxy_read_timeout 7d;
+
+        &#125;
+    # 防止爬虫抓取
+    if ($http_user_agent ~* &quot;360Spider|JikeSpider|Spider|spider|bot|Bot|2345Explorer|curl|wget|webZIP|qihoobot|Baiduspider|Googlebot|Googlebot-Mobile|Googlebot-Image|Mediapartners-Google|Adsbot-Google|Feedfetcher-Google|Yahoo! Slurp|Yahoo! Slurp China|YoudaoBot|Sosospider|Sogou spider|Sogou web spider|MSNBot|ia_archiver|Tomato Bot|NSPlayer|bingbot&quot;)
+        &#123;
+            return 403;
+        &#125;
+&#125;
+language-shell复制代码</code></pre>
 
 <ol>
 <li>ssl.conf</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">        #SSL 访问端口号为 443</span><br><span class="line">        listen 443 ssl;</span><br><span class="line">        #填写绑定证书的域名</span><br><span class="line">        server_name huangfamily.cn;</span><br><span class="line">        #证书文件名称</span><br><span class="line">        ssl_certificate huangfamily.cn_bundle.crt;</span><br><span class="line">        #私钥文件名称</span><br><span class="line">        ssl_certificate_key huangfamily.cn.key;</span><br><span class="line">        ssl_session_timeout 5m;</span><br><span class="line">        #请按照以下协议配置</span><br><span class="line">        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">        #请按照以下套件配置，配置加密套件，写法遵循 openssl 标准。</span><br><span class="line">        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;</span><br><span class="line">        ssl_prefer_server_ciphers on;</span><br><span class="line">        location / &#123;</span><br><span class="line">           #网站主页路径。此路径仅供参考，具体请您按照实际目录操作。</span><br><span class="line">           #例如，您的网站运行目录在/etc/www下，则填写/etc/www。</span><br><span class="line">           proxy_pass http://huangfamily.cn;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">server &#123;</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">   listen 80;</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">   <span class="comment">#填写绑定证书的域名</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">   server_name huangfamily.cn;</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">   <span class="comment">#把http的域名请求转成https</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">   <span class="built_in">return</span> 301 https://$host<span class="variable">$request_uri</span>;</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">&#125;</span></span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs shell">server &#123;
+        #SSL 访问端口号为 443
+        listen 443 ssl;
+        #填写绑定证书的域名
+        server_name huangfamily.cn;
+        #证书文件名称
+        ssl_certificate huangfamily.cn_bundle.crt;
+        #私钥文件名称
+        ssl_certificate_key huangfamily.cn.key;
+        ssl_session_timeout 5m;
+        #请按照以下协议配置
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+        #请按照以下套件配置，配置加密套件，写法遵循 openssl 标准。
+        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;
+        ssl_prefer_server_ciphers on;
+        location / &#123;
+           #网站主页路径。此路径仅供参考，具体请您按照实际目录操作。
+           #例如，您的网站运行目录在/etc/www下，则填写/etc/www。
+           proxy_pass http://huangfamily.cn;
+        &#125;
+&#125;
+<span class="hljs-meta prompt_">#</span><span class="language-bash">server &#123;</span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">   listen 80;</span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">   <span class="hljs-comment">#填写绑定证书的域名</span></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">   server_name huangfamily.cn;</span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">   <span class="hljs-comment">#把http的域名请求转成https</span></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">   <span class="hljs-built_in">return</span> 301 https://$host<span class="hljs-variable">$request_uri</span>;</span>
+<span class="hljs-meta prompt_">#</span><span class="language-bash">&#125;</span>
+language-shell复制代码</code></pre>
 
 <h2 id="四、frp-使用"><a href="#四、frp-使用" class="headerlink" title="四、frp 使用"></a>四、frp 使用</h2><ol>
 <li>内网客户端配置</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">部署frp服务端的公网服务器的ip</span></span><br><span class="line">server_addr = 106.55.104.24</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">和服务端的bind_port保持一致</span></span><br><span class="line">server_port = 4000</span><br><span class="line">token = XXX</span><br><span class="line"></span><br><span class="line">[huangfamily]</span><br><span class="line">type = https</span><br><span class="line">local_port = 80</span><br><span class="line">custom_domains = huangfamily.com</span><br><span class="line">plugin = https2http</span><br><span class="line">plugin_local_addr = 127.0.0.1:80</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">HTTPS 证书相关的配置</span></span><br><span class="line">plugin_crt_path = ./huangfamily.cn_bundle.crt</span><br><span class="line">plugin_key_path = ./huangfamily.cn.key</span><br><span class="line">plugin_host_header_rewrite = 127.0.0.1</span><br><span class="line">plugin_header_X-From-Where = frp</span><br><span class="line"></span><br><span class="line">[http]</span><br><span class="line">type = http</span><br><span class="line">local_port = 80</span><br><span class="line">custom_domains = huangfamily.cn</span><br><span class="line"></span><br><span class="line">[http-home]</span><br><span class="line">type = http</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">local_port代表你想要暴露给外网的本地web服务端口</span></span><br><span class="line">local_port = 3000</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">subdomain 在全局范围内要确保唯一，每个代理服务的subdomain不能重名，否则会影响正常使用。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">客户端的subdomain需和服务端的subdomain_host配合使用</span></span><br><span class="line">subdomain = home</span><br><span class="line"></span><br><span class="line">[http-staging]</span><br><span class="line">type = http</span><br><span class="line">local_port = 3001</span><br><span class="line">subdomain = staging</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[http-dev]</span><br><span class="line">type = http</span><br><span class="line">local_port = 3002</span><br><span class="line">subdomain = dev</span><br><span class="line"></span><br><span class="line">[http-gitee]</span><br><span class="line">type = http</span><br><span class="line">local_port = 4001</span><br><span class="line">subdomain = git</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs shell">[common]
+<span class="hljs-meta prompt_"># </span><span class="language-bash">部署frp服务端的公网服务器的ip</span>
+server_addr = 106.55.104.24
+<span class="hljs-meta prompt_"># </span><span class="language-bash">和服务端的bind_port保持一致</span>
+server_port = 4000
+token = XXX
+
+[huangfamily]
+type = https
+local_port = 80
+custom_domains = huangfamily.com
+plugin = https2http
+plugin_local_addr = 127.0.0.1:80
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">HTTPS 证书相关的配置</span>
+plugin_crt_path = ./huangfamily.cn_bundle.crt
+plugin_key_path = ./huangfamily.cn.key
+plugin_host_header_rewrite = 127.0.0.1
+plugin_header_X-From-Where = frp
+
+[http]
+type = http
+local_port = 80
+custom_domains = huangfamily.cn
+
+[http-home]
+type = http
+<span class="hljs-meta prompt_"># </span><span class="language-bash">local_port代表你想要暴露给外网的本地web服务端口</span>
+local_port = 3000
+<span class="hljs-meta prompt_"># </span><span class="language-bash">subdomain 在全局范围内要确保唯一，每个代理服务的subdomain不能重名，否则会影响正常使用。</span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">客户端的subdomain需和服务端的subdomain_host配合使用</span>
+subdomain = home
+
+[http-staging]
+type = http
+local_port = 3001
+subdomain = staging
+
+
+[http-dev]
+type = http
+local_port = 3002
+subdomain = dev
+
+[http-gitee]
+type = http
+local_port = 4001
+subdomain = git
+language-shell复制代码</code></pre>
 
 <ol>
 <li>配置开机自启动</li>
@@ -1082,7 +1254,19 @@
 <blockquote>
 <p>vim &#x2F;lib&#x2F;systemd&#x2F;system&#x2F;frps.service</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=frps service</span><br><span class="line">After=network.target syslog.target</span><br><span class="line">Wants=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">启动服务的命令（此处写你的frps的实际安装目录）</span></span><br><span class="line">ExecStart=/root/frp38/frps -c /root/frp38/frps.ini</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs shell">[Unit]
+Description=frps service
+After=network.target syslog.target
+Wants=network.target
+
+[Service]
+Type=simple
+<span class="hljs-meta prompt_">#</span><span class="language-bash">启动服务的命令（此处写你的frps的实际安装目录）</span>
+ExecStart=/root/frp38/frps -c /root/frp38/frps.ini
+
+[Install]
+WantedBy=multi-user.target
+language-shell复制代码</code></pre>
 
 <hr>
 

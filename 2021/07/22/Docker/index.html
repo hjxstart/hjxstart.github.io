@@ -122,10 +122,52 @@
         
             
                 <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
                     <div data-rel="读书">
                         
                         读书
                         <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -154,48 +196,6 @@
                         
                         数据库
                         <small>(5)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="运维">
-                        
-                        运维
-                        <small>(25)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="安全">
-                        
-                        安全
-                        <small>(3)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="开发">
-                        
-                        开发
-                        <small>(14)</small>
                         
                     </div>
                     
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<input type="hidden" id="yelog_site_word_count" value="243.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -983,7 +983,7 @@
     </div>
     <div class="article-meta">
         
-        <span>字数:931</span>
+        <span>字数:951</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1022,47 +1022,75 @@
 <ol>
 <li>卸载旧版本</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo yum remove docker \</span><br><span class="line">                  docker-client \</span><br><span class="line">                  docker-client-latest \</span><br><span class="line">                  docker-common \</span><br><span class="line">                  docker-latest \</span><br><span class="line">                  docker-latest-logrotate \</span><br><span class="line">                  docker-logrotate \</span><br><span class="line">                  docker-engine</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs shell">sudo yum remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-engine
+language-shell复制代码</code></pre>
 
 <ol>
 <li>安装需要的安装包</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y yum-utils</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs shell">sudo yum install -y yum-utils
+language-shell复制代码</code></pre>
 
 <ol>
 <li>设置设置yum源</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo yum-config-manager \</span><br><span class="line">	--add-repo \ </span><br><span class="line">	https://download.docker.com/linux/centos/docker-ce.repo</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs shell">sudo yum-config-manager \
+	--add-repo \ 
+	https://download.docker.com/linux/centos/docker-ce.repo
+language-shell复制代码</code></pre>
 
 <ol>
 <li>更新 yum 软件包索引</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo yum makecache fast</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs shell">sudo yum makecache fast
+language-shell复制代码</code></pre>
 
 <ol>
 <li>安装docker相关的内容</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install docker-ce docker-ce-cli containerd.io</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs shell">sudo yum install docker-ce docker-ce-cli containerd.io
+language-shell复制代码</code></pre>
 
 <ol>
 <li>启动docker</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start docker</span><br><span class="line">docker version</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs shell">sudo systemctl start docker
+docker version
+language-shell复制代码</code></pre>
 
 <ol>
 <li>运行 HelloWorld</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run hello-world</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs shell">sudo docker run hello-world
+language-shell复制代码</code></pre>
 
 <ol>
 <li>卸载 Docker</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo yum remove docker-ce docker-ce-cli containerd.io</span><br><span class="line">sudo rm -rf /var/lib/docker</span><br><span class="line">sudo rm -rf /var/lib/containerd</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs shell">sudo yum remove docker-ce docker-ce-cli containerd.io
+sudo rm -rf /var/lib/docker
+sudo rm -rf /var/lib/containerd
+language-shell复制代码</code></pre>
 
 <ol>
 <li>阿里云镜像加速 <a target="_blank" rel="noopener" href="https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors">链接</a></li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /etc/docker</span><br><span class="line">sudo tee /etc/docker/daemon.json &lt;&lt;-&#x27;EOF&#x27;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;https://xsxk9861.mirror.aliyuncs.com&quot;]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs shell">sudo mkdir -p /etc/docker
+sudo tee /etc/docker/daemon.json &lt;&lt;-&#x27;EOF&#x27;
+&#123;
+  &quot;registry-mirrors&quot;: [&quot;https://xsxk9861.mirror.aliyuncs.com&quot;]
+&#125;
+EOF
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+language-shell复制代码</code></pre>
 
 <hr>
 <h2 id="1-3-HelloWorld运行过程"><a href="#1-3-HelloWorld运行过程" class="headerlink" title="1.3 HelloWorld运行过程"></a>1.3 HelloWorld运行过程</h2><h2 id="1-4-常用命令"><a href="#1-4-常用命令" class="headerlink" title="1.4 常用命令"></a>1.4 常用命令</h2><hr>
@@ -1075,29 +1103,76 @@
 <li>只要容器删除，对应网桥一对就没有了。</li>
 <li>实战：容器之间ip地址通信</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装tomcat</span></span><br><span class="line">docker run -d -P --name tomcat01 tomcat</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看容器ip地址</span></span><br><span class="line">docker exec -it tomcat01 ip addr</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">在启动一个容器测试，发现又多了一对网卡，例如：14: eth0@if15</span></span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">安装tomcat</span>
+docker run -d -P --name tomcat01 tomcat
+<span class="hljs-meta prompt_"># </span><span class="language-bash">查看容器ip地址</span>
+docker exec -it tomcat01 ip addr
+<span class="hljs-meta prompt_"># </span><span class="language-bash">在启动一个容器测试，发现又多了一对网卡，例如：14: eth0@if15</span>
+language-shell复制代码</code></pre>
 
 <hr>
 <h3 id="2-4-2-link-不推荐使用"><a href="#2-4-2-link-不推荐使用" class="headerlink" title="2.4.2 link(不推荐使用)"></a>2.4.2 link(不推荐使用)</h3><ol>
 <li>实战：容器之间容器通过name通信</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">实现: docker <span class="built_in">exec</span> -it tomcat02 ping tomcat03</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">1. 使用 --<span class="built_in">link</span> 链接两个容器</span></span><br><span class="line">docker run -d -P --name tomcat03 --link tomcat02 tomcat</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">2. 两个容器 ping</span></span><br><span class="line">docker exec -it tomcat03 ping tomcat02</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">实现: docker <span class="hljs-built_in">exec</span> -it tomcat02 ping tomcat03</span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">1. 使用 --<span class="hljs-built_in">link</span> 链接两个容器</span>
+docker run -d -P --name tomcat03 --link tomcat02 tomcat
+<span class="hljs-meta prompt_"># </span><span class="language-bash">2. 两个容器 ping</span>
+docker exec -it tomcat03 ping tomcat02
+language-shell复制代码</code></pre>
 
 <ol>
 <li>inspect</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看网卡</span></span><br><span class="line">docker network ls</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看具体网卡信息</span></span><br><span class="line">docker network inspect a2a9b68069bc</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">查看网卡</span>
+docker network ls
+<span class="hljs-meta prompt_"># </span><span class="language-bash">查看具体网卡信息</span>
+docker network inspect a2a9b68069bc
+language-shell复制代码</code></pre>
 
 <hr>
 <h3 id="2-4-3-自定义网络"><a href="#2-4-3-自定义网络" class="headerlink" title="2.4.3 自定义网络"></a>2.4.3 自定义网络</h3><ol>
 <li>网络模式</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">bridge: 桥接 docker （默认，自定义网络也是使用桥接模式）</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">none: 不配置网络</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">host: 和宿主机共享网络</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">container: 容器网络连通！（用的少，局限性大）</span></span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">bridge: 桥接 docker （默认，自定义网络也是使用桥接模式）</span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">none: 不配置网络</span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">host: 和宿主机共享网络</span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">container: 容器网络连通！（用的少，局限性大）</span>
+language-shell复制代码</code></pre>
 
 <ol>
 <li>案例</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">默认的情况,两者等价</span></span><br><span class="line">docker run -d -P --name tomcat-1 tomcat</span><br><span class="line">docker run -d -P --name tomcat01  --net bridge tomcat</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">docker0特点，默认是docker0网络：域名不能访问, --<span class="built_in">link</span> 可以打通链接</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">1. 自定义网络： 网络，网关，名称</span></span><br><span class="line">docker network create --driver bridge --subnet 192.168.0.0/16 --gateway 192.168.0.1 mynet</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看网络</span></span><br><span class="line">docker network inspect mynet</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">2. 使用自定义网络mynet</span></span><br><span class="line">docker run -d -P --name tomcat-net-01 --net mynet tomcat</span><br><span class="line">docker run -d -P --name tomcat-net-02 --net mynet tomcat</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">3. 查看网络组成</span></span><br><span class="line"> docker network inspect mynet</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">4. 同一个网络内，可以使用容器名进行互ping</span></span><br><span class="line">docker exec -it tomcat-net-01 ping tomcat-net-02</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">5. 实现不同网络间的通信 容器 ping 另一个网络.（原理：一个容器2个IP地址）</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">自定义网络 mynet 链接 tomcat01 容器</span></span><br><span class="line">docker network connect mynet tomcat01</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">6. 结论：</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">a. 我们自定义的网络docker都已经帮我们维护好了对应的关系，推荐使用自定义网络。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">b. 可以通过划分不同的网络，实现集群间的通信，也更安全</span></span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">默认的情况,两者等价</span>
+docker run -d -P --name tomcat-1 tomcat
+docker run -d -P --name tomcat01  --net bridge tomcat
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">docker0特点，默认是docker0网络：域名不能访问, --<span class="hljs-built_in">link</span> 可以打通链接</span>
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">1. 自定义网络： 网络，网关，名称</span>
+docker network create --driver bridge --subnet 192.168.0.0/16 --gateway 192.168.0.1 mynet
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">查看网络</span>
+docker network inspect mynet
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">2. 使用自定义网络mynet</span>
+docker run -d -P --name tomcat-net-01 --net mynet tomcat
+docker run -d -P --name tomcat-net-02 --net mynet tomcat
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">3. 查看网络组成</span>
+ docker network inspect mynet
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">4. 同一个网络内，可以使用容器名进行互ping</span>
+docker exec -it tomcat-net-01 ping tomcat-net-02
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">5. 实现不同网络间的通信 容器 ping 另一个网络.（原理：一个容器2个IP地址）</span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">自定义网络 mynet 链接 tomcat01 容器</span>
+docker network connect mynet tomcat01
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">6. 结论：</span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">a. 我们自定义的网络docker都已经帮我们维护好了对应的关系，推荐使用自定义网络。</span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">b. 可以通过划分不同的网络，实现集群间的通信，也更安全</span>
+language-shell复制代码</code></pre>
 
 <h3 id="2-4-4-redis-集群"><a href="#2-4-4-redis-集群" class="headerlink" title="2.4.4 redis 集群"></a>2.4.4 redis 集群</h3><hr>
 <h1 id="第三章-实战篇"><a href="#第三章-实战篇" class="headerlink" title="第三章 实战篇"></a>第三章 实战篇</h1><h2 id="3-1-IDEA-整合-Docker"><a href="#3-1-IDEA-整合-Docker" class="headerlink" title="3.1 IDEA 整合 Docker"></a>3.1 IDEA 整合 Docker</h2><h2 id="3-2-Docker-Compose"><a href="#3-2-Docker-Compose" class="headerlink" title="3.2 Docker Compose"></a>3.2 Docker Compose</h2><h2 id="3-3-Docker-Swarm"><a href="#3-3-Docker-Swarm" class="headerlink" title="3.3 Docker Swarm"></a>3.3 Docker Swarm</h2><h2 id="3-4-DI-CD-jenkins"><a href="#3-4-DI-CD-jenkins" class="headerlink" title="3.4 DI\CD jenkins"></a>3.4 DI\CD jenkins</h2><hr>

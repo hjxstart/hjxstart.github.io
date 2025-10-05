@@ -122,10 +122,52 @@
         
             
                 <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
                     <div data-rel="读书">
                         
                         读书
                         <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -154,48 +196,6 @@
                         
                         数据库
                         <small>(5)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="运维">
-                        
-                        运维
-                        <small>(25)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="安全">
-                        
-                        安全
-                        <small>(3)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="开发">
-                        
-                        开发
-                        <small>(14)</small>
                         
                     </div>
                     
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<input type="hidden" id="yelog_site_word_count" value="243.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1096,28 +1096,65 @@
 <p>（3）总经理可以参与所有的部门，也可以完全控制</p>
 <p>（4）public文件夹，所有员工可以读取，经理可以写入</p>
 <h3 id="2、实验分析"><a href="#2、实验分析" class="headerlink" title="2、实验分析"></a><strong>2、实验分析</strong></h3><p>成员角色：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- 技术部：技术经理、技术员工</span><br><span class="line">- 财务部：财务经理、财务员工</span><br><span class="line">- 销售部：销售经理、销售员工</span><br><span class="line">- 经理：总经理、销售经理、技术经理、财务经理</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs asciidoc"><span class="hljs-bullet">- </span>技术部：技术经理、技术员工
+<span class="hljs-bullet">- </span>财务部：财务经理、财务员工
+<span class="hljs-bullet">- </span>销售部：销售经理、销售员工
+<span class="hljs-bullet">- </span>经理：总经理、销售经理、技术经理、财务经理
+复制代码</code></pre>
 
 <p>访问规则：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public文件夹访问规则：总经理、技术经理、财务经理、销售经理具有完全读写、修改权限；技术部员工、财务部员工、销售部员工只能查看。</span><br><span class="line">jishubu文件夹访问规则：总经理、技术经理具有完全读写、修改权限；技术部员工仅具有查看权限</span><br><span class="line">caiwubu文件夹访问规则：总经理、财务经理具有完全读写、修改权限；财务部员工仅具有查看权限</span><br><span class="line">xiaoshoubu文件夹访问规则：总经理、销售经理具有完全读写</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs actionscript"><span class="hljs-keyword">public</span>文件夹访问规则：总经理、技术经理、财务经理、销售经理具有完全读写、修改权限；技术部员工、财务部员工、销售部员工只能查看。
+jishubu文件夹访问规则：总经理、技术经理具有完全读写、修改权限；技术部员工仅具有查看权限
+caiwubu文件夹访问规则：总经理、财务经理具有完全读写、修改权限；财务部员工仅具有查看权限
+xiaoshoubu文件夹访问规则：总经理、销售经理具有完全读写
+复制代码</code></pre>
 
 <p>文件夹权限设置：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">方便起见，文件创建在D:\之下！！</span><br><span class="line">- public：经理组读写权限、技术部可读权限、财务部可读权限、销售部可读权限</span><br><span class="line">- jishubu：技术部组可读权限、技术经理读写权限、总经理读写权限</span><br><span class="line">- caiwubu：财务部组可读权限、财务经理读写权限、总经理读写权限</span><br><span class="line">- xiaoshoubu：销售部组可读权限、销售经理读写权限、总经理读写权限</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs asciidoc">方便起见，文件创建在D:\之下！！
+<span class="hljs-bullet">- </span>public：经理组读写权限、技术部可读权限、财务部可读权限、销售部可读权限
+<span class="hljs-bullet">- </span>jishubu：技术部组可读权限、技术经理读写权限、总经理读写权限
+<span class="hljs-bullet">- </span>caiwubu：财务部组可读权限、财务经理读写权限、总经理读写权限
+<span class="hljs-bullet">- </span>xiaoshoubu：销售部组可读权限、销售经理读写权限、总经理读写权限
+复制代码</code></pre>
 
 <h3 id="3、实验步骤"><a href="#3、实验步骤" class="headerlink" title="3、实验步骤"></a><strong>3、实验步骤</strong></h3><p><strong>（1）命令创建用户、组并将用户划分到指定的组中</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建组</span></span><br><span class="line">net localgroup jishubu /add</span><br><span class="line">net localgroup caiwubu /add</span><br><span class="line">net localgroup xiaoshoubu /add</span><br><span class="line">net localgroup jingli /add</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">创建组</span>
+net localgroup jishubu /add
+net localgroup caiwubu /add
+net localgroup xiaoshoubu /add
+net localgroup jingli /add
+language-shell复制代码</code></pre>
 
 
 
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250823140438226.png" alt="创建组"></p>
 <p>创建组</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建用户</span></span><br><span class="line">net user jishubujl 123.com /add</span><br><span class="line">net user jishubuyg 123.com /add</span><br><span class="line">net user caiwubujl 123.com /add</span><br><span class="line">net user caiwubuyg 123.com /add</span><br><span class="line">net user xiaoshoubujl 123.com /add</span><br><span class="line">net user xiaoshoubuyg 123.com /add</span><br><span class="line">net user zongjingli 123.com /add</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment"># 创建用户</span>
+net user jishubujl 123.com /add
+net user jishubuyg 123.com /add
+net user caiwubujl 123.com /add
+net user caiwubuyg 123.com /add
+net user xiaoshoubujl 123.com /add
+net user xiaoshoubuyg 123.com /add
+net user zongjingli 123.com /add
+</code></pre>
 
 
 
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250823140755381.png" alt="创建用户"></p>
 <p>创建用户</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 划分用户到组中</span></span><br><span class="line">net localgroup jishubu jishubujl /add</span><br><span class="line">net localgroup jishubu jishubuyg /add</span><br><span class="line">net localgroup caiwubu caiwubujl /add</span><br><span class="line">net localgroup caiwubu caiwubuyg /add</span><br><span class="line">net localgroup xiaoshoubu xiaoshoubujl /add</span><br><span class="line">net localgroup xiaoshoubu xiaoshoubuyg /add</span><br><span class="line">net localgroup jingli zongjingli /add</span><br><span class="line">net localgroup jingli jishubujl /add</span><br><span class="line">net localgroup jingli caiwubujl /add</span><br><span class="line">net localgroup jingli xiaoshoubujl /add</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment"># 划分用户到组中</span>
+net localgroup jishubu jishubujl /add
+net localgroup jishubu jishubuyg /add
+net localgroup caiwubu caiwubujl /add
+net localgroup caiwubu caiwubuyg /add
+net localgroup xiaoshoubu xiaoshoubujl /add
+net localgroup xiaoshoubu xiaoshoubuyg /add
+net localgroup jingli zongjingli /add
+net localgroup jingli jishubujl /add
+net localgroup jingli caiwubujl /add
+net localgroup jingli xiaoshoubujl /add
+</code></pre>
 
 
 
@@ -1131,7 +1168,28 @@
 <p> 打开属性界面在【安全】的【高级属性】界面中取消【继承权限】，再删除无用组，添加目的组或用户，并设置相关权限。</p>
 <p><strong>（5）设置xiaoshoubu文件权限</strong></p>
 <p> 打开属性界面在【安全】的【高级属性】界面中取消【继承权限】，再删除无用组，添加目的组或用户，并设置相关权限。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 切换到D盘</span></span><br><span class="line"><span class="built_in">cd</span> /d D:</span><br><span class="line"><span class="comment"># 创建public jishubu caiwubu xiaoshoubu 四个目录</span></span><br><span class="line">md public jishubu caiwubu xiaoshoubu</span><br><span class="line"><span class="comment"># 禁用继承并保留现有权限：icacls &quot;目录路径&quot; /inheritance:r</span></span><br><span class="line"><span class="comment"># 权限控制：禁用继承后，可通过 /grant 或 /deny 添加新权限，</span></span><br><span class="line"><span class="comment"># 如果需要让权限应用到目录下的所有子目录和文件，添加 /T 参数：</span></span><br><span class="line">icacls <span class="string">&quot;public&quot;</span> /inheritance:r /grant <span class="string">&quot;mz&quot;</span>:(F)  /T</span><br><span class="line">icacls <span class="string">&quot;public&quot;</span> /grant <span class="string">&quot;jingli&quot;</span>:(M) /grant <span class="string">&quot;jishubu&quot;</span>:(R) /grant <span class="string">&quot;caiwubu&quot;</span>:(R) /grant <span class="string">&quot;xiaoshoubu&quot;</span>:(R)</span><br><span class="line">/T</span><br><span class="line">icacls <span class="string">&quot;jishubu&quot;</span> /inheritance:r /grant <span class="string">&quot;mz&quot;</span>:(F)  /T</span><br><span class="line">icacls <span class="string">&quot;jishubu&quot;</span> /grant <span class="string">&quot;zongjingli&quot;</span>:(M) /grant <span class="string">&quot;jishubujl&quot;</span>:(M) /grant <span class="string">&quot;jishubuyg&quot;</span>:(R)  /T</span><br><span class="line">icacls <span class="string">&quot;caiwubu&quot;</span> /inheritance:r /grant <span class="string">&quot;mz&quot;</span>:(F)  /T</span><br><span class="line">icacls <span class="string">&quot;caiwubu&quot;</span> /grant <span class="string">&quot;zongjingli&quot;</span>:(M) /grant <span class="string">&quot;caiwubujl&quot;</span>:(M) /grant <span class="string">&quot;caiwubuyg&quot;</span>:(R)  /T</span><br><span class="line">icacls <span class="string">&quot;xiaoshoubu&quot;</span> /inheritance:r /grant <span class="string">&quot;mz&quot;</span>:(F)  /T</span><br><span class="line">icacls <span class="string">&quot;xiaoshoubu&quot;</span> /grant <span class="string">&quot;zongjingli&quot;</span>:(M) /grant <span class="string">&quot;xiaoshoubujl&quot;</span>:(M) /grant <span class="string">&quot;xiaoshoubuyg&quot;</span>:(R)  /T</span><br><span class="line"><span class="comment"># 不保留MZ管理员权限的情况下</span></span><br><span class="line">icacls <span class="string">&quot;public&quot;</span> /inheritance:r /grant <span class="string">&quot;jinli&quot;</span>:(F) /grant <span class="string">&quot;jishubu&quot;</span>:(R) /grant <span class="string">&quot;caiwubu&quot;</span>:(R) /grant <span class="string">&quot;xiaoshoubu&quot;</span>:(R)  /T</span><br><span class="line">icacls <span class="string">&quot;jishubu&quot;</span> /inheritance:r /grant <span class="string">&quot;zongjingli&quot;</span>:(F) /grant <span class="string">&quot;jishubujl&quot;</span>:(F) /grant <span class="string">&quot;jishubuyg&quot;</span>:(R)  /T</span><br><span class="line">icacls <span class="string">&quot;caiwubu&quot;</span> /inheritance:r /grant <span class="string">&quot;zongjingli&quot;</span>:(F) /grant <span class="string">&quot;caiwubujl&quot;</span>:(F) /grant <span class="string">&quot;caiwubuyg&quot;</span>:(R) /T</span><br><span class="line">icacls <span class="string">&quot;xiaoshoubu&quot;</span> /inheritance:r /grant <span class="string">&quot;zongjingli&quot;</span>:(F) /grant <span class="string">&quot;xiaoshoubujl&quot;</span>:(F) /grant <span class="string">&quot;xiaoshoubuyg&quot;</span>:(R)  /T</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment"># 切换到D盘</span>
+<span class="hljs-built_in">cd</span> /d D:
+<span class="hljs-comment"># 创建public jishubu caiwubu xiaoshoubu 四个目录</span>
+md public jishubu caiwubu xiaoshoubu
+<span class="hljs-comment"># 禁用继承并保留现有权限：icacls &quot;目录路径&quot; /inheritance:r</span>
+<span class="hljs-comment"># 权限控制：禁用继承后，可通过 /grant 或 /deny 添加新权限，</span>
+<span class="hljs-comment"># 如果需要让权限应用到目录下的所有子目录和文件，添加 /T 参数：</span>
+icacls <span class="hljs-string">&quot;public&quot;</span> /inheritance:r /grant <span class="hljs-string">&quot;mz&quot;</span>:(F)  /T
+icacls <span class="hljs-string">&quot;public&quot;</span> /grant <span class="hljs-string">&quot;jingli&quot;</span>:(M) /grant <span class="hljs-string">&quot;jishubu&quot;</span>:(R) /grant <span class="hljs-string">&quot;caiwubu&quot;</span>:(R) /grant <span class="hljs-string">&quot;xiaoshoubu&quot;</span>:(R)
+/T
+icacls <span class="hljs-string">&quot;jishubu&quot;</span> /inheritance:r /grant <span class="hljs-string">&quot;mz&quot;</span>:(F)  /T
+icacls <span class="hljs-string">&quot;jishubu&quot;</span> /grant <span class="hljs-string">&quot;zongjingli&quot;</span>:(M) /grant <span class="hljs-string">&quot;jishubujl&quot;</span>:(M) /grant <span class="hljs-string">&quot;jishubuyg&quot;</span>:(R)  /T
+icacls <span class="hljs-string">&quot;caiwubu&quot;</span> /inheritance:r /grant <span class="hljs-string">&quot;mz&quot;</span>:(F)  /T
+icacls <span class="hljs-string">&quot;caiwubu&quot;</span> /grant <span class="hljs-string">&quot;zongjingli&quot;</span>:(M) /grant <span class="hljs-string">&quot;caiwubujl&quot;</span>:(M) /grant <span class="hljs-string">&quot;caiwubuyg&quot;</span>:(R)  /T
+icacls <span class="hljs-string">&quot;xiaoshoubu&quot;</span> /inheritance:r /grant <span class="hljs-string">&quot;mz&quot;</span>:(F)  /T
+icacls <span class="hljs-string">&quot;xiaoshoubu&quot;</span> /grant <span class="hljs-string">&quot;zongjingli&quot;</span>:(M) /grant <span class="hljs-string">&quot;xiaoshoubujl&quot;</span>:(M) /grant <span class="hljs-string">&quot;xiaoshoubuyg&quot;</span>:(R)  /T
+<span class="hljs-comment"># 不保留MZ管理员权限的情况下</span>
+icacls <span class="hljs-string">&quot;public&quot;</span> /inheritance:r /grant <span class="hljs-string">&quot;jinli&quot;</span>:(F) /grant <span class="hljs-string">&quot;jishubu&quot;</span>:(R) /grant <span class="hljs-string">&quot;caiwubu&quot;</span>:(R) /grant <span class="hljs-string">&quot;xiaoshoubu&quot;</span>:(R)  /T
+icacls <span class="hljs-string">&quot;jishubu&quot;</span> /inheritance:r /grant <span class="hljs-string">&quot;zongjingli&quot;</span>:(F) /grant <span class="hljs-string">&quot;jishubujl&quot;</span>:(F) /grant <span class="hljs-string">&quot;jishubuyg&quot;</span>:(R)  /T
+icacls <span class="hljs-string">&quot;caiwubu&quot;</span> /inheritance:r /grant <span class="hljs-string">&quot;zongjingli&quot;</span>:(F) /grant <span class="hljs-string">&quot;caiwubujl&quot;</span>:(F) /grant <span class="hljs-string">&quot;caiwubuyg&quot;</span>:(R) /T
+icacls <span class="hljs-string">&quot;xiaoshoubu&quot;</span> /inheritance:r /grant <span class="hljs-string">&quot;zongjingli&quot;</span>:(F) /grant <span class="hljs-string">&quot;xiaoshoubujl&quot;</span>:(F) /grant <span class="hljs-string">&quot;xiaoshoubuyg&quot;</span>:(R)  /T
+</code></pre>
 
 <p>保留MZ管理员情况下</p>
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250823151835816.png" alt="保留MZ管理员权限"></p>
@@ -1162,20 +1220,32 @@
 <p>（5）分别为每个文件夹分配权限</p>
 <p>（6）登录不同账户验证权限设置效果</p>
 <h3 id="6、收尾"><a href="#6、收尾" class="headerlink" title="6、收尾"></a><strong>6、收尾</strong></h3><p>（1）删除目录</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rd /s/q public jishubu xiaoshoubu caiwubu</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">rd /s/q public jishubu xiaoshoubu caiwubu
+</code></pre>
 
 
 
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250823154606668.png" alt="img"></p>
 <p>（2）删除用户</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">net user jishubujl /del</span><br><span class="line">net user jishubuyg /del</span><br><span class="line">net user caiwubujl /del</span><br><span class="line">net user caiwubuyg /del</span><br><span class="line">net user xiaoshoubujl /del</span><br><span class="line">net user xiaoshoubuyg /del</span><br><span class="line">net user zongjingli /del</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs shell">net user jishubujl /del
+net user jishubuyg /del
+net user caiwubujl /del
+net user caiwubuyg /del
+net user xiaoshoubujl /del
+net user xiaoshoubuyg /del
+net user zongjingli /del
+language-shell复制代码</code></pre>
 
 
 
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250823154753437.png" alt="删除用户"></p>
 <p>删除用户</p>
 <p>（3）删除组</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">net localgroup jishubu /del</span><br><span class="line">net localgroup caiwubu /del</span><br><span class="line">net localgroup xiaoshoubu /del</span><br><span class="line">net localgroup jingli /del</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">net localgroup jishubu /del
+net localgroup caiwubu /del
+net localgroup xiaoshoubu /del
+net localgroup jingli /del
+</code></pre>
 
 
 

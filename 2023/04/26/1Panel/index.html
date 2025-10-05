@@ -122,10 +122,52 @@
         
             
                 <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
                     <div data-rel="读书">
                         
                         读书
                         <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -154,48 +196,6 @@
                         
                         数据库
                         <small>(5)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="运维">
-                        
-                        运维
-                        <small>(25)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="安全">
-                        
-                        安全
-                        <small>(3)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="开发">
-                        
-                        开发
-                        <small>(14)</small>
                         
                     </div>
                     
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<input type="hidden" id="yelog_site_word_count" value="243.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -978,12 +978,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-10-05 13:13:50'>2023-04-26 14:09</time>
+            发布时间 : <time class="date" title='最后更新: 2025-10-05 13:48:24'>2023-04-26 14:09</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:296</span>
+        <span>字数:303</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1018,30 +1018,96 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1Panel"><a href="#1Panel" class="headerlink" title="1Panel"></a>1Panel</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h2 id="网站"><a href="#网站" class="headerlink" title="网站"></a>网站</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+        <h1 id="1Panel"><a href="#1Panel" class="headerlink" title="1Panel"></a>1Panel</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h2 id="网站"><a href="#网站" class="headerlink" title="网站"></a>网站</h2><pre><code class="hljs bash"></code></pre>
 
 <hr>
-<h2 id="Frp"><a href="#Frp" class="headerlink" title="Frp"></a>Frp</h2><h3 id="Frpc"><a href="#Frpc" class="headerlink" title="Frpc"></a>Frpc</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># proxies</span></span><br><span class="line">serverAddr = <span class="string">&quot;154.222.24.218&quot;</span></span><br><span class="line">serverPort = 7000</span><br><span class="line">auth.method = <span class="string">&quot;token&quot;</span></span><br><span class="line">auth.token = <span class="string">&quot;FRPS&quot;</span></span><br><span class="line"></span><br><span class="line">[[proxies]]</span><br><span class="line">name = <span class="string">&quot;7735h-rdp&quot;</span></span><br><span class="line"><span class="built_in">type</span> = <span class="string">&quot;xtcp&quot;</span></span><br><span class="line">secretKey = <span class="string">&quot;&quot;</span></span><br><span class="line">localIP = <span class="string">&quot;127.0.0.1&quot;</span></span><br><span class="line">localPort = 3389</span><br><span class="line"></span><br><span class="line"><span class="comment"># visitors</span></span><br><span class="line">serverAddr = <span class="string">&quot;154.222.24.218&quot;</span></span><br><span class="line">serverPort = 7000</span><br><span class="line">auth.method = <span class="string">&quot;token&quot;</span></span><br><span class="line">auth.token = <span class="string">&quot;FRPS&quot;</span></span><br><span class="line"></span><br><span class="line">[[visitors]]</span><br><span class="line">name = <span class="string">&quot;zdy_&quot;</span></span><br><span class="line"><span class="built_in">type</span> = <span class="string">&quot;xtcp&quot;</span></span><br><span class="line">serverName = <span class="string">&quot;7735h-rdp&quot;</span></span><br><span class="line">secretKey = <span class="string">&quot;&quot;</span></span><br><span class="line">bindAddr = <span class="string">&quot;0.0.0.0&quot;</span></span><br><span class="line">bindPort = 6000</span><br><span class="line">keepTunnelOpen = <span class="literal">true</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="Frp"><a href="#Frp" class="headerlink" title="Frp"></a>Frp</h2><h3 id="Frpc"><a href="#Frpc" class="headerlink" title="Frpc"></a>Frpc</h3><pre><code class="hljs bash"><span class="hljs-comment"># proxies</span>
+serverAddr = <span class="hljs-string">&quot;154.222.24.218&quot;</span>
+serverPort = 7000
+auth.method = <span class="hljs-string">&quot;token&quot;</span>
+auth.token = <span class="hljs-string">&quot;FRPS&quot;</span>
+
+[[proxies]]
+name = <span class="hljs-string">&quot;7735h-rdp&quot;</span>
+<span class="hljs-built_in">type</span> = <span class="hljs-string">&quot;xtcp&quot;</span>
+secretKey = <span class="hljs-string">&quot;&quot;</span>
+localIP = <span class="hljs-string">&quot;127.0.0.1&quot;</span>
+localPort = 3389
+
+<span class="hljs-comment"># visitors</span>
+serverAddr = <span class="hljs-string">&quot;154.222.24.218&quot;</span>
+serverPort = 7000
+auth.method = <span class="hljs-string">&quot;token&quot;</span>
+auth.token = <span class="hljs-string">&quot;FRPS&quot;</span>
+
+[[visitors]]
+name = <span class="hljs-string">&quot;zdy_&quot;</span>
+<span class="hljs-built_in">type</span> = <span class="hljs-string">&quot;xtcp&quot;</span>
+serverName = <span class="hljs-string">&quot;7735h-rdp&quot;</span>
+secretKey = <span class="hljs-string">&quot;&quot;</span>
+bindAddr = <span class="hljs-string">&quot;0.0.0.0&quot;</span>
+bindPort = 6000
+keepTunnelOpen = <span class="hljs-literal">true</span>
+</code></pre>
 
 <hr>
-<h2 id="Cloudreve"><a href="#Cloudreve" class="headerlink" title="Cloudreve"></a>Cloudreve</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 七牛存储策略</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="Cloudreve"><a href="#Cloudreve" class="headerlink" title="Cloudreve"></a>Cloudreve</h2><pre><code class="hljs bash"><span class="hljs-comment"># 七牛存储策略</span>
+
+</code></pre>
 
 <hr>
-<h2 id="maxkb"><a href="#maxkb" class="headerlink" title="maxkb"></a>maxkb</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="maxkb"><a href="#maxkb" class="headerlink" title="maxkb"></a>maxkb</h2><pre><code class="hljs bash"></code></pre>
 
 <hr>
-<h2 id="jumpserver"><a href="#jumpserver" class="headerlink" title="jumpserver"></a>jumpserver</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="jumpserver"><a href="#jumpserver" class="headerlink" title="jumpserver"></a>jumpserver</h2><pre><code class="hljs bash"></code></pre>
 
 <hr>
-<h2 id="zyplayer-doc"><a href="#zyplayer-doc" class="headerlink" title="zyplayer-doc"></a>zyplayer-doc</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置系统功能配置时，onlyoffice和drawio需要配置https域名</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="zyplayer-doc"><a href="#zyplayer-doc" class="headerlink" title="zyplayer-doc"></a>zyplayer-doc</h2><pre><code class="hljs bash"><span class="hljs-comment"># 配置系统功能配置时，onlyoffice和drawio需要配置https域名</span>
+</code></pre>
 
 <blockquote>
 <p>docker-compose.yml</p>
 </blockquote>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">zyplayer:</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">zyplayer-doc</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">registry.cn-beijing.aliyuncs.com/zyplayer/zyplayer-doc:latest</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">8083</span><span class="string">:8083</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DATASOURCE_HOST_PORT=10.0.142.2:3306</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DATASOURCE_DATABASE=zyplayer_doc</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DATASOURCE_USER=zyplayer</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DATASOURCE_PASSWORD=</span>    <span class="comment"># 指定数据库密码</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./files:/zyplayer/files</span></span><br><span class="line">    <span class="attr">healthcheck:</span></span><br><span class="line">      <span class="attr">test:</span> [<span class="string">&quot;CMD&quot;</span>, <span class="string">&quot;curl&quot;</span>, <span class="string">&quot;-f&quot;</span>, <span class="string">&quot;http://localhost:8083&quot;</span>]</span><br><span class="line">      <span class="attr">interval:</span> <span class="string">5s</span></span><br><span class="line">      <span class="attr">timeout:</span> <span class="string">5s</span></span><br><span class="line">      <span class="attr">retries:</span> <span class="number">10</span></span><br><span class="line">      <span class="attr">start_period:</span> <span class="string">10s</span></span><br><span class="line"><span class="string">language-yml复制代码</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs yml"><span class="hljs-attr">version:</span> <span class="hljs-string">&#x27;3&#x27;</span>
+
+<span class="hljs-attr">services:</span>
+  <span class="hljs-attr">zyplayer:</span>
+    <span class="hljs-attr">container_name:</span> <span class="hljs-string">zyplayer-doc</span>
+    <span class="hljs-attr">image:</span> <span class="hljs-string">registry.cn-beijing.aliyuncs.com/zyplayer/zyplayer-doc:latest</span>
+    <span class="hljs-attr">ports:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-number">8083</span><span class="hljs-string">:8083</span>
+    <span class="hljs-attr">environment:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">DATASOURCE_HOST_PORT=10.0.142.2:3306</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">DATASOURCE_DATABASE=zyplayer_doc</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">DATASOURCE_USER=zyplayer</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">DATASOURCE_PASSWORD=</span>    <span class="hljs-comment"># 指定数据库密码</span>
+    <span class="hljs-attr">volumes:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">./files:/zyplayer/files</span>
+    <span class="hljs-attr">healthcheck:</span>
+      <span class="hljs-attr">test:</span> [<span class="hljs-string">&quot;CMD&quot;</span>, <span class="hljs-string">&quot;curl&quot;</span>, <span class="hljs-string">&quot;-f&quot;</span>, <span class="hljs-string">&quot;http://localhost:8083&quot;</span>]
+      <span class="hljs-attr">interval:</span> <span class="hljs-string">5s</span>
+      <span class="hljs-attr">timeout:</span> <span class="hljs-string">5s</span>
+      <span class="hljs-attr">retries:</span> <span class="hljs-number">10</span>
+      <span class="hljs-attr">start_period:</span> <span class="hljs-string">10s</span>
+<span class="hljs-string">language-yml复制代码</span></code></pre>
 
 <hr>
-<h2 id="surveyking"><a href="#surveyking" class="headerlink" title="surveyking"></a>surveyking</h2><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">    <span class="attr">surveyking:</span></span><br><span class="line">        <span class="attr">image:</span> <span class="string">surveyking/surveyking:latest</span></span><br><span class="line">        <span class="attr">container_name:</span> <span class="string">surveyking</span></span><br><span class="line">        <span class="attr">volumes:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">./files:/app/files</span>  <span class="comment"># 文件目录，存储上传的文件，冒号左侧改成自己的，下同</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">./logs:/app/logs</span>    <span class="comment"># 运行日志</span></span><br><span class="line">        <span class="attr">ports:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="number">41991</span><span class="string">:1991</span> <span class="comment"># 冒号左侧可改</span></span><br><span class="line">        <span class="attr">environment:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">PROFILE=mysql</span>                       <span class="comment"># 使用外部 MySQL 数据库</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">MYSQL_USER=surveyking</span>               <span class="comment"># 数据库用户名</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">MYSQL_PASS=</span>               <span class="comment"># 数据库密码</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">DB_URL=jdbc:mysql://10.0.142.2:3306/surveyking?rewriteBatchedStatements=true&amp;useUnicode=true&amp;characterEncoding=UTF-8</span></span><br><span class="line">        <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line"><span class="string">language-yml复制代码</span></span><br></pre></td></tr></table></figure>
+<h2 id="surveyking"><a href="#surveyking" class="headerlink" title="surveyking"></a>surveyking</h2><pre><code class="hljs yml"><span class="hljs-attr">services:</span>
+    <span class="hljs-attr">surveyking:</span>
+        <span class="hljs-attr">image:</span> <span class="hljs-string">surveyking/surveyking:latest</span>
+        <span class="hljs-attr">container_name:</span> <span class="hljs-string">surveyking</span>
+        <span class="hljs-attr">volumes:</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-string">./files:/app/files</span>  <span class="hljs-comment"># 文件目录，存储上传的文件，冒号左侧改成自己的，下同</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-string">./logs:/app/logs</span>    <span class="hljs-comment"># 运行日志</span>
+        <span class="hljs-attr">ports:</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-number">41991</span><span class="hljs-string">:1991</span> <span class="hljs-comment"># 冒号左侧可改</span>
+        <span class="hljs-attr">environment:</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-string">PROFILE=mysql</span>                       <span class="hljs-comment"># 使用外部 MySQL 数据库</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-string">MYSQL_USER=surveyking</span>               <span class="hljs-comment"># 数据库用户名</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-string">MYSQL_PASS=</span>               <span class="hljs-comment"># 数据库密码</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-string">DB_URL=jdbc:mysql://10.0.142.2:3306/surveyking?rewriteBatchedStatements=true&amp;useUnicode=true&amp;characterEncoding=UTF-8</span>
+        <span class="hljs-attr">restart:</span> <span class="hljs-string">always</span>
+<span class="hljs-string">language-yml复制代码</span></code></pre>
 
 <hr>
 

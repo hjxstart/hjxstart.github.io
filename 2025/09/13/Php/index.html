@@ -122,10 +122,52 @@
         
             
                 <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
                     <div data-rel="读书">
                         
                         读书
                         <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -154,48 +196,6 @@
                         
                         数据库
                         <small>(5)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="运维">
-                        
-                        运维
-                        <small>(25)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="安全">
-                        
-                        安全
-                        <small>(3)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="开发">
-                        
-                        开发
-                        <small>(14)</small>
                         
                     </div>
                     
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<input type="hidden" id="yelog_site_word_count" value="243.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1020,36 +1020,199 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># PHP是一种运行在服务器端的脚步语言，可以嵌入到HTML中。是一中面向对象的、解释的。7.3版本比较好用</span></span><br><span class="line"><span class="comment"># 1994年</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><pre><code class="hljs bash"><span class="hljs-comment"># PHP是一种运行在服务器端的脚步语言，可以嵌入到HTML中。是一中面向对象的、解释的。7.3版本比较好用</span>
+<span class="hljs-comment"># 1994年</span>
+</code></pre>
 
-<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装 PhpStorm</span></span><br><span class="line"><span class="comment"># https://3.jetbra.in/ 下载安装包 jetbra.zip 解压后放在 PhpStorm 的bin目录下, 为 jetbra 目录</span></span><br><span class="line"><span class="comment"># 双击 \bin\jetbra\scripts\install-all-users.vbs</span></span><br><span class="line"><span class="comment"># 打开 PhpStorm, 在 https://3.jetbra.in/ 拷贝激活码到激活窗口。</span></span><br><span class="line"><span class="comment"># 如下图配置PHP解析器</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><pre><code class="hljs bash"><span class="hljs-comment"># 安装 PhpStorm</span>
+<span class="hljs-comment"># https://3.jetbra.in/ 下载安装包 jetbra.zip 解压后放在 PhpStorm 的bin目录下, 为 jetbra 目录</span>
+<span class="hljs-comment"># 双击 \bin\jetbra\scripts\install-all-users.vbs</span>
+<span class="hljs-comment"># 打开 PhpStorm, 在 https://3.jetbra.in/ 拷贝激活码到激活窗口。</span>
+<span class="hljs-comment"># 如下图配置PHP解析器</span>
+</code></pre>
 
 
 
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250913234353519.png" alt="img"></p>
-<h2 id="PHP-基础"><a href="#PHP-基础" class="headerlink" title="PHP 基础"></a>PHP 基础</h2><h3 id="PHP代码标记"><a href="#PHP代码标记" class="headerlink" title="PHP代码标记"></a>PHP代码标记</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第一种: ASP 标记</span></span><br><span class="line">	&lt;% php代码 %&gt;</span><br><span class="line"><span class="comment">// 第二种: 短标记</span></span><br><span class="line">    <span class="meta">&lt;?</span> php代码 <span class="meta">?&gt;</span></span><br><span class="line"><span class="comment">// 第三种: 脚步标记</span></span><br><span class="line">    &lt;scrip language=<span class="string">&quot;php&quot;</span>&gt; php 代码 &lt;/scrip&gt;</span><br><span class="line"><span class="comment">// 第四种: 标准标记 (目前常用)</span></span><br><span class="line">    <span class="meta">&lt;?php</span></span><br><span class="line">        php代码;</span><br><span class="line">    <span class="meta">?&gt;</span></span><br><span class="line">        </span><br><span class="line"><span class="comment">// 如果是单独的 php 文档，习惯不闭合</span></span><br><span class="line">        <span class="comment">// 例如</span></span><br><span class="line">        <span class="meta">&lt;?php</span></span><br><span class="line">        	<span class="keyword">echo</span> <span class="string">&quot;hello world&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果是嵌入在html代码中，则需闭合(写在PHP文档中)</span></span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">language-php复制代码</span><br></pre></td></tr></table></figure>
+<h2 id="PHP-基础"><a href="#PHP-基础" class="headerlink" title="PHP 基础"></a>PHP 基础</h2><h3 id="PHP代码标记"><a href="#PHP代码标记" class="headerlink" title="PHP代码标记"></a>PHP代码标记</h3><pre><code class="hljs php"><span class="hljs-comment">// 第一种: ASP 标记</span>
+	&lt;% php代码 %&gt;
+<span class="hljs-comment">// 第二种: 短标记</span>
+    <span class="hljs-meta">&lt;?</span> php代码 <span class="hljs-meta">?&gt;</span>
+<span class="hljs-comment">// 第三种: 脚步标记</span>
+    &lt;scrip language=<span class="hljs-string">&quot;php&quot;</span>&gt; php 代码 &lt;/scrip&gt;
+<span class="hljs-comment">// 第四种: 标准标记 (目前常用)</span>
+    <span class="hljs-meta">&lt;?php</span>
+        php代码;
+    <span class="hljs-meta">?&gt;</span>
+        
+<span class="hljs-comment">// 如果是单独的 php 文档，习惯不闭合</span>
+        <span class="hljs-comment">// 例如</span>
+        <span class="hljs-meta">&lt;?php</span>
+        	<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;hello world&quot;</span>;
 
-<h3 id="PHP-注释"><a href="#PHP-注释" class="headerlink" title="PHP 注释"></a>PHP 注释</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这是一个单行注释的例子</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;hello world&quot;</span>; <span class="comment"># 这也是一个单行注释，跟在代码后面</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">这个是多行注释的例子</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;hello word&quot;</span>; <span class="comment">/* 这个注释可以跨行</span></span><br><span class="line"><span class="comment">				  * 多行	*/</span></span><br><span class="line">language-php复制代码</span><br></pre></td></tr></table></figure>
+<span class="hljs-comment">// 如果是嵌入在html代码中，则需闭合(写在PHP文档中)</span>
 
-<h3 id="PHP变量"><a href="#PHP变量" class="headerlink" title="PHP变量"></a>PHP变量</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># PHP使用 $ 来声明变量</span></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="variable">$var</span>=<span class="number">1</span>; <span class="comment">// 声明变量</span></span><br><span class="line">    <span class="keyword">echo</span> <span class="variable">$var</span>; <span class="comment">// 访问变量</span></span><br><span class="line">    <span class="keyword">unset</span>(<span class="variable">$var</span>); <span class="comment">// 删除变量</span></span><br><span class="line">language-php复制代码</span><br></pre></td></tr></table></figure>
+        
+language-php复制代码</code></pre>
 
-<h3 id="PHP预定变量"><a href="#PHP预定变量" class="headerlink" title="PHP预定变量"></a>PHP预定变量</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">  <span class="comment">// 预定义变量</span></span><br><span class="line">  <span class="comment">// 获取所有get提交表单</span></span><br><span class="line">  <span class="variable">$_GET</span>; <span class="comment">// 获取所以表单以get方式提交的数据</span></span><br><span class="line">  <span class="variable">$_POST</span>; <span class="comment">// POST 提交的数据都会保存在这里</span></span><br><span class="line">  <span class="variable">$_REQUEST</span>; <span class="comment">// GET和POST 提交的都会保存</span></span><br><span class="line">  <span class="variable">$GLOBALS</span>; <span class="comment">// PHP 中所有的全局变量</span></span><br><span class="line">  <span class="variable">$_SERVER</span>; <span class="comment">// 服务器信息</span></span><br><span class="line">  <span class="variable">$_SESSION</span>; <span class="comment">// session 会话数据</span></span><br><span class="line">  <span class="variable">$_COOKIE</span>; <span class="comment">// cookie 会话数据</span></span><br><span class="line">  <span class="variable">$_ENV</span>; <span class="comment">// 环境信息</span></span><br><span class="line">  <span class="variable">$_FILES</span>; <span class="comment">// 用户上传的文件信息</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">echo</span> <span class="string">&#x27;&lt;pre&gt;&#x27;</span>;</span><br><span class="line">  <span class="title function_ invoke__">var_dump</span>(<span class="variable">$_SERVER</span>); <span class="comment">// 打印</span></span><br><span class="line">language-php复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="PHP-注释"><a href="#PHP-注释" class="headerlink" title="PHP 注释"></a>PHP 注释</h3><pre><code class="hljs php"><span class="hljs-comment"># 这是一个单行注释的例子</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;hello world&quot;</span>; <span class="hljs-comment"># 这也是一个单行注释，跟在代码后面</span>
 
-<h3 id="PHP-可变变量"><a href="#PHP-可变变量" class="headerlink" title="PHP 可变变量"></a>PHP 可变变量</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">  <span class="variable">$a</span>=<span class="string">&#x27;b&#x27;</span>;</span><br><span class="line">  <span class="variable">$b</span>=<span class="string">&#x27;bb&#x27;</span>;</span><br><span class="line">  <span class="keyword">echo</span> <span class="variable">$$a</span>; <span class="comment">// bb</span></span><br><span class="line">language-php复制代码</span><br></pre></td></tr></table></figure>
+<span class="hljs-comment">/*</span>
+<span class="hljs-comment">这个是多行注释的例子</span>
+<span class="hljs-comment">*/</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;hello word&quot;</span>; <span class="hljs-comment">/* 这个注释可以跨行</span>
+<span class="hljs-comment">				  * 多行	*/</span>
+language-php复制代码</code></pre>
 
-<h3 id="PHP-变量传值"><a href="#PHP-变量传值" class="headerlink" title="PHP 变量传值"></a>PHP 变量传值</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 变量传递</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 值传递</span></span><br><span class="line"><span class="variable">$a</span>=<span class="number">1</span>;</span><br><span class="line"><span class="variable">$b</span>=<span class="variable">$$a</span>;</span><br><span class="line"><span class="comment">// 上述a和b都指向一个地址，修改任意一个变量，另外一个都会改变。</span></span><br><span class="line">language-php复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="PHP变量"><a href="#PHP变量" class="headerlink" title="PHP变量"></a>PHP变量</h3><pre><code class="hljs php"><span class="hljs-comment"># PHP使用 $ 来声明变量</span>
+<span class="hljs-meta">&lt;?php</span>
+    <span class="hljs-variable">$var</span>=<span class="hljs-number">1</span>; <span class="hljs-comment">// 声明变量</span>
+    <span class="hljs-keyword">echo</span> <span class="hljs-variable">$var</span>; <span class="hljs-comment">// 访问变量</span>
+    <span class="hljs-keyword">unset</span>(<span class="hljs-variable">$var</span>); <span class="hljs-comment">// 删除变量</span>
+language-php复制代码</code></pre>
 
-<h3 id="PHP常量"><a href="#PHP常量" class="headerlink" title="PHP常量"></a>PHP常量</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="variable constant_">PI</span>=<span class="number">3.14</span>;</span><br><span class="line"><span class="keyword">echo</span> PI;</span><br><span class="line"><span class="comment">// 系统常量</span></span><br><span class="line"><span class="keyword">echo</span> PHP_VERSION;</span><br><span class="line"><span class="keyword">echo</span> PHP_INT_SIZE;</span><br><span class="line"><span class="keyword">echo</span> PHP_INT_MAX;</span><br><span class="line"><span class="comment">// 系统魔术常量</span></span><br><span class="line"><span class="keyword">echo</span> <span class="keyword">__DIR__</span>; <span class="comment"># 绝对路径</span></span><br><span class="line"><span class="keyword">echo</span> <span class="keyword">__FILE__</span>; <span class="comment"># 当前文件的绝对路径</span></span><br><span class="line"><span class="keyword">echo</span> <span class="keyword">__LINE__</span>; <span class="comment"># 当前行数</span></span><br><span class="line">language-php复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="PHP预定变量"><a href="#PHP预定变量" class="headerlink" title="PHP预定变量"></a>PHP预定变量</h3><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+  <span class="hljs-comment">// 预定义变量</span>
+  <span class="hljs-comment">// 获取所有get提交表单</span>
+  <span class="hljs-variable">$_GET</span>; <span class="hljs-comment">// 获取所以表单以get方式提交的数据</span>
+  <span class="hljs-variable">$_POST</span>; <span class="hljs-comment">// POST 提交的数据都会保存在这里</span>
+  <span class="hljs-variable">$_REQUEST</span>; <span class="hljs-comment">// GET和POST 提交的都会保存</span>
+  <span class="hljs-variable">$GLOBALS</span>; <span class="hljs-comment">// PHP 中所有的全局变量</span>
+  <span class="hljs-variable">$_SERVER</span>; <span class="hljs-comment">// 服务器信息</span>
+  <span class="hljs-variable">$_SESSION</span>; <span class="hljs-comment">// session 会话数据</span>
+  <span class="hljs-variable">$_COOKIE</span>; <span class="hljs-comment">// cookie 会话数据</span>
+  <span class="hljs-variable">$_ENV</span>; <span class="hljs-comment">// 环境信息</span>
+  <span class="hljs-variable">$_FILES</span>; <span class="hljs-comment">// 用户上传的文件信息</span>
 
-<h3 id="PHP数据类型"><a href="#PHP数据类型" class="headerlink" title="PHP数据类型"></a>PHP数据类型</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 共三大类八小类。</span></span><br><span class="line"><span class="comment"># 简单（基本）数据类型：4个小类。整型(int/integer)、浮点型、字符串型、布尔型</span></span><br><span class="line"><span class="comment"># 复合数据类型：2个小类。对象、数组</span></span><br><span class="line"><span class="comment"># 特殊数据类型：2个小类。资源类型(resource:php外部数据,数据库,文件)、空类型 NULL（不能运算）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 简单（基本）数据类型</span></span><br><span class="line"><span class="comment"># 整型 int/integer</span></span><br><span class="line"><span class="variable">$a1</span>=<span class="number">110</span>; <span class="comment">// 10进制</span></span><br><span class="line"><span class="variable">$a2</span>=<span class="number">0b110</span>; <span class="comment">// 2进制</span></span><br><span class="line"><span class="variable">$a3</span>=<span class="number">0110</span>; <span class="comment">// 8 进制</span></span><br><span class="line"><span class="variable">$a4</span>=<span class="number">0x110</span>; <span class="comment">// 16进制</span></span><br><span class="line"><span class="comment"># 浮点型</span></span><br><span class="line"><span class="variable">$f1</span>=<span class="number">1.23</span>;</span><br><span class="line"><span class="variable">$f2</span>=<span class="number">1.23e10</span>; <span class="comment">// 科学计数法</span></span><br><span class="line"><span class="comment"># 字符串型</span></span><br><span class="line"><span class="variable">$s</span>=<span class="string">&#x27;mz&#x27;</span>;</span><br><span class="line"><span class="comment"># 布尔型 bool/boolean</span></span><br><span class="line"><span class="variable">$a</span>=<span class="literal">true</span>;</span><br><span class="line"><span class="variable">$b</span>=<span class="literal">false</span>;</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="variable">$a</span>,<span class="variable">$b</span>); <span class="comment">// 判断数据类型</span></span><br><span class="line"><span class="comment"># empty()</span></span><br><span class="line"><span class="variable">$a</span>=<span class="string">&#x27;&#x27;</span>; <span class="comment">// true</span></span><br><span class="line"><span class="variable">$b</span>=<span class="literal">null</span>; <span class="comment">// true</span></span><br><span class="line"><span class="variable">$c</span>=<span class="number">111</span>; <span class="comment">// false</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="keyword">isset</span>(<span class="variable">$b</span>)); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 复合数据类型</span></span><br><span class="line"><span class="comment"># 对象</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 数组</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 特殊数据类型</span></span><br><span class="line"><span class="comment"># 资源类型</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 空类型</span></span><br><span class="line">language-php复制代码</span><br></pre></td></tr></table></figure>
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;pre&gt;&#x27;</span>;
+  <span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-variable">$_SERVER</span>); <span class="hljs-comment">// 打印</span>
+language-php复制代码</code></pre>
+
+<h3 id="PHP-可变变量"><a href="#PHP-可变变量" class="headerlink" title="PHP 可变变量"></a>PHP 可变变量</h3><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+  <span class="hljs-variable">$a</span>=<span class="hljs-string">&#x27;b&#x27;</span>;
+  <span class="hljs-variable">$b</span>=<span class="hljs-string">&#x27;bb&#x27;</span>;
+  <span class="hljs-keyword">echo</span> <span class="hljs-variable">$$a</span>; <span class="hljs-comment">// bb</span>
+language-php复制代码</code></pre>
+
+<h3 id="PHP-变量传值"><a href="#PHP-变量传值" class="headerlink" title="PHP 变量传值"></a>PHP 变量传值</h3><pre><code class="hljs php"><span class="hljs-comment">// 变量传递</span>
+
+<span class="hljs-comment">// 值传递</span>
+<span class="hljs-variable">$a</span>=<span class="hljs-number">1</span>;
+<span class="hljs-variable">$b</span>=<span class="hljs-variable">$$a</span>;
+<span class="hljs-comment">// 上述a和b都指向一个地址，修改任意一个变量，另外一个都会改变。</span>
+language-php复制代码</code></pre>
+
+<h3 id="PHP常量"><a href="#PHP常量" class="headerlink" title="PHP常量"></a>PHP常量</h3><pre><code class="hljs php"><span class="hljs-keyword">const</span> <span class="hljs-variable constant_">PI</span>=<span class="hljs-number">3.14</span>;
+<span class="hljs-keyword">echo</span> PI;
+<span class="hljs-comment">// 系统常量</span>
+<span class="hljs-keyword">echo</span> PHP_VERSION;
+<span class="hljs-keyword">echo</span> PHP_INT_SIZE;
+<span class="hljs-keyword">echo</span> PHP_INT_MAX;
+<span class="hljs-comment">// 系统魔术常量</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-keyword">__DIR__</span>; <span class="hljs-comment"># 绝对路径</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-keyword">__FILE__</span>; <span class="hljs-comment"># 当前文件的绝对路径</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-keyword">__LINE__</span>; <span class="hljs-comment"># 当前行数</span>
+language-php复制代码</code></pre>
+
+<h3 id="PHP数据类型"><a href="#PHP数据类型" class="headerlink" title="PHP数据类型"></a>PHP数据类型</h3><pre><code class="hljs php"><span class="hljs-comment">## 共三大类八小类。</span>
+<span class="hljs-comment"># 简单（基本）数据类型：4个小类。整型(int/integer)、浮点型、字符串型、布尔型</span>
+<span class="hljs-comment"># 复合数据类型：2个小类。对象、数组</span>
+<span class="hljs-comment"># 特殊数据类型：2个小类。资源类型(resource:php外部数据,数据库,文件)、空类型 NULL（不能运算）</span>
+
+<span class="hljs-comment">## 简单（基本）数据类型</span>
+<span class="hljs-comment"># 整型 int/integer</span>
+<span class="hljs-variable">$a1</span>=<span class="hljs-number">110</span>; <span class="hljs-comment">// 10进制</span>
+<span class="hljs-variable">$a2</span>=<span class="hljs-number">0b110</span>; <span class="hljs-comment">// 2进制</span>
+<span class="hljs-variable">$a3</span>=<span class="hljs-number">0110</span>; <span class="hljs-comment">// 8 进制</span>
+<span class="hljs-variable">$a4</span>=<span class="hljs-number">0x110</span>; <span class="hljs-comment">// 16进制</span>
+<span class="hljs-comment"># 浮点型</span>
+<span class="hljs-variable">$f1</span>=<span class="hljs-number">1.23</span>;
+<span class="hljs-variable">$f2</span>=<span class="hljs-number">1.23e10</span>; <span class="hljs-comment">// 科学计数法</span>
+<span class="hljs-comment"># 字符串型</span>
+<span class="hljs-variable">$s</span>=<span class="hljs-string">&#x27;mz&#x27;</span>;
+<span class="hljs-comment"># 布尔型 bool/boolean</span>
+<span class="hljs-variable">$a</span>=<span class="hljs-literal">true</span>;
+<span class="hljs-variable">$b</span>=<span class="hljs-literal">false</span>;
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-variable">$a</span>,<span class="hljs-variable">$b</span>); <span class="hljs-comment">// 判断数据类型</span>
+<span class="hljs-comment"># empty()</span>
+<span class="hljs-variable">$a</span>=<span class="hljs-string">&#x27;&#x27;</span>; <span class="hljs-comment">// true</span>
+<span class="hljs-variable">$b</span>=<span class="hljs-literal">null</span>; <span class="hljs-comment">// true</span>
+<span class="hljs-variable">$c</span>=<span class="hljs-number">111</span>; <span class="hljs-comment">// false</span>
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$b</span>)); <span class="hljs-comment">// false</span>
+
+<span class="hljs-comment">## 复合数据类型</span>
+<span class="hljs-comment"># 对象</span>
+
+<span class="hljs-comment"># 数组</span>
+
+<span class="hljs-comment">## 特殊数据类型</span>
+<span class="hljs-comment"># 资源类型</span>
+
+<span class="hljs-comment"># 空类型</span>
+language-php复制代码</code></pre>
 
 <p>PHP强制数据类型转换</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$s</span>=<span class="string">&#x27;1&#x27;</span>;</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>((<span class="keyword">float</span>)<span class="variable">$s1</span>);</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>((<span class="keyword">string</span>)<span class="variable">$s1</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable">$x</span>=<span class="string">&#x27;abc1.1.1&#x27;</span>;</span><br><span class="line"><span class="variable">$x2</span>=<span class="string">&#x27;l.1.1abc&#x27;</span>;</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>((<span class="keyword">float</span>)$<span class="number">1</span>); <span class="comment">// 0</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>((<span class="keyword">float</span>)$<span class="number">2</span>); <span class="comment">// 1.1</span></span><br><span class="line">language-php复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs php"><span class="hljs-variable">$s</span>=<span class="hljs-string">&#x27;1&#x27;</span>;
+<span class="hljs-title function_ invoke__">var_dump</span>((<span class="hljs-keyword">float</span>)<span class="hljs-variable">$s1</span>);
+<span class="hljs-title function_ invoke__">var_dump</span>((<span class="hljs-keyword">string</span>)<span class="hljs-variable">$s1</span>);
+
+<span class="hljs-variable">$x</span>=<span class="hljs-string">&#x27;abc1.1.1&#x27;</span>;
+<span class="hljs-variable">$x2</span>=<span class="hljs-string">&#x27;l.1.1abc&#x27;</span>;
+<span class="hljs-title function_ invoke__">var_dump</span>((<span class="hljs-keyword">float</span>)$<span class="hljs-number">1</span>); <span class="hljs-comment">// 0</span>
+<span class="hljs-title function_ invoke__">var_dump</span>((<span class="hljs-keyword">float</span>)$<span class="hljs-number">2</span>); <span class="hljs-comment">// 1.1</span>
+language-php复制代码</code></pre>
 
 <p>PHP类型判断</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="comment">// 创建数据</span></span><br><span class="line">    <span class="variable">$a</span>=<span class="string">&#x27;abc1.1.1&#x27;</span>;</span><br><span class="line">	<span class="variable">$b</span>=<span class="string">&#x27;1.1.1abc&#x27;</span>;;</span><br><span class="line">	<span class="variable">$c</span>=<span class="number">1</span>;</span><br><span class="line">	<span class="title function_ invoke__">var_dump</span>(<span class="title function_ invoke__">is_int</span>(<span class="variable">$a</span>)); <span class="comment">// false</span></span><br><span class="line">	<span class="title function_ invoke__">var_dump</span>(<span class="title function_ invoke__">is_string</span>(<span class="variable">$a</span>)); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 获取数据类型 gettype()</span></span><br><span class="line">	<span class="keyword">echo</span> <span class="title function_ invoke__">gettype</span>(<span class="variable">$a</span>); <span class="comment">// string</span></span><br><span class="line">	<span class="keyword">echo</span> <span class="title function_ invoke__">gettype</span>(<span class="variable">$c</span>); <span class="comment">// integer</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 设置数据类型 settype()</span></span><br><span class="line">	<span class="title function_ invoke__">settype</span>(<span class="variable">$a</span>, <span class="string">&#x27;int&#x27;</span>);</span><br><span class="line">	<span class="title function_ invoke__">var_dum</span>(<span class="variable">$a</span>); <span class="comment">// string -&gt; int</span></span><br><span class="line">language-php复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+    <span class="hljs-comment">// 创建数据</span>
+    <span class="hljs-variable">$a</span>=<span class="hljs-string">&#x27;abc1.1.1&#x27;</span>;
+	<span class="hljs-variable">$b</span>=<span class="hljs-string">&#x27;1.1.1abc&#x27;</span>;;
+	<span class="hljs-variable">$c</span>=<span class="hljs-number">1</span>;
+	<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-title function_ invoke__">is_int</span>(<span class="hljs-variable">$a</span>)); <span class="hljs-comment">// false</span>
+	<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-title function_ invoke__">is_string</span>(<span class="hljs-variable">$a</span>)); <span class="hljs-comment">// true</span>
 
-<h3 id="PHP-运算符"><a href="#PHP-运算符" class="headerlink" title="PHP 运算符"></a>PHP 运算符</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">	<span class="comment">// 连接运算符 . 或者 .=</span></span><br><span class="line">    <span class="variable">$a</span>=<span class="string">&#x27;whoami&#x27;</span>;</span><br><span class="line">	<span class="variable">$b</span>=<span class="string">&#x27;007&#x27;</span>;</span><br><span class="line">	<span class="keyword">echo</span> <span class="variable">$a</span>.<span class="variable">$b</span>; <span class="comment">// whoami007</span></span><br><span class="line">	<span class="keyword">echo</span> <span class="variable">$a</span>.=<span class="variable">$b</span>; <span class="comment">// whoami007</span></span><br><span class="line">        </span><br><span class="line">    <span class="comment">// 错误抑制符 @</span></span><br><span class="line">    <span class="variable">$a</span>=<span class="number">11</span>;</span><br><span class="line">	<span class="variable">$b</span>=<span class="number">0</span>;</span><br><span class="line">	<span class="variable">$c</span>=@(<span class="variable">$a</span>/<span class="variable">$b</span>); <span class="comment">// @在前面就不会报错了</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 三目运算符</span></span><br><span class="line">	表达式<span class="number">1</span> ? 表达式<span class="number">2</span>: 表达式<span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 自操作运算</span></span><br><span class="line">	<span class="variable">$a</span>=<span class="number">1</span>;</span><br><span class="line">	<span class="variable">$a</span>++; <span class="comment">//2	</span></span><br><span class="line">	++<span class="variable">$a</span>; <span class="comment">//3</span></span><br><span class="line">	<span class="variable">$b</span>=<span class="variable">$a</span>++; <span class="comment">// b=3,a=4</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 计算机码</span></span><br><span class="line">	<span class="comment">// 系统中存在两个0: +0 和 -0</span></span><br><span class="line">	+<span class="number">0</span>:</span><br><span class="line">		原码 <span class="number">00000000</span></span><br><span class="line">         反码 <span class="number">00000000</span></span><br><span class="line">         补码 <span class="number">00000000</span></span><br><span class="line">    -<span class="number">0</span>:</span><br><span class="line">		原码 <span class="number">10000000</span></span><br><span class="line">         反码 <span class="number">11111111</span> <span class="comment">// 反码: 针对负数，符号位不变，其他位取反</span></span><br><span class="line">         补码 <span class="number">00000000</span> <span class="comment">// 补码: 反码+1</span></span><br><span class="line">language-php复制代码</span><br></pre></td></tr></table></figure>
+	<span class="hljs-comment">// 获取数据类型 gettype()</span>
+	<span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">gettype</span>(<span class="hljs-variable">$a</span>); <span class="hljs-comment">// string</span>
+	<span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">gettype</span>(<span class="hljs-variable">$c</span>); <span class="hljs-comment">// integer</span>
+	
+	<span class="hljs-comment">// 设置数据类型 settype()</span>
+	<span class="hljs-title function_ invoke__">settype</span>(<span class="hljs-variable">$a</span>, <span class="hljs-string">&#x27;int&#x27;</span>);
+	<span class="hljs-title function_ invoke__">var_dum</span>(<span class="hljs-variable">$a</span>); <span class="hljs-comment">// string -&gt; int</span>
+language-php复制代码</code></pre>
+
+<h3 id="PHP-运算符"><a href="#PHP-运算符" class="headerlink" title="PHP 运算符"></a>PHP 运算符</h3><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+	<span class="hljs-comment">// 连接运算符 . 或者 .=</span>
+    <span class="hljs-variable">$a</span>=<span class="hljs-string">&#x27;whoami&#x27;</span>;
+	<span class="hljs-variable">$b</span>=<span class="hljs-string">&#x27;007&#x27;</span>;
+	<span class="hljs-keyword">echo</span> <span class="hljs-variable">$a</span>.<span class="hljs-variable">$b</span>; <span class="hljs-comment">// whoami007</span>
+	<span class="hljs-keyword">echo</span> <span class="hljs-variable">$a</span>.=<span class="hljs-variable">$b</span>; <span class="hljs-comment">// whoami007</span>
+        
+    <span class="hljs-comment">// 错误抑制符 @</span>
+    <span class="hljs-variable">$a</span>=<span class="hljs-number">11</span>;
+	<span class="hljs-variable">$b</span>=<span class="hljs-number">0</span>;
+	<span class="hljs-variable">$c</span>=@(<span class="hljs-variable">$a</span>/<span class="hljs-variable">$b</span>); <span class="hljs-comment">// @在前面就不会报错了</span>
+
+	<span class="hljs-comment">// 三目运算符</span>
+	表达式<span class="hljs-number">1</span> ? 表达式<span class="hljs-number">2</span>: 表达式<span class="hljs-number">3</span>;
+
+	<span class="hljs-comment">// 自操作运算</span>
+	<span class="hljs-variable">$a</span>=<span class="hljs-number">1</span>;
+	<span class="hljs-variable">$a</span>++; <span class="hljs-comment">//2	</span>
+	++<span class="hljs-variable">$a</span>; <span class="hljs-comment">//3</span>
+	<span class="hljs-variable">$b</span>=<span class="hljs-variable">$a</span>++; <span class="hljs-comment">// b=3,a=4</span>
+
+	<span class="hljs-comment">// 计算机码</span>
+	<span class="hljs-comment">// 系统中存在两个0: +0 和 -0</span>
+	+<span class="hljs-number">0</span>:
+		原码 <span class="hljs-number">00000000</span>
+         反码 <span class="hljs-number">00000000</span>
+         补码 <span class="hljs-number">00000000</span>
+    -<span class="hljs-number">0</span>:
+		原码 <span class="hljs-number">10000000</span>
+         反码 <span class="hljs-number">11111111</span> <span class="hljs-comment">// 反码: 针对负数，符号位不变，其他位取反</span>
+         补码 <span class="hljs-number">00000000</span> <span class="hljs-comment">// 补码: 反码+1</span>
+language-php复制代码</code></pre>
 
 <hr>
 

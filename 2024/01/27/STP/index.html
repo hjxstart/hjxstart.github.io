@@ -122,10 +122,52 @@
         
             
                 <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
                     <div data-rel="读书">
                         
                         读书
                         <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -154,48 +196,6 @@
                         
                         数据库
                         <small>(5)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="运维">
-                        
-                        运维
-                        <small>(25)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="安全">
-                        
-                        安全
-                        <small>(3)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="开发">
-                        
-                        开发
-                        <small>(14)</small>
                         
                     </div>
                     
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<input type="hidden" id="yelog_site_word_count" value="243.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -983,7 +983,7 @@
     </div>
     <div class="article-meta">
         
-        <span>字数:287</span>
+        <span>字数:311</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1028,13 +1028,58 @@
 <li>ACL技术</li>
 <li>NAT技术</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">关闭系统日志</span></span><br><span class="line">undo info-center enable</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">修改系统语言</span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">language-mode Chinese</span></span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">关闭系统日志</span>
+undo info-center enable
+<span class="hljs-meta prompt_"># </span><span class="language-bash">修改系统语言</span>
+<span class="hljs-meta prompt_">&gt; </span><span class="language-bash">language-mode Chinese</span>
+language-shell复制代码</code></pre>
 
 
 
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20240225140752.png" alt="NA实验"></p>
 <p>NA实验</p>
-<h4 id="NA实验"><a href="#NA实验" class="headerlink" title="NA实验"></a>NA实验</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">access</span></span><br><span class="line">port link-type access</span><br><span class="line">port default vlan 10</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">trunk</span></span><br><span class="line">port link-type trunk</span><br><span class="line">port trunk allow-pass vlan all</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">vlanif</span></span><br><span class="line">int vlanif 10</span><br><span class="line">ip add 10.1.10.254 24</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">单臂路由子接口</span></span><br><span class="line">int g0/0/1.30</span><br><span class="line">dot1q termination vid 30</span><br><span class="line">arp broadcast enable</span><br><span class="line">ip address 10.1.30.254 24</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">OSPF</span></span><br><span class="line">ospf router-id 2.2.2.2</span><br><span class="line">area 0</span><br><span class="line">interface g0/0/1</span><br><span class="line">ospf enable area 0</span><br><span class="line">interface vlanif 10</span><br><span class="line">ospf enable area 0</span><br><span class="line">interface g0/0/1.30</span><br><span class="line">ospf enable area 0</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">静态路由</span></span><br><span class="line">ip route-static 0.0.0.0 0 100.1.1.1</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">默认路由下放</span></span><br><span class="line">ospf</span><br><span class="line">default-route-advertise</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">NAT</span></span><br><span class="line">acl 2000</span><br><span class="line">rule permit source any</span><br><span class="line">quit</span><br><span class="line">int g0/0/0</span><br><span class="line">nat outbound 2000</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<h4 id="NA实验"><a href="#NA实验" class="headerlink" title="NA实验"></a>NA实验</h4><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">access</span>
+port link-type access
+port default vlan 10
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">trunk</span>
+port link-type trunk
+port trunk allow-pass vlan all
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">vlanif</span>
+int vlanif 10
+ip add 10.1.10.254 24
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">单臂路由子接口</span>
+int g0/0/1.30
+dot1q termination vid 30
+arp broadcast enable
+ip address 10.1.30.254 24
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">OSPF</span>
+ospf router-id 2.2.2.2
+area 0
+interface g0/0/1
+ospf enable area 0
+interface vlanif 10
+ospf enable area 0
+interface g0/0/1.30
+ospf enable area 0
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">静态路由</span>
+ip route-static 0.0.0.0 0 100.1.1.1
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">默认路由下放</span>
+ospf
+default-route-advertise
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">NAT</span>
+acl 2000
+rule permit source any
+quit
+int g0/0/0
+nat outbound 2000
+language-shell复制代码</code></pre>
 
 <h1 id="生成树-Spanning-tree-protocal"><a href="#生成树-Spanning-tree-protocal" class="headerlink" title="生成树 Spanning tree protocal"></a>生成树 Spanning tree protocal</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><ol>
 <li>现网环境一般不会使用，一般默认设备会启动MSTP.</li>

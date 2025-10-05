@@ -122,10 +122,52 @@
         
             
                 <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
                     <div data-rel="读书">
                         
                         读书
                         <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -154,48 +196,6 @@
                         
                         数据库
                         <small>(5)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="运维">
-                        
-                        运维
-                        <small>(25)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="安全">
-                        
-                        安全
-                        <small>(3)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="开发">
-                        
-                        开发
-                        <small>(14)</small>
                         
                     </div>
                     
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<input type="hidden" id="yelog_site_word_count" value="243.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -983,7 +983,7 @@
     </div>
     <div class="article-meta">
         
-        <span>字数:202</span>
+        <span>字数:204</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1020,11 +1020,25 @@
       
         <h3 id="Telnet"><a href="#Telnet" class="headerlink" title="Telnet"></a>Telnet</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/NetworkLab_001_Telnet.png" alt="Telnet"></p>
 <p>Telnet</p>
-<h4 id="1-路由器互联接口配置同网段-IP-地址"><a href="#1-路由器互联接口配置同网段-IP-地址" class="headerlink" title="1. 路由器互联接口配置同网段 IP 地址"></a>1. 路由器互联接口配置同网段 IP 地址</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[R1] int g0/0/0</span><br><span class="line">[R1-g0/0/0] ip add 12.1.1.1 24</span><br><span class="line">[R2] int g0/0/0</span><br><span class="line">[R2-g0/0/0] ip add 12.1.1.2 24</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<h4 id="1-路由器互联接口配置同网段-IP-地址"><a href="#1-路由器互联接口配置同网段-IP-地址" class="headerlink" title="1. 路由器互联接口配置同网段 IP 地址"></a>1. 路由器互联接口配置同网段 IP 地址</h4><pre><code class="hljs shell">[R1] int g0/0/0
+[R1-g0/0/0] ip add 12.1.1.1 24
+[R2] int g0/0/0
+[R2-g0/0/0] ip add 12.1.1.2 24
+language-shell复制代码</code></pre>
 
-<h4 id="2-在被登录设备上配置-Telnet"><a href="#2-在被登录设备上配置-Telnet" class="headerlink" title="2. 在被登录设备上配置 Telnet"></a>2. 在被登录设备上配置 Telnet</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">配置 AAA 认证试图下，配置本地 Telnet 登录用户 hjxstart 和密码 HCIE</span></span><br><span class="line">[R2] aaa</span><br><span class="line">[R2-aaa] local-user `hjxstart` privilege level `3` password cipher `HCIE`</span><br><span class="line">[R2-aaa] local-user `hjxstart` service-type `telnet`</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">在被登录设备上，开启 Telnet 服务器</span></span><br><span class="line">[R2] `telnet` server enable</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">在被登录设备上，配置同一时间运行接入的虚拟终端数为 5</span></span><br><span class="line">[R2] user-interface vty 0 4</span><br><span class="line">[R2-ui-vty0-4] authentication-mode aaa</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<h4 id="2-在被登录设备上配置-Telnet"><a href="#2-在被登录设备上配置-Telnet" class="headerlink" title="2. 在被登录设备上配置 Telnet"></a>2. 在被登录设备上配置 Telnet</h4><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">配置 AAA 认证试图下，配置本地 Telnet 登录用户 hjxstart 和密码 HCIE</span>
+[R2] aaa
+[R2-aaa] local-user `hjxstart` privilege level `3` password cipher `HCIE`
+[R2-aaa] local-user `hjxstart` service-type `telnet`
+<span class="hljs-meta prompt_"># </span><span class="language-bash">在被登录设备上，开启 Telnet 服务器</span>
+[R2] `telnet` server enable
+<span class="hljs-meta prompt_"># </span><span class="language-bash">在被登录设备上，配置同一时间运行接入的虚拟终端数为 5</span>
+[R2] user-interface vty 0 4
+[R2-ui-vty0-4] authentication-mode aaa
+language-shell复制代码</code></pre>
 
-<h4 id="3-在发起登录设备-AR1-上-telent-登录被登录设备-AR2"><a href="#3-在发起登录设备-AR1-上-telent-登录被登录设备-AR2" class="headerlink" title="3. 在发起登录设备 AR1 上 telent 登录被登录设备 AR2"></a>3. 在发起登录设备 AR1 上 telent 登录被登录设备 AR2</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;R1&gt; telnet 12.1.1.2</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<h4 id="3-在发起登录设备-AR1-上-telent-登录被登录设备-AR2"><a href="#3-在发起登录设备-AR1-上-telent-登录被登录设备-AR2" class="headerlink" title="3. 在发起登录设备 AR1 上 telent 登录被登录设备 AR2"></a>3. 在发起登录设备 AR1 上 telent 登录被登录设备 AR2</h4><pre><code class="hljs shell">&lt;R1&gt; telnet 12.1.1.2
+language-shell复制代码</code></pre>
 
 <hr>
 

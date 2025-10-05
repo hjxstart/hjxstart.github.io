@@ -122,10 +122,52 @@
         
             
                 <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
                     <div data-rel="读书">
                         
                         读书
                         <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -154,48 +196,6 @@
                         
                         数据库
                         <small>(5)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="运维">
-                        
-                        运维
-                        <small>(25)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="安全">
-                        
-                        安全
-                        <small>(3)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="开发">
-                        
-                        开发
-                        <small>(14)</small>
                         
                     </div>
                     
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<input type="hidden" id="yelog_site_word_count" value="243.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -983,7 +983,7 @@
     </div>
     <div class="article-meta">
         
-        <span>字数:424</span>
+        <span>字数:454</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1114,11 +1114,55 @@
 </ol>
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/ROS-%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA6.png" alt="img"></p>
 <h2 id="ROS-快速配置"><a href="#ROS-快速配置" class="headerlink" title="ROS 快速配置"></a>ROS 快速配置</h2><hr>
-<h1 id="WDS-安装与配置"><a href="#WDS-安装与配置" class="headerlink" title="WDS 安装与配置"></a>WDS 安装与配置</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">修改主机名</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">修改静态IP</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">关闭防火墙</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">打开远程连接</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装WDS</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">配置WDS()</span></span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<h1 id="WDS-安装与配置"><a href="#WDS-安装与配置" class="headerlink" title="WDS 安装与配置"></a>WDS 安装与配置</h1><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">修改主机名</span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">修改静态IP</span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">关闭防火墙</span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">打开远程连接</span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">安装WDS</span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">配置WDS()</span>
+language-shell复制代码</code></pre>
 
-<h1 id="MDT-安装与配置"><a href="#MDT-安装与配置" class="headerlink" title="MDT 安装与配置"></a>MDT 安装与配置</h1><h2 id="Rules"><a href="#Rules" class="headerlink" title="Rules"></a>Rules</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">[Settings]</span><br><span class="line">Priority=Default</span><br><span class="line">Properties=MyCustomProperty</span><br><span class="line"></span><br><span class="line">[Default]</span><br><span class="line">OSInstall=YES</span><br><span class="line">_SMSTSOrgName=CICCHK</span><br><span class="line">SkipBDDWelcome=YES</span><br><span class="line">SkipCapture=YES</span><br><span class="line">SkipAdminPassword=YES</span><br><span class="line">AdminPassword=XXX</span><br><span class="line">SkipAppsOnUpgrade=YES</span><br><span class="line">SkipProductKey=YES</span><br><span class="line">SkipComputerBackup=YES</span><br><span class="line">SkipBitLocker=YES</span><br><span class="line">SkipComputerName=YES</span><br><span class="line">ComputerName=CICCHK</span><br><span class="line">SkipDomainMembership=YES</span><br><span class="line">SkipTaskSequence=YES</span><br><span class="line">TaskSequenceID=Test</span><br><span class="line">SkipTimeZone=YES</span><br><span class="line">TimeZoneName=China Standard Time</span><br><span class="line">SkipLocaleSelection=YES</span><br><span class="line">KeyboardLocale=en-US</span><br><span class="line">UserLocale=en-US</span><br><span class="line">UILanguage=en-US</span><br><span class="line">SkipLocalSelection=YES</span><br><span class="line">SkipUserData=YES</span><br><span class="line">SkipSummary=YES</span><br><span class="line">HideShell=YES</span><br><span class="line">FinishAction=LOGOFF</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<h1 id="MDT-安装与配置"><a href="#MDT-安装与配置" class="headerlink" title="MDT 安装与配置"></a>MDT 安装与配置</h1><h2 id="Rules"><a href="#Rules" class="headerlink" title="Rules"></a>Rules</h2><pre><code class="hljs shell">[Settings]
+Priority=Default
+Properties=MyCustomProperty
 
-<h2 id="Bootstrap"><a href="#Bootstrap" class="headerlink" title="Bootstrap"></a>Bootstrap</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[Default]</span><br><span class="line">DeployRoot=\\WDS\DeploymentShare$</span><br><span class="line">SkipBDDWelcome=YES</span><br><span class="line">UserDomain=workgroup</span><br><span class="line">UserID=administrator</span><br><span class="line">UserPassword=</span><br><span class="line">KeyboardLocale=en-US</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+[Default]
+OSInstall=YES
+_SMSTSOrgName=CICCHK
+SkipBDDWelcome=YES
+SkipCapture=YES
+SkipAdminPassword=YES
+AdminPassword=XXX
+SkipAppsOnUpgrade=YES
+SkipProductKey=YES
+SkipComputerBackup=YES
+SkipBitLocker=YES
+SkipComputerName=YES
+ComputerName=CICCHK
+SkipDomainMembership=YES
+SkipTaskSequence=YES
+TaskSequenceID=Test
+SkipTimeZone=YES
+TimeZoneName=China Standard Time
+SkipLocaleSelection=YES
+KeyboardLocale=en-US
+UserLocale=en-US
+UILanguage=en-US
+SkipLocalSelection=YES
+SkipUserData=YES
+SkipSummary=YES
+HideShell=YES
+FinishAction=LOGOFF
+language-shell复制代码</code></pre>
+
+<h2 id="Bootstrap"><a href="#Bootstrap" class="headerlink" title="Bootstrap"></a>Bootstrap</h2><pre><code class="hljs shell">[Default]
+DeployRoot=\\WDS\DeploymentShare$
+SkipBDDWelcome=YES
+UserDomain=workgroup
+UserID=administrator
+UserPassword=
+KeyboardLocale=en-US
+language-shell复制代码</code></pre>
 
 <hr>
 

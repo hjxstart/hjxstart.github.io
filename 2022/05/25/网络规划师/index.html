@@ -122,10 +122,52 @@
         
             
                 <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
                     <div data-rel="读书">
                         
                         读书
                         <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -154,48 +196,6 @@
                         
                         数据库
                         <small>(5)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="运维">
-                        
-                        运维
-                        <small>(25)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="安全">
-                        
-                        安全
-                        <small>(3)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="开发">
-                        
-                        开发
-                        <small>(14)</small>
                         
                     </div>
                     
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<input type="hidden" id="yelog_site_word_count" value="243.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -983,7 +983,7 @@
     </div>
     <div class="article-meta">
         
-        <span>字数:402</span>
+        <span>字数:404</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1018,7 +1018,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h1><h2 id="IPv6"><a href="#IPv6" class="headerlink" title="IPv6"></a>IPv6</h2><h3 id="IPv6地址表示方式"><a href="#IPv6地址表示方式" class="headerlink" title="IPv6地址表示方式"></a>IPv6地址表示方式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1、地址压缩方式：中间0可用::压缩；前导0可以压缩；两者可以同时使用；::只能出现一次。</span><br><span class="line">2、地址表示方法：IPv6地址=前缀+接口标识，前缀相当于IPv4的网络ID，接口ID相当于IPv4地址中的主机ID。</span><br><span class="line">3、可聚合全球单播地址：2001::/64, 2002::/64用于IPv6网络中建立6to4隧道地址。（单播地址中，有效地址范围前缀内的IPv6地址的接口标识必须为64位）</span><br><span class="line">4、链路本地地址：FE80::/10</span><br><span class="line">5、站点本地地址：FEC0::/10</span><br><span class="line">6、用于表示不存在的地址：0:0:0:0:0:0:0:0或者::，相当于ipv4的0.0.0.0；未指定地址通常在目的地址还未确定时充当源地址使用。此地址不能分配给接口或者是做目标地址使用。</span><br><span class="line">7、环回接口地址：0:0:0:0:0:0:0:1或者::1，相当于IPv4的127.0.0.1</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <h1 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h1><h2 id="IPv6"><a href="#IPv6" class="headerlink" title="IPv6"></a>IPv6</h2><h3 id="IPv6地址表示方式"><a href="#IPv6地址表示方式" class="headerlink" title="IPv6地址表示方式"></a>IPv6地址表示方式</h3><pre><code class="hljs bash">1、地址压缩方式：中间0可用::压缩；前导0可以压缩；两者可以同时使用；::只能出现一次。
+2、地址表示方法：IPv6地址=前缀+接口标识，前缀相当于IPv4的网络ID，接口ID相当于IPv4地址中的主机ID。
+3、可聚合全球单播地址：2001::/64, 2002::/64用于IPv6网络中建立6to4隧道地址。（单播地址中，有效地址范围前缀内的IPv6地址的接口标识必须为64位）
+4、链路本地地址：FE80::/10
+5、站点本地地址：FEC0::/10
+6、用于表示不存在的地址：0:0:0:0:0:0:0:0或者::，相当于ipv4的0.0.0.0；未指定地址通常在目的地址还未确定时充当源地址使用。此地址不能分配给接口或者是做目标地址使用。
+7、环回接口地址：0:0:0:0:0:0:0:1或者::1，相当于IPv4的127.0.0.1
+</code></pre>
 
 <h3 id="ICMPv6协议"><a href="#ICMPv6协议" class="headerlink" title="ICMPv6协议"></a>ICMPv6协议</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250807110816108.png" alt="ICMPv6协议"></p>
 <p>ICMPv6协议</p>
@@ -1026,7 +1033,10 @@
 <p>NDP协议</p>
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250807111402629.png" alt="报名&amp;功能"></p>
 <p>报名&amp;功能</p>
-<h3 id="IPv6地址配置方法"><a href="#IPv6地址配置方法" class="headerlink" title="IPv6地址配置方法"></a>IPv6地址配置方法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1、手动配置：固定IPv6地址配置。</span><br><span class="line">2、无状态地址自动配置：基于ICMPv6 NDP的自动配置（SLAAC），客户端发送RS（路由器请求），服务端回应RA（路由器通告）中包括IPv6地址信息。</span><br><span class="line">3、有状态地址自动配置：基于DHCPv6的自动配置，需要配置DHCPv6服务。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="IPv6地址配置方法"><a href="#IPv6地址配置方法" class="headerlink" title="IPv6地址配置方法"></a>IPv6地址配置方法</h3><pre><code class="hljs bash">1、手动配置：固定IPv6地址配置。
+2、无状态地址自动配置：基于ICMPv6 NDP的自动配置（SLAAC），客户端发送RS（路由器请求），服务端回应RA（路由器通告）中包括IPv6地址信息。
+3、有状态地址自动配置：基于DHCPv6的自动配置，需要配置DHCPv6服务。
+</code></pre>
 
 <h3 id="IPv6报头结构"><a href="#IPv6报头结构" class="headerlink" title="IPv6报头结构"></a>IPv6报头结构</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250807133009311.png" alt="IPv6报头结构"></p>
 <p>IPv6报头结构</p>

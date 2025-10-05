@@ -122,10 +122,52 @@
         
             
                 <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
                     <div data-rel="读书">
                         
                         读书
                         <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -154,48 +196,6 @@
                         
                         数据库
                         <small>(5)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="运维">
-                        
-                        运维
-                        <small>(25)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="安全">
-                        
-                        安全
-                        <small>(3)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="开发">
-                        
-                        开发
-                        <small>(14)</small>
                         
                     </div>
                     
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<input type="hidden" id="yelog_site_word_count" value="243.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -985,7 +985,7 @@
     </div>
     <div class="article-meta">
         
-        <span>字数:5.8k</span>
+        <span>字数:5.9k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1024,51 +1024,465 @@
 <p>Centos7.9最小安装后初始化</p>
 </blockquote>
 <p>关闭防火墙&#x2F;SELinux&#x2F;配置yum源&#x2F;安装常用软件&#x2F;关闭sshd服务器的DNS</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">disable</span> --now firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> --now postfix</span><br><span class="line">sed -i.bak <span class="string">&#x27;/^SELINUX=/c SELINUX=disabled/&#x27;</span> /etc/selinux/config</span><br><span class="line">setenforce 0</span><br><span class="line"><span class="built_in">cd</span> /etc/yum.repos.d/ </span><br><span class="line"><span class="built_in">mkdir</span> bak </span><br><span class="line"><span class="built_in">mv</span> CentOS-* bak/ </span><br><span class="line">curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.tencent.com/repo/centos7_base.repo</span><br><span class="line">curl -o /etc/yum.repos.d/epel.repo http://mirrors.tencent.com/repo/epel-7.repo</span><br><span class="line">yum install -y tree wget lrzsz vim gdisk lsof net-tools bash-completion autofs yum-utils rsync unzip</span><br><span class="line"><span class="comment"># vim /etc/profile.d/prompt.sh</span></span><br><span class="line">PS1=<span class="string">&quot;\[\e[1;33m\][\u@\h \W]\[\e[0m\]\\$ &quot;</span> </span><br><span class="line"><span class="built_in">alias</span> cgrep=<span class="string">&quot;egrep -v &#x27;^(#|$)&#x27;&quot;</span> </span><br><span class="line"><span class="built_in">alias</span> nt=<span class="string">&#x27;netstat -tnlp&#x27;</span> </span><br><span class="line"><span class="built_in">alias</span> ntu=<span class="string">&#x27;netstat -tnlpu&#x27;</span> </span><br><span class="line"><span class="built_in">alias</span> cdnet=<span class="string">&#x27;cd /etc/sysconfig/network-scripts/&#x27;</span></span><br><span class="line"><span class="comment"># vi /etc/ssh/sshd_config # UseDNS no</span></span><br><span class="line"><span class="comment"># 制作快照 shutdown -h now</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">systemctl <span class="hljs-built_in">disable</span> --now firewalld
+systemctl <span class="hljs-built_in">disable</span> --now postfix
+sed -i.bak <span class="hljs-string">&#x27;/^SELINUX=/c SELINUX=disabled/&#x27;</span> /etc/selinux/config
+setenforce 0
+<span class="hljs-built_in">cd</span> /etc/yum.repos.d/ 
+<span class="hljs-built_in">mkdir</span> bak 
+<span class="hljs-built_in">mv</span> CentOS-* bak/ 
+curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.tencent.com/repo/centos7_base.repo
+curl -o /etc/yum.repos.d/epel.repo http://mirrors.tencent.com/repo/epel-7.repo
+yum install -y tree wget lrzsz vim gdisk lsof net-tools bash-completion autofs yum-utils rsync unzip
+<span class="hljs-comment"># vim /etc/profile.d/prompt.sh</span>
+PS1=<span class="hljs-string">&quot;\[\e[1;33m\][\u@\h \W]\[\e[0m\]\\$ &quot;</span> 
+<span class="hljs-built_in">alias</span> cgrep=<span class="hljs-string">&quot;egrep -v &#x27;^(#|$)&#x27;&quot;</span> 
+<span class="hljs-built_in">alias</span> nt=<span class="hljs-string">&#x27;netstat -tnlp&#x27;</span> 
+<span class="hljs-built_in">alias</span> ntu=<span class="hljs-string">&#x27;netstat -tnlpu&#x27;</span> 
+<span class="hljs-built_in">alias</span> cdnet=<span class="hljs-string">&#x27;cd /etc/sysconfig/network-scripts/&#x27;</span>
+<span class="hljs-comment"># vi /etc/ssh/sshd_config # UseDNS no</span>
+<span class="hljs-comment"># 制作快照 shutdown -h now</span>
+</code></pre>
 
 <hr>
 <h3 id="1-2-安装和配置TFTP服务"><a href="#1-2-安装和配置TFTP服务" class="headerlink" title="1.2 安装和配置TFTP服务"></a>1.2 安装和配置TFTP服务</h3><blockquote>
 <p>安装tftp和xinetd</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">yum install -y tftp-server.x86_64 xinetd</span><br><span class="line">rpm -ql tftp-server</span><br><span class="line">systemctl <span class="built_in">enable</span> --now tftp</span><br><span class="line">systemctl <span class="built_in">enable</span> --now xinetd</span><br><span class="line">netstat -tnlpu | grep 69</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">yum install -y tftp-server.x86_64 xinetd
+rpm -ql tftp-server
+systemctl <span class="hljs-built_in">enable</span> --now tftp
+systemctl <span class="hljs-built_in">enable</span> --now xinetd
+netstat -tnlpu | grep 69
+</code></pre>
 
 <blockquote>
 <p>修改配置文件</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> /var/lib/tftpboot/grub</span><br><span class="line"><span class="built_in">mkdir</span> /var/lib/tftpboot/kernel</span><br><span class="line"><span class="built_in">chmod</span> -R 757  /var/lib/tftpboot/</span><br><span class="line">sed -i.bak <span class="string">&#x27;/args/s/$/ -c/&#x27;</span> /etc/xinetd.d/tftp</span><br><span class="line">sed -i <span class="string">&#x27;14s#yes#no#&#x27;</span> /etc/xinetd.d/tftp</span><br><span class="line">systemctl restart xinetd</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-built_in">mkdir</span> /var/lib/tftpboot/grub
+<span class="hljs-built_in">mkdir</span> /var/lib/tftpboot/kernel
+<span class="hljs-built_in">chmod</span> -R 757  /var/lib/tftpboot/
+sed -i.bak <span class="hljs-string">&#x27;/args/s/$/ -c/&#x27;</span> /etc/xinetd.d/tftp
+sed -i <span class="hljs-string">&#x27;14s#yes#no#&#x27;</span> /etc/xinetd.d/tftp
+systemctl restart xinetd
+</code></pre>
 
 
 
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250915113233791.png" alt="img"></p>
-<h3 id="1-3-安装和配置DHCP服务"><a href="#1-3-安装和配置DHCP服务" class="headerlink" title="1.3 安装和配置DHCP服务"></a>1.3 安装和配置DHCP服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装DHCP</span></span><br><span class="line">yum install -y dhcp</span><br><span class="line"></span><br><span class="line"><span class="comment"># 拷贝dhcpd.conf模版文件</span></span><br><span class="line"><span class="built_in">cat</span> /etc/dhcp/dhcpd.conf</span><br><span class="line"><span class="built_in">cp</span> /usr/share/doc/dhcp-4.2.5/dhcpd.conf.example /etc/dhcp/dhcpd.conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># 编辑dhcpd配置文件：vi /etc/dhcp/dhcpd.conf。其他配置可以删除</span></span><br><span class="line">option domain-name <span class="string">&quot;baidu.com&quot;</span>;</span><br><span class="line">option domain-name-servers 180.76.76.76、opt,119.29.29.29,223.5.5.5;</span><br><span class="line"></span><br><span class="line">log-facility local7; <span class="comment"># 这行配置下</span></span><br><span class="line">next-server 192.168.14.5;</span><br><span class="line">filename <span class="string">&quot;/grub/bootx64.efi&quot;</span>;</span><br><span class="line"></span><br><span class="line">subnet 192.168.14.0 netmask 255.255.255.0 &#123;</span><br><span class="line">  range 192.168.14.100 192.168.14.200;</span><br><span class="line">  option routers 192.168.14.1;</span><br><span class="line">  filename <span class="string">&quot;/grub/grubx64.efi&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">host tftp &#123;</span><br><span class="line">  hardware ethernet 00:0c:29:9d:f7:50;</span><br><span class="line">  fixed-address 192.168.35.5;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">#end</span></span><br><span class="line">systemctl <span class="built_in">enable</span> --now dhcpd</span><br><span class="line"><span class="comment"># 查看日志</span></span><br><span class="line"><span class="built_in">tail</span> -f /var/log/messages</span><br><span class="line"><span class="comment"># DHCP数据库文件</span></span><br><span class="line"><span class="built_in">cat</span> /var/lib/dhcpd/dhcpd.leases</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="1-3-安装和配置DHCP服务"><a href="#1-3-安装和配置DHCP服务" class="headerlink" title="1.3 安装和配置DHCP服务"></a>1.3 安装和配置DHCP服务</h3><pre><code class="hljs bash"><span class="hljs-comment"># 安装DHCP</span>
+yum install -y dhcp
+
+<span class="hljs-comment"># 拷贝dhcpd.conf模版文件</span>
+<span class="hljs-built_in">cat</span> /etc/dhcp/dhcpd.conf
+<span class="hljs-built_in">cp</span> /usr/share/doc/dhcp-4.2.5/dhcpd.conf.example /etc/dhcp/dhcpd.conf
+
+<span class="hljs-comment"># 编辑dhcpd配置文件：vi /etc/dhcp/dhcpd.conf。其他配置可以删除</span>
+option domain-name <span class="hljs-string">&quot;baidu.com&quot;</span>;
+option domain-name-servers 180.76.76.76、opt,119.29.29.29,223.5.5.5;
+
+log-facility local7; <span class="hljs-comment"># 这行配置下</span>
+next-server 192.168.14.5;
+filename <span class="hljs-string">&quot;/grub/bootx64.efi&quot;</span>;
+
+subnet 192.168.14.0 netmask 255.255.255.0 &#123;
+  range 192.168.14.100 192.168.14.200;
+  option routers 192.168.14.1;
+  filename <span class="hljs-string">&quot;/grub/grubx64.efi&quot;</span>;
+&#125;
+
+host tftp &#123;
+  hardware ethernet 00:0c:29:9d:f7:50;
+  fixed-address 192.168.35.5;
+&#125;
+<span class="hljs-comment">#end</span>
+systemctl <span class="hljs-built_in">enable</span> --now dhcpd
+<span class="hljs-comment"># 查看日志</span>
+<span class="hljs-built_in">tail</span> -f /var/log/messages
+<span class="hljs-comment"># DHCP数据库文件</span>
+<span class="hljs-built_in">cat</span> /var/lib/dhcpd/dhcpd.leases
+</code></pre>
 
 
 
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250915111202236.png" alt="img"></p>
-<h3 id="1-4-安装和配置HTTP服务"><a href="#1-4-安装和配置HTTP服务" class="headerlink" title="1.4 安装和配置HTTP服务"></a>1.4 安装和配置HTTP服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">yum install -y httpd</span><br><span class="line">systemctl <span class="built_in">enable</span> --now httpd</span><br><span class="line">sed -i.bak <span class="string">&#x27;/#ServerName/aServerName localhost:80&#x27;</span> /etc/httpd/conf/httpd.conf</span><br><span class="line">systemctl restart httpd</span><br><span class="line">systemctl status httpd -l</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建相关目录</span></span><br><span class="line"><span class="built_in">mkdir</span> -p /var/www/html/iso/src</span><br><span class="line"></span><br><span class="line"><span class="built_in">mkdir</span> -p /var/www/html/ks/disk</span><br><span class="line"><span class="built_in">mkdir</span> -p /var/www/html/ks/Other</span><br><span class="line"><span class="built_in">mkdir</span> -p /var/www/html/ks/project</span><br><span class="line"><span class="built_in">mkdir</span> -p /var/www/html/ks/r</span><br><span class="line"><span class="built_in">mkdir</span> -p /var/www/html/ks/u</span><br><span class="line"></span><br><span class="line"><span class="built_in">mkdir</span> -p /var/www/html/src</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="1-4-安装和配置HTTP服务"><a href="#1-4-安装和配置HTTP服务" class="headerlink" title="1.4 安装和配置HTTP服务"></a>1.4 安装和配置HTTP服务</h3><pre><code class="hljs bash">yum install -y httpd
+systemctl <span class="hljs-built_in">enable</span> --now httpd
+sed -i.bak <span class="hljs-string">&#x27;/#ServerName/aServerName localhost:80&#x27;</span> /etc/httpd/conf/httpd.conf
+systemctl restart httpd
+systemctl status httpd -l
+
+<span class="hljs-comment"># 创建相关目录</span>
+<span class="hljs-built_in">mkdir</span> -p /var/www/html/iso/src
+
+<span class="hljs-built_in">mkdir</span> -p /var/www/html/ks/disk
+<span class="hljs-built_in">mkdir</span> -p /var/www/html/ks/Other
+<span class="hljs-built_in">mkdir</span> -p /var/www/html/ks/project
+<span class="hljs-built_in">mkdir</span> -p /var/www/html/ks/r
+<span class="hljs-built_in">mkdir</span> -p /var/www/html/ks/u
+
+<span class="hljs-built_in">mkdir</span> -p /var/www/html/src
+</code></pre>
 
 <h3 id="1-5-Client需要启动的文件"><a href="#1-5-Client需要启动的文件" class="headerlink" title="1.5 Client需要启动的文件"></a>1.5 Client需要启动的文件</h3><blockquote>
 <p>Ubuntu2204系统样例</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##  实现UEFI SecureBoot的bootx64.efi；启动引导文件grubx64.efi；菜单文件grub.cfg</span></span><br><span class="line">apt-get download grub-efi-amd64-signed</span><br><span class="line"><span class="built_in">mkdir</span> grub</span><br><span class="line">dpkg -x grub-efi-amd64-signed_1.187.6xxxxx_amd64.deb grub</span><br><span class="line"><span class="comment"># 下载 grubnetx64.efi.signed 文件到pxe的/var/lib/tftpboot/grub/grubx64.efi</span></span><br><span class="line"><span class="comment"># grub/usr/lib/grub/x86_64-efi-signed/grubnetx64.efi.signed </span></span><br><span class="line">scp grub/usr/lib/grub/x86_64-efi-signed/grubnetx64.efi.signed  root@192.168.35.5:/var/lib/tftpboot/grub/grubx64.efi</span><br><span class="line"></span><br><span class="line"><span class="comment">## Ubuntu2204系统下载shim.signed(UEFI SecureBoot的bootx64.efi)文件</span></span><br><span class="line">apt-get download shim.signed</span><br><span class="line"><span class="built_in">mkdir</span> shim</span><br><span class="line">dpkg -x shim-signed_1.51.4+15.8-0ubuntu1_amd64.deb shim</span><br><span class="line"><span class="comment"># 将shim/usr/lib/shim/shimx64.efi.signed.latest文件拷贝到pxe的/var/lib/tftpboot/grub/bootx64.efi</span></span><br><span class="line">scp shim/usr/lib/shim/shimx64.efi.signed.latesls</span><br><span class="line"></span><br><span class="line">t root@192.168.35.5:/var/lib/tftpboot/grub/bootx64.efi</span><br><span class="line"></span><br><span class="line"><span class="comment">## Ubuntu2204镜像找到/boot/grub/grub.cfg文件</span></span><br><span class="line"><span class="comment">#传到PXE /var/lib/tftpboot/grub目录中</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment">##  实现UEFI SecureBoot的bootx64.efi；启动引导文件grubx64.efi；菜单文件grub.cfg</span>
+apt-get download grub-efi-amd64-signed
+<span class="hljs-built_in">mkdir</span> grub
+dpkg -x grub-efi-amd64-signed_1.187.6xxxxx_amd64.deb grub
+<span class="hljs-comment"># 下载 grubnetx64.efi.signed 文件到pxe的/var/lib/tftpboot/grub/grubx64.efi</span>
+<span class="hljs-comment"># grub/usr/lib/grub/x86_64-efi-signed/grubnetx64.efi.signed </span>
+scp grub/usr/lib/grub/x86_64-efi-signed/grubnetx64.efi.signed  root@192.168.35.5:/var/lib/tftpboot/grub/grubx64.efi
+
+<span class="hljs-comment">## Ubuntu2204系统下载shim.signed(UEFI SecureBoot的bootx64.efi)文件</span>
+apt-get download shim.signed
+<span class="hljs-built_in">mkdir</span> shim
+dpkg -x shim-signed_1.51.4+15.8-0ubuntu1_amd64.deb shim
+<span class="hljs-comment"># 将shim/usr/lib/shim/shimx64.efi.signed.latest文件拷贝到pxe的/var/lib/tftpboot/grub/bootx64.efi</span>
+scp shim/usr/lib/shim/shimx64.efi.signed.latesls
+
+t root@192.168.35.5:/var/lib/tftpboot/grub/bootx64.efi
+
+<span class="hljs-comment">## Ubuntu2204镜像找到/boot/grub/grub.cfg文件</span>
+<span class="hljs-comment">#传到PXE /var/lib/tftpboot/grub目录中</span>
+</code></pre>
 
 <hr>
 <h3 id="1-6-grub启动菜单的美化"><a href="#1-6-grub启动菜单的美化" class="headerlink" title="1.6 grub启动菜单的美化"></a>1.6 grub启动菜单的美化</h3><p><a target="_blank" rel="noopener" href="https://hugh712.gitbooks.io/grub/content/configuration-parameters.html">gfxterm文档</a></p>
 <blockquote>
 <p>&#x2F;var&#x2F;lib&#x2F;tftpboot&#x2F;grub&#x2F;grub.cfg</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 颜色</span></span><br><span class="line"><span class="comment"># 未选中菜单项的颜色，菜单框背景颜色</span></span><br><span class="line"><span class="built_in">set</span> menu_color_normal=white/cyan</span><br><span class="line"><span class="comment"># 突出显示的菜单项的颜色及其在菜单框中的背景</span></span><br><span class="line"><span class="built_in">set</span> menu_color_highlight=yellow/blue</span><br><span class="line"><span class="comment"># 指定菜单框外文字的前景色和背景色</span></span><br><span class="line"><span class="built_in">set</span> color_normal=yellow/black</span><br><span class="line"></span><br><span class="line"><span class="comment">## 字体下载链接(dejavu-fonts-ttf-2.37.zip) https://dejavu-fonts.github.io/Download.html</span></span><br><span class="line"><span class="comment">## 准备工作</span></span><br><span class="line"><span class="comment"># wget https://dejavu-fonts.github.io/Download.html</span></span><br><span class="line"><span class="comment"># unzip dejavu-fonts-ttf-2.37.zip </span></span><br><span class="line"><span class="comment"># grub2-mkfont -s 23 -o dejavu-sans-mono.pf2 dejavu-fonts-ttf-2.37/ttf/DejaVuSansMono.ttf</span></span><br><span class="line"><span class="comment"># rm -rf dejavu-fonts-ttf-2.37*</span></span><br><span class="line"><span class="comment">##字体</span></span><br><span class="line">loadfont /grub/dejavu-sans-mono.pf2</span><br><span class="line">terminal_output gfxterm</span><br><span class="line"></span><br><span class="line"><span class="comment">##grub菜单的 menuentry 说明</span></span><br><span class="line">menuentry <span class="string">&quot;title&quot;</span> [--class-class ..] [--<span class="built_in">users</span>=<span class="built_in">users</span>] [--unrestricted] [--hotkey-key] [--<span class="built_in">id</span>=<span class="built_in">id</span>] [arg...] &#123;<span class="built_in">command</span>; ...&#125;</span><br><span class="line"><span class="comment"># linux加载内核文件，initrd加载虚拟根文件；</span></span><br><span class="line"><span class="comment"># linux和linuxefi是一样的，initrd和initrdefi是一样的</span></span><br><span class="line"><span class="comment"># 内核文件/var/lib/tftpboot/kernel/&#123;Kylin&#125;</span></span><br><span class="line"><span class="comment"># R系列；/images/pxeboot/目录下的vmlinuz 和 initrd.img，镜像需要挂载在目录上。</span></span><br><span class="line">menuentry --hotkey=c <span class="string">&quot;c  Centos7.9&quot;</span> &#123;</span><br><span class="line">        <span class="built_in">set</span> gfxpayload=keep</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&quot;Loading Centos7.9 Kernel...&quot;</span></span><br><span class="line">        linux kernel/Centos7.9/vmlinuz inst.repo=<span class="string">&quot;http://<span class="variable">$&#123;IP&#125;</span>/iso/Centos7.9&quot;</span> inst.ks=<span class="string">&quot;http://<span class="variable">$&#123;IP&#125;</span>/ks/Centos7.9.cfg&quot;</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&quot;Loading Centos7.9 RamDisk...&quot;</span></span><br><span class="line">        initrd kernel/Centos7.9/initrd.img</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># U系列，/casper/目录下的vmlinuz 和 initrd.img，镜像只需要放在目录上。</span></span><br><span class="line">menuentry --hotkey=u <span class="string">&quot;u  Ubuntu2204&quot;</span> &#123;</span><br><span class="line">        <span class="built_in">set</span> gfxpayload=keep</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&quot;Loading Ubuntu2204 Kernel...&quot;</span></span><br><span class="line">	linux kernel/Ubuntu2204/vmlinuz ip=dhcp url=<span class="string">&quot;http://<span class="variable">$&#123;IP&#125;</span>/iso/src/Ubuntu2204.iso&quot;</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&quot;Loading Ubuntu2204 RamDisk...&quot;</span></span><br><span class="line">        initrd kernel/Ubuntu2204/initrd.img</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># 子菜单</span></span><br><span class="line">submenu --hotkey=a <span class="string">&#x27;a  Other Version System...&#x27;</span> &#123;</span><br><span class="line">        <span class="built_in">set</span> IP=192.168.35.5</span><br><span class="line">        <span class="built_in">set</span> menu_color_normal=white/black</span><br><span class="line">        <span class="built_in">set</span> menu_color_highlight=yellow/black</span><br><span class="line">        <span class="built_in">set</span> color_normal=light-magenta/black</span><br><span class="line">        <span class="built_in">source</span> /grub/KylinServer.cfg</span><br><span class="line">        <span class="built_in">source</span> /grub/KylinDesktop.cfg</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">## 其他</span></span><br><span class="line"><span class="comment"># 进入系统</span></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$grub_platform</span>&quot;</span> = <span class="string">&quot;efi&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">menuentry --hotkey=n <span class="string">&#x27;n  Boot from next volume&#x27;</span> &#123;</span><br><span class="line">        <span class="built_in">exit</span> 1</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># 进入Bios设置</span></span><br><span class="line">menuentry --hotkey=u <span class="string">&#x27;u  UEFI Firmware Settings&#x27;</span> &#123;</span><br><span class="line">        fwsetup</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># 关机和重启</span></span><br><span class="line">menuentry --hotkey=h <span class="string">&#x27;h  halt&#x27;</span> &#123; halt &#125;</span><br><span class="line">menuentry --hotkey=r <span class="string">&#x27;r  reboot&#x27;</span> &#123; reboot &#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">menuentry <span class="string">&#x27;Test memory&#x27;</span> &#123;</span><br><span class="line">        linux16 /boot/memtest86+.bin</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment">## 颜色</span>
+<span class="hljs-comment"># 未选中菜单项的颜色，菜单框背景颜色</span>
+<span class="hljs-built_in">set</span> menu_color_normal=white/cyan
+<span class="hljs-comment"># 突出显示的菜单项的颜色及其在菜单框中的背景</span>
+<span class="hljs-built_in">set</span> menu_color_highlight=yellow/blue
+<span class="hljs-comment"># 指定菜单框外文字的前景色和背景色</span>
+<span class="hljs-built_in">set</span> color_normal=yellow/black
+
+<span class="hljs-comment">## 字体下载链接(dejavu-fonts-ttf-2.37.zip) https://dejavu-fonts.github.io/Download.html</span>
+<span class="hljs-comment">## 准备工作</span>
+<span class="hljs-comment"># wget https://dejavu-fonts.github.io/Download.html</span>
+<span class="hljs-comment"># unzip dejavu-fonts-ttf-2.37.zip </span>
+<span class="hljs-comment"># grub2-mkfont -s 23 -o dejavu-sans-mono.pf2 dejavu-fonts-ttf-2.37/ttf/DejaVuSansMono.ttf</span>
+<span class="hljs-comment"># rm -rf dejavu-fonts-ttf-2.37*</span>
+<span class="hljs-comment">##字体</span>
+loadfont /grub/dejavu-sans-mono.pf2
+terminal_output gfxterm
+
+<span class="hljs-comment">##grub菜单的 menuentry 说明</span>
+menuentry <span class="hljs-string">&quot;title&quot;</span> [--class-class ..] [--<span class="hljs-built_in">users</span>=<span class="hljs-built_in">users</span>] [--unrestricted] [--hotkey-key] [--<span class="hljs-built_in">id</span>=<span class="hljs-built_in">id</span>] [arg...] &#123;<span class="hljs-built_in">command</span>; ...&#125;
+<span class="hljs-comment"># linux加载内核文件，initrd加载虚拟根文件；</span>
+<span class="hljs-comment"># linux和linuxefi是一样的，initrd和initrdefi是一样的</span>
+<span class="hljs-comment"># 内核文件/var/lib/tftpboot/kernel/&#123;Kylin&#125;</span>
+<span class="hljs-comment"># R系列；/images/pxeboot/目录下的vmlinuz 和 initrd.img，镜像需要挂载在目录上。</span>
+menuentry --hotkey=c <span class="hljs-string">&quot;c  Centos7.9&quot;</span> &#123;
+        <span class="hljs-built_in">set</span> gfxpayload=keep
+        <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Loading Centos7.9 Kernel...&quot;</span>
+        linux kernel/Centos7.9/vmlinuz inst.repo=<span class="hljs-string">&quot;http://<span class="hljs-variable">$&#123;IP&#125;</span>/iso/Centos7.9&quot;</span> inst.ks=<span class="hljs-string">&quot;http://<span class="hljs-variable">$&#123;IP&#125;</span>/ks/Centos7.9.cfg&quot;</span>
+        <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Loading Centos7.9 RamDisk...&quot;</span>
+        initrd kernel/Centos7.9/initrd.img
+&#125;
+<span class="hljs-comment"># U系列，/casper/目录下的vmlinuz 和 initrd.img，镜像只需要放在目录上。</span>
+menuentry --hotkey=u <span class="hljs-string">&quot;u  Ubuntu2204&quot;</span> &#123;
+        <span class="hljs-built_in">set</span> gfxpayload=keep
+        <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Loading Ubuntu2204 Kernel...&quot;</span>
+	linux kernel/Ubuntu2204/vmlinuz ip=dhcp url=<span class="hljs-string">&quot;http://<span class="hljs-variable">$&#123;IP&#125;</span>/iso/src/Ubuntu2204.iso&quot;</span>
+        <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Loading Ubuntu2204 RamDisk...&quot;</span>
+        initrd kernel/Ubuntu2204/initrd.img
+&#125;
+<span class="hljs-comment"># 子菜单</span>
+submenu --hotkey=a <span class="hljs-string">&#x27;a  Other Version System...&#x27;</span> &#123;
+        <span class="hljs-built_in">set</span> IP=192.168.35.5
+        <span class="hljs-built_in">set</span> menu_color_normal=white/black
+        <span class="hljs-built_in">set</span> menu_color_highlight=yellow/black
+        <span class="hljs-built_in">set</span> color_normal=light-magenta/black
+        <span class="hljs-built_in">source</span> /grub/KylinServer.cfg
+        <span class="hljs-built_in">source</span> /grub/KylinDesktop.cfg
+&#125;
+<span class="hljs-comment">## 其他</span>
+<span class="hljs-comment"># 进入系统</span>
+<span class="hljs-keyword">if</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$grub_platform</span>&quot;</span> = <span class="hljs-string">&quot;efi&quot;</span> ]; <span class="hljs-keyword">then</span>
+menuentry --hotkey=n <span class="hljs-string">&#x27;n  Boot from next volume&#x27;</span> &#123;
+        <span class="hljs-built_in">exit</span> 1
+&#125;
+<span class="hljs-comment"># 进入Bios设置</span>
+menuentry --hotkey=u <span class="hljs-string">&#x27;u  UEFI Firmware Settings&#x27;</span> &#123;
+        fwsetup
+&#125;
+<span class="hljs-comment"># 关机和重启</span>
+menuentry --hotkey=h <span class="hljs-string">&#x27;h  halt&#x27;</span> &#123; halt &#125;
+menuentry --hotkey=r <span class="hljs-string">&#x27;r  reboot&#x27;</span> &#123; reboot &#125;
+<span class="hljs-keyword">else</span>
+menuentry <span class="hljs-string">&#x27;Test memory&#x27;</span> &#123;
+        linux16 /boot/memtest86+.bin
+&#125;
+<span class="hljs-keyword">fi</span>
+</code></pre>
 
 <hr>
 <h2 id="麒麟"><a href="#麒麟" class="headerlink" title="麒麟"></a>麒麟</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><h3 id="服务器-RedHat系"><a href="#服务器-RedHat系" class="headerlink" title="服务器 (RedHat系)"></a>服务器 (RedHat系)</h3><blockquote>
 <p>ks.confg</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#version=DEVEL</span></span><br><span class="line"><span class="comment"># Use graphical install</span></span><br><span class="line">text</span><br><span class="line"><span class="comment">#graphical</span></span><br><span class="line"></span><br><span class="line">%packages</span><br><span class="line"><span class="comment">## 带UKUI GUI的服务器</span></span><br><span class="line">@^kylin-desktop-environment</span><br><span class="line"><span class="comment">#@container-management # 容器管理，用于管理Linux容器的工具。</span></span><br><span class="line"><span class="comment">#@debugging # 调试工具，调试行为异常程序以及诊断性能问题的工具。</span></span><br><span class="line"><span class="comment">#@development # 开发工具，基本开发环境。</span></span><br><span class="line"><span class="comment">#@dns-server # DNS名称服务器，该软件包组允许您在系统上运行DNS名称服务器（BIND）。</span></span><br><span class="line"><span class="comment">#@file-server # 文件及存储服务器，CIFS，SMB，NFS，iSCSI，iSER及iSNS网络存储服务器。</span></span><br><span class="line"><span class="comment">#@ftp-server # FTP服务器，这些工具允许您在系统上运行FTP服务器。</span></span><br><span class="line"><span class="comment">#@gnome-apps # GNOME应用程序，一组经常使用的GNOME应用程序。</span></span><br><span class="line"><span class="comment">#@headless-management # 无图形终端系统管理工具，用于管理无图像终端系统的工具。</span></span><br><span class="line"><span class="comment">#@infiniband # Infiniband支持，该软件旨在使用基于RDMA的InfiniBand，iWARP，RoCE和OPS架构来支持集群，网络连接和低延迟，高带宽存储。</span></span><br><span class="line">@kysecurity-SDK <span class="comment"># 安全套件SDK，安全套件SDK。</span></span><br><span class="line"><span class="comment">#@kysecurity-enhance # 麒麟安全增强工具，麒麟软件安全增强工具。</span></span><br><span class="line"><span class="comment">#@legacy-unix # 传统UNIX兼容性。</span></span><br><span class="line"><span class="comment">#@legacy-x # 传统X Windows系统的兼容性，用于从继承X Windows环境中迁移或者可用于该环境的兼容程序。</span></span><br><span class="line"><span class="comment">#@mail-server # 邮件服务器，这些软件包运行您配置IMAP或Postfix邮件服务器</span></span><br><span class="line">@man-help <span class="comment"># Man手册，Man手册帮助系统</span></span><br><span class="line"><span class="comment">#@performance # 性能工具，诊断系统和程序级别性能问题的工具。</span></span><br><span class="line"><span class="comment">#@remote-desktop-clients # 远程桌面客户端，远程桌面软件。</span></span><br><span class="line"><span class="comment">#@remote-desktop-servers # 远程桌面服务端，远端桌面服务端软件。</span></span><br><span class="line"><span class="comment">#@remote-system-management # Linux的远程管理，Linux的远程管理界面。</span></span><br><span class="line"><span class="comment">#@scientific # 科学计数法支持</span></span><br><span class="line"><span class="comment">#@security-tools # 安全性工具，用于完整性和可信验证的安全性工具。</span></span><br><span class="line"><span class="comment">#@smart-card # 智能卡支持，支持使用智能卡验证。</span></span><br><span class="line"><span class="comment">#@smb-server # 文件及存储服务器，CIFS，SMB，NFS，iSCSI，iSER及iSNS网络存储服务器。</span></span><br><span class="line"><span class="comment">#@system-tools # 系统工具，这组软件包是各类系统工具的集合，如：连接SMB共享的客户；监控网络交通的工具。</span></span><br><span class="line"><span class="comment">#@virtualization-hypervisor # 虚拟化 Hypervisor，最小的虚拟化主机安装。</span></span><br><span class="line"><span class="comment">#@virtualization-tools # 虚拟化工具，用于离线虚拟映像管理的工具。</span></span><br><span class="line"><span class="comment">#@web-server # 基本网页服务器，这些工具运行您在系统上运行万维网服务器。</span></span><br><span class="line">%end</span><br><span class="line"></span><br><span class="line"><span class="comment"># Keyboard layouts 键盘布局</span></span><br><span class="line">keyboard --xlayouts=<span class="string">&#x27;cn&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># System language</span></span><br><span class="line">lang zh_CN.UTF-8 --addsupport=en_US.UTF-8</span><br><span class="line"></span><br><span class="line"><span class="comment"># Network information 网络信息</span></span><br><span class="line">network  --bootproto=dhcp --onboot=on --onboot=on --ipv6=auto --activate --hostname=kylin.cn</span><br><span class="line"></span><br><span class="line"><span class="comment"># Use CDROM installation mdedia</span></span><br><span class="line"><span class="comment">#url --url=http://192.168.35.5/iso/ks-v10-sp3-20240626-x86_64/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Run the Setup Agent on first boot</span></span><br><span class="line">firstboot --<span class="built_in">disable</span></span><br><span class="line">selinux --<span class="built_in">disable</span> <span class="comment"># selinux禁用</span></span><br><span class="line">firewall --<span class="built_in">disable</span> <span class="comment"># 防火墙禁用</span></span><br><span class="line">reboot <span class="comment"># 部署后重启</span></span><br><span class="line">eula --agreed <span class="comment"># 同意协议</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># System services</span></span><br><span class="line"><span class="comment">#service --enable=&quot;chronyd&quot;</span></span><br><span class="line">services --enabled=<span class="string">&quot;chronyd&quot;</span> --disabled=<span class="string">&quot;avahi-daemon,rpcbind,cpus,libvirtd.service,postfix.service&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#ignoredisk --only-use=sda</span></span><br><span class="line"><span class="comment"># Partition clearing information</span></span><br><span class="line"><span class="comment"># clearpart --none --initlabel</span></span><br><span class="line">zerombr</span><br><span class="line">clearpart --all --initlabel</span><br><span class="line"><span class="comment"># Disk partitioning information</span></span><br><span class="line">%include /tmp/sda-nvme.txt</span><br><span class="line"></span><br><span class="line"><span class="comment">## 必须加上这句话，不然无法启动桌面</span></span><br><span class="line">xconfig --startxonboot</span><br><span class="line"></span><br><span class="line"><span class="comment">## System timezone 系统时区</span></span><br><span class="line"><span class="comment"># timesource --ntp-pool=ntp1.aliyun.com</span></span><br><span class="line"><span class="comment">#timesource --ntp-pool=ntp.ntsc.ac.cn</span></span><br><span class="line">timezone Asia/Shanghai --utc</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置Root password，明文是 Kylin@123</span></span><br><span class="line"><span class="comment"># python -c &#x27;import crypt,getpass;pw=getpass.getpass();print(crypt.crypt(pw) if (pw==getpass.getpass(&quot;Confirm: &quot;)) else exit())&#x27;</span></span><br><span class="line">rootpw --iscrypted $6<span class="variable">$kP</span>.a8Tx6yG7O53JN<span class="variable">$cinUa46WrKnRSy1ifhpzwyd4x3DuXE7lFIs5FzduZ6gUvEX</span>/.wJRC0mWDrV15Io2IGxtkeZy0cOwjnRFmZ/pJ0</span><br><span class="line"></span><br><span class="line"><span class="comment">## 创建普通 kylin 用户, 密码明文是 Kylin@123</span></span><br><span class="line">user --name=kylin --password=$6<span class="variable">$kP</span>.a8Tx6yG7O53JN<span class="variable">$cinUa46WrKnRSy1ifhpzwyd4x3DuXE7lFIs5FzduZ6gUvEX</span>/.wJRC0mWDrV15Io2IGxtkeZy0cOwjnRFmZ/pJ0 --iscrypted --gecos=<span class="string">&quot;kylin&quot;</span></span><br><span class="line"><span class="comment"># --groups=whell</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## addon指定附加组件，常用来配置KDUMP。购买了许可，出现了内核崩溃，可以联系技术人员会付费解决该问题</span></span><br><span class="line">%addon com_redhat_kdump --<span class="built_in">disable</span> --reserve-mb=<span class="string">&#x27;1024M&#x27;</span></span><br><span class="line">%end</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## 控制系统的安装界面;pwpolicy:设置密码策略</span></span><br><span class="line">%anaconda</span><br><span class="line">pwpolicy root --minlen=8 --minquality=1 --strict --nochanges --notempty</span><br><span class="line">pwpolicy user --minlen=8 --minquality=1 --strict --nochanges --emptyok</span><br><span class="line">pwpolicy luks --minlen=8 --minquality=1 --strict --nochanges --notempty</span><br><span class="line">%end</span><br><span class="line"></span><br><span class="line"><span class="comment">## 安装系统前检查，并生成 /tmp/sda-nvme.txt</span></span><br><span class="line">%pre</span><br><span class="line"><span class="comment">#       %include http://192.168.14.5/ks/disk/ks-sda-nvme-standard.cfg</span></span><br><span class="line">       %include http://192.168.14.5/ks/disk/ks-sda-nvme-lvm.cfg</span><br><span class="line">%end</span><br><span class="line"></span><br><span class="line"><span class="comment">## 安装后的操作</span></span><br><span class="line">%post --interpreter=/usr/bin/bash --<span class="built_in">log</span>=/root/ks-post.log</span><br><span class="line"></span><br><span class="line"><span class="built_in">cat</span> &gt; /etc/yum.repos.d/local.repo &lt;&lt;<span class="string">EOF</span></span><br><span class="line"><span class="string">[local]</span></span><br><span class="line"><span class="string">name=local</span></span><br><span class="line"><span class="string">baseurl=http://192.168.14.5/iso/ks-v10-sp3-20240626-x86_64/</span></span><br><span class="line"><span class="string">gpgcheck=0</span></span><br><span class="line"><span class="string">#gpgkey=http://192.168.14.5/iso/ks-v10-sp3-20240626-x86_64/RPM-GPG-KEY</span></span><br><span class="line"><span class="string">#/etc/pki/rpm-ggp/RPM-GPG-KEY-kylin</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"></span><br><span class="line">%include http://192.168.14.5/ks/Other/sub-ks-v10-sp3-20240626-x86_64-gui.ks</span><br><span class="line">%end</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment">#version=DEVEL</span>
+<span class="hljs-comment"># Use graphical install</span>
+text
+<span class="hljs-comment">#graphical</span>
+
+%packages
+<span class="hljs-comment">## 带UKUI GUI的服务器</span>
+@^kylin-desktop-environment
+<span class="hljs-comment">#@container-management # 容器管理，用于管理Linux容器的工具。</span>
+<span class="hljs-comment">#@debugging # 调试工具，调试行为异常程序以及诊断性能问题的工具。</span>
+<span class="hljs-comment">#@development # 开发工具，基本开发环境。</span>
+<span class="hljs-comment">#@dns-server # DNS名称服务器，该软件包组允许您在系统上运行DNS名称服务器（BIND）。</span>
+<span class="hljs-comment">#@file-server # 文件及存储服务器，CIFS，SMB，NFS，iSCSI，iSER及iSNS网络存储服务器。</span>
+<span class="hljs-comment">#@ftp-server # FTP服务器，这些工具允许您在系统上运行FTP服务器。</span>
+<span class="hljs-comment">#@gnome-apps # GNOME应用程序，一组经常使用的GNOME应用程序。</span>
+<span class="hljs-comment">#@headless-management # 无图形终端系统管理工具，用于管理无图像终端系统的工具。</span>
+<span class="hljs-comment">#@infiniband # Infiniband支持，该软件旨在使用基于RDMA的InfiniBand，iWARP，RoCE和OPS架构来支持集群，网络连接和低延迟，高带宽存储。</span>
+@kysecurity-SDK <span class="hljs-comment"># 安全套件SDK，安全套件SDK。</span>
+<span class="hljs-comment">#@kysecurity-enhance # 麒麟安全增强工具，麒麟软件安全增强工具。</span>
+<span class="hljs-comment">#@legacy-unix # 传统UNIX兼容性。</span>
+<span class="hljs-comment">#@legacy-x # 传统X Windows系统的兼容性，用于从继承X Windows环境中迁移或者可用于该环境的兼容程序。</span>
+<span class="hljs-comment">#@mail-server # 邮件服务器，这些软件包运行您配置IMAP或Postfix邮件服务器</span>
+@man-help <span class="hljs-comment"># Man手册，Man手册帮助系统</span>
+<span class="hljs-comment">#@performance # 性能工具，诊断系统和程序级别性能问题的工具。</span>
+<span class="hljs-comment">#@remote-desktop-clients # 远程桌面客户端，远程桌面软件。</span>
+<span class="hljs-comment">#@remote-desktop-servers # 远程桌面服务端，远端桌面服务端软件。</span>
+<span class="hljs-comment">#@remote-system-management # Linux的远程管理，Linux的远程管理界面。</span>
+<span class="hljs-comment">#@scientific # 科学计数法支持</span>
+<span class="hljs-comment">#@security-tools # 安全性工具，用于完整性和可信验证的安全性工具。</span>
+<span class="hljs-comment">#@smart-card # 智能卡支持，支持使用智能卡验证。</span>
+<span class="hljs-comment">#@smb-server # 文件及存储服务器，CIFS，SMB，NFS，iSCSI，iSER及iSNS网络存储服务器。</span>
+<span class="hljs-comment">#@system-tools # 系统工具，这组软件包是各类系统工具的集合，如：连接SMB共享的客户；监控网络交通的工具。</span>
+<span class="hljs-comment">#@virtualization-hypervisor # 虚拟化 Hypervisor，最小的虚拟化主机安装。</span>
+<span class="hljs-comment">#@virtualization-tools # 虚拟化工具，用于离线虚拟映像管理的工具。</span>
+<span class="hljs-comment">#@web-server # 基本网页服务器，这些工具运行您在系统上运行万维网服务器。</span>
+%end
+
+<span class="hljs-comment"># Keyboard layouts 键盘布局</span>
+keyboard --xlayouts=<span class="hljs-string">&#x27;cn&#x27;</span>
+
+<span class="hljs-comment"># System language</span>
+lang zh_CN.UTF-8 --addsupport=en_US.UTF-8
+
+<span class="hljs-comment"># Network information 网络信息</span>
+network  --bootproto=dhcp --onboot=on --onboot=on --ipv6=auto --activate --hostname=kylin.cn
+
+<span class="hljs-comment"># Use CDROM installation mdedia</span>
+<span class="hljs-comment">#url --url=http://192.168.35.5/iso/ks-v10-sp3-20240626-x86_64/</span>
+
+<span class="hljs-comment"># Run the Setup Agent on first boot</span>
+firstboot --<span class="hljs-built_in">disable</span>
+selinux --<span class="hljs-built_in">disable</span> <span class="hljs-comment"># selinux禁用</span>
+firewall --<span class="hljs-built_in">disable</span> <span class="hljs-comment"># 防火墙禁用</span>
+reboot <span class="hljs-comment"># 部署后重启</span>
+eula --agreed <span class="hljs-comment"># 同意协议</span>
+
+<span class="hljs-comment"># System services</span>
+<span class="hljs-comment">#service --enable=&quot;chronyd&quot;</span>
+services --enabled=<span class="hljs-string">&quot;chronyd&quot;</span> --disabled=<span class="hljs-string">&quot;avahi-daemon,rpcbind,cpus,libvirtd.service,postfix.service&quot;</span>
+
+
+<span class="hljs-comment">#ignoredisk --only-use=sda</span>
+<span class="hljs-comment"># Partition clearing information</span>
+<span class="hljs-comment"># clearpart --none --initlabel</span>
+zerombr
+clearpart --all --initlabel
+<span class="hljs-comment"># Disk partitioning information</span>
+%include /tmp/sda-nvme.txt
+
+<span class="hljs-comment">## 必须加上这句话，不然无法启动桌面</span>
+xconfig --startxonboot
+
+<span class="hljs-comment">## System timezone 系统时区</span>
+<span class="hljs-comment"># timesource --ntp-pool=ntp1.aliyun.com</span>
+<span class="hljs-comment">#timesource --ntp-pool=ntp.ntsc.ac.cn</span>
+timezone Asia/Shanghai --utc
+
+<span class="hljs-comment"># 设置Root password，明文是 Kylin@123</span>
+<span class="hljs-comment"># python -c &#x27;import crypt,getpass;pw=getpass.getpass();print(crypt.crypt(pw) if (pw==getpass.getpass(&quot;Confirm: &quot;)) else exit())&#x27;</span>
+rootpw --iscrypted $6<span class="hljs-variable">$kP</span>.a8Tx6yG7O53JN<span class="hljs-variable">$cinUa46WrKnRSy1ifhpzwyd4x3DuXE7lFIs5FzduZ6gUvEX</span>/.wJRC0mWDrV15Io2IGxtkeZy0cOwjnRFmZ/pJ0
+
+<span class="hljs-comment">## 创建普通 kylin 用户, 密码明文是 Kylin@123</span>
+user --name=kylin --password=$6<span class="hljs-variable">$kP</span>.a8Tx6yG7O53JN<span class="hljs-variable">$cinUa46WrKnRSy1ifhpzwyd4x3DuXE7lFIs5FzduZ6gUvEX</span>/.wJRC0mWDrV15Io2IGxtkeZy0cOwjnRFmZ/pJ0 --iscrypted --gecos=<span class="hljs-string">&quot;kylin&quot;</span>
+<span class="hljs-comment"># --groups=whell</span>
+
+<span class="hljs-comment">## addon指定附加组件，常用来配置KDUMP。购买了许可，出现了内核崩溃，可以联系技术人员会付费解决该问题</span>
+%addon com_redhat_kdump --<span class="hljs-built_in">disable</span> --reserve-mb=<span class="hljs-string">&#x27;1024M&#x27;</span>
+%end
+
+
+<span class="hljs-comment">## 控制系统的安装界面;pwpolicy:设置密码策略</span>
+%anaconda
+pwpolicy root --minlen=8 --minquality=1 --strict --nochanges --notempty
+pwpolicy user --minlen=8 --minquality=1 --strict --nochanges --emptyok
+pwpolicy luks --minlen=8 --minquality=1 --strict --nochanges --notempty
+%end
+
+<span class="hljs-comment">## 安装系统前检查，并生成 /tmp/sda-nvme.txt</span>
+%pre
+<span class="hljs-comment">#       %include http://192.168.14.5/ks/disk/ks-sda-nvme-standard.cfg</span>
+       %include http://192.168.14.5/ks/disk/ks-sda-nvme-lvm.cfg
+%end
+
+<span class="hljs-comment">## 安装后的操作</span>
+%post --interpreter=/usr/bin/bash --<span class="hljs-built_in">log</span>=/root/ks-post.log
+
+<span class="hljs-built_in">cat</span> &gt; /etc/yum.repos.d/local.repo &lt;&lt;<span class="hljs-string">EOF</span>
+<span class="hljs-string">[local]</span>
+<span class="hljs-string">name=local</span>
+<span class="hljs-string">baseurl=http://192.168.14.5/iso/ks-v10-sp3-20240626-x86_64/</span>
+<span class="hljs-string">gpgcheck=0</span>
+<span class="hljs-string">#gpgkey=http://192.168.14.5/iso/ks-v10-sp3-20240626-x86_64/RPM-GPG-KEY</span>
+<span class="hljs-string">#/etc/pki/rpm-ggp/RPM-GPG-KEY-kylin</span>
+<span class="hljs-string">EOF</span>
+
+%include http://192.168.14.5/ks/Other/sub-ks-v10-sp3-20240626-x86_64-gui.ks
+%end
+</code></pre>
 
 <blockquote>
 <p>软件环境</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 最小安装</span></span><br><span class="line"><span class="comment">#@^minimal-environment</span></span><br><span class="line"><span class="comment">#@container-management # 容器管理，用于管理Linux容器的工具。</span></span><br><span class="line"><span class="comment">#@debugging # 调试工具，调试行为异常程序以及诊断性能问题的工具。</span></span><br><span class="line"><span class="comment">#@development # 开发工具，基本开发环境。</span></span><br><span class="line"><span class="comment">#@headless-management # 无图形终端系统管理工具，用于管理无图像终端系统的工具。</span></span><br><span class="line"><span class="comment">#@kysecurity-SDK # 安全套件SDK，安全套件SDK。</span></span><br><span class="line"><span class="comment">#@kysecurity-enhance # 麒麟安全增强工具，麒麟软件安全增强工具。</span></span><br><span class="line"><span class="comment">#@legacy-unix # 传统UNIX兼容性。</span></span><br><span class="line"><span class="comment">#@man-help # Man手册，Man手册帮助系统</span></span><br><span class="line"><span class="comment">#@scientific # 科学计数法支持</span></span><br><span class="line"><span class="comment">#@security-tools # 安全性工具，用于完整性和可信验证的安全性工具。</span></span><br><span class="line"><span class="comment">#@smart-card # 智能卡支持，支持使用智能卡验证。</span></span><br><span class="line"><span class="comment">#@standard # 标准，标准安装。</span></span><br><span class="line"><span class="comment">#@system-tools # 系统工具，这组软件包是各类系统工具的集合，如：连接SMB共享的客户；监控网络交通的工具。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 基础设施服务器</span></span><br><span class="line"><span class="comment">#@^server-product-environment</span></span><br><span class="line"><span class="comment">#@container-management # 容器管理，用于管理Linux容器的工具。</span></span><br><span class="line"><span class="comment">#@debugging # 调试工具，调试行为异常程序以及诊断性能问题的工具。</span></span><br><span class="line"><span class="comment">#@development # 开发工具，基本开发环境。</span></span><br><span class="line"><span class="comment">#@dns-server # DNS名称服务器，该软件包组允许您在系统上运行DNS名称服务器（BIND）。</span></span><br><span class="line"><span class="comment">#@file-server # 文件及存储服务器，CIFS，SMB，NFS，iSCSI，iSER及iSNS网络存储服务器。</span></span><br><span class="line"><span class="comment">#@ftp-server # FTP服务器，这些工具允许您在系统上运行FTP服务器。</span></span><br><span class="line"><span class="comment">#@hardware-monitoring # 硬件监控工具，一组用来监控服务器硬件的工具。</span></span><br><span class="line"><span class="comment">#@headless-management # 无图形终端系统管理工具，用于管理无图像终端系统的工具。</span></span><br><span class="line"><span class="comment">#@infiniband # Infiniband支持，该软件旨在使用基于RDMA的InfiniBand，iWARP，RoCE和OPS架构来支持集群，网络连接和低延迟，高带宽存储。</span></span><br><span class="line"><span class="comment">#@kysecurity-SDK # 安全套件SDK，安全套件SDK。</span></span><br><span class="line"><span class="comment">#@kysecurity-enhance # 麒麟安全增强工具，麒麟软件安全增强工具。</span></span><br><span class="line"><span class="comment">#@legacy-unix # 传统UNIX兼容性。</span></span><br><span class="line"><span class="comment">#@mail-server # 邮件服务器，这些软件包运行您配置IMAP或Postfix邮件服务器</span></span><br><span class="line"><span class="comment">#@man-help # Man手册，Man手册帮助系统</span></span><br><span class="line"><span class="comment">#@network-file-system-client # 网络文件系统客户端，启用该系统附加到网络存储。</span></span><br><span class="line"><span class="comment">#@performance # 性能工具，诊断系统和程序级别性能问题的工具。</span></span><br><span class="line"><span class="comment">#@remote-system-management # Linux的远程管理，Linux的远程管理界面。</span></span><br><span class="line"><span class="comment">#@scientific # 科学计数法支持</span></span><br><span class="line"><span class="comment">#@security-tools # 安全性工具，用于完整性和可信验证的安全性工具。</span></span><br><span class="line"><span class="comment">#@smart-card # 智能卡支持，支持使用智能卡验证。</span></span><br><span class="line"><span class="comment">#@smb-server # 文件及存储服务器，CIFS，SMB，NFS，iSCSI，iSER及iSNS网络存储服务器。</span></span><br><span class="line"><span class="comment">#@system-tools # 系统工具，这组软件包是各类系统工具的集合，如：连接SMB共享的客户；监控网络交通的工具。</span></span><br><span class="line"><span class="comment">#@virtualization-hypervisor # 虚拟化 Hypervisor，最小的虚拟化主机安装。</span></span><br><span class="line"><span class="comment">#@web-server  # 基本网页服务器，这些工具运行您在系统上运行万维网服务器。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 文件及打印服务器</span></span><br><span class="line"><span class="comment">#@^file-print-server-environment</span></span><br><span class="line"><span class="comment">#@container-management # 容器管理，用于管理Linux容器的工具。</span></span><br><span class="line"><span class="comment">#@debugging # 调试工具，调试行为异常程序以及诊断性能问题的工具。</span></span><br><span class="line"><span class="comment">#@development # 开发工具，基本开发环境。</span></span><br><span class="line"><span class="comment">#@directory-client # 目录客户端，用于整合到使用目录服务管理的网络的客户端。</span></span><br><span class="line"><span class="comment">#@hardware-monitoring # 硬件监控工具，一组用来监控服务器硬件的工具。</span></span><br><span class="line"><span class="comment">#@headless-management # 无图形终端系统管理工具，用于管理无图像终端系统的工具。</span></span><br><span class="line"><span class="comment">#@java-platform # Java平台，Linux服务器和桌面平台的Java支持。</span></span><br><span class="line"><span class="comment">#@kysecurity-SDK # 安全套件SDK，安全套件SDK。</span></span><br><span class="line"><span class="comment">#@kysecurity-enhance # 麒麟安全增强工具，麒麟软件安全增强工具。</span></span><br><span class="line"><span class="comment">#@large-systems # 大系统性能，用于大型系统的性能支持工具。</span></span><br><span class="line"><span class="comment">#@legacy-unix # 传统UNIX兼容性。</span></span><br><span class="line"><span class="comment">#@man-help # Man手册，Man手册帮助系统</span></span><br><span class="line"><span class="comment">#@network-file-system-client # 网络文件系统客户端，启用该系统附加到网络存储。</span></span><br><span class="line"><span class="comment">#@performance # 性能工具，诊断系统和程序级别性能问题的工具。</span></span><br><span class="line"><span class="comment">#@remote-system-management # Linux的远程管理，Linux的远程管理界面。</span></span><br><span class="line"><span class="comment">#@scientific # 科学计数法支持</span></span><br><span class="line"><span class="comment">#@security-tools # 安全性工具，用于完整性和可信验证的安全性工具。</span></span><br><span class="line"><span class="comment">#@smart-card # 智能卡支持，支持使用智能卡验证。</span></span><br><span class="line"><span class="comment">#@system-tools # 系统工具，这组软件包是各类系统工具的集合，如：连接SMB共享的客户；监控网络交通的工具。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 基本网页服务器</span></span><br><span class="line"><span class="comment">#@^web-server-environment</span></span><br><span class="line"><span class="comment">#@container-management # 容器管理，用于管理Linux容器的工具。</span></span><br><span class="line"><span class="comment">#@debugging # 调试工具，调试行为异常程序以及诊断性能问题的工具。</span></span><br><span class="line"><span class="comment">#@development # 开发工具，基本开发环境。</span></span><br><span class="line"><span class="comment">#@directory-client # 目录客户端，用于整合到使用目录服务管理的网络的客户端。</span></span><br><span class="line"><span class="comment">#@hardware-monitoring # 硬件监控工具，一组用来监控服务器硬件的工具。</span></span><br><span class="line"><span class="comment">#@headless-management # 无图形终端系统管理工具，用于管理无图像终端系统的工具。</span></span><br><span class="line"><span class="comment">#@java-platform # Java平台，Linux服务器和桌面平台的Java支持。</span></span><br><span class="line"><span class="comment">#@kysecurity-SDK # 安全套件SDK，安全套件SDK。</span></span><br><span class="line"><span class="comment">#@kysecurity-enhance # 麒麟安全增强工具，麒麟软件安全增强工具。</span></span><br><span class="line"><span class="comment">#@large-systems # 大系统性能，用于大型系统的性能支持工具。</span></span><br><span class="line"><span class="comment">#@legacy-unix # 传统UNIX兼容性。</span></span><br><span class="line"><span class="comment">#@man-help # Man手册，Man手册帮助系统</span></span><br><span class="line"><span class="comment">#@network-file-system-client # 网络文件系统客户端，启用该系统附加到网络存储。</span></span><br><span class="line"><span class="comment">#@performance # 性能工具，诊断系统和程序级别性能问题的工具。</span></span><br><span class="line"><span class="comment">#@python-web # Python Web，基于Pyhton网络应用程序支持。</span></span><br><span class="line"><span class="comment">#@remote-system-management # Linux的远程管理，Linux的远程管理界面。</span></span><br><span class="line"><span class="comment">#@scientific # 科学计数法支持</span></span><br><span class="line"><span class="comment">#@security-tools # 安全性工具，用于完整性和可信验证的安全性工具。</span></span><br><span class="line"><span class="comment">#@smart-card # 智能卡支持，支持使用智能卡验证。</span></span><br><span class="line"><span class="comment">#@system-tools # 系统工具，这组软件包是各类系统工具的集合，如：连接SMB共享的客户；监控网络交通的工具。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 虚拟化主机</span></span><br><span class="line"><span class="comment">#@^virtualization-host-environment</span></span><br><span class="line"><span class="comment">#@container-management # 容器管理，用于管理Linux容器的工具。</span></span><br><span class="line"><span class="comment">#@debugging # 调试工具，调试行为异常程序以及诊断性能问题的工具。</span></span><br><span class="line"><span class="comment">#@development # 开发工具，基本开发环境。</span></span><br><span class="line"><span class="comment">#@headless-management # 无图形终端系统管理工具，用于管理无图像终端系统的工具。</span></span><br><span class="line"><span class="comment">#@kysecurity-SDK # 安全套件SDK，安全套件SDK。</span></span><br><span class="line"><span class="comment">#@kysecurity-enhance # 麒麟安全增强工具，麒麟软件安全增强工具。</span></span><br><span class="line"><span class="comment">#@legacy-unix # 传统UNIX兼容性。</span></span><br><span class="line"><span class="comment">#@man-help # Man手册，Man手册帮助系统</span></span><br><span class="line"><span class="comment">#@network-file-system-client # 网络文件系统客户端，启用该系统附加到网络存储。</span></span><br><span class="line"><span class="comment">#@openvswitch # 虚拟switch，安装vswitch。</span></span><br><span class="line"><span class="comment">#@remote-system-management # Linux的远程管理，Linux的远程管理界面。</span></span><br><span class="line"><span class="comment">#@scientific # 科学计数法支持</span></span><br><span class="line"><span class="comment">#@security-tools # 安全性工具，用于完整性和可信验证的安全性工具。</span></span><br><span class="line"><span class="comment">#@smart-card # 智能卡支持，支持使用智能卡验证。</span></span><br><span class="line"><span class="comment">#@system-tools # 系统工具，这组软件包是各类系统工具的集合，如：连接SMB共享的客户；监控网络交通的工具。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 带UKUI GUI的服务器</span></span><br><span class="line">@^kylin-desktop-environment</span><br><span class="line"><span class="comment">#@container-management # 容器管理，用于管理Linux容器的工具。</span></span><br><span class="line"><span class="comment">#@debugging # 调试工具，调试行为异常程序以及诊断性能问题的工具。</span></span><br><span class="line"><span class="comment">#@development # 开发工具，基本开发环境。</span></span><br><span class="line"><span class="comment">#@dns-server # DNS名称服务器，该软件包组允许您在系统上运行DNS名称服务器（BIND）。</span></span><br><span class="line"><span class="comment">#@file-server # 文件及存储服务器，CIFS，SMB，NFS，iSCSI，iSER及iSNS网络存储服务器。</span></span><br><span class="line"><span class="comment">#@ftp-server # FTP服务器，这些工具允许您在系统上运行FTP服务器。</span></span><br><span class="line"><span class="comment">#@gnome-apps # GNOME应用程序，一组经常使用的GNOME应用程序。</span></span><br><span class="line"><span class="comment">#@headless-management # 无图形终端系统管理工具，用于管理无图像终端系统的工具。</span></span><br><span class="line"><span class="comment">#@infiniband # Infiniband支持，该软件旨在使用基于RDMA的InfiniBand，iWARP，RoCE和OPS架构来支持集群，网络连接和低延迟，高带宽存储。</span></span><br><span class="line">@kysecurity-SDK <span class="comment"># 安全套件SDK，安全套件SDK。</span></span><br><span class="line"><span class="comment">#@kysecurity-enhance # 麒麟安全增强工具，麒麟软件安全增强工具。</span></span><br><span class="line"><span class="comment">#@legacy-unix # 传统UNIX兼容性。</span></span><br><span class="line"><span class="comment">#@legacy-x # 传统X Windows系统的兼容性，用于从继承X Windows环境中迁移或者可用于该环境的兼容程序。</span></span><br><span class="line"><span class="comment">#@mail-server # 邮件服务器，这些软件包运行您配置IMAP或Postfix邮件服务器</span></span><br><span class="line">@man-help <span class="comment"># Man手册，Man手册帮助系统</span></span><br><span class="line"><span class="comment">#@performance # 性能工具，诊断系统和程序级别性能问题的工具。</span></span><br><span class="line"><span class="comment">#@remote-desktop-clients # 远程桌面客户端，远程桌面软件。</span></span><br><span class="line"><span class="comment">#@remote-desktop-servers # 远程桌面服务端，远端桌面服务端软件。</span></span><br><span class="line"><span class="comment">#@remote-system-management # Linux的远程管理，Linux的远程管理界面。</span></span><br><span class="line"><span class="comment">#@scientific # 科学计数法支持</span></span><br><span class="line"><span class="comment">#@security-tools # 安全性工具，用于完整性和可信验证的安全性工具。</span></span><br><span class="line"><span class="comment">#@smart-card # 智能卡支持，支持使用智能卡验证。</span></span><br><span class="line"><span class="comment">#@smb-server # 文件及存储服务器，CIFS，SMB，NFS，iSCSI，iSER及iSNS网络存储服务器。</span></span><br><span class="line"><span class="comment">#@system-tools # 系统工具，这组软件包是各类系统工具的集合，如：连接SMB共享的客户；监控网络交通的工具。</span></span><br><span class="line"><span class="comment">#@virtualization-hypervisor # 虚拟化 Hypervisor，最小的虚拟化主机安装。</span></span><br><span class="line"><span class="comment">#@virtualization-tools # 虚拟化工具，用于离线虚拟映像管理的工具。</span></span><br><span class="line"><span class="comment">#@web-server # 基本网页服务器，这些工具运行您在系统上运行万维网服务器。</span></span><br><span class="line">%end</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment">## 最小安装</span>
+<span class="hljs-comment">#@^minimal-environment</span>
+<span class="hljs-comment">#@container-management # 容器管理，用于管理Linux容器的工具。</span>
+<span class="hljs-comment">#@debugging # 调试工具，调试行为异常程序以及诊断性能问题的工具。</span>
+<span class="hljs-comment">#@development # 开发工具，基本开发环境。</span>
+<span class="hljs-comment">#@headless-management # 无图形终端系统管理工具，用于管理无图像终端系统的工具。</span>
+<span class="hljs-comment">#@kysecurity-SDK # 安全套件SDK，安全套件SDK。</span>
+<span class="hljs-comment">#@kysecurity-enhance # 麒麟安全增强工具，麒麟软件安全增强工具。</span>
+<span class="hljs-comment">#@legacy-unix # 传统UNIX兼容性。</span>
+<span class="hljs-comment">#@man-help # Man手册，Man手册帮助系统</span>
+<span class="hljs-comment">#@scientific # 科学计数法支持</span>
+<span class="hljs-comment">#@security-tools # 安全性工具，用于完整性和可信验证的安全性工具。</span>
+<span class="hljs-comment">#@smart-card # 智能卡支持，支持使用智能卡验证。</span>
+<span class="hljs-comment">#@standard # 标准，标准安装。</span>
+<span class="hljs-comment">#@system-tools # 系统工具，这组软件包是各类系统工具的集合，如：连接SMB共享的客户；监控网络交通的工具。</span>
+
+<span class="hljs-comment">## 基础设施服务器</span>
+<span class="hljs-comment">#@^server-product-environment</span>
+<span class="hljs-comment">#@container-management # 容器管理，用于管理Linux容器的工具。</span>
+<span class="hljs-comment">#@debugging # 调试工具，调试行为异常程序以及诊断性能问题的工具。</span>
+<span class="hljs-comment">#@development # 开发工具，基本开发环境。</span>
+<span class="hljs-comment">#@dns-server # DNS名称服务器，该软件包组允许您在系统上运行DNS名称服务器（BIND）。</span>
+<span class="hljs-comment">#@file-server # 文件及存储服务器，CIFS，SMB，NFS，iSCSI，iSER及iSNS网络存储服务器。</span>
+<span class="hljs-comment">#@ftp-server # FTP服务器，这些工具允许您在系统上运行FTP服务器。</span>
+<span class="hljs-comment">#@hardware-monitoring # 硬件监控工具，一组用来监控服务器硬件的工具。</span>
+<span class="hljs-comment">#@headless-management # 无图形终端系统管理工具，用于管理无图像终端系统的工具。</span>
+<span class="hljs-comment">#@infiniband # Infiniband支持，该软件旨在使用基于RDMA的InfiniBand，iWARP，RoCE和OPS架构来支持集群，网络连接和低延迟，高带宽存储。</span>
+<span class="hljs-comment">#@kysecurity-SDK # 安全套件SDK，安全套件SDK。</span>
+<span class="hljs-comment">#@kysecurity-enhance # 麒麟安全增强工具，麒麟软件安全增强工具。</span>
+<span class="hljs-comment">#@legacy-unix # 传统UNIX兼容性。</span>
+<span class="hljs-comment">#@mail-server # 邮件服务器，这些软件包运行您配置IMAP或Postfix邮件服务器</span>
+<span class="hljs-comment">#@man-help # Man手册，Man手册帮助系统</span>
+<span class="hljs-comment">#@network-file-system-client # 网络文件系统客户端，启用该系统附加到网络存储。</span>
+<span class="hljs-comment">#@performance # 性能工具，诊断系统和程序级别性能问题的工具。</span>
+<span class="hljs-comment">#@remote-system-management # Linux的远程管理，Linux的远程管理界面。</span>
+<span class="hljs-comment">#@scientific # 科学计数法支持</span>
+<span class="hljs-comment">#@security-tools # 安全性工具，用于完整性和可信验证的安全性工具。</span>
+<span class="hljs-comment">#@smart-card # 智能卡支持，支持使用智能卡验证。</span>
+<span class="hljs-comment">#@smb-server # 文件及存储服务器，CIFS，SMB，NFS，iSCSI，iSER及iSNS网络存储服务器。</span>
+<span class="hljs-comment">#@system-tools # 系统工具，这组软件包是各类系统工具的集合，如：连接SMB共享的客户；监控网络交通的工具。</span>
+<span class="hljs-comment">#@virtualization-hypervisor # 虚拟化 Hypervisor，最小的虚拟化主机安装。</span>
+<span class="hljs-comment">#@web-server  # 基本网页服务器，这些工具运行您在系统上运行万维网服务器。</span>
+
+<span class="hljs-comment">## 文件及打印服务器</span>
+<span class="hljs-comment">#@^file-print-server-environment</span>
+<span class="hljs-comment">#@container-management # 容器管理，用于管理Linux容器的工具。</span>
+<span class="hljs-comment">#@debugging # 调试工具，调试行为异常程序以及诊断性能问题的工具。</span>
+<span class="hljs-comment">#@development # 开发工具，基本开发环境。</span>
+<span class="hljs-comment">#@directory-client # 目录客户端，用于整合到使用目录服务管理的网络的客户端。</span>
+<span class="hljs-comment">#@hardware-monitoring # 硬件监控工具，一组用来监控服务器硬件的工具。</span>
+<span class="hljs-comment">#@headless-management # 无图形终端系统管理工具，用于管理无图像终端系统的工具。</span>
+<span class="hljs-comment">#@java-platform # Java平台，Linux服务器和桌面平台的Java支持。</span>
+<span class="hljs-comment">#@kysecurity-SDK # 安全套件SDK，安全套件SDK。</span>
+<span class="hljs-comment">#@kysecurity-enhance # 麒麟安全增强工具，麒麟软件安全增强工具。</span>
+<span class="hljs-comment">#@large-systems # 大系统性能，用于大型系统的性能支持工具。</span>
+<span class="hljs-comment">#@legacy-unix # 传统UNIX兼容性。</span>
+<span class="hljs-comment">#@man-help # Man手册，Man手册帮助系统</span>
+<span class="hljs-comment">#@network-file-system-client # 网络文件系统客户端，启用该系统附加到网络存储。</span>
+<span class="hljs-comment">#@performance # 性能工具，诊断系统和程序级别性能问题的工具。</span>
+<span class="hljs-comment">#@remote-system-management # Linux的远程管理，Linux的远程管理界面。</span>
+<span class="hljs-comment">#@scientific # 科学计数法支持</span>
+<span class="hljs-comment">#@security-tools # 安全性工具，用于完整性和可信验证的安全性工具。</span>
+<span class="hljs-comment">#@smart-card # 智能卡支持，支持使用智能卡验证。</span>
+<span class="hljs-comment">#@system-tools # 系统工具，这组软件包是各类系统工具的集合，如：连接SMB共享的客户；监控网络交通的工具。</span>
+
+<span class="hljs-comment">## 基本网页服务器</span>
+<span class="hljs-comment">#@^web-server-environment</span>
+<span class="hljs-comment">#@container-management # 容器管理，用于管理Linux容器的工具。</span>
+<span class="hljs-comment">#@debugging # 调试工具，调试行为异常程序以及诊断性能问题的工具。</span>
+<span class="hljs-comment">#@development # 开发工具，基本开发环境。</span>
+<span class="hljs-comment">#@directory-client # 目录客户端，用于整合到使用目录服务管理的网络的客户端。</span>
+<span class="hljs-comment">#@hardware-monitoring # 硬件监控工具，一组用来监控服务器硬件的工具。</span>
+<span class="hljs-comment">#@headless-management # 无图形终端系统管理工具，用于管理无图像终端系统的工具。</span>
+<span class="hljs-comment">#@java-platform # Java平台，Linux服务器和桌面平台的Java支持。</span>
+<span class="hljs-comment">#@kysecurity-SDK # 安全套件SDK，安全套件SDK。</span>
+<span class="hljs-comment">#@kysecurity-enhance # 麒麟安全增强工具，麒麟软件安全增强工具。</span>
+<span class="hljs-comment">#@large-systems # 大系统性能，用于大型系统的性能支持工具。</span>
+<span class="hljs-comment">#@legacy-unix # 传统UNIX兼容性。</span>
+<span class="hljs-comment">#@man-help # Man手册，Man手册帮助系统</span>
+<span class="hljs-comment">#@network-file-system-client # 网络文件系统客户端，启用该系统附加到网络存储。</span>
+<span class="hljs-comment">#@performance # 性能工具，诊断系统和程序级别性能问题的工具。</span>
+<span class="hljs-comment">#@python-web # Python Web，基于Pyhton网络应用程序支持。</span>
+<span class="hljs-comment">#@remote-system-management # Linux的远程管理，Linux的远程管理界面。</span>
+<span class="hljs-comment">#@scientific # 科学计数法支持</span>
+<span class="hljs-comment">#@security-tools # 安全性工具，用于完整性和可信验证的安全性工具。</span>
+<span class="hljs-comment">#@smart-card # 智能卡支持，支持使用智能卡验证。</span>
+<span class="hljs-comment">#@system-tools # 系统工具，这组软件包是各类系统工具的集合，如：连接SMB共享的客户；监控网络交通的工具。</span>
+
+<span class="hljs-comment">## 虚拟化主机</span>
+<span class="hljs-comment">#@^virtualization-host-environment</span>
+<span class="hljs-comment">#@container-management # 容器管理，用于管理Linux容器的工具。</span>
+<span class="hljs-comment">#@debugging # 调试工具，调试行为异常程序以及诊断性能问题的工具。</span>
+<span class="hljs-comment">#@development # 开发工具，基本开发环境。</span>
+<span class="hljs-comment">#@headless-management # 无图形终端系统管理工具，用于管理无图像终端系统的工具。</span>
+<span class="hljs-comment">#@kysecurity-SDK # 安全套件SDK，安全套件SDK。</span>
+<span class="hljs-comment">#@kysecurity-enhance # 麒麟安全增强工具，麒麟软件安全增强工具。</span>
+<span class="hljs-comment">#@legacy-unix # 传统UNIX兼容性。</span>
+<span class="hljs-comment">#@man-help # Man手册，Man手册帮助系统</span>
+<span class="hljs-comment">#@network-file-system-client # 网络文件系统客户端，启用该系统附加到网络存储。</span>
+<span class="hljs-comment">#@openvswitch # 虚拟switch，安装vswitch。</span>
+<span class="hljs-comment">#@remote-system-management # Linux的远程管理，Linux的远程管理界面。</span>
+<span class="hljs-comment">#@scientific # 科学计数法支持</span>
+<span class="hljs-comment">#@security-tools # 安全性工具，用于完整性和可信验证的安全性工具。</span>
+<span class="hljs-comment">#@smart-card # 智能卡支持，支持使用智能卡验证。</span>
+<span class="hljs-comment">#@system-tools # 系统工具，这组软件包是各类系统工具的集合，如：连接SMB共享的客户；监控网络交通的工具。</span>
+
+<span class="hljs-comment">## 带UKUI GUI的服务器</span>
+@^kylin-desktop-environment
+<span class="hljs-comment">#@container-management # 容器管理，用于管理Linux容器的工具。</span>
+<span class="hljs-comment">#@debugging # 调试工具，调试行为异常程序以及诊断性能问题的工具。</span>
+<span class="hljs-comment">#@development # 开发工具，基本开发环境。</span>
+<span class="hljs-comment">#@dns-server # DNS名称服务器，该软件包组允许您在系统上运行DNS名称服务器（BIND）。</span>
+<span class="hljs-comment">#@file-server # 文件及存储服务器，CIFS，SMB，NFS，iSCSI，iSER及iSNS网络存储服务器。</span>
+<span class="hljs-comment">#@ftp-server # FTP服务器，这些工具允许您在系统上运行FTP服务器。</span>
+<span class="hljs-comment">#@gnome-apps # GNOME应用程序，一组经常使用的GNOME应用程序。</span>
+<span class="hljs-comment">#@headless-management # 无图形终端系统管理工具，用于管理无图像终端系统的工具。</span>
+<span class="hljs-comment">#@infiniband # Infiniband支持，该软件旨在使用基于RDMA的InfiniBand，iWARP，RoCE和OPS架构来支持集群，网络连接和低延迟，高带宽存储。</span>
+@kysecurity-SDK <span class="hljs-comment"># 安全套件SDK，安全套件SDK。</span>
+<span class="hljs-comment">#@kysecurity-enhance # 麒麟安全增强工具，麒麟软件安全增强工具。</span>
+<span class="hljs-comment">#@legacy-unix # 传统UNIX兼容性。</span>
+<span class="hljs-comment">#@legacy-x # 传统X Windows系统的兼容性，用于从继承X Windows环境中迁移或者可用于该环境的兼容程序。</span>
+<span class="hljs-comment">#@mail-server # 邮件服务器，这些软件包运行您配置IMAP或Postfix邮件服务器</span>
+@man-help <span class="hljs-comment"># Man手册，Man手册帮助系统</span>
+<span class="hljs-comment">#@performance # 性能工具，诊断系统和程序级别性能问题的工具。</span>
+<span class="hljs-comment">#@remote-desktop-clients # 远程桌面客户端，远程桌面软件。</span>
+<span class="hljs-comment">#@remote-desktop-servers # 远程桌面服务端，远端桌面服务端软件。</span>
+<span class="hljs-comment">#@remote-system-management # Linux的远程管理，Linux的远程管理界面。</span>
+<span class="hljs-comment">#@scientific # 科学计数法支持</span>
+<span class="hljs-comment">#@security-tools # 安全性工具，用于完整性和可信验证的安全性工具。</span>
+<span class="hljs-comment">#@smart-card # 智能卡支持，支持使用智能卡验证。</span>
+<span class="hljs-comment">#@smb-server # 文件及存储服务器，CIFS，SMB，NFS，iSCSI，iSER及iSNS网络存储服务器。</span>
+<span class="hljs-comment">#@system-tools # 系统工具，这组软件包是各类系统工具的集合，如：连接SMB共享的客户；监控网络交通的工具。</span>
+<span class="hljs-comment">#@virtualization-hypervisor # 虚拟化 Hypervisor，最小的虚拟化主机安装。</span>
+<span class="hljs-comment">#@virtualization-tools # 虚拟化工具，用于离线虚拟映像管理的工具。</span>
+<span class="hljs-comment">#@web-server # 基本网页服务器，这些工具运行您在系统上运行万维网服务器。</span>
+%end
+</code></pre>
 
 <h3 id="桌面-Ubuntu系"><a href="#桌面-Ubuntu系" class="headerlink" title="桌面 (Ubuntu系)"></a>桌面 (Ubuntu系)</h3><hr>
 <h2 id="Centos"><a href="#Centos" class="headerlink" title="Centos"></a>Centos</h2><h2 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h2><h2 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h2><h3 id="标准分区"><a href="#标准分区" class="headerlink" title="标准分区"></a>标准分区</h3><blockquote>
@@ -1077,19 +1491,192 @@
 <blockquote>
 <p>ks-sda-nvme-lvm.cfg</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查系统中是否存在nvme0n1磁盘</span></span><br><span class="line"><span class="keyword">if</span> lsblk | grep -q <span class="string">&#x27;nvme0n1&#x27;</span>; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;检测到NVMe磁盘(nvme0n1)，采用方案A配置&quot;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 生成Kickstart分区配置文件</span></span><br><span class="line">    <span class="built_in">cat</span> &gt; /tmp/sda-nvme.txt &lt;&lt; <span class="string">&#x27;EOF&#x27;</span></span><br><span class="line">ignoredisk --only-use=nvme0n1</span><br><span class="line">part pv.112 --fstype=<span class="string">&quot;lvmpv&quot;</span> --ondisk=nvme0n1 --grow</span><br><span class="line">part /boot --fstype=<span class="string">&quot;xfs&quot;</span> --ondisk=nvme0n1 --size=1024</span><br><span class="line">part /boot/efi --fstype=<span class="string">&quot;efi&quot;</span> --ondisk=nvme0n1 --size=512 --fsoptions=<span class="string">&quot;umask=0077,shortname=winnt&quot;</span></span><br><span class="line">volgroup ks1 --pesize=4096 pv.112</span><br><span class="line">logvol / --fstype=<span class="string">&quot;xfs&quot;</span> --size=1 --grow --name=root --vgname=ks1</span><br><span class="line">logvol swap --fstype=<span class="string">&quot;swap&quot;</span> --size=2048 --name=swap --vgname=ks1</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;未检测到NVMe磁盘，采用方案B配置(SATA磁盘)&quot;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 生成SATA磁盘的备用配置</span></span><br><span class="line">    <span class="built_in">cat</span> &gt; /tmp/sda-nvme.txt &lt;&lt; <span class="string">&#x27;EOF&#x27;</span></span><br><span class="line">ignoredisk --only-use=sda</span><br><span class="line">part pv.112 --fstype=<span class="string">&quot;lvmpv&quot;</span> --ondisk=sda --grow</span><br><span class="line">part /boot --fstype=<span class="string">&quot;xfs&quot;</span> --ondisk=sda --size=1024</span><br><span class="line">part /boot/efi --fstype=<span class="string">&quot;efi&quot;</span> --ondisk=sda --size=512 --fsoptions=<span class="string">&quot;umask=0077,shortname=winnt&quot;</span></span><br><span class="line">volgroup ks1 --pesize=4096 pv.112</span><br><span class="line">logvol / --fstype=<span class="string">&quot;xfs&quot;</span> --size=1 --grow --name=root --vgname=ks1</span><br><span class="line">logvol swap --fstype=<span class="string">&quot;swap&quot;</span> --size=2048 --name=swap --vgname=ks1</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加可选分区示例 (按需取消注释)</span></span><br><span class="line"><span class="comment"># echo &#x27;logvol /data --fstype=&quot;xfs&quot; --size=3145728 --name=data --vgname=ks1&#x27; &gt;&gt; /tmp/sda-nvme.txt</span></span><br><span class="line"><span class="comment"># echo &#x27;logvol /home --fstype=&quot;xfs&quot; --size=51200 --name=home --vgname=ks1&#x27; &gt;&gt; /tmp/sda-nvme.txt</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span>
+
+<span class="hljs-comment"># 检查系统中是否存在nvme0n1磁盘</span>
+<span class="hljs-keyword">if</span> lsblk | grep -q <span class="hljs-string">&#x27;nvme0n1&#x27;</span>; <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;检测到NVMe磁盘(nvme0n1)，采用方案A配置&quot;</span>
+    
+    <span class="hljs-comment"># 生成Kickstart分区配置文件</span>
+    <span class="hljs-built_in">cat</span> &gt; /tmp/sda-nvme.txt &lt;&lt; <span class="hljs-string">&#x27;EOF&#x27;</span>
+ignoredisk --only-use=nvme0n1
+part pv.112 --fstype=<span class="hljs-string">&quot;lvmpv&quot;</span> --ondisk=nvme0n1 --grow
+part /boot --fstype=<span class="hljs-string">&quot;xfs&quot;</span> --ondisk=nvme0n1 --size=1024
+part /boot/efi --fstype=<span class="hljs-string">&quot;efi&quot;</span> --ondisk=nvme0n1 --size=512 --fsoptions=<span class="hljs-string">&quot;umask=0077,shortname=winnt&quot;</span>
+volgroup ks1 --pesize=4096 pv.112
+logvol / --fstype=<span class="hljs-string">&quot;xfs&quot;</span> --size=1 --grow --name=root --vgname=ks1
+logvol swap --fstype=<span class="hljs-string">&quot;swap&quot;</span> --size=2048 --name=swap --vgname=ks1
+EOF
+
+<span class="hljs-keyword">else</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;未检测到NVMe磁盘，采用方案B配置(SATA磁盘)&quot;</span>
+    
+    <span class="hljs-comment"># 生成SATA磁盘的备用配置</span>
+    <span class="hljs-built_in">cat</span> &gt; /tmp/sda-nvme.txt &lt;&lt; <span class="hljs-string">&#x27;EOF&#x27;</span>
+ignoredisk --only-use=sda
+part pv.112 --fstype=<span class="hljs-string">&quot;lvmpv&quot;</span> --ondisk=sda --grow
+part /boot --fstype=<span class="hljs-string">&quot;xfs&quot;</span> --ondisk=sda --size=1024
+part /boot/efi --fstype=<span class="hljs-string">&quot;efi&quot;</span> --ondisk=sda --size=512 --fsoptions=<span class="hljs-string">&quot;umask=0077,shortname=winnt&quot;</span>
+volgroup ks1 --pesize=4096 pv.112
+logvol / --fstype=<span class="hljs-string">&quot;xfs&quot;</span> --size=1 --grow --name=root --vgname=ks1
+logvol swap --fstype=<span class="hljs-string">&quot;swap&quot;</span> --size=2048 --name=swap --vgname=ks1
+EOF
+
+<span class="hljs-keyword">fi</span>
+
+<span class="hljs-comment"># 添加可选分区示例 (按需取消注释)</span>
+<span class="hljs-comment"># echo &#x27;logvol /data --fstype=&quot;xfs&quot; --size=3145728 --name=data --vgname=ks1&#x27; &gt;&gt; /tmp/sda-nvme.txt</span>
+<span class="hljs-comment"># echo &#x27;logvol /home --fstype=&quot;xfs&quot; --size=51200 --name=home --vgname=ks1&#x27; &gt;&gt; /tmp/sda-nvme.txt</span>
+</code></pre>
 
 <blockquote>
 </blockquote>
-<h3 id="网卡bond-sh"><a href="#网卡bond-sh" class="headerlink" title="网卡bond.sh"></a>网卡bond.sh</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;请输入bond接口名称&quot;</span></span><br><span class="line"><span class="built_in">read</span> bond_name</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;请输入bond ip（如192.168.1.1/24）&quot;</span></span><br><span class="line"><span class="built_in">read</span> bond_ip</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;请输入bond 网关（如192.168.1.254）&quot;</span></span><br><span class="line"><span class="built_in">read</span> bond_gateway</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;请输入物理网卡名称（如 eth0,eth1）&quot;</span></span><br><span class="line"><span class="built_in">read</span> physical_interfaces</span><br><span class="line"></span><br><span class="line"><span class="comment">#将物理网卡列表转为数组</span></span><br><span class="line">IFS=<span class="string">&#x27;,&#x27;</span> <span class="built_in">read</span> -ra physical_interfaces_array &lt;&lt;&lt; <span class="string">&quot;<span class="variable">$physical_interfaces</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">bond_create</span></span>() &#123;</span><br><span class="line">    <span class="comment">#创建bond 接口</span></span><br><span class="line">    nmcli connection add <span class="built_in">type</span> bond con-name <span class="variable">$bond_name</span> ifname <span class="variable">$bond_name</span> mode <span class="variable">$bond_mode</span></span><br><span class="line">    <span class="keyword">if</span> [ $? -ne 0 ]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&quot;bond 接口 <span class="variable">$bond_name</span> 创建失败&quot;</span></span><br><span class="line">        <span class="built_in">exit</span> 1</span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    <span class="comment">#将物理网卡添加到bond接口</span></span><br><span class="line">    <span class="keyword">for</span> interface <span class="keyword">in</span> <span class="string">&quot;<span class="variable">$&#123;physical_interfaces_array[@]&#125;</span>&quot;</span>; <span class="keyword">do</span></span><br><span class="line">        nmcli connection add <span class="built_in">type</span> ethernet slave-type bond con-name <span class="string">&quot;<span class="variable">$&#123;interface&#125;</span>-slave&quot;</span> ifname <span class="variable">$interface</span> master <span class="variable">$bond_name</span></span><br><span class="line">        <span class="keyword">if</span> [ $? -ne 0 ]; <span class="keyword">then</span></span><br><span class="line">            <span class="built_in">echo</span> <span class="string">&quot;将网卡<span class="variable">$interface</span> 添加到bond接口失败&quot;</span></span><br><span class="line">            <span class="built_in">exit</span> 1</span><br><span class="line">        <span class="keyword">fi</span></span><br><span class="line">    <span class="keyword">done</span></span><br><span class="line">    <span class="comment">#配置bond接口的ip</span></span><br><span class="line">    nmcli connection modify <span class="variable">$bond_name</span> ipv4.addresses <span class="variable">$bond_ip</span>  ipv4.gateway <span class="variable">$bond_gateway</span>  ipv4.method manual</span><br><span class="line">    <span class="keyword">if</span> [ $? -ne 0 ]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&quot;修改 <span class="variable">$bond_name</span> 网络参数失败&quot;</span></span><br><span class="line">        <span class="built_in">exit</span> 1</span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#激活bond 接口</span></span><br><span class="line">    nmcli connection up <span class="variable">$bond_name</span></span><br><span class="line">    <span class="keyword">if</span> [ $? -ne 0 ]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$bond_name</span> 激活失败&quot;</span></span><br><span class="line">        <span class="built_in">exit</span> 1</span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$bond_name</span> 成功配置及激活&quot;</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;bond配置菜单如下：&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;1.配置bond0（balance-rr）轮询&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;2.配置bond1（active-backup）主备&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;3.配置bond4（802.3ad）动态聚合链路&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">read</span> Bond</span><br><span class="line"></span><br><span class="line"><span class="keyword">case</span> <span class="variable">$Bond</span> <span class="keyword">in</span></span><br><span class="line">    1)</span><br><span class="line">        bond_mode=<span class="string">&quot;balance-rr&quot;</span></span><br><span class="line">        bond_create</span><br><span class="line">        ;;</span><br><span class="line">    2)</span><br><span class="line">        bond_mode=<span class="string">&quot;active-backup&quot;</span></span><br><span class="line">        bond_create</span><br><span class="line">        ;;</span><br><span class="line">    3)</span><br><span class="line">        bond_mode=<span class="string">&quot;802.3ad&quot;</span></span><br><span class="line">        bond_create</span><br><span class="line">        ;;</span><br><span class="line">    *)</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&quot;请输入1-3数字&quot;</span></span><br><span class="line">        ;;</span><br><span class="line"><span class="keyword">esac</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="网卡bond-sh"><a href="#网卡bond-sh" class="headerlink" title="网卡bond.sh"></a>网卡bond.sh</h3><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span>
+
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;请输入bond接口名称&quot;</span>
+<span class="hljs-built_in">read</span> bond_name
+
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;请输入bond ip（如192.168.1.1/24）&quot;</span>
+<span class="hljs-built_in">read</span> bond_ip
+
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;请输入bond 网关（如192.168.1.254）&quot;</span>
+<span class="hljs-built_in">read</span> bond_gateway
+
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;请输入物理网卡名称（如 eth0,eth1）&quot;</span>
+<span class="hljs-built_in">read</span> physical_interfaces
+
+<span class="hljs-comment">#将物理网卡列表转为数组</span>
+IFS=<span class="hljs-string">&#x27;,&#x27;</span> <span class="hljs-built_in">read</span> -ra physical_interfaces_array &lt;&lt;&lt; <span class="hljs-string">&quot;<span class="hljs-variable">$physical_interfaces</span>&quot;</span>
+
+<span class="hljs-function"><span class="hljs-title">bond_create</span></span>() &#123;
+    <span class="hljs-comment">#创建bond 接口</span>
+    nmcli connection add <span class="hljs-built_in">type</span> bond con-name <span class="hljs-variable">$bond_name</span> ifname <span class="hljs-variable">$bond_name</span> mode <span class="hljs-variable">$bond_mode</span>
+    <span class="hljs-keyword">if</span> [ $? -ne 0 ]; <span class="hljs-keyword">then</span>
+        <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;bond 接口 <span class="hljs-variable">$bond_name</span> 创建失败&quot;</span>
+        <span class="hljs-built_in">exit</span> 1
+    <span class="hljs-keyword">fi</span>
+    <span class="hljs-comment">#将物理网卡添加到bond接口</span>
+    <span class="hljs-keyword">for</span> interface <span class="hljs-keyword">in</span> <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;physical_interfaces_array[@]&#125;</span>&quot;</span>; <span class="hljs-keyword">do</span>
+        nmcli connection add <span class="hljs-built_in">type</span> ethernet slave-type bond con-name <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;interface&#125;</span>-slave&quot;</span> ifname <span class="hljs-variable">$interface</span> master <span class="hljs-variable">$bond_name</span>
+        <span class="hljs-keyword">if</span> [ $? -ne 0 ]; <span class="hljs-keyword">then</span>
+            <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;将网卡<span class="hljs-variable">$interface</span> 添加到bond接口失败&quot;</span>
+            <span class="hljs-built_in">exit</span> 1
+        <span class="hljs-keyword">fi</span>
+    <span class="hljs-keyword">done</span>
+    <span class="hljs-comment">#配置bond接口的ip</span>
+    nmcli connection modify <span class="hljs-variable">$bond_name</span> ipv4.addresses <span class="hljs-variable">$bond_ip</span>  ipv4.gateway <span class="hljs-variable">$bond_gateway</span>  ipv4.method manual
+    <span class="hljs-keyword">if</span> [ $? -ne 0 ]; <span class="hljs-keyword">then</span>
+        <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;修改 <span class="hljs-variable">$bond_name</span> 网络参数失败&quot;</span>
+        <span class="hljs-built_in">exit</span> 1
+    <span class="hljs-keyword">fi</span>
+
+    <span class="hljs-comment">#激活bond 接口</span>
+    nmcli connection up <span class="hljs-variable">$bond_name</span>
+    <span class="hljs-keyword">if</span> [ $? -ne 0 ]; <span class="hljs-keyword">then</span>
+        <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$bond_name</span> 激活失败&quot;</span>
+        <span class="hljs-built_in">exit</span> 1
+    <span class="hljs-keyword">fi</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$bond_name</span> 成功配置及激活&quot;</span>
+
+&#125;
+
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;bond配置菜单如下：&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;1.配置bond0（balance-rr）轮询&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;2.配置bond1（active-backup）主备&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;3.配置bond4（802.3ad）动态聚合链路&quot;</span>
+
+<span class="hljs-built_in">read</span> Bond
+
+<span class="hljs-keyword">case</span> <span class="hljs-variable">$Bond</span> <span class="hljs-keyword">in</span>
+    1)
+        bond_mode=<span class="hljs-string">&quot;balance-rr&quot;</span>
+        bond_create
+        ;;
+    2)
+        bond_mode=<span class="hljs-string">&quot;active-backup&quot;</span>
+        bond_create
+        ;;
+    3)
+        bond_mode=<span class="hljs-string">&quot;802.3ad&quot;</span>
+        bond_create
+        ;;
+    *)
+        <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;请输入1-3数字&quot;</span>
+        ;;
+<span class="hljs-keyword">esac</span>
+</code></pre>
 
 <h3 id="安装后的优化"><a href="#安装后的优化" class="headerlink" title="安装后的优化"></a>安装后的优化</h3><blockquote>
 <p>sub-ks-v10-sp3-20240626-x86_64-gui.ks</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># wget -O /etc/yum.repos.d/Centos-Base.repo https://repo.huaweicloud.com/repository/conf/CentOS-7-reg.repo</span></span><br><span class="line"><span class="comment"># wget -O /etc/yum.repos.d/epel.repo http://mirrors.cloud.tencent.com/repo/epel-7.repo</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#cat &gt; /etc/yum.repos.d/nginx.repo &lt;&lt; EOF</span></span><br><span class="line"><span class="comment">#[nginx-stable]</span></span><br><span class="line"><span class="comment">#name=nginx stable repo</span></span><br><span class="line"><span class="comment">#baseurl=http://nginx.org/packages/centos/\$releasever/\$basearch/</span></span><br><span class="line"><span class="comment">#gpgcheck=1</span></span><br><span class="line"><span class="comment">#enable=1</span></span><br><span class="line"><span class="comment">#gpgkey=https://nginx.org/keys/nginx_signing.key</span></span><br><span class="line"><span class="comment">#module_hotfixes=true</span></span><br><span class="line"><span class="comment">#EOF</span></span><br><span class="line"><span class="comment"># aolis7.9/openEuler 不能使用nginx源</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 禁止某些用户登录，等保要求</span></span><br><span class="line"><span class="comment">#sed -i &#x27;s/^Ip/#Ip/g&#x27; /etc/passwd</span></span><br><span class="line"><span class="comment">#sed -i &#x27;s/^sysnc/#sync/g&#x27; /etc/passwd</span></span><br><span class="line"><span class="comment">#sed -i &#x27;s/^shutdown/#shutdown/g&#x27; /etc/passwd</span></span><br><span class="line"><span class="comment">#sed -i &#x27;s/^halt/#halt/g&#x27; /etc/passwd</span></span><br><span class="line"><span class="comment">#sed -i &#x27;s/^operator/#operator/g&#x27; /etc/passwd</span></span><br><span class="line"><span class="comment">#sed -i &#x27;s/^games/#games/g&#x27; /etc/passwd</span></span><br><span class="line"><span class="comment">#sed -i &#x27;s/^ftp/#ftp/g&#x27; /etc/passwd</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 系统优化，增加用户最大线程数，最大打开文件数</span></span><br><span class="line"><span class="comment">#cat &gt; /etc/security/limits.d/mylimits.conf &lt;&lt; -EOF_LIMITS</span></span><br><span class="line"><span class="comment">#*      soft    nproc   131072</span></span><br><span class="line"><span class="comment">#*      hard    nproc   131072</span></span><br><span class="line"><span class="comment">#*      soft    nofile  65536</span></span><br><span class="line"><span class="comment">#*      hard    nofile  65536</span></span><br><span class="line"><span class="comment">#EOF_LIMITS</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 系统优化2，</span></span><br><span class="line"><span class="comment">#cat &gt; /etc/profile.d/prompt.sh &lt;&lt; EOF</span></span><br><span class="line"><span class="comment">#PS1=&quot;\[\e[1;33m\][\u@\h \W]\[\e[0m\]\\$ &quot;</span></span><br><span class="line"><span class="comment">#alias cgrep=&quot;egrep -v &#x27;^(#|$)&#x27;&quot;</span></span><br><span class="line"><span class="comment">#alias nt=&#x27;netstat -tnlp&#x27;</span></span><br><span class="line"><span class="comment">#alias ntu=&#x27;netstat -tnlpu&#x27;</span></span><br><span class="line"><span class="comment">#alias cdnet=&#x27;cd /etc/sysconfig/network-scripts/&#x27;</span></span><br><span class="line"><span class="comment">#ailas scandisk=&#x27;echo ---&gt; /sys/class/scsi_host/host0/scan;echo ---&gt; /sys/class/scsi_host/host1/scan;echo ---&gt; /sys/class/scsi_host/host2/scan&#x27;</span></span><br><span class="line"><span class="comment">#export HISTZIE=10000</span></span><br><span class="line"><span class="comment">#export HISTTIMEFORMAT=&quot;%F-%T `whoami` &quot;</span></span><br><span class="line"><span class="comment">#EOF</span></span><br><span class="line"><span class="comment"># source /ect/profile.d/prompat.sh</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 系统优化3，</span></span><br><span class="line"><span class="comment"># Centos7和Centos8有些不同</span></span><br><span class="line"><span class="comment">#sed -i.bak &#x27;/^#UseDNS/aUseDNS no&#x27; /etc/ssh/sshd_config</span></span><br><span class="line"><span class="comment"># sed -i &#x27;s/GSSAPIAuthentication yes/GSSAPIAuthentication no/&#x27; /etc/sshd/sshd_config</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 网卡Bound设置</span></span><br><span class="line"><span class="comment"># nmcli connection delete eth0</span></span><br><span class="line"><span class="comment"># nmcli connection delete eth1</span></span><br><span class="line"><span class="comment"># nmcli connection add type bond ifname bond0 con-name bond0 mode active-backup miimon 100</span></span><br><span class="line"><span class="comment"># nmcli connection add type bond-slave ifname eth0 con-name bond0-eth0 master bond0</span></span><br><span class="line"><span class="comment"># nmcli connection add type bond-slave ifname eth1 con-name bond0-eth1 master bond0</span></span><br><span class="line"><span class="comment"># nmcli connection modify bond0 ipv4.method manual ipv4.addresses 192.168.35.53/24 ipv4.gateway 192.168.35.2 autoconnect yes</span></span><br><span class="line"><span class="comment"># nmcli connection up bond0</span></span><br><span class="line"><span class="comment"># ifconfig</span></span><br><span class="line"><span class="comment"># mkdir /etc/network</span></span><br><span class="line"><span class="comment"># echo &quot;interface=bond0&quot; &gt;&gt; /etc/network/default_gw</span></span><br><span class="line"><span class="comment"># cat /etc/network/default_gw</span></span><br><span class="line"><span class="comment"># nmcli connection show</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment"># wget -O /etc/yum.repos.d/Centos-Base.repo https://repo.huaweicloud.com/repository/conf/CentOS-7-reg.repo</span>
+<span class="hljs-comment"># wget -O /etc/yum.repos.d/epel.repo http://mirrors.cloud.tencent.com/repo/epel-7.repo</span>
+
+<span class="hljs-comment">#cat &gt; /etc/yum.repos.d/nginx.repo &lt;&lt; EOF</span>
+<span class="hljs-comment">#[nginx-stable]</span>
+<span class="hljs-comment">#name=nginx stable repo</span>
+<span class="hljs-comment">#baseurl=http://nginx.org/packages/centos/\$releasever/\$basearch/</span>
+<span class="hljs-comment">#gpgcheck=1</span>
+<span class="hljs-comment">#enable=1</span>
+<span class="hljs-comment">#gpgkey=https://nginx.org/keys/nginx_signing.key</span>
+<span class="hljs-comment">#module_hotfixes=true</span>
+<span class="hljs-comment">#EOF</span>
+<span class="hljs-comment"># aolis7.9/openEuler 不能使用nginx源</span>
+
+<span class="hljs-comment"># 禁止某些用户登录，等保要求</span>
+<span class="hljs-comment">#sed -i &#x27;s/^Ip/#Ip/g&#x27; /etc/passwd</span>
+<span class="hljs-comment">#sed -i &#x27;s/^sysnc/#sync/g&#x27; /etc/passwd</span>
+<span class="hljs-comment">#sed -i &#x27;s/^shutdown/#shutdown/g&#x27; /etc/passwd</span>
+<span class="hljs-comment">#sed -i &#x27;s/^halt/#halt/g&#x27; /etc/passwd</span>
+<span class="hljs-comment">#sed -i &#x27;s/^operator/#operator/g&#x27; /etc/passwd</span>
+<span class="hljs-comment">#sed -i &#x27;s/^games/#games/g&#x27; /etc/passwd</span>
+<span class="hljs-comment">#sed -i &#x27;s/^ftp/#ftp/g&#x27; /etc/passwd</span>
+
+<span class="hljs-comment"># 系统优化，增加用户最大线程数，最大打开文件数</span>
+<span class="hljs-comment">#cat &gt; /etc/security/limits.d/mylimits.conf &lt;&lt; -EOF_LIMITS</span>
+<span class="hljs-comment">#*      soft    nproc   131072</span>
+<span class="hljs-comment">#*      hard    nproc   131072</span>
+<span class="hljs-comment">#*      soft    nofile  65536</span>
+<span class="hljs-comment">#*      hard    nofile  65536</span>
+<span class="hljs-comment">#EOF_LIMITS</span>
+
+<span class="hljs-comment"># 系统优化2，</span>
+<span class="hljs-comment">#cat &gt; /etc/profile.d/prompt.sh &lt;&lt; EOF</span>
+<span class="hljs-comment">#PS1=&quot;\[\e[1;33m\][\u@\h \W]\[\e[0m\]\\$ &quot;</span>
+<span class="hljs-comment">#alias cgrep=&quot;egrep -v &#x27;^(#|$)&#x27;&quot;</span>
+<span class="hljs-comment">#alias nt=&#x27;netstat -tnlp&#x27;</span>
+<span class="hljs-comment">#alias ntu=&#x27;netstat -tnlpu&#x27;</span>
+<span class="hljs-comment">#alias cdnet=&#x27;cd /etc/sysconfig/network-scripts/&#x27;</span>
+<span class="hljs-comment">#ailas scandisk=&#x27;echo ---&gt; /sys/class/scsi_host/host0/scan;echo ---&gt; /sys/class/scsi_host/host1/scan;echo ---&gt; /sys/class/scsi_host/host2/scan&#x27;</span>
+<span class="hljs-comment">#export HISTZIE=10000</span>
+<span class="hljs-comment">#export HISTTIMEFORMAT=&quot;%F-%T `whoami` &quot;</span>
+<span class="hljs-comment">#EOF</span>
+<span class="hljs-comment"># source /ect/profile.d/prompat.sh</span>
+
+<span class="hljs-comment"># 系统优化3，</span>
+<span class="hljs-comment"># Centos7和Centos8有些不同</span>
+<span class="hljs-comment">#sed -i.bak &#x27;/^#UseDNS/aUseDNS no&#x27; /etc/ssh/sshd_config</span>
+<span class="hljs-comment"># sed -i &#x27;s/GSSAPIAuthentication yes/GSSAPIAuthentication no/&#x27; /etc/sshd/sshd_config</span>
+
+<span class="hljs-comment">## 网卡Bound设置</span>
+<span class="hljs-comment"># nmcli connection delete eth0</span>
+<span class="hljs-comment"># nmcli connection delete eth1</span>
+<span class="hljs-comment"># nmcli connection add type bond ifname bond0 con-name bond0 mode active-backup miimon 100</span>
+<span class="hljs-comment"># nmcli connection add type bond-slave ifname eth0 con-name bond0-eth0 master bond0</span>
+<span class="hljs-comment"># nmcli connection add type bond-slave ifname eth1 con-name bond0-eth1 master bond0</span>
+<span class="hljs-comment"># nmcli connection modify bond0 ipv4.method manual ipv4.addresses 192.168.35.53/24 ipv4.gateway 192.168.35.2 autoconnect yes</span>
+<span class="hljs-comment"># nmcli connection up bond0</span>
+<span class="hljs-comment"># ifconfig</span>
+<span class="hljs-comment"># mkdir /etc/network</span>
+<span class="hljs-comment"># echo &quot;interface=bond0&quot; &gt;&gt; /etc/network/default_gw</span>
+<span class="hljs-comment"># cat /etc/network/default_gw</span>
+<span class="hljs-comment"># nmcli connection show</span>
+</code></pre>
 
 <h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><h3 id="NBP-is-too-big-to-fix-in-free-base-memory"><a href="#NBP-is-too-big-to-fix-in-free-base-memory" class="headerlink" title="NBP is too big to fix in free base memory"></a>NBP is too big to fix in free base memory</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250915135859291.png" alt="img"></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 解决方法</span></span><br><span class="line">关闭VMware的自动DHCP功能柜、测试机器选择UEFI启动。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment"># 解决方法</span>
+关闭VMware的自动DHCP功能柜、测试机器选择UEFI启动。
+</code></pre>
 
 
 

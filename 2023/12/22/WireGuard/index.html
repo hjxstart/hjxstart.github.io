@@ -122,10 +122,52 @@
         
             
                 <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
                     <div data-rel="读书">
                         
                         读书
                         <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -154,48 +196,6 @@
                         
                         数据库
                         <small>(5)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="运维">
-                        
-                        运维
-                        <small>(25)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="安全">
-                        
-                        安全
-                        <small>(3)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="开发">
-                        
-                        开发
-                        <small>(14)</small>
                         
                     </div>
                     
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<input type="hidden" id="yelog_site_word_count" value="243.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -978,12 +978,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-10-05 11:22:16'>2023-12-22 07:40</time>
+            发布时间 : <time class="date" title='最后更新: 2025-10-05 13:48:11'>2023-12-22 07:40</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:392</span>
+        <span>字数:400</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1018,13 +1018,58 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="WireGuard"><a href="#WireGuard" class="headerlink" title="WireGuard"></a>WireGuard</h1><h2 id="服务端配置"><a href="#服务端配置" class="headerlink" title="服务端配置"></a>服务端配置</h2><h2 id="客户端配置"><a href="#客户端配置" class="headerlink" title="客户端配置"></a>客户端配置</h2><h3 id="1-安装-wireguard-tools"><a href="#1-安装-wireguard-tools" class="headerlink" title="1.安装 wireguard-tools"></a>1.安装 wireguard-tools</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install wireguard-tools</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+        <h1 id="WireGuard"><a href="#WireGuard" class="headerlink" title="WireGuard"></a>WireGuard</h1><h2 id="服务端配置"><a href="#服务端配置" class="headerlink" title="服务端配置"></a>服务端配置</h2><h2 id="客户端配置"><a href="#客户端配置" class="headerlink" title="客户端配置"></a>客户端配置</h2><h3 id="1-安装-wireguard-tools"><a href="#1-安装-wireguard-tools" class="headerlink" title="1.安装 wireguard-tools"></a>1.安装 wireguard-tools</h3><pre><code class="hljs shell">brew install wireguard-tools
+language-shell复制代码</code></pre>
 
-<h3 id="2-配置-wireguard-tools"><a href="#2-配置-wireguard-tools" class="headerlink" title="2.配置 wireguard-tools"></a>2.配置 wireguard-tools</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建文件夹</span></span><br><span class="line">sudo mkdir /etc/wireguard</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">设置文件夹权限</span></span><br><span class="line">sudo chmod 777  /etc/wireguard</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">切入到创建的目录下</span></span><br><span class="line">cd /etc/wireguard</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">生成公钥与私钥</span></span><br><span class="line">wg genkey | tee privatekey | wg pubkey &gt; publickey</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建虚拟网卡配置文件</span></span><br><span class="line">touch wg0.conf</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">编辑虚拟网卡配置文件内容</span></span><br><span class="line">vi wg0.conf</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="2-配置-wireguard-tools"><a href="#2-配置-wireguard-tools" class="headerlink" title="2.配置 wireguard-tools"></a>2.配置 wireguard-tools</h3><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">创建文件夹</span>
+sudo mkdir /etc/wireguard
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">设置文件夹权限</span>
+sudo chmod 777  /etc/wireguard
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">切入到创建的目录下</span>
+cd /etc/wireguard
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">生成公钥与私钥</span>
+wg genkey | tee privatekey | wg pubkey &gt; publickey
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">创建虚拟网卡配置文件</span>
+touch wg0.conf
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">编辑虚拟网卡配置文件内容</span>
+vi wg0.conf
+language-shell复制代码</code></pre>
 
-<h3 id="3-wg0-conf-虚拟网卡配置"><a href="#3-wg0-conf-虚拟网卡配置" class="headerlink" title="3.wg0.conf 虚拟网卡配置"></a>3.wg0.conf 虚拟网卡配置</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[Interface]</span><br><span class="line">Address = 192.168.XX.20/24</span><br><span class="line">PrivateKey = 客户端的私钥 (privatekey)</span><br><span class="line">DNS = 192.168.XX.1</span><br><span class="line"></span><br><span class="line">[Peer]</span><br><span class="line">PublicKey = 服务端的公钥</span><br><span class="line">Endpoint = 服务器公网IP:13231</span><br><span class="line">AllowedIPs = 0.0.0.0/0</span><br><span class="line">PersistentKeepalive = 30</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="3-wg0-conf-虚拟网卡配置"><a href="#3-wg0-conf-虚拟网卡配置" class="headerlink" title="3.wg0.conf 虚拟网卡配置"></a>3.wg0.conf 虚拟网卡配置</h3><pre><code class="hljs shell">[Interface]
+Address = 192.168.XX.20/24
+PrivateKey = 客户端的私钥 (privatekey)
+DNS = 192.168.XX.1
 
-<h3 id="4-相关命令"><a href="#4-相关命令" class="headerlink" title="4.相关命令"></a>4.相关命令</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">启动网卡</span></span><br><span class="line">wg-quick up wg0</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">停止服务</span></span><br><span class="line">wg-quick down wg0</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看配置</span></span><br><span class="line">wg-quick strip wg0</span><br><span class="line">language-shell复制代码</span><br><span class="line">[Interface]</span><br><span class="line">PrivateKey = cOVbYQzoRcUsr31GtEV1rKgO9FK2vohF6WWy72R11l0=</span><br><span class="line">Address = 192.168.44.11/32</span><br><span class="line">DNS = 192.168.14.1</span><br><span class="line"></span><br><span class="line">[Peer]</span><br><span class="line">PublicKey = RGClYhAev1eJKKzlAMBWhh2N4LP4hLTuEMrurLl8j0w=</span><br><span class="line">AllowedIPs = 1.0.0.0/8, 2.0.0.0/8, 3.0.0.0/8, 4.0.0.0/6, 8.0.0.0/7, 11.0.0.0/8, 12.0.0.0/6, 16.0.0.0/4, 32.0.0.0/3, 64.0.0.0/2, 128.0.0.0/3, 160.0.0.0/5, 168.0.0.0/6, 172.0.0.0/12, 172.32.0.0/11, 172.64.0.0/10, 172.128.0.0/9, 173.0.0.0/8, 174.0.0.0/7, 176.0.0.0/4, 192.0.0.0/9, 192.128.0.0/11, 192.160.0.0/13, 192.169.0.0/16, 192.170.0.0/15, 192.172.0.0/14, 192.176.0.0/12, 192.192.0.0/10, 193.0.0.0/8, 194.0.0.0/7, 196.0.0.0/6, 200.0.0.0/5, 208.0.0.0/4, 192.168.14.1/32</span><br><span class="line">Endpoint = ros.huangfamily.cn:40044</span><br><span class="line">PersistentKeepalive = 30</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+[Peer]
+PublicKey = 服务端的公钥
+Endpoint = 服务器公网IP:13231
+AllowedIPs = 0.0.0.0/0
+PersistentKeepalive = 30
+language-shell复制代码</code></pre>
+
+<h3 id="4-相关命令"><a href="#4-相关命令" class="headerlink" title="4.相关命令"></a>4.相关命令</h3><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">启动网卡</span>
+wg-quick up wg0
+<span class="hljs-meta prompt_"># </span><span class="language-bash">停止服务</span>
+wg-quick down wg0
+<span class="hljs-meta prompt_"># </span><span class="language-bash">查看配置</span>
+wg-quick strip wg0
+language-shell复制代码
+[Interface]
+PrivateKey = cOVbYQzoRcUsr31GtEV1rKgO9FK2vohF6WWy72R11l0=
+Address = 192.168.44.11/32
+DNS = 192.168.14.1
+
+[Peer]
+PublicKey = RGClYhAev1eJKKzlAMBWhh2N4LP4hLTuEMrurLl8j0w=
+AllowedIPs = 1.0.0.0/8, 2.0.0.0/8, 3.0.0.0/8, 4.0.0.0/6, 8.0.0.0/7, 11.0.0.0/8, 12.0.0.0/6, 16.0.0.0/4, 32.0.0.0/3, 64.0.0.0/2, 128.0.0.0/3, 160.0.0.0/5, 168.0.0.0/6, 172.0.0.0/12, 172.32.0.0/11, 172.64.0.0/10, 172.128.0.0/9, 173.0.0.0/8, 174.0.0.0/7, 176.0.0.0/4, 192.0.0.0/9, 192.128.0.0/11, 192.160.0.0/13, 192.169.0.0/16, 192.170.0.0/15, 192.172.0.0/14, 192.176.0.0/12, 192.192.0.0/10, 193.0.0.0/8, 194.0.0.0/7, 196.0.0.0/6, 200.0.0.0/5, 208.0.0.0/4, 192.168.14.1/32
+Endpoint = ros.huangfamily.cn:40044
+PersistentKeepalive = 30
+</code></pre>
 
 <hr>
 

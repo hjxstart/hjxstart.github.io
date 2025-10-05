@@ -122,10 +122,52 @@
         
             
                 <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
                     <div data-rel="读书">
                         
                         读书
                         <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -154,48 +196,6 @@
                         
                         数据库
                         <small>(5)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="运维">
-                        
-                        运维
-                        <small>(25)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="安全">
-                        
-                        安全
-                        <small>(3)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="开发">
-                        
-                        开发
-                        <small>(14)</small>
                         
                     </div>
                     
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<input type="hidden" id="yelog_site_word_count" value="243.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1020,15 +1020,53 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 数据库DB：存储数据的仓库，数据是有组织的进行存储；</span></span><br><span class="line"><span class="comment"># 数据库管理系统DBMS：操纵和管理数据库的大型软件；</span></span><br><span class="line"><span class="comment"># SQL：操作关系型数据库的编程语言，定义了一套操作；</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 常见数据库：Oracle、MySQL、SQL Server</span></span><br><span class="line"><span class="comment"># mysql，旧版本以5.7为主流，新版本是8</span></span><br><span class="line"></span><br><span class="line">database &gt; table (column | row)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><pre><code class="hljs bash"><span class="hljs-comment"># 数据库DB：存储数据的仓库，数据是有组织的进行存储；</span>
+<span class="hljs-comment"># 数据库管理系统DBMS：操纵和管理数据库的大型软件；</span>
+<span class="hljs-comment"># SQL：操作关系型数据库的编程语言，定义了一套操作；</span>
 
-<h2 id="Mysql"><a href="#Mysql" class="headerlink" title="Mysql"></a>Mysql</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mysql库是mysql的核心数据库</span></span><br><span class="line"><span class="comment"># infomation_schema 是 SQL注入常见的数据库，提供对数据库元数据的只读访问，包括数据库、表、列、索引、权限等信息</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<span class="hljs-comment"># 常见数据库：Oracle、MySQL、SQL Server</span>
+<span class="hljs-comment"># mysql，旧版本以5.7为主流，新版本是8</span>
 
-<h3 id="information-schema数据库"><a href="#information-schema数据库" class="headerlink" title="information_schema数据库"></a>information_schema数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 常用表</span></span><br><span class="line">schemata: 列出所有数据库</span><br><span class="line">tables: 列出所有表及其属性</span><br><span class="line">columns: 列出所有列及其属性</span><br><span class="line">statistics: 列出索引信息</span><br><span class="line">user_privileges 和 schema_privileges: 列出用户权限</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查询所有数据库</span></span><br><span class="line"><span class="keyword">select</span> schema_name from information_schema.schemata;</span><br><span class="line"><span class="comment"># 查询所有表</span></span><br><span class="line"><span class="keyword">select</span> table_name from information_schema.tables;</span><br><span class="line"><span class="keyword">select</span> * from information_schema.tables <span class="built_in">where</span> table_name=<span class="string">&#x27;emp&#x27;</span>; <span class="comment"># 查找emp表的信息，所属用户等</span></span><br><span class="line"><span class="comment"># 查询所列</span></span><br><span class="line"><span class="keyword">select</span> column_name from information_schema.columns;</span><br><span class="line"><span class="keyword">select</span> column_name from information_schema.columns <span class="built_in">where</span> table_name=<span class="string">&#x27;emp&#x27;</span>; <span class="comment"># 查看emp表的字段</span></span><br><span class="line"><span class="comment"># </span></span><br><span class="line">use information_schema</span><br><span class="line">show tables;</span><br><span class="line"><span class="keyword">select</span> * from tables; <span class="comment"># 有table_name(表名), table_schema（库名）等</span></span><br><span class="line"><span class="keyword">select</span> * from columns; <span class="comment"># 有table_name(表名), table_schema（库名）, column_name(列名，字段)等</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+database &gt; table (column | row)
+</code></pre>
 
-<h2 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h2><h3 id="SQL通用语法"><a href="#SQL通用语法" class="headerlink" title="SQL通用语法"></a>SQL通用语法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># SQL可以单行或者多行书写，以分号结尾</span></span><br><span class="line"><span class="comment"># SQL可以使用空格/缩进 来增强预计的可读性</span></span><br><span class="line"><span class="comment"># MySQL数据库的SQL语句不区分大小写，关键词建议使用大写</span></span><br><span class="line"><span class="comment"># 注释：单行注释: -- 注释内容 或者 # 注释内容； 多行注释：/* 注释内容 */</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="Mysql"><a href="#Mysql" class="headerlink" title="Mysql"></a>Mysql</h2><pre><code class="hljs bash"><span class="hljs-comment"># mysql库是mysql的核心数据库</span>
+<span class="hljs-comment"># infomation_schema 是 SQL注入常见的数据库，提供对数据库元数据的只读访问，包括数据库、表、列、索引、权限等信息</span>
+</code></pre>
 
-<h3 id="SQL-分类"><a href="#SQL-分类" class="headerlink" title="SQL 分类"></a>SQL 分类</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># DDL: 数据库定义语言，用于定义数据库对象（数据库、表、字段）；</span></span><br><span class="line"><span class="comment"># DML: 数据操作语言，用来对数据库表中的数据进行增删改；</span></span><br><span class="line"><span class="comment"># DQL: 数据查询语言，用来查询数据表中表的记录；</span></span><br><span class="line"><span class="comment"># DCL: 数据控制语言，用来创建数据库用户、控制数据库的访问权限；</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="information-schema数据库"><a href="#information-schema数据库" class="headerlink" title="information_schema数据库"></a>information_schema数据库</h3><pre><code class="hljs bash"><span class="hljs-comment"># 常用表</span>
+schemata: 列出所有数据库
+tables: 列出所有表及其属性
+columns: 列出所有列及其属性
+statistics: 列出索引信息
+user_privileges 和 schema_privileges: 列出用户权限
+
+<span class="hljs-comment"># 查询所有数据库</span>
+<span class="hljs-keyword">select</span> schema_name from information_schema.schemata;
+<span class="hljs-comment"># 查询所有表</span>
+<span class="hljs-keyword">select</span> table_name from information_schema.tables;
+<span class="hljs-keyword">select</span> * from information_schema.tables <span class="hljs-built_in">where</span> table_name=<span class="hljs-string">&#x27;emp&#x27;</span>; <span class="hljs-comment"># 查找emp表的信息，所属用户等</span>
+<span class="hljs-comment"># 查询所列</span>
+<span class="hljs-keyword">select</span> column_name from information_schema.columns;
+<span class="hljs-keyword">select</span> column_name from information_schema.columns <span class="hljs-built_in">where</span> table_name=<span class="hljs-string">&#x27;emp&#x27;</span>; <span class="hljs-comment"># 查看emp表的字段</span>
+<span class="hljs-comment"># </span>
+use information_schema
+show tables;
+<span class="hljs-keyword">select</span> * from tables; <span class="hljs-comment"># 有table_name(表名), table_schema（库名）等</span>
+<span class="hljs-keyword">select</span> * from columns; <span class="hljs-comment"># 有table_name(表名), table_schema（库名）, column_name(列名，字段)等</span>
+</code></pre>
+
+<h2 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h2><h3 id="SQL通用语法"><a href="#SQL通用语法" class="headerlink" title="SQL通用语法"></a>SQL通用语法</h3><pre><code class="hljs bash"><span class="hljs-comment"># SQL可以单行或者多行书写，以分号结尾</span>
+<span class="hljs-comment"># SQL可以使用空格/缩进 来增强预计的可读性</span>
+<span class="hljs-comment"># MySQL数据库的SQL语句不区分大小写，关键词建议使用大写</span>
+<span class="hljs-comment"># 注释：单行注释: -- 注释内容 或者 # 注释内容； 多行注释：/* 注释内容 */</span>
+</code></pre>
+
+<h3 id="SQL-分类"><a href="#SQL-分类" class="headerlink" title="SQL 分类"></a>SQL 分类</h3><pre><code class="hljs bash"><span class="hljs-comment"># DDL: 数据库定义语言，用于定义数据库对象（数据库、表、字段）；</span>
+<span class="hljs-comment"># DML: 数据操作语言，用来对数据库表中的数据进行增删改；</span>
+<span class="hljs-comment"># DQL: 数据查询语言，用来查询数据表中表的记录；</span>
+<span class="hljs-comment"># DCL: 数据控制语言，用来创建数据库用户、控制数据库的访问权限；</span>
+</code></pre>
 
 <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="数据类型-1"><a href="#数据类型-1" class="headerlink" title="数据类型"></a>数据类型</h3><table>
 <thead>
@@ -1335,22 +1373,40 @@
 </tr>
 </tbody></table>
 <hr>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="Docker-安装-MySQL5-7"><a href="#Docker-安装-MySQL5-7" class="headerlink" title="Docker 安装 MySQL5.7"></a>Docker 安装 MySQL5.7</h2><h3 id="安装命令"><a href="#安装命令" class="headerlink" title="安装命令"></a>安装命令</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 3306:3306 --privileged=true \</span><br><span class="line">-v /home/hjx/docker/mysql/conf/my.cnf:/etc/my.cnf \</span><br><span class="line">-v /home/hjx/docker/mysql/data:/var/lib/mysql \</span><br><span class="line">-e MYSQL_ROOT_PASSWORD=hadoop \</span><br><span class="line">--name mysql mysql:5.7 \</span><br><span class="line">--character-set-server=utf8mb4 \</span><br><span class="line">--collation-server=utf8mb4_general_ci</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="Docker-安装-MySQL5-7"><a href="#Docker-安装-MySQL5-7" class="headerlink" title="Docker 安装 MySQL5.7"></a>Docker 安装 MySQL5.7</h2><h3 id="安装命令"><a href="#安装命令" class="headerlink" title="安装命令"></a>安装命令</h3><pre><code class="hljs shell">docker run -d -p 3306:3306 --privileged=true \
+-v /home/hjx/docker/mysql/conf/my.cnf:/etc/my.cnf \
+-v /home/hjx/docker/mysql/data:/var/lib/mysql \
+-e MYSQL_ROOT_PASSWORD=hadoop \
+--name mysql mysql:5.7 \
+--character-set-server=utf8mb4 \
+--collation-server=utf8mb4_general_ci
+language-shell复制代码</code></pre>
 
 <blockquote>
 <p>创建用户</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">先进入容器</span></span><br><span class="line">docker exec -it mysql bash</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">执行MySQL命令, 输入root密码, 连接MySQL</span></span><br><span class="line">mysql -uroot -p</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">输入密码后, 执行下面命令创建新用户 (用户名: <span class="built_in">test</span> , 密码: test123)</span></span><br><span class="line">GRANT ALL PRIVILEGES ON *.* TO &#x27;test&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;test123&#x27; WITH GRANT OPTION;</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">先进入容器</span>
+docker exec -it mysql bash
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">执行MySQL命令, 输入root密码, 连接MySQL</span>
+mysql -uroot -p
+<span class="hljs-meta prompt_"></span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">输入密码后, 执行下面命令创建新用户 (用户名: <span class="hljs-built_in">test</span> , 密码: test123)</span>
+GRANT ALL PRIVILEGES ON *.* TO &#x27;test&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;test123&#x27; WITH GRANT OPTION;
+language-shell复制代码</code></pre>
 
 <h3 id="Docker-安装-MySQL8"><a href="#Docker-安装-MySQL8" class="headerlink" title="Docker 安装 MySQL8"></a>Docker 安装 MySQL8</h3><ol>
 <li>拉起镜像</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pull mysql:8.0.12</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs shell">docker pull mysql:8.0.12
+language-shell复制代码</code></pre>
 
 <ol>
 <li>创建数据目录和配置文件</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /usr/mysql/conf /usr/mysql/data</span><br><span class="line">chmod -R 755 /usr/mysql/</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs shell">mkdir -p /usr/mysql/conf /usr/mysql/data
+chmod -R 755 /usr/mysql/
+language-shell复制代码</code></pre>
 
 <ol>
 <li>创建配置文件</li>
@@ -1358,122 +1414,232 @@
 <blockquote>
 <p>vim &#x2F;usr&#x2F;mysql&#x2F;conf&#x2F;my.cnf</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[client]</span><br><span class="line"><span class="comment">#socket = /usr/mysql/mysqld.sock</span></span><br><span class="line">default-character-set = utf8mb4</span><br><span class="line"></span><br><span class="line">[mysqld]</span><br><span class="line"><span class="comment">#pid-file        = /var/run/mysqld/mysqld.pid</span></span><br><span class="line"><span class="comment">#socket          = /var/run/mysqld/mysqld.sock</span></span><br><span class="line"><span class="comment">#datadir         = /var/lib/mysql</span></span><br><span class="line"><span class="comment">#socket = /usr/mysql/mysqld.sock</span></span><br><span class="line"><span class="comment">#pid-file = /usr/mysql/mysqld.pid</span></span><br><span class="line">datadir = /usr/mysql/data</span><br><span class="line">character_set_server = utf8mb4</span><br><span class="line">collation_server = utf8mb4_bin</span><br><span class="line">secure-file-priv= NULL</span><br><span class="line"><span class="comment"># Disabling symbolic-links is recommended to prevent assorted security risks</span></span><br><span class="line">symbolic-links=0</span><br><span class="line"><span class="comment"># Custom config should go here</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">[client]
+<span class="hljs-comment">#socket = /usr/mysql/mysqld.sock</span>
+default-character-set = utf8mb4
+
+[mysqld]
+<span class="hljs-comment">#pid-file        = /var/run/mysqld/mysqld.pid</span>
+<span class="hljs-comment">#socket          = /var/run/mysqld/mysqld.sock</span>
+<span class="hljs-comment">#datadir         = /var/lib/mysql</span>
+<span class="hljs-comment">#socket = /usr/mysql/mysqld.sock</span>
+<span class="hljs-comment">#pid-file = /usr/mysql/mysqld.pid</span>
+datadir = /usr/mysql/data
+character_set_server = utf8mb4
+collation_server = utf8mb4_bin
+secure-file-priv= NULL
+<span class="hljs-comment"># Disabling symbolic-links is recommended to prevent assorted security risks</span>
+symbolic-links=0
+<span class="hljs-comment"># Custom config should go here</span>
+</code></pre>
 
 <ol>
 <li>创建容器</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker run --restart=unless-stopped -d --name mysql8 \</span><br><span class="line">-v /usr/mysql/conf/my.cnf:/etc/mysql/my.cnf \</span><br><span class="line">-v /usr/mysql/data:/var/lib/mysql \</span><br><span class="line">-p 3306:3306 -e MYSQL_ROOT_PASSWORD=hadoop mysql</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs shell">docker run --restart=unless-stopped -d --name mysql8 \
+-v /usr/mysql/conf/my.cnf:/etc/mysql/my.cnf \
+-v /usr/mysql/data:/var/lib/mysql \
+-p 3306:3306 -e MYSQL_ROOT_PASSWORD=hadoop mysql
+language-shell复制代码</code></pre>
 
 <ol>
 <li>修改mysql密码以及可访问主机</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">use mysql</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">修改访问主机以及密码等，设置为所有主机可访问</span></span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;%&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;新密码&#x27;;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">刷新</span></span><br><span class="line">flush privileges;</span><br><span class="line">language-shell复制代码</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs shell">use mysql
+<span class="hljs-meta prompt_"># </span><span class="language-bash">修改访问主机以及密码等，设置为所有主机可访问</span>
+ALTER USER &#x27;root&#x27;@&#x27;%&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;新密码&#x27;;
+<span class="hljs-meta prompt_"># </span><span class="language-bash">刷新</span>
+flush privileges;
+language-shell复制代码</code></pre>
 
-<h2 id="靶场环境"><a href="#靶场环境" class="headerlink" title="靶场环境"></a>靶场环境</h2><h3 id="phpStudy"><a href="#phpStudy" class="headerlink" title="phpStudy"></a>phpStudy</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 解压安装后，配置环境变量</span></span><br><span class="line">在path中添加：D:\phpstudy_pro\Extensions\MySQL5.7.26\bin</span><br><span class="line"><span class="comment"># 连接, 默认密码 root</span></span><br><span class="line">mysql -u root -p </span><br><span class="line">mysql -h 192.168.16.2 -P 3396 -p</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="靶场环境"><a href="#靶场环境" class="headerlink" title="靶场环境"></a>靶场环境</h2><h3 id="phpStudy"><a href="#phpStudy" class="headerlink" title="phpStudy"></a>phpStudy</h3><pre><code class="hljs bash"><span class="hljs-comment"># 解压安装后，配置环境变量</span>
+在path中添加：D:\phpstudy_pro\Extensions\MySQL5.7.26\bin
+<span class="hljs-comment"># 连接, 默认密码 root</span>
+mysql -u root -p 
+mysql -h 192.168.16.2 -P 3396 -p
+</code></pre>
 
 <hr>
 <h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><h2 id="快速使用"><a href="#快速使用" class="headerlink" title="快速使用"></a>快速使用</h2><h3 id="database"><a href="#database" class="headerlink" title="database"></a>database</h3><ol>
 <li>查看库</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">show databases;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">show databases;
+</code></pre>
 
 <ol>
 <li>创建库</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">create database db_name; <span class="comment"># create database mz charset utf8mb4;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">create database db_name; <span class="hljs-comment"># create database mz charset utf8mb4;</span>
+</code></pre>
 
 <ol>
 <li>删除库</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">drop database db_name;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">drop database db_name;
+</code></pre>
 
 <ol>
 <li>选择库</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">use db_name;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">use db_name;
+</code></pre>
 
 <ol>
 <li>查看表</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">show tables;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">show tables;
+</code></pre>
 
 <ol>
 <li>查看创建库创建语句</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">show create database db_name;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">show create database db_name;
+</code></pre>
 
 <ol>
 <li>查看选中的数据库</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> database();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-keyword">select</span> database();
+</code></pre>
 
 <ol>
 <li>修改数据库字符集</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alter database db_name default charset=utf8;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">alter database db_name default charset=utf8;
+</code></pre>
 
 <h3 id="table"><a href="#table" class="headerlink" title="table"></a>table</h3><ol>
 <li>查看表结构</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">desc table_name; <span class="comment"># 查看Type，Key等</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">desc table_name; <span class="hljs-comment"># 查看Type，Key等</span>
+</code></pre>
 
 <ol>
 <li>查看创建表的语句</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">show create table table_name; <span class="comment"># 例如 show create table user;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">show create table table_name; <span class="hljs-comment"># 例如 show create table user;</span>
+</code></pre>
 
 <ol>
 <li>创建表</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">create table table_name(</span><br><span class="line">	字段1	字段类型	comment <span class="string">&#x27;字段1的注释&#x27;</span>,</span><br><span class="line">	字段2	字段类型	comment <span class="string">&#x27;字段2的注释&#x27;</span>,</span><br><span class="line">	...</span><br><span class="line">) comment <span class="string">&#x27;表注释&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例</span></span><br><span class="line">create table <span class="built_in">test</span>(</span><br><span class="line">	<span class="built_in">id</span> int comment <span class="string">&#x27;编号&#x27;</span>,</span><br><span class="line">	name varchar(50) comment <span class="string">&#x27;姓名&#x27;</span>,</span><br><span class="line">	age int comment <span class="string">&#x27;年龄&#x27;</span>,</span><br><span class="line">	gender varchar(1) comment <span class="string">&#x27;性别&#x27;</span></span><br><span class="line">) comment <span class="string">&#x27;用户表&#x27;</span>;</span><br><span class="line"><span class="comment"># 实例2</span></span><br><span class="line">create table emp(</span><br><span class="line"><span class="built_in">id</span> int comment <span class="string">&#x27;编号&#x27;</span>,</span><br><span class="line">workno varchar(10) comment <span class="string">&#x27;工号&#x27;</span>,</span><br><span class="line">name varchar(10) comment <span class="string">&#x27;姓名&#x27;</span>,</span><br><span class="line">gender char(1) comment <span class="string">&#x27;性别&#x27;</span>,</span><br><span class="line">age tinyint unsigned comment <span class="string">&#x27;年龄&#x27;</span>,</span><br><span class="line">idcard char(18) comment <span class="string">&#x27;身份证号&#x27;</span>,</span><br><span class="line">entrydate <span class="built_in">date</span> comment <span class="string">&#x27;入职时间&#x27;</span></span><br><span class="line">) comment <span class="string">&#x27;员工表&#x27;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">create table table_name(
+	字段1	字段类型	comment <span class="hljs-string">&#x27;字段1的注释&#x27;</span>,
+	字段2	字段类型	comment <span class="hljs-string">&#x27;字段2的注释&#x27;</span>,
+	...
+) comment <span class="hljs-string">&#x27;表注释&#x27;</span>
+
+<span class="hljs-comment"># 示例</span>
+create table <span class="hljs-built_in">test</span>(
+	<span class="hljs-built_in">id</span> int comment <span class="hljs-string">&#x27;编号&#x27;</span>,
+	name varchar(50) comment <span class="hljs-string">&#x27;姓名&#x27;</span>,
+	age int comment <span class="hljs-string">&#x27;年龄&#x27;</span>,
+	gender varchar(1) comment <span class="hljs-string">&#x27;性别&#x27;</span>
+) comment <span class="hljs-string">&#x27;用户表&#x27;</span>;
+<span class="hljs-comment"># 实例2</span>
+create table emp(
+<span class="hljs-built_in">id</span> int comment <span class="hljs-string">&#x27;编号&#x27;</span>,
+workno varchar(10) comment <span class="hljs-string">&#x27;工号&#x27;</span>,
+name varchar(10) comment <span class="hljs-string">&#x27;姓名&#x27;</span>,
+gender char(1) comment <span class="hljs-string">&#x27;性别&#x27;</span>,
+age tinyint unsigned comment <span class="hljs-string">&#x27;年龄&#x27;</span>,
+idcard char(18) comment <span class="hljs-string">&#x27;身份证号&#x27;</span>,
+entrydate <span class="hljs-built_in">date</span> comment <span class="hljs-string">&#x27;入职时间&#x27;</span>
+) comment <span class="hljs-string">&#x27;员工表&#x27;</span>;
+</code></pre>
 
 <ol>
 <li>修改表</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加一个字段</span></span><br><span class="line">alter table emp add nickname varchar(20) comment <span class="string">&#x27;昵称&#x27;</span>;</span><br><span class="line"><span class="comment"># 修改数据类型</span></span><br><span class="line">alter table emp modify nickname varchar(30);</span><br><span class="line"><span class="comment"># 修改字段名字，将nickname字段修改为username</span></span><br><span class="line">alter table emp change nickname username varchar(50) comment <span class="string">&#x27;用户名&#x27;</span>;</span><br><span class="line"><span class="comment"># 删除字段，删除username字段</span></span><br><span class="line">alter table emp drop username;</span><br><span class="line"><span class="comment"># 修改表名，将emp修改为employee</span></span><br><span class="line">alter table emp rename to employee;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment"># 添加一个字段</span>
+alter table emp add nickname varchar(20) comment <span class="hljs-string">&#x27;昵称&#x27;</span>;
+<span class="hljs-comment"># 修改数据类型</span>
+alter table emp modify nickname varchar(30);
+<span class="hljs-comment"># 修改字段名字，将nickname字段修改为username</span>
+alter table emp change nickname username varchar(50) comment <span class="hljs-string">&#x27;用户名&#x27;</span>;
+<span class="hljs-comment"># 删除字段，删除username字段</span>
+alter table emp drop username;
+<span class="hljs-comment"># 修改表名，将emp修改为employee</span>
+alter table emp rename to employee;
+</code></pre>
 
 <ol>
 <li>删除表</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">drop table employee;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">drop table employee;
+</code></pre>
 
-<h3 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">create table employee(</span><br><span class="line"><span class="built_in">id</span> int comment <span class="string">&#x27;编号&#x27;</span>,</span><br><span class="line">workno varchar(10) comment <span class="string">&#x27;工号&#x27;</span>,</span><br><span class="line">name varchar(10) comment <span class="string">&#x27;姓名&#x27;</span>,</span><br><span class="line">gender char(1) comment <span class="string">&#x27;性别&#x27;</span>,</span><br><span class="line">age tinyint unsigned comment <span class="string">&#x27;年龄&#x27;</span>,</span><br><span class="line">idcard char(18) comment <span class="string">&#x27;身份证号&#x27;</span>,</span><br><span class="line">entrydate <span class="built_in">date</span> comment <span class="string">&#x27;入职时间&#x27;</span></span><br><span class="line">) comment <span class="string">&#x27;员工表&#x27;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h3><pre><code class="hljs bash">create table employee(
+<span class="hljs-built_in">id</span> int comment <span class="hljs-string">&#x27;编号&#x27;</span>,
+workno varchar(10) comment <span class="hljs-string">&#x27;工号&#x27;</span>,
+name varchar(10) comment <span class="hljs-string">&#x27;姓名&#x27;</span>,
+gender char(1) comment <span class="hljs-string">&#x27;性别&#x27;</span>,
+age tinyint unsigned comment <span class="hljs-string">&#x27;年龄&#x27;</span>,
+idcard char(18) comment <span class="hljs-string">&#x27;身份证号&#x27;</span>,
+entrydate <span class="hljs-built_in">date</span> comment <span class="hljs-string">&#x27;入职时间&#x27;</span>
+) comment <span class="hljs-string">&#x27;员工表&#x27;</span>;
+</code></pre>
 
 <ol>
 <li>插入数据</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">insert into employee (<span class="built_in">id</span>, workno, name, gender, age, idcard, entrydate) values (1,<span class="string">&#x27;001&#x27;</span>,<span class="string">&#x27;mz&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,18,<span class="string">&#x27;000000000000110000&#x27;</span>,<span class="string">&#x27;2025-09-09&#x27;</span>);</span><br><span class="line"><span class="comment"># 不指定字段，需要按顺序</span></span><br><span class="line">insert into employee values (2,<span class="string">&#x27;002&#x27;</span>,<span class="string">&#x27;mzz&#x27;</span>,<span class="string">&#x27;女&#x27;</span>,19,<span class="string">&#x27;000000000000120000&#x27;</span>,<span class="string">&#x27;2025-09-10&#x27;</span>);</span><br><span class="line"><span class="comment"># 批量添加</span></span><br><span class="line">insert into employee values </span><br><span class="line">(3,<span class="string">&#x27;003&#x27;</span>,<span class="string">&#x27;mzz3&#x27;</span>,<span class="string">&#x27;女&#x27;</span>,19,<span class="string">&#x27;000000000000130000&#x27;</span>,<span class="string">&#x27;2025-09-13&#x27;</span>),</span><br><span class="line">(4,<span class="string">&#x27;004&#x27;</span>,<span class="string">&#x27;mzz4&#x27;</span>,<span class="string">&#x27;女&#x27;</span>,19,<span class="string">&#x27;000000000000140000&#x27;</span>,<span class="string">&#x27;2025-09-14&#x27;</span>),</span><br><span class="line">(5,<span class="string">&#x27;005&#x27;</span>,<span class="string">&#x27;mzz5&#x27;</span>,<span class="string">&#x27;女&#x27;</span>,19,<span class="string">&#x27;000000000000150000&#x27;</span>,<span class="string">&#x27;2025-09-15&#x27;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">insert into employee (<span class="hljs-built_in">id</span>, workno, name, gender, age, idcard, entrydate) values (1,<span class="hljs-string">&#x27;001&#x27;</span>,<span class="hljs-string">&#x27;mz&#x27;</span>,<span class="hljs-string">&#x27;男&#x27;</span>,18,<span class="hljs-string">&#x27;000000000000110000&#x27;</span>,<span class="hljs-string">&#x27;2025-09-09&#x27;</span>);
+<span class="hljs-comment"># 不指定字段，需要按顺序</span>
+insert into employee values (2,<span class="hljs-string">&#x27;002&#x27;</span>,<span class="hljs-string">&#x27;mzz&#x27;</span>,<span class="hljs-string">&#x27;女&#x27;</span>,19,<span class="hljs-string">&#x27;000000000000120000&#x27;</span>,<span class="hljs-string">&#x27;2025-09-10&#x27;</span>);
+<span class="hljs-comment"># 批量添加</span>
+insert into employee values 
+(3,<span class="hljs-string">&#x27;003&#x27;</span>,<span class="hljs-string">&#x27;mzz3&#x27;</span>,<span class="hljs-string">&#x27;女&#x27;</span>,19,<span class="hljs-string">&#x27;000000000000130000&#x27;</span>,<span class="hljs-string">&#x27;2025-09-13&#x27;</span>),
+(4,<span class="hljs-string">&#x27;004&#x27;</span>,<span class="hljs-string">&#x27;mzz4&#x27;</span>,<span class="hljs-string">&#x27;女&#x27;</span>,19,<span class="hljs-string">&#x27;000000000000140000&#x27;</span>,<span class="hljs-string">&#x27;2025-09-14&#x27;</span>),
+(5,<span class="hljs-string">&#x27;005&#x27;</span>,<span class="hljs-string">&#x27;mzz5&#x27;</span>,<span class="hljs-string">&#x27;女&#x27;</span>,19,<span class="hljs-string">&#x27;000000000000150000&#x27;</span>,<span class="hljs-string">&#x27;2025-09-15&#x27;</span>);
+</code></pre>
 
 <ol>
 <li>修改数据</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">update employee <span class="built_in">set</span> name=<span class="string">&#x27;mzz6&#x27;</span> <span class="built_in">where</span> <span class="built_in">id</span>=4;</span><br><span class="line"><span class="comment"># 修改多个字段</span></span><br><span class="line">update employee <span class="built_in">set</span> <span class="built_in">id</span>=3,name=<span class="string">&#x27;mzz3&#x27;</span>,gender=<span class="string">&#x27;男&#x27;</span> <span class="built_in">where</span> <span class="built_in">id</span>=5;</span><br><span class="line"><span class="comment"># 多个条件</span></span><br><span class="line">update employee <span class="built_in">set</span> name=<span class="string">&#x27;mzz6&#x27;</span> <span class="built_in">where</span> <span class="built_in">id</span>=5 and </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">update employee <span class="hljs-built_in">set</span> name=<span class="hljs-string">&#x27;mzz6&#x27;</span> <span class="hljs-built_in">where</span> <span class="hljs-built_in">id</span>=4;
+<span class="hljs-comment"># 修改多个字段</span>
+update employee <span class="hljs-built_in">set</span> <span class="hljs-built_in">id</span>=3,name=<span class="hljs-string">&#x27;mzz3&#x27;</span>,gender=<span class="hljs-string">&#x27;男&#x27;</span> <span class="hljs-built_in">where</span> <span class="hljs-built_in">id</span>=5;
+<span class="hljs-comment"># 多个条件</span>
+update employee <span class="hljs-built_in">set</span> name=<span class="hljs-string">&#x27;mzz6&#x27;</span> <span class="hljs-built_in">where</span> <span class="hljs-built_in">id</span>=5 and 
+</code></pre>
 
 <ol>
 <li>删除数据</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除符合条件的数据</span></span><br><span class="line">delete from employee <span class="built_in">where</span> <span class="built_in">id</span>=3;</span><br><span class="line"><span class="comment"># 清空表</span></span><br><span class="line">delete from employee;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment"># 删除符合条件的数据</span>
+delete from employee <span class="hljs-built_in">where</span> <span class="hljs-built_in">id</span>=3;
+<span class="hljs-comment"># 清空表</span>
+delete from employee;
+</code></pre>
 
 <h3 id="user"><a href="#user" class="headerlink" title="user"></a>user</h3><ol>
 <li>查看用户</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看所有用户</span></span><br><span class="line"><span class="keyword">select</span> * from mysql.user;</span><br><span class="line"><span class="keyword">select</span> user,host from mysql.user;</span><br><span class="line"><span class="comment"># 查看当前用户</span></span><br><span class="line"><span class="keyword">select</span> user();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment"># 查看所有用户</span>
+<span class="hljs-keyword">select</span> * from mysql.user;
+<span class="hljs-keyword">select</span> user,host from mysql.user;
+<span class="hljs-comment"># 查看当前用户</span>
+<span class="hljs-keyword">select</span> user();
+</code></pre>
 
 <ol>
 <li>创建用户</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">create user <span class="string">&#x27;mz&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> identified by <span class="string">&#x27;123456&#x27;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">create user <span class="hljs-string">&#x27;mz&#x27;</span>@<span class="hljs-string">&#x27;localhost&#x27;</span> identified by <span class="hljs-string">&#x27;123456&#x27;</span>;
+</code></pre>
 
 <ol>
 <li>修改密码</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改用户密码为123</span></span><br><span class="line">alter user <span class="string">&#x27;mz&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> identified with mysql_native_password by <span class="string">&#x27;123&#x27;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment"># 修改用户密码为123</span>
+alter user <span class="hljs-string">&#x27;mz&#x27;</span>@<span class="hljs-string">&#x27;localhost&#x27;</span> identified with mysql_native_password by <span class="hljs-string">&#x27;123&#x27;</span>;
+</code></pre>
 
 <ol>
 <li>删除用户</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">drop user <span class="string">&#x27;mz&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">drop user <span class="hljs-string">&#x27;mz&#x27;</span>@<span class="hljs-string">&#x27;localhost&#x27;</span>;
+</code></pre>
 
 <h3 id="权限-1"><a href="#权限-1" class="headerlink" title="权限"></a>权限</h3><table>
 <thead>
@@ -1518,23 +1684,104 @@
 <ol>
 <li>查看权限</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">show grants <span class="keyword">for</span> <span class="string">&#x27;用户名&#x27;</span>@<span class="string">&#x27;主机名&#x27;</span>;</span><br><span class="line"><span class="comment"># 查看 mz 用户的权限</span></span><br><span class="line">show grants <span class="keyword">for</span> <span class="string">&#x27;mz&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span>;</span><br><span class="line">use information_schema; <span class="comment"># 不需要权限</span></span><br><span class="line">show tables;</span><br><span class="line"><span class="keyword">select</span> * from tables;</span><br><span class="line"><span class="comment"># 查看 root 的权限</span></span><br><span class="line">show grants <span class="keyword">for</span> <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">show grants <span class="hljs-keyword">for</span> <span class="hljs-string">&#x27;用户名&#x27;</span>@<span class="hljs-string">&#x27;主机名&#x27;</span>;
+<span class="hljs-comment"># 查看 mz 用户的权限</span>
+show grants <span class="hljs-keyword">for</span> <span class="hljs-string">&#x27;mz&#x27;</span>@<span class="hljs-string">&#x27;localhost&#x27;</span>;
+use information_schema; <span class="hljs-comment"># 不需要权限</span>
+show tables;
+<span class="hljs-keyword">select</span> * from tables;
+<span class="hljs-comment"># 查看 root 的权限</span>
+show grants <span class="hljs-keyword">for</span> <span class="hljs-string">&#x27;root&#x27;</span>@<span class="hljs-string">&#x27;localhost&#x27;</span>;
+</code></pre>
 
 <ol>
 <li>添加权限</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">grant 权限列表 on 数据库名.表名 to <span class="string">&#x27;用户名&#x27;</span>@<span class="string">&#x27;主机名&#x27;</span>;</span><br><span class="line"><span class="comment">## 查询权限 select</span></span><br><span class="line"><span class="comment"># 将mz数据库的test表的查询权限给mz用户</span></span><br><span class="line">grant <span class="keyword">select</span> on mz.test to <span class="string">&#x27;mz&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span>;</span><br><span class="line"><span class="comment"># 将mz数据库的所有表的查询权限给mz用户</span></span><br><span class="line">grant <span class="keyword">select</span> on mz.* to <span class="string">&#x27;mz&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">## create,drop,alter</span></span><br><span class="line"><span class="comment"># 给mz库下的创建、删除、修改表的权限给mz</span></span><br><span class="line">grant create,drop,alter on mz.* to <span class="string">&#x27;mz&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span>;</span><br><span class="line"><span class="comment"># 给全部mz库下面的表权限给mz用户</span></span><br><span class="line">grant all on mz.* to <span class="string">&#x27;mz&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">grant 权限列表 on 数据库名.表名 to <span class="hljs-string">&#x27;用户名&#x27;</span>@<span class="hljs-string">&#x27;主机名&#x27;</span>;
+<span class="hljs-comment">## 查询权限 select</span>
+<span class="hljs-comment"># 将mz数据库的test表的查询权限给mz用户</span>
+grant <span class="hljs-keyword">select</span> on mz.test to <span class="hljs-string">&#x27;mz&#x27;</span>@<span class="hljs-string">&#x27;localhost&#x27;</span>;
+<span class="hljs-comment"># 将mz数据库的所有表的查询权限给mz用户</span>
+grant <span class="hljs-keyword">select</span> on mz.* to <span class="hljs-string">&#x27;mz&#x27;</span>@<span class="hljs-string">&#x27;localhost&#x27;</span>;
+
+<span class="hljs-comment">## create,drop,alter</span>
+<span class="hljs-comment"># 给mz库下的创建、删除、修改表的权限给mz</span>
+grant create,drop,alter on mz.* to <span class="hljs-string">&#x27;mz&#x27;</span>@<span class="hljs-string">&#x27;localhost&#x27;</span>;
+<span class="hljs-comment"># 给全部mz库下面的表权限给mz用户</span>
+grant all on mz.* to <span class="hljs-string">&#x27;mz&#x27;</span>@<span class="hljs-string">&#x27;localhost&#x27;</span>;
+</code></pre>
 
 <ol>
 <li>撤销权限</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">revoke 权限列表 on 数据库名.表名 to <span class="string">&#x27;用户名&#x27;</span>@<span class="string">&#x27;主机名&#x27;</span>;</span><br><span class="line"><span class="comment"># 撤销 select 权限</span></span><br><span class="line">revoke <span class="keyword">select</span> no mz.* from <span class="string">&#x27;mz&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">revoke 权限列表 on 数据库名.表名 to <span class="hljs-string">&#x27;用户名&#x27;</span>@<span class="hljs-string">&#x27;主机名&#x27;</span>;
+<span class="hljs-comment"># 撤销 select 权限</span>
+revoke <span class="hljs-keyword">select</span> no mz.* from <span class="hljs-string">&#x27;mz&#x27;</span>@<span class="hljs-string">&#x27;localhost&#x27;</span>;
+</code></pre>
 
-<h3 id="修改host登录"><a href="#修改host登录" class="headerlink" title="修改host登录"></a>修改host登录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改Host是某IP登录</span></span><br><span class="line">update user <span class="built_in">set</span> host=<span class="string">&#x27;ip&#x27;</span> <span class="built_in">where</span> user=<span class="string">&#x27;root&#x27;</span>;</span><br><span class="line"><span class="comment"># 运行任意IP连接</span></span><br><span class="line">update user <span class="built_in">set</span> host=<span class="string">&#x27;%&#x27;</span> <span class="built_in">where</span> user=<span class="string">&#x27;root&#x27;</span>;</span><br><span class="line"><span class="comment"># h指定ip地址: mysql -u root -h ip -p </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改密码</span></span><br><span class="line">alter user <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;ip&#x27;</span> identified with mysql_native_password by <span class="string">&#x27;root&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 刷新配置</span></span><br><span class="line">flush privileges;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="修改host登录"><a href="#修改host登录" class="headerlink" title="修改host登录"></a>修改host登录</h3><pre><code class="hljs bash"><span class="hljs-comment"># 修改Host是某IP登录</span>
+update user <span class="hljs-built_in">set</span> host=<span class="hljs-string">&#x27;ip&#x27;</span> <span class="hljs-built_in">where</span> user=<span class="hljs-string">&#x27;root&#x27;</span>;
+<span class="hljs-comment"># 运行任意IP连接</span>
+update user <span class="hljs-built_in">set</span> host=<span class="hljs-string">&#x27;%&#x27;</span> <span class="hljs-built_in">where</span> user=<span class="hljs-string">&#x27;root&#x27;</span>;
+<span class="hljs-comment"># h指定ip地址: mysql -u root -h ip -p </span>
 
-<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> </span><br><span class="line">	字段列表</span><br><span class="line">from </span><br><span class="line">	表名列表</span><br><span class="line"><span class="built_in">where</span></span><br><span class="line">	条件列表</span><br><span class="line">group by </span><br><span class="line">	分组字段列表</span><br><span class="line">having</span><br><span class="line">	分组后条件列表</span><br><span class="line">order by</span><br><span class="line">	排序字段列表</span><br><span class="line"><span class="built_in">limit</span></span><br><span class="line">	分页参数</span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据表准备</span></span><br><span class="line">create table emp(</span><br><span class="line"><span class="built_in">id</span> int comment <span class="string">&#x27;编号&#x27;</span>,</span><br><span class="line">workno varchar(10) comment <span class="string">&#x27;工号&#x27;</span>,</span><br><span class="line">name varchar(10) comment <span class="string">&#x27;姓名&#x27;</span>,</span><br><span class="line">gender char(1) comment <span class="string">&#x27;性别&#x27;</span>,</span><br><span class="line">age tinyint unsigned comment <span class="string">&#x27;年龄&#x27;</span>,</span><br><span class="line">idcard char(18) comment <span class="string">&#x27;身份证号&#x27;</span>,</span><br><span class="line">workaddress varchar(50) comment <span class="string">&#x27;工作地址&#x27;</span>,</span><br><span class="line">entrydate <span class="built_in">date</span> comment <span class="string">&#x27;入职时间&#x27;</span></span><br><span class="line">)comment <span class="string">&#x27;员工表&#x27;</span>;</span><br><span class="line"><span class="comment"># 数据准备</span></span><br><span class="line">INSERT INTO emp VALUES (1, <span class="string">&#x27;00001&#x27;</span>, <span class="string">&#x27;柳岩666&#x27;</span>, <span class="string">&#x27;女&#x27;</span>, 20, <span class="string">&#x27;123456789012345678&#x27;</span>, <span class="string">&#x27;北京&#x27;</span>, <span class="string">&#x27;2000-01-01&#x27;</span>),(2, <span class="string">&#x27;00002&#x27;</span>, <span class="string">&#x27;张无忌&#x27;</span>, <span class="string">&#x27;男&#x27;</span>, 18, <span class="string">&#x27;123456789012345670&#x27;</span>, <span class="string">&#x27;北京&#x27;</span>, <span class="string">&#x27;2005-09-01&#x27;</span>),(3, <span class="string">&#x27;00003&#x27;</span>, <span class="string">&#x27;韦一笑&#x27;</span>, <span class="string">&#x27;男&#x27;</span>, 38, <span class="string">&#x27;123456789712345670&#x27;</span>, <span class="string">&#x27;上海&#x27;</span>, <span class="string">&#x27;2005-08-01&#x27;</span>),(4, <span class="string">&#x27;00004&#x27;</span>, <span class="string">&#x27;赵敏&#x27;</span>, <span class="string">&#x27;女&#x27;</span>, 18, <span class="string">&#x27;123456757123845670&#x27;</span>, <span class="string">&#x27;北京&#x27;</span>, <span class="string">&#x27;2009-12-01&#x27;</span>),(5, <span class="string">&#x27;00005&#x27;</span>, <span class="string">&#x27;小昭&#x27;</span>, <span class="string">&#x27;女&#x27;</span>, 16, <span class="string">&#x27;123456769012345678&#x27;</span>, <span class="string">&#x27;上海&#x27;</span>, <span class="string">&#x27;2007-07-01&#x27;</span>),(6, <span class="string">&#x27;00006&#x27;</span>, <span class="string">&#x27;杨逍&#x27;</span>, <span class="string">&#x27;男&#x27;</span>, 28, <span class="string">&#x27;12345678931234567X&#x27;</span>, <span class="string">&#x27;北京&#x27;</span>, <span class="string">&#x27;2006-01-01&#x27;</span>),(7, <span class="string">&#x27;00007&#x27;</span>, <span class="string">&#x27;范瑶&#x27;</span>, <span class="string">&#x27;男&#x27;</span>, 40, <span class="string">&#x27;123456789212345670&#x27;</span>, <span class="string">&#x27;北京&#x27;</span>, <span class="string">&#x27;2005-05-01&#x27;</span>),(8, <span class="string">&#x27;00008&#x27;</span>, <span class="string">&#x27;黛绮丝&#x27;</span>, <span class="string">&#x27;女&#x27;</span>, 38, <span class="string">&#x27;123456157123645670&#x27;</span>, <span class="string">&#x27;天津&#x27;</span>, <span class="string">&#x27;2015-05-01&#x27;</span>),(9, <span class="string">&#x27;00009&#x27;</span>, <span class="string">&#x27;范凉凉&#x27;</span>, <span class="string">&#x27;女&#x27;</span>, 45, <span class="string">&#x27;123156789012345678&#x27;</span>, <span class="string">&#x27;北京&#x27;</span>, <span class="string">&#x27;2010-04-01&#x27;</span>),(10, <span class="string">&#x27;00010&#x27;</span>, <span class="string">&#x27;陈友谅&#x27;</span>, <span class="string">&#x27;男&#x27;</span>, 53, <span class="string">&#x27;123456789012345670&#x27;</span>, <span class="string">&#x27;上海&#x27;</span>, <span class="string">&#x27;2011-01-01&#x27;</span>),(11, <span class="string">&#x27;00011&#x27;</span>, <span class="string">&#x27;张士诚&#x27;</span>, <span class="string">&#x27;男&#x27;</span>, 55, <span class="string">&#x27;123567897123465670&#x27;</span>, <span class="string">&#x27;江苏&#x27;</span>, <span class="string">&#x27;2015-05-01&#x27;</span>),(12, <span class="string">&#x27;00012&#x27;</span>, <span class="string">&#x27;常遇春&#x27;</span>, <span class="string">&#x27;男&#x27;</span>, 32, <span class="string">&#x27;123446757152345670&#x27;</span>, <span class="string">&#x27;北京&#x27;</span>, <span class="string">&#x27;2004-02-01&#x27;</span>),(13, <span class="string">&#x27;00013&#x27;</span>, <span class="string">&#x27;张三丰&#x27;</span>, <span class="string">&#x27;男&#x27;</span>, 88, <span class="string">&#x27;123656789012345678&#x27;</span>, <span class="string">&#x27;江苏&#x27;</span>, <span class="string">&#x27;2020-11-01&#x27;</span>),(14, <span class="string">&#x27;00014&#x27;</span>, <span class="string">&#x27;灭绝&#x27;</span>, <span class="string">&#x27;女&#x27;</span>, 65, <span class="string">&#x27;123456719012345670&#x27;</span>, <span class="string">&#x27;西安&#x27;</span>, <span class="string">&#x27;2019-05-01&#x27;</span>),(15, <span class="string">&#x27;00015&#x27;</span>, <span class="string">&#x27;胡青牛&#x27;</span>, <span class="string">&#x27;男&#x27;</span>, 70, <span class="string">&#x27;12345674971234567X&#x27;</span>, <span class="string">&#x27;西安&#x27;</span>, <span class="string">&#x27;2018-04-01&#x27;</span>),(16, <span class="string">&#x27;00016&#x27;</span>, <span class="string">&#x27;周芷若&#x27;</span>, <span class="string">&#x27;女&#x27;</span>, 18, null, <span class="string">&#x27;北京&#x27;</span>, <span class="string">&#x27;2012-06-01&#x27;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<span class="hljs-comment"># 修改密码</span>
+alter user <span class="hljs-string">&#x27;root&#x27;</span>@<span class="hljs-string">&#x27;ip&#x27;</span> identified with mysql_native_password by <span class="hljs-string">&#x27;root&#x27;</span>
 
-<h3 id="基础查询-select"><a href="#基础查询-select" class="headerlink" title="基础查询 select"></a>基础查询 select</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 全表查询</span></span><br><span class="line"><span class="keyword">select</span> * from emp;</span><br><span class="line"><span class="comment"># 查询某些字段</span></span><br><span class="line"><span class="keyword">select</span> name,gender from emp;</span><br><span class="line"><span class="comment"># 查询别名显示</span></span><br><span class="line"><span class="keyword">select</span> name as 姓名, gender as 性别 from emp;</span><br><span class="line"><span class="comment"># 去重查询</span></span><br><span class="line"><span class="keyword">select</span> distinct gender from emp;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## 练习</span></span><br><span class="line"><span class="comment"># A. 查询指定字段 name, workno, age 并返回</span></span><br><span class="line"><span class="keyword">select</span> name,workno,age from emp;</span><br><span class="line"><span class="comment"># B. 查询返回所有字段</span></span><br><span class="line"><span class="keyword">select</span> * from emp;</span><br><span class="line"><span class="comment"># C. 查询所有员工的工作地址,起别名</span></span><br><span class="line"><span class="keyword">select</span> workaddress as <span class="string">&#x27;工作地址&#x27;</span> from emp;</span><br><span class="line"><span class="comment"># D. 查询公司员工的上班地址有哪些(不要重复)</span></span><br><span class="line"><span class="keyword">select</span> distinct workaddress from emp;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<span class="hljs-comment"># 刷新配置</span>
+flush privileges;
+</code></pre>
+
+<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><pre><code class="hljs bash"><span class="hljs-keyword">select</span> 
+	字段列表
+from 
+	表名列表
+<span class="hljs-built_in">where</span>
+	条件列表
+group by 
+	分组字段列表
+having
+	分组后条件列表
+order by
+	排序字段列表
+<span class="hljs-built_in">limit</span>
+	分页参数
+
+<span class="hljs-comment"># 数据表准备</span>
+create table emp(
+<span class="hljs-built_in">id</span> int comment <span class="hljs-string">&#x27;编号&#x27;</span>,
+workno varchar(10) comment <span class="hljs-string">&#x27;工号&#x27;</span>,
+name varchar(10) comment <span class="hljs-string">&#x27;姓名&#x27;</span>,
+gender char(1) comment <span class="hljs-string">&#x27;性别&#x27;</span>,
+age tinyint unsigned comment <span class="hljs-string">&#x27;年龄&#x27;</span>,
+idcard char(18) comment <span class="hljs-string">&#x27;身份证号&#x27;</span>,
+workaddress varchar(50) comment <span class="hljs-string">&#x27;工作地址&#x27;</span>,
+entrydate <span class="hljs-built_in">date</span> comment <span class="hljs-string">&#x27;入职时间&#x27;</span>
+)comment <span class="hljs-string">&#x27;员工表&#x27;</span>;
+<span class="hljs-comment"># 数据准备</span>
+INSERT INTO emp VALUES (1, <span class="hljs-string">&#x27;00001&#x27;</span>, <span class="hljs-string">&#x27;柳岩666&#x27;</span>, <span class="hljs-string">&#x27;女&#x27;</span>, 20, <span class="hljs-string">&#x27;123456789012345678&#x27;</span>, <span class="hljs-string">&#x27;北京&#x27;</span>, <span class="hljs-string">&#x27;2000-01-01&#x27;</span>),(2, <span class="hljs-string">&#x27;00002&#x27;</span>, <span class="hljs-string">&#x27;张无忌&#x27;</span>, <span class="hljs-string">&#x27;男&#x27;</span>, 18, <span class="hljs-string">&#x27;123456789012345670&#x27;</span>, <span class="hljs-string">&#x27;北京&#x27;</span>, <span class="hljs-string">&#x27;2005-09-01&#x27;</span>),(3, <span class="hljs-string">&#x27;00003&#x27;</span>, <span class="hljs-string">&#x27;韦一笑&#x27;</span>, <span class="hljs-string">&#x27;男&#x27;</span>, 38, <span class="hljs-string">&#x27;123456789712345670&#x27;</span>, <span class="hljs-string">&#x27;上海&#x27;</span>, <span class="hljs-string">&#x27;2005-08-01&#x27;</span>),(4, <span class="hljs-string">&#x27;00004&#x27;</span>, <span class="hljs-string">&#x27;赵敏&#x27;</span>, <span class="hljs-string">&#x27;女&#x27;</span>, 18, <span class="hljs-string">&#x27;123456757123845670&#x27;</span>, <span class="hljs-string">&#x27;北京&#x27;</span>, <span class="hljs-string">&#x27;2009-12-01&#x27;</span>),(5, <span class="hljs-string">&#x27;00005&#x27;</span>, <span class="hljs-string">&#x27;小昭&#x27;</span>, <span class="hljs-string">&#x27;女&#x27;</span>, 16, <span class="hljs-string">&#x27;123456769012345678&#x27;</span>, <span class="hljs-string">&#x27;上海&#x27;</span>, <span class="hljs-string">&#x27;2007-07-01&#x27;</span>),(6, <span class="hljs-string">&#x27;00006&#x27;</span>, <span class="hljs-string">&#x27;杨逍&#x27;</span>, <span class="hljs-string">&#x27;男&#x27;</span>, 28, <span class="hljs-string">&#x27;12345678931234567X&#x27;</span>, <span class="hljs-string">&#x27;北京&#x27;</span>, <span class="hljs-string">&#x27;2006-01-01&#x27;</span>),(7, <span class="hljs-string">&#x27;00007&#x27;</span>, <span class="hljs-string">&#x27;范瑶&#x27;</span>, <span class="hljs-string">&#x27;男&#x27;</span>, 40, <span class="hljs-string">&#x27;123456789212345670&#x27;</span>, <span class="hljs-string">&#x27;北京&#x27;</span>, <span class="hljs-string">&#x27;2005-05-01&#x27;</span>),(8, <span class="hljs-string">&#x27;00008&#x27;</span>, <span class="hljs-string">&#x27;黛绮丝&#x27;</span>, <span class="hljs-string">&#x27;女&#x27;</span>, 38, <span class="hljs-string">&#x27;123456157123645670&#x27;</span>, <span class="hljs-string">&#x27;天津&#x27;</span>, <span class="hljs-string">&#x27;2015-05-01&#x27;</span>),(9, <span class="hljs-string">&#x27;00009&#x27;</span>, <span class="hljs-string">&#x27;范凉凉&#x27;</span>, <span class="hljs-string">&#x27;女&#x27;</span>, 45, <span class="hljs-string">&#x27;123156789012345678&#x27;</span>, <span class="hljs-string">&#x27;北京&#x27;</span>, <span class="hljs-string">&#x27;2010-04-01&#x27;</span>),(10, <span class="hljs-string">&#x27;00010&#x27;</span>, <span class="hljs-string">&#x27;陈友谅&#x27;</span>, <span class="hljs-string">&#x27;男&#x27;</span>, 53, <span class="hljs-string">&#x27;123456789012345670&#x27;</span>, <span class="hljs-string">&#x27;上海&#x27;</span>, <span class="hljs-string">&#x27;2011-01-01&#x27;</span>),(11, <span class="hljs-string">&#x27;00011&#x27;</span>, <span class="hljs-string">&#x27;张士诚&#x27;</span>, <span class="hljs-string">&#x27;男&#x27;</span>, 55, <span class="hljs-string">&#x27;123567897123465670&#x27;</span>, <span class="hljs-string">&#x27;江苏&#x27;</span>, <span class="hljs-string">&#x27;2015-05-01&#x27;</span>),(12, <span class="hljs-string">&#x27;00012&#x27;</span>, <span class="hljs-string">&#x27;常遇春&#x27;</span>, <span class="hljs-string">&#x27;男&#x27;</span>, 32, <span class="hljs-string">&#x27;123446757152345670&#x27;</span>, <span class="hljs-string">&#x27;北京&#x27;</span>, <span class="hljs-string">&#x27;2004-02-01&#x27;</span>),(13, <span class="hljs-string">&#x27;00013&#x27;</span>, <span class="hljs-string">&#x27;张三丰&#x27;</span>, <span class="hljs-string">&#x27;男&#x27;</span>, 88, <span class="hljs-string">&#x27;123656789012345678&#x27;</span>, <span class="hljs-string">&#x27;江苏&#x27;</span>, <span class="hljs-string">&#x27;2020-11-01&#x27;</span>),(14, <span class="hljs-string">&#x27;00014&#x27;</span>, <span class="hljs-string">&#x27;灭绝&#x27;</span>, <span class="hljs-string">&#x27;女&#x27;</span>, 65, <span class="hljs-string">&#x27;123456719012345670&#x27;</span>, <span class="hljs-string">&#x27;西安&#x27;</span>, <span class="hljs-string">&#x27;2019-05-01&#x27;</span>),(15, <span class="hljs-string">&#x27;00015&#x27;</span>, <span class="hljs-string">&#x27;胡青牛&#x27;</span>, <span class="hljs-string">&#x27;男&#x27;</span>, 70, <span class="hljs-string">&#x27;12345674971234567X&#x27;</span>, <span class="hljs-string">&#x27;西安&#x27;</span>, <span class="hljs-string">&#x27;2018-04-01&#x27;</span>),(16, <span class="hljs-string">&#x27;00016&#x27;</span>, <span class="hljs-string">&#x27;周芷若&#x27;</span>, <span class="hljs-string">&#x27;女&#x27;</span>, 18, null, <span class="hljs-string">&#x27;北京&#x27;</span>, <span class="hljs-string">&#x27;2012-06-01&#x27;</span>);
+</code></pre>
+
+<h3 id="基础查询-select"><a href="#基础查询-select" class="headerlink" title="基础查询 select"></a>基础查询 select</h3><pre><code class="hljs bash"><span class="hljs-comment"># 全表查询</span>
+<span class="hljs-keyword">select</span> * from emp;
+<span class="hljs-comment"># 查询某些字段</span>
+<span class="hljs-keyword">select</span> name,gender from emp;
+<span class="hljs-comment"># 查询别名显示</span>
+<span class="hljs-keyword">select</span> name as 姓名, gender as 性别 from emp;
+<span class="hljs-comment"># 去重查询</span>
+<span class="hljs-keyword">select</span> distinct gender from emp;
+
+
+<span class="hljs-comment">## 练习</span>
+<span class="hljs-comment"># A. 查询指定字段 name, workno, age 并返回</span>
+<span class="hljs-keyword">select</span> name,workno,age from emp;
+<span class="hljs-comment"># B. 查询返回所有字段</span>
+<span class="hljs-keyword">select</span> * from emp;
+<span class="hljs-comment"># C. 查询所有员工的工作地址,起别名</span>
+<span class="hljs-keyword">select</span> workaddress as <span class="hljs-string">&#x27;工作地址&#x27;</span> from emp;
+<span class="hljs-comment"># D. 查询公司员工的上班地址有哪些(不要重复)</span>
+<span class="hljs-keyword">select</span> distinct workaddress from emp;
+</code></pre>
 
 <h3 id="聚合函数-count"><a href="#聚合函数-count" class="headerlink" title="聚合函数 count"></a>聚合函数 count</h3><p>将一列数据作为一个整体，进行纵向计算。</p>
 <table>
@@ -1565,7 +1812,26 @@
 <td align="left">求和</td>
 </tr>
 </tbody></table>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 语法：select 聚合函数(字段列表) from 表名;</span></span><br><span class="line"><span class="keyword">select</span> count(*) from emp;</span><br><span class="line"><span class="comment"># 统计表有多少行，*可以用1代替</span></span><br><span class="line"><span class="keyword">select</span> count(*) as total from emp;</span><br><span class="line"><span class="comment"># 统计idcard非空行数量</span></span><br><span class="line"><span class="keyword">select</span> count(idcard) as total from emp;</span><br><span class="line"></span><br><span class="line"><span class="comment">## 统计员工年龄</span></span><br><span class="line"><span class="comment"># 平均年龄</span></span><br><span class="line"><span class="keyword">select</span> avg(age) from emp;</span><br><span class="line"><span class="comment"># 最大年龄</span></span><br><span class="line"><span class="keyword">select</span> max(age) from emp;</span><br><span class="line"><span class="comment"># 最小年龄</span></span><br><span class="line"><span class="keyword">select</span> min(age) from emp;</span><br><span class="line"><span class="comment"># 全部年龄</span></span><br><span class="line"><span class="keyword">select</span> <span class="built_in">sum</span>(age) from emp;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 统计西安地区的平均年龄</span></span><br><span class="line"><span class="keyword">select</span> avg(age) from emp <span class="built_in">where</span> workaddress=<span class="string">&#x27;西安&#x27;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment">## 语法：select 聚合函数(字段列表) from 表名;</span>
+<span class="hljs-keyword">select</span> count(*) from emp;
+<span class="hljs-comment"># 统计表有多少行，*可以用1代替</span>
+<span class="hljs-keyword">select</span> count(*) as total from emp;
+<span class="hljs-comment"># 统计idcard非空行数量</span>
+<span class="hljs-keyword">select</span> count(idcard) as total from emp;
+
+<span class="hljs-comment">## 统计员工年龄</span>
+<span class="hljs-comment"># 平均年龄</span>
+<span class="hljs-keyword">select</span> avg(age) from emp;
+<span class="hljs-comment"># 最大年龄</span>
+<span class="hljs-keyword">select</span> max(age) from emp;
+<span class="hljs-comment"># 最小年龄</span>
+<span class="hljs-keyword">select</span> min(age) from emp;
+<span class="hljs-comment"># 全部年龄</span>
+<span class="hljs-keyword">select</span> <span class="hljs-built_in">sum</span>(age) from emp;
+
+<span class="hljs-comment"># 统计西安地区的平均年龄</span>
+<span class="hljs-keyword">select</span> avg(age) from emp <span class="hljs-built_in">where</span> workaddress=<span class="hljs-string">&#x27;西安&#x27;</span>;
+</code></pre>
 
 <h3 id="条件查询-where"><a href="#条件查询-where" class="headerlink" title="条件查询 where"></a>条件查询 where</h3><table>
 <thead>
@@ -1635,15 +1901,82 @@
 <td align="left">非，不是</td>
 </tr>
 </tbody></table>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 练习</span></span><br><span class="line"><span class="comment"># A. 查询年龄等于 88 的员工</span></span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> age=18;</span><br><span class="line"><span class="comment"># B. 查询年龄小于 20 的员工信息</span></span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> age&lt;20;</span><br><span class="line"><span class="comment"># C. 查询年龄小于等于 20 的员工信息</span></span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> age&lt;=20;</span><br><span class="line"><span class="comment"># D. 查询没有身份证号的员工信息</span></span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> idcard is null;</span><br><span class="line"><span class="comment"># E. 查询有身份证号的员工信息</span></span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> idcard is not null;</span><br><span class="line"><span class="comment"># F. 查询年龄不等于 88 的员工信息</span></span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> age!=88;</span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> age&lt;&gt;88;</span><br><span class="line"><span class="comment"># G. 查询年龄在15岁(包含) 到 20岁(包含)之间的员工信息</span></span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> age &gt;= 15 and age &lt;=20;</span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> age between 15 and 20;</span><br><span class="line"><span class="comment"># H. 查询性别为 女 且年龄小于 25岁的员工信息</span></span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> gender=<span class="string">&#x27;女&#x27;</span> and age&lt;25;</span><br><span class="line"><span class="comment"># I. 查询年龄等于18 或 20 或 40 的员工信息</span></span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> age=18 or age=20 or age=40;</span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> age <span class="keyword">in</span>(18,20,40);</span><br><span class="line"><span class="comment"># J. 查询姓名为两个字的员工信息 _ %</span></span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> name like <span class="string">&#x27;__&#x27;</span>;</span><br><span class="line"><span class="comment"># K. 查询身份证号最后一位是X的员工信息</span></span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> idcard like <span class="string">&#x27;_________________X&#x27;</span>;</span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> idcard list <span class="string">&#x27;%X&#x27;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash"><span class="hljs-comment">## 练习</span>
+<span class="hljs-comment"># A. 查询年龄等于 88 的员工</span>
+<span class="hljs-keyword">select</span> * from emp <span class="hljs-built_in">where</span> age=18;
+<span class="hljs-comment"># B. 查询年龄小于 20 的员工信息</span>
+<span class="hljs-keyword">select</span> * from emp <span class="hljs-built_in">where</span> age&lt;20;
+<span class="hljs-comment"># C. 查询年龄小于等于 20 的员工信息</span>
+<span class="hljs-keyword">select</span> * from emp <span class="hljs-built_in">where</span> age&lt;=20;
+<span class="hljs-comment"># D. 查询没有身份证号的员工信息</span>
+<span class="hljs-keyword">select</span> * from emp <span class="hljs-built_in">where</span> idcard is null;
+<span class="hljs-comment"># E. 查询有身份证号的员工信息</span>
+<span class="hljs-keyword">select</span> * from emp <span class="hljs-built_in">where</span> idcard is not null;
+<span class="hljs-comment"># F. 查询年龄不等于 88 的员工信息</span>
+<span class="hljs-keyword">select</span> * from emp <span class="hljs-built_in">where</span> age!=88;
+<span class="hljs-keyword">select</span> * from emp <span class="hljs-built_in">where</span> age&lt;&gt;88;
+<span class="hljs-comment"># G. 查询年龄在15岁(包含) 到 20岁(包含)之间的员工信息</span>
+<span class="hljs-keyword">select</span> * from emp <span class="hljs-built_in">where</span> age &gt;= 15 and age &lt;=20;
+<span class="hljs-keyword">select</span> * from emp <span class="hljs-built_in">where</span> age between 15 and 20;
+<span class="hljs-comment"># H. 查询性别为 女 且年龄小于 25岁的员工信息</span>
+<span class="hljs-keyword">select</span> * from emp <span class="hljs-built_in">where</span> gender=<span class="hljs-string">&#x27;女&#x27;</span> and age&lt;25;
+<span class="hljs-comment"># I. 查询年龄等于18 或 20 或 40 的员工信息</span>
+<span class="hljs-keyword">select</span> * from emp <span class="hljs-built_in">where</span> age=18 or age=20 or age=40;
+<span class="hljs-keyword">select</span> * from emp <span class="hljs-built_in">where</span> age <span class="hljs-keyword">in</span>(18,20,40);
+<span class="hljs-comment"># J. 查询姓名为两个字的员工信息 _ %</span>
+<span class="hljs-keyword">select</span> * from emp <span class="hljs-built_in">where</span> name like <span class="hljs-string">&#x27;__&#x27;</span>;
+<span class="hljs-comment"># K. 查询身份证号最后一位是X的员工信息</span>
+<span class="hljs-keyword">select</span> * from emp <span class="hljs-built_in">where</span> idcard like <span class="hljs-string">&#x27;_________________X&#x27;</span>;
+<span class="hljs-keyword">select</span> * from emp <span class="hljs-built_in">where</span> idcard list <span class="hljs-string">&#x27;%X&#x27;</span>;
+</code></pre>
 
-<h3 id="分组查询-group-by"><a href="#分组查询-group-by" class="headerlink" title="分组查询 group by"></a>分组查询 group by</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># where 是分组前过滤, having 是分组后的过滤条件</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据性别分组：统计男性和女性的数量</span></span><br><span class="line"><span class="keyword">select</span> gender,count(*) from emp group by gender;</span><br><span class="line"><span class="keyword">select</span> gender,count(*) total from emp group by gender;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据性别分组：统计男性和女性的数量</span></span><br><span class="line"><span class="keyword">select</span> gender,avg(age) from emp group by gender;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查询年龄小于45的员工，并根据工作地址分组，获取员工数量大于等于3的工作地点。</span></span><br><span class="line"><span class="keyword">select</span> workaddress,count(*) total from emp <span class="built_in">where</span> age &lt; 45 group by workaddress having total &gt;= 3;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据工作地址和性别统计人数</span></span><br><span class="line"><span class="keyword">select</span> workaddress,gender, count(*) <span class="string">&#x27;total&#x27;</span> from emp group by workaddress,gender;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="分组查询-group-by"><a href="#分组查询-group-by" class="headerlink" title="分组查询 group by"></a>分组查询 group by</h3><pre><code class="hljs bash"><span class="hljs-comment"># where 是分组前过滤, having 是分组后的过滤条件</span>
 
-<h3 id="排序查询-order-by-降序desc"><a href="#排序查询-order-by-降序desc" class="headerlink" title="排序查询 order by (降序desc)"></a>排序查询 order by (降序desc)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 默认升序</span></span><br><span class="line"><span class="comment"># 按照年龄从小到大升序</span></span><br><span class="line"><span class="keyword">select</span> * from emp order by age;</span><br><span class="line"><span class="keyword">select</span> * from emp order by age asc;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 按照年龄从大到小，降序</span></span><br><span class="line"><span class="keyword">select</span> * from emp order by age desc;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据入职时间先降序，(同入职时间的)根据年龄升序</span></span><br><span class="line"><span class="keyword">select</span> * from emp order by entrydate desc, age asc;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<span class="hljs-comment"># 根据性别分组：统计男性和女性的数量</span>
+<span class="hljs-keyword">select</span> gender,count(*) from emp group by gender;
+<span class="hljs-keyword">select</span> gender,count(*) total from emp group by gender;
 
-<h3 id="分页查询-limit"><a href="#分页查询-limit" class="headerlink" title="分页查询 limit"></a>分页查询 limit</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 对查询结果进行分页</span></span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">limit</span> 0,10;</span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">limit</span> 10,20;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<span class="hljs-comment"># 根据性别分组：统计男性和女性的数量</span>
+<span class="hljs-keyword">select</span> gender,avg(age) from emp group by gender;
 
-<h3 id="联合查询-union"><a href="#联合查询-union" class="headerlink" title="联合查询 union"></a>联合查询 union</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将多次查询结果联合在一起，形成一次查询结果</span></span><br><span class="line"><span class="comment"># 多表查询必须列数一样</span></span><br><span class="line"><span class="comment"># 会自动去重，不想去重可以使用 union all</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查询ID小于10和age=88</span></span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> <span class="built_in">id</span> &lt; 10</span><br><span class="line">union</span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> age = 88;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查询ID小于10和age=88，不去重</span></span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> <span class="built_in">id</span> &lt; 10</span><br><span class="line">union all</span><br><span class="line"><span class="keyword">select</span> * from emp <span class="built_in">where</span> age = 88;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<span class="hljs-comment"># 查询年龄小于45的员工，并根据工作地址分组，获取员工数量大于等于3的工作地点。</span>
+<span class="hljs-keyword">select</span> workaddress,count(*) total from emp <span class="hljs-built_in">where</span> age &lt; 45 group by workaddress having total &gt;= 3;
+
+<span class="hljs-comment"># 根据工作地址和性别统计人数</span>
+<span class="hljs-keyword">select</span> workaddress,gender, count(*) <span class="hljs-string">&#x27;total&#x27;</span> from emp group by workaddress,gender;
+</code></pre>
+
+<h3 id="排序查询-order-by-降序desc"><a href="#排序查询-order-by-降序desc" class="headerlink" title="排序查询 order by (降序desc)"></a>排序查询 order by (降序desc)</h3><pre><code class="hljs bash"><span class="hljs-comment"># 默认升序</span>
+<span class="hljs-comment"># 按照年龄从小到大升序</span>
+<span class="hljs-keyword">select</span> * from emp order by age;
+<span class="hljs-keyword">select</span> * from emp order by age asc;
+
+<span class="hljs-comment"># 按照年龄从大到小，降序</span>
+<span class="hljs-keyword">select</span> * from emp order by age desc;
+
+<span class="hljs-comment"># 根据入职时间先降序，(同入职时间的)根据年龄升序</span>
+<span class="hljs-keyword">select</span> * from emp order by entrydate desc, age asc;
+</code></pre>
+
+<h3 id="分页查询-limit"><a href="#分页查询-limit" class="headerlink" title="分页查询 limit"></a>分页查询 limit</h3><pre><code class="hljs bash"><span class="hljs-comment"># 对查询结果进行分页</span>
+<span class="hljs-keyword">select</span> * from emp <span class="hljs-built_in">limit</span> 0,10;
+<span class="hljs-keyword">select</span> * from emp <span class="hljs-built_in">limit</span> 10,20;
+</code></pre>
+
+<h3 id="联合查询-union"><a href="#联合查询-union" class="headerlink" title="联合查询 union"></a>联合查询 union</h3><pre><code class="hljs bash"><span class="hljs-comment"># 将多次查询结果联合在一起，形成一次查询结果</span>
+<span class="hljs-comment"># 多表查询必须列数一样</span>
+<span class="hljs-comment"># 会自动去重，不想去重可以使用 union all</span>
+
+<span class="hljs-comment"># 查询ID小于10和age=88</span>
+<span class="hljs-keyword">select</span> * from emp <span class="hljs-built_in">where</span> <span class="hljs-built_in">id</span> &lt; 10
+union
+<span class="hljs-keyword">select</span> * from emp <span class="hljs-built_in">where</span> age = 88;
+
+<span class="hljs-comment"># 查询ID小于10和age=88，不去重</span>
+<span class="hljs-keyword">select</span> * from emp <span class="hljs-built_in">where</span> <span class="hljs-built_in">id</span> &lt; 10
+union all
+<span class="hljs-keyword">select</span> * from emp <span class="hljs-built_in">where</span> age = 88;
+</code></pre>
 
 <h1 id="其他-1"><a href="#其他-1" class="headerlink" title="其他"></a>其他</h1><h2 id="MySQL-触发器"><a href="#MySQL-触发器" class="headerlink" title="MySQL 触发器"></a>MySQL 触发器</h2><h2 id="MySQL-数据库引擎"><a href="#MySQL-数据库引擎" class="headerlink" title="MySQL 数据库引擎"></a>MySQL 数据库引擎</h2><h2 id="MySQL-事务"><a href="#MySQL-事务" class="headerlink" title="MySQL 事务"></a>MySQL 事务</h2><h2 id="MySQL-分区分表"><a href="#MySQL-分区分表" class="headerlink" title="MySQL 分区分表"></a>MySQL 分区分表</h2><h2 id="MySQL-视图"><a href="#MySQL-视图" class="headerlink" title="MySQL 视图"></a>MySQL 视图</h2><h2 id="MySQL-数据库设计及SQL优化"><a href="#MySQL-数据库设计及SQL优化" class="headerlink" title="MySQL 数据库设计及SQL优化"></a>MySQL 数据库设计及SQL优化</h2><h2 id="MySQL-数据备份还原"><a href="#MySQL-数据备份还原" class="headerlink" title="MySQL 数据备份还原"></a>MySQL 数据备份还原</h2><h1 id="SQL-注入"><a href="#SQL-注入" class="headerlink" title="SQL 注入"></a>SQL 注入</h1><hr>
 

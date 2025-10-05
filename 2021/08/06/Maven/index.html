@@ -122,10 +122,52 @@
         
             
                 <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
                     <div data-rel="读书">
                         
                         读书
                         <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -154,48 +196,6 @@
                         
                         数据库
                         <small>(5)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="运维">
-                        
-                        运维
-                        <small>(25)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="安全">
-                        
-                        安全
-                        <small>(3)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
-                    <div data-rel="开发">
-                        
-                        开发
-                        <small>(14)</small>
                         
                     </div>
                     
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="239.8k">
+<input type="hidden" id="yelog_site_word_count" value="243.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1018,13 +1018,52 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h1><h2 id="1-本地仓库位置修改"><a href="#1-本地仓库位置修改" class="headerlink" title="1. 本地仓库位置修改"></a>1. 本地仓库位置修改</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">localRepository</span>&gt;</span>D:\tools\repository<span class="tag">&lt;/<span class="name">localRepository</span>&gt;</span></span><br><span class="line">language-xml复制代码</span><br></pre></td></tr></table></figure>
+        <h1 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h1><h2 id="1-本地仓库位置修改"><a href="#1-本地仓库位置修改" class="headerlink" title="1. 本地仓库位置修改"></a>1. 本地仓库位置修改</h2><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">localRepository</span>&gt;</span>D:\tools\repository<span class="hljs-tag">&lt;/<span class="hljs-name">localRepository</span>&gt;</span>
+language-xml复制代码</code></pre>
 
-<h2 id="2-修改maven默认的JDK版本"><a href="#2-修改maven默认的JDK版本" class="headerlink" title="2. 修改maven默认的JDK版本"></a>2. 修改maven默认的JDK版本</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">profile</span>&gt;</span>     </span><br><span class="line">    <span class="tag">&lt;<span class="name">id</span>&gt;</span>JDK-1.8<span class="tag">&lt;/<span class="name">id</span>&gt;</span>       </span><br><span class="line">    <span class="tag">&lt;<span class="name">activation</span>&gt;</span>       </span><br><span class="line">        <span class="tag">&lt;<span class="name">activeByDefault</span>&gt;</span>true<span class="tag">&lt;/<span class="name">activeByDefault</span>&gt;</span>       </span><br><span class="line">        <span class="tag">&lt;<span class="name">jdk</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">jdk</span>&gt;</span>       </span><br><span class="line">    <span class="tag">&lt;/<span class="name">activation</span>&gt;</span>       </span><br><span class="line">    <span class="tag">&lt;<span class="name">properties</span>&gt;</span>       </span><br><span class="line">        <span class="tag">&lt;<span class="name">maven.compiler.source</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.source</span>&gt;</span>       </span><br><span class="line">        <span class="tag">&lt;<span class="name">maven.compiler.target</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.target</span>&gt;</span>       </span><br><span class="line">        <span class="tag">&lt;<span class="name">maven.compiler.compilerVersion</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.compilerVersion</span>&gt;</span>       </span><br><span class="line">    <span class="tag">&lt;/<span class="name">properties</span>&gt;</span>       </span><br><span class="line"><span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br><span class="line">language-xml复制代码</span><br></pre></td></tr></table></figure>
+<h2 id="2-修改maven默认的JDK版本"><a href="#2-修改maven默认的JDK版本" class="headerlink" title="2. 修改maven默认的JDK版本"></a>2. 修改maven默认的JDK版本</h2><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">profile</span>&gt;</span>     
+    <span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>JDK-1.8<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span>       
+    <span class="hljs-tag">&lt;<span class="hljs-name">activation</span>&gt;</span>       
+        <span class="hljs-tag">&lt;<span class="hljs-name">activeByDefault</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">activeByDefault</span>&gt;</span>       
+        <span class="hljs-tag">&lt;<span class="hljs-name">jdk</span>&gt;</span>1.8<span class="hljs-tag">&lt;/<span class="hljs-name">jdk</span>&gt;</span>       
+    <span class="hljs-tag">&lt;/<span class="hljs-name">activation</span>&gt;</span>       
+    <span class="hljs-tag">&lt;<span class="hljs-name">properties</span>&gt;</span>       
+        <span class="hljs-tag">&lt;<span class="hljs-name">maven.compiler.source</span>&gt;</span>1.8<span class="hljs-tag">&lt;/<span class="hljs-name">maven.compiler.source</span>&gt;</span>       
+        <span class="hljs-tag">&lt;<span class="hljs-name">maven.compiler.target</span>&gt;</span>1.8<span class="hljs-tag">&lt;/<span class="hljs-name">maven.compiler.target</span>&gt;</span>       
+        <span class="hljs-tag">&lt;<span class="hljs-name">maven.compiler.compilerVersion</span>&gt;</span>1.8<span class="hljs-tag">&lt;/<span class="hljs-name">maven.compiler.compilerVersion</span>&gt;</span>       
+    <span class="hljs-tag">&lt;/<span class="hljs-name">properties</span>&gt;</span>       
+<span class="hljs-tag">&lt;/<span class="hljs-name">profile</span>&gt;</span>
+language-xml复制代码</code></pre>
 
-<h2 id="3-添加国内镜像源"><a href="#3-添加国内镜像源" class="headerlink" title="3. 添加国内镜像源"></a>3. 添加国内镜像源</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 阿里云仓库 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">id</span>&gt;</span>alimaven<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>aliyun maven<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://maven.aliyun.com/nexus/content/repositories/central/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 中央仓库1 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">id</span>&gt;</span>repo1<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>Human Readable Name for this Mirror.<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://repo1.maven.org/maven2/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 中央仓库2 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">id</span>&gt;</span>repo2<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>Human Readable Name for this Mirror.<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://repo2.maven.org/maven2/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line">language-xml复制代码</span><br></pre></td></tr></table></figure>
+<h2 id="3-添加国内镜像源"><a href="#3-添加国内镜像源" class="headerlink" title="3. 添加国内镜像源"></a>3. 添加国内镜像源</h2><pre><code class="hljs xml"><span class="hljs-comment">&lt;!-- 阿里云仓库 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">mirror</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>alimaven<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">mirrorOf</span>&gt;</span>central<span class="hljs-tag">&lt;/<span class="hljs-name">mirrorOf</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>aliyun maven<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">url</span>&gt;</span>http://maven.aliyun.com/nexus/content/repositories/central/<span class="hljs-tag">&lt;/<span class="hljs-name">url</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">mirror</span>&gt;</span>
 
-<h2 id="4-常用IDE下配置Maven"><a href="#4-常用IDE下配置Maven" class="headerlink" title="4. 常用IDE下配置Maven"></a>4. 常用IDE下配置Maven</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1：此处修改为自己解压的Maven目录</span><br><span class="line">2：勾选Override，修改为自己目录下的settings.xml目录</span><br><span class="line">3：修改为自己的本地仓库地址，一般会自动识别。</span><br><span class="line">language-xml复制代码</span><br></pre></td></tr></table></figure>
+<span class="hljs-comment">&lt;!-- 中央仓库1 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">mirror</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>repo1<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">mirrorOf</span>&gt;</span>central<span class="hljs-tag">&lt;/<span class="hljs-name">mirrorOf</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>Human Readable Name for this Mirror.<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">url</span>&gt;</span>http://repo1.maven.org/maven2/<span class="hljs-tag">&lt;/<span class="hljs-name">url</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">mirror</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- 中央仓库2 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">mirror</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>repo2<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">mirrorOf</span>&gt;</span>central<span class="hljs-tag">&lt;/<span class="hljs-name">mirrorOf</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>Human Readable Name for this Mirror.<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">url</span>&gt;</span>http://repo2.maven.org/maven2/<span class="hljs-tag">&lt;/<span class="hljs-name">url</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">mirror</span>&gt;</span>
+language-xml复制代码</code></pre>
+
+<h2 id="4-常用IDE下配置Maven"><a href="#4-常用IDE下配置Maven" class="headerlink" title="4. 常用IDE下配置Maven"></a>4. 常用IDE下配置Maven</h2><pre><code class="hljs xml">1：此处修改为自己解压的Maven目录
+2：勾选Override，修改为自己目录下的settings.xml目录
+3：修改为自己的本地仓库地址，一般会自动识别。
+language-xml复制代码</code></pre>
 
 <hr>
 
