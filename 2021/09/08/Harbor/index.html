@@ -1025,7 +1025,7 @@
 <li>解压 <code>tar -zxvf harbor-xxx.tar</code></li>
 <li>移动harbor <code>mv harbor /usr/local</code></li>
 <li>生成openssl证书: <code>openssl genrsa -des3 -out server.key 2048</code>(密码123456)</li>
-<li>创建证书请求：<code>openssl req -new -key server.key -out server.csr</code>(密码:123456, 国家：CN, 省会:GD, 市:ZJ, 机构:XJ, 单位：XJ，域名 hub.xj.com, 邮箱: <a href="mailto:&#x68;&#x6a;&#x78;&#x73;&#116;&#x61;&#x72;&#x74;&#x40;&#49;&#x32;&#54;&#x2e;&#99;&#x6f;&#109;">hjxstart@126.com</a>, 密码：123456,公司名字:XJ).中途输入错误可以<code>Ctr+C</code>退出.</li>
+<li>创建证书请求：<code>openssl req -new -key server.key -out server.csr</code>(密码:123456, 国家：CN, 省会:GD, 市:ZJ, 机构:XJ, 单位：XJ，域名 hub.xj.com, 邮箱: <a href="mailto:&#104;&#x6a;&#120;&#x73;&#116;&#x61;&#x72;&#116;&#x40;&#49;&#50;&#x36;&#46;&#99;&#111;&#x6d;">hjxstart@126.com</a>, 密码：123456,公司名字:XJ).中途输入错误可以<code>Ctr+C</code>退出.</li>
 <li>复制文件：cp server.key server.key.org</li>
 <li>取消密码认证：<code>openssl rsa -in server.key.org -out server.key</code>(密码123456)</li>
 <li>创建证书（类型:x509,有效期：365天）：<code>openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt</code></li>
