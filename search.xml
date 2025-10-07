@@ -441,25 +441,6 @@
     
     
     <entry>
-      <title>ESXI</title>
-      <link href="/2023/12/18/ESXI/"/>
-      <url>/2023/12/18/ESXI/</url>
-      
-        <content type="html"><![CDATA[<h1 id="概述-ESXI"><a href="#概述-ESXI" class="headerlink" title="概述 ESXI"></a>概述 ESXI</h1><h2 id="硬件环境概述"><a href="#硬件环境概述" class="headerlink" title="硬件环境概述"></a>硬件环境概述</h2><pre><code class="hljs shell">1.language-shell复制代码</code></pre><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224148.png" alt="img"></p><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224320.png" alt="img"></p><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224521.png" alt="img"></p><h3 id="按-Enter-继续安装"><a href="#按-Enter-继续安装" class="headerlink" title="按 Enter 继续安装"></a>按 Enter 继续安装</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222224705.png" alt="img"></p><h3 id="按-F11-接受许可"><a href="#按-F11-接受许可" class="headerlink" title="按 F11 接受许可"></a>按 F11 接受许可</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225551.png" alt="img"></p><h3 id="按-Enter-选择硬盘"><a href="#按-Enter-选择硬盘" class="headerlink" title="按 Enter 选择硬盘"></a>按 Enter 选择硬盘</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225341.png" alt="img"></p><h3 id="按-Enter-重启"><a href="#按-Enter-重启" class="headerlink" title="按 Enter 重启"></a>按 Enter 重启</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225745.png" alt="img"></p><h3 id="选择-OS"><a href="#选择-OS" class="headerlink" title="选择 OS"></a>选择 OS</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222225912.png" alt="img"></p><h3 id="输入管理员密码"><a href="#输入管理员密码" class="headerlink" title="输入管理员密码"></a>输入管理员密码</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230033.png" alt="img"></p><h3 id="选择-F11-Install"><a href="#选择-F11-Install" class="headerlink" title="选择 F11 Install"></a>选择 F11 Install</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230241.png" alt="img"></p><h3 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230445.png" alt="img"></p><h3 id="管理员登录"><a href="#管理员登录" class="headerlink" title="管理员登录"></a>管理员登录</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230753.png" alt="img"></p><h3 id="选择修改管理网络"><a href="#选择修改管理网络" class="headerlink" title="选择修改管理网络"></a>选择修改管理网络</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222230951.png" alt="img"></p><h3 id="打开网络设备"><a href="#打开网络设备" class="headerlink" title="打开网络设备"></a>打开网络设备</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222231317.png" alt="img"></p><h3 id="选择管理口"><a href="#选择管理口" class="headerlink" title="选择管理口"></a>选择管理口</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222231628.png" alt="img"></p><h3 id="选择-IPv4"><a href="#选择-IPv4" class="headerlink" title="选择 IPv4"></a>选择 IPv4</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222231733.png" alt="img"></p><h3 id="设置静态-IP"><a href="#设置静态-IP" class="headerlink" title="设置静态 IP"></a>设置静态 IP</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20231222232011.png" alt="img"></p><h2 id="ESC-退出和保存配置，就可以使用浏览器通过-IP-地址访问-ESXI-了"><a href="#ESC-退出和保存配置，就可以使用浏览器通过-IP-地址访问-ESXI-了" class="headerlink" title="ESC 退出和保存配置，就可以使用浏览器通过 IP 地址访问 ESXI 了"></a>ESC 退出和保存配置，就可以使用浏览器通过 IP 地址访问 ESXI 了</h2><h2 id="网卡直通"><a href="#网卡直通" class="headerlink" title="网卡直通"></a>网卡直通</h2><p>过滤出可直通的设备，选择除管理网卡外的网络直通</p><hr>]]></content>
-      
-      
-      <categories>
-          
-          <category> 运维 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>RouterOS</title>
       <link href="/2023/12/18/RouterOS/"/>
       <url>/2023/12/18/RouterOS/</url>
@@ -1039,7 +1020,7 @@
       
       <categories>
           
-          <category> 工具 </category>
+          <category> 运维 </category>
           
       </categories>
       
