@@ -15,7 +15,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250913234353519.png">
 <meta property="article:published_time" content="2025-09-13T15:10:00.000Z">
-<meta property="article:modified_time" content="2025-10-05T03:22:16.168Z">
+<meta property="article:modified_time" content="2025-10-08T11:21:46.999Z">
 <meta property="article:author" content="黄金贤">
 <meta property="article:tag" content="计算机网络 数据库 操作系统 数据结构 算法 Java Nodejs">
 <meta name="twitter:card" content="summary">
@@ -238,7 +238,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="66">
-<input type="hidden" id="yelog_site_word_count" value="243.1k">
+<input type="hidden" id="yelog_site_word_count" value="240.1k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -860,12 +860,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-10-04 23:07:20'>2021-07-19 20:58</time>
+            发布时间 : <time class="date" title='最后更新: 2025-10-08 19:21:46'>2021-07-19 20:58</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:2.5k</span>
+        <span>字数:2.4k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -907,7 +907,7 @@
             <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-security<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
-language-xml复制代码</code></pre>
+language-xml</code></pre>
 
 <ol>
 <li>controller</li>
@@ -921,7 +921,7 @@ language-xml复制代码</code></pre>
         <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;hello security&quot;</span>;
     &#125;
 &#125;
-复制代码</code></pre>
+</code></pre>
 
 <ol>
 <li>运行项目即可</li>
@@ -955,7 +955,7 @@ language-xml复制代码</code></pre>
 <pre><code class="hljs properties"><span class="hljs-comment"># 方式一：设置用户名和密码</span>
 <span class="hljs-attr">spring.security.user.name</span>=<span class="hljs-string">admin</span>
 <span class="hljs-attr">spring.security.user.password</span>=<span class="hljs-string">hadoop</span>
-<span class="hljs-attr">language-properties复制代码</span></code></pre>
+<span class="hljs-attr">language-properties</span></code></pre>
 
 <ol>
 <li>方式二：配置类</li>
@@ -980,7 +980,7 @@ language-xml复制代码</code></pre>
         <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">BCryptPasswordEncoder</span>();
     &#125;
 &#125;
-language-java复制代码</code></pre>
+language-java</code></pre>
 
 <ol>
 <li>方式三：自定义编写实现类 UserDetailsService</li>
@@ -1018,7 +1018,7 @@ language-java复制代码</code></pre>
         <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">User</span>(users.getUsername(), <span class="hljs-keyword">new</span> <span class="hljs-title class_">BCryptPasswordEncoder</span>().encode(users.getPassword()), auths);
     &#125;
 &#125;
-language-java复制代码</code></pre>
+language-java</code></pre>
 
 <h4 id="3-2-授权"><a href="#3-2-授权" class="headerlink" title="3.2 授权"></a>3.2 授权</h4><hr>
 <h3 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h3><h4 id="4-1-自定义登录页面-不需要认证也可以访问"><a href="#4-1-自定义登录页面-不需要认证也可以访问" class="headerlink" title="4.1 自定义登录页面 &amp; 不需要认证也可以访问"></a>4.1 自定义登录页面 &amp; 不需要认证也可以访问</h4><ol>
@@ -1036,7 +1036,7 @@ language-java复制代码</code></pre>
                 .anyRequest().authenticated().and().csrf().disable();
     &#125;
 &#125;
-language-java复制代码</code></pre>
+language-java</code></pre>
 
 <ol>
 <li>static目录下有login.html</li>
@@ -1067,7 +1067,7 @@ language-java复制代码</code></pre>
                 .and().csrf().disable();
     &#125;
 &#125;
-language-java复制代码</code></pre>
+language-java</code></pre>
 
 <ul>
 <li>步骤二：在UserDetailsService,把返回User对象设置权限</li>
@@ -1100,7 +1100,7 @@ language-java复制代码</code></pre>
         <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">User</span>(users.getUsername(), <span class="hljs-keyword">new</span> <span class="hljs-title class_">BCryptPasswordEncoder</span>().encode(users.getPassword()), auths);
     &#125;
 &#125;
-language-java复制代码</code></pre>
+language-java</code></pre>
 
 <ul>
 <li>没有访问权限提示:(type&#x3D;Forbidden,status&#x3D;403)</li>
@@ -1114,14 +1114,14 @@ language-java复制代码</code></pre>
 </ul>
 <pre><code class="hljs java"><span class="hljs-comment">// Configuration</span>
 .antMatchers(<span class="hljs-string">&quot;/test/index&quot;</span>).hasAnyAuthority(<span class="hljs-string">&quot;admins,manager&quot;</span>)
-language-java复制代码</code></pre>
+language-java</code></pre>
 
 <ul>
 <li>步骤二</li>
 </ul>
 <pre><code class="hljs java"><span class="hljs-comment">// Service</span>
  List&lt;GrantedAuthority&gt; auths = AuthorityUtils.commaSeparatedStringToAuthorityList(<span class="hljs-string">&quot;admins&quot;</span>);
-language-java复制代码</code></pre>
+language-java</code></pre>
 
 <ol>
 <li>hasRole 方法</li>
@@ -1132,14 +1132,14 @@ language-java复制代码</code></pre>
 </ul>
 <pre><code class="hljs java"><span class="hljs-comment">// Configuration</span>
 .antMatchers(<span class="hljs-string">&quot;/test/index&quot;</span>).hasRole(<span class="hljs-string">&quot;sale&quot;</span>)
-language-java复制代码</code></pre>
+language-java</code></pre>
 
 <ul>
 <li>步骤二</li>
 </ul>
 <pre><code class="hljs java"><span class="hljs-comment">// Service //以ROLE_XXXXX</span>
 List&lt;GrantedAuthority&gt; auths = AuthorityUtils.commaSeparatedStringToAuthorityList(<span class="hljs-string">&quot;admins，ROLE_sale&quot;</span>);
-language-java复制代码</code></pre>
+language-java</code></pre>
 
 <ol>
 <li>hasAnyRole 方法</li>
@@ -1150,7 +1150,7 @@ language-java复制代码</code></pre>
 </ul>
 <pre><code class="hljs java"><span class="hljs-comment">// 角色权限控制方法四：hasAnyRole</span>
 .antMatchers(<span class="hljs-string">&quot;/test/index&quot;</span>).hasAnyRole(<span class="hljs-string">&quot;admins,sale&quot;</span>)
-language-java复制代码</code></pre>
+language-java</code></pre>
 
 <ul>
 <li>给用户添加角色</li>
@@ -1158,14 +1158,14 @@ language-java复制代码</code></pre>
 <pre><code class="hljs java"><span class="hljs-comment">// 定义一个权限列表</span>
 List&lt;GrantedAuthority&gt; auths = AuthorityUtils.commaSeparatedStringToAuthorityList(<span class="hljs-string">&quot;ROLE_admins,ROLE_sale&quot;</span>);
 <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">User</span>(users.getUsername(), <span class="hljs-keyword">new</span> <span class="hljs-title class_">BCryptPasswordEncoder</span>().encode(users.getPassword()), auths);
-language-java复制代码</code></pre>
+language-java</code></pre>
 
 <h3 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a>第五章</h3><h4 id="5-1-自定义403没有权限访问页面"><a href="#5-1-自定义403没有权限访问页面" class="headerlink" title="5.1 自定义403没有权限访问页面"></a>5.1 自定义403没有权限访问页面</h4><ol>
 <li>在配置类进行配置就可以了</li>
 </ol>
 <pre><code class="hljs java"><span class="hljs-comment">// 配置没有权限访问跳转自定义页面</span>
         http.exceptionHandling().accessDeniedPage(<span class="hljs-string">&quot;/unauth.html&quot;</span>);
-language-java复制代码</code></pre>
+language-java</code></pre>
 
 <h3 id="第六章-方法常用注解使用"><a href="#第六章-方法常用注解使用" class="headerlink" title="第六章 方法常用注解使用"></a>第六章 方法常用注解使用</h3><h4 id="6-1-EnableGlobalMethodSecurity-securedEnabled-true-prePostEnable-true"><a href="#6-1-EnableGlobalMethodSecurity-securedEnabled-true-prePostEnable-true" class="headerlink" title="6.1 @EnableGlobalMethodSecurity(securedEnabled &#x3D; true, prePostEnable&#x3D;true)"></a>6.1 @EnableGlobalMethodSecurity(securedEnabled &#x3D; true, prePostEnable&#x3D;true)</h4><ol>
 <li>使用注解先要在启动类里面开启注解功能！</li>
@@ -1179,20 +1179,20 @@ language-java复制代码</code></pre>
     <span class="hljs-keyword">public</span> String <span class="hljs-title function_">update</span><span class="hljs-params">()</span> &#123;
         <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;hello update&quot;</span>;
     &#125;
-language-java复制代码</code></pre>
+language-java</code></pre>
 
 <ol>
 <li>步骤三：在config添加角色</li>
 </ol>
 <pre><code class="hljs java">List&lt;GrantedAuthority&gt; auths = AuthorityUtils.commaSeparatedStringToAuthorityList(<span class="hljs-string">&quot;ROLE_admins,ROLE_sale&quot;</span>);
-language-java复制代码</code></pre>
+language-java</code></pre>
 
 <h4 id="6-3-PreAuthorize-方法执行前"><a href="#6-3-PreAuthorize-方法执行前" class="headerlink" title="6.3 @PreAuthorize 方法执行前"></a>6.3 @PreAuthorize 方法执行前</h4><ol>
 <li>@PreAuthorize 注解适合进入方法前的权限验证；</li>
 <li>步骤一：在启动类(配置类)开启注解</li>
 </ol>
 <pre><code class="hljs java"><span class="hljs-meta">@EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true)</span>
-language-java复制代码</code></pre>
+language-java</code></pre>
 
 <ol>
 <li>步骤二：在方法添加注解 @preAuthorize</li>
@@ -1203,14 +1203,14 @@ language-java复制代码</code></pre>
     <span class="hljs-keyword">public</span> String <span class="hljs-title function_">update</span><span class="hljs-params">()</span> &#123;
         <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;hello update&quot;</span>;
     &#125;
-language-java复制代码</code></pre>
+language-java</code></pre>
 
 <h4 id="6-4-PostAuthorize-方法执行后-返回值"><a href="#6-4-PostAuthorize-方法执行后-返回值" class="headerlink" title="6.4 @PostAuthorize 方法执行后,返回值"></a>6.4 @PostAuthorize 方法执行后,返回值</h4><ol>
 <li>@PostAuthorize 在方法执行完后验证</li>
 <li>步骤一：在启动类(配置类)添加注解</li>
 </ol>
 <pre><code class="hljs java"><span class="hljs-meta">@EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true)</span>
-language-java复制代码</code></pre>
+language-java</code></pre>
 
 <ol>
 <li>步骤二：在方法添加注解</li>
@@ -1223,7 +1223,7 @@ language-java复制代码</code></pre>
         System.out.println(<span class="hljs-string">&quot;update.........&quot;</span>);
         <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;hello update&quot;</span>;
     &#125;
-language-java复制代码</code></pre>
+language-java</code></pre>
 
 <h4 id="6-5-PostFilter-对方法返回数据进行过滤"><a href="#6-5-PostFilter-对方法返回数据进行过滤" class="headerlink" title="6.5 @PostFilter 对方法返回数据进行过滤"></a>6.5 @PostFilter 对方法返回数据进行过滤</h4><ol>
 <li>@PostFilter 权限验证之后对数据进行过滤，留下用户名是admin1的数据</li>
@@ -1239,7 +1239,7 @@ language-java复制代码</code></pre>
         System.out.println(list);
         <span class="hljs-keyword">return</span> list;
     &#125;
-language-java复制代码</code></pre>
+language-java</code></pre>
 
 <h4 id="6-6-PreFilter-对-方法传入的参数做过滤"><a href="#6-6-PreFilter-对-方法传入的参数做过滤" class="headerlink" title="6.6 @PreFilter 对 方法传入的参数做过滤"></a>6.6 @PreFilter 对 方法传入的参数做过滤</h4><ol>
 <li>@PreFilter 进入控制器之前对数据进行过滤</li>
@@ -1255,21 +1255,21 @@ language-java复制代码</code></pre>
         &#125;);
         <span class="hljs-keyword">return</span> list;
     &#125;
-language-java复制代码</code></pre>
+language-java</code></pre>
 
 <h3 id="第7章-用户注销"><a href="#第7章-用户注销" class="headerlink" title="第7章 用户注销"></a>第7章 用户注销</h3><h4 id="用户注销"><a href="#用户注销" class="headerlink" title="用户注销"></a>用户注销</h4><ol>
 <li>在配置类中添加退出映射地址</li>
 </ol>
 <pre><code class="hljs java"><span class="hljs-comment">// 退出，注销配置, 退出地址，退出后的跳转地址</span>
         http.logout().logoutUrl(<span class="hljs-string">&quot;/logout&quot;</span>).logoutSuccessUrl(<span class="hljs-string">&quot;/test/hello&quot;</span>).permitAll();
-language-java复制代码</code></pre>
+language-java</code></pre>
 
 <ol>
 <li>在成功页面添加超链接，写设置退出路径 success.html</li>
 </ol>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>登录成功！<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/logout&quot;</span>&gt;</span>退出<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-language-html复制代码</code></pre>
+language-html</code></pre>
 
 <ol>
 <li>登录成功之后，在成功页面点击退出，再去访问其他controller不能进行访问的</li>
@@ -1278,7 +1278,7 @@ language-html复制代码</code></pre>
                 .loginPage(<span class="hljs-string">&quot;/login.html&quot;</span>)
                 .loginProcessingUrl(<span class="hljs-string">&quot;/user/login&quot;</span>)
                 .defaultSuccessUrl(<span class="hljs-string">&quot;/success.html&quot;</span>).permitAll()
-language-java复制代码</code></pre>
+language-java</code></pre>
 
 <h3 id="第8章-自动登录-RemeberMeService"><a href="#第8章-自动登录-RemeberMeService" class="headerlink" title="第8章 自动登录 RemeberMeService"></a>第8章 自动登录 RemeberMeService</h3><h4 id="8-1-原理"><a href="#8-1-原理" class="headerlink" title="8.1 原理"></a>8.1 原理</h4><h4 id="8-2-实现"><a href="#8-2-实现" class="headerlink" title="8.2 实现"></a>8.2 实现</h4><ol>
 <li>创建表(可选)</li>
@@ -1304,7 +1304,7 @@ language-java复制代码</code></pre>
         jdbcTokenRepository.setCreateTableOnStartup(<span class="hljs-literal">true</span>);
         <span class="hljs-keyword">return</span> jdbcTokenRepository;
     &#125;
-language-java复制代码</code></pre>
+language-java</code></pre>
 
 <ol>
 <li>配置类中，配置自动登录</li>
@@ -1314,17 +1314,17 @@ language-java复制代码</code></pre>
                     .tokenValiditySeconds(<span class="hljs-number">60</span>)
                     <span class="hljs-comment">// 使用userDetailsService对象对数据库的操作</span>
                     .userDetailsService(userDetailsService)
-language-java复制代码</code></pre>
+language-java</code></pre>
 
 <ol>
 <li>在登录页面添加复选框</li>
 </ol>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;remember-me&quot;</span>&gt;</span>自动登录
 <span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span>
-language-html复制代码</code></pre>
+language-html</code></pre>
 
 <h3 id="第九章-CSRF"><a href="#第九章-CSRF" class="headerlink" title="第九章 CSRF"></a>第九章 CSRF</h3><h4 id="9-1"><a href="#9-1" class="headerlink" title="9.1"></a>9.1</h4><pre><code class="hljs java">&lt;input type=<span class="hljs-string">&quot;hidden&quot;</span> th:name=<span class="hljs-string">&quot;$&#123;_csrf.parameterName&#125;&quot;</span> th:value=<span class="hljs-string">&quot;$&#123;_csrf.token&#125;&quot;</span>/&gt;
-language-java复制代码</code></pre>
+language-java</code></pre>
 
 <h4 id="9-2-开启CSRF-防护"><a href="#9-2-开启CSRF-防护" class="headerlink" title="9.2 开启CSRF 防护"></a>9.2 开启CSRF 防护</h4><hr>
 

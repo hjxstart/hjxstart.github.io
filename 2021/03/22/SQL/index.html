@@ -15,7 +15,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250913234353519.png">
 <meta property="article:published_time" content="2025-09-13T15:10:00.000Z">
-<meta property="article:modified_time" content="2025-10-05T03:22:16.168Z">
+<meta property="article:modified_time" content="2025-10-08T11:21:46.999Z">
 <meta property="article:author" content="黄金贤">
 <meta property="article:tag" content="计算机网络 数据库 操作系统 数据结构 算法 Java Nodejs">
 <meta name="twitter:card" content="summary">
@@ -238,7 +238,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="66">
-<input type="hidden" id="yelog_site_word_count" value="243.1k">
+<input type="hidden" id="yelog_site_word_count" value="240.1k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -860,12 +860,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-10-04 23:14:57'>2021-03-22 18:33</time>
+            发布时间 : <time class="date" title='最后更新: 2025-10-08 19:21:46'>2021-03-22 18:33</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:4.5k</span>
+        <span>字数:4.4k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -916,13 +916,13 @@
 <pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> file_hash  <span class="hljs-comment">-- stored ssdeep hash</span>
   <span class="hljs-keyword">FROM</span> file_system
  <span class="hljs-keyword">WHERE</span> file_name <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;.vimrc&#x27;</span>;
-<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>复制代码
+<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>
 <span class="hljs-comment">/* Updating the file record after writing to the file */</span>
 <span class="hljs-keyword">UPDATE</span> file_system
    <span class="hljs-keyword">SET</span> file_modified_date <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;1980-02-22 13:19:01.00000&#x27;</span>,
        file_size <span class="hljs-operator">=</span> <span class="hljs-number">209732</span>
  <span class="hljs-keyword">WHERE</span> file_name <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;.vimrc&#x27;</span>;
-<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>复制代码</code></pre>
+<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span></code></pre>
 
 <h3 id="Avoid-应避免的事情"><a href="#Avoid-应避免的事情" class="headerlink" title="Avoid 应避免的事情"></a>Avoid 应避免的事情</h3><ul>
 <li>驼峰命名法 —— 它不适合快速扫读。</li>
@@ -942,7 +942,7 @@
 </ul>
 <pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> first_name
   <span class="hljs-keyword">FROM</span> staff;
-<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>复制代码</code></pre>
+<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span></code></pre>
 
 <h3 id="Tables-表名"><a href="#Tables-表名" class="headerlink" title="Tables 表名"></a>Tables 表名</h3><ul>
 <li>使用集合名称，或在不那么理想的情况下使用复数形式。如 <code>staff</code>（建议使用）和 <code>employees</code>。</li>
@@ -967,10 +967,10 @@
   <span class="hljs-keyword">FROM</span> staff <span class="hljs-keyword">AS</span> s1
   <span class="hljs-keyword">JOIN</span> students <span class="hljs-keyword">AS</span> s2
     <span class="hljs-keyword">ON</span> s2.mentor_id <span class="hljs-operator">=</span> s1.staff_num;
-<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>复制代码
+<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>
 <span class="hljs-keyword">SELECT</span> <span class="hljs-built_in">SUM</span>(s.monitor_tally) <span class="hljs-keyword">AS</span> monitor_total
   <span class="hljs-keyword">FROM</span> staff <span class="hljs-keyword">AS</span> s;
-<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>复制代码</code></pre>
+<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span></code></pre>
 
 <h3 id="Stored-procedures-存储过程名"><a href="#Stored-procedures-存储过程名" class="headerlink" title="Stored procedures 存储过程名"></a>Stored procedures 存储过程名</h3><ul>
 <li>名字一定要包含动词。</li>
@@ -995,7 +995,7 @@
 <pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> model_num
   <span class="hljs-keyword">FROM</span> phones <span class="hljs-keyword">AS</span> p
  <span class="hljs-keyword">WHERE</span> p.release_date <span class="hljs-operator">&gt;</span> <span class="hljs-string">&#x27;2014-09-30&#x27;</span>;
-<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>复制代码</code></pre>
+<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span></code></pre>
 
 <h3 id="White-space-空白字符"><a href="#White-space-空白字符" class="headerlink" title="White space 空白字符"></a>White space 空白字符</h3><p>正确地使用空白字符对清晰的代码十分重要。不要把代码堆在一起或移除自然语言中的空格。</p>
 <h4 id="Spaces-空格"><a href="#Spaces-空格" class="headerlink" title="Spaces 空格"></a>Spaces 空格</h4><p>用空格使根关键字都结束在同一列上。在代码中间形成一个从上到下的“川流”，这样帮助读者快速扫视代码并将关键字和实现细节分开。川流在排版时应该避免，但是对阅读 SQL 语句是有帮助的。</p>
@@ -1016,7 +1016,7 @@
      <span class="hljs-keyword">OR</span> b.species_name <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;Sheoak&#x27;</span>
      <span class="hljs-keyword">OR</span> b.species_name <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;Wattle&#x27;</span>
   <span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> b.species_name, b.observation_date);
-<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>复制代码</code></pre>
+<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span></code></pre>
 
 <p>注意 <code>SELECT</code> 和 <code>FROM</code> 等关键字，都右对齐，而实际的列名和实现细节都左对齐。</p>
 <p>注意下列情况总是加入空格：</p>
@@ -1029,7 +1029,7 @@
   <span class="hljs-keyword">FROM</span> albums <span class="hljs-keyword">AS</span> a
  <span class="hljs-keyword">WHERE</span> a.title <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;Charcoal Lane&#x27;</span>
     <span class="hljs-keyword">OR</span> a.title <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;The New Danger&#x27;</span>;
-<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>复制代码</code></pre>
+<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span></code></pre>
 
 <h4 id="Line-spacing-换行"><a href="#Line-spacing-换行" class="headerlink" title="Line spacing 换行"></a>Line spacing 换行</h4><p>总是换行的情况：</p>
 <ul>
@@ -1043,17 +1043,17 @@
 <pre><code class="hljs sql"><span class="hljs-keyword">INSERT INTO</span> albums (title, release_date, recording_date)
 <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">&#x27;Charcoal Lane&#x27;</span>, <span class="hljs-string">&#x27;1990-01-01 01:01:01.00000&#x27;</span>, <span class="hljs-string">&#x27;1990-01-01 01:01:01.00000&#x27;</span>),
        (<span class="hljs-string">&#x27;The New Danger&#x27;</span>, <span class="hljs-string">&#x27;2008-01-01 01:01:01.00000&#x27;</span>, <span class="hljs-string">&#x27;1990-01-01 01:01:01.00000&#x27;</span>);
-<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>复制代码
+<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>
 <span class="hljs-keyword">UPDATE</span> albums
    <span class="hljs-keyword">SET</span> release_date <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;1990-01-01 01:01:01.00000&#x27;</span>
  <span class="hljs-keyword">WHERE</span> title <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;The New Danger&#x27;</span>;
-<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>复制代码
+<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>
 <span class="hljs-keyword">SELECT</span> a.title,
        a.release_date, a.recording_date, a.production_date <span class="hljs-comment">-- 将所有的日期放在一起</span>
   <span class="hljs-keyword">FROM</span> albums <span class="hljs-keyword">AS</span> a
  <span class="hljs-keyword">WHERE</span> a.title <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;Charcoal Lane&#x27;</span>
     <span class="hljs-keyword">OR</span> a.title <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;The New Danger&#x27;</span>;
-<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>复制代码</code></pre>
+<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span></code></pre>
 
 <h3 id="Indentation-缩进"><a href="#Indentation-缩进" class="headerlink" title="Indentation 缩进"></a>Indentation 缩进</h3><p>为确保 SQL 的可读性，一定要遵守下列规则。</p>
 <h4 id="Joins-Join-语句"><a href="#Joins-Join-语句" class="headerlink" title="Joins Join 语句"></a>Joins Join 语句</h4><p>Join 语句应该缩进到川流的另一侧并在必要的时候添加一个换行。</p>
@@ -1066,7 +1066,7 @@
        <span class="hljs-keyword">INNER</span> <span class="hljs-keyword">JOIN</span> crew <span class="hljs-keyword">AS</span> c
        <span class="hljs-keyword">ON</span> r.crew_chief_last_name <span class="hljs-operator">=</span> c.last_name
           <span class="hljs-keyword">AND</span> c.chief <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;Y&#x27;</span>;
-<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>复制代码</code></pre>
+<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span></code></pre>
 
 <h4 id="Subqueries-子查询"><a href="#Subqueries-子查询" class="headerlink" title="Subqueries 子查询"></a>Subqueries 子查询</h4><p>子查询应该在川流的右侧对齐并使用其他查询相同的样式。有时候将右括号单独置于一行并同与它配对的左括号对齐是有意义的 —— 尤其是当存在嵌套子查询的时候。</p>
 <pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> r.last_name,
@@ -1080,7 +1080,7 @@
           <span class="hljs-keyword">FROM</span> champions <span class="hljs-keyword">AS</span> c
          <span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">YEAR</span>(championship_date) <span class="hljs-operator">&gt;</span> <span class="hljs-string">&#x27;2008&#x27;</span>
            <span class="hljs-keyword">AND</span> c.confirmed <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;Y&#x27;</span>);
-<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>复制代码</code></pre>
+<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span></code></pre>
 
 <h3 id="Preferred-formalisms-推荐的形式"><a href="#Preferred-formalisms-推荐的形式" class="headerlink" title="Preferred formalisms 推荐的形式"></a>Preferred formalisms 推荐的形式</h3><ul>
 <li>尽量使用 <code>BETWEEN</code> 而不是多个 <code>AND</code> 语句。</li>
@@ -1096,7 +1096,7 @@
  <span class="hljs-keyword">WHERE</span> country <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;United Kingdom&#x27;</span>
    <span class="hljs-keyword">AND</span> opening_time <span class="hljs-keyword">BETWEEN</span> <span class="hljs-number">8</span> <span class="hljs-keyword">AND</span> <span class="hljs-number">9</span>
    <span class="hljs-keyword">AND</span> postcode <span class="hljs-keyword">IN</span> (<span class="hljs-string">&#x27;EH1&#x27;</span>, <span class="hljs-string">&#x27;BN1&#x27;</span>, <span class="hljs-string">&#x27;NN1&#x27;</span>, <span class="hljs-string">&#x27;KW1&#x27;</span>);
-<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>复制代码</code></pre>
+<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span></code></pre>
 
 <h2 id="Create-syntax-创建语句"><a href="#Create-syntax-创建语句" class="headerlink" title="Create syntax 创建语句"></a>Create syntax 创建语句</h2><p>声明模式信息时维护可读代码也很重要。所以列定义的顺序和分组一定要有意义。</p>
 <p>在 <code>CREATE</code> 定义中，每个列定义要缩进 4 个空格。</p>
@@ -1143,7 +1143,7 @@
                    <span class="hljs-keyword">CONSTRAINT</span> pens_in_drawer_range
                    <span class="hljs-keyword">CHECK</span>(pens_in_drawer <span class="hljs-keyword">BETWEEN</span> <span class="hljs-number">1</span> <span class="hljs-keyword">AND</span> <span class="hljs-number">99</span>)
 );
-<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>复制代码</code></pre>
+<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span></code></pre>
 
 <h3 id="Design-to-avoid-应该避免的设计"><a href="#Design-to-avoid-应该避免的设计" class="headerlink" title="Design to avoid 应该避免的设计"></a>Design to avoid 应该避免的设计</h3><ul>
 <li>在关系型数据库的设计中应用面向对象设计思想（原则）—— 面向对象设计思想（原则）并不能很好地适用于关系型数据库的设计，避免这个陷阱。</li>
@@ -1977,7 +1977,7 @@ XOR
 YEAR_MONTH
 ZEROFILL
 ZONE
-<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span>复制代码</code></pre>
+<span class="hljs-keyword">language</span><span class="hljs-operator">-</span><span class="hljs-keyword">sql</span></code></pre>
 
 <h3 id="Column-data-types-列的数据类型"><a href="#Column-data-types-列的数据类型" class="headerlink" title="Column data types 列的数据类型"></a>Column data types 列的数据类型</h3><p>出于在数据库引擎之间达到最大程度兼容的目的，下面是一些建议使用的列数据类型。</p>
 <h4 id="Character-types-字符型"><a href="#Character-types-字符型" class="headerlink" title="Character types 字符型"></a>Character types 字符型</h4><ul>

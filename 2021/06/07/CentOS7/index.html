@@ -15,7 +15,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250913234353519.png">
 <meta property="article:published_time" content="2025-09-13T15:10:00.000Z">
-<meta property="article:modified_time" content="2025-10-05T03:22:16.168Z">
+<meta property="article:modified_time" content="2025-10-08T11:21:46.999Z">
 <meta property="article:author" content="黄金贤">
 <meta property="article:tag" content="计算机网络 数据库 操作系统 数据结构 算法 Java Nodejs">
 <meta name="twitter:card" content="summary">
@@ -238,7 +238,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="66">
-<input type="hidden" id="yelog_site_word_count" value="243.1k">
+<input type="hidden" id="yelog_site_word_count" value="240.1k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -860,12 +860,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-10-08 18:17:03'>2021-06-07 23:16</time>
+            发布时间 : <time class="date" title='最后更新: 2025-10-08 19:21:47'>2021-06-07 23:16</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:7.2k</span>
+        <span>字数:7.1k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -905,23 +905,23 @@
 y
 y
 ifconfig
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <h3 id="2-安装-openssh、openssl-并启动"><a href="#2-安装-openssh、openssl-并启动" class="headerlink" title="2.安装 openssh、openssl 并启动"></a>2.安装 openssh、openssl 并启动</h3><pre><code class="hljs shell">yum install openssh*
 y
 yum -y install openssl openssl-devel patch
 systemctl start sshd
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <h3 id="3-安装-vim"><a href="#3-安装-vim" class="headerlink" title="3.安装 vim"></a>3.安装 vim</h3><pre><code class="hljs shell">yum -y install vim
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <h3 id="4-安装-wget"><a href="#4-安装-wget" class="headerlink" title="4.安装 wget"></a>4.安装 wget</h3><pre><code class="hljs shell">yum -y install wget
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <h3 id="5-安装-gcc-编译套件"><a href="#5-安装-gcc-编译套件" class="headerlink" title="5.安装 gcc 编译套件"></a>5.安装 gcc 编译套件</h3><pre><code class="hljs shell">yum install gcc
 y
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <h2 id="系统优化"><a href="#系统优化" class="headerlink" title="系统优化"></a>系统优化</h2><h3 id="1-关闭-selinux"><a href="#1-关闭-selinux" class="headerlink" title="1.关闭 selinux"></a>1.关闭 selinux</h3><pre><code class="hljs bash">sed -i <span class="hljs-string">&#x27;s/=enforcing/=disabled/&#x27;</span> /etc/selinux/config
 setenforce 0
@@ -1380,14 +1380,14 @@ systemctl start atd.service
 systemctl enable atd.service
 <span class="hljs-meta prompt_"># </span><span class="language-bash">查看当前的</span>
 systemctl status atd
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <h3 id="2-at-简单使用"><a href="#2-at-简单使用" class="headerlink" title="2.at 简单使用"></a>2.at 简单使用</h3><p>定义定时任务 1</p>
 <pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">设置当前用户的一次性任务命令</span>
 at 23:30
 <span class="hljs-meta prompt_"># </span><span class="language-bash">定义定时任务要执行的命令</span>
 systemctl restart httpd
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <blockquote>
 <p><code>注意:</code> 一次性的计划任务使用 ctr+D 来结束提交</p>
@@ -1398,11 +1398,11 @@ language-shell复制代码</code></pre>
 
 <p>查看定时任务</p>
 <pre><code class="hljs shell">at -l
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <p>删除编号为 2 的定时任务</p>
 <pre><code class="hljs shell">atrm 2
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <blockquote>
 <p>使用帮助： <code>at --help</code> 或者 <code>man at</code></p>
@@ -1443,7 +1443,7 @@ language-shell复制代码</code></pre>
 3,15 8-11 * * *
 <span class="hljs-meta prompt_"># </span><span class="language-bash">每隔两天的上午8点到11点的第3 和第15分钟执行</span>
 3,15 8-11 */2 * *
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <blockquote>
 <ol>
@@ -1472,7 +1472,7 @@ language-shell复制代码</code></pre>
 <span class="hljs-meta prompt_"># </span><span class="language-bash">| | | | .----dayofweek(0-6)(Sunday=0or7)OR sun,mon,tue,wed,thu,fri,sat</span>
 <span class="hljs-meta prompt_"># </span><span class="language-bash">| | | | |</span>
 <span class="hljs-meta prompt_"># </span><span class="language-bash">* * * * * user-name <span class="hljs-built_in">command</span> to be executed</span>
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <hr>
 <h3 id="5-用户级的计划任务"><a href="#5-用户级的计划任务" class="headerlink" title="5.用户级的计划任务"></a>5.用户级的计划任务</h3><ol>
@@ -1538,7 +1538,7 @@ at -l
 <span class="hljs-meta prompt_"></span>
 <span class="hljs-meta prompt_"># </span><span class="language-bash">4.每两小时取出当前系统/proc/meminfo文件中以S或M开 头的行信息追加至/tmp/meminfo.txt文件中。</span>
 0 */2 * * * grep ^[SM] /proc/meminfo  &gt;&gt; /tem/meminfo.txt
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <hr>
 <h3 id="6-rsyslog-日志管理"><a href="#6-rsyslog-日志管理" class="headerlink" title="6.rsyslog 日志管理"></a>6.rsyslog 日志管理</h3><ol>
@@ -1580,7 +1580,7 @@ language-shell复制代码</code></pre>
 <pre><code class="hljs shell">tail -2 /var/log/messages
 Jun  9 10:11:03 localhost dbus[6555]: [system] Activating service name=&#x27;org.freedesktop.problems&#x27; (using servicehelper)
 Jun  9 10:11:03 localhost dbus[6555]: [system] Successfully activated service &#x27;org.freedesktop.problems&#x27;
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <ol>
 <li>&#x2F;etc&#x2F;rsyslog.conf 配置文件格式</li>
@@ -1596,7 +1596,7 @@ language-shell复制代码</code></pre>
 <pre><code class="hljs shell">服务名称[连接符号]日志等级 日志记录位置
 authpriv.* /var/log/secure
 认证相关服务.所有日志等级 记录在/var/log/secure 日志中
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <ol>
 <li>日志服务 rsyslogd</li>
@@ -1604,21 +1604,21 @@ language-shell复制代码</code></pre>
 <p>存放日志的服务器（开启接受功能）:192.168.17.130</p>
 <pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">编辑配置文件</span>
 vim /etc/rsyslog.conf
-language-shell复制代码
+language-shell
 <span class="hljs-meta prompt_"># </span><span class="language-bash">Provides UDP syslog reception 开启UDP传输</span>
 <span class="hljs-meta prompt_">$</span><span class="language-bash">ModLoad imudp</span>
 <span class="hljs-meta prompt_">$</span><span class="language-bash">UDPServerRun 514</span>
 <span class="hljs-meta prompt_"># </span><span class="language-bash">Provides TCP syslog reception 开启TCP传输</span>
 <span class="hljs-meta prompt_">$</span><span class="language-bash">ModLoad imtcp</span>
 <span class="hljs-meta prompt_">$</span><span class="language-bash">InputTCPServerRun 514</span>
-language-shell复制代码
+language-shell
 <span class="hljs-meta prompt_"># </span><span class="language-bash">重启服务</span>
 systemctl restart rsyslog
 <span class="hljs-meta prompt_"># </span><span class="language-bash">查看514端口是否在监听</span>
 netstat -tnlup | grep :514
 <span class="hljs-meta prompt_"># </span><span class="language-bash">实时查看日志后，进行测试</span>
 tail /var/log/maillog -f
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <p>产生日志服务器（发送日志）:192.168.17.133</p>
 <pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">默认端口为514</span>
@@ -1627,7 +1627,7 @@ echo &#x27;mail.info @192.168.17.130:514&#x27;&gt;&gt; /etc/rsyslog.conf
 [root@localhost ~]# systemctl restart rsyslog # 重启服务
 <span class="hljs-meta prompt_"># </span><span class="language-bash">发送测试消息</span>
 [root@localhost ~]# logger -p mail.info &quot;this is a test for rmote log.&quot;
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <ol>
 <li>作业</li>
@@ -1672,7 +1672,7 @@ language-shell复制代码</code></pre>
 <span class="hljs-meta prompt_">	# </span><span class="language-bash">systemctl restart rsyslog</span>
 	尝试ssh登录服务器1,并观察本地日志
 <span class="hljs-meta prompt_">	# </span><span class="language-bash"><span class="hljs-built_in">tail</span> -f /var/log/server12.<span class="hljs-built_in">log</span></span>
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <hr>
 <h3 id="7-logrotate-日志轮转"><a href="#7-logrotate-日志轮转" class="headerlink" title="7.logrotate 日志轮转"></a>7.logrotate 日志轮转</h3><ol>
@@ -1687,7 +1687,7 @@ language-shell复制代码</code></pre>
 </ol>
 </blockquote>
 <pre><code class="hljs shell">cat /etc/cron.daily/logrotate
-language-shell复制代码
+language-shell
 <span class="hljs-meta prompt_">#</span><span class="language-bash">!/bin/sh</span>
 /usr/sbin/logrotate -s /var/lib/logrotate/logrotate.status /etc/logrotate.conf
 EXITVALUE=$?
@@ -1695,7 +1695,7 @@ if [ $EXITVALUE != 0 ]; then
     /usr/bin/logger -t logrotate &quot;ALERT exited abnormally with [$EXITVALUE]&quot;
 fi
 exit 0
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <ol>
 <li>日志文件命名规则</li>
@@ -1728,7 +1728,7 @@ include /etc/logrotate.d // 包含该目录下的文件也轮询
     create 0600 root utmp	// 轮转后创建新文件，并设置权限
     rotate 1	// 保留一份
 &#125;
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <p>其他配置信息</p>
 <ul>
@@ -1761,7 +1761,7 @@ language-shell复制代码</code></pre>
 <span class="hljs-meta prompt_"># </span><span class="language-bash">logrotate -f /etc/logrotate.d/err_log <span class="hljs-comment"># 手动强制启动轮转</span></span>
 <span class="hljs-meta prompt_"># </span><span class="language-bash">ll /var/log/</span>
 -rw-------. 1 root   root    11449 6月   8 03:31 boot.log-20210608
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <ol>
 <li>作业</li>
@@ -1816,7 +1816,7 @@ language-shell复制代码</code></pre>
 <span class="hljs-meta prompt_">			#</span><span class="language-bash">重启 Nginx 服务</span>
 		endscript
 	&#125;
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <h3 id="8-sshd"><a href="#8-sshd" class="headerlink" title="8.sshd"></a>8.sshd</h3><ol>
 <li>sshd 简介</li>
@@ -1833,7 +1833,7 @@ language-shell复制代码</code></pre>
 
 [root@localhost ~]# useradd ftpuser	// 创建ftp测试用户
 [root@localhost ~]# echo &quot;hadoop&quot; | passwd --stdin ftpuser
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <hr>
 

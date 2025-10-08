@@ -15,7 +15,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250913234353519.png">
 <meta property="article:published_time" content="2025-09-13T15:10:00.000Z">
-<meta property="article:modified_time" content="2025-10-05T03:22:16.168Z">
+<meta property="article:modified_time" content="2025-10-08T11:21:46.999Z">
 <meta property="article:author" content="黄金贤">
 <meta property="article:tag" content="计算机网络 数据库 操作系统 数据结构 算法 Java Nodejs">
 <meta name="twitter:card" content="summary">
@@ -238,7 +238,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="66">
-<input type="hidden" id="yelog_site_word_count" value="243.1k">
+<input type="hidden" id="yelog_site_word_count" value="240.1k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -860,12 +860,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-10-08 18:31:28'>2021-09-20 08:04</time>
+            发布时间 : <time class="date" title='最后更新: 2025-10-08 19:21:46'>2021-09-20 08:04</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:2.4k</span>
+        <span>字数:2.3k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -912,7 +912,7 @@ yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/d
 yum install -y docker-ce-18.09.9-3.el7
 <span class="hljs-meta prompt_"># </span><span class="language-bash">启动docker</span>
 systemctl enable docker &amp;&amp; systemctl start docker
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <hr>
 <h2 id="1-3-only-centos-use"><a href="#1-3-only-centos-use" class="headerlink" title="1.3 only centos use"></a>1.3 only centos use</h2><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">关闭防火墙</span>
@@ -944,7 +944,7 @@ net.bridge.bridge-nf-call-ip6tables = 1
 net.bridge.bridge-nf-call-iptables = 1
 EOF
 sudo sysctl --system
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <hr>
 <h2 id="1-4-更换k8s-yum源"><a href="#1-4-更换k8s-yum源" class="headerlink" title="1.4 更换k8s yum源"></a>1.4 更换k8s yum源</h2><pre><code class="hljs shell">cat &lt;&lt;EOF &gt; /etc/yum.repos.d/kubernetes.repo
@@ -956,12 +956,12 @@ gpgcheck=1
 repo_gpgcheck=1
 gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
 EOF
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <hr>
 <h2 id="1-5-安装-k8s三件套"><a href="#1-5-安装-k8s三件套" class="headerlink" title="1.5 安装 k8s三件套"></a>1.5 安装 k8s三件套</h2><pre><code class="hljs shell">yum install -y kubelet-1.20.1-0 kubeadm-1.20.1-0 kubectl-1.20.1-0 --disableexcludes=kubernetes
 systemctl enable --now kubelet
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <hr>
 <h2 id="1-6-编辑docker文件"><a href="#1-6-编辑docker文件" class="headerlink" title="1.6 编辑docker文件"></a>1.6 编辑docker文件</h2><pre><code class="hljs bash"><span class="hljs-comment"># 创建文件 </span>
@@ -992,7 +992,7 @@ systemctl restart docker
 docker pull quay.mirrors.ustc.edu.cn/coreos/flannel:v0.14.0
 docker tag quay.mirrors.ustc.edu.cn/coreos/flannel:v0.14.0  quay.io/coreos/flannel:v0.14.0
 docker rmi quay.mirrors.ustc.edu.cn/coreos/flannel:v0.14.0
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <hr>
 <h2 id="1-9-创建集群"><a href="#1-9-创建集群" class="headerlink" title="1.9 创建集群"></a>1.9 创建集群</h2><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">在master上创建集群</span>
@@ -1009,13 +1009,13 @@ kubectl get nodes
 <span class="hljs-meta prompt_"></span>
 <span class="hljs-meta prompt_"># </span><span class="language-bash">查看加入集群的命令</span>
 kubeadm token create --print-join-command
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <hr>
 <h2 id="1-10-其他机器加入集群"><a href="#1-10-其他机器加入集群" class="headerlink" title="1.10 其他机器加入集群"></a>1.10 其他机器加入集群</h2><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">在其他节点中执行1~8的步骤</span>
 <span class="hljs-meta prompt_"># </span><span class="language-bash">执行第9步骤中加入集群的命令，类似以下的命令</span>
 kubeadm join 192.168.18.200:6443 --token opip9p.rh35kkvqzwjizely --discovery-token-ca-cert-hash sha256:9252e13d2ffd3569c40b02c477f59038fac39aade9e99f282a333c0f8c5d7b22
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <h2 id="1-11-测试"><a href="#1-11-测试" class="headerlink" title="1.11 测试"></a>1.11 测试</h2><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">https://raw.githubusercontent.com/kubernetes/website/master/content/en/examples/application/nginx-app.yaml需要科学上网才能访问，</span>
 <span class="hljs-meta prompt_"># </span><span class="language-bash">可在你的电脑访问后，在master服务器上创建nginx-app.yaml后，粘贴进去。</span>
@@ -1024,7 +1024,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/website/master/con
 kubectl get pods -o wide
 <span class="hljs-meta prompt_"># </span><span class="language-bash">执行如下命令则可以查看 services 状态。</span>
 kubectl get service
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <hr>
 <h1 id="第二章-k8s-DashBoard"><a href="#第二章-k8s-DashBoard" class="headerlink" title="第二章 k8s DashBoard"></a>第二章 k8s DashBoard</h1><h2 id="2-1-安装DashBoard"><a href="#2-1-安装DashBoard" class="headerlink" title="2.1 安装DashBoard"></a>2.1 安装DashBoard</h2><pre><code class="hljs yaml"><span class="hljs-comment"># 用浏览器打开以下文件并复制</span>
@@ -1046,13 +1046,13 @@ language-shell复制代码</code></pre>
   <span class="hljs-attr">type:</span> <span class="hljs-string">NodePort</span> <span class="hljs-comment"># 加入这一行，使用NodePort模式</span>
   <span class="hljs-attr">selector:</span>
     <span class="hljs-attr">k8s-app:</span> <span class="hljs-string">kubernetes-dashboard</span>
-<span class="hljs-string">language-yaml复制代码</span></code></pre>
+<span class="hljs-string">language-yaml</span></code></pre>
 
 <hr>
 <h2 id="2-2-生成token"><a href="#2-2-生成token" class="headerlink" title="2.2 生成token"></a>2.2 生成token</h2><pre><code class="hljs shell">kubectl apply -f https://kuboard.cn/install-script/k8s-dashboard/auth.yaml
 <span class="hljs-meta prompt_"># </span><span class="language-bash">查看token值</span>
 kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk &#x27;&#123;print $1&#125;&#x27;)
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <p>生成类似以下的内容</p>
 <pre><code class="hljs shell">Name:         admin-user-token-v57nw
@@ -1068,7 +1068,7 @@ Data
 ca.crt:     1066 bytes
 namespace:  20 bytes
 token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlcm5ldGVzLWRhc2hib2FyZCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJhZG1pbi11c2VyLXRva2VuLXY1N253Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImFkbWluLXVzZXIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiIwMzAzMjQzYy00MDQwLTRhNTgtOGE0Ny04NDllZTliYTc5YzEiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZXJuZXRlcy1kYXNoYm9hcmQ6YWRtaW4tdXNlciJ9.Z2JrQlitASVwWbc-s6deLRFVk5DWD3P_vjUFXsqVSY10pbjFLG4njoZwh8p3tLxnX_VBsr7_6bwxhWSYChp9hwxznemD5x5HLtjb16kI9Z7yFWLtohzkTwuFbqmQaMoget_nYcQBUC5fDmBHRfFvNKePh_vSSb2h_aYXa8GV5AcfPQpY7r461itme1EXHQJqv-SN-zUnguDguCTjD80pFZ_CmnSE1z9QdMHPB8hoB4V68gtswR1VLa6mSYdgPwCHauuOobojALSaMc3RH7MmFUumAgguhqAkX3Omqd3rJbYOMRuMjhANqd08piDC3aIabINX6gP5-Tuuw2svnV6NYQ
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <hr>
 <h2 id="2-3-查看Dashboard运行的端口"><a href="#2-3-查看Dashboard运行的端口" class="headerlink" title="2.3 查看Dashboard运行的端口"></a>2.3 查看Dashboard运行的端口</h2><pre><code class="hljs shell">kubectl -n kubernetes-dashboard get svc -o wide
@@ -1076,7 +1076,7 @@ NAME                        TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)
 dashboard-metrics-scraper   ClusterIP      10.98.73.37     &lt;none&gt;        8000/TCP        16m     k8s-app=dashboard-metrics-scraper
 kubernetes-dashboard        NodePort       10.111.244.42   &lt;none&gt;        443:30307/TCP   16m     k8s-app=kubernetes-dashboard
 <span class="hljs-meta prompt_"># </span><span class="language-bash">浏览器输入https://node地址:30307(端口)</span>
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <hr>
 <h1 id="第三章-kubesphere"><a href="#第三章-kubesphere" class="headerlink" title="第三章 kubesphere"></a>第三章 kubesphere</h1><h2 id="3-1-kubesphere-前置要求"><a href="#3-1-kubesphere-前置要求" class="headerlink" title="3.1 kubesphere 前置要求"></a>3.1 kubesphere 前置要求</h2><blockquote>
@@ -1089,7 +1089,7 @@ yum list kubelet kubeadm kubectl  --showduplicates|sort -r
 <span class="hljs-meta prompt_"># </span><span class="language-bash">Kubernetes 版本必须为：1.17.x、1.18.x、1.19.x 或 1.20.x</span>
 <span class="hljs-meta prompt_"># </span><span class="language-bash">所以就安装了1.20.x</span>
 yum install kubelet-1.20.1-0 kubeadm-1.20.1-0 kubectl-1.20.1-0
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <hr>
 <h2 id="3-3-创建存储类型"><a href="#3-3-创建存储类型" class="headerlink" title="3.3 创建存储类型"></a>3.3 创建存储类型</h2><blockquote>
@@ -1111,7 +1111,7 @@ service rpcbind start
 <span class="hljs-meta prompt_"># </span><span class="language-bash">设置开机启动</span>
 systemctl enable nfs
 systemctl enable rpcbind
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <hr>
 <h2 id="3-5-客户端使用nfs"><a href="#3-5-客户端使用nfs" class="headerlink" title="3.5 客户端使用nfs"></a>3.5 客户端使用nfs</h2><blockquote>
@@ -1141,7 +1141,7 @@ https://raw.githubusercontent.com/kubernetes-incubator/external-storage/master/n
 kubectl create -f rbac.yaml
 kubectl create -f class.yaml
 kubectl create -f deployment.yaml
-language-shell复制代码
+language-shell
 <span class="hljs-meta prompt_"># </span><span class="language-bash">每个节点都要安装nfs-tuils</span>
 yum -y install nfs-utils
 <span class="hljs-meta prompt_"># </span><span class="language-bash">在master执行</span>
@@ -1161,7 +1161,7 @@ kubectl patch storageclass managed-nfs-storage -p &#x27;&#123;&quot;metadata&quo
 kubectl get storageclass
 NAME                            PROVISIONER      AGE
 managed-nfs-storage (default)   fuseim.pri/ifs   139m
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <hr>
 <h2 id="3-6-安装kubeSphere"><a href="#3-6-安装kubeSphere" class="headerlink" title="3.6 安装kubeSphere"></a>3.6 安装kubeSphere</h2><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">安装的kubesphere 3.1.1</span>
@@ -1172,7 +1172,7 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
 <span class="hljs-meta prompt_"># </span><span class="language-bash">使用 kubectl get pod --all-namespaces 查看所有 Pod 是否在 KubeSphere 的相关命名空间中正常运行。如果是，请通过以下命令检查控制台的端口（默认为 30880）:</span>
 kubectl get svc/ks-console -n kubesphere-system
 <span class="hljs-meta prompt_"># </span><span class="language-bash">确保在安全组中打开了端口 30880，并通过 NodePort (IP:30880) 使用默认帐户和密码 (admin/P@88w0rd) 访问 Web 控制台。</span>
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <hr>
 <h1 id="第四章-error"><a href="#第四章-error" class="headerlink" title="第四章 error"></a>第四章 error</h1><h2 id="4-1-关于prometheus-k8s-0-启动失败，一直-pending-状态。"><a href="#4-1-关于prometheus-k8s-0-启动失败，一直-pending-状态。" class="headerlink" title="4.1 关于prometheus-k8s-0 启动失败，一直 pending 状态。"></a>4.1 关于prometheus-k8s-0 启动失败，一直 pending 状态。</h2><blockquote>
@@ -1197,7 +1197,7 @@ spec:
 kubectl create -f pvc.yaml
 <span class="hljs-meta prompt_"># </span><span class="language-bash">验证是否成功</span>
 kubectl get pvc
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <blockquote>
 <p>修改&#x2F;etc&#x2F;kubernetes&#x2F;manifests&#x2F;kube-apiserver.yaml</p>
@@ -1211,13 +1211,13 @@ language-shell复制代码</code></pre>
 <span class="hljs-bullet">-</span> <span class="hljs-string">--feature-gates=RemoveSelfLink=false</span>
 <span class="hljs-comment"># 执行</span>
 <span class="hljs-string">kubectl</span> <span class="hljs-string">apply</span> <span class="hljs-string">-f</span> <span class="hljs-string">/etc/kubernetes/manifests/kube-apiserver.yaml</span>
-<span class="hljs-string">language-yaml复制代码</span></code></pre>
+<span class="hljs-string">language-yaml</span></code></pre>
 
 <hr>
 <h2 id="4-2-cni0问题"><a href="#4-2-cni0问题" class="headerlink" title="4.2 cni0问题"></a>4.2 cni0问题</h2><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">可以使用类似以下的命令查看pod的运行描述信息</span>
 kubectl describe pod coredns-*** -n kube-system
 <span class="hljs-meta prompt_"># </span><span class="language-bash">发现报错信息为类似<span class="hljs-string">&quot;network: failed to set bridge addr: &quot;</span>cni0<span class="hljs-string">&quot; already has an IP address different from 10.244.0.1/24&quot;</span></span>
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <p><strong>解决办法</strong></p>
 <blockquote>
@@ -1239,7 +1239,7 @@ ip link delete flannel.1
 systemctl start kubelet
 systemctl start docker
 <span class="hljs-meta prompt_"># </span><span class="language-bash">重新创建集群</span>
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <hr>
 

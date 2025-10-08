@@ -15,7 +15,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250913234353519.png">
 <meta property="article:published_time" content="2025-09-13T15:10:00.000Z">
-<meta property="article:modified_time" content="2025-10-05T03:22:16.168Z">
+<meta property="article:modified_time" content="2025-10-08T11:21:46.999Z">
 <meta property="article:author" content="黄金贤">
 <meta property="article:tag" content="计算机网络 数据库 操作系统 数据结构 算法 Java Nodejs">
 <meta name="twitter:card" content="summary">
@@ -238,7 +238,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="66">
-<input type="hidden" id="yelog_site_word_count" value="243.1k">
+<input type="hidden" id="yelog_site_word_count" value="240.1k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -860,12 +860,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-10-05 11:22:16'>2024-04-16 22:14</time>
+            发布时间 : <time class="date" title='最后更新: 2025-10-08 19:21:46'>2024-04-16 22:14</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:60.3k</span>
+        <span>字数:60.2k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -2353,7 +2353,7 @@ user-interface vty 0 4
 <span class="hljs-selector-tag">B</span>.全局开启管理接口的流量抑制功能
 C.开启管理接口的流量统计功能
 D.限制管理口和业务接口之间的流量转发
-复制代码</code></pre>
+</code></pre>
 
 <blockquote>
 <p>答：D</p>
@@ -2368,11 +2368,11 @@ D.限制管理口和业务接口之间的流量转发
 </li>
 </ul>
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250506214949311.png" alt="img"></p>
-<pre><code class="hljs awk">A.交换机 SW3 的生成树模式为 RSTP （解析： 有MSTID，说明是MSTP协议）
-B.Instance <span class="hljs-number">20</span>MST 域内，GigabitEthernet0<span class="hljs-regexp">/0/</span><span class="hljs-number">1</span> 为 GigabitEthernet0<span class="hljs-regexp">/0/</span><span class="hljs-number">2</span> GigabitEthernet0<span class="hljs-regexp">/0/</span><span class="hljs-number">3</span>的备份端口 （<span class="hljs-number">3</span>个都是Forwarding状态，所以是错的，应该是Discarding）
-C.SW3 为 Instance <span class="hljs-number">20</span>MST 域的根桥 (解析：根桥没有Root根端口，只能有指定端口)
-D.SW3 为 Instance <span class="hljs-number">10</span>MST 域的根桥
-复制代码</code></pre>
+<pre><code class="hljs apache"><span class="hljs-attribute">A</span>.交换机 SW3 的生成树模式为 RSTP （解析： 有MSTID，说明是MSTP协议）
+<span class="hljs-attribute">B</span>.Instance <span class="hljs-number">20</span>MST 域内，GigabitEthernet0/<span class="hljs-number">0</span>/<span class="hljs-number">1</span> 为 GigabitEthernet0/<span class="hljs-number">0</span>/<span class="hljs-number">2</span> GigabitEthernet0/<span class="hljs-number">0</span>/<span class="hljs-number">3</span>的备份端口 （<span class="hljs-number">3</span>个都是Forwarding状态，所以是错的，应该是Discarding）
+<span class="hljs-attribute">C</span>.SW3 为 Instance <span class="hljs-number">20</span>MST 域的根桥 (解析：根桥没有Root根端口，只能有指定端口)
+<span class="hljs-attribute">D</span>.SW3 为 Instance <span class="hljs-number">10</span>MST 域的根桥
+</code></pre>
 
 <blockquote>
 <p>答：D</p>
@@ -2553,7 +2553,7 @@ D.SW3 为 Instance <span class="hljs-number">10</span>MST 域的根桥
 B.允许所有主机访问该主机的SSH服务
 C.允许所有主机<span class="hljs-built_in">ping</span>该主机
 D.允许所有主机使用https协议访问该主机的web服务
-复制代码</code></pre>
+</code></pre>
 
 <blockquote>
 <p>答：D</p>
@@ -2601,11 +2601,11 @@ D.允许所有主机使用https协议访问该主机的web服务
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250507152059212.png" alt="img"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250507152119241.png" alt="img"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250507152137834.png" alt="img"></p>
-<pre><code class="hljs css"><span class="hljs-selector-tag">A</span><span class="hljs-selector-class">.acl</span> <span class="hljs-number">2001</span>中未配置放行规则
-<span class="hljs-selector-tag">B</span><span class="hljs-selector-class">.acl</span> <span class="hljs-number">2001</span>的rule <span class="hljs-number">100</span> 中配置的通配符为<span class="hljs-number">0</span>，造成过滤范围扩大
-C.基本acl无法实现该要求，应使用高级acl配置规则过滤
-D<span class="hljs-selector-class">.acl</span>无法实现该要求，应使用ip-prefix前缀列表配置规则过滤
-复制代码</code></pre>
+<pre><code class="hljs apache"><span class="hljs-attribute">A</span>.acl <span class="hljs-number">2001</span>中未配置放行规则
+<span class="hljs-attribute">B</span>.acl <span class="hljs-number">2001</span>的rule <span class="hljs-number">100</span> 中配置的通配符为<span class="hljs-number">0</span>，造成过滤范围扩大
+<span class="hljs-attribute">C</span>.基本acl无法实现该要求，应使用高级acl配置规则过滤
+<span class="hljs-attribute">D</span>.acl无法实现该要求，应使用ip-prefix前缀列表配置规则过滤
+</code></pre>
 
 <blockquote>
 <p>答：A</p>
@@ -2631,7 +2631,7 @@ D<span class="hljs-selector-class">.acl</span>无法实现该要求，应使用i
 <span class="hljs-selector-tag">B</span>.配置了负载分担模式，实现两条链路共同承担流量
 C.配置了基于LACP（链路聚合控制协议）的链路聚合模式
 D.两台交换机的链路聚合组编号不一致，上述配置无法生效
-复制代码</code></pre>
+</code></pre>
 
 <blockquote>
 <p>答：B</p>
@@ -2731,7 +2731,7 @@ D.两台交换机的链路聚合组编号不一致，上述配置无法生效
 B.OSPF进程ID冲突
 C.Network命令指定的网络范围过大
 D.未指定Router-id
-复制代码</code></pre>
+</code></pre>
 
 <blockquote>
 <p>答：A</p>
@@ -2801,7 +2801,7 @@ A.<span class="hljs-number">2</span>-Way
 B<span class="hljs-selector-class">.Full</span>
 C<span class="hljs-selector-class">.Init</span>
 D<span class="hljs-selector-class">.Exstart</span>
-复制代码</code></pre>
+</code></pre>
 
 
 
@@ -2845,7 +2845,7 @@ D<span class="hljs-selector-class">.Exstart</span>
 <span class="hljs-selector-tag">B</span>.沟通
 C.选项
 D.运维
-复制代码</code></pre>
+</code></pre>
 
 <blockquote>
 <p>答：B</p>
@@ -4012,11 +4012,11 @@ D.运维
 </li>
 </ul>
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250512144657372.png" alt="img"></p>
-<pre><code class="hljs css"><span class="hljs-selector-tag">A</span>.<span class="hljs-number">4</span>
-<span class="hljs-selector-tag">B</span>.<span class="hljs-number">2</span>
-C.<span class="hljs-number">3</span>
-D.<span class="hljs-number">1</span>
-复制代码</code></pre>
+<pre><code class="hljs apache"><span class="hljs-attribute">A</span>.<span class="hljs-number">4</span>
+<span class="hljs-attribute">B</span>.<span class="hljs-number">2</span>
+<span class="hljs-attribute">C</span>.<span class="hljs-number">3</span>
+<span class="hljs-attribute">D</span>.<span class="hljs-number">1</span>
+</code></pre>
 
 
 
@@ -4338,15 +4338,15 @@ D.<span class="hljs-number">1</span>
 <li>64.65. 某网络图片如下图所示，局域网用户通过防火墙访问互联网，在防火墙上配置安全策略实现其功能时源地址应为（）、目的安全域应为（）、动作为Permit。</li>
 </ul>
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250513224930839.png" alt="img"></p>
-<pre><code class="hljs dns"><span class="hljs-keyword">A</span>.<span class="hljs-number">113.200.2.1</span>/<span class="hljs-number">28</span>
-B.<span class="hljs-number">10.0.1.1</span>/<span class="hljs-number">25</span>
-C.<span class="hljs-number">10.0.1.1</span>/<span class="hljs-number">24</span>
-D.<span class="hljs-number">10.0.1.129</span>/<span class="hljs-number">25</span>
-<span class="hljs-keyword">A</span>.local
-B.untrust
-C.trust
-D.dmz
-复制代码</code></pre>
+<pre><code class="hljs apache"><span class="hljs-attribute">A</span>.<span class="hljs-number">113.200.2.1</span>/<span class="hljs-number">28</span>
+<span class="hljs-attribute">B</span>.<span class="hljs-number">10.0.1.1</span>/<span class="hljs-number">25</span>
+<span class="hljs-attribute">C</span>.<span class="hljs-number">10.0.1.1</span>/<span class="hljs-number">24</span>
+<span class="hljs-attribute">D</span>.<span class="hljs-number">10.0.1.129</span>/<span class="hljs-number">25</span>
+<span class="hljs-attribute">A</span>.local
+<span class="hljs-attribute">B</span>.untrust
+<span class="hljs-attribute">C</span>.trust
+<span class="hljs-attribute">D</span>.dmz
+</code></pre>
 
 <blockquote>
 <p>答：C,B</p>
@@ -5303,7 +5303,7 @@ B. network <span class="hljs-number">10.10.0.0</span> <span class="hljs-number">
    network <span class="hljs-number">10.10.20.0</span> <span class="hljs-number">255.255.255.0</span>
 C. network <span class="hljs-number">10.10.0.0</span> <span class="hljs-number">255.255.0.0</span>
 D. network <span class="hljs-number">10.0.0.0</span>
-复制代码</code></pre>
+</code></pre>
 
 <blockquote>
 <p>答：D</p>
@@ -5312,15 +5312,15 @@ D. network <span class="hljs-number">10.0.0.0</span>
 <li>26.27. 在MA网络中运行OSPF路由协议，路由协议会根据路由器的配置信息来确认Router-ID，管理员依次配置了下面接口，当前的Router-ID是（），如管理员执行reset ospf process命令使用OSPF协议后，Route-ID是（）。</li>
 </ul>
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250515092246389.png" alt="img"></p>
-<pre><code class="hljs dns"><span class="hljs-keyword">A</span>.<span class="hljs-number">10.0.1.254</span>
-B.<span class="hljs-number">10.1.12.10</span>
-C.<span class="hljs-number">12.1.1.2</span>
-D.<span class="hljs-number">12.1.1.1</span>
-<span class="hljs-keyword">A</span>.<span class="hljs-number">10.0.1.254</span>
-B.<span class="hljs-number">101.12.10</span>
-C.<span class="hljs-number">12.1.1.2</span>
-D.<span class="hljs-number">12.1.1.1</span>
-复制代码</code></pre>
+<pre><code class="hljs apache"><span class="hljs-attribute">A</span>.<span class="hljs-number">10.0.1.254</span>
+<span class="hljs-attribute">B</span>.<span class="hljs-number">10.1.12.10</span>
+<span class="hljs-attribute">C</span>.<span class="hljs-number">12.1.1.2</span>
+<span class="hljs-attribute">D</span>.<span class="hljs-number">12.1.1.1</span>
+<span class="hljs-attribute">A</span>.<span class="hljs-number">10.0.1.254</span>
+<span class="hljs-attribute">B</span>.<span class="hljs-number">101</span>.<span class="hljs-number">12</span>.<span class="hljs-number">10</span>
+<span class="hljs-attribute">C</span>.<span class="hljs-number">12.1.1.2</span>
+<span class="hljs-attribute">D</span>.<span class="hljs-number">12.1.1.1</span>
+</code></pre>
 
 <blockquote>
 <p>答：A,C</p>
@@ -5552,7 +5552,7 @@ D.<span class="hljs-number">12.1.1.1</span>
 <span class="hljs-selector-tag">B</span>.认证方式
 C<span class="hljs-selector-class">.SNMPv3</span>设备的引擎ID
 D<span class="hljs-selector-class">.MIB</span>节点的统计信息
-复制代码</code></pre>
+</code></pre>
 
 <blockquote>
 <p>答：D</p>
@@ -5893,7 +5893,7 @@ D<span class="hljs-selector-class">.MIB</span>节点的统计信息
 B.AC2上有<span class="hljs-keyword">AP</span>的信息，且<span class="hljs-keyword">AP</span>在AC2的状态normal
 C.AC2上有STA的信息，且STA的状态为未认证
 <span class="hljs-keyword">D</span>.AC2上有STA的信息，且STA的状态为已认证
-复制代码</code></pre>
+</code></pre>
 
 <blockquote>
 <p>答：D</p>
@@ -6971,7 +6971,7 @@ C.AC2上有STA的信息，且STA的状态为未认证
 B.<span class="hljs-keyword">display</span> <span class="hljs-keyword">this</span>
 C.<span class="hljs-keyword">display</span> ospf brief
 D.<span class="hljs-keyword">display</span> ospf <span class="hljs-keyword">interface</span>
-复制代码</code></pre>
+</code></pre>
 
 <blockquote>
 <p>答：D</p>
@@ -7487,7 +7487,7 @@ D.<span class="hljs-keyword">display</span> ospf <span class="hljs-keyword">inte
 B.<span class="hljs-keyword">cc</span>.<span class="hljs-keyword">com</span>的邮件交换服务器地址
 C.<span class="hljs-keyword">cc</span>.<span class="hljs-keyword">com</span>的别名
 D.<span class="hljs-keyword">cc</span>.<span class="hljs-keyword">com</span>的PTP指针
-复制代码</code></pre>
+</code></pre>
 
 
 
@@ -7643,11 +7643,11 @@ D.<span class="hljs-keyword">cc</span>.<span class="hljs-keyword">com</span>的P
 </li>
 </ul>
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250520210908411.png" alt="img"></p>
-<pre><code class="hljs dns"><span class="hljs-keyword">A</span>.限制<span class="hljs-number">192.168.1.0</span>网段设备访问HTTP的流量不超过<span class="hljs-number">4</span>Mbps
-B.限制<span class="hljs-number">192.168.1.0</span>网段设备访问HTTP的流量不超过<span class="hljs-number">80</span>Mbps
-C.限制<span class="hljs-number">192.168.1.0</span>网段设备的TCP的流量不超过<span class="hljs-number">4</span>Mbps
-D.限制<span class="hljs-number">192.168.1.0</span>网段设备的TCP的流量不超过<span class="hljs-number">80</span>Mbps
-复制代码</code></pre>
+<pre><code class="hljs apache"><span class="hljs-attribute">A</span>.限制<span class="hljs-number">192.168.1.0</span>网段设备访问HTTP的流量不超过<span class="hljs-number">4</span>Mbps
+<span class="hljs-attribute">B</span>.限制<span class="hljs-number">192.168.1.0</span>网段设备访问HTTP的流量不超过<span class="hljs-number">80</span>Mbps
+<span class="hljs-attribute">C</span>.限制<span class="hljs-number">192.168.1.0</span>网段设备的TCP的流量不超过<span class="hljs-number">4</span>Mbps
+<span class="hljs-attribute">D</span>.限制<span class="hljs-number">192.168.1.0</span>网段设备的TCP的流量不超过<span class="hljs-number">80</span>Mbps
+</code></pre>
 
 <blockquote>
 <p>答：A</p>
@@ -7673,7 +7673,7 @@ D.限制<span class="hljs-number">192.168.1.0</span>网段设备的TCP的流量�
 <span class="hljs-selector-tag">B</span>.恢复接口上vlanif缺省配置
 C.开启vlanif2接口
 D.关闭所有vlanif接口
-复制代码</code></pre>
+</code></pre>
 
 <blockquote>
 <p>答：C</p>
@@ -7971,7 +7971,7 @@ D.关闭所有vlanif接口
 <span class="hljs-selector-tag">B</span>.公有<span class="hljs-number">2</span>个广播域
 C.计算机S和计算机T构成冲突域
 D.计算机O查找计算机<span class="hljs-attribute">R</span>的MAC地址时，ARP报文会传播到计算机S
-复制代码</code></pre>
+</code></pre>
 
 <blockquote>
 <p>答：B</p>
@@ -8020,7 +8020,7 @@ D.计算机O查找计算机<span class="hljs-attribute">R</span>的MAC地址时�
 [H1-GigabitEthernet0/0/4] port link-type trunk # (2)
 [H1-GigabitEthernet0/0/4] port trunk allow-pass vlan 10 20 30 # (3)
 [H1-GigabitEthernet0/0/4] quit
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <blockquote>
 <p>问题2（6分，配置QinQ）：在楼层接入交换机上，同一企业处在相同的VLAN中。公司为了节省VLAN资源，在楼栋汇聚交换机上采用QinQ技术，使得向相同企业的业务实现透传。</p>
@@ -8079,7 +8079,7 @@ language-shell复制代码</code></pre>
 </blockquote>
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250426202317352.png" alt="img"></p>
 <blockquote>
-<p>问题2（8分，网络安全）：网络源发现某台主机感染了病毒，大部分的文件后缀都变成了.LOCK，桌面背景被篡改，提示“All you data has been locked, mail to <a href="mailto:&#x78;&#120;&#x78;&#x78;&#64;&#x6c;&#x6f;&#x63;&#107;&#x2e;&#120;&#x79;&#x7a;">xxxx@lock.xyz</a>”。该主机可能感染（）类型的病毒，网管员应该采取（）的措施（至少回答3点措施）。</p>
+<p>问题2（8分，网络安全）：网络源发现某台主机感染了病毒，大部分的文件后缀都变成了.LOCK，桌面背景被篡改，提示“All you data has been locked, mail to <a href="mailto:&#x78;&#120;&#120;&#x78;&#x40;&#108;&#x6f;&#99;&#x6b;&#x2e;&#x78;&#121;&#122;">xxxx@lock.xyz</a>”。该主机可能感染（）类型的病毒，网管员应该采取（）的措施（至少回答3点措施）。</p>
 </blockquote>
 <blockquote>
 <p>答：</p>
@@ -8236,7 +8236,7 @@ Link State Database
 Area:: 0.0.0.1
 Type    LinkStateID     AdvRouter       Age     Len     Sequence    Metric
 Router  2.2.2.2         2.2.2.2         1149    36      8000000004  1
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <blockquote>
 <p>问题2（4分）当上述4台路由器均正确配置接口IP地址，建立OSPF邻居关系，并将接口宣告到规划区域，完成OSPF路由收敛后，在路由器R1上执行ping -a 192.168.0.1 34.1.1.4，结果显示“Request time out”，请说明原因，并简要说明如何解决改故障（非静态路由解决措施）。</p>
@@ -8251,7 +8251,7 @@ language-shell复制代码</code></pre>
 [R4-ospf-1] （7） # 在R4将外部路由引入OSPF
 完成上述配置后，还需要在R5进行配置（8）才能实现R1和R5互通。
 在R4将外部路由引入到OSPF时，R4会成为（9）路由器，R4会触发2条LSU，第一条LSU携带自身的Type 1 LSA，且ASBR置位，R3收到这条LSA后，会转换为（10）LSA，传递到其他区域；第二条LSU携带（11）LSA，起作用是（12）。
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <p>答：</p>
 <pre><code class="hljs bash">（7）import-route direct
@@ -8404,7 +8404,7 @@ language-shell复制代码</code></pre>
 <span class="hljs-meta prompt_"># </span><span class="language-bash">在R4将210.23.3.4/32引入BGP</span>
 [R4] bgp 200
 [R4-bgp] (5) #  将210.23.3.4/32 引入BGP   
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <p>答：</p>
 <pre><code class="hljs bash">(1) 100

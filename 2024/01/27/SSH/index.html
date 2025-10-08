@@ -15,7 +15,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250913234353519.png">
 <meta property="article:published_time" content="2025-09-13T15:10:00.000Z">
-<meta property="article:modified_time" content="2025-10-05T03:22:16.168Z">
+<meta property="article:modified_time" content="2025-10-08T11:21:46.999Z">
 <meta property="article:author" content="黄金贤">
 <meta property="article:tag" content="计算机网络 数据库 操作系统 数据结构 算法 Java Nodejs">
 <meta name="twitter:card" content="summary">
@@ -238,7 +238,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="66">
-<input type="hidden" id="yelog_site_word_count" value="243.1k">
+<input type="hidden" id="yelog_site_word_count" value="240.1k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -860,12 +860,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-10-04 22:21:47'>2024-01-27 10:44</time>
+            发布时间 : <time class="date" title='最后更新: 2025-10-08 19:21:46'>2024-01-27 10:44</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:264</span>
+        <span>字数:252</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -906,7 +906,7 @@
 [R1-g0/0/0] ip add 12.1.1.1 24
 [R2] int g0/0/0
 [R2-g0/0/0] ip add 12.1.1.2 24
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <h4 id="2-在被登录设备上配置-SSH"><a href="#2-在被登录设备上配置-SSH" class="headerlink" title="2. 在被登录设备上配置 SSH"></a>2. 在被登录设备上配置 SSH</h4><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">配置 AAA 认证试图下，配置本地 SSH 登录用户 hjxstart 和密码 HCIE</span>
 [R2] aaa
@@ -921,13 +921,13 @@ language-shell复制代码</code></pre>
 [R2-ui-vty0-4] authentication-mode aaa
 <span class="hljs-meta prompt_"># </span><span class="language-bash">允许虚拟终端使用SSH协议</span>
 protocol inbound ssh
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <h4 id="3-在发起登录设备-AR1-上-SSH-登录被登录设备-AR2"><a href="#3-在发起登录设备-AR1-上-SSH-登录被登录设备-AR2" class="headerlink" title="3. 在发起登录设备 AR1 上 SSH 登录被登录设备 AR2"></a>3. 在发起登录设备 AR1 上 SSH 登录被登录设备 AR2</h4><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">让R1第一时间成为SSH客户端</span>
 [R1] ssh client first-time enable
 <span class="hljs-meta prompt_"># </span><span class="language-bash">使用SSH登录R2，接受SSH公钥，和输入密码</span>
 [R1] stelnet 12.1.1.2
-language-shell复制代码</code></pre>
+language-shell</code></pre>
 
 <hr>
 
