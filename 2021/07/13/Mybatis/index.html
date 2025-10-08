@@ -15,7 +15,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250913234353519.png">
 <meta property="article:published_time" content="2025-09-13T15:10:00.000Z">
-<meta property="article:modified_time" content="2025-10-08T11:21:46.999Z">
+<meta property="article:modified_time" content="2025-10-08T11:23:27.820Z">
 <meta property="article:author" content="黄金贤">
 <meta property="article:tag" content="计算机网络 数据库 操作系统 数据结构 算法 Java Nodejs">
 <meta name="twitter:card" content="summary">
@@ -238,7 +238,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="66">
-<input type="hidden" id="yelog_site_word_count" value="240.1k">
+<input type="hidden" id="yelog_site_word_count" value="242.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -479,7 +479,7 @@
         </a>
         
         <a  class="全部文章 工具 "
-           href="/2023/12/18/GIT/"
+           href="/2023/12/18/Git/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="GIT">GIT</span>
@@ -559,7 +559,7 @@
         </a>
         
         <a  class="全部文章 工具 "
-           href="/2022/08/24/FRP/"
+           href="/2022/08/24/frp/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="FRP">FRP</span>
@@ -599,7 +599,7 @@
         </a>
         
         <a  class="全部文章 数据库 "
-           href="/2022/03/14/InfluxDB/"
+           href="/2022/03/14/influxDB/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="InfluxDB">InfluxDB</span>
@@ -623,7 +623,7 @@
         </a>
         
         <a  class="全部文章 运维 "
-           href="/2021/12/16/VSFTPD/"
+           href="/2021/12/16/vsftpd/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="VSFTPD">VSFTPD</span>
@@ -631,7 +631,7 @@
         </a>
         
         <a  class="全部文章 数据库 "
-           href="/2021/10/06/REDIS/"
+           href="/2021/10/06/Redis/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="REDIS">REDIS</span>
@@ -671,7 +671,7 @@
         </a>
         
         <a  class="全部文章 开发 "
-           href="/2021/08/26/Go/"
+           href="/2021/08/26/GO/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="Go">Go</span>
@@ -860,12 +860,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-10-08 19:21:46'>2021-07-13 10:38</time>
+            发布时间 : <time class="date" title='最后更新: 2025-10-08 19:23:27'>2021-07-13 10:38</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:1.5k</span>
+        <span>字数:1.6k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -906,7 +906,7 @@
     &lt;artifactId&gt;log4j&lt;/artifactId&gt;
     &lt;version&gt;1.2.17&lt;/version&gt;
 &lt;/dependency&gt;
-language-pom</code></pre>
+language-pom复制代码</code></pre>
 
 <hr>
 <h3 id="步骤2-log4j-properties"><a href="#步骤2-log4j-properties" class="headerlink" title="步骤2 log4j.properties"></a>步骤2 log4j.properties</h3><pre><code class="hljs properties"><span class="hljs-comment">#将等级为DEBUG的日志信息输出到console和file两个目的地</span>
@@ -933,12 +933,12 @@ language-pom</code></pre>
 <span class="hljs-attr">log4j.logger.java.sql.Statement</span>=<span class="hljs-string">DEBUG</span>
 <span class="hljs-attr">log4j.logger.java.sql.ResultSet</span>=<span class="hljs-string">DEBUG</span>
 <span class="hljs-attr">log4j.logger.java.sql.PreparedStatement</span>=<span class="hljs-string">DEBUG</span>
-<span class="hljs-attr">language-properties</span></code></pre>
+<span class="hljs-attr">language-properties复制代码</span></code></pre>
 
 <hr>
 <h3 id="步骤3-设置使用log4j"><a href="#步骤3-设置使用log4j" class="headerlink" title="步骤3 设置使用log4j"></a>步骤3 设置使用log4j</h3><h3 id="4-使用log4j"><a href="#4-使用log4j" class="headerlink" title="4 使用log4j"></a>4 使用log4j</h3><pre><code class="hljs java"><span class="hljs-keyword">static</span> <span class="hljs-type">Logger</span> <span class="hljs-variable">logger</span> <span class="hljs-operator">=</span> Logger.getLogger(xx.class)
 logger.info(<span class="hljs-string">&quot;进入到了log4j&quot;</span>);
-language-java</code></pre>
+language-java复制代码</code></pre>
 
 <h2 id="1-Log4j的配置-1"><a href="#1-Log4j的配置-1" class="headerlink" title="1. Log4j的配置"></a>1. Log4j的配置</h2><h3 id="步骤1-导入包-1"><a href="#步骤1-导入包-1" class="headerlink" title="步骤1 导入包"></a>步骤1 导入包</h3><pre><code class="hljs pom">&lt;!-- https://mvnrepository.com/artifact/log4j/log4j --&gt;
 &lt;dependency&gt;
@@ -946,7 +946,7 @@ language-java</code></pre>
     &lt;artifactId&gt;log4j&lt;/artifactId&gt;
     &lt;version&gt;1.2.17&lt;/version&gt;
 &lt;/dependency&gt;
-language-pom</code></pre>
+language-pom复制代码</code></pre>
 
 <hr>
 <h3 id="步骤2-log4j-properties-1"><a href="#步骤2-log4j-properties-1" class="headerlink" title="步骤2 log4j.properties"></a>步骤2 log4j.properties</h3><pre><code class="hljs properties"><span class="hljs-comment">#将等级为DEBUG的日志信息输出到console和file两个目的地</span>
@@ -973,15 +973,15 @@ language-pom</code></pre>
 <span class="hljs-attr">log4j.logger.java.sql.Statement</span>=<span class="hljs-string">DEBUG</span>
 <span class="hljs-attr">log4j.logger.java.sql.ResultSet</span>=<span class="hljs-string">DEBUG</span>
 <span class="hljs-attr">log4j.logger.java.sql.PreparedStatement</span>=<span class="hljs-string">DEBUG</span>
-<span class="hljs-attr">language-properties</span></code></pre>
+<span class="hljs-attr">language-properties复制代码</span></code></pre>
 
 <hr>
-<h3 id="步骤3-设置使用log4j-1"><a href="#步骤3-设置使用log4j-1" class="headerlink" title="步骤3 设置使用log4j"></a>步骤3 设置使用log4j</h3><pre><code class="hljs xml">language-xml</code></pre>
+<h3 id="步骤3-设置使用log4j-1"><a href="#步骤3-设置使用log4j-1" class="headerlink" title="步骤3 设置使用log4j"></a>步骤3 设置使用log4j</h3><pre><code class="hljs xml">language-xml复制代码</code></pre>
 
 <p>— ###4 使用log4j</p>
 <pre><code class="hljs java"><span class="hljs-keyword">static</span> <span class="hljs-type">Logger</span> <span class="hljs-variable">logger</span> <span class="hljs-operator">=</span> Logger.getLogger(xx.class)
 logger.info(<span class="hljs-string">&quot;进入到了log4j&quot;</span>);
-language-java</code></pre>
+language-java复制代码</code></pre>
 
 <h2 id="第二章-配置模式"><a href="#第二章-配置模式" class="headerlink" title="第二章 配置模式"></a>第二章 配置模式</h2><h3 id="1-1-配置"><a href="#1-1-配置" class="headerlink" title="1.1 配置"></a>1.1 配置</h3><ol>
 <li>application.yaml</li>
@@ -994,12 +994,12 @@ language-java</code></pre>
 <span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span>
 
 <span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span>
-language-xml</code></pre>
+language-xml复制代码</code></pre>
 
 <ol>
 <li>mapper 映射文件</li>
 </ol>
-<pre><code class="hljs xml">language-xml</code></pre>
+<pre><code class="hljs xml">language-xml复制代码</code></pre>
 
 <h3 id="1-2-使用"><a href="#1-2-使用" class="headerlink" title="1.2 使用"></a>1.2 使用</h3><ol>
 <li>定义实体类</li>
@@ -1014,7 +1014,7 @@ language-xml</code></pre>
     <span class="hljs-keyword">private</span> String userId;
     <span class="hljs-keyword">private</span> Integer money;
 &#125;
-language-java</code></pre>
+language-java复制代码</code></pre>
 
 <ol>
 <li>定义接口</li>
@@ -1027,7 +1027,7 @@ language-java</code></pre>
     <span class="hljs-comment">// 根据 id 获取用户</span>
     <span class="hljs-keyword">public</span> Account <span class="hljs-title function_">getAcct</span><span class="hljs-params">(Long id)</span>;
 &#125;
-language-java</code></pre>
+language-java复制代码</code></pre>
 
 <ol>
 <li>mapper</li>
@@ -1042,7 +1042,7 @@ language-java</code></pre>
         select * from account_tab where id=#&#123;id&#125;
     <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">mapper</span>&gt;</span>
-language-xml</code></pre>
+language-xml复制代码</code></pre>
 
 <hr>
 <h2 id="第三章-MyBatis-Plus简单使用"><a href="#第三章-MyBatis-Plus简单使用" class="headerlink" title="第三章 MyBatis-Plus简单使用"></a>第三章 MyBatis-Plus简单使用</h2><h3 id="1-pom-xml"><a href="#1-pom-xml" class="headerlink" title="1. pom.xml"></a>1. pom.xml</h3><pre><code class="hljs xml">	<span class="hljs-comment">&lt;!--MyBatis Plus--&gt;</span>
@@ -1070,7 +1070,7 @@ language-xml</code></pre>
             <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>8.0.12<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>runtime<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
-language-xml</code></pre>
+language-xml复制代码</code></pre>
 
 <hr>
 <h3 id="2-自动代码生成类"><a href="#2-自动代码生成类" class="headerlink" title="2. 自动代码生成类"></a>2. 自动代码生成类</h3><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.fh.oateat;
@@ -1138,12 +1138,12 @@ language-xml</code></pre>
         ag.execute();
     &#125;
 &#125;
-language-java</code></pre>
+language-java复制代码</code></pre>
 
 <hr>
 <h3 id="3-Application"><a href="#3-Application" class="headerlink" title="3. Application"></a>3. Application</h3><pre><code class="hljs java"><span class="hljs-meta">@MapperScan(&quot;com.fh.oateat.v1.mapper&quot;)</span> <span class="hljs-comment">// 该注解可以省略在每个mapper接口的注解</span>
 <span class="hljs-meta">@SpringBootApplication</span>
-language-java</code></pre>
+language-java复制代码</code></pre>
 
 <hr>
 <h3 id="4-application-yaml"><a href="#4-application-yaml" class="headerlink" title="4. application.yaml"></a>4. application.yaml</h3><pre><code class="hljs yaml"><span class="hljs-attr">spring:</span>
@@ -1157,7 +1157,7 @@ language-java</code></pre>
   <span class="hljs-attr">configuration:</span>
     <span class="hljs-string">//</span> <span class="hljs-string">控制台输出对数据库的操作</span>
     <span class="hljs-attr">log-impl:</span> <span class="hljs-string">org.apache.ibatis.logging.stdout.StdOutImpl</span>
-<span class="hljs-string">language-yaml</span></code></pre>
+<span class="hljs-string">language-yaml复制代码</span></code></pre>
 
 <hr>
 <h3 id="5-分页插件"><a href="#5-分页插件" class="headerlink" title="5. 分页插件"></a>5. 分页插件</h3><pre><code class="hljs java"><span class="hljs-meta">@Configuration</span>
@@ -1173,7 +1173,7 @@ language-java</code></pre>
         <span class="hljs-keyword">return</span> interceptor;
     &#125;
 &#125;
-language-java</code></pre>
+language-java复制代码</code></pre>
 
 <hr>
 <h3 id="6-创建好数据库即可"><a href="#6-创建好数据库即可" class="headerlink" title="6. 创建好数据库即可"></a>6. 创建好数据库即可</h3><ol>
@@ -1181,11 +1181,11 @@ language-java</code></pre>
 </ol>
 <hr>
 <h3 id="7-Controller测试"><a href="#7-Controller测试" class="headerlink" title="7. Controller测试"></a>7. Controller测试</h3><h2 id="第二章-逻辑删除"><a href="#第二章-逻辑删除" class="headerlink" title="第二章 逻辑删除"></a>第二章 逻辑删除</h2><h3 id="1-在实体类和数据库添加enable字段"><a href="#1-在实体类和数据库添加enable字段" class="headerlink" title="1. 在实体类和数据库添加enable字段"></a>1. 在实体类和数据库添加enable字段</h3><pre><code class="hljs java"><span class="hljs-keyword">private</span> Integer enabled;
-language-java</code></pre>
+language-java复制代码</code></pre>
 
 <h3 id="2-添加注解，实现局部逻辑删除"><a href="#2-添加注解，实现局部逻辑删除" class="headerlink" title="2. 添加注解，实现局部逻辑删除"></a>2. 添加注解，实现局部逻辑删除</h3><pre><code class="hljs java"><span class="hljs-meta">@TableLogic</span>
     <span class="hljs-keyword">private</span> Integer enabled;
-language-java</code></pre>
+language-java复制代码</code></pre>
 
 
       

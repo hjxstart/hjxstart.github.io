@@ -15,7 +15,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250913234353519.png">
 <meta property="article:published_time" content="2025-09-13T15:10:00.000Z">
-<meta property="article:modified_time" content="2025-10-08T11:21:46.999Z">
+<meta property="article:modified_time" content="2025-10-08T11:23:27.820Z">
 <meta property="article:author" content="黄金贤">
 <meta property="article:tag" content="计算机网络 数据库 操作系统 数据结构 算法 Java Nodejs">
 <meta name="twitter:card" content="summary">
@@ -238,7 +238,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="66">
-<input type="hidden" id="yelog_site_word_count" value="240.1k">
+<input type="hidden" id="yelog_site_word_count" value="242.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -479,7 +479,7 @@
         </a>
         
         <a  class="全部文章 工具 "
-           href="/2023/12/18/GIT/"
+           href="/2023/12/18/Git/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="GIT">GIT</span>
@@ -559,7 +559,7 @@
         </a>
         
         <a  class="全部文章 工具 "
-           href="/2022/08/24/FRP/"
+           href="/2022/08/24/frp/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="FRP">FRP</span>
@@ -599,7 +599,7 @@
         </a>
         
         <a  class="全部文章 数据库 "
-           href="/2022/03/14/InfluxDB/"
+           href="/2022/03/14/influxDB/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="InfluxDB">InfluxDB</span>
@@ -623,7 +623,7 @@
         </a>
         
         <a  class="全部文章 运维 "
-           href="/2021/12/16/VSFTPD/"
+           href="/2021/12/16/vsftpd/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="VSFTPD">VSFTPD</span>
@@ -631,7 +631,7 @@
         </a>
         
         <a  class="全部文章 数据库 "
-           href="/2021/10/06/REDIS/"
+           href="/2021/10/06/Redis/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="REDIS">REDIS</span>
@@ -671,7 +671,7 @@
         </a>
         
         <a  class="全部文章 开发 "
-           href="/2021/08/26/Go/"
+           href="/2021/08/26/GO/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="Go">Go</span>
@@ -860,12 +860,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-10-08 19:21:46'>2021-09-15 20:48</time>
+            发布时间 : <time class="date" title='最后更新: 2025-10-08 19:23:27'>2021-09-15 20:48</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:2.6k</span>
+        <span>字数:2.7k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -908,7 +908,7 @@ yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/d
 yum install -y docker-ce-18.09.9-3.el7
 <span class="hljs-meta prompt_"># </span><span class="language-bash">启动docker</span>
 systemctl enable docker &amp;&amp; systemctl start docker
-language-shell</code></pre>
+language-shell复制代码</code></pre>
 
 <hr>
 <h1 id="2-only-centos"><a href="#2-only-centos" class="headerlink" title="2. only centos"></a>2. only centos</h1><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">关闭防火墙</span>
@@ -930,7 +930,7 @@ net.bridge.bridge-nf-call-ip6tables = 1
 net.bridge.bridge-nf-call-iptables = 1
 EOF
 sysctl --system
-language-shell</code></pre>
+language-shell复制代码</code></pre>
 
 <h1 id="3-更改k8阿里云源"><a href="#3-更改k8阿里云源" class="headerlink" title="3.更改k8阿里云源"></a>3.更改k8阿里云源</h1><pre><code class="hljs shell">cat &lt;&lt;EOF &gt; /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
@@ -941,7 +941,7 @@ gpgcheck=1
 repo_gpgcheck=1
 gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
 EOF
-language-shell</code></pre>
+language-shell复制代码</code></pre>
 
 <h1 id="4-允许-iptables-检查桥接流量"><a href="#4-允许-iptables-检查桥接流量" class="headerlink" title="4.允许 iptables 检查桥接流量"></a>4.允许 iptables 检查桥接流量</h1><pre><code class="hljs shell">cat &lt;&lt;EOF | sudo tee /etc/modules-load.d/k8s.conf
 br_netfilter
@@ -952,12 +952,12 @@ net.bridge.bridge-nf-call-ip6tables = 1
 net.bridge.bridge-nf-call-iptables = 1
 EOF
 sudo sysctl --system
-language-shell</code></pre>
+language-shell复制代码</code></pre>
 
 <hr>
 <h1 id="5-安装kubeadm"><a href="#5-安装kubeadm" class="headerlink" title="5. 安装kubeadm"></a>5. 安装kubeadm</h1><pre><code class="hljs shell">yum install -y kubelet-1.20.1-0 kubeadm-1.20.1-0 kubectl-1.20.1-0 --disableexcludes=kubernetes
 sudo systemctl enable --now kubelet
-language-shell</code></pre>
+language-shell复制代码</code></pre>
 
 <hr>
 <h1 id="6-编写docker文件"><a href="#6-编写docker文件" class="headerlink" title="6.编写docker文件"></a>6.编写docker文件</h1><ol>
@@ -978,26 +978,26 @@ export http_proxy=$proxy
 export https_proxy=$proxy 
 export ftp_proxy=$proxy 
 export no_proxy=&quot;localhost, 127.0.0.1, ::1&quot;
-language-shell</code></pre>
+language-shell复制代码</code></pre>
 
 <ol>
 <li>更新配置文件</li>
 </ol>
 <pre><code class="hljs shell">source /etc/profile
-language-shell</code></pre>
+language-shell复制代码</code></pre>
 
 <ol>
 <li>测试</li>
 </ol>
 <pre><code class="hljs shell">curl http://www.google.com
-language-shell</code></pre>
+language-shell复制代码</code></pre>
 
 <hr>
 <h1 id="8-Docker网络代理设置"><a href="#8-Docker网络代理设置" class="headerlink" title="8.Docker网络代理设置"></a>8.Docker网络代理设置</h1><ol>
 <li>创建和编辑docker服务文件：</li>
 </ol>
 <pre><code class="hljs shell">mkdir -p /etc/systemd/system/docker.service.d
-language-shell</code></pre>
+language-shell复制代码</code></pre>
 
 <ol>
 <li>创建和编辑文件</li>
@@ -1007,21 +1007,21 @@ i
 <span class="hljs-meta prompt_"># </span><span class="language-bash">中[proxy-addr]和[proxy-port]分别改成实际情况的代理地址和端口</span>
 [Service]
 Environment=&quot;HTTP_PROXY=http://[proxy-addr]:[proxy-port]/&quot; &quot;HTTPS_PROXY=http://[proxy-addr]:[proxy-port]/&quot;
-language-shell</code></pre>
+language-shell复制代码</code></pre>
 
 <ol>
 <li>更新配置文件和重启docker</li>
 </ol>
 <pre><code class="hljs nsis"><span class="hljs-params">system</span>ctl daemon-reload
 <span class="hljs-params">system</span>ctl restart docker
-</code></pre>
+复制代码</code></pre>
 
 <hr>
 <h1 id="9-下载镜像"><a href="#9-下载镜像" class="headerlink" title="9.下载镜像"></a>9.下载镜像</h1><ol>
 <li>下载安装k8s所需的镜像</li>
 </ol>
 <pre><code class="hljs shell">kubeadm config images pull
-language-shell</code></pre>
+language-shell复制代码</code></pre>
 
 <ol>
 <li>下载flannel</li>
@@ -1030,7 +1030,7 @@ language-shell</code></pre>
 docker pull quay.mirrors.ustc.edu.cn/coreos/flannel:v0.14.0 
 docker tag quay.mirrors.ustc.edu.cn/coreos/flannel:v0.14.0  quay.io/coreos/flannel:v0.14.0
 docker rmi quay.mirrors.ustc.edu.cn/coreos/flannel:v0.14.0
-language-shell</code></pre>
+language-shell复制代码</code></pre>
 
 <h1 id="10-关闭代理"><a href="#10-关闭代理" class="headerlink" title="10.关闭代理"></a>10.关闭代理</h1><ol>
 <li>关闭科学上网</li>
@@ -1039,7 +1039,7 @@ language-shell</code></pre>
 <li>编辑配置文件并注释相关配置</li>
 </ul>
 <pre><code class="hljs shell">vi /etc/profile
-language-shell</code></pre>
+language-shell复制代码</code></pre>
 
 <ul>
 <li>如果要关闭代理，仅仅注释掉profile的代理内容是不行的，在文件内加入以下内容</li>
@@ -1054,7 +1054,7 @@ language-shell</code></pre>
 <li>更新配置文件</li>
 </ul>
 <pre><code class="hljs shell">source /etc/profile
-language-shell</code></pre>
+language-shell复制代码</code></pre>
 
 <ol>
 <li>关闭Docker代理(可以不关闭)</li>
@@ -1063,14 +1063,14 @@ language-shell</code></pre>
 <li>编辑配置文件，注释相关配置</li>
 </ul>
 <pre><code class="hljs shell">vi /etc/systemd/system/docker.service.d/http-proxy.conf
-language-shell</code></pre>
+language-shell复制代码</code></pre>
 
 <ul>
 <li>更新配置并重启docker</li>
 </ul>
 <pre><code class="hljs shell">systemctl daemon-reload
 systemctl restart docker
-language-shell</code></pre>
+language-shell复制代码</code></pre>
 
 <h1 id="11-在maste上创建集群"><a href="#11-在maste上创建集群" class="headerlink" title="11.在maste上创建集群"></a>11.在maste上创建集群</h1><ol>
 <li>在master上创建集群</li>
@@ -1078,7 +1078,7 @@ language-shell</code></pre>
 <pre><code class="hljs brainfuck"><span class="hljs-comment"># 192</span><span class="hljs-string">.</span><span class="hljs-comment">168</span><span class="hljs-string">.</span><span class="hljs-comment">18</span><span class="hljs-string">.</span><span class="hljs-comment">200为masteip；10</span><span class="hljs-string">.</span><span class="hljs-comment">244</span><span class="hljs-string">.</span><span class="hljs-comment">0</span><span class="hljs-string">.</span><span class="hljs-comment">0/16为pod地址池；kubeadm</span><span class="hljs-literal">-</span><span class="hljs-comment">config</span><span class="hljs-string">.</span><span class="hljs-comment">yaml是配置 kubelet 的 cgroup 驱动的文件</span>
 <span class="hljs-comment"># kubeadm init</span> <span class="hljs-literal">--</span><span class="hljs-comment">apiserver</span><span class="hljs-literal">-</span><span class="hljs-comment">advertise</span><span class="hljs-literal">-</span><span class="hljs-comment">address 192</span><span class="hljs-string">.</span><span class="hljs-comment">168</span><span class="hljs-string">.</span><span class="hljs-comment">18</span><span class="hljs-string">.</span><span class="hljs-comment">200</span> <span class="hljs-literal">--</span><span class="hljs-comment">pod</span><span class="hljs-literal">-</span><span class="hljs-comment">network</span><span class="hljs-literal">-</span><span class="hljs-comment">cidr=10</span><span class="hljs-string">.</span><span class="hljs-comment">244</span><span class="hljs-string">.</span><span class="hljs-comment">0</span><span class="hljs-string">.</span><span class="hljs-comment">0/16</span> <span class="hljs-literal">--</span><span class="hljs-comment">config kubeadm</span><span class="hljs-literal">-</span><span class="hljs-comment">config</span><span class="hljs-string">.</span><span class="hljs-comment">yaml</span>
 <span class="hljs-comment">kubeadm init</span> <span class="hljs-literal">--</span><span class="hljs-comment">apiserver</span><span class="hljs-literal">-</span><span class="hljs-comment">advertise</span><span class="hljs-literal">-</span><span class="hljs-comment">address 10</span><span class="hljs-string">.</span><span class="hljs-comment">0</span><span class="hljs-string">.</span><span class="hljs-comment">1</span><span class="hljs-string">.</span><span class="hljs-comment">128</span> <span class="hljs-literal">--</span><span class="hljs-comment">pod</span><span class="hljs-literal">-</span><span class="hljs-comment">network</span><span class="hljs-literal">-</span><span class="hljs-comment">cidr=10</span><span class="hljs-string">.</span><span class="hljs-comment">244</span><span class="hljs-string">.</span><span class="hljs-comment">0</span><span class="hljs-string">.</span><span class="hljs-comment">0/16</span> <span class="hljs-literal">--</span><span class="hljs-comment">ignore</span><span class="hljs-literal">-</span><span class="hljs-comment">preflight</span><span class="hljs-literal">-</span><span class="hljs-comment">errors=</span><span class="hljs-string">.</span><span class="hljs-string">.</span><span class="hljs-string">.</span>
-</code></pre>
+<span class="hljs-comment">复制代码</span></code></pre>
 
 <ol>
 <li>安装flanner网络</li>
@@ -1087,7 +1087,7 @@ language-shell</code></pre>
 <span class="hljs-meta prompt_"># </span><span class="language-bash">https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml需要科学上网才能访问，</span>
 <span class="hljs-meta prompt_"># </span><span class="language-bash">kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</span>
 kubectl apply -f kube-flannel.yml
-language-shell</code></pre>
+language-shell复制代码</code></pre>
 
 <ul>
 <li>创建和编辑kube-flannel.yml文件: <code>vi kube-flannel.yml</code></li>
@@ -1321,16 +1321,16 @@ spec:
 <li>查看节点状态，状态必须为ready</li>
 </ol>
 <pre><code class="hljs shell">kubectl get nodes
-language-shell</code></pre>
+language-shell复制代码</code></pre>
 
 <ol>
 <li>查看加入集群的命令</li>
 </ol>
 <pre><code class="hljs shell">kubeadm token create --print-join-command
-language-shell</code></pre>
+language-shell复制代码</code></pre>
 
 <h1 id="12-node加入集群"><a href="#12-node加入集群" class="headerlink" title="12.node加入集群"></a>12.node加入集群</h1><pre><code class="hljs shell">kubeadm join 192.168.18.200:6443 --token opip9p.rh35kkvqzwjizely --discovery-token-ca-cert-hash sha256:9252e13d2ffd3569c40b02c477f59038fac39aade9e99f282a333c0f8c5d7b22
-language-shell</code></pre>
+language-shell复制代码</code></pre>
 
 <h1 id="13-测试"><a href="#13-测试" class="headerlink" title="13.测试"></a>13.测试</h1><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">https://raw.githubusercontent.com/kubernetes/website/master/content/en/examples/application/nginx-app.yaml需要科学上网才能访问，</span>
 <span class="hljs-meta prompt_"># </span><span class="language-bash">可在你的电脑访问后，在master服务器上创建nginx-app.yaml后，粘贴进去。</span>
@@ -1339,7 +1339,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/website/master/con
 kubectl get pods -o wide
 <span class="hljs-meta prompt_"># </span><span class="language-bash">执行如下命令则可以查看 services 状态。</span>
 kubectl get service
-language-shell</code></pre>
+language-shell复制代码</code></pre>
 
 <hr>
 <h1 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h1><ol>
@@ -1352,25 +1352,25 @@ language-shell</code></pre>
 <li>创建共享目录</li>
 </ol>
 <pre><code class="hljs bash"><span class="hljs-built_in">mkdir</span> -p /data/kubernetes
-</code></pre>
+复制代码</code></pre>
 
 <ol>
 <li>xxxxxxxxxx 前因后果状态。bash</li>
 </ol>
 <pre><code class="hljs cmake">yum -y <span class="hljs-keyword">install</span> nfs-utils rpcbind
-</code></pre>
+复制代码</code></pre>
 
 <ol>
 <li>编辑配置文件</li>
 </ol>
 <pre><code class="hljs awk">vi <span class="hljs-regexp">/etc/</span>exports
-</code></pre>
+复制代码</code></pre>
 
 <ol>
 <li>内容如下：</li>
 </ol>
 <pre><code class="hljs haskell">/<span class="hljs-class"><span class="hljs-keyword">data</span>/kubernetes 192.168.31.0/24(<span class="hljs-title">rw</span>,<span class="hljs-title">sync</span>,<span class="hljs-title">no_root_squash</span>)</span>
-</code></pre>
+复制代码</code></pre>
 
 <p>注意：这里的192.168.31.0&#x2F;24，表示客户端访问白名单。只有符合的ip，才能访问。</p>
 <ol>
@@ -1378,20 +1378,20 @@ language-shell</code></pre>
 </ol>
 <pre><code class="hljs crmsh">service nfs <span class="hljs-literal">start</span>
 service rpcbind <span class="hljs-literal">start</span>
-</code></pre>
+复制代码</code></pre>
 
 <ol>
 <li>设置开机自启动</li>
 </ol>
 <pre><code class="hljs routeros">systemctl <span class="hljs-built_in">enable</span> nfs
 systemctl <span class="hljs-built_in">enable</span> rpcbind
-</code></pre>
+复制代码</code></pre>
 
 <ol>
 <li>登录<strong>主机k8s-master</strong>，安装客户端组件</li>
 </ol>
 <pre><code class="hljs cmake">yum -y <span class="hljs-keyword">install</span> nfs-utils rpcbind
-</code></pre>
+复制代码</code></pre>
 
 <ol>
 <li>测试nfs</li>
@@ -1399,13 +1399,13 @@ systemctl <span class="hljs-built_in">enable</span> rpcbind
 <pre><code class="hljs nginx"><span class="hljs-comment">## showmount -e 192.168.31.179</span>
 <span class="hljs-attribute">Export</span> list for <span class="hljs-number">192.168.31.179</span>:
 /data/kubernetes <span class="hljs-number">192.168.31.0</span>/<span class="hljs-number">24</span>
-</code></pre>
+复制代码</code></pre>
 
 <h2 id="1-2-安装-StorageClass"><a href="#1-2-安装-StorageClass" class="headerlink" title="1.2 安装 StorageClass"></a>1.2 安装 StorageClass</h2><ol>
 <li>登录<strong>主机k8s-master</strong>，创建目录</li>
 </ol>
 <pre><code class="hljs arduino">mkdir nfsvolume
-</code></pre>
+复制代码</code></pre>
 
 <ol>
 <li>下载yaml文件</li>
@@ -1413,7 +1413,7 @@ systemctl <span class="hljs-built_in">enable</span> rpcbind
 <pre><code class="hljs awk">https:<span class="hljs-regexp">//</span>raw.githubusercontent.com<span class="hljs-regexp">/kubernetes-incubator/</span>external-storage<span class="hljs-regexp">/master/</span>nfs-client<span class="hljs-regexp">/deploy/</span>rbac.yaml
 https:<span class="hljs-regexp">//</span>raw.githubusercontent.com<span class="hljs-regexp">/kubernetes-incubator/</span>external-storage<span class="hljs-regexp">/master/</span>nfs-client<span class="hljs-regexp">/deploy/</span>class.yaml
 https:<span class="hljs-regexp">//</span>raw.githubusercontent.com<span class="hljs-regexp">/kubernetes-incubator/</span>external-storage<span class="hljs-regexp">/master/</span>nfs-client<span class="hljs-regexp">/deploy/</span>deployment.yaml
-</code></pre>
+复制代码</code></pre>
 
 <ol>
 <li>修改 deployment.yaml 中的两处 NFS 服务器 IP 和目录</li>
@@ -1431,7 +1431,7 @@ https:<span class="hljs-regexp">//</span>raw.githubusercontent.com<span class="h
           <span class="hljs-params">nfs:</span>
             <span class="hljs-params">server:</span> <span class="hljs-number">192.168</span>.<span class="hljs-number">31.179</span>
             <span class="hljs-params">path:</span> <span class="hljs-symbol">/data/kubernetes</span>
-</code></pre>
+复制代码</code></pre>
 
 <h3 id="1-3-部署创建"><a href="#1-3-部署创建" class="headerlink" title="1.3 部署创建"></a>1.3 部署创建</h3><ol>
 <li>具体的说明可以去官网查看</li>
@@ -1439,13 +1439,13 @@ https:<span class="hljs-regexp">//</span>raw.githubusercontent.com<span class="h
 <pre><code class="hljs oxygene">kubectl <span class="hljs-keyword">create</span> -f rbac.yaml
 kubectl <span class="hljs-keyword">create</span> -f <span class="hljs-keyword">class</span>.yaml
 kubectl <span class="hljs-keyword">create</span> -f deployment.yaml
-</code></pre>
+复制代码</code></pre>
 
 <ol>
 <li>注意：请确保每一个k8s node节点，安装了nfs-utils</li>
 </ol>
 <pre><code class="hljs cmake">yum -y <span class="hljs-keyword">install</span> nfs-utils
-</code></pre>
+复制代码</code></pre>
 
 <ol>
 <li>查看storageclass</li>
@@ -1453,21 +1453,21 @@ kubectl <span class="hljs-keyword">create</span> -f deployment.yaml
 <pre><code class="hljs kotlin">## kubectl <span class="hljs-keyword">get</span> storage<span class="hljs-keyword">class</span>
 <span class="hljs-title class_">NAME</span>                            <span class="hljs-title">PROVISIONER</span>      <span class="hljs-title">AGE</span>
 managed-nfs-storage    fuseim.pri/ifs   139m
-</code></pre>
+复制代码</code></pre>
 
 <ol>
 <li>查看nfs pod</li>
 </ol>
-<pre><code class="hljs apache"><span class="hljs-comment">## kubectl get pods</span>
-<span class="hljs-attribute">NAME</span>                                      READY   STATUS    RESTARTS   AGE
-<span class="hljs-attribute">nfs</span>-client-provisioner-<span class="hljs-number">59777</span>fb457-dkf87   <span class="hljs-number">1</span>/<span class="hljs-number">1</span>     Running   <span class="hljs-number">0</span>          <span class="hljs-number">153</span>m
-</code></pre>
+<pre><code class="hljs axapta"><span class="hljs-meta">## kubectl get pods</span>
+NAME                                      READY   STATUS    RESTARTS   AGE
+nfs-<span class="hljs-keyword">client</span>-provisioner<span class="hljs-number">-59777</span>fb457-dkf87   <span class="hljs-number">1</span>/<span class="hljs-number">1</span>     Running   <span class="hljs-number">0</span>          <span class="hljs-number">153</span>m
+复制代码</code></pre>
 
 <ol>
 <li>标记一个默认的 StorageClass</li>
 </ol>
 <pre><code class="hljs jboss-cli">kubectl <span class="hljs-keyword">patch</span> storageclass managed-nfs-storage -p &#x27;&#123;<span class="hljs-string">&quot;metadata&quot;</span>: &#123;<span class="hljs-string">&quot;annotations&quot;</span>:&#123;<span class="hljs-string">&quot;storageclass.kubernetes.io/is-default-class&quot;</span>:<span class="hljs-string">&quot;true&quot;</span>&#125;&#125;&#125;&#x27;
-</code></pre>
+复制代码</code></pre>
 
 <ol>
 <li>验证标记是否成功</li>
@@ -1475,7 +1475,7 @@ managed-nfs-storage    fuseim.pri/ifs   139m
 <pre><code class="hljs pgsql">## kubectl <span class="hljs-keyword">get</span> storageclass
 <span class="hljs-type">NAME</span>                            PROVISIONER      AGE
 managed-nfs-<span class="hljs-keyword">storage</span> (<span class="hljs-keyword">default</span>)   fuseim.pri/ifs   <span class="hljs-number">139</span>m
-</code></pre>
+复制代码</code></pre>
 
 <p>出现了一个default，表示成功了。</p>
 <h2 id="2-安装KubeSphere"><a href="#2-安装KubeSphere" class="headerlink" title="2. 安装KubeSphere"></a>2. 安装KubeSphere</h2><h3 id="参考管访问当"><a href="#参考管访问当" class="headerlink" title="参考管访问当"></a>参考管访问当</h3><h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ol>

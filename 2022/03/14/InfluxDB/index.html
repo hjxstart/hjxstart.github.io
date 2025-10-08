@@ -15,7 +15,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250913234353519.png">
 <meta property="article:published_time" content="2025-09-13T15:10:00.000Z">
-<meta property="article:modified_time" content="2025-10-08T11:21:46.999Z">
+<meta property="article:modified_time" content="2025-10-08T11:23:27.820Z">
 <meta property="article:author" content="黄金贤">
 <meta property="article:tag" content="计算机网络 数据库 操作系统 数据结构 算法 Java Nodejs">
 <meta name="twitter:card" content="summary">
@@ -238,7 +238,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="66">
-<input type="hidden" id="yelog_site_word_count" value="240.1k">
+<input type="hidden" id="yelog_site_word_count" value="242.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -479,7 +479,7 @@
         </a>
         
         <a  class="全部文章 工具 "
-           href="/2023/12/18/GIT/"
+           href="/2023/12/18/Git/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="GIT">GIT</span>
@@ -559,7 +559,7 @@
         </a>
         
         <a  class="全部文章 工具 "
-           href="/2022/08/24/FRP/"
+           href="/2022/08/24/frp/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="FRP">FRP</span>
@@ -599,7 +599,7 @@
         </a>
         
         <a  class="全部文章 数据库 "
-           href="/2022/03/14/InfluxDB/"
+           href="/2022/03/14/influxDB/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="InfluxDB">InfluxDB</span>
@@ -623,7 +623,7 @@
         </a>
         
         <a  class="全部文章 运维 "
-           href="/2021/12/16/VSFTPD/"
+           href="/2021/12/16/vsftpd/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="VSFTPD">VSFTPD</span>
@@ -631,7 +631,7 @@
         </a>
         
         <a  class="全部文章 数据库 "
-           href="/2021/10/06/REDIS/"
+           href="/2021/10/06/Redis/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="REDIS">REDIS</span>
@@ -671,7 +671,7 @@
         </a>
         
         <a  class="全部文章 开发 "
-           href="/2021/08/26/Go/"
+           href="/2021/08/26/GO/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="Go">Go</span>
@@ -840,7 +840,7 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-InfluxDB" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-influxDB" class="article article-type-post" itemscope itemprop="blogPost">
     
         <h1 class="article-title">InfluxDB</h1>
     
@@ -860,12 +860,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-10-08 19:21:47'>2022-03-14 13:25</time>
+            发布时间 : <time class="date" title='最后更新: 2025-10-08 19:23:27'>2022-03-14 13:25</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:485</span>
+        <span>字数:537</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -915,11 +915,11 @@
 <pre><code class="hljs conf"># Change this option to true to disable reporting.
 reporting-disabled =true
 bind-address = &quot;:8087&quot;
-language-conf</code></pre>
+language-conf复制代码</code></pre>
 
 <p><strong>3. 根据配置文件运行</strong></p>
 <pre><code class="hljs ps1">influxd <span class="hljs-literal">-config</span> influxdb.conf
-language<span class="hljs-literal">-ps1</span></code></pre>
+language<span class="hljs-literal">-ps1</span>复制代码</code></pre>
 
 <blockquote>
 <p>验证：在浏览器中打开 <a target="_blank" rel="noopener" href="http://localhost:8087/">http://localhost:8087</a></p>
@@ -930,21 +930,21 @@ language<span class="hljs-literal">-ps1</span></code></pre>
 </blockquote>
 <p><strong>1. 拉取相关版本镜像</strong></p>
 <pre><code class="hljs shell">docker pull influxdb:1.7.9
-language-shell</code></pre>
+language-shell复制代码</code></pre>
 
 <p><strong>2. 使用镜像创建容器</strong></p>
 <pre><code class="hljs shell">docker run -d -p  8083:8083 -p 8086:8086 --name influxdb influxdb:1.7.9
-language-shell</code></pre>
+language-shell复制代码</code></pre>
 
 <p><strong>3. 开放防火墙端口[可选]</strong></p>
 <pre><code class="hljs shell">firewall-cmd --zone=public --add-port=8083/tcp --permanent
 firewall-cmd --zone=public --add-port=8086/tcp --permanent
 firewall-cmd --reload
-language-shell</code></pre>
+language-shell复制代码</code></pre>
 
 <p><strong>4. 进入容器内部</strong></p>
 <pre><code class="hljs shell">docker exec -it influxdb /bin/bash
-language-shell</code></pre>
+language-shell复制代码</code></pre>
 
 <hr>
 <h3 id="1-2-2-创建用户"><a href="#1-2-2-创建用户" class="headerlink" title="1.2.2 创建用户"></a>1.2.2 创建用户</h3><p><strong>1. 进入<code>influxdb</code>命令交互模式</strong></p>
@@ -993,35 +993,35 @@ apt-get install vim
 
 <p><strong>4. 重启容器</strong></p>
 <pre><code class="hljs shell">docker restart influxdb
-language-shell</code></pre>
+language-shell复制代码</code></pre>
 
 <hr>
 <h3 id="1-2-4-测试"><a href="#1-2-4-测试" class="headerlink" title="1.2.4 测试"></a>1.2.4 测试</h3><p><strong>1. 进入容器</strong></p>
 <pre><code class="hljs shell">docker exec -it influxdb /bin/bash
-language-shell</code></pre>
+language-shell复制代码</code></pre>
 
 <p><strong>2. 进入交互模式</strong></p>
 <pre><code class="hljs shell">influx -username &#x27;hjxstart&#x27; -password &#x27;123456&#x27;
-language-shell</code></pre>
+language-shell复制代码</code></pre>
 
 <p><strong>3. 使用数据库</strong></p>
 <pre><code class="hljs shell">use test;
-language-shell</code></pre>
+language-shell复制代码</code></pre>
 
 <hr>
 <h3 id="1-2-5-整合-Grafana"><a href="#1-2-5-整合-Grafana" class="headerlink" title="1.2.5 整合 Grafana"></a>1.2.5 整合 Grafana</h3><p><strong>1. 安装 Grafana</strong></p>
 <pre><code class="hljs shell">docker run -d -p 3000:3000 --name=grafana grafana/grafana
-language-shell</code></pre>
+language-shell复制代码</code></pre>
 
 <p><strong>2. 开放防火墙端口</strong></p>
 <pre><code class="hljs shell">firewall-cmd --zone=public --add-port=3000/tcp --permanent
 firewall-cmd --reload
-language-shell</code></pre>
+language-shell复制代码</code></pre>
 
 <p><strong>3. 访问</strong></p>
 <pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">用户名密码默认：admin</span>
 http://ip:8086
-language-shell</code></pre>
+language-shell复制代码</code></pre>
 
 <hr>
 
