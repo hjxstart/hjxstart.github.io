@@ -238,7 +238,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="66">
-<input type="hidden" id="yelog_site_word_count" value="244.3k">
+<input type="hidden" id="yelog_site_word_count" value="253.8k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -303,10 +303,10 @@
         </a>
         
         <a id="top" class="全部文章 安全 "
-           href="/2025/08/17/CISP-PTE/"
+           href="/2025/08/17/PTE/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="CISP-PTE">CISP-PTE</span>
+            <span class="post-title" title="PTE">PTE</span>
             <span class="post-date" title="2025-08-17 11:12:00">2025/08/17</span>
         </a>
         
@@ -862,12 +862,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-10-08 18:32:36'>2025-04-04 10:45</time>
+            发布时间 : <time class="date" title='最后更新: 2025-10-12 21:25:02'>2025-04-04 10:45</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:5.9k</span>
+        <span>字数:6k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -886,7 +886,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-text">1 环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-PXE%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-text">1.1 PXE服务器端初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AETFTP%E6%9C%8D%E5%8A%A1"><span class="toc-text">1.2 安装和配置TFTP服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AEDHCP%E6%9C%8D%E5%8A%A1"><span class="toc-text">1.3 安装和配置DHCP服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AEHTTP%E6%9C%8D%E5%8A%A1"><span class="toc-text">1.4 安装和配置HTTP服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-Client%E9%9C%80%E8%A6%81%E5%90%AF%E5%8A%A8%E7%9A%84%E6%96%87%E4%BB%B6"><span class="toc-text">1.5 Client需要启动的文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6-grub%E5%90%AF%E5%8A%A8%E8%8F%9C%E5%8D%95%E7%9A%84%E7%BE%8E%E5%8C%96"><span class="toc-text">1.6 grub启动菜单的美化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%BA%92%E9%BA%9F"><span class="toc-text">麒麟</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8-RedHat%E7%B3%BB"><span class="toc-text">服务器 (RedHat系)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%8C%E9%9D%A2-Ubuntu%E7%B3%BB"><span class="toc-text">桌面 (Ubuntu系)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Centos"><span class="toc-text">Centos</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ubuntu"><span class="toc-text">Ubuntu</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Other"><span class="toc-text">Other</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E5%87%86%E5%88%86%E5%8C%BA"><span class="toc-text">标准分区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E5%8D%A1bond-sh"><span class="toc-text">网卡bond.sh</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%90%8E%E7%9A%84%E4%BC%98%E5%8C%96"><span class="toc-text">安装后的优化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FAQ"><span class="toc-text">FAQ</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#NBP-is-too-big-to-fix-in-free-base-memory"><span class="toc-text">NBP is too big to fix in free base memory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text"></span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#PXE-Kickstart"><span class="toc-text">PXE-Kickstart</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-text">1 环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-PXE%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-text">1.1 PXE服务器端初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AETFTP%E6%9C%8D%E5%8A%A1"><span class="toc-text">1.2 安装和配置TFTP服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AEDHCP%E6%9C%8D%E5%8A%A1"><span class="toc-text">1.3 安装和配置DHCP服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AEHTTP%E6%9C%8D%E5%8A%A1"><span class="toc-text">1.4 安装和配置HTTP服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-Client%E9%9C%80%E8%A6%81%E5%90%AF%E5%8A%A8%E7%9A%84%E6%96%87%E4%BB%B6"><span class="toc-text">1.5 Client需要启动的文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6-grub%E5%90%AF%E5%8A%A8%E8%8F%9C%E5%8D%95%E7%9A%84%E7%BE%8E%E5%8C%96"><span class="toc-text">1.6 grub启动菜单的美化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%BA%92%E9%BA%9F"><span class="toc-text">麒麟</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8-RedHat%E7%B3%BB"><span class="toc-text">服务器 (RedHat系)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%8C%E9%9D%A2-Ubuntu%E7%B3%BB"><span class="toc-text">桌面 (Ubuntu系)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Centos"><span class="toc-text">Centos</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ubuntu"><span class="toc-text">Ubuntu</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Other"><span class="toc-text">Other</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E5%87%86%E5%88%86%E5%8C%BA"><span class="toc-text">标准分区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E5%8D%A1bond-sh"><span class="toc-text">网卡bond.sh</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%90%8E%E7%9A%84%E4%BC%98%E5%8C%96"><span class="toc-text">安装后的优化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FAQ"><span class="toc-text">FAQ</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#NBP-is-too-big-to-fix-in-free-base-memory"><span class="toc-text">NBP is too big to fix in free base memory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text"></span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -902,7 +902,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-环境配置"><a href="#1-环境配置" class="headerlink" title="1 环境配置"></a>1 环境配置</h2><h3 id="1-1-PXE服务器端初始化"><a href="#1-1-PXE服务器端初始化" class="headerlink" title="1.1 PXE服务器端初始化"></a>1.1 PXE服务器端初始化</h3><blockquote>
+        <h1 id="PXE-Kickstart"><a href="#PXE-Kickstart" class="headerlink" title="PXE-Kickstart"></a>PXE-Kickstart</h1><h2 id="1-环境配置"><a href="#1-环境配置" class="headerlink" title="1 环境配置"></a>1 环境配置</h2><h3 id="1-1-PXE服务器端初始化"><a href="#1-1-PXE服务器端初始化" class="headerlink" title="1.1 PXE服务器端初始化"></a>1.1 PXE服务器端初始化</h3><blockquote>
 <p>Centos7.9最小安装后初始化</p>
 </blockquote>
 <p>关闭防火墙&#x2F;SELinux&#x2F;配置yum源&#x2F;安装常用软件&#x2F;关闭sshd服务器的DNS</p>
@@ -1366,7 +1366,25 @@ pwpolicy luks --minlen=8 --minquality=1 --strict --nochanges --notempty
 %end
 </code></pre>
 
-<h3 id="桌面-Ubuntu系"><a href="#桌面-Ubuntu系" class="headerlink" title="桌面 (Ubuntu系)"></a>桌面 (Ubuntu系)</h3><hr>
+<h3 id="桌面-Ubuntu系"><a href="#桌面-Ubuntu系" class="headerlink" title="桌面 (Ubuntu系)"></a>桌面 (Ubuntu系)</h3><pre><code class="hljs bash"><span class="hljs-comment"># 关闭防火墙</span>
+    <span class="hljs-built_in">sudo</span> kylin-firewall  -s off -p &gt; /dev/null 2&gt;&amp;1
+  	<span class="hljs-comment">#关闭应用联网控制：</span>
+	<span class="hljs-built_in">sudo</span> setstatus -f netctl off -p &gt; /dev/null 2&gt;&amp;1
+	<span class="hljs-comment">#关闭应用程序执行控制</span>
+	<span class="hljs-built_in">sudo</span> setstatus -f  exectl off -p &gt; /dev/null 2&gt;&amp;1
+	<span class="hljs-comment">#关闭应用访问权限控制</span>
+	<span class="hljs-built_in">sudo</span> setstatus -f kid off -p &gt; /dev/null 2&gt;&amp;1
+	<span class="hljs-comment">#关闭应用防护控制</span>
+	<span class="hljs-built_in">sudo</span> setstatus -f fpro off -p &gt; /dev/null 2&gt;&amp;1
+	<span class="hljs-comment">#关闭外设管控</span>
+	<span class="hljs-built_in">sudo</span> setstatus  -f devctl off -p &gt; /dev/null 2&gt;&amp;1
+    
+	<span class="hljs-comment">#永久关闭kysec</span>
+	<span class="hljs-built_in">sudo</span> setstatus  <span class="hljs-built_in">disable</span> -p &gt; /dev/null 2&gt;&amp;1</code></pre>
+
+
+
+<hr>
 <h2 id="Centos"><a href="#Centos" class="headerlink" title="Centos"></a>Centos</h2><h2 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h2><h2 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h2><h3 id="标准分区"><a href="#标准分区" class="headerlink" title="标准分区"></a>标准分区</h3><blockquote>
 <p>安装系统前检查和确定分区方案，并输出到&#x2F;tmp&#x2F;sda-nvme.txt中，等安装系统时执行</p>
 </blockquote>
