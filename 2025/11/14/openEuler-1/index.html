@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Springboot项目 | 黄金贤的博客</title>
+  <title>openEuler | 黄金贤的博客</title>
   <meta name="keywords" content="">
-  <meta name="description" content="Springboot项目 | 黄金贤的博客">
+  <meta name="description" content="openEuler | 黄金贤的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="黄金贤 hjxstart">
 <meta property="og:type" content="article">
@@ -854,32 +854,24 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-Springboot项目" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-openEuler-1" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Springboot项目</h1>
+        <h1 class="article-title">openEuler</h1>
     
     <div class="article-meta">
         
         
-        
-        <span class="book">
-            <i class="iconfont icon-category"></i>
-            
-            
-            <a  data-rel="开发">开发</a>
-            
-        </span>
         
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-10-08 19:23:27'>2021-07-31 19:34</time>
+            发布时间 : <time class="date" title='最后更新: 2025-11-14 13:31:16'>2025-11-14 13:31</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:407</span>
+        <span>字数:0</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -898,7 +890,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker%E9%83%A8%E7%BD%B2Springboot%E9%A1%B9%E7%9B%AE"><span class="toc-text">Docker部署Springboot项目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-docker-%E5%BC%80%E5%90%AF%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5"><span class="toc-text">1. docker 开启远程连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-IDEA-%E9%85%8D%E7%BD%AE"><span class="toc-text">2. IDEA 配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%89%93%E5%8C%85%E9%83%A8%E7%BD%B2"><span class="toc-text">3. 打包部署</span></a></li></ol></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -914,92 +906,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Docker部署Springboot项目"><a href="#Docker部署Springboot项目" class="headerlink" title="Docker部署Springboot项目"></a>Docker部署Springboot项目</h2><h3 id="1-docker-开启远程连接"><a href="#1-docker-开启远程连接" class="headerlink" title="1. docker 开启远程连接"></a>1. docker 开启远程连接</h3><ol>
-<li>编辑docker.service文件</li>
-</ol>
-<pre><code class="hljs shell">vi /usr/lib/systemd/system/docker.service
-language-shell复制代码</code></pre>
-
-<ol>
-<li>修改 ExecStart 属性</li>
-</ol>
-<pre><code class="hljs shell">ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock -H tcp://0.0.0.0:2375
-language-shell复制代码</code></pre>
-
-<ol>
-<li>重新加载Docker配置生效</li>
-</ol>
-<pre><code class="hljs shell">systemctl daemon-reload 
-systemctl restart docker
-language-shell复制代码</code></pre>
-
-<hr>
-<h3 id="2-IDEA-配置"><a href="#2-IDEA-配置" class="headerlink" title="2. IDEA 配置"></a>2. IDEA 配置</h3><ol>
-<li>连接docker</li>
-</ol>
-<pre><code class="hljs shell">tcp://ip:2375
-language-shell复制代码</code></pre>
-
-<ol>
-<li>配置镜像加速器</li>
-</ol>
-<pre><code class="hljs shell">https://xsxk9861.mirror.aliyuncs.com
-language-shell复制代码</code></pre>
-
-<ol>
-<li>集成mavn插件 pom.xml</li>
-</ol>
-<pre><code class="hljs xml">    <span class="hljs-tag">&lt;<span class="hljs-name">properties</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">java.version</span>&gt;</span>1.8<span class="hljs-tag">&lt;/<span class="hljs-name">java.version</span>&gt;</span>
-        <span class="hljs-comment">&lt;!--docker镜像前缀名称--&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">docker.image.prefix</span>&gt;</span>java<span class="hljs-tag">&lt;/<span class="hljs-name">docker.image.prefix</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">properties</span>&gt;</span>
-language-xml复制代码
-          <span class="hljs-tag">&lt;<span class="hljs-name">plugin</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.spotify<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>docker-maven-plugin<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.0.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
-
-                <span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span>
-                    <span class="hljs-comment">&lt;!--远程docker的地址--&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-name">dockerHost</span>&gt;</span>http://45.77.120.192:2375<span class="hljs-tag">&lt;/<span class="hljs-name">dockerHost</span>&gt;</span>
-                    <span class="hljs-comment">&lt;!--镜像名称，前缀/项目名--&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-name">imageName</span>&gt;</span>$&#123;docker.image.prefix&#125;/$&#123;project.artifactId&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">imageName</span>&gt;</span>
-                    <span class="hljs-comment">&lt;!--Dockerfile的位置--&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-name">dockerDirectory</span>&gt;</span>src/main/docker<span class="hljs-tag">&lt;/<span class="hljs-name">dockerDirectory</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-name">resources</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">resource</span>&gt;</span>
-                            <span class="hljs-tag">&lt;<span class="hljs-name">targetPath</span>&gt;</span>/<span class="hljs-tag">&lt;/<span class="hljs-name">targetPath</span>&gt;</span>
-                            <span class="hljs-tag">&lt;<span class="hljs-name">directory</span>&gt;</span>$&#123;project.build.directory&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">directory</span>&gt;</span>
-                            <span class="hljs-tag">&lt;<span class="hljs-name">include</span>&gt;</span>$&#123;project.build.finalName&#125;.jar<span class="hljs-tag">&lt;/<span class="hljs-name">include</span>&gt;</span>
-                        <span class="hljs-tag">&lt;/<span class="hljs-name">resource</span>&gt;</span>
-                    <span class="hljs-tag">&lt;/<span class="hljs-name">resources</span>&gt;</span>
-                <span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-name">plugin</span>&gt;</span>
-language-xml复制代码</code></pre>
-
-<ol>
-<li>创建src&#x2F;main&#x2F;docker&#x2F;Dockerfile</li>
-</ol>
-<pre><code class="hljs dockerfile"><span class="hljs-comment">#依赖jdk8</span>
-<span class="hljs-keyword">FROM</span> java:<span class="hljs-number">8</span>
-<span class="hljs-comment"># 维护者信息</span>
-<span class="hljs-keyword">MAINTAINER</span> hjxstart hjxstart@<span class="hljs-number">126</span>.com
-<span class="hljs-comment">#容器卷</span>
-<span class="hljs-keyword">VOLUME</span><span class="language-bash"> /tmp</span>
-<span class="hljs-comment">#拷贝jar包</span>
-<span class="hljs-keyword">ADD</span><span class="language-bash"> internal-system-java-0.0.1-SNAPSHOT.jar /test.jar</span>
-<span class="hljs-comment">#暴漏端口</span>
-<span class="hljs-comment"># EXPOSE 8080</span>
-<span class="hljs-comment">#容器启动时执行</span>
-<span class="hljs-keyword">ENTRYPOINT</span><span class="language-bash"> [ <span class="hljs-string">&quot;java&quot;</span>, <span class="hljs-string">&quot;-Djava.security.egd=file:/dev/./urandom&quot;</span>, <span class="hljs-string">&quot;-jar&quot;</span>, <span class="hljs-string">&quot;/test.jar&quot;</span> ]</span>
-language-dockerfile复制代码</code></pre>
-
-<h3 id="3-打包部署"><a href="#3-打包部署" class="headerlink" title="3. 打包部署"></a>3. 打包部署</h3><ol>
-<li>使用Plugins插件分别运行build</li>
-</ol>
-<hr>
-
+        
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 hjxstart@126.com </span>
     </div>
