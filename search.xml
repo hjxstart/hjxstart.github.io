@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>DaVinci</title>
+      <link href="/2026/03/02/DaVinci/"/>
+      <url>/2026/03/02/DaVinci/</url>
+      
+        <content type="html"><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="视频制作流程"><a href="#视频制作流程" class="headerlink" title="视频制作流程"></a>视频制作流程</h2><h3 id="剪辑"><a href="#剪辑" class="headerlink" title="剪辑"></a>剪辑</h3><pre><code class="hljs bash"><span class="hljs-comment"># 剪辑：把拍摄的素材拼接在一起，编排结构，控制演出节奏。无论是电影项目还是短视频，最重要的东西都是相通的。基本内容大致有如下：</span>素材管理创建工程创建时间线挑选素材剪辑添加效果添加音频添加字幕导出</code></pre><h3 id="素材管理"><a href="#素材管理" class="headerlink" title="素材管理"></a>素材管理</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20260302102813635.png" alt="文件夹结构"></p><pre><code class="hljs bash"><span class="hljs-comment"># 首先你需要了解，每一个项目我们都需要将素材分门别类存放在文件夹中。</span><span class="hljs-comment"># 文件夹结构属于基本管理</span></code></pre><h3 id="创建工程、时间线和挑素材"><a href="#创建工程、时间线和挑素材" class="headerlink" title="创建工程、时间线和挑素材"></a>创建工程、时间线和挑素材</h3><pre><code class="hljs bash"><span class="hljs-comment"># 首次打开达芬奇，我们需要在项目这个位置，添加一个项目库，然后新建一个项目。</span><span class="hljs-comment"># 打开项目第一步，首先要去到右下角齿轮，去设置一下时间线的帧速率设置成25帧，分配率保持默认的1920x1080，点保存</span><span class="hljs-comment"># 第二步去到媒体窗口的左上角，找到我们素材那个文件夹存放的位置，把视频素材文件夹拖到Master下，不更改项目频率。</span><span class="hljs-comment"># 时间线上挑选素材：去到剪辑窗口，把视频素材全部放到时间线上，可以将不同的素材隔开进行挑选，对素材进行一些插头去尾部的操作保留需要的素材，最后要更精细的去看和挑选一遍素材；</span><span class="hljs-comment"># 媒体池挑选素材，媒体池里可以看每一条素材，然后在里面打入点和出点，打完点之后就可以拖到时间线上。</span></code></pre><h3 id="剪辑-1"><a href="#剪辑-1" class="headerlink" title="剪辑"></a>剪辑</h3><pre><code class="hljs bash"><span class="hljs-comment"># 剪辑流程是一个偏复制的操作</span></code></pre><h3 id="添加效果"><a href="#添加效果" class="headerlink" title="添加效果"></a>添加效果</h3>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>安全产品</title>
       <link href="/2026/02/01/%E5%AE%89%E5%85%A8%E4%BA%A7%E5%93%81/"/>
       <url>/2026/02/01/%E5%AE%89%E5%85%A8%E4%BA%A7%E5%93%81/</url>
