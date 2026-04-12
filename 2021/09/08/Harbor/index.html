@@ -6,12 +6,12 @@
   <meta name="keywords" content="">
   <meta name="description" content="Harbor | 黄金贤的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="KylinOS一、桌面1.1 镜像下载86 架构## intel&amp;amd # INTEL-13代 [Kylin-Desktop-V10-SP1-2303-update2-HWE-6.1-Release-20240122-x86_64.iso] https:&#x2F;&#x2F;iso.kylinos.cn&#x2F;web_pungi&#x2F;download&#x2F;cdn&#x2F;Xcm7e30IBGZ6VFdjbyDvxTsYPL9h">
+<meta name="description" content="一、桌面1.1 镜像下载86架构## intel&amp;amd # INTEL-13代 [Kylin-Desktop-V10-SP1-2303-update2-HWE-6.1-Release-20240122-x86_64.iso] https:&#x2F;&#x2F;iso.kylinos.cn&#x2F;web_pungi&#x2F;download&#x2F;cdn&#x2F;Xcm7e30IBGZ6VFdjbyDvxTsYPL9hgA2r&#x2F; #">
 <meta property="og:type" content="article">
 <meta property="og:title" content="KylinOS">
 <meta property="og:url" content="https://hjxstart.github.io/2026/04/09/KylinOS/index.html">
 <meta property="og:site_name" content="黄金贤的博客">
-<meta property="og:description" content="KylinOS一、桌面1.1 镜像下载86 架构## intel&amp;amd # INTEL-13代 [Kylin-Desktop-V10-SP1-2303-update2-HWE-6.1-Release-20240122-x86_64.iso] https:&#x2F;&#x2F;iso.kylinos.cn&#x2F;web_pungi&#x2F;download&#x2F;cdn&#x2F;Xcm7e30IBGZ6VFdjbyDvxTsYPL9h">
+<meta property="og:description" content="一、桌面1.1 镜像下载86架构## intel&amp;amd # INTEL-13代 [Kylin-Desktop-V10-SP1-2303-update2-HWE-6.1-Release-20240122-x86_64.iso] https:&#x2F;&#x2F;iso.kylinos.cn&#x2F;web_pungi&#x2F;download&#x2F;cdn&#x2F;Xcm7e30IBGZ6VFdjbyDvxTsYPL9hgA2r&#x2F; #">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250912115431149.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20250912115608057.png">
@@ -114,7 +114,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20260327121727546.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20260327122325145.png">
 <meta property="article:published_time" content="2026-04-09T09:39:50.000Z">
-<meta property="article:modified_time" content="2026-04-12T10:24:16.270Z">
+<meta property="article:modified_time" content="2026-04-12T10:45:53.447Z">
 <meta property="article:author" content="黄金贤">
 <meta property="article:tag" content="计算机网络 数据库 操作系统 数据结构 算法 Java Nodejs">
 <meta name="twitter:card" content="summary">
@@ -337,7 +337,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="71">
-<input type="hidden" id="yelog_site_word_count" value="321.9k">
+<input type="hidden" id="yelog_site_word_count" value="321.8k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1046,7 +1046,7 @@
 <li>解压 <code>tar -zxvf harbor-xxx.tar</code></li>
 <li>移动harbor <code>mv harbor /usr/local</code></li>
 <li>生成openssl证书: <code>openssl genrsa -des3 -out server.key 2048</code>(密码123456)</li>
-<li>创建证书请求：<code>openssl req -new -key server.key -out server.csr</code>(密码:123456, 国家：CN, 省会:GD, 市:ZJ, 机构:XJ, 单位：XJ，域名 hub.xj.com, 邮箱: <a href="mailto:&#104;&#106;&#120;&#x73;&#x74;&#x61;&#114;&#x74;&#64;&#x31;&#x32;&#54;&#46;&#99;&#x6f;&#x6d;">hjxstart@126.com</a>, 密码：123456,公司名字:XJ).中途输入错误可以<code>Ctr+C</code>退出.</li>
+<li>创建证书请求：<code>openssl req -new -key server.key -out server.csr</code>(密码:123456, 国家：CN, 省会:GD, 市:ZJ, 机构:XJ, 单位：XJ，域名 hub.xj.com, 邮箱: <a href="mailto:&#x68;&#x6a;&#120;&#115;&#116;&#97;&#114;&#116;&#x40;&#x31;&#x32;&#54;&#x2e;&#99;&#111;&#109;">hjxstart@126.com</a>, 密码：123456,公司名字:XJ).中途输入错误可以<code>Ctr+C</code>退出.</li>
 <li>复制文件：cp server.key server.key.org</li>
 <li>取消密码认证：<code>openssl rsa -in server.key.org -out server.key</code>(密码123456)</li>
 <li>创建证书（类型:x509,有效期：365天）：<code>openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt</code></li>
