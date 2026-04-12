@@ -1,0 +1,2752 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>CISO | 黄金贤的博客</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="CISO | 黄金贤的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="RHCA概述## 概述 1. RH442 红帽的Linux性能调优 2. CL260 RHCS ceph的云存储 3. RH358 服务自动化 使用ansible来管理服务 4. D0447 ansible平台自动化 5. CL210 OSP 红帽的云计算平台 开源的openstack 对于环境 RHCI的培训环境 32G内存及以上  ## D0447 ansible平台自动化 # RH294 (">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RHCA">
+<meta property="og:url" content="https://hjxstart.github.io/2026/04/01/RHCA/index.html">
+<meta property="og:site_name" content="黄金贤的博客">
+<meta property="og:description" content="RHCA概述## 概述 1. RH442 红帽的Linux性能调优 2. CL260 RHCS ceph的云存储 3. RH358 服务自动化 使用ansible来管理服务 4. D0447 ansible平台自动化 5. CL210 OSP 红帽的云计算平台 开源的openstack 对于环境 RHCI的培训环境 32G内存及以上  ## D0447 ansible平台自动化 # RH294 (">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20260401164617408.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20260401165236252.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20260402101942779.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20260402102330753.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20260403162504608.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20260404101528216.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20260404180138337.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20260405123839159.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20260403185041859.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20260405222847345.png">
+<meta property="article:published_time" content="2026-04-01T01:25:53.000Z">
+<meta property="article:modified_time" content="2026-04-12T08:50:41.108Z">
+<meta property="article:author" content="黄金贤">
+<meta property="article:tag" content="计算机网络 数据库 操作系统 数据结构 算法 Java Nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20260401164617408.png">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-dark.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 8.0.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>黄金贤</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="github"
+               href="https://github.com/hjxstart"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="email"
+               href="mailto:hjxstart@126.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=1726283687&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(70)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="读书">
+                        
+                        读书
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(10)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据库">
+                        
+                        数据库
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(18)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(12)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="网络">
+                        
+                        网络
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="70">
+<input type="hidden" id="yelog_site_word_count" value="283.4k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://github.com/hjxstart">hjxstart</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="全部文章 网络 "
+           href="/2024/05/06/HCIE%20Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HCIE Lab">HCIE Lab</span>
+            <span class="post-date" title="2024-05-06 19:42:00">2024/05/06</span>
+        </a>
+        
+        <a id="top" class="全部文章 安全 "
+           href="/2025/08/17/PTE/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PTE">PTE</span>
+            <span class="post-date" title="2025-08-17 11:12:00">2025/08/17</span>
+        </a>
+        
+        <a id="top" class="全部文章 安全 "
+           href="/2024/08/23/CISO/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CISO">CISO</span>
+            <span class="post-date" title="2024-08-23 19:29:00">2024/08/23</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2021/09/09/VMware/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="VMware">VMware</span>
+            <span class="post-date" title="2021-09-09 15:38:00">2021/09/09</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2025/04/04/PXE-Kickstart/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PXE+Kickstart">PXE+Kickstart</span>
+            <span class="post-date" title="2025-04-04 10:45:00">2025/04/04</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2025/08/24/Windows/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Windows">Windows</span>
+            <span class="post-date" title="2025-08-24 11:19:00">2025/08/24</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2022/03/24/Linux/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Linux">Linux</span>
+            <span class="post-date" title="2022-03-24 11:53:00">2022/03/24</span>
+        </a>
+        
+        <a id="top" class="全部文章 工具 "
+           href="/2024/07/28/NTLite/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="NTLite">NTLite</span>
+            <span class="post-date" title="2024-07-28 21:32:00">2024/07/28</span>
+        </a>
+        
+        <a id="top" class="全部文章 数据库 "
+           href="/2020/03/19/MySQL/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="MySQL">MySQL</span>
+            <span class="post-date" title="2020-03-19 21:51:00">2020/03/19</span>
+        </a>
+        
+        <a id="top" class="全部文章 开发 "
+           href="/2025/09/13/Php/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Php">Php</span>
+            <span class="post-date" title="2025-09-13 23:10:00">2025/09/13</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2023/05/13/IBMC/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="IBMC">IBMC</span>
+            <span class="post-date" title="2023-05-13 21:04:00">2023/05/13</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2026/04/01/RHCA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="RHCA">RHCA</span>
+            <span class="post-date" title="2026-04-01 09:25:53">2026/04/01</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2026/03/02/DaVinci/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="DaVinci">DaVinci</span>
+            <span class="post-date" title="2026-03-02 10:05:22">2026/03/02</span>
+        </a>
+        
+        <a  class="全部文章 安全 "
+           href="/2026/02/01/%E5%AE%89%E5%85%A8%E4%BA%A7%E5%93%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="安全产品">安全产品</span>
+            <span class="post-date" title="2026-02-01 09:23:23">2026/02/01</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2026/01/04/BSL/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="BSL">BSL</span>
+            <span class="post-date" title="2026-01-04 21:37:49">2026/01/04</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2025/11/27/%E5%86%99%E4%BD%9C%E8%A7%84%E8%8C%83/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="写作规范">写作规范</span>
+            <span class="post-date" title="2025-11-27 16:04:08">2025/11/27</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2025/11/04/openEuler/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="openEuler">openEuler</span>
+            <span class="post-date" title="2025-11-04 14:34:44">2025/11/04</span>
+        </a>
+        
+        <a  class="全部文章 安全 "
+           href="/2025/08/21/cisp-practice/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="cisp-practice">cisp-practice</span>
+            <span class="post-date" title="2025-08-21 19:41:00">2025/08/21</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2025/04/24/Openstack/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OpenStack">OpenStack</span>
+            <span class="post-date" title="2025-04-24 09:04:00">2025/04/24</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/04/16/%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="网络工程师">网络工程师</span>
+            <span class="post-date" title="2024-04-16 22:14:00">2024/04/16</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/STP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="STP">STP</span>
+            <span class="post-date" title="2024-01-27 14:01:00">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/VLAN/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="VLAN">VLAN</span>
+            <span class="post-date" title="2024-01-27 11:42:00">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/LLDP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="LLDP">LLDP</span>
+            <span class="post-date" title="2024-01-27 11:31:00">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/Telnet/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Telnet">Telnet</span>
+            <span class="post-date" title="2024-01-27 10:45:00">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/SSH/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SSH">SSH</span>
+            <span class="post-date" title="2024-01-27 10:44:00">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2023/12/22/WireGuard/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="WireGuard">WireGuard</span>
+            <span class="post-date" title="2023-12-22 07:40:00">2023/12/22</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/12/21/Stack-Port/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Stack Port">Stack Port</span>
+            <span class="post-date" title="2023-12-21 19:31:00">2023/12/21</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2023/12/18/RouterOS/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="RouterOS">RouterOS</span>
+            <span class="post-date" title="2023-12-18 17:05:00">2023/12/18</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2023/12/18/Git/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="GIT">GIT</span>
+            <span class="post-date" title="2023-12-18 17:00:00">2023/12/18</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2023/11/30/HelpDesk/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HelpDesk">HelpDesk</span>
+            <span class="post-date" title="2023-11-30 21:21:00">2023/11/30</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2023/11/18/OpenWrt/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OpenWrt">OpenWrt</span>
+            <span class="post-date" title="2023-11-18 17:03:00">2023/11/18</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/06/01/HCNP-Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="华为NP网络实验">华为NP网络实验</span>
+            <span class="post-date" title="2023-06-01 10:46:04">2023/06/01</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/06/01/CCNP-Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CCNP Lab">CCNP Lab</span>
+            <span class="post-date" title="2023-06-01 10:46:00">2023/06/01</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2023/04/26/1Panel/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1Panel">1Panel</span>
+            <span class="post-date" title="2023-04-26 14:09:00">2023/04/26</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/08/HCNA-Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HCNA Lab">HCNA Lab</span>
+            <span class="post-date" title="2023-04-08 11:46:00">2023/04/08</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/07/CCNA-Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CCNA Lab">CCNA Lab</span>
+            <span class="post-date" title="2023-04-07 20:13:29">2023/04/07</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/07/OSPF/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OSPF">OSPF</span>
+            <span class="post-date" title="2023-04-07 19:19:00">2023/04/07</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2022/08/12/HomeLab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HomeLab">HomeLab</span>
+            <span class="post-date" title="2022-08-12 15:09:00">2022/08/12</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2022/08/10/frp/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="FRP">FRP</span>
+            <span class="post-date" title="2022-08-10 10:22:24">2022/08/10</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2022/07/28/WDS-MDT/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="WDS+MDT">WDS+MDT</span>
+            <span class="post-date" title="2022-07-28 21:33:00">2022/07/28</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2022/06/21/Anaconda/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Anaconda">Anaconda</span>
+            <span class="post-date" title="2022-06-21 20:56:00">2022/06/21</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2022/05/25/%E7%BD%91%E7%BB%9C%E8%A7%84%E5%88%92%E5%B8%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="网络规划师">网络规划师</span>
+            <span class="post-date" title="2022-05-25 11:57:00">2022/05/25</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2022/03/14/influxDB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="InfluxDB">InfluxDB</span>
+            <span class="post-date" title="2022-03-14 13:25:00">2022/03/14</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2022/03/06/MongoDB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="MongoDB">MongoDB</span>
+            <span class="post-date" title="2022-03-06 17:38:00">2022/03/06</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/12/27/Vim/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="VIM">VIM</span>
+            <span class="post-date" title="2021-12-27 09:15:00">2021/12/27</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/12/16/vsftpd/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="VSFTPD">VSFTPD</span>
+            <span class="post-date" title="2021-12-16 08:49:00">2021/12/16</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2021/10/06/Redis/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="REDIS">REDIS</span>
+            <span class="post-date" title="2021-10-06 17:19:00">2021/10/06</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/20/K8s-lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="K8s_lab">K8s_lab</span>
+            <span class="post-date" title="2021-09-20 08:04:00">2021/09/20</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/15/K8s/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="K8s">K8s</span>
+            <span class="post-date" title="2021-09-15 20:48:00">2021/09/15</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/08/Ingress/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Ingress">Ingress</span>
+            <span class="post-date" title="2021-09-08 23:56:00">2021/09/08</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/08/Harbor/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Harbor">Harbor</span>
+            <span class="post-date" title="2021-09-08 18:04:00">2021/09/08</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/08/26/GO/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Go">Go</span>
+            <span class="post-date" title="2021-08-26 11:50:00">2021/08/26</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/08/15/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Java多线程">Java多线程</span>
+            <span class="post-date" title="2021-08-15 14:36:00">2021/08/15</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/08/11/Nginx/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Nginx">Nginx</span>
+            <span class="post-date" title="2021-08-11 23:28:00">2021/08/11</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/08/06/Maven/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Maven">Maven</span>
+            <span class="post-date" title="2021-08-06 09:38:00">2021/08/06</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/07/31/Springboot%E9%A1%B9%E7%9B%AE/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Springboot项目">Springboot项目</span>
+            <span class="post-date" title="2021-07-31 19:34:00">2021/07/31</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/07/22/Docker/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Docker">Docker</span>
+            <span class="post-date" title="2021-07-22 14:53:00">2021/07/22</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/07/19/SpringSecurity/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SpringSecurity">SpringSecurity</span>
+            <span class="post-date" title="2021-07-19 20:58:00">2021/07/19</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/07/13/Mybatis/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Mybatis">Mybatis</span>
+            <span class="post-date" title="2021-07-13 10:38:00">2021/07/13</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/07/05/NVM/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="NVM">NVM</span>
+            <span class="post-date" title="2021-07-05 08:15:00">2021/07/05</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/06/26/Java-Project/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Java Project">Java Project</span>
+            <span class="post-date" title="2021-06-26 07:58:00">2021/06/26</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/06/23/Vue/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Vue">Vue</span>
+            <span class="post-date" title="2021-06-23 10:48:00">2021/06/23</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/06/08/SpringBoot2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SpringBoot2">SpringBoot2</span>
+            <span class="post-date" title="2021-06-08 16:51:00">2021/06/08</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/06/07/CentOS7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CentOS7">CentOS7</span>
+            <span class="post-date" title="2021-06-07 23:16:00">2021/06/07</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/04/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="设计模式">设计模式</span>
+            <span class="post-date" title="2021-04-18 22:19:00">2021/04/18</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2021/03/22/SQL/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SQL">SQL</span>
+            <span class="post-date" title="2021-03-22 18:33:00">2021/03/22</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/03/14/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="时间管理">时间管理</span>
+            <span class="post-date" title="2021-03-14 21:49:00">2021/03/14</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/03/14/Hexo/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hexo">Hexo</span>
+            <span class="post-date" title="2021-03-14 08:31:00">2021/03/14</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2020/09/12/UltraISO/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="UltraISO">UltraISO</span>
+            <span class="post-date" title="2020-09-12 11:42:00">2020/09/12</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2020/09/12/Ventoy/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Ventoy">Ventoy</span>
+            <span class="post-date" title="2020-09-12 11:42:00">2020/09/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-CISO" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">CISO</h1>
+    
+    <div class="article-meta">
+        
+        <span class="top"><a>置顶</a></span>
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="安全">安全</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2026-03-29 22:38:48'>2024-08-23 19:29</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:18.8k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CISO"><span class="toc-text">CISO</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC0%E7%AB%A0-CISP%E7%AE%80%E4%BB%8B"><span class="toc-text">第0章 CISP简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFCISP"><span class="toc-text">什么是CISP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CISP%E8%81%8C%E4%B8%9A%E9%81%93%E5%BE%B7%E5%87%86%E5%88%99"><span class="toc-text">CISP职业道德准则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CISP%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-text">CISP知识体系结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC1%E7%AB%A0-%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E4%BF%9D%E9%9A%9C"><span class="toc-text">第1章 信息安全保障</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E4%BF%9D%E9%9A%9C%E5%9F%BA%E7%A1%80"><span class="toc-text">1.1 信息安全保障基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AE%9A%E4%B9%89"><span class="toc-text">信息安全定义 *</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86%E7%9A%84%E7%90%86%E5%BF%B5"><span class="toc-text">信息安全管理的理念 *</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E7%8B%AD%E4%B9%89-%E5%B9%BF%E4%B9%89"><span class="toc-text">信息安全狭义&amp;广义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98%E7%9A%84%E6%A0%B9%E6%BA%90%E5%8F%8A%E7%89%B9%E5%BE%81"><span class="toc-text">信息安全问题的根源及特征</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A8%81%E8%83%81%E6%83%85%E6%8A%A5%E4%B8%8E%E6%80%81%E5%8A%BF%E6%84%9F%E7%9F%A5"><span class="toc-text">威胁情报与态势感知</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E4%BF%9D%E9%9A%9C%E5%9F%BA%E7%A1%80"><span class="toc-text">信息安全保障基础</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%B1%9E%E6%80%A7"><span class="toc-text">信息安全属性 *</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%88%98"><span class="toc-text">网络战</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%AD%E5%9B%BD%E4%BA%BA%E6%B0%91%E8%A7%A3%E6%94%BE%E5%86%9B%E4%BF%A1%E6%81%AF%E6%94%AF%E6%8F%B4%E9%83%A8%E9%98%9F"><span class="toc-text">中国人民解放军信息支援部队</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BD%E5%AE%B6%E5%85%B3%E9%94%AE%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD%E4%BF%9D%E6%8A%A4"><span class="toc-text">国家关键基础设施保护</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BD%E5%AE%B6%E8%A7%86%E8%A7%92"><span class="toc-text">国家视角</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%81%E4%B8%9A%E8%A7%86%E8%A7%92"><span class="toc-text">企业视角</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E8%A7%86%E8%A7%92"><span class="toc-text">个人视角</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%8F%91%E5%B1%95%E9%98%B6%E6%AE%B5"><span class="toc-text">信息安全发展阶段 *</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%91%E8%AE%A1%E7%AE%97%E7%9A%84%E5%AE%89%E5%85%A8%E9%A3%8E%E9%99%A9"><span class="toc-text">云计算的安全风险</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%A9%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84"><span class="toc-text">物联网技术架构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E5%8C%96%E5%AE%89%E5%85%A8"><span class="toc-text">虚拟化安全</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8"><span class="toc-text">大数据安全</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E4%BA%92%E8%81%94%E7%BD%91%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98%E5%8F%8A%E7%AD%96%E7%95%A5"><span class="toc-text">移动互联网安全问题及策略</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E4%BF%9D%E9%9A%9C%E6%A1%86%E6%9E%B6"><span class="toc-text">1.2 信息安全保障框架</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E6%97%B6%E9%97%B4%E7%9A%84PDR%E4%B8%8EPPDR%E6%A8%A1%E5%9E%8B"><span class="toc-text">基于时间的PDR与PPDR模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PPDR%E6%A8%A1%E5%9E%8B"><span class="toc-text">PPDR模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PDR-%E6%A8%A1%E5%9E%8B"><span class="toc-text">PDR 模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E4%BF%9D%E9%9A%9C%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6-IATF"><span class="toc-text">信息安全保障技术框架 IATF*</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E4%BF%9D%E9%9A%9C%E8%AF%84%E4%BC%B0%E6%A1%86%E6%9E%B6"><span class="toc-text">信息系统安全保障评估框架*#@</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E6%8F%8F%E8%BF%B0"><span class="toc-text">评估描述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E6%A8%A1%E5%9E%8B"><span class="toc-text">评估模型 ***#@</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%81%E4%B8%9A%E5%AE%89%E5%85%A8%E6%9E%B6%E6%9E%84"><span class="toc-text">企业安全架构 *#@</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC2%E7%AB%A0-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%9B%91%E7%AE%A1"><span class="toc-text">第2章 网络安全监管</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%B3%95%E5%BE%8B%E4%BD%93%E7%B3%BB%E5%BB%BA%E8%AE%BE"><span class="toc-text">2.1 网络安全法律体系建设</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%8A%AF%E7%BD%AA"><span class="toc-text">计算机犯罪</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%91%E5%9B%BD%E7%AB%8B%E6%B3%95%E4%BD%93%E7%B3%BB"><span class="toc-text">我国立法体系</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E5%9B%BD%E5%AE%B6%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%94%BF%E7%AD%96"><span class="toc-text">2.2 国家网络安全政策 *</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%B3%95"><span class="toc-text">网络安全法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%9B%B8%E5%85%B3%E6%B3%95%E5%BE%8B%E5%BB%BA%E8%AE%BE"><span class="toc-text">网络安全相关法律建设</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%84%E5%9B%BD%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%AB%8B%E6%B3%95%E7%9A%84%E9%87%8D%E7%82%B9%E5%88%B6%E5%BA%A6"><span class="toc-text">各国网络安全立法的重点制度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%B3%95%E5%87%BA%E5%8F%B0%E8%83%8C%E6%99%AF"><span class="toc-text">网络安全法出台背景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E3%80%8A%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%B3%95%E3%80%8B%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">《网络安全法》基本概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%B3%95%E4%B8%BB%E8%A6%81%E7%BB%93%E6%9E%84"><span class="toc-text">网络安全法主要结构 *#@</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%80%BB%E5%88%99"><span class="toc-text">第一章 总则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0"><span class="toc-text">第二章</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E7%BD%91%E7%BB%9C%E8%BF%90%E8%A1%8C%E5%AE%89%E5%85%A8"><span class="toc-text">第三章 网络运行安全</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E7%BD%91%E7%BB%9C%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8"><span class="toc-text">第四章 网络信息安全</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E7%9B%91%E6%B5%8B%E9%A2%84%E8%AD%A6%E4%B8%8E%E5%BA%94%E6%80%A5%E5%A4%84%E7%BD%AE"><span class="toc-text">第五章 监测预警与应急处置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E6%B3%95%E5%BE%8B%E8%B4%A3%E4%BB%BB"><span class="toc-text">第六章 法律责任</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E5%AD%90%E5%9F%9F%EF%BC%9A%E5%9B%BD%E5%AE%B6%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%94%BF%E7%AD%96"><span class="toc-text">知识子域：国家网络安全政策</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BD%E5%AE%B6%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E5%AE%89%E5%85%A8%E6%88%98%E7%95%A5"><span class="toc-text">国家网络空间安全战略</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E9%81%93%E5%BE%B7%E5%87%86%E5%88%99"><span class="toc-text">2.3 网络安全道德准则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E9%81%93%E5%BE%B7%E5%87%86%E5%88%99"><span class="toc-text">网络安全道德准则</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%A0%87%E5%87%86"><span class="toc-text">2.4 信息安全标准 *</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%AD%89%E7%BA%A7%E4%BF%9D%E6%8A%A4%E6%94%BF%E7%AD%96"><span class="toc-text">网络安全等级保护政策*#@</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%A0%87%E5%87%86"><span class="toc-text">信息安全标准</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%87%E5%87%86"><span class="toc-text">标准</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%87%E5%87%86%E5%8C%96"><span class="toc-text">标准化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%87%E5%87%86%E5%8C%96%E7%BB%84%E7%BB%87"><span class="toc-text">标准化组织</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%91%E5%9B%BD%E6%A0%87%E5%87%86%E5%88%86%E7%B1%BB"><span class="toc-text">我国标准分类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%A0%87%E5%87%86%E4%BD%93%E7%B3%BB"><span class="toc-text">信息安全标准体系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%A0%87%E5%87%86-1"><span class="toc-text">信息安全标准 **#@</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AD%89%E7%BA%A7%E4%BF%9D%E6%8A%A4%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%EF%BC%88%E5%AE%9E%E6%96%BD%EF%BC%89"><span class="toc-text">等级保护工作流程（实施）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC3%E7%AB%A0-%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86"><span class="toc-text">第3章 信息安全管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86-%E5%9F%BA%E7%A1%80"><span class="toc-text">3.1 信息安全管理-基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86%E7%9A%84%E4%BD%9C%E7%94%A8%E5%8F%8A%E5%AF%B9%E7%BB%84%E7%BB%87%E7%9A%84%E4%BB%B7%E5%80%BC"><span class="toc-text">信息安全管理的作用及对组织的价值</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8-%E9%A3%8E%E9%99%A9%E7%AE%A1%E7%90%86"><span class="toc-text">3.2 信息安全-风险管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A3%8E%E9%99%A9%E7%AE%A1%E7%90%86%E6%A6%82%E8%BF%B0"><span class="toc-text">风险管理概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%A3%8E%E9%99%A9%E7%AE%A1%E7%90%86%E6%A8%A1%E5%9E%8B"><span class="toc-text">常见风险管理模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E9%A3%8E%E9%99%A9%E7%AE%A1%E7%90%86%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B"><span class="toc-text">安全风险管理基本过程 *#@</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E4%B8%AA%E9%98%B6%E6%AE%B5-%E8%83%8C%E6%99%AF%E5%BB%BA%E7%AB%8B"><span class="toc-text">四个阶段-背景建立*#@</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E4%B8%AA%E9%98%B6%E6%AE%B5-%E9%A3%8E%E9%99%A9%E8%AF%84%E4%BC%B0"><span class="toc-text">四个阶段-风险评估*#@</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E4%B8%AA%E9%98%B6%E6%AE%B5-%E9%A3%8E%E9%99%A9%E5%A4%84%E7%90%86"><span class="toc-text">四个阶段-风险处理*#@</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E4%B8%AA%E9%98%B6%E6%AE%B5-%E6%89%B9%E5%87%86%E7%9B%91%E7%9D%A3"><span class="toc-text">四个阶段-批准监督*#@</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E8%B4%AF%E7%A9%BF-%E7%9B%91%E6%8E%A7%E5%AE%A1%E6%9F%A5"><span class="toc-text">两个贯穿-监控审查 *#@</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E8%B4%AF%E7%A9%BF-%E6%B2%9F%E9%80%9A%E5%92%A8%E8%AF%A2"><span class="toc-text">两个贯穿-沟通咨询 *#@</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86%E4%BD%93%E7%B3%BB-%E5%BB%BA%E8%AE%BE"><span class="toc-text">3.3 信息安全管理体系-建设</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86%E4%BD%93%E7%B3%BB%E6%88%90%E5%8A%9F%E5%9B%A0%E7%B4%A0"><span class="toc-text">信息安全管理体系成功因素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PDCA%E8%BF%87%E7%A8%8B%EF%BC%88%E6%88%B4%E6%98%8E%E7%8E%AF%EF%BC%89"><span class="toc-text">PDCA过程（戴明环）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E6%A1%A3%E5%8C%96"><span class="toc-text">文档化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86%E4%BD%93%E7%B3%BB-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="toc-text">3.4 信息安全管理体系-最佳实践 *#@</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%8E%A7%E5%88%B6%E6%8E%AA%E6%96%BD%E5%86%85%E9%83%A8%E7%BB%93%E6%9E%84"><span class="toc-text">安全控制措施内部结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ISO-IEC-27002%E6%A0%87%E5%87%86%E7%9A%84%E6%BC%94%E8%BF%9B%E5%8E%86%E7%A8%8B"><span class="toc-text">ISO&#x2F;IEC 27002标准的演进历程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86%E4%BD%93%E7%B3%BB-%E5%BA%A6%E9%87%8F"><span class="toc-text">3.5  信息安全管理体系-度量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC4%E7%AB%A0-%E4%B8%9A%E5%8A%A1%E8%BF%9E%E7%BB%AD%E6%80%A7"><span class="toc-text">第4章 业务连续性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E4%B8%9A%E5%8A%A1%E8%BF%9E%E7%BB%AD%E6%80%A7%E7%AE%A1%E7%90%86"><span class="toc-text">4.1 业务连续性管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94"><span class="toc-text">4.2 信息安全应急响应</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E7%81%BE%E9%9A%BE%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8D"><span class="toc-text">4.3 灾难备份与恢复</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC5%E7%AB%A0-%E5%AE%89%E5%85%A8%E5%B7%A5%E7%A8%8B%E4%B8%8E%E8%BF%90%E8%90%A5"><span class="toc-text">第5章 安全工程与运营</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E5%B7%A5%E7%A8%8B"><span class="toc-text">5.1 系统安全工程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-%E5%AE%89%E5%85%A8%E8%BF%90%E8%90%A5"><span class="toc-text">5.2 安全运营</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-%E4%BF%A1%E6%81%AF%E5%86%85%E5%AE%B9%E5%AE%89%E5%85%A8"><span class="toc-text">5.3 信息内容安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-%E7%A4%BE%E4%BC%9A%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B8%8E%E5%9F%B9%E8%AE%AD%E6%95%99%E8%82%B2"><span class="toc-text">5.4 社会工程学与培训教育</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC6%E7%AB%A0-%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E8%AF%84%E4%BC%B0"><span class="toc-text">第6章 信息安全评估</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-%E5%AE%89%E5%85%A8%E8%AF%84%E4%BC%B0%E5%9F%BA%E7%A1%80"><span class="toc-text">6.1 安全评估基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-%E5%AE%89%E5%85%A8%E8%AF%84%E4%BC%B0%E5%AE%9E%E6%96%BD"><span class="toc-text">6.2 安全评估实施</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%AE%A1%E8%AE%A1"><span class="toc-text">6.3 信息系统审计</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC7%E7%AB%A0-%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%94%AF%E6%92%91%E6%8A%80%E6%9C%AF"><span class="toc-text">第7章 信息安全支撑技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-%E5%AF%86%E7%A0%81%E5%AD%A6"><span class="toc-text">7.1 密码学</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-%E8%BA%AB%E4%BB%BD%E9%89%B4%E5%88%AB"><span class="toc-text">7.2 身份鉴别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6"><span class="toc-text">7.3 访问控制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC8%E7%AB%A0-%E7%89%A9%E7%90%86%E7%8E%AF%E5%A2%83%E4%B8%8E%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1%E5%AE%89%E5%85%A8"><span class="toc-text">第8章 物理环境与网络通信安全</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-%E7%89%A9%E7%90%86%E5%AE%89%E5%85%A8"><span class="toc-text">8.1 物理安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2-OSI%E6%A8%A1%E5%9E%8B"><span class="toc-text">8.2 OSI模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-TCP-IP%E5%8D%8F%E8%AE%AE"><span class="toc-text">8.3 TCP&#x2F;IP协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-4-%E6%97%A0%E7%BA%BF%E9%80%9A%E4%BF%A1%E5%AE%89%E5%85%A8"><span class="toc-text">8.4 无线通信安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-5-%E5%85%B8%E5%9E%8B%E7%BD%91%E7%BB%9C%E6%94%BB%E5%87%BB%E5%8F%8A%E9%98%B2%E8%8C%83"><span class="toc-text">8.5 典型网络攻击及防范</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-6-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4%E6%8A%80%E6%9C%AF"><span class="toc-text">8.6 网络安全防护技术</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC9%E7%AB%A0-%E8%AE%A1%E7%AE%97%E7%8E%AF%E5%A2%83%E5%AE%89%E5%85%A8"><span class="toc-text">第9章 计算环境安全</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#9-1-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8"><span class="toc-text">9.1 操作系统安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-2-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B8%8E%E7%B3%BB%E7%BB%9F"><span class="toc-text">9.2 信息收集与系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-3-%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E9%98%B2%E6%8A%A4"><span class="toc-text">9.3 恶意代码防护</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-4-%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8"><span class="toc-text">9.4 应用安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-5-%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8"><span class="toc-text">9.5 数据安全</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC10%E7%AB%A0-%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8%E5%BC%80%E5%8F%91"><span class="toc-text">第10章 软件安全开发</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-1-%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8%E5%BC%80%E5%8F%91"><span class="toc-text">10.1 软件安全开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-2-%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8%E9%9C%80%E6%B1%82%E5%8F%8A%E8%AE%BE%E8%AE%A1"><span class="toc-text">10.2 软件安全需求及设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-3-%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8%E5%AE%9E%E7%8E%B0"><span class="toc-text">10.3 软件安全实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-4-%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8%E6%B5%8B%E8%AF%95"><span class="toc-text">10.4 软件安全测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-5-%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8%E4%BA%A4%E4%BB%98"><span class="toc-text">10.5 软件安全交付</span></a></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="CISO"><a href="#CISO" class="headerlink" title="CISO"></a>CISO</h1><h2 id="第0章-CISP简介"><a href="#第0章-CISP简介" class="headerlink" title="第0章 CISP简介"></a>第0章 CISP简介</h2><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251103164810.png"></p>
+<h3 id="什么是CISP"><a href="#什么是CISP" class="headerlink" title="什么是CISP"></a>什么是CISP</h3><pre><code class="hljs bash"><span class="hljs-comment"># CISP (Certified Information Security Professional) 注册信息安全专业人员资格认证</span>
+<span class="hljs-comment"># CISO 注册信息安全管理人员</span>
+<span class="hljs-comment"># CISE 注册信息安全工程师</span>
+
+<span class="hljs-comment"># 认证单位：中国信息安全测评中心（以下简称测评中心）是我国专门从事信息技术安全测试和风险评估的权威职能机构。</span>
+<span class="hljs-comment">#*#: 重点记忆</span></code></pre>
+
+<h3 id="CISP职业道德准则"><a href="#CISP职业道德准则" class="headerlink" title="CISP职业道德准则"></a>CISP职业道德准则</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251103165531.png"></p>
+<h3 id="CISP知识体系结构"><a href="#CISP知识体系结构" class="headerlink" title="CISP知识体系结构"></a>CISP知识体系结构</h3><pre><code class="hljs bash"><span class="hljs-comment"># 五方面：信息安全保障、信息安全技术、信息安全管理、信息安全工程、信息安全法规标准。</span></code></pre>
+
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251103172753.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251103173840.png"></p>
+<h2 id="第1章-信息安全保障"><a href="#第1章-信息安全保障" class="headerlink" title="第1章 信息安全保障"></a>第1章 信息安全保障</h2><h3 id="1-1-信息安全保障基础"><a href="#1-1-信息安全保障基础" class="headerlink" title="1.1 信息安全保障基础"></a>1.1 信息安全保障基础</h3><h4 id="信息安全定义"><a href="#信息安全定义" class="headerlink" title="信息安全定义 *"></a>信息安全定义 *</h4><pre><code class="hljs bash">国际标准化组织 (International Organization <span class="hljs-keyword">for</span> Standardization, ISO)对信息安全的定义为：“为数据处理系统建立和采取技术、管理的安全保护，保护计算机硬件、软件、数据不因偶然的或恶意的原因而收到破坏、更改、渗漏。”</code></pre>
+
+<h4 id="信息安全管理的理念"><a href="#信息安全管理的理念" class="headerlink" title="信息安全管理的理念 *"></a>信息安全管理的理念 *</h4><pre><code class="hljs bash">1. 信息安全战略要服务于企业的业务战略;
+2. 信息安全管理是一个全生命周期管理过程;
+3. 信息安全管理的对象：人（制度）、事（流程）、物（监控）;
+4. 信息安全管理的措施 人、技术、管理、过程;
+5. 信息安全管理是一个整体管理过程，任何一个网络行为的参与都是一个安全的主体，而任何一个安全主体的失败都将导致安全的整体失败;
+6. 信息安全管理要遵循成本效益原则;
+7. 信息安全管理永远只有相对安全，没有绝对安全;
+8. 信息安全管理是分级/分层来实现的；
+9. 信息安全管理要遵循适度安全原则：过分的安全性和没有安全性一样是有害的；
+10. 信息安全管理是一个动态管理过程；
+11. 人是信息安全管理中最活跃的因素，也是最薄弱的环境；
+12. 信息安全管理中三分靠技术、七分靠管理，而且技术永远都不能取代管理；
+13. 技术不是万能的，技术不能解决所有问题；
+14. 技术是安全的基础，管理是安全的灵魂；
+15. 来自于Intranet的攻击占80%，来自于Internet的攻击占20%；
+16. 信息安全管理遵循木桶理论（短板效应）
+17. 信息安全管理遵循新木桶理论（不同的木板之间是否有缝隙；不同要素之间的紧密配合）
+18. 风险管理要遵循成本效益原则
+19. 信息安全管理是自上而下贯彻执行，自下而上得到满足。
+20. 信息安全管理是一个一把手工程（安全不是老大难，老大重视就不难）
+21. 信息安全管理是一个全员参与工程
+ 
+
+
+复杂性: 周期长（开发/使用/维护）、投资大、人员众多（开发/使用/维护）、跨领域（互联网+N）、有明确的质量标准（可用性、可靠性、安全性、一致性等）。
+
+未雨绸缪: 事前
+亡羊补牢: 事后 （亡羊补牢的措施要未雨绸缪来定）
+
+<span class="hljs-comment"># CIA</span>
+保密性-C	D-泄露
+完整性-I	A-篡改
+可用性-A	D-破坏
+
+<span class="hljs-comment"># 3法2条例1标准					生效时间</span>
+《网络安全法》						2017.6.1
+《数据安全法》						2021.9.1
+《个人信息保护法》				   2021.11.1
+《关键信息基础设施保护条例》		    2021.9.1
+《网络数据安全管理条例》			 2025.1.1
+《网络安全等级保护标准2.0》           2019.12.1
+
+<span class="hljs-comment"># DIKW</span>
+Data -&gt; Information -&gt; Knowledge -&gt; Wisdom
+
+<span class="hljs-comment"># IATF</span>
+IATF 没有成为国际标准
+
+<span class="hljs-comment"># 安全需求的来源：</span>
+1、风险评估 --&gt; 获取现状
+2、法规要求 --&gt; 合规性
+
+<span class="hljs-comment"># 可实施性</span>
+1、可接受的成本
+2、合理的进度
+3、技术可实现性
+4、组织管理和文化的可接受性
+
+凡事有章可循
+凡事有据可查
+凡事有人负责
+凡事有人监督
+
+<span class="hljs-comment"># 国家网信办/中央网络安全和信息化委员会办公室 2014.2.27成立</span>
+https://www.cac.gov.cn/ <span class="hljs-comment"># 可以查国家层面关于安全、政策的动态。</span>
+https://www.tc260.org.cn/ <span class="hljs-comment"># 全国信息安全标准化技术委员会 -&gt; 全国网络安全标准化技术委员会</span>
+https://www.djbh.net/
+
+<span class="hljs-comment"># 信息安全管理岗位：</span>
+CEO/CIO/CTO/CSO/CISO/CFO/COO/CRO/SA(administrator)/SA(audiotr)/Safeguard
+
+<span class="hljs-comment"># 信息是关于客观事实的可以通讯的知识，具有如下特征：</span>
+1、信息是客观世界中各种事物的特征的反应
+2、信息是可以进行交换的，而且随着交换而增值
+3、信息是可以形成知识的，而知识可以创造价值
+
+<span class="hljs-comment">## 国际标准</span>
+<span class="hljs-comment"># 信息安全管理的国家标准是ISO 27001</span>
+ISO 27001:2005
+ISO 27001:2013发布, 2015.10正式生效。14个控制类，35个控制目标, 114个控制措施。
+ISO 27001:2022发布, 2025.10.25正式生效
+<span class="hljs-comment"># 风险管理的国际标准是ISO 31000</span>
+<span class="hljs-comment"># IT服务管理的国际标准是ISO 20000</span>
+<span class="hljs-comment"># 质量管理的国际标准是ISO 9000</span>
+
+
+
+<span class="hljs-comment"># 标准的采用方式：</span>
+1、等同采用（拿来用，照抄）:别人写的太好了，没办法修改。
+ISO 27001:2005	GB/T 22080:2008
+ISO 27001:2013	GB/T 22080:2016
+ISO 27001:2022	GB/T 22080:2025（预计）
+2、等效采用：我们达到的效果一样，但是采取的措施不一样。
+
+<span class="hljs-comment"># 风险是一种客观存在</span>
+风险的基本属性：
+1、风险发生的概率-P
+2、风险一旦发生所带来的影响/后果-I
+风险的基本特征：
+1、随机性（风险随时可能发生）
+2、相对性（有两种类型结果，积极正面、消极负面）
+翻译问题：
+event	incident	accident
+事态		事件		事故
+
+<span class="hljs-comment"># 风险要素</span>
+1、IT资产：任何影响IT交付的资源
+2、脆弱性：资产本身固有的缺陷
+3、威胁：对脆弱性的利用
+4、风险：威胁和脆弱性的组合
+5、控制措施：对风险的应对方案/方法
+
+<span class="hljs-comment"># 沟通管理要点：</span>
+1、一个目标：共识
+2、两个原则：相关性和适用性
+3、三个方向：向上（要共识）、向下（要落实）、水平（要支持/协调）
+4、四个要素：沟通要有目标、对象、内容、反馈
+
+<span class="hljs-comment"># 戴明环：PDCA改进循环，是一个闭环系统，没有终点，特征：</span>
+1、自加固
+2、自修正
+3、自适应
+
+<span class="hljs-comment"># 文档化/文件化：清晰的表达</span>
+一级文件定目标
+二级文件定措施
+三级文件看执行
+四级文件看结果
+
+</code></pre>
+
+<h4 id="信息安全狭义-广义"><a href="#信息安全狭义-广义" class="headerlink" title="信息安全狭义&amp;广义"></a>信息安全狭义&amp;广义</h4><pre><code class="hljs bash"><span class="hljs-comment"># 狭义的信息安全概念</span>
+狭义建立在以IT技术为主的安全范畴
+<span class="hljs-comment"># 广义的信息安全问题</span>
+1、一个跨学科领域的安全问题；
+2、安全的根本目的是保证组织业务可持续性进行；
+3、信息安全应该建立在整个生命周期中所管理的人、事、物的基础上，综合考虑人、技术、管理和过程控制，使得信息安全不是一个局部而是一个整体；
+4、安全要考虑成本因素；
+5、信息系统不仅仅是业务的支持，而是业务的命脉。</code></pre>
+
+<h4 id="信息安全问题的根源及特征"><a href="#信息安全问题的根源及特征" class="headerlink" title="信息安全问题的根源及特征"></a>信息安全问题的根源及特征</h4><pre><code class="hljs bash">	<span class="hljs-comment">#*# 环境的不安全因素、人的不安全行为、物的不安全状态</span>
+
+<span class="hljs-comment"># 信息安全问题的根源</span>
+内因: 信息系统复杂性导致漏洞的存储不可避免
+外因: 环境因素、人为因素
+<span class="hljs-comment"># 信息安全的特征</span>
+系统性
+动态性
+无边界
+非传统	
+</code></pre>
+
+
+
+<h4 id="威胁情报与态势感知"><a href="#威胁情报与态势感知" class="headerlink" title="威胁情报与态势感知"></a>威胁情报与态势感知</h4><p><strong>威胁情报</strong></p>
+<ul>
+<li>为管理人员提供行动和指定决策的 <strong>依据</strong> ；</li>
+<li>建立在大量的数据搜集和处理的基础上，通过对搜索数据的分析和评估，从而形成相应的结论；</li>
+<li>威胁情报成为信息安全保障中的 <strong>关键性能力</strong> 。</li>
+</ul>
+<p><strong>态势感知</strong></p>
+<ul>
+<li>建立在威胁情报的基础上；</li>
+<li>利用 <strong>大数据</strong> 和 <strong>高性能计算</strong> 为支撑，综合网络威胁相关的形式化及非形式化数据进行分析，并形成对未来网络威胁状态进行 <strong>预判</strong> 以便调整安装策略。</li>
+</ul>
+<h4 id="信息安全保障基础"><a href="#信息安全保障基础" class="headerlink" title="信息安全保障基础"></a>信息安全保障基础</h4><p><strong>信息安全属性</strong></p>
+<ul>
+<li>理解信息安全属性的概念及CIA三元组（ <strong>保密性</strong>、<strong>完整性</strong>、<strong>可用性</strong>）；</li>
+<li>了解真实性、不可否认性、可问责性、可靠性等其他不可缺少的信息安全属性；</li>
+</ul>
+<p><strong>信息安全视角</strong></p>
+<ul>
+<li>了解 <strong>国家视角</strong> 对信息安全的关注点（网络站、关键基础设施保护、法律建设与标准化）及相关概念；</li>
+<li>了解 <strong>企业视角</strong> 对信息安全的关照点（业务连续性管理、资产保护、合规性）及相关概念；</li>
+<li>了解 <strong>个人视角</strong> 对信息安全的关注点（隐私保护、个人资产保护、社会工程学）及相关概念。</li>
+</ul>
+<h4 id="信息安全属性"><a href="#信息安全属性" class="headerlink" title="信息安全属性 *"></a>信息安全属性 *</h4><p><img src="D:\code\notes\blog\source_posts\assets\20251103202328-1762175030059-6.png"></p>
+<p><strong>基本属性</strong> : **CIA ** *#@</p>
+<ul>
+<li>保密性：确认信息不要暴露给未经授权的实体或者进程。解决方案可下所示：<ul>
+<li>授权：授予特定的用户具有特定的权限–OA</li>
+<li>加密：数据加密–EFS、通信加密–SSH&#x2F;SSL&#x2F;VPN</li>
+</ul>
+</li>
+<li>完整性：只有得到允许的人才能修改数据，而且可以判别出数据是否已经被篡改。解决方案如下：<ul>
+<li>数据信封：</li>
+<li>数字签名：</li>
+</ul>
+</li>
+<li>可用性：得到授权的实体在需要时可以访问数据，即攻击者不能占用全部的资源而阻碍授权者的工作。解决方案如下：<ul>
+<li>Clustering: 集群技术</li>
+<li>BackUp: 备份技术</li>
+</ul>
+</li>
+</ul>
+<pre><code class="hljs bash">保密性-C	D-泄露
+完整性-I	A-篡改
+可用性-A	D-破坏</code></pre>
+
+<p><strong>其他属性</strong></p>
+<ul>
+<li>真实性</li>
+<li>可问责性</li>
+<li>不可否认性</li>
+<li>可靠性</li>
+</ul>
+<h4 id="网络战"><a href="#网络战" class="headerlink" title="网络战"></a>网络战</h4><ul>
+<li>“一个民族国家为了造成损害或破坏而渗透另一个国家的计算机或网络的行为”；</li>
+<li><strong>网络战</strong> 其作为国家整体军事战略的一个组成部分已经成为 <strong>趋势</strong>。</li>
+</ul>
+<h4 id="中国人民解放军信息支援部队"><a href="#中国人民解放军信息支援部队" class="headerlink" title="中国人民解放军信息支援部队"></a>中国人民解放军信息支援部队</h4><ul>
+<li>2024年4月19日，中国人民解放军信息支援部队成立大会在京举行。根据中央军委决定，新组建的信息支援部队由中央军委直接领导指挥，同时撤销 <strong>战略支援部队</strong> 番号，相应调整军事航天部队、网络空间部队领导管理关系。</li>
+</ul>
+<h4 id="国家关键基础设施保护"><a href="#国家关键基础设施保护" class="headerlink" title="国家关键基础设施保护"></a>国家关键基础设施保护</h4><ul>
+<li>2016年11月通过的《网络安全法》第三章第二节第三十一条 <strong>定义了我国关键基础设施</strong>，“公共通信和信息服务、能源、交通、水利、金融、公共服务、电子政务等重要行业和领域，已经其他一旦遭受破坏、丧失功能或者数据泄露，可能严重危害国家安全、国计民生、公共利益的基础设施” 为关键基础设施。</li>
+</ul>
+<h4 id="国家视角"><a href="#国家视角" class="headerlink" title="国家视角"></a>国家视角</h4><ul>
+<li>由互联网的开放、自由和共有的脆弱性，使国家安全、社会功能利益以及个人权利在网络活动中面临着来自各方面的威胁，国家需要再技术允许的范围内保持 <strong>适当的安全要求</strong>；</li>
+<li>所谓 <strong>适度安全</strong> 是指安全保护的理发的范围要和应用的重要性相一致，不要花费过多的成本，限制信息系统的可用性；</li>
+<li>信息安全风险具有 “不可逆” 的特点，需要信息安全法律采取以 <strong>预防为主</strong> 的法律原则。但是由于信息安全威胁的全局特点，其法律原则更应当采取 <strong>积极主动</strong> 的预防原则。</li>
+</ul>
+<h4 id="企业视角"><a href="#企业视角" class="headerlink" title="企业视角"></a>企业视角</h4><ul>
+<li><strong>业务连续性</strong>：业务数据对组织的重要性使得组织必须关照 <strong>业务连续性</strong>；</li>
+<li>资产保护：有什么、用来做什么、需要保护他们吗？</li>
+<li>合规性：法律法规的合规组、标准合规性。</li>
+</ul>
+<h4 id="个人视角"><a href="#个人视角" class="headerlink" title="个人视角"></a>个人视角</h4><ul>
+<li><p>从个人角度而言，这不仅仅是一个技术问题，还是一个 <strong>社会</strong> 问题、<strong>法律</strong> 问题以及 <strong>道德</strong> 问题。</p>
+<ul>
+<li>隐私保护</li>
+<li>社会工程学</li>
+<li>个人资产安全</li>
+</ul>
+</li>
+<li><p>个人信息资产问题思考</p>
+<ul>
+<li>哪些信息资产被恶意利用后会形成人身的损害？</li>
+<li>哪些信息资产被恶意利用后会形成财务的损失？</li>
+<li>哪些信息资产被恶意利用后形成法律责任？</li>
+</ul>
+</li>
+</ul>
+<h4 id="信息安全发展阶段"><a href="#信息安全发展阶段" class="headerlink" title="信息安全发展阶段 *"></a>信息安全发展阶段 *</h4><ul>
+<li><p>了解 <strong>通信安全阶段</strong> 的核心安全需求、主要技术措施；</p>
+<ul>
+<li>20世纪，40年代-70年代</li>
+<li>主要关注 <strong>传输过程中</strong> 的数据保护</li>
+<li>安全威胁：搭线窃听、密码学分析</li>
+<li>核心思想：通过 <strong>密码技术</strong> 解决通信保密，保证数据的保密性和完整性</li>
+<li>安全措施：加密</li>
+<li>影响现代通信安全因素越来越多，针对移动通信的伪基站、对通信链路的破坏、干扰等因素</li>
+</ul>
+</li>
+<li><p>了解 <strong>计算机安全阶段</strong> 信息安全需求、主要技术措施及阶段的标志；</p>
+<ul>
+<li>20世纪，70-90年代</li>
+<li>主要关注于 <strong>数据处理</strong> 和 <strong>存储</strong> 时的数据保护</li>
+<li>安全威胁：非法访问、恶意代码、脆弱口令等</li>
+<li>核心思想：预防、检测和减少计算机系统（包括软件和硬件）用户（授权和未授权用户）执行的未授权活动所造成的后果。</li>
+<li>安全措施：通过操作系统的访问控制技术来防止非授权用户的访问</li>
+</ul>
+</li>
+<li><p>了解 <strong>信息系统安全阶段</strong> 的安全需求、主要技术措施及阶段的标准；*#@</p>
+<ul>
+<li>20世纪，90年代后-现在</li>
+<li>主要关注 <strong>信息系统整体安全</strong></li>
+<li>安全威胁：网络入侵、病毒破坏、信息对抗等</li>
+<li>核心思想：重点在于保护比 “数据” 更精炼的 “信息”</li>
+<li><strong>安全措施</strong>：防火墙、防病毒、漏洞扫描、入侵检测、PKI、VPN等</li>
+<li>把信息系统安全从技术扩展到管理、从静态扩展到动态，通过技术、管理、工程等措施的综合融合至信息化中，形成对信息、信息系统乃至业务使命的保障</li>
+</ul>
+</li>
+<li><p>了解 <strong>信息安全保障阶段</strong> 与 <strong>系统安全阶段</strong> 的区别，信息安全保障的概念及我国信息安全保障工作的总体要求、主要原则；</p>
+<ul>
+<li><p><strong>信息安全保障阶段</strong></p>
+<ul>
+<li><p><strong>1996年</strong>，<strong>DoDD (美国国防部)</strong> 5-3600.1 号指令，首次提出了信息安全保障 *#@</p>
+</li>
+<li><p>关注信息、信息系统对组织业务及使命的保障</p>
+</li>
+<li><p>信息安全概念延伸，实现 <strong>全面安全</strong></p>
+</li>
+<li><p>我国信息安全保障工作</p>
+<ul>
+<li><strong>总体要求</strong>：积极防御，综合防范</li>
+<li><strong>主要原则</strong>：技术与管理并重，正确处理安全与发展的关系</li>
+</ul>
+</li>
+<li><p><strong>2008年，《国家(指美国)网络安全综合倡议》(CNCI) 发布。CNCI计划建立三道防线，还明确了12项任务。</strong> *#@</p>
+</li>
+<li><p><strong>2016年12月，我国发布了《国家网络空间安全战略》</strong>，明确了<strong>网络空间是国家安全的新疆域</strong>，<strong>网络空间主权成为国家主权的重要组成部分</strong>。*#@</p>
+</li>
+<li><p><strong>我国信息安全保障工作从2001年开始</strong>，<strong>2003年</strong>7月出台了《关于加强信息安全保障工作的意见》（中办发<strong>第27号文件</strong>），文件<strong>明确了加强信息安全保障工作的总体要求，提出了加强信息安全保障工作的主要原则。</strong>*#@</p>
+</li>
+<li><p>信息安全保障 <strong>总体要求</strong>：坚持积极防御、综合防范的<strong>方针</strong>，全面提高信息安全防护能力，重点保障基础信息网络和重要信息系统安全，创建安全健康的网络环境，保障和促进信息化的发展，保护公共利益，维护国家安全。**#@</p>
+</li>
+<li><p>信息安全保障 <strong>主要原则</strong>：<strong>立足国情，以我为主，坚持管理与技术并重</strong>；正确处理安全与发展的关系，以安全保发展，在发展中求安全；<strong>统筹规划，突出重点，强化基础性工作</strong>；明确国家、企业、个人的责任和义务，充分发挥各方面的积极性，共同构筑国家信息安全保障体系。**#@</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>了解 <strong>网络空间</strong> 的概念，理解网络空间安全对国家安全的重要性。</p>
+<ul>
+<li>网络空间：（<strong>Cyberspace</strong> 赛博空间）*#@</li>
+<li>互联网已经将传统的虚拟世界与物理世界互连接，形成网络空间</li>
+<li>新技术领域融合带来新的安全风险<ul>
+<li>工业控制系统</li>
+<li><strong>“云大移物智”</strong> *#@</li>
+</ul>
+</li>
+<li>核心思想：强调 “威慑” 概念。（1能力、2决心、3True）</li>
+<li>将 <strong>防御</strong> 、 <strong>威慑</strong>** 和 <strong>利用</strong> 结合成三位一体的网络空间安全保障</li>
+</ul>
+</li>
+</ul>
+<h4 id="云计算的安全风险"><a href="#云计算的安全风险" class="headerlink" title="云计算的安全风险"></a>云计算的安全风险</h4><ul>
+<li><strong>数据管理</strong> 和 <strong>访问失控</strong> 的风险<ul>
+<li>数据存储位置对用户失控</li>
+<li>云计算服务商对数据权限高于用户</li>
+<li>用户不能有效监管云计算厂商内部人员对数据的非授权访问</li>
+</ul>
+</li>
+<li><strong>数据管理责任</strong> 风险<ul>
+<li>不适用 “谁主管谁负责 谁运营谁负责”</li>
+</ul>
+</li>
+<li><strong>数据保护</strong> 风险<ul>
+<li>缺乏统一标准，数据存储格式不同</li>
+<li>存储介质由云服务商控制，用户对数据的操作需要通过云服务商执行，用户无法有效掌控自己数据</li>
+</ul>
+</li>
+</ul>
+<h4 id="物联网技术架构"><a href="#物联网技术架构" class="headerlink" title="物联网技术架构"></a>物联网技术架构</h4><ul>
+<li><strong>感知</strong>：射频识别、二维码、传感器网络、短距离无线通信、实时定位</li>
+<li><strong>传输</strong>：移动网络、互联网、无线网络、<strong>卫星</strong>、Post-IP网络</li>
+<li><strong>支持</strong>：智能处理、分布式技术、云计算、海量存储与数据挖掘、综合设计验证据</li>
+<li><strong>应用</strong>：运营平台、信息中心、内容服务、专家系统</li>
+</ul>
+<h4 id="虚拟化安全"><a href="#虚拟化安全" class="headerlink" title="虚拟化安全"></a>虚拟化安全</h4><ul>
+<li><strong>虚拟化是云技术的支撑技术</strong>，把硬件资源虚拟化，构成一个资源池，从而提供云服务的各项特性</li>
+<li>虚拟化安全<ul>
+<li>云计算中核心的安全问题</li>
+<li>确保虚拟化多租户之间的 <strong>有效隔离</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="大数据安全"><a href="#大数据安全" class="headerlink" title="大数据安全"></a>大数据安全</h4><ul>
+<li>大数据的概念：大数据是指传统数据架构无法有效处理的新数据集</li>
+<li>大数据的价值：<strong>趋势</strong> 分析</li>
+<li>大数据安全：数据的生命周期安全、技术平台安全</li>
+</ul>
+<h4 id="移动互联网安全问题及策略"><a href="#移动互联网安全问题及策略" class="headerlink" title="移动互联网安全问题及策略"></a>移动互联网安全问题及策略</h4><ul>
+<li>移动互联网安全问题<ul>
+<li>系统安全问题</li>
+<li>移动应用安全问题</li>
+<li>个人隐私保护问题</li>
+</ul>
+</li>
+<li>安全策略<ul>
+<li>策略管控</li>
+<li>应用分发管控</li>
+<li>加强隐私保护要求</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="1-2-信息安全保障框架"><a href="#1-2-信息安全保障框架" class="headerlink" title="1.2 信息安全保障框架"></a>1.2 信息安全保障框架</h3><h4 id="基于时间的PDR与PPDR模型"><a href="#基于时间的PDR与PPDR模型" class="headerlink" title="基于时间的PDR与PPDR模型"></a>基于时间的PDR与PPDR模型</h4><ul>
+<li>理解基于时间的PDR模型的核心思想及出发点</li>
+<li>理解PPDR模型与PDR模型的本质区别</li>
+<li>了解基于时间判断系统安全性的方式</li>
+</ul>
+<h4 id="PPDR模型"><a href="#PPDR模型" class="headerlink" title="PPDR模型"></a>PPDR模型</h4><ul>
+<li>PPDR模型核心思想<ul>
+<li>所有的防护、检测、响应都是依据安全策略实施</li>
+</ul>
+</li>
+<li>全新定义：及时的检测和响应就是安全<ul>
+<li>如果Pt &lt; Dt + Rt 那么，Et &#x3D; (Dt + Rt) - Pt</li>
+</ul>
+</li>
+<li>PPDR模型则更强调控制和对抗、考虑了管理的因素，强调安全管理的持续性、安全策略的动态性等。</li>
+</ul>
+<h4 id="PDR-模型"><a href="#PDR-模型" class="headerlink" title="PDR 模型"></a>PDR 模型</h4><ul>
+<li><p>Protection 防护 detection检测  response响应</p>
+</li>
+<li><p>PDR模型思想</p>
+<ul>
+<li>承认漏洞，正视威胁，采取适度防护、加强检测工作、落实响应、建立对威胁的防护来保障系统的安全</li>
+</ul>
+</li>
+<li><p>出发点：基于时间的可证明的安全模型</p>
+<ul>
+<li>任何安全防护措施都是基于时间的，超过该时间段，这种防护措施是可能被攻破的</li>
+<li>当Pt &gt; Dt + Rt, 系统是安全的</li>
+</ul>
+</li>
+<li><p>局限性：Pt、Dt、Rt很难准确定义</p>
+</li>
+</ul>
+<h4 id="信息安全保障技术框架-IATF"><a href="#信息安全保障技术框架-IATF" class="headerlink" title="信息安全保障技术框架 IATF*"></a>信息安全保障技术框架 IATF*</h4><ul>
+<li><p><strong>信息安全保障技术架构（Information Assurance Technical Framework, IATF）由美国国家安全局发布，为保障美国政府和工业的信息基础设施提供技术指南</strong>。（IATF没有成为国际标准）*#@</p>
+</li>
+<li><p>理解信息安全保障技术框架 （IATF）的 “深度防御” <strong>核心思想</strong>、<strong>三个核心要素</strong> 及 <strong>四个焦点领域</strong>；</p>
+</li>
+<li><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251103225834.png"></p>
+</li>
+<li><p>三个核心：人、技术、操作</p>
+<ul>
+<li>人 （People）<ul>
+<li>信息保障体系的 <strong>核心</strong>，是 <strong>第一位</strong>的要素，同时也是最脆弱的。</li>
+<li>基于这样的认识，安全管理在安全保障体系中愈显重要，包括：意识培训、组织管理、技术管理、操作管理</li>
+</ul>
+</li>
+<li>技术（Technology）<ul>
+<li>技术是实现信息保障的 <strong>重要手段</strong></li>
+<li>动态的技术体系：<strong>防护、检测、响应、恢复</strong></li>
+</ul>
+</li>
+<li>操作（Operation）<ul>
+<li>也叫运行，构成安全保障的 <strong>主动防御</strong> 体系</li>
+<li>是将各方面技术紧密结合在一起的主动的过程，包括<ul>
+<li>风险评估、安全监控、安全审计、跟踪告警、入侵检测、响应恢复</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>四个焦点领域 *#@</p>
+<ul>
+<li><em><em>保护计算机环境</em>#@</em>*<ul>
+<li>目标<ul>
+<li>使用信息保护技术确保数据在 <strong>进入</strong>、<strong>离开</strong> 或 <strong>驻留</strong> 客户机和服务器时具有 <strong>保密性</strong>、<strong>完整性</strong> 和 <strong>可用性</strong></li>
+</ul>
+</li>
+<li>方法<ul>
+<li>使用安全的操作系统</li>
+<li>使用安全的应用程序</li>
+<li>主机入侵检测</li>
+<li>防病毒系统</li>
+<li>主机脆弱性扫描</li>
+<li>文件完整性保护…</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>区域边界</strong> *#@<ul>
+<li>区域的网络设备与其他网络设备的接入点被称为 “区域边界” *#@</li>
+<li>目标：对进出某区域 （物理区域或逻辑区域）的数据流进行有效的 <strong>控制</strong> 与 <strong>监视</strong></li>
+<li>方法：<ul>
+<li>病毒、恶意代码防御</li>
+<li>防火墙</li>
+<li>入侵检测</li>
+<li>远程访问</li>
+<li>多级别安全</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><em>网络基础设施</em>#@</em>*<ul>
+<li><strong>目标</strong>：网络和支持他的基础实施 <strong>必须</strong><ul>
+<li>防止数据非法泄露 (DLP)</li>
+<li>防止受到拒绝服务的攻击</li>
+<li>防止受到保护的信息在发送过程中的时延、误传或未发送</li>
+</ul>
+</li>
+<li><strong>方法</strong>：<ul>
+<li>骨干网可用性</li>
+<li>无线网络安全框架</li>
+<li>系统高度互联和虚拟专用网</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><em>支撑性基础设施</em>#@</em>*<ul>
+<li>目标：为安全保障服务提供一套相互关联的活动与基础设施</li>
+<li>密钥关联基础设施（KMI）</li>
+<li>检测和响应基础设施：能够迅速检测并响应入侵行为，需要入侵检测与监视软件等 <strong>技术解决方案</strong> 以及训练有素的专业人员（通常指 <strong>计算机应急响应小组 （CERT）</strong>）的支持。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>安全远程与特点</strong></p>
+<ul>
+<li>*<em>保护多个位置 <em>#@</em></em></li>
+<li>分层防御</li>
+<li>安全强健性</li>
+</ul>
+</li>
+<li><p>IATF特点</p>
+<ul>
+<li>全方位防御、纵深防御将系统风险 <strong>降到最低</strong></li>
+<li>信息安全不纯粹是技术问题，而是一个复杂的系统工程</li>
+<li>提出 “人” 这一要素的重要性，<strong>人即管理</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="信息系统安全保障评估框架"><a href="#信息系统安全保障评估框架" class="headerlink" title="信息系统安全保障评估框架*#@"></a>信息系统安全保障评估框架*#@</h4><ul>
+<li><p>基本概念</p>
+<ul>
+<li>用于 <strong>采集、处理、存储、传输、分发</strong> 和 <strong>部署</strong> 信息的整个基础设施、组织结构、机构人员和组件的 <strong>总和</strong></li>
+</ul>
+</li>
+<li><p>信息系统安全风险</p>
+<ul>
+<li>是具体的风险、产生风险的因素主要有信心系统自身存在的 <strong>漏洞</strong> 和来自系统外部的 <strong>威胁</strong>。信息系统运行环境存在特定威胁冬季的 <strong>威胁源</strong>。</li>
+</ul>
+</li>
+<li><p><em><em>信息系统安全保障</em>#@</em>*</p>
+<ul>
+<li><strong>在信息系统的整个生命周期中，通过对信息系统的风险分析，制定并执行相应的安全保障策略，从技术、管理、工程和人员等方面提出信息安全保障要求，确保信息系统的保密性、完整性和可用性，把安全风险降低到可接受的程度，从而保障系统能够顺利实现组织架构的使命。</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="评估描述"><a href="#评估描述" class="headerlink" title="评估描述"></a>评估描述</h4><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251103233058.png"></p>
+<ul>
+<li><p><strong>信息系统保护轮廓（ISPP）</strong></p>
+<ul>
+<li>根据组织机构使命和所处的运行环境，从组织机构的策略和风险的实际情况出发，对具体信息系统安全保障需求和能力进行具体描述。</li>
+<li>表达一类产品或系统的 <strong>安全目的和要求</strong></li>
+<li>ISPP是从 <strong>信息系统的所有者（用户）的角度</strong>规范化、结构化的描述信息系统安全保障需求。</li>
+</ul>
+</li>
+<li><p><strong>信息系统安全目标（ISST）</strong></p>
+<ul>
+<li>根据信息系统保护轮廓（ISPP）编制的信息系统安全保障方案</li>
+<li>某一特定产品或系统的 <strong>安全需求</strong></li>
+<li>ISST从 <strong>信息系统安全保障的建设方（厂商）的角度</strong>指定的信息系统安全保障方案。</li>
+</ul>
+</li>
+</ul>
+<h4 id="评估模型"><a href="#评估模型" class="headerlink" title="评估模型 ***#@"></a>评估模型 ***#@</h4><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251103233347.png"></p>
+<ul>
+<li><p>模型特点***#@</p>
+<ul>
+<li>将 <strong>风险</strong> 和 <strong>策略</strong> 作为信息系统安全保障的 <strong>基础</strong> 和 <strong>核心</strong></li>
+<li>强调安全贯彻信息系统 <strong>生命周期</strong></li>
+<li>强调 <strong>综合保障</strong> 的观念</li>
+<li><strong>以风险和策略为基础，在整个信息系统的生命周期中实施技术、管理、工程和人员保障要素。通过信息系统安全保障实现信息安全的安全特征：信息的保密性、完整性这可用性特征，从而达到保障组织机构执行其使命的根本目的。</strong></li>
+<li>总结：<strong>生命周期的每个阶段都可以用4个保障要素来实现3个安全目标。</strong></li>
+</ul>
+</li>
+<li><p>信息系统安全保障评估框架</p>
+<ul>
+<li><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251104090134.png"></li>
+<li>基于信息系统的生命周期的信息安全保障<ul>
+<li>信息系统的生命周期层面和保障要素层面 <strong>不是互相孤立</strong> 的，而是 <strong>互相关联、密不可分</strong> 的</li>
+<li>在信息系统生命周期中的任何时间点上，都需要综合信息系统安全保障的技术、管理、工程和人员保障要素。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>信息安全保障要素</p>
+<ul>
+<li><p><strong>信息安全技术</strong></p>
+<ul>
+<li>密码技术</li>
+<li>访问控制技术</li>
+<li>审计和监控技术</li>
+<li>网络安全技术</li>
+<li>操作系统技术</li>
+<li>数据库安全技术</li>
+<li>安全漏洞与恶意代码</li>
+<li>软件安全开发</li>
+</ul>
+</li>
+<li><p><strong>信息安全管理</strong></p>
+<ul>
+<li>信息安全管理体系</li>
+<li>风险管理</li>
+</ul>
+</li>
+<li><p><strong>信息安全工程</strong></p>
+<ul>
+<li>信息安全工程涉及系统和应用的开发、集成、操作、管理、维护和进化以及产品的开发、交付和升级。</li>
+</ul>
+</li>
+<li><p><strong>信息安全人才</strong></p>
+<ul>
+<li>信息安全保障诸要素中，<strong>人</strong> 是最关键、也是最活跃的要素。网络攻防对抗，最终较量的时攻防两端的人，而不是设备。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>信息安全保障 <strong>解决方案</strong></p>
+<ul>
+<li><p>以 <strong>风险评估</strong> 和 <strong>法规要求</strong> 得出的 <strong>安全需求为依据</strong></p>
+<ul>
+<li>考虑系统的业务功能和价值</li>
+<li>考虑系统风险哪些是必须处置的，哪些是可接受的</li>
+</ul>
+</li>
+<li><p>贴合实际具有 <strong>可实施性</strong></p>
+<ul>
+<li>可接受的成本</li>
+<li>合理的进度</li>
+<li>技术可实现性</li>
+<li>组织管理和文化的可接受性</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="企业安全架构"><a href="#企业安全架构" class="headerlink" title="企业安全架构 *#@"></a>企业安全架构 *#@</h4><ul>
+<li><p><strong>什么是企业安全架构</strong></p>
+<ul>
+<li>企业架构的一个子集，它定义了信息安全战略，包括各层级的解决方案、流程、和规程，以及它们与整个企业的战略、战术和运营链接的方式。</li>
+<li>开发企业安全架构的主要原因是确保安全工作以一个 <strong>标准化</strong> 的和 <strong>节省成本</strong> 的方式与业务实践相结合。</li>
+</ul>
+</li>
+<li><p>常见企业安全架构</p>
+<ul>
+<li>舍伍德的商业应用安全架构（Sherwood Applied Business Security Architecture, SABSA）</li>
+<li>Zachman框架</li>
+<li>开放群组架构框架（The Open Group Architecture Framework, TOGAF）</li>
+</ul>
+</li>
+<li><p><strong>SABSA</strong> **#@ </p>
+<ul>
+<li>舍伍德商业应用安全架构（Sherwood Applied Business Security Architecture, SABSA）是一个 <strong>分层</strong> 的模型，包括 <strong>6个</strong> 层级。第一层从 <strong>安全</strong> 的角度定义了 <strong>业务需求</strong>，模型的每一层在抽象方面 <strong>逐层减少</strong>，但是在细节方面则是 <strong>逐层增加</strong>。SABSA安全架构提供了一个包括战略、概念、涉及、实施、度量和审计层次的 <strong>安全链条</strong>，层次都是建立在其他层之上。</li>
+<li><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251104211514.png"><ul>
+<li><strong>设计</strong> 它包含了建筑设计中的 <strong>逻辑设计、物理设计、组件设计呵护服务管理设计</strong>。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ul>
+<li>信息安全保障基础<ul>
+<li>基本概念</li>
+<li>信息安全发展阶段</li>
+<li>信息安全保障新领域</li>
+</ul>
+</li>
+<li>信息安全保障架构<ul>
+<li>PPDR</li>
+<li>IATF</li>
+<li>信息系统安全保障评估框架</li>
+<li>舍伍德的商业应用安全架构</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251104212248.png"></p>
+<hr>
+<h2 id="第2章-网络安全监管"><a href="#第2章-网络安全监管" class="headerlink" title="第2章 网络安全监管"></a>第2章 网络安全监管</h2><h3 id="2-1-网络安全法律体系建设"><a href="#2-1-网络安全法律体系建设" class="headerlink" title="2.1 网络安全法律体系建设"></a>2.1 网络安全法律体系建设</h3><h4 id="计算机犯罪"><a href="#计算机犯罪" class="headerlink" title="计算机犯罪"></a>计算机犯罪</h4><ul>
+<li><p><strong>了解</strong> 计算机犯罪的概念、特征及计算机犯罪的发展趋势。</p>
+</li>
+<li><p>计算机犯罪的 <strong>特点</strong></p>
+<ul>
+<li>多样化</li>
+<li>复杂化</li>
+<li>国际化</li>
+</ul>
+</li>
+<li><p>计算机犯罪的 <strong>趋势</strong></p>
+<ul>
+<li>从无意识到有组织</li>
+<li>从个体侵害到国家威胁</li>
+<li>跨越计算机本身的实施能力</li>
+<li>低龄化成为法律制约难题</li>
+</ul>
+</li>
+<li><p>计算机犯罪与其他犯罪的不同点</p>
+<ul>
+<li>调查取证比较困难，计算机证据更容易遭到破坏</li>
+<li>相关法律不完善</li>
+<li>跨地域的特征</li>
+<li>从统计来看，内部犯罪几率比较高</li>
+<li>受害架构不报告，担心影响架构的正常运行和损害用户对机构的信任</li>
+</ul>
+</li>
+</ul>
+<h4 id="我国立法体系"><a href="#我国立法体系" class="headerlink" title="我国立法体系"></a>我国立法体系</h4><ul>
+<li><strong>了解</strong>  我国多级立法机制及相关职能；</li>
+<li><strong>了解</strong> 立法分类（法律、行政法规及地方性法规）等概念。</li>
+<li>立法是网络空间治理的基础工作</li>
+<li>我国采取 <strong>多级立法</strong> 机制<ul>
+<li><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251104213819.png"></li>
+</ul>
+</li>
+</ul>
+<h3 id="2-2-国家网络安全政策"><a href="#2-2-国家网络安全政策" class="headerlink" title="2.2 国家网络安全政策 *"></a>2.2 国家网络安全政策 *</h3><pre><code class="hljs bash">网络安全法</code></pre>
+
+<h4 id="网络安全法"><a href="#网络安全法" class="headerlink" title="网络安全法"></a>网络安全法</h4><ul>
+<li><strong>理解</strong> 网络安全法出台背景；</li>
+<li><strong>理解</strong> 网络安全法中定义的网络、网络安全等基本概念及网络空间主权原则；</li>
+<li><strong>了解</strong> 网络运行安全制度、关键基础设施保护制度、等级保护制度、网络安全审查制度的相关要求。</li>
+</ul>
+<h4 id="网络安全相关法律建设"><a href="#网络安全相关法律建设" class="headerlink" title="网络安全相关法律建设"></a>网络安全相关法律建设</h4><ul>
+<li>了解行政违法相关概念及行政处罚；</li>
+<li>了解刑事责任、常见网络安全犯罪及量刑等概念；</li>
+<li>了解民事违法相关概念及违法民事处罚；</li>
+<li>了解国家安全法、保密法、电子签名法、反恐怖主义法、密码法中网络安全相关条款。</li>
+</ul>
+<h4 id="各国网络安全立法的重点制度"><a href="#各国网络安全立法的重点制度" class="headerlink" title="各国网络安全立法的重点制度"></a>各国网络安全立法的重点制度</h4><ul>
+<li>对传统的网络安全制度进行立法修正<ul>
+<li>机构职责和管理制度</li>
+<li>检测预警及应急处理机制</li>
+</ul>
+</li>
+<li>对近几年涌现的新问题进行应对<ul>
+<li>关键基础设施保护</li>
+<li>数据安全防护（跨境数据流动、数据渗漏处置等）</li>
+<li>云技术等新技术、新业务引发的安全问题等</li>
+<li><strong>网络安全立法演变为全国范围内的利益协调与国家主权斗争</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="网络安全法出台背景"><a href="#网络安全法出台背景" class="headerlink" title="网络安全法出台背景"></a>网络安全法出台背景</h4><ul>
+<li><p><strong>2016.11.7发布，2017.06.1生效</strong></p>
+</li>
+<li><p>《网络安全法》从草稿发布到正式出台，共经历了 <strong>三次审议，两次公开征求意见和修改</strong>。</p>
+</li>
+<li><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251104214934.png"></p>
+</li>
+</ul>
+<h4 id="《网络安全法》基本概念"><a href="#《网络安全法》基本概念" class="headerlink" title="《网络安全法》基本概念"></a>《网络安全法》基本概念</h4><ul>
+<li><strong>网络空间</strong> 已经成为领土、领海、领空、太空之外的 <strong>“第五空间” 或人类 “第二类生存空间”</strong> 成为国家主机延伸的新疆域。</li>
+<li>网络：是指由计算机或者其他信息终端及相关设备组成的，按照一定的规则和程序对信息进行收集、存储、传输、交换、处理的系统。</li>
+<li>网络安全：是指通过采取必要措施，防范对网络的攻击、侵入、干扰、破坏和非法使用以及意外事故，使网络处于稳定可靠运行的状态，以及保障网络数据的完整性、保密性、可用性的能力。</li>
+<li>网络空间安全</li>
+<li>关键信息基础设施</li>
+<li><strong>网络运营者</strong>：是指网络的所有者、管理者和网络服务提供者。</li>
+<li><strong>个人信息</strong>：是指以电子或者其他方式记录的能够单独或者其他信息结果识别自然人个人身份证的各种信息，包括但不限于自然人的姓名、出生日期、身份证号码、个人生物识别信息、住址、电话号码等。GBT 35273-2020《信息安全技术个人信息安全规范》<ul>
+<li><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251104221521.png"></li>
+<li><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251104221642.png"></li>
+</ul>
+</li>
+<li>网络数据：是指通过网络收集、存储、传输、处理和产生的各种数据。</li>
+</ul>
+<h4 id="网络安全法主要结构"><a href="#网络安全法主要结构" class="headerlink" title="网络安全法主要结构 *#@"></a>网络安全法主要结构 *#@</h4><ul>
+<li><strong>七章79条</strong> *#@</li>
+<li><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251104222149.png"></li>
+</ul>
+<h4 id="第一章-总则"><a href="#第一章-总则" class="headerlink" title="第一章 总则"></a>第一章 总则</h4><ul>
+<li><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251104222355.png"></li>
+</ul>
+<h4 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h4><ul>
+<li>建立和完善 <strong>网络安全标准体系</strong> 建设</li>
+<li>统筹规划，扶持 <strong>网络安全产业</strong> （产品、服务等）</li>
+<li>推动 <strong>社会化</strong>  <strong>网络安全服务体系</strong> 建设</li>
+<li>鼓励开发 <strong>数据安全保护和利用</strong> 技术、创新 <strong>网络安全管理</strong> 方式</li>
+<li>开展 <strong>经常性网络安全宣传</strong> 教育</li>
+<li>支持企业和高等学校、职业学校等教育培训机构开展网络安全相关教育与培训，采取 <strong>多种方式培养网络安全人才</strong>，促进网络安全人才交流 <strong>解决人不足问题</strong></li>
+</ul>
+<h4 id="第三章-网络运行安全"><a href="#第三章-网络运行安全" class="headerlink" title="第三章 网络运行安全"></a>第三章 网络运行安全</h4><ul>
+<li><p><strong>明确要求落实网络安全等级保护制度</strong></p>
+<p>第二十一条 国家实行 <strong>网络安全等级保护制度</strong>。 <strong>网络运营者</strong> 应当按照网络安全等级保护制度的要求，履行下列安全保护 <strong>义务</strong>，保障网络免受干扰、破坏或者未经授权的访问，防止网络数据泄露或者被窃取、篡改：</p>
+<ul>
+<li>指定内部 <strong>安全管理制度</strong> 和 <strong>操作规程</strong>，确定 <strong>网络安全负责人</strong>，落实网络安全保护责任；</li>
+<li>采取防范计算机病毒和网络攻击、网络侵入等危害网络安全行为的技术措施；</li>
+<li>采取检测、记录网络运行状态、网络安全事件的技术措施，并按照规定 <strong>留存相关的网络日志不少于六个月</strong>；</li>
+<li>采取数据分类、重要数据备份和加密等措施；</li>
+<li>法律、行政法规规定的其他义务。</li>
+</ul>
+</li>
+<li><p>明确网络运营者的安全义务</p>
+<ul>
+<li><strong>内部安全管理</strong>：制定内部安全管理制度和操作规程，确定网络安全负责人；</li>
+<li><strong>安全技术措施</strong>：采取防范网络安全行为的技术措施；采取监测、记录网络运行状态、网络安全事件的技术措施，留存相关的网络日志不少于六个月</li>
+<li><strong>数据安全管理</strong>：采取数据分类、重要数据备份和加密等措施，防止网络数据泄露或者被窃取、篡改；</li>
+<li><strong>网络身份管理</strong>：办理网络接入、域名注册服务，或固定电话、移动电话等入网手续、或为用户提供信息发布、即时通讯等服务，应要求用户提供真实身份信息。</li>
+<li><strong>应急预案机制</strong>：指定网络安全事件应急预案，及时处理系统漏洞、计算机病毒、网络工具、网络侵入等安全风险；在发生危害网络安全的事件时，立即启动应急预案，采取相应的补救措施，并向有关主管部门报告。</li>
+<li><strong>安全协助义务</strong>：位公安机关、国家安全机关依法维护国家安全和侦查犯罪的活动提供技术和协助。</li>
+</ul>
+</li>
+<li><p>明确网络产品、服务提供者的安全义务</p>
+<ul>
+<li><strong>强制标准义务</strong>：网络产品、服务应当符合相关国家标准的强制要求，不得设置恶意程序；网络关机设备和网络安全专用产品应当按照相关国家标准的强制性要求，由具备资格的机构安全认证合格或者安全检测符合要求后，方可销售或者提供。</li>
+<li><strong>告知补救义务</strong>：网络产品、服务提供者发现其网络产品、服务存在安全缺陷、漏洞等风险时，应当立即采取补救措施，及时告知用户，向有关主管部门报告。</li>
+<li><strong>安全维护义务</strong>：网络产品、服务提供者应为产品、服务持续提供安全维护，在规定或者当事人约定的期限内不得终止。</li>
+<li><strong>个人信息保护</strong>：网络产品、服务具有手机用户信息功能的，网络产品、服务提供者应向用户明示并取得同意；涉及用户个人信息的，还应遵守相关法律、行政法规中有关个人信息的规定。</li>
+</ul>
+</li>
+<li><p>明确一般性安全保护义务</p>
+<ul>
+<li><strong>安全信息发布</strong>：开展网络安全认证、检测、风险评估等活动，向社会发布系统漏洞、计算机病毒、网络攻击、网络侵入等网络安全信息，应当遵守国家有关规定。</li>
+<li><strong>禁止危害行为</strong>：任何个人和组织不得从事非法侵入他人网络、干扰他人网络正常功能、窃取网络数据等危害网络安全的活动；不得提供专门用于从事侵入我那个、干扰网络正常功能及防护措施、窃取网络数据等危害网络安全活动的程序、工具；明知他人从事危害网络安全的活动的，不得为其提供技术支持、广告推广、支付结算等。</li>
+<li><strong>信息使用规则</strong>：网信部门和有关部门在履行网络安全保护职责中获取的信息，只能用于维护网络安全的需要，不得用于其他用途。</li>
+</ul>
+</li>
+<li><p>关键信息基础设施保护</p>
+<ul>
+<li><strong>关键信息基础设施内涵</strong>：公共通信和信息服务、能源、交通、水利、金融、公共服务、电子政务重要行业和领域的关机信息基础设施；其他一旦遭到破坏、丧失功能或者数据泄露，可能验证危害 <strong>国家安全、国计民生、公共利益</strong>、的关机信息基础设施。</li>
+<li><strong>关机信息基础设施外延</strong>：关键信息基础设施的具体范围由 <strong>国务院</strong> 制定；鼓励关键信息基础设施以外的网络运营者 <strong>自愿</strong> 参与关键信息基础设施保护体系。</li>
+<li><strong>关键信息基础设施管理机制</strong>：按照国务院固定的职责分工，负责关键信息基础设施安全保护工作的部门具体负责实施 <strong>本行业</strong>、<strong>本领域</strong>的关机信息基础设施保护工作。<strong>国家网信部门</strong>统筹协调有关部门对关键信息基础设施采取安全保护措施。</li>
+<li><strong>关键信息基础设施建设要求</strong>：确保具有支持 <strong>业务稳定、持续运行</strong> 的性能。安全技术措施同步规划、同步建设、同步使用。</li>
+</ul>
+</li>
+<li><p>关键信息基础设施运营者安全保护义务</p>
+<ul>
+<li><strong>人员安全管理</strong>：设置专门安全管理机制和安全管理负责人；对负责人和关键岗位的人员进行安全背景审查；定期对从业人员进行网络安全教育、培训和考核。</li>
+<li><strong>数据境内留存</strong>：在我国境内运营中收集和产生的个人信息和重要数据应当在境内存储。确需向境外提供的，需经国家安全评估；对重要系统和数据库进行容灾备份。</li>
+<li><strong>应急预案机制</strong>：制定网络安全事件应急预案，并定期进行演练。</li>
+<li><strong>安全采购措施</strong>：采购网络产品和服务可能影响国家安全的，应当通过国家安全审查。应与网络产品和服务提供者签订安全保密协议。</li>
+<li><strong>风险评估机制</strong>：自行或者委托网络安全服务机构对其网络的安全性和可能存在的风险每年进行一次检测评估，并将检测评估情况和改进措施报送相关部门。</li>
+</ul>
+</li>
+<li><p>关键基础设施运营中产生的数据必须境内存储</p>
+</li>
+<li><p>2017年04月10日国家互联网信息办公室发布关于《个人信息和重要数据出境安全评估办法（征求意见稿）》公开征求意见的通知。<strong>明确了</strong></p>
+<ul>
+<li>个人信息和重要数据 <strong>出境的范围</strong><ul>
+<li>有50万人以上的个人信息</li>
+<li>数据量超过1000GB</li>
+<li>7大重要领域数据等（包含核设施、化学生物、国防军工、人口健康等领域数据，大型工程活动、海洋环境以及敏感地理数据等）</li>
+</ul>
+</li>
+<li>数据出境评估原则</li>
+<li>评估7个方面主要内容<ul>
+<li>数据出境的必要性；</li>
+<li>涉及个人信息的情况，包括个人信息的数量、范围、类型、敏感程度，以及个人信息主体是否同意其个人信息出境等；</li>
+<li>涉及重要数据情况，包括重要数据的数量、范围、类型及其敏感程度等；</li>
+<li>数据接收方的安全保护措施、能力和水平，已经所在国家和地区的网络安全环境等；</li>
+<li>数据出境及再转移后背泄露、坏损、篡改、滥用等风险；</li>
+<li>数据出境及出境数据汇聚可能对国家安全、社会公共利益、个人合法利益带来的风险；</li>
+<li>其他需要评估的重要事项。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>关键信息基础设施运营者安全保护义务</p>
+<ul>
+<li><strong>人员安全管理</strong>：设置专门安全管理机构和安全管理负责人；对负责人和关键岗位的人员进行安全背景审查；定期对从业人员进行网络安全教育、培训和考核。</li>
+<li><strong>数据境内留存</strong>：在我国境内运营中收集和产生的个人信息和重要数据应当在境内存储。确需向境外提供的，需经国家安全评估；对重要系统和数据库进行容灾备份。</li>
+<li><strong>应急预案机制</strong>：制定网络安全事件应急预案，并定期进行演练。</li>
+<li><strong>安全采购措施</strong>：采购网络产品和服务可能影响国家安全的，应当通过国家安全审查。应与网络产品和服务提供者签订安全保密协议。</li>
+<li><strong>风险评估机制</strong>：自行或者委托网络安全服务机构对其网络的安全性和可能存在的风险每年至少进行一次检测评估，并将检测评估情况和改进措施报送相关部门。</li>
+</ul>
+</li>
+<li><p>明确我国实行 <strong>网络安全审查</strong> 制度</p>
+<ul>
+<li><strong>第三十五条</strong> 关键信息基础设施的运营者采购网络产品和服务，可能影响国家安全的，应当通过国家网信部门会同国务院有关组织的国家安全审查。</li>
+<li>2017年05月02月中央网信办正式发布 <strong>《网络产品和服务安全审查办法（试行）》</strong> 。其中就审查的目的、需要审查的网络产品和服务的范围、网络安全审查的管理部门（网络安全审查委员会）、审查的架构（国家统一认定网络安全审查第三方机构）和对党政机关和重点行业的审查工作提出要求。<strong>关于2017年6月1日同《网络安全法》一同实施</strong>。</li>
+</ul>
+</li>
+</ul>
+<h4 id="第四章-网络信息安全"><a href="#第四章-网络信息安全" class="headerlink" title="第四章 网络信息安全"></a>第四章 网络信息安全</h4><ul>
+<li><p>重视对个人信息保护</p>
+<ul>
+<li>保护规范：<ul>
+<li><strong>原则</strong>：合法、正当、必要（第41条）</li>
+<li><strong>规则</strong>：吸收了国际通行规则 （例如：GDPR 通用数据保护条例，欧盟，草案2016年5月份发布。我国是2016年11月7号）</li>
+<li><strong>规则透明</strong>：公开规则、获得同意（第41条）</li>
+<li><strong>目的限制</strong>：不得超范围收集、违法和违法收集（第41条）</li>
+<li><strong>安全保密</strong>：不得泄露毁损、预防措施、补救措施（第40、42条）</li>
+<li><strong>删除改正</strong>：删除违法、违约信息、改正有误信息（第43条）</li>
+</ul>
+</li>
+<li>规范主体：<ul>
+<li>网络运营者、任何个人组织、负有网络安全监督管理职责的部门及其工作人员。</li>
+<li>网络运营者：安全保密、知情同意、目的限制、删除改正</li>
+<li>个人和组织：不得窃取、非法出售个人信息</li>
+<li>监督部门：保密、不得泄露出售</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>规范信息管理</p>
+<ul>
+<li><strong>规制对象–行为</strong>：<ul>
+<li>设立网站、通讯群组<ul>
+<li>诈骗</li>
+<li>传授犯罪方法</li>
+<li>制作或者销售违禁管制物品</li>
+</ul>
+</li>
+<li>利用网络发布信息</li>
+<li>发送电子信息<ul>
+<li>设置恶意软件</li>
+<li>包含违法犯罪信息</li>
+</ul>
+</li>
+<li>提供应用软件</li>
+</ul>
+</li>
+<li><strong>规制对象–主体</strong>：<ul>
+<li>市场主体<ul>
+<li>应用软件下载服务提供者</li>
+<li>网络运营者</li>
+<li>个人和组织</li>
+<li>电子信息发送服务者</li>
+</ul>
+</li>
+<li>监督主体<ul>
+<li>网信部门和有关部门</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>确定信息管理中相关职责</p>
+<ul>
+<li>个人和组织：禁止发布传输违法信息、制作销售违禁物品、传授犯罪方法、设置恶意软件、实施诈骗。</li>
+<li>网络运营者：信息发现、中断传输、保存报告、投诉处理、配合管理。</li>
+<li>电子信息发送服务者&amp;应用软件下载服务提供者：行为发现、停止服务、消除措施、保存报告。</li>
+<li>监督部门：行为发现、通知网络运营者、通知相关机构。</li>
+</ul>
+</li>
+<li><p>2017年05月02日国家互联网信息办公室正式发布 <strong>《互联网新闻信息服务管理规定》（国信办1号令）</strong>，于6月1日同《网络安全法》一起实施。规范了：</p>
+<ul>
+<li>互联网新闻信息服务的范围</li>
+<li>互联网新闻信息服务的6项许可条件</li>
+<li>互联网新闻信息服务提供者的义务</li>
+<li>网信部门对互联网新闻信息服务的监督检查要求</li>
+<li>相关法律责任</li>
+</ul>
+</li>
+<li><p>同日国家互联网信息办公室一并发布**《互联网信息内容管理行政执法程序规定》（国信办2号令）**，于6月1日同《网络安全法》一起实施。规范了：</p>
+<ul>
+<li>互联网信息内容管理部门行政执法依据</li>
+<li>管辖范围</li>
+<li>立案流程</li>
+<li>调查取证过程</li>
+<li>听证及约谈机制</li>
+<li>处罚决定及执行办法等</li>
+</ul>
+</li>
+</ul>
+<h4 id="第五章-监测预警与应急处置"><a href="#第五章-监测预警与应急处置" class="headerlink" title="第五章 监测预警与应急处置"></a>第五章 监测预警与应急处置</h4><ul>
+<li><p>工作制度化、法制化</p>
+<ul>
+<li><table>
+<thead>
+<tr>
+<th>责任主体</th>
+<th>具体制度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>国家网信部门</strong></td>
+<td>统筹网络安全信息收集、分享和通报，统一发布网络安全监测预警信息；制定网络安全事件应急预案，<strong>定期组织演练</strong>。</td>
+</tr>
+<tr>
+<td><strong>负责关键基础设施安全保护工作部门</strong></td>
+<td>建立健全本行业、本领域的网络安全监测预警和信息通报制度，按照规定报送预警信息；指定本行业、本领域的网络安全事件应急预案，<strong>定期组织演练</strong>。</td>
+</tr>
+<tr>
+<td><strong>省级以上人民政府有关部门</strong></td>
+<td>网络安全事件发生的风险增大时，采取信息报送、网络安全风险信息评估、向社会预警等措施；按照规定程序及权限对网络运营者法定代表人进行约谈。</td>
+</tr>
+<tr>
+<td><strong>网络运营者</strong></td>
+<td>采取技术措施和其他必要措施，消除安全隐患，防止危害扩大，并技术向社会发布与公众有关的警示信息；按照省级以上人民政府要求进行整改，消除隐患。</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="第六章-法律责任"><a href="#第六章-法律责任" class="headerlink" title="第六章 法律责任"></a>第六章 法律责任</h4><ul>
+<li><p>对违法《网络安全法》的行为，第六章规定了 <strong>民事责任、行政责任、刑事责任</strong>。</p>
+</li>
+<li><table>
+<thead>
+<tr>
+<th>民事责任</th>
+<th>行政责任</th>
+<th>刑事责任</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>第七十四条规定：违法本法规定，给他人造成损害的，依法承担民事责任。</td>
+<td>1、情节较轻的：责令改正、警告等；<br />2、情节严重的：罚款、责令停止相关业务、停业整顿、关闭网站、吊销相关业务许可证或者吊销营业执照等；<br />3、均适用的：没收违法所得、拘留等；<br />4、其他：计入信用档案并公示。</td>
+<td>第其实四条规定：构成犯罪的，依法追究刑事责任。</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>网络安全相关法规</p>
+<ul>
+<li>行政法相关法规</li>
+<li>民法相关法规</li>
+<li>刑法相关法规：出售或者提供公民个人信息罪、非法侵入计算机信息系统罪、网络服务渎职罪等</li>
+<li>其他网络安全相关法规及条款<ul>
+<li>国家安全法</li>
+<li>保密法</li>
+<li>电子签名法</li>
+<li>反恐怖主义法</li>
+<li>密码法</li>
+</ul>
+</li>
+<li><strong>电子签名法</strong>：2005年4月1日<ul>
+<li><strong>（一）电子签名制作数据用于电子签名时，属于电子签名人专有；</strong></li>
+<li>（二）签署时电子签名制作数据仅有电子签名人控制；</li>
+<li>（三）签署时对电子签名的任何改动能够被发现；</li>
+<li>（四）签署后对数据电文内容和形式的任何改动能够被发现；</li>
+<li>当事人也可以选项使用符合其约定的可靠条件的电子签名。</li>
+</ul>
+</li>
+<li>2015年8月《刑法修正案（九）》增设了一个罪名：帮助信息网络犯罪活动罪，简称“帮信罪”。2015年11月1日开始实施，主要指行为人明知他人利用信息网络实施犯罪，而为其犯罪提供互联网接入、服务器托管、网络存储、通信传输等技术支持，或者提供广告推广、支付结算等帮助的犯罪行为。</li>
+</ul>
+</li>
+</ul>
+<h4 id="知识子域：国家网络安全政策"><a href="#知识子域：国家网络安全政策" class="headerlink" title="知识子域：国家网络安全政策"></a>知识子域：国家网络安全政策</h4><ul>
+<li>国家网络空间安全战略<ul>
+<li><strong>了解</strong>国家《网络空间安全战略》中总结的七种新机遇、六大严峻挑战及建设网络强国的战略目标；</li>
+<li><strong>了解</strong>《国家网络空间战略》提出的四项基本原则和九大任务；</li>
+</ul>
+</li>
+<li>国家网络安全等保政策<ul>
+<li><strong>了解</strong>我国网络安全等级保护相关策略。</li>
+</ul>
+</li>
+</ul>
+<h4 id="国家网络空间安全战略"><a href="#国家网络空间安全战略" class="headerlink" title="国家网络空间安全战略"></a>国家网络空间安全战略</h4><ul>
+<li>七种新机遇<ul>
+<li>信息传播的新渠道</li>
+<li>生成生活的新空间</li>
+<li>经济发展的新引擎</li>
+<li>文化繁荣的新载体</li>
+<li>社会治理的新平台</li>
+<li>交流合作的新纽带</li>
+<li>国家主权的新疆域</li>
+</ul>
+</li>
+<li>六大严峻挑战<ul>
+<li>网络渗透危害政治安全</li>
+<li>网络攻击威胁经济安全</li>
+<li>网络有害信息侵蚀文化安全</li>
+<li>网络恐怖和违法犯罪破坏社会安全</li>
+<li>网络空间的国家竞争方兴未艾</li>
+<li>网络空间机遇和挑战并存，机遇大于挑战</li>
+</ul>
+</li>
+<li>发展战略目标<ul>
+<li>以总体国家安全观为指导，贯彻落实创新、协调、绿色、开放、共享的发展理念，增强风险意识和微机意识，统筹国内两个大局，统筹发展安全两件大事，积极防御、有效应对，推进网络空间 <strong>和平、安全、开发、合作、有序</strong>，维护国家主权、安全、发展利益，实现建设网络强国的战略目标。</li>
+</ul>
+</li>
+<li>四项原则<ul>
+<li>尊重维护网络空间主机</li>
+<li>和平利用网络空间</li>
+<li>依法治理网络空间</li>
+<li>统筹网络安全与发展</li>
+</ul>
+</li>
+<li>九大任务<ul>
+<li>坚定捍卫网络空间主权</li>
+<li>坚决维护国家安全</li>
+<li>保护关键信息基础设施</li>
+<li>加强网络文化建设</li>
+<li>打击网络恐怖和违法犯罪</li>
+<li>完善网络安全治理体系</li>
+<li>夯实网络安全基础</li>
+<li>提升网络空间防护能力</li>
+<li>强化网络空间国家合作。</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-3-网络安全道德准则"><a href="#2-3-网络安全道德准则" class="headerlink" title="2.3 网络安全道德准则"></a>2.3 网络安全道德准则</h3><h4 id="网络安全道德准则"><a href="#网络安全道德准则" class="headerlink" title="网络安全道德准则"></a>网络安全道德准则</h4><ul>
+<li>道德约束<ul>
+<li><strong>了解</strong> 道德的概念、道德的法律的差异；<ul>
+<li>道德的概念：一定社会或阶级用以调整人们之间利益关系的行为准则，也是评价人们行为善恶的标准。</li>
+<li>道德和法律：道德 <strong>没有</strong>  严谨的结构体系，法律是国家意志统一体系，<strong>有</strong> 严密的逻辑</li>
+</ul>
+</li>
+<li><strong>理解</strong> 道德约束相关概念。<ul>
+<li>道德约束<ul>
+<li>道德约束是建立在完善的法律基础上</li>
+<li>惩戒性条款的管理制度是组织内部建立职业道德约束的有效手段之一</li>
+<li>培训与教育是不可或缺的增强员工道德意识的途径</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>职业道德准则<ul>
+<li><strong>理解</strong> 信息安全从业人员遵守职业道德的重要性；</li>
+<li><strong>了解</strong> 目前国际团体和组织制作的职业道德规范文件；</li>
+<li><strong>理解</strong> 《CISP职业道德准则》的要求；</li>
+<li>职业道德的概念（最早的例子之一就是医生今天依然检查的<strong>希波克拉低誓言</strong>）</li>
+<li>著名的计算机职业伦理守则<ul>
+<li>美国计算机学会职业伦理守则、英国计算机学会伦理守则、</li>
+<li><strong>计算机伦理十诫（摩西十诫）</strong><ul>
+<li>你不应当用计算机去伤害他人</li>
+<li>你不应当干扰他人的计算机工作</li>
+<li>你不应当偷窃他人的文件</li>
+<li>你不应当用计算机进行偷盗</li>
+<li>你不应当用计算机做伪证</li>
+<li>你不应当使用或复制没有付过钱的软件</li>
+<li>你不应当未经许可而使用他人的计算机资源</li>
+<li>你不应当盗用别人的智力成果</li>
+<li>你应当考虑你所编制的程序的社会后果</li>
+<li>你应当深思熟虑和审慎的态度来使用计算机</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>CISP职业道德准则</strong><ul>
+<li>维护国家、社会和公众的信息安全</li>
+<li>诚实守信、遵纪守法</li>
+<li>努力工作，尽职尽责</li>
+<li>发展自身，维护荣誉</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-4-信息安全标准"><a href="#2-4-信息安全标准" class="headerlink" title="2.4 信息安全标准 *"></a>2.4 信息安全标准 *</h3><pre><code class="hljs bash">网络安全等级保护</code></pre>
+
+<h4 id="网络安全等级保护政策"><a href="#网络安全等级保护政策" class="headerlink" title="网络安全等级保护政策*#@"></a>网络安全等级保护政策*#@</h4><ul>
+<li><strong>1994：《中华人民共和国计算机信息系统安全保护条例》规定了计算机系统实现安全等级保护。</strong></li>
+<li><strong>1999</strong>：**GB 17859-1999《计算机信息系统安全保护等级划分准则》**正式细化等级保护要求，划分了 <strong>五个级别</strong></li>
+<li><strong>2004</strong>：**公安部、保密局、密码委、信息办（四部委）**联合发文《关于信息安全等级保护工作的实施意见的通知》规定登记保护指导思想、原则和要求。定级从信息和信息系统的业务重要性及遭受破坏后的影响出发。  <ul>
+<li>改通知将信息和信息系统的安全保护等级划分为五级，<strong>即第一级：自主保护级；第二级：指导保护级；第三级：监督保护级；第四级：强制保护级；第五级：专控保护级。</strong></li>
+<li>2017年，四部委发文《信息安全等级保护管理办法》，<strong>涉及国家密码的信息系统也以不低于登记保护三级的标准机械能设计和建设</strong>。</li>
+</ul>
+</li>
+<li><strong>2016</strong>：<strong>《网络安全法》明确我国实行网络安全等级保护制度</strong></li>
+</ul>
+<h4 id="信息安全标准"><a href="#信息安全标准" class="headerlink" title="信息安全标准"></a>信息安全标准</h4><ul>
+<li>信息安全标准基础<ul>
+<li><strong>了解</strong> 标准的基本概念及标准的作用、标准化的特点及原则等；</li>
+<li><strong>了解</strong> 国际信息安全标准化组织和我国信息安全标准化组织；</li>
+<li><strong>了解</strong> 我国标准分类及信息安全标准体系。</li>
+</ul>
+</li>
+<li>我国信息安全标准<ul>
+<li><strong>了解</strong> 我国信息安全标准体系分类及基础标准、技术与机制、管理与服务标准、测评标准构成；</li>
+</ul>
+</li>
+</ul>
+<h4 id="标准"><a href="#标准" class="headerlink" title="标准"></a>标准</h4><ul>
+<li>为了在 <strong>一定范围</strong> 内获得 <strong>最佳秩序</strong>，经 <strong>协商一致</strong> 制定并由 <strong>公认机构</strong> 批准，共同使用的和 <strong>重复使用</strong> 的一种规范性文件。</li>
+<li><strong>标准类型</strong><ul>
+<li>国际标准</li>
+<li>国家标准</li>
+<li>行业标准</li>
+<li>地方标准</li>
+</ul>
+</li>
+</ul>
+<h4 id="标准化"><a href="#标准化" class="headerlink" title="标准化"></a>标准化</h4><ul>
+<li>标准化：为了在 <strong>一定范围</strong> 内获得 <strong>最佳秩序</strong>，对现实问题或潜在问题制定 <strong>共同使用</strong> 和 <strong>重复使用</strong> 的条款的 <strong>活动</strong></li>
+<li>标准化的 <strong>基本特点</strong><ul>
+<li>标准化是一项活动</li>
+<li>标准化的对象：物、事、人</li>
+<li>标准化是一个动态的概念</li>
+<li>标准化是一个相对的概念</li>
+<li>标准化的效益只有应用后才能体现</li>
+</ul>
+</li>
+<li>标准化 <strong>工作原则</strong>：简化、统一、协调、优化</li>
+</ul>
+<h4 id="标准化组织"><a href="#标准化组织" class="headerlink" title="标准化组织"></a>标准化组织</h4><ul>
+<li><strong>主要国际标准化组织</strong><ul>
+<li>国家标准化组织（ISO）</li>
+<li>国际电工委员会（IEC）</li>
+<li><strong>Internet工程任务组（IETF）：创建于1986年，目前IETF已成为全球互联网界最具权威的大型技术研究组织。 著名的IKE和IPsec都在RFC系列之中</strong>。（RFC开头的标准都是IETF的）</li>
+<li>国际电信联盟（ITU）及国际电信联盟远程通信标准化组织（ITU-T）</li>
+</ul>
+</li>
+<li><strong>美国标准化组织（美国）</strong><ul>
+<li>美国国家标准化协会（ANSI）</li>
+<li>美国国家标准技术研究院（NIST）<ul>
+<li><strong>信息安全相关的专题出版物（NIST SP 800系列 和 NIST SP 500系列）</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>英国标准协会（BSI）</strong></li>
+<li><strong>中国</strong><ul>
+<li><strong>中国国际标准化管理委员会：中国国际标准化管理委员会（以下简称“国家标准委”）是我国最高级别的国家标准化机构，其下属的全国信息安全标准化技术委员会（TC260）负责信息安全相关标准制定及管理</strong>。</li>
+<li><strong>【2004】1号文决定：自2004年1月起，各有关部门在申报信息安全国家标准计划项目时，必须经信息安全标委会提出工作意见，协调一致后由信息安全标委会组织申报。</strong></li>
+<li><strong>秘书处设在中国电子技术标准化研究所</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="我国标准分类"><a href="#我国标准分类" class="headerlink" title="我国标准分类"></a>我国标准分类</h4><ul>
+<li><strong>GB</strong>  强制性国家标准<ul>
+<li>一经颁布必须贯彻执行，违反则构成经济或法律方面的责任。</li>
+</ul>
+</li>
+<li><strong>GB&#x2F;T</strong> 推荐性国家标准<ul>
+<li>自愿采用的标准，共同遵守的技术依据，严格贯彻执行。</li>
+</ul>
+</li>
+<li><strong>GB&#x2F;Z</strong> 国家标准指导性技术文件<ul>
+<li>由于技术发展过程中或其他理由，将来可能达成一致意见指导性技术文件</li>
+<li><strong>实施后3年内必须进行复审。复审结果的可能是以下结果。</strong><ul>
+<li><strong>再延长3年</strong></li>
+<li><strong>转为国家标准</strong></li>
+<li><strong>撤销</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="信息安全标准体系"><a href="#信息安全标准体系" class="headerlink" title="信息安全标准体系"></a>信息安全标准体系</h4><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251115122500831.png"></p>
+<ul>
+<li>基础类标准<ul>
+<li>安全术语类</li>
+<li>测评基础类</li>
+<li>管理基础类</li>
+<li>物理安全类</li>
+<li>安全模型类</li>
+<li>安全体系架构类</li>
+</ul>
+</li>
+<li>技术与机制标准<ul>
+<li>密码技术</li>
+<li>鉴别机制</li>
+<li>授权机制</li>
+<li>电子签名</li>
+<li>公钥基础设施</li>
+<li>通信安全技术</li>
+<li>涉密系统通用技术要求</li>
+</ul>
+</li>
+<li>测评标准<ul>
+<li>密码产品</li>
+<li>通用产品</li>
+<li>安全保密产品</li>
+<li>通用系统</li>
+<li>涉密通信系统</li>
+<li>通信安全</li>
+<li>政府安全检查</li>
+<li>安全能力评估</li>
+</ul>
+</li>
+</ul>
+<h4 id="信息安全标准-1"><a href="#信息安全标准-1" class="headerlink" title="信息安全标准 **#@"></a>信息安全标准 **#@</h4><ul>
+<li><p><strong>等级保护标准族</strong></p>
+<ul>
+<li>了解网络安全等级保护标准体系；</li>
+<li><strong>掌握</strong> 等级保护实施流程中定级、备案的工作要求并了解等级保护整改、测评相关要求；</li>
+<li>了解登记保护2.0的相关变化。</li>
+</ul>
+</li>
+<li><p>看图方法</p>
+<ul>
+<li>从上往下看，定级别；看定级指南 和 定级细则。一级不用保，五级（国家安全，执行分保制度）保不了。<ul>
+<li><strong>安全等级类</strong>： 主要对 <strong>如何进行信息系统定级</strong> 做出指导<ul>
+<li><del>GB&#x2F;T 22240-2008 《信息安全技术 信息系统安全保护等级保护定级指南》</del></li>
+<li><strong>GB&#x2F;T 22240-2020 《信息安全技术 网络安全等级保护定级指南》</strong> （云计算、物联网、大数据、移动互联技术）</li>
+<li>各类行业定级规则</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>从右往左看，方法指导 <ul>
+<li><strong>方法指导类</strong>：对 <strong>如何开展等级保护工作</strong> 做了详细规定<ul>
+<li><del>GB&#x2F;T 25058-2010 《信息安全技术 信息系统安全等级保护实施指南》</del></li>
+<li><strong>GB&#x2F;T 25058-2019 《信息安全技术 网络安全等级保护实施指南》</strong>（云计算、物联网、大数据、移动互联技术）</li>
+<li><del>GB&#x2F;T 25070-2010 《信息安全技术 信息系统等级保护安全设计技术要求》</del></li>
+<li><strong>GB&#x2F;T 25070-2019 《信息安全技术 网络安全等级保护安全设计技术要求》</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>从左往右看，状态分析<ul>
+<li><strong>状态分析类</strong>：对 <strong>如何开展等级保护测评</strong> 工作做出了详细规定<ul>
+<li><del>GB&#x2F;T 28448-2012 《信息安全技术 信息系统安全等级保护测评要求》</del></li>
+<li><strong>GB&#x2F;T 28448-2019 《信息安全技术 网络安全等级保护测评要求》</strong></li>
+<li><del>GB&#x2F;T 28449-2012 《信息安全技术 信息系统安全等级保护测评过程指南》</del></li>
+<li><strong>GB&#x2F;T 28449-2018 《信息安全技术 网络安全等级保护测评过程指南》</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>从下往上看，基线要求<ul>
+<li><strong>基线要求类</strong>：分技术类、管理类和产品类等标准，分别对某些 <strong>专门技术、管理和产品</strong> 的进行要求<ul>
+<li><del>GB&#x2F;T 22239-2008 《信息安全技术 信息系统安全等级保护基本要求》</del></li>
+<li><strong>GB&#x2F;T 22289-2019 《信息安全技术 网络安全等级保护基本要求》</strong>（云计算、物联网、大数据、移动互联技术）</li>
+<li>GB&#x2F;T 20271-2006 《信息系统通用安全技术要求》</li>
+<li>GB&#x2F;T 21052-2007 《信息系统物理安全技术要求》</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251115123244786.png"></p>
+</li>
+<li><p>时间段</p>
+<ul>
+<li>1994年进入等保1.0阶段</li>
+<li>2016年提出等保2.0</li>
+<li>2019.12.1号正式进入等保2.0阶段</li>
+</ul>
+</li>
+<li><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251115124053257.png"></p>
+</li>
+<li></li>
+</ul>
+<h4 id="等级保护工作流程（实施）"><a href="#等级保护工作流程（实施）" class="headerlink" title="等级保护工作流程（实施）"></a>等级保护工作流程（实施）</h4><p>等级保护实施根据 GB&#x2F;T 25058-2010 《信息安全技术 信息系统等级保护实施指南》<strong>根据实际情况逐步形成了等级、备案、差距分析（也叫差距测评）、建设整改、验收测评、定期复查为流程的等级保护工作流程。</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251115131255402.png"></p>
+<ul>
+<li>定级</li>
+<li>备案<ul>
+<li><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251115132611995.png" alt="定级备案"></li>
+</ul>
+</li>
+<li>差距分析<ul>
+<li><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251115132700720.png"></li>
+</ul>
+</li>
+<li>建设整改<ul>
+<li><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251115132805327.png"></li>
+</ul>
+</li>
+<li>验收测评<ul>
+<li><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251115132832350.png"></li>
+</ul>
+</li>
+<li>定期复查</li>
+</ul>
+<hr>
+<h2 id="第3章-信息安全管理"><a href="#第3章-信息安全管理" class="headerlink" title="第3章 信息安全管理"></a>第3章 信息安全管理</h2><h3 id="3-1-信息安全管理-基础"><a href="#3-1-信息安全管理-基础" class="headerlink" title="3.1 信息安全管理-基础"></a>3.1 信息安全管理-基础</h3><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><p><strong>了解</strong> 信息、信息安全管理、信息安全管理体系等基础概念。</p>
+<ul>
+<li><strong>信息</strong><ul>
+<li>企业：对用户的信息保护成为新的关注点</li>
+<li>用户：用户将安全作为选择服务的重要依据之一</li>
+<li>攻击者：不起眼的数据对攻击者可能价值很高，倒逼企业和个人更关照信息安全。</li>
+</ul>
+</li>
+<li><strong>信息安全管理</strong><ul>
+<li>信息安全管理是组织管理体系的一个重要环节</li>
+</ul>
+</li>
+<li><strong>信息安全管理体系</strong><ul>
+<li>组织管理体系的一部分</li>
+<li>基于风险评估和组织风险接受水平</li>
+</ul>
+</li>
+</ul>
+<h4 id="信息安全管理的作用及对组织的价值"><a href="#信息安全管理的作用及对组织的价值" class="headerlink" title="信息安全管理的作用及对组织的价值"></a>信息安全管理的作用及对组织的价值</h4><p><strong>理解</strong> 信息安全管理的作用、对组织内部和组织外部的价值</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251115135915204.png"></p>
+<ul>
+<li><strong>信息安全管理的作用</strong><ul>
+<li>信息安全管理是组织整体管理的重要、固有组成部分，是组织实现其业务目标的重要保障。</li>
+<li>信息安全管理是信息安全技术的融合剂，保障各项技术措施能够发挥作用。</li>
+<li>信息安全管理能 <strong>预防、组织或减少</strong> 信息安全事件的发生。</li>
+</ul>
+</li>
+<li><strong>对组织的价值</strong><ul>
+<li>对内</li>
+<li>对外</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-2-信息安全-风险管理"><a href="#3-2-信息安全-风险管理" class="headerlink" title="3.2 信息安全-风险管理"></a>3.2 信息安全-风险管理</h3><h4 id="风险管理概述"><a href="#风险管理概述" class="headerlink" title="风险管理概述"></a>风险管理概述</h4><p><strong>了解</strong> 信息安全风险、风险管理的概念；</p>
+<ul>
+<li><strong>风险</strong>：事态的概率及其结果的组合<ul>
+<li>风险是客观存在</li>
+<li><strong>风险管理</strong> 是指导和控制一个组织相关风险的协调活动、其目的是确保不确定性不会使企业的业务目标发生变化。</li>
+<li>风险的识别、评估和优化</li>
+</ul>
+</li>
+<li><strong>风险管理</strong> 的价值<ul>
+<li>安全措施的 <strong>成本</strong> 与资产 <strong>价值</strong>  之间的 <strong>平衡</strong></li>
+</ul>
+</li>
+<li><strong>基于风险的思想是所有信息系统安全保障工作的核心思想！</strong></li>
+</ul>
+<p><strong>理解</strong> 信息安全风险管理的作用和价值；</p>
+<h4 id="常见风险管理模型"><a href="#常见风险管理模型" class="headerlink" title="常见风险管理模型"></a>常见风险管理模型</h4><p><strong>了解</strong> COSO报告、ISO31000、COBIT等风险管理模型的租用。</p>
+<ul>
+<li>内部控制整合框架（COSO报告）<ul>
+<li><strong>三个目标</strong>：财务报告可靠性、经验效率和效果、合规性</li>
+<li><strong>五个管理要素</strong>：内制环境、风险评估、控制活动、信息与沟通、监控</li>
+</ul>
+</li>
+<li>ISO 31000<ul>
+<li>为所有与风险管理相关的操作提供最佳实践结构和指导</li>
+</ul>
+</li>
+<li>**GOBIT ** 2019最新<ul>
+<li>为信息系统和技术的治理及控制过程提供 <strong>最佳实践</strong></li>
+<li>组件：框架、流程描述、控制目标、管理指南、成熟度模型。</li>
+</ul>
+</li>
+</ul>
+<h4 id="安全风险管理基本过程"><a href="#安全风险管理基本过程" class="headerlink" title="安全风险管理基本过程 *#@"></a>安全风险管理基本过程 *#@</h4><p><strong>理解</strong> 风险管理的背景建立、风险评估、风险处理、批准监督、监控审查和沟通咨询六个方面的工作目标及内容；</p>
+<ul>
+<li>GB&#x2F;Z 24364-2009 《信息安全风险管理指南》最新版本GB&#x2F;Z 24364-2023<ul>
+<li><strong>四个阶段</strong> *#@</li>
+<li><strong>两个贯穿</strong> *#@</li>
+<li><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251115142919143.png"></li>
+</ul>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251115143851897.png"></p>
+<h4 id="四个阶段-背景建立"><a href="#四个阶段-背景建立" class="headerlink" title="四个阶段-背景建立*#@"></a>四个阶段-背景建立*#@</h4><p>背景建立是信息安全风险管理的 <strong>第一个步骤</strong>，确定风险管理的 <strong>对象</strong> 和 <strong>范围</strong>，确立实施风险管理的 <strong>准备</strong>，进行相关信息的 <strong>调查</strong> 和 <strong>分析</strong></p>
+<ul>
+<li>风险管理准备：确定对象、组件团队、指定计划、获得支持</li>
+<li>信息系统调查：信息系统的业务目标、技术和管理上的特点</li>
+<li>信息系统分析：信息系统的体系结构、关键要素</li>
+<li>信息安全分析：分析安全要求、分析安全环境</li>
+</ul>
+<h4 id="四个阶段-风险评估"><a href="#四个阶段-风险评估" class="headerlink" title="四个阶段-风险评估*#@"></a>四个阶段-风险评估*#@</h4><p>信息安全风险管理要 <strong>依靠</strong> 风险评估的结果来确定随后的 <strong>风险处理</strong> 和 <strong>批准监督</strong> 活动。</p>
+<ul>
+<li>风险 <strong>评估准备</strong>：制定风险评估方案、选择评估方法</li>
+<li>风险 <strong>要素识别</strong>：发现系统存在的 <strong>威胁、脆弱性和控制措施</strong></li>
+<li><strong>风险分析</strong>：判断风险发生的可能性和影响的程度</li>
+<li>风险 <strong>结果判定</strong>：综合分析结果判定风险等级。</li>
+</ul>
+<h4 id="四个阶段-风险处理"><a href="#四个阶段-风险处理" class="headerlink" title="四个阶段-风险处理*#@"></a>四个阶段-风险处理*#@</h4><p>风险处理是为了将风险始终控制在 <strong>可接受</strong>  范围内。</p>
+<ul>
+<li><strong>现存风险判断</strong>：判断信息系统中哪些风险可以接受，哪些不可以</li>
+<li><strong>处理目标确认</strong>：不可接受的风险需要控制到怎样的程度</li>
+<li><strong>处理措施选择</strong>：选择风险处理方式，确定风险控制措施</li>
+<li><strong>处理措施实施</strong>：指定具体安全方案，部署控制措施</li>
+</ul>
+<h4 id="四个阶段-批准监督"><a href="#四个阶段-批准监督" class="headerlink" title="四个阶段-批准监督*#@"></a>四个阶段-批准监督*#@</h4><ul>
+<li><strong>批准</strong>：是指机构的 <strong>决策层</strong> 依据风险评估和风险处理的结果是否满足信息系统的安全要求，做出是否认可风险管理活动的 <strong>决定</strong></li>
+<li><strong>监督</strong>：是指 <strong>检查</strong> 机构及其信息系统已经信息安全相关的环境有无变化，<strong>监督</strong> 变化因素是否有可能引入新风险。</li>
+</ul>
+<h4 id="两个贯穿-监控审查"><a href="#两个贯穿-监控审查" class="headerlink" title="两个贯穿-监控审查 *#@"></a>两个贯穿-监控审查 *#@</h4><ul>
+<li><strong>监控与审查</strong> 可以及时 <strong>发现</strong> 已经出现或即将出现的变化、偏差和延误等问题，并 <strong>采取</strong> 适当的措施进行控制和纠正，从而 <strong>减少</strong> 因此造成的损失，<strong>保证</strong> 信息安全风险管理 <strong>主循环的有效性</strong>。</li>
+<li><strong>类似信息系统工程中的监理</strong>：监理对双方负责。<ul>
+<li>**信息安全工程监理模型 *#@**：<ul>
+<li><em><em>监理咨询支撑要素</em>#@</em>*：（组织结构、设施设备、安全保障知识、质量管理）</li>
+<li><em><em>监理咨询阶段过程</em>#@</em>*</li>
+<li><em><em>控制管理措施</em>#@</em>*：（“四控制、三管理、一协调”，即质量控制、进度控制、成本控制、变更控制、合同管理、信息管理和安全管理、组织协调）</li>
+</ul>
+</li>
+<li><strong>信息安全工程监理的职责</strong><ul>
+<li><em><em>四控</em>#@</em>*：进度控制，质量控制、成本控制（投资控制），变更控制</li>
+<li><em><em>三管</em>#@</em>*：合同管理，安全管理，信息管理</li>
+<li><em><em>一协调</em>#@</em>*：协调甲方、总包及设备材料供应方的关系</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="两个贯穿-沟通咨询"><a href="#两个贯穿-沟通咨询" class="headerlink" title="两个贯穿-沟通咨询 *#@"></a>两个贯穿-沟通咨询 *#@</h4><ul>
+<li><p>通过畅通的交流和重发的沟通，保持行动的 <strong>协调</strong> 和 <strong>一致性</strong>；通过有效的培训和方便的咨询，保证行动者具有 <strong>足够的知识</strong> 和 <strong>技能</strong>，就是沟通咨询的意义所在。</p>
+</li>
+<li><table>
+<thead>
+<tr>
+<th align="left">沟通咨询</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>与领导沟通</strong>，以得到理解和批准<br /><strong>单位内部各有关部门</strong> 相互沟通，以得到理解和协作<br /><strong>与支持单位和系统用户</strong> 沟通，以得到了解和支持</td>
+</tr>
+<tr>
+<td align="left">为所有层面的相关人员提供 <strong>咨询和培训</strong> 等，以提高人员的安全意识、知识和技能</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h3 id="3-3-信息安全管理体系-建设"><a href="#3-3-信息安全管理体系-建设" class="headerlink" title="3.3 信息安全管理体系-建设"></a>3.3 信息安全管理体系-建设</h3><pre><code class="hljs bash">ISO27001-2013版本   20251025失效，考2013
+ISO27001-2022版本   最新版本，实际应用2022，企业还是2013</code></pre>
+
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251115153242468.png"></p>
+<p><strong>信息安全管理体系</strong> – ISMS</p>
+<ul>
+<li>组织在 <strong>整体</strong> 或 <strong>特定范围</strong>  内建立的信息安全 <strong>方针</strong> 和 <strong>目标</strong>，以及为完成这些目标所用的方法和体系。它是直接管理活动的结果，表示为 <strong>方针、原则、目标、方法、计划、活动、程序、过程和资源</strong> 的 <strong>集合</strong>。</li>
+</ul>
+<h4 id="信息安全管理体系成功因素"><a href="#信息安全管理体系成功因素" class="headerlink" title="信息安全管理体系成功因素"></a>信息安全管理体系成功因素</h4><p><strong>理解</strong> GB&#x2F;T 29246-2017 中描述的信息安全管理体系成功的主要因素</p>
+<ul>
+<li>信息安全 <strong>策略、目标</strong> 和 目标一致的 <strong>活动</strong></li>
+<li>与 <strong>组织文化</strong> 一致的，信息安全设计、实施、监视、保持和改进的方法与框架</li>
+<li>来自所有 <strong>管理层级</strong>、特别是 <strong>最高管理者</strong> 的 <strong>可见支持</strong> 和 承诺</li>
+<li>对 <strong>应用</strong> 信息安全风险管理 （见ISO&#x2F;IEC 27005）实现信息资产保护的理解</li>
+<li><strong>有效的信息安全意识、撇讯和教育计划</strong>，以使 <strong>所有员工</strong> 和 <strong>其他相关方</strong> 知悉在信息安全策略、标准等当中他们的信息 <strong>安全义务</strong>，并激励他们做出相应的 <strong>行动</strong></li>
+<li>有效的信息安全事件 <strong>管理过程</strong></li>
+<li>有效的业务持续性 <strong>管理方法</strong></li>
+<li>评价信息安全管理性能的 <strong>测量系统</strong> 和反馈的 <strong>改进建议</strong>。</li>
+</ul>
+<h4 id="PDCA过程（戴明环）"><a href="#PDCA过程（戴明环）" class="headerlink" title="PDCA过程（戴明环）"></a>PDCA过程（戴明环）</h4><p><strong>理解</strong> PDCA过程模型的构成及作用</p>
+<ul>
+<li>管理学常用的 <strong>过程模型</strong><ul>
+<li>P（Plan）：计划</li>
+<li>D（Do）：实施</li>
+<li>C（Check）：检查</li>
+<li>A（Act）：行动</li>
+</ul>
+</li>
+</ul>
+<p><strong>了解</strong> ISO&#x2F;IEC 27001:2013中定义的PDCA过程方法四个阶段工作。</p>
+<ul>
+<li><p>按照PDCA进行循环，大环套小环，<strong>持续改进</strong></p>
+<ul>
+<li>PDCA是27001定义的过程方法。</li>
+<li><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251115162414121.png" alt="*#@要理解每个阶段对应的字母"></li>
+<li><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251115161933975.png"></li>
+</ul>
+</li>
+<li><p><strong>组织背景</strong></p>
+<ul>
+<li>建立信息安全管理体系的 <strong>基础</strong></li>
+<li>了解组织有关信息安全的 <strong>内部</strong>（人员、管理、流程等）和 <strong>外部</strong> （合作伙伴、供应商、外包商等）问题</li>
+<li>确定ISMS管理范围</li>
+<li>建立、实施、运行、保持和持续改进符合国际标准要求的ISMS</li>
+</ul>
+</li>
+<li><p><strong>领导力</strong></p>
+<ul>
+<li><strong>管理承诺</strong> 是建立信息安全管理体系的关键成功因素之一</li>
+<li>建立在组织的整体管理基础，需要组织 <strong>整体参与</strong></li>
+<li><strong>组织高层确定的信息安全方针 文档化</strong>，明确描述组织的角色、职责和权限</li>
+</ul>
+</li>
+<li><p><strong>计划</strong></p>
+<ul>
+<li>计划建立在风险评估基础上</li>
+<li>计划必须符合组织的安全目标</li>
+<li>层次改进</li>
+</ul>
+</li>
+<li><p><strong>支持</strong></p>
+<ul>
+<li>获得资源</li>
+<li>全员宣贯培训（<strong>最高管理者全称参与</strong>）</li>
+</ul>
+</li>
+<li><p><strong>实施与运行</strong></p>
+<ul>
+<li><strong>实施风险评估</strong>，<strong>确定</strong>所识别信息资产的信息安全 <strong>风险</strong>，已经 <strong>处理</strong> 信息安全风险的 <strong>决策</strong>，<strong>形成</strong>信息安全 <strong>要求</strong></li>
+<li>控制措施适度安全</li>
+<li>控制在适用性声明中形成文件</li>
+</ul>
+</li>
+<li><p><strong>监视和评审</strong></p>
+<ul>
+<li>根据组织正常和目标，监控和评估绩效来维护和改进ISMS</li>
+</ul>
+</li>
+<li><p><strong>维护与改进</strong></p>
+<ul>
+<li>不符合和纠正措施</li>
+<li>持续改进</li>
+</ul>
+</li>
+</ul>
+<h4 id="文档化"><a href="#文档化" class="headerlink" title="文档化"></a>文档化</h4><pre><code class="hljs bash">一级文件定目标
+二级文件定措施
+三级文件看执行
+四级文件看结果</code></pre>
+
+<ul>
+<li><strong>管理体系的文档化分为 文件和记录 两部分。文件是管理体系审核的 依据，记录是管理体系审核的 证据。两者都需要得到妥善的使用和保存。</strong></li>
+<li>一级文件：由高级管理层发布</li>
+<li>二级文件：有组织管理者代表签署发布；二级文件发布范围通常在组织内部。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251115163647691.png"></p>
+<ul>
+<li><strong>文档结构</strong></li>
+<li><strong>文件控制</strong>全过程<ul>
+<li>建立</li>
+<li>批准发布</li>
+<li>评审与更新</li>
+<li>文件保存</li>
+<li>文件作废</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-4-信息安全管理体系-最佳实践"><a href="#3-4-信息安全管理体系-最佳实践" class="headerlink" title="3.4 信息安全管理体系-最佳实践 *#@"></a>3.4 信息安全管理体系-最佳实践 *#@</h3><ul>
+<li><p>信息安全管理体系控制类型</p>
+<ul>
+<li><strong>了解 预防性、检测性、纠正性</strong> 控制措施的差别及应用。</li>
+</ul>
+</li>
+<li><p>信息安全管理体系控制措施结构</p>
+<ul>
+<li><strong>了解</strong> 安全方针、信息安全组织、人力资源安全、资产管理、访问控制、密码学、物理和环境安全、操作安全、通信安全、安全采购开发和维护、供应商关系、安全事件管理、业务连续性管理及合规性14个控制章节的 <strong>控制目标、控制措施</strong> 并理解实施指南的相关要素。</li>
+</ul>
+</li>
+<li><p>**预防性控制 *#@**：（账号密码认证）</p>
+<ul>
+<li><strong>预防性控制是为了避免产生错误或尽量减少今后的更正性活动，是为了防止资金、时间或其他资源的损耗而采取的一种预防保护措施</strong>。</li>
+</ul>
+</li>
+<li><p>**检测性控制 *#@**：</p>
+<ul>
+<li><strong>建立检测性控制的目的是发现流程中可能发生的安全问题</strong>。</li>
+</ul>
+</li>
+<li><p>**纠正性控制 *#@**：（备份数据库去恢复、电脑蓝屏）</p>
+<ul>
+<li><strong>纠正性控制措施无法阻止安全事件的发生，但提供了一种系统的方式来检查何时发生了安全事件并对安全事件带来的影响进行纠正</strong>。</li>
+</ul>
+</li>
+<li></li>
+</ul>
+<h4 id="安全控制措施内部结构"><a href="#安全控制措施内部结构" class="headerlink" title="安全控制措施内部结构"></a>安全控制措施内部结构</h4><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251118115029391.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251117122511719.png" alt="信息安全管理控制措施"></p>
+<ul>
+<li><strong>结构</strong><ul>
+<li>14个类别</li>
+<li>35个目标</li>
+<li>114个控制措施</li>
+</ul>
+</li>
+<li><strong>描述方式</strong><ul>
+<li>控制类</li>
+<li>控制目标</li>
+<li>控制措施</li>
+<li>实施指南</li>
+</ul>
+</li>
+</ul>
+<h4 id="ISO-IEC-27002标准的演进历程"><a href="#ISO-IEC-27002标准的演进历程" class="headerlink" title="ISO&#x2F;IEC 27002标准的演进历程"></a>ISO&#x2F;IEC 27002标准的演进历程</h4><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251118120216659.png"></p>
+<h3 id="3-5-信息安全管理体系-度量"><a href="#3-5-信息安全管理体系-度量" class="headerlink" title="3.5  信息安全管理体系-度量"></a>3.5  信息安全管理体系-度量</h3><hr>
+<h2 id="第4章-业务连续性"><a href="#第4章-业务连续性" class="headerlink" title="第4章 业务连续性"></a>第4章 业务连续性</h2><h3 id="4-1-业务连续性管理"><a href="#4-1-业务连续性管理" class="headerlink" title="4.1 业务连续性管理"></a>4.1 业务连续性管理</h3><h3 id="4-2-信息安全应急响应"><a href="#4-2-信息安全应急响应" class="headerlink" title="4.2 信息安全应急响应"></a>4.2 信息安全应急响应</h3><h3 id="4-3-灾难备份与恢复"><a href="#4-3-灾难备份与恢复" class="headerlink" title="4.3 灾难备份与恢复"></a>4.3 灾难备份与恢复</h3><hr>
+<h2 id="第5章-安全工程与运营"><a href="#第5章-安全工程与运营" class="headerlink" title="第5章 安全工程与运营"></a>第5章 安全工程与运营</h2><h3 id="5-1-系统安全工程"><a href="#5-1-系统安全工程" class="headerlink" title="5.1 系统安全工程"></a>5.1 系统安全工程</h3><h3 id="5-2-安全运营"><a href="#5-2-安全运营" class="headerlink" title="5.2 安全运营"></a>5.2 安全运营</h3><h3 id="5-3-信息内容安全"><a href="#5-3-信息内容安全" class="headerlink" title="5.3 信息内容安全"></a>5.3 信息内容安全</h3><h3 id="5-4-社会工程学与培训教育"><a href="#5-4-社会工程学与培训教育" class="headerlink" title="5.4 社会工程学与培训教育"></a>5.4 社会工程学与培训教育</h3><hr>
+<h2 id="第6章-信息安全评估"><a href="#第6章-信息安全评估" class="headerlink" title="第6章 信息安全评估"></a>第6章 信息安全评估</h2><pre><code class="hljs bash">安全评估 = 风险评估</code></pre>
+
+
+
+<h3 id="6-1-安全评估基础"><a href="#6-1-安全评估基础" class="headerlink" title="6.1 安全评估基础"></a>6.1 安全评估基础</h3><h3 id="6-2-安全评估实施"><a href="#6-2-安全评估实施" class="headerlink" title="6.2 安全评估实施"></a>6.2 安全评估实施</h3><h3 id="6-3-信息系统审计"><a href="#6-3-信息系统审计" class="headerlink" title="6.3 信息系统审计"></a>6.3 信息系统审计</h3><hr>
+<h2 id="第7章-信息安全支撑技术"><a href="#第7章-信息安全支撑技术" class="headerlink" title="第7章 信息安全支撑技术"></a>第7章 信息安全支撑技术</h2><h3 id="7-1-密码学"><a href="#7-1-密码学" class="headerlink" title="7.1 密码学"></a>7.1 密码学</h3><h3 id="7-2-身份鉴别"><a href="#7-2-身份鉴别" class="headerlink" title="7.2 身份鉴别"></a>7.2 身份鉴别</h3><h3 id="7-3-访问控制"><a href="#7-3-访问控制" class="headerlink" title="7.3 访问控制"></a>7.3 访问控制</h3><hr>
+<h2 id="第8章-物理环境与网络通信安全"><a href="#第8章-物理环境与网络通信安全" class="headerlink" title="第8章 物理环境与网络通信安全"></a>第8章 物理环境与网络通信安全</h2><h3 id="8-1-物理安全"><a href="#8-1-物理安全" class="headerlink" title="8.1 物理安全"></a>8.1 物理安全</h3><h3 id="8-2-OSI模型"><a href="#8-2-OSI模型" class="headerlink" title="8.2 OSI模型"></a>8.2 OSI模型</h3><h3 id="8-3-TCP-IP协议"><a href="#8-3-TCP-IP协议" class="headerlink" title="8.3 TCP&#x2F;IP协议"></a>8.3 TCP&#x2F;IP协议</h3><h3 id="8-4-无线通信安全"><a href="#8-4-无线通信安全" class="headerlink" title="8.4 无线通信安全"></a>8.4 无线通信安全</h3><h3 id="8-5-典型网络攻击及防范"><a href="#8-5-典型网络攻击及防范" class="headerlink" title="8.5 典型网络攻击及防范"></a>8.5 典型网络攻击及防范</h3><h3 id="8-6-网络安全防护技术"><a href="#8-6-网络安全防护技术" class="headerlink" title="8.6 网络安全防护技术"></a>8.6 网络安全防护技术</h3><hr>
+<h2 id="第9章-计算环境安全"><a href="#第9章-计算环境安全" class="headerlink" title="第9章 计算环境安全"></a>第9章 计算环境安全</h2><h3 id="9-1-操作系统安全"><a href="#9-1-操作系统安全" class="headerlink" title="9.1 操作系统安全"></a>9.1 操作系统安全</h3><h3 id="9-2-信息收集与系统"><a href="#9-2-信息收集与系统" class="headerlink" title="9.2 信息收集与系统"></a>9.2 信息收集与系统</h3><h3 id="9-3-恶意代码防护"><a href="#9-3-恶意代码防护" class="headerlink" title="9.3 恶意代码防护"></a>9.3 恶意代码防护</h3><h3 id="9-4-应用安全"><a href="#9-4-应用安全" class="headerlink" title="9.4 应用安全"></a>9.4 应用安全</h3><h3 id="9-5-数据安全"><a href="#9-5-数据安全" class="headerlink" title="9.5 数据安全"></a>9.5 数据安全</h3><hr>
+<h2 id="第10章-软件安全开发"><a href="#第10章-软件安全开发" class="headerlink" title="第10章 软件安全开发"></a>第10章 软件安全开发</h2><h3 id="10-1-软件安全开发"><a href="#10-1-软件安全开发" class="headerlink" title="10.1 软件安全开发"></a>10.1 软件安全开发</h3><h3 id="10-2-软件安全需求及设计"><a href="#10-2-软件安全需求及设计" class="headerlink" title="10.2 软件安全需求及设计"></a>10.2 软件安全需求及设计</h3><h3 id="10-3-软件安全实现"><a href="#10-3-软件安全实现" class="headerlink" title="10.3 软件安全实现"></a>10.3 软件安全实现</h3><h3 id="10-4-软件安全测试"><a href="#10-4-软件安全测试" class="headerlink" title="10.4 软件安全测试"></a>10.4 软件安全测试</h3><h3 id="10-5-软件安全交付"><a href="#10-5-软件安全交付" class="headerlink" title="10.5 软件安全交付"></a>10.5 软件安全交付</h3><hr>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 hjxstart@126.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry"><span class="miit">
+                <img src="/img/gov.png" title="中华人民共和国工业和信息化部">
+                <a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">粤ICP备2021170625号-1</a>
+        </span>
+    
+    ©2019-2022 hjxstart
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("/img/article-list-bg-img.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
