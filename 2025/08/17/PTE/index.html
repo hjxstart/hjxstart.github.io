@@ -238,7 +238,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="72">
-<input type="hidden" id="yelog_site_word_count" value="371.9k">
+<input type="hidden" id="yelog_site_word_count" value="378.2k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -910,12 +910,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2026-04-12 16:50:41'>2025-08-17 11:12</time>
+            发布时间 : <time class="date" title='最后更新: 2026-05-11 18:22:32'>2025-08-17 11:12</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:6.3k</span>
+        <span>字数:6.4k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1348,6 +1348,16 @@ service [start|stop|restatus|reload|status] service_name
 <span class="hljs-comment"># systemctl service_name [start|stop|restatus|reload|status]</span>
 systemctl show firewalld
 systemctl mask firewalld <span class="hljs-comment"># 注销（无法通过命令启动，可以需要unmask找回来启动）</span>
+firewall-cmd --permanent --zone=public --add-rich-rule=<span class="hljs-string">&#x27;rule family=&quot;ipv4&quot; source address=&quot;192.168.1.10&quot; port protocol=tcp port=2049 accept&#x27;</span>
+firewall-cmd --list-all
+firewall-cmd --zone=public --remove-port=8080/tcp --permanent
+firewall-cmd --zone=public --add-port=2049/tcp --permanent
+firewall-cmd --zone=public --remove-source=192.168.1.100 --permanent
+firewall-cmd --zone=public --remove-all-rules --permanment
+firewall-cmd --zone=public --remove-rich-rule=<span class="hljs-string">&#x27;rule family=&quot;ipv4&quot; source address=&quot;192.168.1.10&quot; port port=&quot;2049&quot; protocol=&quot;tcp&quot; accept&#x27;</span> --permanent
+
+
+
 <span class="hljs-comment"># 服务状态</span>
 static : 不可以自己启动，需要enabled服务来唤醒
 mask : 注销，无法启动，可以通过systemctl unmask 恢复原来的状态
