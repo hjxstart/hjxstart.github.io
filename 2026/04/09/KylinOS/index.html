@@ -238,7 +238,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="72">
-<input type="hidden" id="yelog_site_word_count" value="389k">
+<input type="hidden" id="yelog_site_word_count" value="389.1k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -910,7 +910,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2026-05-21 12:26:05'>2026-04-09 17:39</time>
+            发布时间 : <time class="date" title='最后更新: 2026-05-21 12:46:27'>2026-04-09 17:39</time>
         
     </div>
     <div class="article-meta">
@@ -3453,6 +3453,8 @@ tar -xf preinstall.tgz
 bash check.sh  Clusterfile/Clusterfile-3-nfs <span class="hljs-comment"># 执行结果有红色输出时，需解决问题后重新执行检查脚本，直到输出结果没有红</span>
 
 <span class="hljs-comment">## 7. 部署集群</span>
+mount Kylin-Cloud-Native-PLAT-v3.3update1-Release-202409-X86_64.iso /mnt/
+<span class="hljs-built_in">cp</span> /mnt/KYLINCLOUDLICENSE   /opt/mnt
 <span class="hljs-built_in">cd</span> /opt/mnt
 <span class="hljs-built_in">nohup</span> kcctl run -f Clusterfile/Clusterfile-3-nas -l KYLINCLOUDLICENSE &amp;&gt;kcctl.log &amp; <span class="hljs-comment"># KYLINCLOUDLICENSE在虚拟化镜像中</span>
 <span class="hljs-built_in">tail</span> -f kcctl.log
@@ -3499,11 +3501,13 @@ Poc_enabled=<span class="hljs-literal">true</span>
 
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20260521120759876.png"></p>
 <hr>
-<h3 id="7-Q-A"><a href="#7-Q-A" class="headerlink" title="7 Q&amp;A"></a>7 Q&amp;A</h3><pre><code class="hljs bash">
+<h3 id="7-Q-A"><a href="#7-Q-A" class="headerlink" title="7 Q&amp;A"></a>7 Q&amp;A</h3><pre><code class="hljs bash"><span class="hljs-comment">## 1. Waiting kccuser-controller ready</span>
+
 </code></pre>
 
 
 
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20260521123002956.png"></p>
 <hr>
 <h2 id="域控部署"><a href="#域控部署" class="headerlink" title="域控部署"></a>域控部署</h2><pre><code class="hljs bash">
 </code></pre>
