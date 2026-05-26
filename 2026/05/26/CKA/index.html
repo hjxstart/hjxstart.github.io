@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>华为NP网络实验 | 黄金贤的博客</title>
+  <title>CKA | 黄金贤的博客</title>
   <meta name="keywords" content="">
-  <meta name="description" content="华为NP网络实验 | 黄金贤的博客">
+  <meta name="description" content="CKA | 黄金贤的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="WSL安装开启 WSL 功能# 以 管理员身份 运行 PowerShell 或命令提示符。输入以下命令并回车： wsl --install  安装在线版# 查看可用版本： wsl --list --online # 安装指定版本（例如 Debian）： wsl --install -d Debian  安装离线包# 1. 下载离线 Ubuntu Base 镜像 http:&#x2F;&#x2F;cdimage.ubu">
 <meta property="og:type" content="article">
@@ -896,32 +896,24 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-HCNP-Lab" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-CKA" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">华为NP网络实验</h1>
+        <h1 class="article-title">CKA</h1>
     
     <div class="article-meta">
         
         
-        
-        <span class="book">
-            <i class="iconfont icon-category"></i>
-            
-            
-            <a  data-rel="网络">网络</a>
-            
-        </span>
         
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2026-04-12 16:50:41'>2023-06-01 10:46</time>
+            发布时间 : <time class="date" title='最后更新: 2026-05-26 23:29:16'>2026-05-26 23:29</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:692</span>
+        <span>字数:0</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -940,7 +932,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#01-BFD%E5%AE%9E%E9%AA%8C"><span class="toc-text">01 BFD实验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#02-NQA%E5%AF%A6%E9%A9%97"><span class="toc-text">02 NQA實驗</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%A8%A1%E6%9D%BF"><span class="toc-text">实验模板</span></a></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -956,187 +948,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="01-BFD实验"><a href="#01-BFD实验" class="headerlink" title="01 BFD实验"></a>01 BFD实验</h2><ol>
-<li>是什么: BFD可用于端到端双向转发检测的公有协议；</li>
-<li>应用场景: 静态路由的冗余备份场景，实现主备路由切换。</li>
-<li>场景设计: 两个网络A&#x2F;B之间仅存在两条静态路由a&#x2F;b(a为明细路由, b为汇总路由)，BFD可检测a路由之间的联通性，从而联动a路由，实现数据包a&#x2F;b路由的切换。</li>
-</ol>
-<details>
-  <summary>配置概述</summary>
-
-
-  <pre><code class="hljs bash">1. 在AR1路由器上，配置接口IP，和通往2个網絡的靜態路由。
-2. 在AR2路由器上，配置接口IP，配置LoopBack地址模擬其中一個網絡，添加1條靜態路由，啟用BFD和配置AR2/3的a路由的鏈路檢測，配置1條靜態路由並關聯BFD。
-3. 在AR3路由器上，配置接口IP，配置LoopBack地址模擬其中一個網絡，添加1條靜態路由，啟用BFD和配置AR3/2的a路由的鏈路檢測，配置1條靜態路由並關聯BFD。</code></pre>
-
-</details>
-
-<details>
-  <summary>AR1</summary>
-
-
-  <pre><code class="hljs bash"><span class="hljs-comment"># </span>
-system-view
-sysname AR1
-<span class="hljs-comment"># </span>
-interface GigabitEthernet 0/0/0
-ip address 12.1.1.1 24
-<span class="hljs-comment"># </span>
-interface GigabitEthernet 0/0/1
-ip address 13.1.1.1 24
-<span class="hljs-comment"># </span>
-quit
-display ip interface brief
-<span class="hljs-comment"># </span>
-ip route-static 2.2.2.2 32 GigabitEthernet 0/0/0 12.1.1.1
-ip route-static 3.3.3.3 32 GigabitEthernet 0/0/1 13.1.1.1
-<span class="hljs-comment"># </span>
-display ip routing-table protocol static</code></pre>
-
-</details>
-
-<details>
-  <summary>AR2</summary>
-
-
-  <pre><code class="hljs bash"><span class="hljs-comment"># </span>
-system-view
-sysname AR2
-<span class="hljs-comment"># </span>
-interface GigabitEthernet 0/0/0
-ip address 23.1.1.2 24
-<span class="hljs-comment"># </span>
-interface GigabitEthernet 0/0/1
-ip address 12.1.1.2 24
-<span class="hljs-comment"># </span>
-quit
-display ip interface brief
-<span class="hljs-comment">#</span>
-ip route-static 13.1.1.3 24 GigabitEthernet 0/0/1
-ip route-static 3.3.3.0 24 GigbitEthernet 0/0/0 23.1.1.3
-display ip routing-table protocol static
-<span class="hljs-comment">#   </span>
-bfd
-quit
-<span class="hljs-comment"># </span>
-bfd 1 <span class="hljs-built_in">bind</span> peer-ip 13.1.1.3 source-ip 12.1.1.2 auto
-quit
-<span class="hljs-comment"># </span>
-ip route-static 3.3.3.3 32 GigabitEthernet 0/0/1 12.1.1.1 track bfd-session 1
-display ip routing-table protocol static</code></pre>
-
-</details>
-
-<details>
-  <summary>AR3</summary>
-
-
-  <pre><code class="hljs bash"><span class="hljs-comment"># </span>
-system-view
-sysname AR3
-<span class="hljs-comment"># </span>
-interface GigabitEthernet 0/0/0
-ip address 12.1.1.2 24
-<span class="hljs-comment"># </span>
-interface GigabitEthernet 0/0/1
-ip address 23.1.1.2 24
-<span class="hljs-comment"># </span>
-quit
-display ip interface brief
-<span class="hljs-comment">#</span>
-ip route-static 12.1.1.2 24 GigabitEthernet 0/0/0
-ip route-static 2.2.2.0 24 GigbitEthernet 0/0/1 23.1.1.2
-display ip routing-table protocol static
-<span class="hljs-comment"># </span>
-bfd
-quit
-<span class="hljs-comment"># </span>
-bfd 1 <span class="hljs-built_in">bind</span> peer-ip 12.1.1.2 source-ip 13.1.1.3 auto
-quit
-<span class="hljs-comment"># </span>
-ip route-static 2.2.2.2 32 GigabitEthernet 0/0/0 13.1.1.1 track bfd-session 1
-display ip routing-table protocol static</code></pre>
-
-</details>
-
-<details>
-  <summary>测试验证</summary>
-
-
-  <pre><code class="hljs bash">tracert -a 2.2.2.2 3.3.3.3
-ping -c 10000 -a 2.2.2.2 3.3.3.3</code></pre>
-
-</details>
-
-<hr>
-<h2 id="02-NQA實驗"><a href="#02-NQA實驗" class="headerlink" title="02 NQA實驗"></a>02 NQA實驗</h2><p>实验概述。</p>
-<p><img src="/" alt="实验拓扑"></p>
-<details>
-  <summary>配置概述</summary>
-
-
-  <pre><code class="hljs bash">1.</code></pre>
-
-</details>
-
-<details>
-  <summary>AR1</summary>
-
-
-  <pre><code class="hljs bash"><span class="hljs-comment"># NQA</span>
-nqa test-instance Admin Tigerlab
-test-type icmp
-destination-address ipv4 13.1.1.3
-source-address ipv4 12.1.1.2
-threshold rtd 1
-frequency 5
-<span class="hljs-built_in">timeout</span> 2
-probe-count 1
-start now
-
-
-
-<span class="hljs-comment"># 聯動方法和BFD一樣，檢查命令如下</span>
-display nqa results
-display nqa <span class="hljs-built_in">history</span>
-tracert -a 2.2.2.2 3.3.3.3</code></pre>
-
-</details>
-
-<details>
-  <summary>测试验证</summary>
-
-
-</details>
-
-<hr>
-<h2 id="实验模板"><a href="#实验模板" class="headerlink" title="实验模板"></a>实验模板</h2><p>实验概述。</p>
-<p><img src="/" alt="实验拓扑"></p>
-<details>
-  <summary>配置概述</summary>
-
-
-  <pre><code class="hljs bash">1.</code></pre>
-
-</details>
-
-<details>
-  <summary>AR1</summary>
-
-
-  <pre><code class="hljs bash"><span class="hljs-comment"># </span>
-<span class="hljs-built_in">enable</span>
-configure terminal
-hostname AR1</code></pre>
-
-</details>
-
-<details>
-  <summary>测试验证</summary>
-
-
-</details>
-
+        
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 hjxstart@126.com </span>
     </div>
