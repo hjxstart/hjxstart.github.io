@@ -6,15 +6,15 @@
   <meta name="keywords" content="">
   <meta name="description" content="KylinOS | 黄金贤的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="颠覆脑力，让你更聪明的哈佛学习力1 认知升级篇# 21世纪的成功的四大特性 不可预测--快 无法复制 百发齐放--优秀的标准不再单一，只要有一技之长，每一个人成功的可能性非常宽广 难以跨越--阶级的难以跨越是表象，而思维层次差距是阶级难以跨越的背后原因 # 学习力 我们过多的纠结于知识内容本身的记忆，过多的关注如何模仿成功人士的行为，过少的去忽略学习背后的思考和思维逻辑；所以21世纪的学习力应该是">
+<meta name="description" content="第1章 容器技术入门1.1 Linux基础Linux权限管理## 所有者权限: 文件或目录的创建者拥有的权限   ## 组权限: 同组用户拥有的权限   ## 特殊权限: SUID, SGID, Sticky Bit   ## 其他用户权限: 非所有者和同组用户的权限    Linux用户和组管理## 创建用户: useradd命令创建新用户账户 useradd test # 创建test用户 c">
 <meta property="og:type" content="article">
-<meta property="og:title" content="学习力">
-<meta property="og:url" content="https://hjxstart.github.io/2026/06/16/%E5%AD%A6%E4%B9%A0%E5%8A%9B/index.html">
+<meta property="og:title" content="CKA">
+<meta property="og:url" content="https://hjxstart.github.io/2026/05/26/CKA/index.html">
 <meta property="og:site_name" content="黄金贤的博客">
-<meta property="og:description" content="颠覆脑力，让你更聪明的哈佛学习力1 认知升级篇# 21世纪的成功的四大特性 不可预测--快 无法复制 百发齐放--优秀的标准不再单一，只要有一技之长，每一个人成功的可能性非常宽广 难以跨越--阶级的难以跨越是表象，而思维层次差距是阶级难以跨越的背后原因 # 学习力 我们过多的纠结于知识内容本身的记忆，过多的关注如何模仿成功人士的行为，过少的去忽略学习背后的思考和思维逻辑；所以21世纪的学习力应该是">
+<meta property="og:description" content="第1章 容器技术入门1.1 Linux基础Linux权限管理## 所有者权限: 文件或目录的创建者拥有的权限   ## 组权限: 同组用户拥有的权限   ## 特殊权限: SUID, SGID, Sticky Bit   ## 其他用户权限: 非所有者和同组用户的权限    Linux用户和组管理## 创建用户: useradd命令创建新用户账户 useradd test # 创建test用户 c">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-06-16T13:00:09.000Z">
-<meta property="article:modified_time" content="2026-06-22T14:53:25.995Z">
+<meta property="article:published_time" content="2026-05-26T15:29:16.000Z">
+<meta property="article:modified_time" content="2026-06-22T12:07:24.564Z">
 <meta property="article:author" content="黄金贤">
 <meta property="article:tag" content="计算机网络 数据库 操作系统 数据结构 算法 Java Nodejs">
 <meta name="twitter:card" content="summary">
@@ -236,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="74">
-<input type="hidden" id="yelog_site_word_count" value="433.6k">
+<input type="hidden" id="yelog_site_word_count" value="433.1k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -924,12 +924,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2026-06-22 19:56:39'>2026-04-09 17:39</time>
+            发布时间 : <time class="date" title='最后更新: 2026-06-23 11:40:37'>2026-04-09 17:39</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:59.4k</span>
+        <span>字数:59.2k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1851,39 +1851,42 @@ dracut --force <span class="hljs-comment"># 需要执行该命令重新生成ini
 <h3 id="显示隐藏文件"><a href="#显示隐藏文件" class="headerlink" title="显示隐藏文件"></a>显示隐藏文件</h3><p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251106101931.png"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20251106102112.png"></p>
 <h3 id="2403-arm服务器系统安装"><a href="#2403-arm服务器系统安装" class="headerlink" title="2403 arm服务器系统安装"></a>2403 arm服务器系统安装</h3><pre><code class="hljs bash">Kylin-Server-V10-SP3-2403-Release-20240426-ARM64.iso
-<span class="hljs-comment">## 挂载原生镜像，拷贝镜像文件</span>
-
-<span class="hljs-comment">## 制作ks文件模板</span>
-
-<span class="hljs-comment">## 修改EFI引导文件</span>
-<span class="hljs-comment"># Arm架构系统只通过EFI引导，不需要配置isolinux.cfg</span>
-/opt/isobuid/x86-sp3/EFI/BOOT/grub.cfg配置文件：
-
-
-<span class="hljs-comment">## 封装系统</span>
-mkisofs  -J -R -V Kylin-Server-10 -eltorito-alt-boot -e images/efiboot.img  -no-emul-boot  -o /root/Kylin-Server-10-SP2-x86-Release-Build09-20210524.iso  .
-mkisofs -v -U -J -R -T -V <span class="hljs-string">&#x27;Kylin-Server-10&#x27;</span> -m repoview -m boot.iso -eltorito-alt-boot -e images/efiboot.img -no-emul-boot -o /root/Kylin-Server-10-SP2-x86-Release-Build09-20210524.iso  .
-
+<span class="hljs-comment">## 1. 挂载原生镜像，拷贝镜像文件</span>
+mount Kylin-Server-V10-SP3-2403-Release-20240426-ARM64.iso /mnt
+<span class="hljs-built_in">mkdir</span> -p /opt/iso_workspace/2403-sp3-arm <span class="hljs-comment"># 创建buid镜像的目录</span>
+rsync -av /mnt/ /opt/iso_workspace/2403-sp3-arm/ <span class="hljs-comment"># 拷贝镜像文件</span>
+<span class="hljs-comment">## 2. 制作ks文件模板</span>
+<span class="hljs-comment"># 将ks文件模板放在/opt/isobuid/x86-sp3/目录下，并修改内容 vim ks.cfg</span>
+<span class="hljs-built_in">cp</span> /root/anaconda-ks.cfg  /opt/iso_workspace/2403-sp3-arm/ks.cfg
+<span class="hljs-comment">## 3. 修改EFI引导文件的引导方式配置： vim /opt/iso_workspace/2403-sp3-arm/EFI/BOOT/grub.cfg</span>
+inst.ks=hd:LABEL=Kylin-Server-10:/ks.cfg 
+inst.repo=hd:LABEL=Kylin-Server-10
+<span class="hljs-comment"># 最终版本</span>
+linux /images/pxeboot/vmlinuz inst.stage2=hd:LABEL=Kylin-Server-10 ro inst.ks=hd:LABEL=Kylin-Server-10:/ks.cfg inst.repo=hd:LABEL=Kylin-Server-10 ro console=tty0 video=efifb:off video=VGA-1:640x480-32@60me
+<span class="hljs-comment">## 4. 封装系统</span>
+mkisofs -v -U -J -joliet-long -R -T -m repoview \
+-e images/efiboot.img -no-emul-boot \
+-V <span class="hljs-string">&quot;Kylin-Server-10&quot;</span> \
+-o /opt/build/Kylin-Server-V10-SP3-2403-Release-20240426-ARM64.iso \
+/opt/iso_workspace/2403-sp3-arm/
 <span class="hljs-comment">## 安装验证</span>
-
-
 </code></pre>
 
 <h3 id="2403-x86服务器系统安装"><a href="#2403-x86服务器系统安装" class="headerlink" title="2403 x86服务器系统安装"></a>2403 x86服务器系统安装</h3><pre><code class="hljs bash">Kylin-Server-V10-SP3-2403-Release-20240426-X86_64.iso
 <span class="hljs-comment">## 1. 挂载原生镜像，拷贝镜像文件</span>
 mount Kylin-Server-V10-SP3-General-Release-2303-X86_64.iso /mnt
-<span class="hljs-built_in">mkdir</span> /opt/isobuid/x86-sp3 <span class="hljs-comment"># 创建buid镜像的目录</span>
+<span class="hljs-built_in">mkdir</span> /opt/iso_workspace/2403-sp3-x86 <span class="hljs-comment"># 创建buid镜像的目录</span>
 rsync -av /mnt/ /opt/iso_workspace/2403-sp3-x86/ <span class="hljs-comment"># 拷贝镜像文件</span>
 <span class="hljs-comment">## 2. 制作ks文件模板</span>
-<span class="hljs-comment"># 将ks文件模板放在/opt/isobuid/x86-sp3/目录下，并修改内容 vim ks.cfg</span>
+<span class="hljs-comment"># 将ks文件模板放在/opt/iso_workspace/2403-sp3-x86目录下，并修改内容 vim ks.cfg</span>
 <span class="hljs-built_in">cp</span> /root/anaconda-ks.cfg  /opt/iso_workspace/2403-sp3-x86/ks.cfg
 <span class="hljs-comment">## 3. 修改引导文件</span>
 <span class="hljs-comment"># mbr引导方式配置：</span>
-vim /opt/isobuid/x86-sp3/isolinux/isolinux.cfg文件，
+vim /opt/iso_workspace/2403-sp3-x86/isolinux/isolinux.cfg文件，
 inst.ks=hd:LABEL=Kylin-Server-10:/ks.cfg     <span class="hljs-comment">#通过 inst.ks关键字指明ks.cfg文件位置</span>
 inst.repo=hd:LABEL=Kylin-Server-10           <span class="hljs-comment">#通过 inst.repo关键字指明安装源是镜像源</span>
 <span class="hljs-comment"># EFI引导方式配置：</span>
-vim /opt/isobuid/x86-sp3/EFI/BOOT/grub.cfg，添加自定义部分。
+vim /opt/iso_workspace/2403-sp3-x86/EFI/BOOT/grub.cfg，添加自定义部分。
 inst.ks=hd:LABEL=Kylin-Server-10:/ks.cfg 
 inst.repo=hd:LABEL=Kylin-Server-10
 linuxefi /images/pxeboot/vmlinuz inst.stage2=hd:LABEL=Kylin-Server-10 ro inst.ks=hd:LABEL=Kylin-Server-10:/ks.cfg inst.repo=hd:LABEL=Kylin-Server-10 quiet <span class="hljs-comment"># 最终版本</span>
@@ -1898,25 +1901,7 @@ mkisofs -v -U -J -joliet-long -R -T -m repoview \
 -V <span class="hljs-string">&quot;Kylin-Server-10&quot;</span> \
 -o /opt/build/Kylin-Server-V10-SP3-2403-Release-20240426-X86_64.iso \
 /opt/iso_workspace/2403-sp3-x86/
-<span class="hljs-comment"># 命令参数简介：</span>
-<span class="hljs-built_in">cd</span> /app/iso
-mkisofs -v -U -J -R -T -m repoview -m boot.iso -b isolinux/isolinux.bin -c isolinux/boot.cat  -no-emul-boot -boot-load-size 4 -boot-info-table -eltorito-alt-boot -e images/efiboot.img  -no-emul-boot  -V Kylin-Server-10 -o /root/Auto-Kylin-Server-V10-SP3-General-Release-2303-X86_64.iso  .
--o  指定映像文件的名称。 
--b  指定在制作可开机光盘时所需的开机映像文件。 
--c  制作可开机光盘时，会将开机映像文件中的no-eltorito-catalog全部内容作成一个文件。
--no-emul-boot  非模拟模式启动。
--boot-load-size 4   设置载入部分的数量。
--boot-info-table 在启动的图像中显示信息。
--joliet-long   使用 joliet 格式的目录与文件名称，长文件名支持。 
--R 或 -rock    使用 Rock RidgeExtensions 。
--J 或 -joliet    使用 Joliet 格式的目录与文件名称。 
--v 或 -verbose    执行时显示详细的信息。 
--T 或-translation-table    建立文件名的转换表，适用于不支持 Rock Ridge Extensions 的系统上。
--V  指定光盘label 
-
 <span class="hljs-comment">## 安装验证</span>
-
-
 </code></pre>
 
 
