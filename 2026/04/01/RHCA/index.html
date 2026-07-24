@@ -243,7 +243,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="77">
-<input type="hidden" id="yelog_site_word_count" value="482.8k">
+<input type="hidden" id="yelog_site_word_count" value="485k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -955,7 +955,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2026-07-21 15:57:12'>2026-04-01 09:25</time>
+            发布时间 : <time class="date" title='最后更新: 2026-07-24 16:49:26'>2026-04-01 09:25</time>
         
     </div>
     <div class="article-meta">
@@ -1054,7 +1054,6 @@ ss -tulnp | grep 8080
 rpm -qa | grep python
 dpkg -l | grep python
 
---------------------------------------------------------------------
 
 <span class="hljs-comment">### sed: sed [选项] &#x27;地址 + 操作命令&#x27; 文件名</span>
 <span class="hljs-comment">## 【文本替换】</span>
@@ -1091,7 +1090,7 @@ sed -i <span class="hljs-string">&#x27;/ServerName/a \ServerAlias www.example.co
 <span class="hljs-comment"># 在文件的最开头（第 1 行上方）插入一行配置</span>
 sed -i <span class="hljs-string">&#x27;1i \# Updated by Admin&#x27;</span> config.conf
 
---------------------------------------------------------------------
+
 
 <span class="hljs-comment">### awk -F &#x27;分隔符&#x27; &#x27;过滤条件 &#123; 执行动作 &#125;&#x27; 文件名</span>
 <span class="hljs-comment"># 打印第 5 行到第 10 行</span>
@@ -1119,8 +1118,9 @@ awk <span class="hljs-string">&#x27;$9 == 200 &#123;print $7&#125;&#x27;</span> 
 <span class="hljs-built_in">ls</span> -l | awk <span class="hljs-string">&#x27;BEGIN &#123;sum=0&#125; &#123;sum += $5&#125; END &#123;print &quot;Total Size:&quot;, sum/1024/1024, &quot;MB&quot;&#125;&#x27;</span>
 <span class="hljs-comment"># 2. 统计 Web 日志中 200 状态码与 404 状态码的数量</span>
 awk <span class="hljs-string">&#x27;$9 == 200 &#123;c200++&#125; $9 == 404 &#123;c404++&#125; END &#123;print &quot;200 Success:&quot;, c200, &quot;| 404 Errors:&quot;, c404&#125;&#x27;</span> access.log
+</code></pre>
 
-<span class="hljs-comment">## 【基于数组（Array）的高级频次统计】</span></code></pre>
+
 
 
 
