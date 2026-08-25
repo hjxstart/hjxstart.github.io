@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>STP | 黄金贤的博客</title>
+  <title>English | 黄金贤的博客</title>
   <meta name="keywords" content="">
-  <meta name="description" content="STP | 黄金贤的博客">
+  <meta name="description" content="English | 黄金贤的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="修改静态IP# sudo vim &#x2F;etc&#x2F;netplan&#x2F;00-installer-config.yaml network:   version: 2   renderer: networkd   ethernets:     ens33:       dhcp4: no       addresses:         - 192.168.44.81&#x2F;24       routes:">
 <meta property="og:type" content="article">
@@ -942,9 +942,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-STP" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-English" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">STP</h1>
+        <h1 class="article-title">English</h1>
     
     <div class="article-meta">
         
@@ -954,7 +954,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="网络">网络</a>
+            <a  data-rel="读书">读书</a>
             
         </span>
         
@@ -962,12 +962,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2026-04-12 16:50:41'>2024-01-27 14:01</time>
+            发布时间 : <time class="date" title='最后更新: 2026-08-25 21:47:56'>2026-08-25 20:57</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:312</span>
+        <span>字数:54</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -986,7 +986,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#NA%E5%A4%8D%E4%B9%A0"><span class="toc-text">NA复习</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#NA%E5%AE%9E%E9%AA%8C"><span class="toc-text">NA实验</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E6%A0%91-Spanning-tree-protocal"><span class="toc-text">生成树 Spanning tree protocal</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">使用场景</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E5%B1%82%E7%8E%AF%E8%B7%AF"><span class="toc-text">二层环路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#STP%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-text">STP的作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#STP%E7%9A%84%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86"><span class="toc-text">STP的运行原理</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#English"><span class="toc-text">English</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A5%BD%E5%A5%BD%E8%AF%BB%E4%B9%A6"><span class="toc-text">好好读书</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Data1"><span class="toc-text">Data1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Data2"><span class="toc-text">Data2</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E9%A1%B9%E9%80%89%E6%8B%A9"><span class="toc-text">单项选择</span></a></li></ol></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1002,75 +1002,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="NA复习"><a href="#NA复习" class="headerlink" title="NA复习"></a>NA复习</h1><ol>
-<li>IP规划. IP地址的作用是寻址；</li>
-<li>路由技术. 高速路上的路标；路由形成的3种方式，直连路由&#x2F;静态路由&#x2F;动态路由.</li>
-<li>静态路由</li>
-<li>OSPF协议</li>
-<li>VLAN技术</li>
-<li>VLAN间通信</li>
-<li>ACL技术</li>
-<li>NAT技术</li>
-</ol>
-<pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">关闭系统日志</span>
-undo info-center enable
-<span class="hljs-meta prompt_"># </span><span class="language-bash">修改系统语言</span>
-<span class="hljs-meta prompt_">&gt; </span><span class="language-bash">language-mode Chinese</span>
-language-shell复制代码</code></pre>
+        <h1 id="English"><a href="#English" class="headerlink" title="English"></a>English</h1><h2 id="好好读书"><a href="#好好读书" class="headerlink" title="好好读书"></a>好好读书</h2><h3 id="Data1"><a href="#Data1" class="headerlink" title="Data1"></a>Data1</h3><h3 id="Data2"><a href="#Data2" class="headerlink" title="Data2"></a>Data2</h3><h4 id="单项选择"><a href="#单项选择" class="headerlink" title="单项选择"></a>单项选择</h4><pre><code class="hljs bash"><span class="hljs-comment">## 1. ____, when I arrived she was just leaving, so we only had time for a few words.</span>
+A. Unluckily	B. Luckily    C. Happily    D. Unfortunate
+<span class="hljs-comment"># 答案: A.  Unluckily</span>
+
+<span class="hljs-comment">## 2. ____reading is faster than reading aloud.</span>
+A. Silent    B. Still    C. Quiet    D. Calm
+
+</code></pre>
 
 
 
-<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20240225140752.png" alt="NA实验"></p>
-<p>NA实验</p>
-<h4 id="NA实验"><a href="#NA实验" class="headerlink" title="NA实验"></a>NA实验</h4><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">access</span>
-port link-type access
-port default vlan 10
-<span class="hljs-meta prompt_"></span>
-<span class="hljs-meta prompt_"># </span><span class="language-bash">trunk</span>
-port link-type trunk
-port trunk allow-pass vlan all
-<span class="hljs-meta prompt_"></span>
-<span class="hljs-meta prompt_"># </span><span class="language-bash">vlanif</span>
-int vlanif 10
-ip add 10.1.10.254 24
-<span class="hljs-meta prompt_"></span>
-<span class="hljs-meta prompt_"># </span><span class="language-bash">单臂路由子接口</span>
-int g0/0/1.30
-dot1q termination vid 30
-arp broadcast enable
-ip address 10.1.30.254 24
-<span class="hljs-meta prompt_"></span>
-<span class="hljs-meta prompt_"># </span><span class="language-bash">OSPF</span>
-ospf router-id 2.2.2.2
-area 0
-interface g0/0/1
-ospf enable area 0
-interface vlanif 10
-ospf enable area 0
-interface g0/0/1.30
-ospf enable area 0
-<span class="hljs-meta prompt_"></span>
-<span class="hljs-meta prompt_"># </span><span class="language-bash">静态路由</span>
-ip route-static 0.0.0.0 0 100.1.1.1
-<span class="hljs-meta prompt_"></span>
-<span class="hljs-meta prompt_"># </span><span class="language-bash">默认路由下放</span>
-ospf
-default-route-advertise
-<span class="hljs-meta prompt_"></span>
-<span class="hljs-meta prompt_"># </span><span class="language-bash">NAT</span>
-acl 2000
-rule permit source any
-quit
-int g0/0/0
-nat outbound 2000
-language-shell复制代码</code></pre>
 
-<h1 id="生成树-Spanning-tree-protocal"><a href="#生成树-Spanning-tree-protocal" class="headerlink" title="生成树 Spanning tree protocal"></a>生成树 Spanning tree protocal</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><ol>
-<li>现网环境一般不会使用，一般默认设备会启动MSTP.</li>
-<li>解决二层环路，MAC地址漂移。二层环路的原因是交换机尽力而为的</li>
-</ol>
-<h2 id="二层环路"><a href="#二层环路" class="headerlink" title="二层环路"></a>二层环路</h2><h2 id="STP的作用"><a href="#STP的作用" class="headerlink" title="STP的作用"></a>STP的作用</h2><h2 id="STP的运行原理"><a href="#STP的运行原理" class="headerlink" title="STP的运行原理"></a>STP的运行原理</h2><hr>
-<p>s</p>
+
+
+
+
+
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 hjxstart@126.com </span>
