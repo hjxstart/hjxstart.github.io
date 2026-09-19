@@ -964,7 +964,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2026-09-19 23:01:38'>2026-04-09 17:39</time>
+            发布时间 : <time class="date" title='最后更新: 2026-09-19 23:06:49'>2026-04-09 17:39</time>
         
     </div>
     <div class="article-meta">
@@ -6057,40 +6057,39 @@ kylin-software-properties_0.0.1.1-0k5.10_arm64.deb
 步骤5.新建事务
 事务管理--&gt;事务--&gt;新建事务--&gt;自定义名称；类型选择标准；预计推送时间默认不动；推送范围，按实际情况来即可--&gt;点击“下一步”--&gt;节点添加，点击节点名称输入框会提示已创建节点，选择自己所需的即可--&gt;点击“下一步”--&gt;关联机器页面需要按需选择，一般不带域控的私有化，只需要新建机器即可，带麒麟域控的更新平台可以选择组织或者分组，此处按实际来即可，本次标准案例，使用机器，填入实际的桌面客户端服务序列号（<span class="hljs-built_in">cat</span>  /etc/.kyinfo）即可--&gt;点击“创建”。
 步骤6.启动事务
-事务管理--&gt;事务--&gt;选择自己需要的事务点击右边的“启用<span class="hljs-string">&#x27;即可。</span>
-<span class="hljs-string"></span>
-<span class="hljs-string"></span>
-<span class="hljs-string">## 麒麟软件更新管理平台V2.2(全ARM架构)【系统更新完成后，信息集合以表格形式汇总展示】操作方法</span>
-<span class="hljs-string">【使用场景】</span>
-<span class="hljs-string">系统更新完成之后，需要将其信息集合导出为一个表格进行查看。</span>
-<span class="hljs-string"></span>
-<span class="hljs-string">【操作步骤】</span>
-<span class="hljs-string">进入更新管理平台所在的服务器，运行命令：docker exec -it kylin-system-upgrade-mariadb bash；</span>
-<span class="hljs-string">进入容器之后，运行命令：mysqldump -u root -p  --databases system_upgrade  &gt; ./su-xxx.sql；</span>
-<span class="hljs-string">输入密码：Bigdata*20230413*mariadb，要来回两次，第一次可能会报错，再运行一次即可；</span>
-<span class="hljs-string">接着运行命令：exit，退出容器，再运行命令：docker cp kylin-system-upgrade-mariadb:/su-xxx.sql ./，将sql文件复制到本机，然后通过第三方工具将 sql 转成 excel。</span>
-<span class="hljs-string">如下是可能会用的相关表的释义：</span>
-<span class="hljs-string">machine 机器</span>
-<span class="hljs-string">node 节点</span>
-<span class="hljs-string">transaction 事务</span>
-<span class="hljs-string">txn_mtm_machine_log 推送日志</span>
-<span class="hljs-string">这里可以使用Navicat Premium工具或者其他第三方工具将其转成所需excel。</span>
-<span class="hljs-string"></span>
-<span class="hljs-string"></span>
-<span class="hljs-string">## 麒麟软件更新管理平台V2.2(全X86/ARM架构)【客户端主动安装服务端推送的强制更新】操作方法</span>
-<span class="hljs-string">【使用场景】</span>
-<span class="hljs-string">在麒麟软件更新管理平台中，创建事务并推送强制更新后，需桌面客户端主动检测强制更新的获取是否正常，而不是等待任务自动获取更新。</span>
-<span class="hljs-string">【操作步骤】</span>
-<span class="hljs-string">在银河麒麟桌面操作系统上，打开终端，输入kylin-background-upgrade命令。</span>
-<span class="hljs-string"></span>
-<span class="hljs-string"></span>
-<span class="hljs-string">## 麒麟软件更新管理平台V2.2(全架构)【客户端查看服务端推送的强制更新包列表方法】</span>
-<span class="hljs-string">服务端推送的强制更新包列表存储于客户端本地文件：</span>
-<span class="hljs-string">/var/lib/kylin-software-properties/template/crucial.list</span>
-<span class="hljs-string">可以通过终端查看列表：</span>
-<span class="hljs-string">cat /var/lib/kylin-software-properties/template/crucial.list</span>
-<span class="hljs-string"></span>
-<span class="hljs-string"></span></code></pre>
+事务管理--&gt;事务--&gt;选择自己需要的事务点击右边的启用即可。
+
+
+<span class="hljs-comment">## 麒麟软件更新管理平台V2.2(全ARM架构)【系统更新完成后，信息集合以表格形式汇总展示】操作方法</span>
+【使用场景】
+系统更新完成之后，需要将其信息集合导出为一个表格进行查看。
+
+【操作步骤】
+进入更新管理平台所在的服务器，运行命令：docker <span class="hljs-built_in">exec</span> -it kylin-system-upgrade-mariadb bash；
+进入容器之后，运行命令：mysqldump -u root -p  --databases system_upgrade  &gt; ./su-xxx.sql；
+输入密码：Bigdata*20230413*mariadb，要来回两次，第一次可能会报错，再运行一次即可；
+接着运行命令：<span class="hljs-built_in">exit</span>，退出容器，再运行命令：docker <span class="hljs-built_in">cp</span> kylin-system-upgrade-mariadb:/su-xxx.sql ./，将sql文件复制到本机，然后通过第三方工具将 sql 转成 excel。
+如下是可能会用的相关表的释义：
+machine 机器
+node 节点
+transaction 事务
+txn_mtm_machine_log 推送日志
+这里可以使用Navicat Premium工具或者其他第三方工具将其转成所需excel。
+
+
+<span class="hljs-comment">## 麒麟软件更新管理平台V2.2(全X86/ARM架构)【客户端主动安装服务端推送的强制更新】操作方法</span>
+【使用场景】
+在麒麟软件更新管理平台中，创建事务并推送强制更新后，需桌面客户端主动检测强制更新的获取是否正常，而不是等待任务自动获取更新。
+【操作步骤】
+在银河麒麟桌面操作系统上，打开终端，输入kylin-background-upgrade命令。
+
+
+<span class="hljs-comment">## 麒麟软件更新管理平台V2.2(全架构)【客户端查看服务端推送的强制更新包列表方法】</span>
+服务端推送的强制更新包列表存储于客户端本地文件：
+/var/lib/kylin-software-properties/template/crucial.list
+可以通过终端查看列表：
+<span class="hljs-built_in">cat</span> /var/lib/kylin-software-properties/template/crucial.list
+</code></pre>
 
 
 
@@ -6112,10 +6111,10 @@ bash ./shell/main.sh</code></pre>
 1. 软件商店的包名，
 
 <span class="hljs-comment"># 更新组包</span>
-<span class="hljs-string">&#x27;kylin-update-desktop-system&#x27;</span>:系统更新
-<span class="hljs-string">&#x27;kylin-update-desktop-quality&#x27;</span>:质量更新
-<span class="hljs-string">&#x27;kylin-update-desktop-safety&#x27;</span>:安全更新
-<span class="hljs-string">&#x27;kylin-update-desktop-urgency&#x27;</span>:关键更新</code></pre>
+kylin-update-desktop-system:系统更新
+kylin-update-desktop-quality:质量更新
+kylin-update-desktop-safety:安全更新
+kylin-update-desktop-urgency:关键更新</code></pre>
 
 <h3 id="https"><a href="#https" class="headerlink" title="https"></a>https</h3><pre><code class="hljs bash">1. 替换nginx的ssl证书
 2. 重启 kylin-system-upgrade-nginx 容器
@@ -6123,7 +6122,6 @@ bash ./shell/main.sh</code></pre>
 默认 更新管理平台有自签证书，默认支持 https 和 http 共存，软件商店不行。</code></pre>
 
 <p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20260919225016870.png"></p>
-<hr>
 <h1 id="五、HA高可用"><a href="#五、HA高可用" class="headerlink" title="五、HA高可用"></a>五、HA高可用</h1><h2 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h2><pre><code class="hljs bash"><span class="hljs-comment"># 至少需要 2 个节点，节点可以是物理服务器和虚拟机，每个节点至少需要 2 块网卡做心跳与业务网卡；</span>
 <span class="hljs-comment"># [可选]建议使用一台 SAN/NAS/ISCSI/NFS 存储作为数据共享存储空间；</span>
 <span class="hljs-comment"># [可选]提供电源管理设备。</span>
