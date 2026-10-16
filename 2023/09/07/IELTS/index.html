@@ -6,21 +6,18 @@
   <meta name="keywords" content="">
   <meta name="description" content="IELTS | 黄金贤的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="概念第1章 网络信息安全概述  3-11. 网络空间: 它是国家继陆、海、空、天四个疆域之后的 &quot;第五疆域&quot;。 2. 网络信息安全基本属性: &quot;机密性&quot;(对应涉密), &quot;完整性&quot;(对应篡改), &quot;可用性&quot;(对应破坏), 抗抵赖性, 可控性 3. &quot;防御、监测、应急、恢复（口诀: 房间积灰），被称为网络安全保障">
+<meta name="description" content="修改静态IP# sudo vim &#x2F;etc&#x2F;netplan&#x2F;00-installer-config.yaml network:   version: 2   renderer: networkd   ethernets:     ens33:       dhcp4: no       addresses:         - 192.168.44.81&#x2F;24       routes:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="信息安全工程师">
-<meta property="og:url" content="https://hjxstart.github.io/2026/10/02/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%B7%A5%E7%A8%8B%E5%B8%88/index.html">
+<meta property="og:title" content="Ubuntu">
+<meta property="og:url" content="https://hjxstart.github.io/2026/08/15/Ubuntu/index.html">
 <meta property="og:site_name" content="黄金贤的博客">
-<meta property="og:description" content="概念第1章 网络信息安全概述  3-11. 网络空间: 它是国家继陆、海、空、天四个疆域之后的 &quot;第五疆域&quot;。 2. 网络信息安全基本属性: &quot;机密性&quot;(对应涉密), &quot;完整性&quot;(对应篡改), &quot;可用性&quot;(对应破坏), 抗抵赖性, 可控性 3. &quot;防御、监测、应急、恢复（口诀: 房间积灰），被称为网络安全保障">
+<meta property="og:description" content="修改静态IP# sudo vim &#x2F;etc&#x2F;netplan&#x2F;00-installer-config.yaml network:   version: 2   renderer: networkd   ethernets:     ens33:       dhcp4: no       addresses:         - 192.168.44.81&#x2F;24       routes:">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261008180956851.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261015121719049.png">
-<meta property="article:published_time" content="2026-10-02T01:41:17.000Z">
-<meta property="article:modified_time" content="2026-10-15T13:57:54.631Z">
+<meta property="article:published_time" content="2026-08-15T03:40:23.000Z">
+<meta property="article:modified_time" content="2026-08-15T04:06:21.270Z">
 <meta property="article:author" content="黄金贤">
 <meta property="article:tag" content="计算机网络 数据库 操作系统 数据结构 算法 Java Nodejs">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261008180956851.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -239,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="80">
-<input type="hidden" id="yelog_site_word_count" value="561.9k">
+<input type="hidden" id="yelog_site_word_count" value="563.2k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -973,12 +970,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2026-10-15 20:59:09'>2023-09-07 17:57</time>
+            发布时间 : <time class="date" title='最后更新: 2026-10-16 12:40:56'>2023-09-07 17:57</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:18.4k</span>
+        <span>字数:19.4k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -2763,7 +2760,7 @@ Eg: idea, belief, fact, truth, problem, news, evidence.
 3. 分词: 现在分词: doing, 过去分词: <span class="hljs-keyword">done</span>
 </code></pre>
 
-<h4 id="to-to-不定式作成分"><a href="#to-to-不定式作成分" class="headerlink" title="to to 不定式作成分"></a>to to 不定式作成分</h4><pre><code class="hljs bash"><span class="hljs-comment">### 1. 把不定式 to do 直接放在句首的主语位置 (区分主语从句)</span>
+<h4 id="to-to-不定式作成分"><a href="#to-to-不定式作成分" class="headerlink" title="to to 不定式作成分"></a>to to 不定式作成分</h4><pre><code class="hljs bash"><span class="hljs-comment">#### 一. 把不定式 to do 直接放在句首的主语位置 (区分主语从句)</span>
 It is + adj + to <span class="hljs-keyword">do</span> <span class="hljs-comment"># 做...事情是...</span>
 Eg: To see is to believe. -&gt; It is difficult to know oneself. <span class="hljs-comment"># It是形式主语, to know oneself是to do 不定式作主语。</span>
 1. 不定式: <span class="hljs-string">&#x27;It is important to develop&#x27;</span> critical thinking skills at an early age.
@@ -2790,8 +2787,8 @@ Eg: It is essential to invest <span class="hljs-keyword">in</span> public edcati
 Eg: It is crucial to provide equal access to quality education <span class="hljs-keyword">for</span> all children.
 
 
-<span class="hljs-comment">### 2. to do 不定式作宾语</span>
-<span class="hljs-comment">## 1 动词 + to do (雅思口语重点)</span>
+<span class="hljs-comment">#### 二. to do 不定式作宾语</span>
+<span class="hljs-comment">### 1 动词 + to do (雅思口语重点)</span>
 常用: agree, aim, ask, choose, decide, pretend, expect, hope, learn, manage... (<span class="hljs-string">&#x27;搭配pdf总结&#x27;</span>)
 Eg: I <span class="hljs-string">&#x27;hope to see&#x27;</span> you again.
 	She <span class="hljs-string">&#x27;decided to take&#x27;</span> part <span class="hljs-keyword">in</span> the competition.
@@ -2809,6 +2806,111 @@ Eg: I managed to balance my study and work during the busy semester.
 - through <span class="hljs-comment"># 通过</span>
 - daily parctice <span class="hljs-comment"># 日常练习</span>
 Eg: I hope to improve my English speaking skills through daily practice.
+
+<span class="hljs-comment">### 2 动词 + 疑问句 + to do  (雅思口语重点)</span>
+在一些动词后，可以在连接代词 (what, <span class="hljs-built_in">who</span>, <span class="hljs-built_in">which</span>) 或 连接副词 (how, when, <span class="hljs-built_in">where</span>)后面可以接一个不定式。
+Eg: <span class="hljs-string">&#x27;I wonder who to invite&#x27;</span>.
+	<span class="hljs-string">&quot;I&#x27;m not sure where&quot;</span> to find reliable information online.
+<span class="hljs-comment">## Make setence2:</span>
+<span class="hljs-comment"># 1. 许多学生不确定该如何高效地管理时间。可用核心词汇/短语：</span>
+- be unsure <span class="hljs-comment"># 不确定</span>
+- how to <span class="hljs-keyword">do</span> sth <span class="hljs-comment"># 如何做某事</span>
+- manage <span class="hljs-keyword">time</span> <span class="hljs-comment"># 管理时间</span>
+- effectively <span class="hljs-comment"># 高效地</span>
+Eg: Many students are unsure how to manage their <span class="hljs-keyword">time</span> effectively.
+<span class="hljs-comment"># 2. 我没法决定今年该去哪里度假。可用核心词汇/短语:</span>
+- decide <span class="hljs-comment"># 决定</span>
+- <span class="hljs-built_in">where</span> to <span class="hljs-keyword">do</span> sth <span class="hljs-comment"># 去哪里做某事</span>
+- spend h holiday <span class="hljs-comment"># 度假</span>
+Eg；I cloudn<span class="hljs-string">&#x27;t decide where to spend my holiday this year.</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">### 3 动词 + it + 宾补 + to do (雅思写作重点)</span>
+<span class="hljs-string">Eg: I &#x27;</span>think it hard<span class="hljs-string">&#x27; to answer the question.</span>
+<span class="hljs-string">		It: 形式宾语, 宾语: &#x27;</span>to answer the question.<span class="hljs-string">&#x27;</span>
+<span class="hljs-string">	Many people &#x27;</span>find it difficult<span class="hljs-string">&#x27; to maintain a healthy work-life balance.</span>
+<span class="hljs-string">## Make sentence3</span>
+<span class="hljs-string"># 1. 许多用户发现通过数字平台获取信息非常方便。可用核心词汇/短语:</span>
+<span class="hljs-string">- find it + adj + to do </span>
+<span class="hljs-string">- convenient # 方便的</span>
+<span class="hljs-string">- access information # 获取平台信息</span>
+<span class="hljs-string">- digital platforms # 数字平台</span>
+<span class="hljs-string">Eg: Many users find it convenient to access information through digital platforms.</span>
+<span class="hljs-string"># 政府认为减少碳排放以保护环境试必要的。可用核心词汇/短语：</span>
+<span class="hljs-string">- consider it + adj + to do </span>
+<span class="hljs-string">- necessary # 必要的</span>
+<span class="hljs-string">- reduce carbon esmissions # 减少碳排放</span>
+<span class="hljs-string">- protect the environment # 保护环境</span>
+<span class="hljs-string">Eg: The government considers it necessary to reduce carbon emissions to protect the environment.</span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string">#### 三. to do 不定式作表语</span>
+<span class="hljs-string">Eg: His wish &#x27;</span>is to become<span class="hljs-string">&#x27; an astronaut.</span>
+<span class="hljs-string">	The main objective &#x27;</span>is to promote<span class="hljs-string">&#x27; sustainable development.</span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string">#### 四. to do 不定式作同位语</span>
+<span class="hljs-string">Eg: (抽象名词: 解释说明)</span>
+<span class="hljs-string">	Her &#x27;</span>ambition<span class="hljs-string">&#x27; is &#x27;</span>to start her own business<span class="hljs-string">&#x27; one day.</span>
+<span class="hljs-string">	We have a common &#x27;</span>goal to protect the environment.<span class="hljs-string">&#x27;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string">#### 五. to do 不定式作定语</span>
+<span class="hljs-string">1. 动宾关系: I gave the kid &#x27;</span>a comic to <span class="hljs-built_in">read</span><span class="hljs-string">&#x27;.</span>
+<span class="hljs-string">2. 动宾关系: She bought &#x27;</span>a book to <span class="hljs-built_in">read</span><span class="hljs-string">&#x27; on the train.</span>
+<span class="hljs-string">3. 介宾关系: I have &#x27;</span>no place to live <span class="hljs-keyword">in</span><span class="hljs-string">&#x27;.(vi)  补充: to live &#x27;</span><span class="hljs-keyword">in</span> place<span class="hljs-string">&#x27;</span>
+<span class="hljs-string">4. 介宾关系: He is looking for &#x27;</span>a room to stay <span class="hljs-keyword">in</span>.<span class="hljs-string">&#x27;(vi) 补充: to stay &#x27;</span><span class="hljs-keyword">in</span> a room<span class="hljs-string">&#x27;</span>
+<span class="hljs-string">## to do 不定式作后置定语和同位语的区别:</span>
+<span class="hljs-string">1. I have a dream &#x27;</span>to finsh<span class="hljs-string">&#x27;. (后置定语)</span>
+<span class="hljs-string">2. I have a dream &#x27;</span>to be a director.<span class="hljs-string">&#x27; (同位语)</span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string">#### 六. to do 不定式作状语</span>
+<span class="hljs-string">### 1. 目的状语: (雅思写作重点)</span>
+<span class="hljs-string">1. So as to do sth... # 常放在句中</span>
+<span class="hljs-string">2. In order to do sth... # 常放在句首</span>
+<span class="hljs-string">Eg: We had better start early &#x27;</span>so as to<span class="hljs-string">&#x27; catch the train. </span>
+<span class="hljs-string">		Had better to sth # 最好去做...</span>
+<span class="hljs-string">	&#x27;</span>In order to<span class="hljs-string">&#x27; play tennis, you need a tennis racket and tennis balls.</span>
+<span class="hljs-string">## Make sentence1:</span>
+<span class="hljs-string"># 1. 为了保护用户的个人数据，公司应该加强网络安全系统。可用核心词汇/短语：</span>
+<span class="hljs-string">- protect # 保护</span>
+<span class="hljs-string">- persional data # 个人数据</span>
+<span class="hljs-string">- strengthen # 加强</span>
+<span class="hljs-string">- online security systems # 网络安全系统。</span>
+<span class="hljs-string">Eg: In order to protect users&#x27;</span> persional data, companins should strengthen online security systems.
+<span class="hljs-comment"># 2. 许多人限制屏幕使用时间，以保持健康的生活方式。可用核心词汇/短语:</span>
+- <span class="hljs-built_in">limit</span> <span class="hljs-comment"># 限制</span>
+- screen <span class="hljs-keyword">time</span> <span class="hljs-comment"># 屏幕使用时间</span>
+- maintain <span class="hljs-comment"># 保持</span>
+- a healthy lifestyle <span class="hljs-comment"># 健康的生活方式</span>
+Eg: Many people <span class="hljs-built_in">limit</span> their screen <span class="hljs-keyword">time</span> so as to maintain a healthy lifestyle.
+
+<span class="hljs-comment">### 2. 结果状语: (雅思写作重点)</span>
+1. Only to <span class="hljs-keyword">do</span> <span class="hljs-comment"># 结果有点意想不到</span>
+2. Too...to <span class="hljs-keyword">do</span> sth <span class="hljs-comment"># 太...而不能...</span>
+3. Enough to <span class="hljs-keyword">do</span> ... <span class="hljs-comment"># 足够做某事</span>
+Eg: We hurried to the railway station, <span class="hljs-string">&#x27;only to find&#x27;</span> the train had just left.
+	She is <span class="hljs-string">&#x27;too young to work&#x27;</span> <span class="hljs-keyword">in</span> a factory.
+	She is <span class="hljs-string">&#x27;old enough to retire&#x27;</span> from the factory.
+<span class="hljs-comment">## Make sentence2:</span>
+<span class="hljs-comment"># 1. 我熬夜完成了报告，结果缺发现发错了文件。可用核心词汇/短语：</span>
+- stay up late <span class="hljs-comment"># 熬夜</span>
+- finish the report <span class="hljs-comment"># 完成报告</span>
+- realize <span class="hljs-comment"># 意识到</span>
+- send the wrong file <span class="hljs-comment"># 发错文件</span>
+Eg: I stayed up late to finish the report, only to realize I had sent the wrong file.
+<span class="hljs-comment"># 2. 面试时我太紧张了，以至于没法清楚地表达自己的想法。可用核心词汇/短语:</span>
+- nervous <span class="hljs-comment"># 紧张的</span>
+- express ideas <span class="hljs-comment"># 表达想法</span>
+- clearly <span class="hljs-comment"># 清楚地</span>
+- during the interview <span class="hljs-comment"># 在面试中</span>
+Eg: I was too nervous to express my ideas clearly during the interview.
+<span class="hljs-comment"># 3. 我已经足够自信，可以用英语和外国人交了。可用核心词汇/短语:</span>
+- confident enough <span class="hljs-comment"># 足够自信</span>
+- speak English <span class="hljs-comment"># 说英语</span>
+- foreigners <span class="hljs-comment"># 外国人</span>
+- be able to <span class="hljs-comment"># 能够</span>
+Eg: I am confident enough to speak English with foreigners.
 </code></pre>
 
 <h4 id="不定式的时态和语态"><a href="#不定式的时态和语态" class="headerlink" title="不定式的时态和语态"></a>不定式的时态和语态</h4><pre><code class="hljs bash">
