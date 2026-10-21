@@ -6,21 +6,18 @@
   <meta name="keywords" content="">
   <meta name="description" content="信息安全工程师 | 黄金贤的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="概念第1章 网络信息安全概述  3-11. 网络空间: 它是国家继陆、海、空、天四个疆域之后的 &quot;第五疆域&quot;。 2. 网络信息安全基本属性: &quot;机密性&quot;(对应涉密), &quot;完整性&quot;(对应篡改), &quot;可用性&quot;(对应破坏), 抗抵赖性, 可控性 3. &quot;防御、监测、应急、恢复（口诀: 房间积灰），被称为网络安全保障">
+<meta name="description" content="修改静态IP# sudo vim &#x2F;etc&#x2F;netplan&#x2F;00-installer-config.yaml network:   version: 2   renderer: networkd   ethernets:     ens33:       dhcp4: no       addresses:         - 192.168.44.81&#x2F;24       routes:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="信息安全工程师">
-<meta property="og:url" content="https://hjxstart.github.io/2026/10/02/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%B7%A5%E7%A8%8B%E5%B8%88/index.html">
+<meta property="og:title" content="Ubuntu">
+<meta property="og:url" content="https://hjxstart.github.io/2026/08/15/Ubuntu/index.html">
 <meta property="og:site_name" content="黄金贤的博客">
-<meta property="og:description" content="概念第1章 网络信息安全概述  3-11. 网络空间: 它是国家继陆、海、空、天四个疆域之后的 &quot;第五疆域&quot;。 2. 网络信息安全基本属性: &quot;机密性&quot;(对应涉密), &quot;完整性&quot;(对应篡改), &quot;可用性&quot;(对应破坏), 抗抵赖性, 可控性 3. &quot;防御、监测、应急、恢复（口诀: 房间积灰），被称为网络安全保障">
+<meta property="og:description" content="修改静态IP# sudo vim &#x2F;etc&#x2F;netplan&#x2F;00-installer-config.yaml network:   version: 2   renderer: networkd   ethernets:     ens33:       dhcp4: no       addresses:         - 192.168.44.81&#x2F;24       routes:">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261008180956851.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261015121719049.png">
-<meta property="article:published_time" content="2026-10-02T01:41:17.000Z">
-<meta property="article:modified_time" content="2026-10-20T15:06:56.506Z">
+<meta property="article:published_time" content="2026-08-15T03:40:23.000Z">
+<meta property="article:modified_time" content="2026-08-15T04:06:21.270Z">
 <meta property="article:author" content="黄金贤">
 <meta property="article:tag" content="计算机网络 数据库 操作系统 数据结构 算法 Java Nodejs">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261008180956851.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -239,7 +236,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="80">
-<input type="hidden" id="yelog_site_word_count" value="574.8k">
+<input type="hidden" id="yelog_site_word_count" value="582.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -973,12 +970,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2026-10-20 23:06:56'>2026-10-02 09:41</time>
+            发布时间 : <time class="date" title='最后更新: 2026-10-21 23:10:53'>2026-10-02 09:41</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:49.3k</span>
+        <span>字数:55.8k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -997,7 +994,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-text">概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC1%E7%AB%A0-%E7%BD%91%E7%BB%9C%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%A6%82%E8%BF%B0-3-1"><span class="toc-text">第1章 网络信息安全概述  3-1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E5%A0%82%E7%BB%83%E4%B9%A0"><span class="toc-text">课堂练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC2%E7%AB%A0-%E7%BD%91%E7%BB%9C%E6%94%BB%E5%87%BB%E5%8E%9F%E7%90%86%E4%B8%8E%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF-7"><span class="toc-text">第2章  网络攻击原理与常用技术 7</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC3%E7%AB%A0-%E5%AF%86%E7%A0%81%E5%AD%A6%E5%9F%BA%E6%9C%AC%E7%90%86%E8%AE%BA-5-4"><span class="toc-text">第3章 密码学基本理论 5-4</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-1"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC4%E7%AB%A0-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%BD%93%E7%B3%BB%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9E%8B-3-4"><span class="toc-text">第4章 网络安全体系与网络安全模型 3-4</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E5%A0%82%E7%BB%83%E4%B9%A0-1"><span class="toc-text">课堂练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC5%E7%AB%A0-%E7%89%A9%E7%90%86%E4%B8%8E%E7%8E%AF%E5%A2%83%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF-2"><span class="toc-text">第5章 物理与环境安全技术 2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-2"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC6%E7%AB%A0-%E8%AE%A4%E8%AF%81%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8-3-3"><span class="toc-text">第6章 认证技术原理与应用 3-3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-3"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC7%E7%AB%A0-%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8-3-3"><span class="toc-text">第7章 访问控制技术原理与应用 3-3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-4"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC8%E7%AB%A0-%E9%98%B2%E7%81%AB%E5%A2%99%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8-3-8"><span class="toc-text">第8章 防火墙技术原理与应用 3-8</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-5"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC9%E7%AB%A0-VPN%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8-2"><span class="toc-text">第9章 VPN技术原理与应用 2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-6"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC10%E7%AB%A0-%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8-2-4"><span class="toc-text">第10章 入侵检测技术原理与应用 2-4</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-7"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC11%E7%AB%A0-%E7%BD%91%E7%BB%9C%E7%89%A9%E7%90%86%E9%9A%94%E7%A6%BB%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A81-1"><span class="toc-text">第11章 网络物理隔离技术原理与应用1-1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-8"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC12%E7%AB%A0-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A82-2"><span class="toc-text">第12章 网络安全审计技术原理与应用2-2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-9"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC13%E7%AB%A0-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E%E9%98%B2%E6%8A%A4%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A82"><span class="toc-text">第13章 网络安全漏洞防护技术原理与应用2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-10"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC14%E7%AB%A0-%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E9%98%B2%E8%8C%83%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86-4-5"><span class="toc-text">第14章 恶意代码防范技术原理 4-5</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-11"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC15%E7%AB%A0-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%BB%E5%8A%A8%E9%98%B2%E5%BE%A1%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8-2"><span class="toc-text">第15章 网络安全主动防御技术与应用 2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-12"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC16%E7%AB%A0-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E9%A3%8E%E9%99%A9%E8%AF%84%E4%BC%B0%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A81-3"><span class="toc-text">第16章 网络安全风险评估技术原理与应用1-3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-13"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC17%E7%AB%A0-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8"><span class="toc-text">第17章  网络安全应急响应技术原理与应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-14"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC18%E7%AB%A0-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%B5%8B%E8%AF%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E6%A0%87%E5%87%86-1"><span class="toc-text">第18章  网络安全测评技术与标准 1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-15"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC19%E7%AB%A0-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E4%BF%9D%E6%8A%A4-4-14"><span class="toc-text">第19章  操作系统安全保护 4-14</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-16"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC20%E7%AB%A0-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8-2"><span class="toc-text">第20章 数据库系统安全 2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-17"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC21%E7%AB%A0-%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E5%AE%89%E5%85%A8-1"><span class="toc-text">第21章 网络设备安全  1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-18"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC22%E7%AB%A0-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90%E4%B8%8E%E5%AE%89%E5%85%A8%E4%BF%9D%E6%8A%A4%E5%B7%A5%E7%A8%8B-2-5"><span class="toc-text">第22章 网络安全需求分析与安全保护工程 2-5</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-19"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC23%E7%AB%A0"><span class="toc-text">第23章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-20"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC24%E7%AB%A0"><span class="toc-text">第24章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-21"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC25%E7%AB%A0"><span class="toc-text">第25章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-22"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC26%E7%AB%A0"><span class="toc-text">第26章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-23"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC27%E7%AB%A0"><span class="toc-text">第27章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-24"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC28%E7%AB%A0"><span class="toc-text">第28章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-25"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC29%E7%AB%A0"><span class="toc-text">第29章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-26"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC30%E7%AB%A0"><span class="toc-text">第30章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-27"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC31%E7%AB%A0"><span class="toc-text">第31章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-28"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC32%E7%AB%A0"><span class="toc-text">第32章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-29"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC33%E7%AB%A0"><span class="toc-text">第33章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-30"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC34%E7%AB%A0"><span class="toc-text">第34章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-31"><span class="toc-text">课程练习</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90"><span class="toc-text">案例分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E5%AD%A6%E6%89%A9%E5%B1%95"><span class="toc-text">密码学扩展</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Windows%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80"><span class="toc-text">Windows安全基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows%E8%B4%A6%E5%8F%B7%E5%AE%89%E5%85%A8"><span class="toc-text">Windows账号安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8"><span class="toc-text">Windows系统安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows%E6%9C%8D%E5%8A%A1%E5%AE%89%E5%85%A8"><span class="toc-text">Windows服务安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4"><span class="toc-text">Windows常用快捷命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80"><span class="toc-text">Linux安全基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux%E6%A6%82%E8%BF%B0"><span class="toc-text">Linux概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-text">Linux目录结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4"><span class="toc-text">Linux基础操作命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86"><span class="toc-text">Linux用户管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86"><span class="toc-text">Linux日志管理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E5%AE%89%E5%85%A8%E8%AE%BE%E5%A4%87%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86"><span class="toc-text">常见安全设备配置与管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Snort"><span class="toc-text">Snort</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-text">概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC1%E7%AB%A0-%E7%BD%91%E7%BB%9C%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%A6%82%E8%BF%B0-3-1"><span class="toc-text">第1章 网络信息安全概述  3-1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E5%A0%82%E7%BB%83%E4%B9%A0"><span class="toc-text">课堂练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC2%E7%AB%A0-%E7%BD%91%E7%BB%9C%E6%94%BB%E5%87%BB%E5%8E%9F%E7%90%86%E4%B8%8E%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF-7"><span class="toc-text">第2章  网络攻击原理与常用技术 7</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC3%E7%AB%A0-%E5%AF%86%E7%A0%81%E5%AD%A6%E5%9F%BA%E6%9C%AC%E7%90%86%E8%AE%BA-5-4"><span class="toc-text">第3章 密码学基本理论 5-4</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-1"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC4%E7%AB%A0-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%BD%93%E7%B3%BB%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9E%8B-3-4"><span class="toc-text">第4章 网络安全体系与网络安全模型 3-4</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E5%A0%82%E7%BB%83%E4%B9%A0-1"><span class="toc-text">课堂练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC5%E7%AB%A0-%E7%89%A9%E7%90%86%E4%B8%8E%E7%8E%AF%E5%A2%83%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF-2"><span class="toc-text">第5章 物理与环境安全技术 2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-2"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC6%E7%AB%A0-%E8%AE%A4%E8%AF%81%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8-3-3"><span class="toc-text">第6章 认证技术原理与应用 3-3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-3"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC7%E7%AB%A0-%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8-3-3"><span class="toc-text">第7章 访问控制技术原理与应用 3-3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-4"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC8%E7%AB%A0-%E9%98%B2%E7%81%AB%E5%A2%99%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8-3-8"><span class="toc-text">第8章 防火墙技术原理与应用 3-8</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-5"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC9%E7%AB%A0-VPN%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8-2"><span class="toc-text">第9章 VPN技术原理与应用 2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-6"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC10%E7%AB%A0-%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8-2-4"><span class="toc-text">第10章 入侵检测技术原理与应用 2-4</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-7"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC11%E7%AB%A0-%E7%BD%91%E7%BB%9C%E7%89%A9%E7%90%86%E9%9A%94%E7%A6%BB%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A81-1"><span class="toc-text">第11章 网络物理隔离技术原理与应用1-1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-8"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC12%E7%AB%A0-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A82-2"><span class="toc-text">第12章 网络安全审计技术原理与应用2-2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-9"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC13%E7%AB%A0-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E%E9%98%B2%E6%8A%A4%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A82"><span class="toc-text">第13章 网络安全漏洞防护技术原理与应用2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-10"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC14%E7%AB%A0-%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E9%98%B2%E8%8C%83%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86-4-5"><span class="toc-text">第14章 恶意代码防范技术原理 4-5</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-11"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC15%E7%AB%A0-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%BB%E5%8A%A8%E9%98%B2%E5%BE%A1%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8-2"><span class="toc-text">第15章 网络安全主动防御技术与应用 2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-12"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC16%E7%AB%A0-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E9%A3%8E%E9%99%A9%E8%AF%84%E4%BC%B0%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A81-3"><span class="toc-text">第16章 网络安全风险评估技术原理与应用1-3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-13"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC17%E7%AB%A0-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8"><span class="toc-text">第17章  网络安全应急响应技术原理与应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-14"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC18%E7%AB%A0-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%B5%8B%E8%AF%84%E6%8A%80%E6%9C%AF%E4%B8%8E%E6%A0%87%E5%87%86-1"><span class="toc-text">第18章  网络安全测评技术与标准 1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-15"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC19%E7%AB%A0-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E4%BF%9D%E6%8A%A4-4-14"><span class="toc-text">第19章  操作系统安全保护 4-14</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-16"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC20%E7%AB%A0-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8-2"><span class="toc-text">第20章 数据库系统安全 2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-17"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC21%E7%AB%A0-%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E5%AE%89%E5%85%A8-1"><span class="toc-text">第21章 网络设备安全  1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-18"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC22%E7%AB%A0-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90%E4%B8%8E%E5%AE%89%E5%85%A8%E4%BF%9D%E6%8A%A4%E5%B7%A5%E7%A8%8B-2-5"><span class="toc-text">第22章 网络安全需求分析与安全保护工程 2-5</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-19"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC23%E7%AB%A0"><span class="toc-text">第23章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-20"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC24%E7%AB%A0"><span class="toc-text">第24章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-21"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC25%E7%AB%A0"><span class="toc-text">第25章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-22"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC26%E7%AB%A0"><span class="toc-text">第26章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-23"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC27%E7%AB%A0"><span class="toc-text">第27章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-24"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC28%E7%AB%A0"><span class="toc-text">第28章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-25"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC29%E7%AB%A0"><span class="toc-text">第29章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-26"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC30%E7%AB%A0"><span class="toc-text">第30章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-27"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC31%E7%AB%A0"><span class="toc-text">第31章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-28"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC32%E7%AB%A0"><span class="toc-text">第32章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-29"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC33%E7%AB%A0"><span class="toc-text">第33章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-30"><span class="toc-text">课程练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC34%E7%AB%A0"><span class="toc-text">第34章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0-31"><span class="toc-text">课程练习</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90"><span class="toc-text">案例分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E5%AD%A6%E6%89%A9%E5%B1%95"><span class="toc-text">密码学扩展</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-text">其他</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Windows%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80"><span class="toc-text">Windows安全基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows%E8%B4%A6%E5%8F%B7%E5%AE%89%E5%85%A8"><span class="toc-text">Windows账号安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8"><span class="toc-text">Windows系统安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows%E6%9C%8D%E5%8A%A1%E5%AE%89%E5%85%A8"><span class="toc-text">Windows服务安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4"><span class="toc-text">Windows常用快捷命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80"><span class="toc-text">Linux安全基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux%E6%A6%82%E8%BF%B0"><span class="toc-text">Linux概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-text">Linux目录结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4"><span class="toc-text">Linux基础操作命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86"><span class="toc-text">Linux用户管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86"><span class="toc-text">Linux日志管理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E5%AE%89%E5%85%A8%E8%AE%BE%E5%A4%87%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86"><span class="toc-text">常见安全设备配置与管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Netfilter-Iptables%E9%98%B2%E7%81%AB%E5%A2%99%E5%8E%9F%E7%90%86%E4%B8%8E%E9%85%8D%E7%BD%AE"><span class="toc-text">Netfilter&#x2F;Iptables防火墙原理与配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP-Wrappers%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E6%9C%BA%E5%88%B6"><span class="toc-text">TCP_Wrappers访问控制机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Snort%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%99"><span class="toc-text">Snort入侵检测系统原理与规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2026%E5%B9%B4%E9%A2%84%E6%B5%8B"><span class="toc-text">2026年预测</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2025%E5%B9%B4%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90"><span class="toc-text">2025年案例分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SSH-15%E2%80%99"><span class="toc-text">SSH 15’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Android-15%E2%80%99"><span class="toc-text">Android 15’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Window-15%E2%80%99"><span class="toc-text">Window 15’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux-Wireshark%E6%8A%93%E5%8C%85%E5%88%86%E6%9E%90-15%E2%80%99"><span class="toc-text">Linux &amp; Wireshark抓包分析 15’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E4%BD%93%E7%B3%BB-15%E2%80%99"><span class="toc-text">安全体系 15’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-RSA"><span class="toc-text">2020 RSA</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2723,7 +2720,11 @@ A. tacacs-server key    B. tacacs-server host    C. tacacs-server     D. passwd
 2. 风险管理: 子池识别与分类、脆弱性评估方法、风险计算与处置策略制定
 3. 基础技术细节: 网络协议安全配置、身份认证机制、恶意代码分析与防范基础</code></pre>
 
-<h2 id="密码学扩展"><a href="#密码学扩展" class="headerlink" title="密码学扩展"></a>密码学扩展</h2><pre><code class="hljs bash"><span class="hljs-comment">## 01 按对称密钥管理分类</span>
+<h2 id="密码学扩展"><a href="#密码学扩展" class="headerlink" title="密码学扩展"></a>密码学扩展</h2><pre><code class="hljs bash"></code></pre>
+
+
+
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><pre><code class="hljs bash"><span class="hljs-comment">## 01 按对称密钥管理分类</span>
 <span class="hljs-comment"># 对称密码 (Symmetric Cryptography)</span>
 - 核心: 加密=解密密钥(Kc=Kd)
 - 特征: 运算速度极快，适合大数据加密；密钥分发难
@@ -2986,145 +2987,6 @@ taskkill /f /t /fi <span class="hljs-string">&quot;imagename eq com.exe # f是�
 
 
 <h2 id="Linux安全基础"><a href="#Linux安全基础" class="headerlink" title="Linux安全基础"></a>Linux安全基础</h2><pre><code class="hljs bash">
-<span class="hljs-comment">#### 3. 基础操作命令</span>
-<span class="hljs-comment"># 显示系统登录用户信息</span>
-1. <span class="hljs-built_in">who</span> -- 查看系统登录用户信息
-<span class="hljs-built_in">who</span> -a <span class="hljs-comment"># 显示所有用户的详细登录信息 (含系统进程与死进程)</span>
-2. <span class="hljs-built_in">whoami</span> -- 显示当前操作用户身份
-3. hostname / hostnamectl -- 主机名管理
-hostnamectl set-hostname test1
-<span class="hljs-comment"># 通配符</span>
-?: 匹配文件名中任意单个字符, 例如 file?.<span class="hljs-built_in">log</span>
-[]: 匹配括号内任意的单个字符，支持范围表示, [abc].conf 匹配a.conf/b.conf/c.conf; [0-9].sh 也可以
-\: 转义符: \*.txt 匹配名为 *.txt的文件
-<span class="hljs-comment"># md5sum 计算和校验文件哈希值</span>
-<span class="hljs-built_in">md5sum</span> 
-<span class="hljs-built_in">sha256sum</span>
-<span class="hljs-built_in">sha512sum</span>
-<span class="hljs-comment">## find 查找命令</span>
-<span class="hljs-comment"># 常见参数</span>
--name <span class="hljs-comment"># 按文件名精确匹配，支持通配符</span>
--user <span class="hljs-comment"># 查找指定用户所拥有的文件/目录</span>
--<span class="hljs-built_in">type</span> <span class="hljs-comment"># 指定文件类型: f(文件)/d(目录)/l(链接)</span>
--perm <span class="hljs-comment"># 按文件权限查找: 如755, 644</span>
--size <span class="hljs-comment"># 按文件大小查找: 如 +10M (大于10M)</span>
--<span class="hljs-built_in">exec</span> <span class="hljs-comment"># 对查找到的文件执行后续命令操作</span>
-find /etc -perm 666 -<span class="hljs-built_in">type</span> f -execl <span class="hljs-built_in">chmod</span> 644 &#123;&#125; \;
-在 /etc 目录下递归查找所有权限为666的普通文件，并将他们的权限逐个修改为644，&#123;&#125;是文件占位符，代表查找到的每一个文件。执行时，find会把找到的文件路径逐个替换到 &#123;&#125; 的位置， \;是命令结束标记。
-
-<span class="hljs-comment">## 硬链接与软链接</span>
-<span class="hljs-built_in">ln</span>: 是创建链接的核心命令，作用是为文件在其他位置建立同步链接，避免重复存储文件占用磁盘空间。命令格式如下
-<span class="hljs-built_in">ln</span> [选项] [源文件/目录] [目标文件/目录]
-<span class="hljs-comment"># 常见选项参数</span>
--f: 链接时先将与目标文件同名的文件删除
--d: 允许系统管理员创建对目录的硬链接，默认不允许
--i: 在删除与目标文件同名的文件时先进行询问
--n: 在进行软连接时，将目标文件视为一般的文件
--s: 创建软链接，默认创建硬链接
--v: 在链接之前显示其文件
--b: 在创建链接时将可能被覆盖或删除的文件备份
-<span class="hljs-comment"># 实例</span>
-<span class="hljs-built_in">ln</span> test01.txt  test02.txt
-<span class="hljs-built_in">ls</span> -s test01.txt test02.txt
-
-<span class="hljs-comment">### 文件权限管理类</span>
-<span class="hljs-comment"># chmod</span>
-<span class="hljs-built_in">chmod</span> u-x file1
-<span class="hljs-built_in">chmod</span> g+x file1
-<span class="hljs-built_in">chmod</span> o=rwx file1
-<span class="hljs-built_in">chmod</span> a=rwx file <span class="hljs-comment"># chmod 777 file</span>
-<span class="hljs-built_in">chmod</span> 766 file
-<span class="hljs-comment"># chown 命令</span>
-<span class="hljs-built_in">chown</span> [参数] 属主:[属组] 文件/目录
-<span class="hljs-comment"># chgrp命令</span>
-<span class="hljs-built_in">chgrp</span> [参数] 属组 文件/目录
-<span class="hljs-comment"># 文件属性不可变标志 (chattr/lsattr) -- 防篡改</span>
-chattr +i filename <span class="hljs-comment"># 不可变属性，即使时root也无法删除、修改、重命名该文件</span>
-chattr +a filename <span class="hljs-comment"># 只能追加内容</span>
-laattr filename <span class="hljs-comment"># 查看隐藏属性</span>
-
-<span class="hljs-comment">## 特殊权限 s和t权限</span>
-<span class="hljs-built_in">chmod</span> 4755 file1 <span class="hljs-comment"># 设置SUID(s)</span>
-<span class="hljs-built_in">chmod</span> 2755 dir1 <span class="hljs-comment"># 设置SGID(s)</span>
-<span class="hljs-built_in">chmod</span> 1755 dir1 <span class="hljs-comment"># 设置SBIT(t) </span>
-<span class="hljs-built_in">chmod</span> 6755 file1 <span class="hljs-comment"># 同时设置SUID和SGID</span>
-<span class="hljs-built_in">chmod</span> 7755 file1 <span class="hljs-comment"># 同时设置SUID、SGID和SBIT,这种情况很少见</span>
-符合方式
-<span class="hljs-built_in">chmod</span> u+s file1 <span class="hljs-comment"># 设置SUID， chmod u-s file1</span>
-<span class="hljs-built_in">chmod</span> g+s <span class="hljs-built_in">dir</span> <span class="hljs-comment"># 设置SGID, chmod g-s dir</span>
-<span class="hljs-built_in">chmod</span> o+t <span class="hljs-built_in">dir</span> <span class="hljs-comment"># 设置SBIT, chmod o-t dir</span>
-<span class="hljs-comment"># s权限 -- 执行时临时有文件所有者权限</span>
-设置使文件在执行阶段具有文件所有者权限，相当于临时拥有文件所有者的身份。典型的文件是passwd。如果一般用户执行该文件则在执行过程中，该文件可用获得root权限，从而可以更改用户自己的密码。
-<span class="hljs-built_in">ls</span> -l /usr/bin/passwd
--rwsr-xr-x 1 root root 30800 Dec 21  2023 /usr/bin/passwd
-	<span class="hljs-comment"># 当s这个标志出现在文件所有者x权限的位置时，被称为Set UID， 简称SUID</span>
-	<span class="hljs-comment"># 当s这个标志出现在文件所属用户组x权限的位置时，被称为Set GID，简称SGID</span>
-在上述输出中，所有者权限位的s代表开启了SUID。这意味着: 普通用户执行passwd时，会临时拥有root(文件所有者)的权限。
-由于系统密码存储在/etc/shadow (权限为000，仅root可写)，普通用户本无写入权限。但借助passwd的SUID机制，用户能临时获得root权限，从而合法修改自己的密码。
----------- 1 root root 749 Jul 24 15:53 /etc/shadow
-<span class="hljs-comment"># t权限 (Sticky Bit/粘滞位: 目录防误删机制) -- 不可用删除别人的文件</span>
-使一个目录能够让任何用户写入文档，又不让用户删除这个目录下他人的文档。最具有代表的就是/tmp目录，任何人都可以在/tmp内增加、修改文件（因为权限都是rwx），但仅有该文件/目录创建者与root能偶删除自己的文件或目录。权限使drwxrwxrwt，最后一个t就是SBIT标志。
-<span class="hljs-built_in">sudo</span> <span class="hljs-built_in">chmod</span> o+t testdir/
-drwxrwxrwt   10 root root  200 Oct 19 21:32 tmp
-
-
-<span class="hljs-comment">### 进程类</span>
-<span class="hljs-comment">## ps命令</span>
-ps -aux
-ps [选项]
-<span class="hljs-comment"># 参数</span>
--a <span class="hljs-comment"># 显示终端上的所有进程，包括其他用户的进程</span>
--u <span class="hljs-comment"># 显示进程的详细状态</span>
--x <span class="hljs-comment"># 显示没有控制终端的进程</span>
--w <span class="hljs-comment"># 显示加宽，以便显示更多的信息</span>
--r <span class="hljs-comment"># 只显示正在运行的进程</span>
-<span class="hljs-comment">## top命令</span>
-top -d &lt;interval&gt; <span class="hljs-comment"># 默认刷新间隔3秒</span>
-top -d 5 <span class="hljs-comment"># 刷新5秒一次</span>
-<span class="hljs-comment">## lsof</span>
-可以列出当前系统中进程打开的所有文件
-
-<span class="hljs-comment">### 网络类</span>
-ping -c 5 www.baidu.com <span class="hljs-comment"># 五个数据包</span>
-traceroute [选项] 目标主机或IP地址
-netstat <span class="hljs-comment"># 查看网络的连接状态</span>
-<span class="hljs-comment"># ifconfig </span>
-ifconfig 网络接口设备名 IP地址 [netmask 网络掩码] [broadcast 广播地址]
-ifconfig eth0 192.168.0.138 netmask 255.255.255.0 <span class="hljs-comment"># 配置是临时的</span>
-
-
-<span class="hljs-comment">#### 4. Linux用户管理</span>
-系统账号有: 用户账号和组账号
-<span class="hljs-comment"># su (切换用户)</span>
-输入root密码即可获取超级权限
-<span class="hljs-comment"># sudo (Superuser Do)命令</span>
-允许普通用户以root用户或其他特权用户的身份执行特定的命令。<span class="hljs-built_in">sudo</span> 命令需要在系统中进行配置，以允许特定用户或用户组执行的命令。执行时需要输入当前用户的密码。
-<span class="hljs-comment">## 影子密码体系（考试重点）</span>
-<span class="hljs-comment"># 用户账号信息: /etc/passwd, 7字段结构</span>
-1. 字段1: 用户名: root
-2. 字段2: 口令:x, 实际在/etc/shadow，口令占位符
-3. 字段3: UID: 0
-4. 字段4: GID: 0
-5. 字段5: 账号信息: root
-6. 字段6: 主目录: /root
-7. 字段7: 登录shell: /bin/bash
-<span class="hljs-comment"># 仅root可读的加密口令存储库--/etc/shadow, 9字段结构</span>
-格式: 用户名:加密口令:最后修改日:最小间隔:有效期:警告期:宽限期:失效期:保留位
-1. username: 用户登录账号名，与/etc/passwd 一一对应
-2. passwd: 加密后的密钥串，<span class="hljs-string">&quot;!&quot;</span>表示账号锁定，空则无密码
-3. lastchg: 从1970年1月1日起至上次改密的天数
-4. min: 两次改密的最小间隔天数，防止频繁修改
-5. max: 密码有效期天数，99999代表永不过期
-6. warn: 密码过期前多少天开始向用户发送警告
-7. inactive: 密码过期后账号仍可登录的宽限天数
-8. expire: 账号失效的具体日期(Unix时间戳)，到期锁定
-9. flag: 保留域，暂未使用
-<span class="hljs-comment"># 核心安全优势与管理特征</span>
-权限隔离与加密存储:
-全生命周期管控：
-全局策略标志化: 通过/etc/login.defs配置系统密码策略，如密码最小长度、密码过期前告警天数、账号非活跃期锁定等，建立统一的账号安全基线。
-管理规范化: 强制使用专用命令(useradd/passswd/usermod)进行账号管理，直接修改/etc/passwd将失效，规避了手动编辑系统文件可能带来的配置错误与安全隐患。
-
 </code></pre>
 
 <h3 id="Linux概述"><a href="#Linux概述" class="headerlink" title="Linux概述"></a>Linux概述</h3><pre><code class="hljs bash"><span class="hljs-comment">#### 1. Linux概述</span>
@@ -3298,14 +3160,55 @@ ifconfig eth0 192.168.0.138 netmask 255.255.255.0 <span class="hljs-comment"># �
 8. expire: 账号失效的具体日期(Unix时间戳)，到期锁定
 9. flag: 保留域，暂未使用
 <span class="hljs-comment"># 核心安全优势与管理特征</span>
-权限隔离与加密存储:
-全生命周期管控：
-全局策略标志化: 通过/etc/login.defs配置系统密码策略，如密码最小长度、密码过期前告警天数、账号非活跃期锁定等，建立统一的账号安全基线。
-管理规范化: 强制使用专用命令(useradd/passswd/usermod)进行账号管理，直接修改/etc/passwd将失效，规避了手动编辑系统文件可能带来的配置错误与安全隐患。
+1. 权限隔离与加密存储: 将密码从公开可读的/etc/passwd迁移至仅root可读的/etc/shadow，密码采用MD5不可逆算法加密，彻底杜绝非授权用户的密码窥探风险，root仅可执行重置或禁用操作。
+2. 全生命周期管控：自动记录密码最后修改时间，支持设置密码有效期(Max)和最小使用周期(Min)，即防止密码长期不换，也避免用户频繁变更密码导致记忆混乱。
+3. 全局策略标志化: 通过/etc/login.defs配置系统密码策略，如密码最小长度、密码过期前告警天数、账号非活跃期锁定等，建立统一的账号安全基线。
+4. 管理规范化: 强制使用专用命令(useradd/passswd/usermod)进行账号管理，直接修改/etc/passwd将失效，规避了手动编辑系统文件可能带来的配置错误与安全隐患。</code></pre>
 
-</code></pre>
+<h3 id="Linux日志管理"><a href="#Linux日志管理" class="headerlink" title="Linux日志管理"></a>Linux日志管理</h3><pre><code class="hljs bash"><span class="hljs-comment">### 日志文件的分类</span>
+<span class="hljs-comment"># 连接时间日志</span>
+由多个程序执行，把记录写入到/var/log/wtmp和/var/run/utmp，通过login等程序更新wtmp和utmp文件，使系统管理员能够跟踪谁在何时登录到系统。
+<span class="hljs-comment"># 进程统计日志</span>
+由系统内核执行。当一个进程终止时，为每个进程往进程文件(pacct或acct)中写入一个记录。进程统计的目的是为系统中的基本服务提供命令统计。
+<span class="hljs-comment"># 错误日志</span>
+各种系统守护进程、用户程序和内核通过syslogd守护程序向文件/var/log/messages报告值得注意的事件。另外，有许多UNIX程序创建日志，HTTP和FTP等提供网络服务的服务器也保持详细的日志。
+<span class="hljs-comment"># 应用程序日志</span>
+许多程序通过维护日志来反馈系统的安全状态。su命令允许用户获得另一个用户的权限，所以它的安全很重要，它的文件为sulog，同样的还有sudolog。另外，诸如Apache等HTTP的服务器都有两个日志: access_log(客户端访问日志)以及error_log(服务出错日志)。FTP服务的日志记录在xferlog文件中，Linux下邮件传送服务(sendmail)的日志一般存放在maillog文件当中。
 
-<h3 id="Linux日志管理"><a href="#Linux日志管理" class="headerlink" title="Linux日志管理"></a>Linux日志管理</h3><pre><code class="hljs bash">
+<span class="hljs-comment">### 常用日志文件</span>
+默认位于 /var/log目录下
+1. access-log <span class="hljs-comment"># 记录HTTP/Web的传输</span>
+2. acct/pacct <span class="hljs-comment"># 记录用户命令</span>
+3. boot.log <span class="hljs-comment"># 记录Linux系统开机自检过程显示的信息</span>
+4. lastlog <span class="hljs-comment"># 记录最近几次成功登录的事件和最后一次不成功的登录</span>
+5. messages <span class="hljs-comment"># 从syslog中记录信息(有的连接到syslog文件)</span>
+6. sulog <span class="hljs-comment"># 记录使用su命令的使用</span>
+7. syslog <span class="hljs-comment"># 从syslog中记录信息</span>
+8. utmp <span class="hljs-comment"># 记录当前登录的每个用户信息</span>
+9. wtmp <span class="hljs-comment"># 一个用户每次登录进入和退出事件的永久记录</span>
+10. xferlog <span class="hljs-comment"># 记录FTP会话信息</span>
+11. maillog <span class="hljs-comment"># 记录每一个发送到系统或从系统发出的电子邮件的活动，它可以用来查看用户使用哪个系统发送工具或把数据发送到哪个系统。	</span>
+<span class="hljs-comment"># 日志消息的级别（从高到低）</span>
+0. EMERG(紧急): 系统不可用的严重故障，如内核崩溃、硬件故障等，需立即处理。
+1. ALERT(警告): 必须立即采取行动的问题，如数据库损坏、关键服务停止。
+2. CRIT(严重): 严重的系统错误，如磁盘空间耗尽、关键服务停止。
+3. ERR(错误): 常规运行错误，如服务启动失败、文件读写异常，需排查修复。
+4. WARNING(提醒): 潜在风险提示，如配置文件过期、资源使用率偏高，需要关注。
+5. NOTICE(注意): 正常但值得记录的事件，如用户登录、服务重启，用于审计追踪。
+6. INFO(信息): 普通允许信息，如服务启动成功、系统状态正常，用于日常监控。
+7. DEBUG(调试): 程序调试与开发日志，包含详细的变量、调用栈信息，用于问题排查。
+<span class="hljs-comment"># 日志记录的一般格式</span>
+1. 时间标签: 精确记录日志产生的日期与具体时分秒，是排查系统时间时间线、定位故障发送时刻的核心依据。
+2. 主机名: 标识生成该日志消息的服务器名称，在多服务器集群环境中，可快速区分日志来源的具体节点。
+3. 子系统名: 指定消息的来源主体，如内核(kernel)、系统服务(sshd/NetworkManager)或用户进程，用于定位问题所属的系统模块。
+4. 消息字段: 日志的核心内容，包含事件描述、错误代码、状态变化、操作结果等关键信息，是分析故障原因的直接依据。
+<span class="hljs-comment"># 示例</span>
+1. wtmp和utmp为二进制文件，不能用文本查；命令直接查看，可以通过<span class="hljs-built_in">who</span>、w、<span class="hljs-built_in">users</span>、last和ac查看这两个文件包含的信息。
+2. <span class="hljs-built_in">who</span>命令查询utmp文件输入包含用户名、终端类型、登录日期及登录的来源主机
+3. <span class="hljs-built_in">who</span>命令跟wtmp文件名，则可以查看所有的登录记录信息。
+4. <span class="hljs-string">&#x27;w命令&#x27;</span>: 查询utmp文件，展示当前系统所有登录用户及进程信息，包括登录名、终端、远程主机、登录时长、空闲时间、进程占用CPU等关键数据。
+5. <span class="hljs-string">&#x27;users命令&#x27;</span>: 以单元形式输出当前所有登录的用户名，每个用户名对应一个独立的登录会话，简洁展示系统当前的用户概况。
+6. <span class="hljs-string">&#x27;last命令&#x27;</span>: 回溯读取wtmp日志文件，呈现从文件创建至今的所有用户登录历史记录，包括登录时间、来源地址、登出时间等信息。
 
 </code></pre>
 
@@ -3315,21 +3218,289 @@ ifconfig eth0 192.168.0.138 netmask 255.255.255.0 <span class="hljs-comment"># �
 
 </code></pre>
 
-<h3 id="Snort"><a href="#Snort" class="headerlink" title="Snort"></a>Snort</h3><pre><code class="hljs bash">Snort具备三种核心工作模式: <span class="hljs-string">&#x27;嗅探器模式、包过滤模式、网络入侵检测模式&#x27;</span>。
-<span class="hljs-comment">### 作为入侵检测系统</span>
-<span class="hljs-comment">## 一、Snort规则头</span>
-标准格式: <span class="hljs-string">&#x27;rules_action protocol src_ip src_port -&gt; dst_ip dst_port (rules_option)&#x27;</span>
-1. rules_action(规则动作): alert报警(如弹窗、邮件，写入日志), <span class="hljs-built_in">log</span>记录, pass放行(不记录，用于白名单流量)
-2. protocol(网络协议): 如tcp/udp/icmp等
-3. -&gt;: 箭头左侧为源端信息，右侧为目的端信息。
-4. &lt;&gt;: 定义双向通信，明确流量流向边界。
-5. 地址与端口: 支持 “网络/掩码” 格式(如192.168.0.0/24); <span class="hljs-string">&#x27;any&#x27;</span>匹配任意IP/端口, <span class="hljs-string">&#x27;!&#x27;</span>表示取反, <span class="hljs-string">&#x27;:&#x27;</span>指定端口范围(1024:65535)
+<h3 id="Netfilter-Iptables防火墙原理与配置"><a href="#Netfilter-Iptables防火墙原理与配置" class="headerlink" title="Netfilter&#x2F;Iptables防火墙原理与配置"></a>Netfilter&#x2F;Iptables防火墙原理与配置</h3><pre><code class="hljs bash"><span class="hljs-comment">### 一、Linux包过滤防火墙概述</span>
+<span class="hljs-comment"># Netfilter 内核态</span>
+1. 集成在Linux内核中的包过滤功能体系，是防火墙的核心实现层。
+2. 工作在系统内核空间，负责对进出服务器的数据包进行实际的过滤、转发、修改等操作。
+<span class="hljs-comment"># iptables 用户态</span>
+1. 位于/sbin/iptables路径下的命令行工具，属于防火墙的规则管理接口
+2. 通过iptables命令可以向内核态Netfillter添加、删除、修改防火墙规则，实现对网络访问的管控。
+
+
+<span class="hljs-comment">### 二、Linux包过滤防火墙工作层次</span>
+<span class="hljs-comment"># 包过滤的工作层次</span>
+1. 主要是网络层，解析IP包头信息，包括源/目的IP、协议类型、端口号等
+2. 体现在对包内的IP地址、端口等信息的处理上
+
+
+<span class="hljs-comment">### 三、etfilter/Iptables架构</span>
+Netfilter是Linux内核的底层数据包处理引擎，通过[表(Tables) -&gt; 链(Chains) -&gt; 规则(Rules)] 的三层层级结构实现对网络数据包的过滤、修改与转发控制。表是功能分类容器，链式规则的执行队列，规则是具体的匹配条件与动作指令。
+<span class="hljs-comment">## (一) iptables内置了4个表，即filter表、nat表、mangle表和raw表。【四表】</span>
+1. raw表: 确定是否对该数据进行状态跟踪 (使用率不高)
+2. mangle表: 为数据包设置标记
+3. nat表: 修改数据包中的源、目的IP或端口
+4. filter表: 确定是否放行该数据包(过滤)
+<span class="hljs-comment"># Filter表(默认表) -- 防火墙核心</span>
+负责数据包的过滤决策，决定数据包的 [放行ACCEPT、丢弃DROP 或 拒绝REJECT]，是构建主机防火墙的核心表，包含 [入站INPUT、出战OUTPUT、转发FORWARD] 三大核心链。
+<span class="hljs-comment"># NAT表 -- 地址与端口转换</span>
+实现网络地址转换功能，包含 SNAT(源地址转换，内网访问外网)、DNAT(目的地址转换，端口映射)、MASQUERADE(动态源转换)，是网关与代理服务器的核心配置表。
+<span class="hljs-comment"># Mangle表 -- 数据包整形与标记</span>
+用于修改数据包的IP头部信息(如TTL生存期、TOS服务类型)，或为数据包添加内核标记(Mark)，支持策略路由、流量整形等高级网络管控场景
+<span class="hljs-comment"># Raw表 -- 绕过连接跟踪的高性能表</span>
+优先级最高的表，用于再连接跟踪(Conntrack)之前处理数据包，可配置绕过连接跟踪机制，提升高并发网络场景下的处理性能，也用于解决特殊无状态数据包的处理问题。
+
+<span class="hljs-comment">## (二) 链(Chains)的本质: 数据包的 “检测清单” 【五链】</span>
+链是数据包在系统中流转的路径与规则集合。当数据包到达某条链时，系统会逐条匹配规则: 满足条件则执行对应动作(如放行、丢弃)；若无一匹配，则执行链的默认策略。
+<span class="hljs-comment"># 系统默认的五大核心规则链</span>
+1. INPUT链: 专门处理目标地址为本机的入站数据包，是主机防护的第一道关卡。
+2. OUTPUT链: 处理由本机主动发起的出战数据包，控制主机对外的网络访问请求。
+3. FORWARD链: 针对经过本机转发的数据包生效，是路由器、网关设备的核心过滤规则链。
+4. PREROUTING链: 数据包到达网络层后、路由决策前触发，常用于DNAT(目的地址转换)配置。
+5. POSTROUTING链: 路由决策完成后、数据包离开本机前触发，常用于SNAT(源地址转换)与MASQUERADE(地址伪装)
+
+<span class="hljs-comment">## (三) 规则(rules)</span>
+规则是网络管理员预定义的匹配条件与动作组合，核心逻辑为“若数据包满足条件，则执行对应动作”。规则存储于内核空间的过滤表中，匹配维度包含源/目的IP、传输协议(TCP/UDP/ICMP)及服务端口(HTTP/FTP等)。匹配成功后，执行动作包括：放行(Accept)、拒绝(Reject，返回错误包)、丢弃(Drop，无响应)。防火墙的配置本质就是对规则的增删改查与策略优化。如规则表执行顺序图所示。
+
+
+<span class="hljs-comment">### 四、Netfilter/Iptables架构</span>
+<span class="hljs-comment">## (一) raw表</span>
+ip_conntrack (nf_conntrack) 连接追踪
+- 内核维护一张 <span class="hljs-string">&#x27;会话记录表&#x27;</span>，记录TCP/UDP会话(源/目的IP、端口、连接状态)
+- 用途: ①支持<span class="hljs-string">&#x27;-m state&#x27;</span>状态防火墙; ②NAT 地址转换必须依赖此表
+- 代价: 消耗内存CPU；高并发场景表满会导致丢包
+<span class="hljs-comment"># raw表特点(优先级最高)</span>
+- 仅2条链: REROUTING、OUTPUT
+- 唯一核心动作: NOTRACK (不做连接追踪)
+- NOTRACK != 丢弃数据包，报文仍然经过 filter 表做过滤
+<span class="hljs-comment"># NOTRACK 效果</span>
+1. 数据包不在写入conntrack会话表，节约系统资源;
+2. 自动跳过后续NAT规则 (NAT依赖连接追踪)
+3. 不能再使用state状态模块匹配流量
+<span class="hljs-comment"># 示例</span>
+iptables -t raw -A PRROUTING -d 192.168.56.102 -j NOTRACK
+
+<span class="hljs-comment">## (二) mangle表</span>
+mangle表核心价值: 在路由决策之前(PRROUTING链)修改数据包标记，实现流量的精细化路径控制。
+实现逻辑: 通过MARK标记为流量分类，集合Linux多路由表机制，让不同业务流量走不通的出口网关，满足带宽管理或安全隔离需求。
+<span class="hljs-comment"># STEP1: 为不同的业务流量打标记(MARK)</span>
+为Web服务 (80/443端口) 打上标记1；为FTP服务(20/21端口)打上标记2
+iptables -t mangle -A PRROUTING -i eth0 -p tcp --dport 80:443 -j MARK --set-mark 1
+iptables -t mangle -A PRROUTING -i eth0 -p tpc --dropt 20:21 -j MARK --set-mark 2
+<span class="hljs-comment"># STEP2: 配置策略路由表与规则绑定</span>
+定义两个独立的路由表 (10和20)，指向不通的出口网关
+ip route add default via 202.106.xx.xx dev eth1 table 10 <span class="hljs-comment"># 标记1流量走此路由</span>
+ip route add default via 211.108.xx.xx dev eth2 table 20 <span class="hljs-comment"># 标记2流量走此路由</span>
+ip rule add from all fwmark 1 table 10 <span class="hljs-comment"># 绑定标记与表</span>
+ip rule add from all fwmark 2 table 20 <span class="hljs-comment"># 绑定标记与表</span>
+
+<span class="hljs-comment">## (三) nat表</span>
+- NAT 是将局域网的内部地址转换为公网上的IP地址，从而使得内部主机能像公网的主机一样上网。NAT将自动修改IP报文中的源IP和目的IP地址，IP地址校验在NAT处理过程中自动完成。网络地址转换分为<span class="hljs-string">&#x27;源地址转换与目的地址转换&#x27;</span>两种。
+- SNAT(源地址转换) 数据包出网卡时替换源IP为公网IP，使对端认为来自公网主机，从而正常响应，是内部访问外网的关键技术。
+<span class="hljs-comment"># 示例1-SNAT: </span>
+公司内网主机(192.168.1.100)访问公网时，网关通过SNAT将源IP转换为服务器公网IP(218.29.30.21)，实现对外通信。
+- 实现关键: SNAT需要在路由决策后指向，因此必须配置在POSTROUTING链上，属于nat表的核心规则。
+- 配置实例: 使用iptables命令将内网192.168.1.0/24网段的源IP转换为公网IP 218.29.30.21, 实现共享上网
+iptables -t nat -A POSTROUTING -s 192.168.1.100 -o ens33 -j SNAT --to-source 218.29.30.31 <span class="hljs-comment"># iptables -L -t nat 查看</span>
+<span class="hljs-comment"># 示例2-DNAT:</span>
+外部用户访问公司公网IP (如218.29.30.31)的Web服务，通过DNAT转发至内网服务器(如192.168.1.6)
+- 使用Linux系统中的iptables可实现DNAT功能。DNAT是在数据报文进行路由选择前进行的，因此其使用在PREROUTING链上。
+- 配置iptables使得从本机网卡流入的数据包从目的IP是218.29.30.31替换为目的IP是192.168.1.6.
+iptables -t nat -A PREROUTING -i ens33 -d 218.29.31.31 -p tcp --dport 80 -j DNAT --to-detination 192.168.1.6
+
+
+
+<span class="hljs-comment">### 五 iptables基本语法</span>
+iptables -t filter -I INPUT -p icmp -j DROP <span class="hljs-comment"># -I 在INPUT的开头插入规则</span>
+iptables -t filter -I INPUT 3 -p icmp -j DROP <span class="hljs-comment"># -I 在INPUT的3序号插入规则</span>
+iptables -t filter -A INPUT -p icmp -j DRO <span class="hljs-comment"># -A是在INPUT的末尾追加规则</span>
+iptables [-t 表名] 选项 [链名] [条件] [-j 控制类型]
+<span class="hljs-comment"># 几个主要事项</span>
+- 不指定表名时，默认指filter表
+- 不指定链名时，默认指表内的所有链
+- 除非设置链的默认策略，否则必须指定匹配条件
+- 选项(I/A)、链名、控制类型使用大写字母，其他均为小写
+- 选项，添加新的规则: -A是末尾追加，-I是链的开头(或指定序号)插入一条规则
+<span class="hljs-comment">## (0) 数据包的常见控制类型:</span>
+iptables [-t 表名] 选项 [链名] [条件] [-j <span class="hljs-string">&#x27;控制类型&#x27;</span>]
+- ACCEPT: 允许通过
+- DROP: 直接丢失，不给出任何回应
+- REJECT: 拒绝通过，必要时给出提示
+- LOG: 记录日志信息，然后传给下一条规则继续匹配
+- MASQUERADE: 是SNAT的一种特殊形式，适用于动态的地址分配
+- SNAT: 源地址转换
+- DNAT: 目的地址转换
+
+<span class="hljs-comment">## (1) iptables的管理选项 A/I, D/F, L, P </span>
+iptables [-t 表名] <span class="hljs-string">&#x27;选项&#x27;</span> [链名] [条件] [-j 控制类型]
+<span class="hljs-comment"># 新增规则 要大写</span>
+-A: 在链的末尾追加一条规则
+	iptables -t filter -A INPUT -p icmp -j DRO <span class="hljs-comment"># -A是在INPUT的末尾追加规则</span>
+-I: 在链的开头 (或指定序号) 插入一条规则
+	iptables -t filter -I INPUT -p icmp -j DROP <span class="hljs-comment"># -I 在INPUT的开头插入规则</span>
+	iptables -t filter -I INPUT 3 -p icmp -j DROP <span class="hljs-comment"># -I 在INPUT的3序号插入规则</span>
+<span class="hljs-comment"># 查看规则列表</span>
+-L: 列出所有的规则条目
+-n: 以数字形式显示地址、端口等信息
+-v: 以更详细的方式显示规则信息
+--line-numbers: 查看规则时，显示规则的序号
+iptables -t filter -L INPUT -n -v --line-number <span class="hljs-comment"># 查看 filter 表某条链，并显示规则编号</span>
+<span class="hljs-comment"># 删除、清空规则</span>
+-D: 删除链内指定序号(或内容)的一条规则
+-F: 清空所有的规则
+iptables -D INPUT 3   <span class="hljs-comment"># 删除 INPUT 链里编号为 3 的那条规则</span>
+iptables -F INPUT        <span class="hljs-comment"># 清空 INPUT 链所有规则</span>
+iptables -F              <span class="hljs-comment"># 清空 filter 表所有链（危险，慎用）</span>
+iptables -t nat -F
+iptables -t mangle -F
+iptables -t raw -F
+<span class="hljs-comment"># 设置默认策略</span>
+-P: 为指定的链设置默认规则。（只有ACCEPT，和DROP，没有REJECT）
+1. <span class="hljs-string">&#x27;黑名单安全策略(宽松)&#x27;</span>: 默认策略为ACCEPT，链中的规则对应的动作应该为DROP或者REJECT，表示只有匹配到规则的报文才会被拒绝，没有被规则匹配到的报文都会默认接收。
+iptables -P OUTPUT ACCEPT
+2. <span class="hljs-string">&#x27;白名单安全策略(严格)&#x27;</span>: 链的默认策略为DROP，链中的规则对应的动作应改为ACCEPT，表示只有匹配到规则的报文才会被放行，没有被规则匹配到的报文都会被默认拒绝。
+iptables -t filter -P FORWARD DROP
+<span class="hljs-comment"># 其他</span>
+service iptables save <span class="hljs-comment"># 删完一定要保存，否则重启就回来</span>
+
+
+<span class="hljs-comment">## (2) iptables规则匹配条件</span>
+iptables [-t 表名] 选项 [链名] [<span class="hljs-string">&#x27;条件&#x27;</span>] [-j 控制类型]
+<span class="hljs-comment"># 常见的通用匹配条件 &#x27;!&#x27;表示条件取反</span>
+1. 协议匹配: -p 协议名
+	iptables -I input -p icmp -j DROP
+	iptables -A FORWARD -p ! icmp -j ACCEPT
+2. 地址匹配: -s 源地址, -d 目的地址
+	iptables -A FORWARD -s 192.168.1.11 -j REJECT
+	iptables -I INPUT -s 10.20.30.0/24 -j DROP
+3. 接口匹配: -i 入职网卡, -o 出站网卡
+	iptables -A INPUT -i eth1 -s 192.168.0.0/16 -j DROP
+	iptables -A INPUT -i eth1 -s 10.0.0.0/8 -j DROP
+	iptables -A INPUT -i eth1 -s 172.16.0.0/16 -j DROP
+4. 端口匹配: --sport源端口, --dport目的端口
+	iptables -A FORWARD -s 192.168.4.0/24 -p udp --dport 53 -j ACCEPT
+	iptables -A INPUT -p tcp --dport 20:21 -j ACCEPT</code></pre>
+
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261021130822944.png" alt="规则表执行顺序图"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261021141627909.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261021141839894.png"></p>
+<h3 id="TCP-Wrappers访问控制机制"><a href="#TCP-Wrappers访问控制机制" class="headerlink" title="TCP_Wrappers访问控制机制"></a>TCP_Wrappers访问控制机制</h3><pre><code class="hljs bash"><span class="hljs-comment">### TCP_Wrappers基础</span>
+1. TCP_Wrappers是Linux/Unix系统中轻量级的安全访问控制工具，作为“服务请求”与“系统服务”的中间校验层，通过配置文件 (hosts.allow/deny) 实现服务级的黑白名单管控，同时记录所有连接日志，常与inetd/xinetd守护进程配合，覆盖SSH、FTP、HTTP、SMTP等主流网络服务。
+2. 当inetd接收到外部服务请求时，并非直接调用服务进程，而是先转交TCP_Wrappers; TCP_Wrappers依据预设的访问规则 (允许/拒绝) 校验请求源的合法性; 校验通过则将请求转发给对应服务守护进程，同时记录连接日志；若校验失败则直接阻断请求，从源头拦截非法访问。
+
+<span class="hljs-comment">### iptables 和 TCP_Wrappers的区别</span>
+1. iptables时防火墙软件，归于第4层传输层，作用于第3层和第4层，对IP、Port、传输层协议(tcp、udp)进行限定。
+2. TCP_Wrappers是安全工具，归于第7层应用层，作用于第3层和第7层，对IP、应用层协议(ssh、http、ftp等)进行限定。
+3. 执行顺序: iptables -&gt; TCP_Wrappers -&gt; 本地服务。
+4. Linux 本身有两层安全防火墙。第一层防护 (iptables): 拦截网络层恶意流量，阻挡非法IP/Port的访问; 第二层防护(TCP_Wrappers):对通过第一层的请求进行应用服务级准入校验; 最终合法请求抵达本地服务进程。双层防护实现了 “从网络流量到应用服务” 的纵深防御体系。
+
+
+<span class="hljs-comment">### TCP_Wrappers工作原理</span>
+以SSH为例，每当SSH的连接请求时，先读取系统管理员所设置的访问控制文件，符合要求，则会把这次连接原封不动的转给ssh进程，由ssh完成后续工作，如果这次连接发起的IP不符合访问控制文件中的设置，则会中断连接请求。拒绝SSH访问。
+<span class="hljs-comment"># 通过两个配置文件来控制:</span>
+1. /etc/hosts.allow <span class="hljs-comment"># 定义允许的访问</span>
+2. /etc/hosts.deny <span class="hljs-comment"># 定义拒绝的访问</span>
+- 优先查看 hosts.allow 文件，匹配访问控制策略
+- 允许个别拒绝所有: hosts.allow文件添加单个允许的策略，hosts.deny文件添加 all
+- 拒绝个别允许所有: hosts.deny文件添加单个拒绝的策略，hosts.allow文件为空
+
+
+<span class="hljs-comment">### TCP_Wrappers配置文件格式</span>
+daemon_list: client_list [[[:option] :option] ...]
+<span class="hljs-comment">## deamon_list: 守护进程</span>
+必须填写 /usr/sbin 目录下的应用程序文件名，支持多种匹配方式:
+1. 单服务名: 直接写程序名, 如 vsftpd、 sshd
+2. 多服务列表: 逗号分隔, 如 sshd,vsftpd
+3. 通配符: ALL 代表所有受 TCP_Wrappers 管控的服务
+<span class="hljs-comment">## client_list: 客户端</span>
+支持IP地址、主机名或网段匹配，网段需要注意掩码格式规范:
+1. 基础匹配: 单个IP (如192.168.1.10) 或可解析的主机名
+2. 标准网段: 需要使用完整子网掩码，如 172.16.0.0/255.255.0.0
+3. 简洁网段: 省略后端，如172.16. 匹配172.16开头的所有地址。
+<span class="hljs-comment">## :option 控制选项</span>
+1. deny: 拒绝, 主要用于hosts.allow文件，定义拒绝访问规则
+2. allow: 允许, 主要用于hosts.deny文件，定义允许规则
+3. spawn: 触发外部脚本 (如日志记录、邮件告警) 来执行后续的命令，增强审计能力
+<span class="hljs-comment">## 示例: sshd服务不允许172.16.0.0.16，但允许172.16.1.3f访问</span>
+<span class="hljs-comment"># 方法一: (黑名单分离控制)</span>
+sshd: 172.16.1.3 <span class="hljs-comment"># /etc/hosts.allow</span>
+sshd: 172.16. <span class="hljs-comment"># /etc/hosts.deny</span>
+<span class="hljs-comment"># 方法二: (单文件例外排除)</span>
+sshd: 172.16. EXCEPT 172.16.1.3 <span class="hljs-comment"># /etc/hosts.deny</span>
+<span class="hljs-comment"># 方法三: (全局兜底策略)</span>
+sshd: ALL EXCEPT 172.16. EXCEPT 172.168.1.3 <span class="hljs-comment"># /etc/hosts.allow</span>
+sshd: ALL <span class="hljs-comment"># /etc/hosts.deny</span></code></pre>
+
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261021220453780.png"></p>
+<h3 id="Snort入侵检测系统原理与规则"><a href="#Snort入侵检测系统原理与规则" class="headerlink" title="Snort入侵检测系统原理与规则"></a>Snort入侵检测系统原理与规则</h3><pre><code class="hljs bash"><span class="hljs-comment">#### Snort (NIDS)</span>
+<span class="hljs-comment"># Snort核心概述</span>
+Snort是一款轻量级、开源免费的网络入侵检测系统 (NIDS)，遵循GPL协议，使用于大中小型网络环境，尤其适合无法承担商业IDS高昂成本的中小企业，是网络安全防御体系中的重要工具。
+<span class="hljs-comment"># 核心功能特性</span>
+1. 轻量高效: 代码简洁短小，资源占用低，可在普通硬件上流畅运行，不影响网络性能。
+2. 实时检测: 具备实时流量分析与工具检测能力，支持TCP/UDP/ICMP等主流协议解析，快速发现并告警各类网络攻击行为。
+3. 跨平台兼容: 完美支持Linux、Solaris、BSD、HP-UX即Windows等主流操作系统，部署灵活。
+4. 灵活扩展: 支持插件机制，可通过插件扩展功能，同时利用FlexResp模块实现主动阻断恶意连接，提升防御能力。
+<span class="hljs-comment"># 三种核心工作模式 （常考）</span>
+Snort具备三种核心工作模式: <span class="hljs-string">&#x27;嗅探器模式&#x27;</span>(实时抓取并显示网络数据包流)、<span class="hljs-string">&#x27;包过滤模式&#x27;</span>(将捕获的流量持久化存储至硬盘)、<span class="hljs-string">&#x27;网络入侵检测模式&#x27;</span>(NIDS，基于规则库分析流量，识别攻击行为并触发告警/阻断动作)。其中NIDS模式支持灵活的规则配置，是实现入侵检测的核心。
+
+<span class="hljs-comment">### 一、作为嗅探器模式的参数应用</span>
+./snort -v <span class="hljs-comment"># 简单模式</span>
+<span class="hljs-comment"># 参数和功能说明</span>
+1. -v: 基础模式: 仅显示数据包的 TCP/IP 层包头信息
+2. -vd: 详细模式: 展示IP、TCP、UDP、ICMP等协议的详细包头字段
+3. -vde: 完整模式: 同时输出 <span class="hljs-string">&#x27;包头信息&#x27;</span> 与数据包的 <span class="hljs-string">&#x27;实际载荷&#x27;</span> (数据内容)
+4. -c: 配置加载: 指定Snort运行时使用的规则配置文件 (如 snort.conf)
+
+<span class="hljs-comment">### 二、作为包过滤器模式</span>
+Snort可将截获的网络数据包完整记录至指定日志文件，是入侵检测与流量审计的基础功能。通过配置不同参数，可灵活定义日志的存储路径、格式及输出方式，满足不通常见下的审计与分析需求。
+more snort.log.1234324123 <span class="hljs-comment"># 查看日志</span>
+<span class="hljs-comment"># 关键参数和功能说明</span>
+1. -l &lt;log_dir&gt;: 指定日志文件的存放目录，需确保目录已存在且有写入权限。
+2. -h &lt;IP/Host&gt;: 定义受保护的主机网络(Home Network)，用于区分内外网的流量。
+3. -b: 以二进制格式 (tcpdump格式)记录数据包，节省空间且便于后续分析。
+4. -s: 将日志信息发送给系统syslog服务，便于日志的集中收集与管理。
+
+<span class="hljs-comment">### 三、作为网络入侵检测</span>
+./snort -vde -l /var/log/snort -c /etc/snort/snort.conf <span class="hljs-comment"># 启动入侵检测共功能: 完整模式，输出目录，配置文件</span>
+snort最重要的用途还是作为网络入侵检测系统。能够实时监控网络流量，通过预定义的规则库识别攻击行为并触发告警。它通过分析数据包的特征，有效防御端口扫描、DDOS攻击、缓冲区溢出等多种威胁，是构建网络安全防线的重要工具。
+<span class="hljs-comment"># 帮助snort实现网络入侵检测功能的参数如下表所示。</span>
+1. -c &lt;file&gt;: 指定Snort配置文件路径，包含检测规则库
+2. -A &lt;mode&gt;: 配置告警输出模式 (如full/quick/console)
+3. -b: 以二进制格式快速记录原始网络数据包
+4. -s: 将告警信息转发至系统syslog日志服务
+5. -M WORKSTATIONS: 使用SMB警报机制 (Windows的弹窗告警)。
+<span class="hljs-comment"># 警报机制</span>
+snort的警报机制有full, fast, socket, none, smb(winpopup)和syslog等6种。其中，前4种警报机制可以使用-A参数设置，如下
+1. -A fast: 输出精简的报警信息，仅包含关键要素: 时间戳、报警分类信息、源IP/目的IP地址及通信端口，适合快速查看与日志归档。
+2. -A full: 完整报警模式，输出包含数据包的详细信息(如协议细节、负责内容片段)，适合深度审计与入侵行为分析。
+3. -A unsock: 将报警信息通过UNIX本地套接字发送给第三方进程，支持实时联动处理(如联动防护墙阻断、自动化响应脚本)
+4. -A none: 完全关闭报警输出功能，仅进行数据包检测而不生产任何报警日志，适用于仅需流量分析或性能优先的场景。
+使用建议: 日常监控推荐使用 -A fast以节省日志存储空间；若需取证分析或深度排查，则使用-A full; 若需与自动化运维平台联动, -A unsock是最佳选择。
+
+<span class="hljs-comment">### 四、Snort规则 （考试内容）</span>
+snort作为网络入侵检测系统，拥有自己的规则语言。从语法上看，该规则语言非常简单，又足够强大。
+<span class="hljs-comment"># snort规则语法</span>
+1. 规则由两部分组成: <span class="hljs-string">&#x27;规则头部&#x27;</span>定义流量的基本五元组特征(动作、协议、源/目的IP、源/目的端口)；<span class="hljs-string">&#x27;规则选项&#x27;</span>则包含报警信息、工具特征码(如内容匹配、正则表达式)等关键检测条件，是判定是否触发规则的核心依据。
+2. 标准格式: <span class="hljs-string">&#x27;rules_action protocol src_ip src_port -&gt; dst_ip dst_port&#x27;</span> (rules_option)
+3. 其中rules_action为规则动作(如alert报警、<span class="hljs-built_in">log</span>记录、pass放行)、protocol(网络协议，如tcp/udp/icmp)、箭头左侧为源端信息，右侧为目的端信息。例如
+<span class="hljs-built_in">log</span> tcp any any -&gt; 192.168.0.0/24 21
+使用这条规则，snort可以将任意网络到网络192.168.0.0/24的21端口的数据报记录到日志中，用于审计FTP访问行为。
+
+<span class="hljs-comment">## (1) Snort规则头</span>
+<span class="hljs-comment"># rules_action(规则动作): </span>
+alert报警(如弹窗、邮件，写入日志), <span class="hljs-built_in">log</span>记录(写日志), pass放行(不记录，用于白名单流量)
+<span class="hljs-comment"># protocol(网络协议): 如tcp/udp/icmp等</span>
+<span class="hljs-comment"># 通信方向</span>
+1. -&gt;: 箭头左侧为源端信息，右侧为目的端信息。
+2. &lt;&gt;: 定义双向通信，明确流量流向边界。
+<span class="hljs-comment"># 地址与端口: 支持 “网络/掩码” 格式(如192.168.0.0/24); &#x27;any&#x27;匹配任意IP/端口, &#x27;!&#x27;表示取反, &#x27;:&#x27;指定端口范围(1024:65535)</span>
 <span class="hljs-comment"># 实例1: log tcp any any -&gt; 192.168.0.0/24 21</span>
 解析: 使用这条规律，snort可以将任意网络到网络192.168.0.0/24的21端口的数据包记录到日志中，用于审计FTP访问行为。
 <span class="hljs-comment"># 实例2: alert tcp ! 192.168.0.0/24 any -&gt; 192.168.0.0/24 1024:65535 (msg: &quot;tcp traffice&quot;;)</span>
 解析: 监控内网192.168.0.0/24网段，对从非192.168.0.0/24网络的任意端口发往该网段1024-65535端口的TCP流量进行告警。
-<span class="hljs-comment">## 二、Snort规则选项(默认规则目录/etc/snort/rules)</span>
-规则选项是Snort入侵检测引擎的核心逻辑载体，封装在规则的括号内，各选项以分号<span class="hljs-string">&quot;;&quot;</span>分隔。它们定义了检测的具体条件、匹配深度、响应动作及日志信息，是实现精确威胁检测的关键要素，灵活组合可应对多样化的网络工具场景。Snort支持如下所示的选项。
+
+<span class="hljs-comment">## (2) Snort规则选项(默认规则目录/etc/snort/rules)</span>
+规则选项是Snort入侵检测引擎的核心逻辑载体，封装在规则的括号内，各选项以分号<span class="hljs-string">&quot;;&quot;</span>分隔。它们定义了检测的具体条件、匹配深度、响应动作及日志信息，是实现精确威胁检测的关键要素，灵活组合可应对多样化的网络工具场景。
+<span class="hljs-comment"># Snort支持如下所示的选项。</span>
 1. content: 用于匹配数据包应用层的负载内容，是检测攻击特征（如恶意指令、病毒特征码）的核心选项。
 2. msg: 定义触发规则时输出的报警或日志信息，帮助管理员快速识别告警事件的类型与描述。
 3. flags: 检查TCP头部的标志位(如SYN、ACK、FIN、RST等)，用于识别特定的TCP连接状态或扫描行为。
@@ -3339,9 +3510,9 @@ ifconfig eth0 192.168.0.138 netmask 255.255.255.0 <span class="hljs-comment"># �
 alert tcp ! 192.168.0.0/24 any -&gt; 192.168.0.0/24 80 (msg:<span class="hljs-string">&quot;Web traffic&quot;</span>; sid:1000001; rev:1;)
 解析: 该规则表示警报从外网的任意端口到192.168.0.0/24的所有Web通信，同时定义了规则ID(sid)和版本号(rev)
 生效方法: 在/etc/snort/snort.conf文件末尾添加: include <span class="hljs-variable">$RULE_PATH</span>/new_rule.rules, 重启服务systemctl restart snort
-<span class="hljs-comment"># 示例2</span>
+<span class="hljs-comment"># 示例2 详细示例</span>
 alert http any any -&gt; <span class="hljs-variable">$HOME_NET</span> any (msg:<span class="hljs-string">&quot;Potential SQL injection attempt&quot;</span>; content:<span class="hljs-string">&quot;SELECT|2b|OR|2b|INSERT|2b|UPDATE|2b|DELETE&quot;</span>; nocase; threshold:<span class="hljs-built_in">type</span> both; track by_src, count 3, seconds 10; sid:1000005; rev:1;)
-解析
+<span class="hljs-comment"># 示例2 解析</span>
 - alert表示触发这个规则时产生一个警报。http指定协议为HTTP。any any 表示源IP地址和源端口可以是任意的。-&gt;表示数据包的流向。<span class="hljs-variable">$HOME_NET</span> any表示目的为内网网络（通过变量定义）的任意端口。
 - (msg: <span class="hljs-string">&quot;Potential SQL injection attempt&quot;</span>;: 设置警报消息为<span class="hljs-string">&quot;Potential SQL injection attempt&quot;</span>，即潜在的SQL注入尝试。
 - content:<span class="hljs-string">&quot;SELECT|2b|OR|2b|INSERT|2b|UPDATE|2b|DELETE&quot;</span>;nocase;: 检查HTTP数据包中是否包含常见的SQL关键字，如<span class="hljs-string">&quot;SELECT、OR、INSERT、UPDATE、DELETE&quot;</span>等，这里的<span class="hljs-string">&quot;2b&quot;</span>表示空格的十六进制表示，nocase表示不区分大小写，因为SQL注入尝试可能以各种大小写形式出现。
@@ -3349,11 +3520,155 @@ alert http any any -&gt; <span class="hljs-variable">$HOME_NET</span> any (msg:<
 - sid是规则的唯一标识符，这里为1000005。rev是规则的版本号，这里为1.
 - 这个规则可以检测到可能的HTTP请求中的SQL注入尝试行为，当在特定时间内来自同一源IP的多个请求中包含可疑的SQL关键字时，Snort会发出警报，提醒管理员防范潜在的SQL注入攻击。</code></pre>
 
+<h3 id="2026年预测"><a href="#2026年预测" class="headerlink" title="2026年预测"></a>2026年预测</h3><pre><code class="hljs bash">1. 操作系统与系统安全撇嘴仍是分值最高的方向，重点在 Linux 权限模型 与 SSH加固、Windows安全子系统日志。
+
+2. <span class="hljs-string">&quot;日志与流量分析 + 代码审计&quot;</span> 的组合大题将延续，需同时具备抓包分析与代码漏洞定位能力。
+
+3. 新技术安全基线围绕 安卓 / 移动App： APK结构、签名目录、权限声明 (AndroidManifest.xml)。
+
+4. 密码学大概率回归: DES分组填充与置换过程、RSA参数与密钥计算、数字签名及可实现的安全目标。
+
+5. 安全模型、安全体系与安全管理概念题(八大安全机制、PDRR、ISO安全服务) 近年反复出现。
+
+</code></pre>
 
 
 
 
 
+<h2 id="2025年案例分析"><a href="#2025年案例分析" class="headerlink" title="2025年案例分析"></a>2025年案例分析</h2><h3 id="SSH-15’"><a href="#SSH-15’" class="headerlink" title="SSH 15’"></a>SSH 15’</h3><pre><code class="hljs bash"><span class="hljs-comment"># 1. SSH基于密钥的免密认证使用什么秘密体制？ 2&#x27;</span>
+答: 公钥(非对称)密码体制。
+解析: SSH使用非对称加密算法(如RSA)来生成密钥对，利用公钥加密，私钥解密的特征进行身份验证。
+<span class="hljs-comment"># 2. 为了安全，要使用基于秘密对认证，ssh创建密钥对的命令是什么？ 2&#x27;</span>
+答: ssh-keygen
+解析: ssh-keygen全称为Secure Shell Key Generate，是Linux及类Unix系统中用于生成SSH远程登录所需非对称加密密钥对的专用命令
+<span class="hljs-comment"># 3. ssh基于密钥对认证，需要上传那个文件到服务器？ 2&#x27;</span>
+答: id_rsa.pub
+解析: 必须上传公钥文件 (通常是ip_rsa.pub)到服务器的~/.ssh/authorized_keys中，私钥(id_rsa)必须永远保留在本地。
+<span class="hljs-comment"># 4. 为了保证安全，要定期检查authorized_keys的权限，为防止其他用户篡改authorized_keys的权限，应该怎么设置权限？用数据表示。</span>
+答: 600
+解析: authorized_keys权限必须严格为600，权限过大会直接导致密钥登陆失败。（目录是700）
+<span class="hljs-comment"># 5. ssh服务的配置文件是哪个？ 2&#x27;</span>
+答: sshd_config
+解析: SSH服务进程为sshd，系统标准配置文件路径: /etc/ssh/sshd_config. (ssh_config是客户端的配置文件)
+<span class="hljs-comment"># 6. SSH服务的端口是多少? 2&#x27;</span>
+答: 22
+解析: SSH协议官方默认监听端口22
+<span class="hljs-comment"># 7. 为了保证前面安全规则(基于公钥认证)，ssh服务配置文件的以下几项怎么设置？3&#x27;</span>
+PermitRootLogin ()
+PasswordAuthentication ()
+PubkeyAuthentication ()
+答: no; no; <span class="hljs-built_in">yes</span>.
+解析: 禁止root登陆，关闭秘密认证，开启公钥认证
+</code></pre>
+
+<h3 id="Android-15’"><a href="#Android-15’" class="headerlink" title="Android 15’"></a>Android 15’</h3><pre><code class="hljs bash"><span class="hljs-comment"># 1. 选择: 安装APK文件属于什么类型? 2&#x27;</span>
+A. 压缩文件    B. 可执行文件    C. 图片文件    D. 文本文件
+答: A (压缩文件)
+解析: APK本质是ZIP压缩包，可直接解压查看内部资源、代码、配置文件，不属于安卓可执行程序，安装真正可指向是dex文件。
+<span class="hljs-comment"># 2. 根据APK结构体，回答下面问题</span>
+(1) 数据签名是哪个文件 (目录)？
+答: META-INF
+(2) 参数配置是哪个文件 (目录)？
+答: Androidmanifest.xml
+(3) 字节码是哪个文件 (目录)?
+答: classes.dex
+补充: assets是素材，不会打包的; lib是库文件; res是美工方面（页面布局）; resources.arsc(res的索引) 
+<span class="hljs-comment">## 补充</span>
+1. 自身权限: <span class="hljs-string">&#x27;permission&#x27;</span>  <span class="hljs-comment"># 定义app本身的权限，其他应用要来用某些东西必须具有定义的权限 normal</span>
+2. 访问权限: <span class="hljs-string">&#x27;uses-permission&#x27;</span> <span class="hljs-comment"># APP要运用，需要使用系统的哪些权限</span>
+3. 保护级别: protectionLevel的值 <span class="hljs-string">&#x27;normal&#x27;</span>
+4. 权限安全等级排序: normal &lt; dangerous &lt; signature &lt; signatureOrsuystem。normal属于低安全级别，无需用户权限即可获取；
+5. dengerous危险权限同样安全性弱，易被恶意程序滥用，二者安全防护能力较差，因此选dangerous
+6. 安卓四大核心组件: <span class="hljs-string">&#x27;&lt;activity&gt;&#x27;</span>对应Activity活动、<span class="hljs-string">&#x27;&lt;service&gt;&#x27;</span>对应Service服务、<span class="hljs-string">&#x27;&lt;receiver&gt;&#x27;</span>对应Broadcast Receiver关闭接收者、<span class="hljs-string">&#x27;&lt;provider&gt;&#x27;</span>对应 Content Provider内容提供者。
+7. Activity是承载手机界面、人机交换、账号密码输入的核心组件。
+</code></pre>
+
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261021163954405.png"></p>
+<h3 id="Window-15’"><a href="#Window-15’" class="headerlink" title="Window 15’"></a>Window 15’</h3><pre><code class="hljs bash"><span class="hljs-comment">### Windows安全子系统组件服务主要包括 SRM、SAM、LSASS</span>
+1. SRM: 安全引用监视器: 负责执行对象的 <span class="hljs-string">&#x27;安全访问检查&#x27;</span>、管理用户特权、<span class="hljs-string">&#x27;生成安全审计消息&#x27;</span>，并且定义了访问令牌的 <span class="hljs-string">&#x27;数据结构&#x27;</span> 来表示一个安全的环境。
+2. SAM: 安全账号管理器: 是Windows本地账号 <span class="hljs-string">&#x27;数据库&#x27;</span>，专门存放本地用户名、密码哈希、用户权限、身份标识等所有本地用户身份核心信息，是系统保存用户账号数据的专属组件。
+3. LSASS: 本地安全权威子系统: 负责本地系统的 <span class="hljs-string">&#x27;安全策略&#x27;</span>，同时，它也认证用户身份，以及 <span class="hljs-string">&#x27;将安全审计消息发送到系统的事件日志中&#x27;</span> 
+4. Winlogon: 负责响应SAS(安全注意序列)，全权管理交互式登陆会话，用户开机登陆、注销、锁屏交换流程均由该组件主导，登录后还会创建 <span class="hljs-string">&#x27;初始进程&#x27;</span> ,并进一步由它桌面外壳(shell)进程。
+
+<span class="hljs-comment">### Windows中应用、系统、安全日志文件的名称</span>
+AppEvent.evt
+SysEvent.evt
+SecEvent.evt
+
+<span class="hljs-comment">### 事件ID</span>
+4624: 登录成功
+4625: 登录失败
+4620: 创建用户账号
+4612: 清除审计日志
+
+<span class="hljs-comment">### 自主访问机制</span>
+<span class="hljs-comment"># 基于行</span>
+能力表(capability list)
+前缀表(profiles)
+口令(password)
+<span class="hljs-comment"># 基于列</span>
+保护位
+访问控制列表
+
+
+<span class="hljs-comment">### Windows核心系统管理与安全类</span>
+1. secpol.msc <span class="hljs-comment"># 本地安全策略：密码策略、账号锁定策略、本地策略、安全选项	</span>
+2. gpedit.msc <span class="hljs-comment"># 打开本地组策略编辑器</span>
+3. eventvwr.msc <span class="hljs-comment"># 事件查看器</span>
+4. services.msc <span class="hljs-comment"># 服务管理控制台</span>
+5. lusrmgr.msc <span class="hljs-comment"># 本地用户和组管理单元</span>
+6. taskschd.msc <span class="hljs-comment"># 打开任务计划程序</span>
+7. sysdm.cpl <span class="hljs-comment"># 系统属性窗口</span>
+8. msinfo32 <span class="hljs-comment"># 系统信息工具</span>
+9. regedit  <span class="hljs-comment"># 启动注册表编辑器 ProfileList，组策略</span>
+10. net user <span class="hljs-comment"># 清除冗余账号</span>
+11. net localgroup <span class="hljs-comment"># 控制组成语</span>
+<span class="hljs-comment"># Windows 网络管理与诊断类</span>
+1. wf.msc <span class="hljs-comment"># 打开高级安全Windows防火墙控制台</span>
+2. ncpa.cpl <span class="hljs-comment"># 打开网络连接窗口</span>
+3. control firewall.cpl <span class="hljs-comment"># 打开传统Windows Defender防火墙控制面</span>
+</code></pre>
+
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261021165159667.png"></p>
+<h3 id="Linux-Wireshark抓包分析-15’"><a href="#Linux-Wireshark抓包分析-15’" class="headerlink" title="Linux &amp; Wireshark抓包分析 15’"></a>Linux &amp; Wireshark抓包分析 15’</h3><pre><code class="hljs bash"><span class="hljs-comment">### 网络设备</span>
+NTA: 全流量记录设备。
+SIEM: 日志审计的感觉。日志汇总分析。
+Firewall: 侧重访问拦截。
+IDS: 侧重入侵告警。
+Honeypot: 蜜罐。侧重主动诱捕攻击。
+
+
+<span class="hljs-comment">### Wireshark 过滤规则</span>
+ip.addr == 192.168.133.100
+
+
+<span class="hljs-comment">### iptables</span>
+iptables -t filter -A input -s 192.168.133.1 -j DROP
+
+
+
+<span class="hljs-comment">### 漏洞类型</span>
+1. 远程命令执行漏洞 (命令注入)
+
+</code></pre>
+
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261021171318711.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261021172218942.png"></p>
+<h3 id="安全体系-15’"><a href="#安全体系-15’" class="headerlink" title="安全体系 15’"></a>安全体系 15’</h3><pre><code class="hljs bash"><span class="hljs-comment">### 八大安全机制</span>
+1. 加密机制
+2. 数据完整性机制
+3. 流量填充机制
+4. 访问控制机制
+5. 数据签名机制
+6. 交换鉴别机制
+7. 公证机制
+8. 路由控制机制。
+
+</code></pre>
+
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261021172630762.png"></p>
+<h3 id="2020-RSA"><a href="#2020-RSA" class="headerlink" title="2020 RSA"></a>2020 RSA</h3><pre><code class="hljs bash"></code></pre>
 
 
       
