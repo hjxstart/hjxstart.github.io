@@ -275,7 +275,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="80">
-<input type="hidden" id="yelog_site_word_count" value="593.8k">
+<input type="hidden" id="yelog_site_word_count" value="595.1k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1011,12 +1011,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2026-10-28 18:04:36'>2026-04-01 09:25</time>
+            发布时间 : <time class="date" title='最后更新: 2026-10-29 18:39:12'>2026-04-01 09:25</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:45.5k</span>
+        <span>字数:46.2k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -5210,15 +5210,12 @@ bigmem 10240 <span class="hljs-comment"># 申请10G物理内存</span>
 <span class="hljs-comment"># swap关闭的命令</span>
 swapoff -a</code></pre>
 
-<h2 id="模拟环境"><a href="#模拟环境" class="headerlink" title="模拟环境"></a>模拟环境</h2><pre><code class="hljs bash">账号：kiosk　密码：redha
+<h2 id="模拟环境"><a href="#模拟环境" class="headerlink" title="模拟环境"></a>模拟环境</h2><pre><code class="hljs bash">4小时，全英文环境
+账号：kiosk　密码：redha
 su - root <span class="hljs-comment"># Asimov 是密码</span>
 虚拟机: root/redhat   student/student
-
 virsh start workstation
-
 virsh list --all
-
-
 </code></pre>
 
 <h3 id="练习内容"><a href="#练习内容" class="headerlink" title="练习内容"></a>练习内容</h3><pre><code class="hljs bash"><span class="hljs-comment">## 练习环境简介</span>
@@ -5232,13 +5229,80 @@ virsh list --all
 
 <span class="hljs-comment">## 2. 分析 sar 的输出结果</span>
 在 servera 上，分析采集自其他计算机的 sar.data 文件，回答以下问题: 系统的最高进程数量是多少?
+sar -q -f sar.data |<span class="hljs-built_in">sort</span> -nr -k 3 | more <span class="hljs-comment"># 统计最大进程数</span>
 
 
 <span class="hljs-comment">## 3. 分析 sar 的磁盘输出</span>
 在 servera 上，分析 sar.data 文件，回答以下问题: (注: 这个文件采集自含有逻辑卷的计算机，请忽略逻辑卷，而之分析物理驱动器)
 关于拥有最高 I/O 的设备，最高的写 I/O 是? (四舍五入到百位)
+sar -d -p -f sar.data | <span class="hljs-built_in">sort</span> -nrk 5 | <span class="hljs-built_in">head</span> <span class="hljs-comment"># 统计最大写速率的设备</span>
 
 
+<span class="hljs-comment">## 4. 分析 sar 的网络输出</span>
+在 servera 上，分析 sar.data 文件，回答以下问题: 在单一网卡上持续了多长时间 (分钟) 的爆发性流量?
+
+
+<span class="hljs-comment">## 5. 分析 system call</span>
+在 servera 上，找到 updatedb 命令的最频繁 system call
+strace -c updatedb
+
+
+<span class="hljs-comment">## 6. 限制内存分配</span>
+配置 servera, 当 greedy 程序运行时，报错信息如下: <span class="hljs-string">&quot;unable to allocate memory&quot;</span>, 当 checklimit 命令运行时，显示: <span class="hljs-string">&quot;Success: Address space limit is okay&quot;</span>，设置要求重启也生效。
+<span class="hljs-comment"># 1. 将以下内存配置重定向到 /etc/sysctl.conf</span>
+1. sysctl -a | grep overcomm
+2. sysctl -a | grep overcomm &gt;&gt; /etc/sysctl.conf
+3. vim /etc/sysctl.conf <span class="hljs-comment"># 修改以下配置</span>
+保留配置1: vm.overcommit_memory = 2 <span class="hljs-comment"># 将值设置为2，默认是0(有多少内存给多少内存), 1是(要多少内存给多少), 2是(所有的swap+内存的一半)</span>
+保留配置2: vm.overcommit_ratio = 50
+4. sysctl -p <span class="hljs-comment"># 使配置生效</span>
+
+
+<span class="hljs-comment">## 7. 配置共享内存</span>
+在 servera 上，配置 SYSV 共享内存的数量在 1 GiB 至 1.5 Gib 之间，重启后也生效。
+
+
+
+<span class="hljs-comment">## 8. 分析虚拟内存占用</span>
+Determine the amount of physical memory, <span class="hljs-string">&#x27;in pages&#x27;</span>, used by the realtime application. If necessary, pick the value from the list that rounds up to or down to the closest value. Click on <span class="hljs-string">&#x27;Submit Answers&#x27;</span> to record your answer.
+在 servera 上，计算 memory_usage 软件的虚拟内存占用 (单位为 page)
+<span class="hljs-comment"># 1. 查看共享内存段的数量</span>
+sysctl -a | grep shm <span class="hljs-comment"># kernel.shmmax = 1xxxxx</span>
+<span class="hljs-comment"># 2. 计算大小 </span>
+1.25 * 1024 * 1024 / 4 = 327680
+<span class="hljs-comment"># 3. vim /etc/sysctl.conf</span>
+kernel.shmall = 32760
+<span class="hljs-comment"># 4. sysctl -p # 使配置生效</span>
+
+
+
+<span class="hljs-comment">## 9. 配置 systemtap</span>
+在 servera 上， root 家目录下有一个文件 count_jiffies.stp, 配置系统使得 root 用户可以运行这个脚本
+<span class="hljs-comment"># Configure system profiling support</span>
+On station there is a file <span class="hljs-keyword">in</span> the root home directory called <span class="hljs-string">&#x27;count_jiffies.stp&#x27;</span>. Configure this system so that the root user can run this script
+<span class="hljs-comment"># 1. 安装环境</span>
+stap -v <span class="hljs-comment"># 如果没有该命令，就安装 systemtap</span>
+yum -y install systemtap
+<span class="hljs-comment"># 2. 安装 gcc 编译器</span>
+
+
+
+
+<span class="hljs-comment">## 10. 针对 cache 的利用率，选择合适的应用</span>
+在 servera 上，账号的目录有两个版本的应用程序: cache-a 和 cache-b。两个版本的应用程序功能一样，但是其中一个在使用缓存方面不合理，确认哪个应用程序有更好的缓存性能并复制这个程序到 /usr/local/bin
+
+
+<span class="hljs-comment">## 11. 配置网络 buffer</span>
+在 servera 上，配置网络缓存使得每个 UDP 连接 (输入、输出)，保证能有最小 128 KiB 最大 192 KiB 的 buffer，重启仍能生效。
+
+
+
+<span class="hljs-comment">### 其他命令</span>
+pmap <span class="hljs-string">&#x27;pid&#x27;</span> <span class="hljs-comment"># 查看进程ID使用的虚拟内存</span>
+./shellxxx &amp; <span class="hljs-comment"># 后台运行该命令</span>
+<span class="hljs-built_in">jobs</span> <span class="hljs-comment"># 查看后台运行服务</span>
+ps aux | grep <span class="hljs-string">&#x27;process_name&#x27;</span> <span class="hljs-comment"># 可以查看物理内存 RSS</span>
+bc <span class="hljs-comment"># 调用计算器</span>
 
 
 
