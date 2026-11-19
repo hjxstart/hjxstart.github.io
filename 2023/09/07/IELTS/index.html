@@ -6,57 +6,18 @@
   <meta name="keywords" content="">
   <meta name="description" content="IELTS | 黄金贤的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="概念第1章 网络信息安全概述  3-11. 网络空间: 它是国家继陆、海、空、天四个疆域之后的 &quot;第五疆域&quot;。 2. 网络信息安全基本属性: &quot;机密性&quot;(对应涉密), &quot;完整性&quot;(对应篡改), &quot;可用性&quot;(对应破坏), 抗抵赖性, 可控性 3. &quot;防御、监测、应急、恢复（口诀: 房间积灰），被称为网络安全保障">
+<meta name="description" content="概述准备笔记本准备### Vmware workstation 网络规划 1. 仅主机: 192.168.41.4&#x2F;24, GW: 192.168.41.1 # 优先级3 2. Nat: 192.168.42.4&#x2F;24, GW: 192.168.42.2 # 优先级0 3. PXE-桥接: 192.168.44.4&#x2F;24 # 优先级1 3. PXE-bmc: 192.168.2.10&#x2F;24 # 优">
 <meta property="og:type" content="article">
-<meta property="og:title" content="信息安全工程师">
-<meta property="og:url" content="https://hjxstart.github.io/2026/10/02/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%B7%A5%E7%A8%8B%E5%B8%88/index.html">
+<meta property="og:title" content="PAK">
+<meta property="og:url" content="https://hjxstart.github.io/2026/11/17/PAK/index.html">
 <meta property="og:site_name" content="黄金贤的博客">
-<meta property="og:description" content="概念第1章 网络信息安全概述  3-11. 网络空间: 它是国家继陆、海、空、天四个疆域之后的 &quot;第五疆域&quot;。 2. 网络信息安全基本属性: &quot;机密性&quot;(对应涉密), &quot;完整性&quot;(对应篡改), &quot;可用性&quot;(对应破坏), 抗抵赖性, 可控性 3. &quot;防御、监测、应急、恢复（口诀: 房间积灰），被称为网络安全保障">
+<meta property="og:description" content="概述准备笔记本准备### Vmware workstation 网络规划 1. 仅主机: 192.168.41.4&#x2F;24, GW: 192.168.41.1 # 优先级3 2. Nat: 192.168.42.4&#x2F;24, GW: 192.168.42.2 # 优先级0 3. PXE-桥接: 192.168.44.4&#x2F;24 # 优先级1 3. PXE-bmc: 192.168.2.10&#x2F;24 # 优">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261008180956851.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261015121719049.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261021130822944.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261021141627909.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261021141839894.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261021220453780.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261021163954405.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261021165159667.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261021171318711.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261021172218942.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261021172630762.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261022104146549.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261022104756748.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261022113418649.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261022115348149.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261022121148502.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261022122608907.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261022123427373.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261022123910165.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261022125330424.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261022131741401.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261022132425798.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261022134154121.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261022134219782.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261022135322219.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261022135355503.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261022161849723.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261022162555435.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261022163929096.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261022165739111.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261022165805504.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261022165850353.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261022170323720.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261022172531516.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261023160514148.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261023160536939.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261023170734508.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261023170632281.png">
-<meta property="article:published_time" content="2026-10-02T01:41:17.000Z">
-<meta property="article:modified_time" content="2026-10-28T03:17:18.255Z">
+<meta property="article:published_time" content="2026-11-17T02:32:50.000Z">
+<meta property="article:modified_time" content="2026-11-17T08:33:20.877Z">
 <meta property="article:author" content="黄金贤">
 <meta property="article:tag" content="计算机网络 数据库 操作系统 数据结构 算法 Java Nodejs">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261008180956851.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -153,7 +114,7 @@
     <li>
         <div class="all active" data-rel="全部文章">全部文章
             
-                <small>(81)</small>
+                <small>(83)</small>
             
         </div>
     </li>
@@ -178,7 +139,7 @@
                     <div data-rel="工具">
                         
                         工具
-                        <small>(14)</small>
+                        <small>(15)</small>
                         
                     </div>
                     
@@ -248,7 +209,7 @@
                     <div data-rel="网络">
                         
                         网络
-                        <small>(15)</small>
+                        <small>(16)</small>
                         
                     </div>
                     
@@ -274,8 +235,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="81">
-<input type="hidden" id="yelog_site_word_count" value="601.3k">
+<input type="hidden" id="yelog_site_posts_number" value="83">
+<input type="hidden" id="yelog_site_word_count" value="614.2k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -441,6 +402,22 @@
            data-author="" >
             <span class="post-title" title="DaVinci">DaVinci</span>
             <span class="post-date" title="2026-03-02 10:05:22">2026/03/02</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2026/11/17/PAK/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PAK">PAK</span>
+            <span class="post-date" title="2026-11-17 10:32:50">2026/11/17</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2026/11/09/HAM/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HAM">HAM</span>
+            <span class="post-date" title="2026-11-09 16:44:02">2026/11/09</span>
         </a>
         
         <a  class="全部文章 安全 "
@@ -1017,12 +994,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2026-11-05 22:06:04'>2023-09-07 17:57</time>
+            发布时间 : <time class="date" title='最后更新: 2026-11-16 21:27:55'>2023-09-07 17:57</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:32.3k</span>
+        <span>字数:36.6k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1041,7 +1018,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%8B%B1%E8%AF%AD%E5%9F%BA%E7%A1%80%E8%AF%BE"><span class="toc-text">英语基础课</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%8B%B1%E6%A0%87-%E8%AF%8D%E6%80%A7-%E5%8F%A5%E5%AD%90%E6%88%90%E5%88%86-%E4%B8%BB%E8%B0%93%E4%B8%80%E8%87%B4"><span class="toc-text">1-英标&#x2F;词性&#x2F;句子成分&#x2F;主谓一致</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#48%E9%9F%B3%E6%A0%87%E5%9F%BA%E7%A1%80"><span class="toc-text">48音标基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8%E5%A4%A7%E8%AF%8D%E6%80%A7"><span class="toc-text">8大词性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%A5%E5%AD%90%E6%88%90%E5%88%86-%E4%B8%BB-%E8%B0%93-%E5%AE%BE-%E8%A1%A8-%E5%AE%9A%E8%AF%AD-%E8%A1%A5%E8%AF%AD"><span class="toc-text">句子成分(主&#x2F;谓&#x2F;宾&#x2F;表&#x2F;定语&#x2F;补语)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5%E7%A7%8D%E7%AE%80%E5%8D%95%E5%8F%A5"><span class="toc-text">5种简单句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%B0%93%E4%B8%80%E8%87%B4"><span class="toc-text">主谓一致</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Summary-Assignment"><span class="toc-text">Summary&amp;Assignment</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%90%8D%E8%AF%8D%E3%80%81%E5%86%A0%E8%AF%8D%E3%80%81%E4%BB%A3%E8%AF%8D%E3%80%81%E5%BD%A2%E5%AE%B9%E8%AF%8D%E4%B8%8E%E5%89%AF%E8%AF%8D"><span class="toc-text">2-名词、冠词、代词、形容词与副词</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8D%E8%AF%8D-Noun%E2%80%93%E5%8F%AF%E6%95%B0%E5%90%8D%E8%AF%8D-%E4%B8%8D%E5%8F%AF%E6%95%B0%E5%90%8D%E8%AF%8D"><span class="toc-text">名词 Noun–可数名词&#x2F;不可数名词</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%A0%E8%AF%8D-%E2%80%93a-an-the"><span class="toc-text">冠词 –a&#x2F;an&#x2F;the</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E8%AF%8D-i-you-he-she-it-we-they"><span class="toc-text">代词-i&#x2F;you&#x2F;he&#x2F;she&#x2F;it&#x2F;we&#x2F;they</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%A2%E5%AE%B9%E8%AF%8D%E2%80%94Adj%E2%80%A6%E7%9A%84-%E5%90%8D%E8%AF%8D"><span class="toc-text">形容词—Adj…的(名词)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%AF%E8%AF%8D%E2%80%93adv%E2%80%A6%E5%9C%B0-%E5%8A%A8%E4%BD%9C"><span class="toc-text">副词–adv…地(动作)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Summary-Assignment-1"><span class="toc-text">Summary&amp;Assignment</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%B9%9D%E5%A4%A7%E6%97%B6%E6%80%81%E2%80%93%E4%B8%80%E8%88%AC%E5%BC%8F-%E8%BF%9B%E8%A1%8C%E5%BC%8F-%E5%AE%8C%E6%88%90%E5%BC%8F"><span class="toc-text">3-九大时态–一般式&#x2F;进行式&#x2F;完成式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E6%80%81%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7"><span class="toc-text">时态的重要性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E8%88%AC%E5%BC%8F"><span class="toc-text">一般式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E8%A1%8C%E5%BC%8F"><span class="toc-text">进行式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8C%E6%88%90%E5%BC%8F"><span class="toc-text">完成式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Summary-Assignment-2"><span class="toc-text">Summary&amp;Assignment</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E8%AF%AD%E6%80%81%E2%80%93%E4%B8%BB%E5%8A%A8-%E8%A2%AB%E5%8A%A8%E8%AF%AD%E6%80%81"><span class="toc-text">4-语态–主动&#x2F;被动语态</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AB%E5%A4%A7%E6%A0%B8%E5%BF%83%E8%A2%AB%E5%8A%A8%E8%AF%AD%E6%80%81%E6%80%BB%E7%BB%93"><span class="toc-text">八大核心被动语态总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E8%88%AC%E5%BC%8F-1"><span class="toc-text">一般式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E8%A1%8C%E5%BC%8F-1"><span class="toc-text">进行式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8C%E6%88%90%E5%BC%8F-1"><span class="toc-text">完成式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E7%9A%84%E8%A2%AB%E5%8A%A8%E7%BB%93%E6%9E%84"><span class="toc-text">特殊的被动结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Summary"><span class="toc-text">Summary</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%A4%8D%E5%90%88%E5%8F%A5%E2%80%93%E5%AE%9A%E8%AF%AD-%E7%8A%B6%E8%AF%AD-%E5%90%8D%E8%AF%8D%E6%80%A7%E4%BB%8E%E5%8F%A5"><span class="toc-text">5-复合句–定语&#x2F;状语&#x2F;名词性从句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E8%AF%AD%E4%BB%8E%E5%8F%A5%E2%80%93%E4%BF%AE%E9%A5%B0%E5%90%8D%E8%AF%8D"><span class="toc-text">定语从句–修饰名词</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E4%BB%A3%E8%AF%8D-who-whom-which-that"><span class="toc-text">关系代词-who&#x2F;whom&#x2F;which&#x2F;that</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E5%89%AF%E8%AF%8D%E2%80%94when-where-why-for-at-on-in-which"><span class="toc-text">关系副词—when&#x2F;where&#x2F;why (for&#x2F;at&#x2F;on&#x2F;in which)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E5%BD%A2%E5%AE%B9%E8%AF%8D%E2%80%93whose%E7%9A%84%E7%94%A8%E6%B3%95"><span class="toc-text">关系形容词–whose的用法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E8%AF%AD%E4%BB%8E%E5%8F%A5%E5%88%86%E7%B1%BB%E2%80%93%E9%99%90%E5%88%B6-%E9%9D%9E%E9%99%90%E5%88%B6"><span class="toc-text">定语从句分类–限制&#x2F;非限制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Summary-1"><span class="toc-text">Summary</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8A%B6%E8%AF%AD%E4%BB%8E%E5%8F%A5%E2%80%93%E4%BF%AE%E9%A5%B0%E5%8A%A8%E8%AF%8D"><span class="toc-text">状语从句–修饰动词</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E7%8A%B6%E8%AF%AD%E4%BB%8E%E5%8F%A5"><span class="toc-text">时间状语从句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8E%9F%E5%9B%A0%E7%8A%B6%E8%AF%AD%E4%BB%8E%E5%8F%A5"><span class="toc-text">原因状语从句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%AE%E7%9A%84%E7%8A%B6%E8%AF%AD%E4%BB%8E%E5%8F%A5"><span class="toc-text">目的状语从句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C%E7%8A%B6%E8%AF%AD%E4%BB%8E%E5%8F%A5"><span class="toc-text">结果状语从句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E7%8A%B6%E8%AF%AD%E4%BB%8E%E5%8F%A5"><span class="toc-text">条件状语从句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A9%E6%AD%A5%E7%8A%B6%E8%AF%AD%E4%BB%8E%E5%8F%A5"><span class="toc-text">让步状语从句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E7%8A%B6%E8%AF%AD%E4%BB%8E%E5%8F%A5"><span class="toc-text">比较状语从句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E5%BC%8F%E7%8A%B6%E8%AF%AD%E4%BB%8E%E5%8F%A5"><span class="toc-text">方式状语从句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%B0%E7%82%B9%E7%8A%B6%E8%AF%AD%E4%BB%8E%E5%8F%A5"><span class="toc-text">地点状语从句</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8D%E8%AF%8D%E6%80%A7%E4%BB%8E%E5%8F%A5"><span class="toc-text">名词性从句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%B6%E5%88%97%E5%8F%A5%E2%80%93%E5%B9%B6%E5%88%97-%E8%BD%AC%E6%8A%98-%E5%9B%A0%E6%9E%9C-%E9%80%89%E6%8B%A9"><span class="toc-text">并列句–并列&#x2F;转折&#x2F;因果&#x2F;选择</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%8D%E8%AF%8D%E6%80%A7%E4%BB%8E%E5%8F%A5-1"><span class="toc-text">名词性从句</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E9%9D%9E%E8%B0%93%E8%AF%AD%E5%8A%A8%E8%AF%8D%E2%80%93%E4%B8%8D%E6%98%AF%E8%B0%93%E8%AF%AD-%E5%85%B6%E4%BB%96%E9%83%BD%E5%8F%AF%E4%BB%A5"><span class="toc-text">6 -非谓语动词–不是谓语,其他都可以</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%9E%E8%B0%93%E8%AF%AD%E5%8A%A8%E8%AF%8D%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-text">非谓语动词的分类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#to-to-%E4%B8%8D%E5%AE%9A%E5%BC%8F%E4%BD%9C%E6%88%90%E5%88%86"><span class="toc-text">to to 不定式作成分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%AE%9A%E5%BC%8F%E7%9A%84%E6%97%B6%E6%80%81%E5%92%8C%E8%AF%AD%E6%80%81"><span class="toc-text">不定式的时态和语态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%AE%9A%E5%BC%8F%E7%9A%84%E9%80%BB%E8%BE%91%E4%B8%BB%E8%AF%AD"><span class="toc-text">不定式的逻辑主语</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%AE%9A%E5%BC%8F%E7%9A%84%E5%90%A6%E5%AE%9A%E5%BD%A2%E5%BC%8F"><span class="toc-text">不定式的否定形式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E5%90%8D%E8%AF%8D%E4%BD%9C%E6%88%90%E5%88%86"><span class="toc-text">动名词作成分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E5%90%8D%E8%AF%8D%E7%9A%84%E6%97%B6%E6%80%81%E5%92%8C%E8%AF%AD%E6%80%81"><span class="toc-text">动名词的时态和语态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E8%AF%8D%E4%BD%9C%E6%88%90%E5%88%86"><span class="toc-text">分词作成分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E8%AF%8D%E7%9A%84%E6%97%B6%E6%80%81%E5%92%8C%E8%AF%AD%E6%80%81"><span class="toc-text">分词的时态和语态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Summary-2"><span class="toc-text">Summary</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E7%89%B9%E6%AE%8A%E5%8F%A5%E5%9E%8B-%E5%80%92%E8%A3%85%E5%8F%A5-%E5%BC%BA%E8%B0%83%E5%8F%A5-%E8%99%9A%E6%8B%9F%E8%AF%AD%E6%B0%94"><span class="toc-text">7-特殊句型-倒装句&#x2F;强调句&#x2F;虚拟语气</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%80%92%E8%A3%85%E5%8F%A5"><span class="toc-text">倒装句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%BA%E8%B0%83%E5%8F%A5"><span class="toc-text">强调句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E8%AF%AD%E6%B0%94"><span class="toc-text">虚拟语气</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#00-%E5%85%B6%E4%BB%96%E7%9F%A5%E8%AF%86%E8%A1%A5%E5%85%85"><span class="toc-text">00-其他知识补充</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E5%AE%BE%E8%AF%AD%E5%8A%A8%E8%AF%8D%E8%A1%A8"><span class="toc-text">双宾语动词表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%BC%80"><span class="toc-text">前缀</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E8%A7%84%E5%88%99%E6%AF%94%E8%BE%83%E7%BA%A7-%E6%9C%80%E9%AB%98%E7%BA%A7%E5%8F%98%E5%8C%96%E8%A1%A8"><span class="toc-text">不规则比较级&#x2F;最高级变化表</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A1%94%E6%8E%A5%E8%AF%BE"><span class="toc-text">衔接课</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%85%E6%80%9D%E8%A1%94%E6%8E%A5%E8%AF%BE-1"><span class="toc-text">雅思衔接课 1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%85%E6%80%9D%E5%90%AC%E5%8A%9B%E8%80%83%E8%AF%95%E4%BB%8B%E7%BB%8D"><span class="toc-text">雅思听力考试介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8B%B1%E8%AF%AD%E5%8F%91%E9%9F%B3%E8%A7%84%E5%88%99"><span class="toc-text">英语发音规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AC%E5%8A%9B%E7%B2%BE%E5%90%AC%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0"><span class="toc-text">听力精听方法学习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%85%E6%80%9D%E8%A1%94%E6%8E%A5%E8%AF%BE2"><span class="toc-text">雅思衔接课2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Listening-Practice1"><span class="toc-text">Listening-Practice1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Listening-Practice2"><span class="toc-text">Listening-Practice2</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%85%E6%80%9D%E8%A1%94%E6%8E%A5%E8%AF%BE3"><span class="toc-text">雅思衔接课3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Listening-Practice3"><span class="toc-text">Listening-Practice3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%85%E6%80%9D%E5%8F%A3%E8%AF%AD%E8%80%83%E8%AF%95%E5%86%85%E5%AE%B9-introduction"><span class="toc-text">雅思口语考试内容 introduction</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%85%E6%80%9D%E8%A1%94%E6%8E%A5%E8%AF%BE4"><span class="toc-text">雅思衔接课4</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%85%E6%80%9D%E9%98%85%E8%AF%BB%E8%80%83%E8%AF%95%E4%BB%8B%E7%BB%8D"><span class="toc-text">雅思阅读考试介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%8D%E6%B1%87%E8%A1%A5%E5%85%85-%E7%BB%BC%E5%90%88%E8%AE%AD%E7%BB%83"><span class="toc-text">词汇补充+综合训练</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%85%E8%AF%BB%E5%AE%9E%E6%88%98%E8%AE%AD%E7%BB%83"><span class="toc-text">阅读实战训练</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-1"><span class="toc-text">总结</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%8B%B1%E8%AF%AD%E5%9F%BA%E7%A1%80%E8%AF%BE"><span class="toc-text">英语基础课</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%8B%B1%E6%A0%87-%E8%AF%8D%E6%80%A7-%E5%8F%A5%E5%AD%90%E6%88%90%E5%88%86-%E4%B8%BB%E8%B0%93%E4%B8%80%E8%87%B4"><span class="toc-text">1-英标&#x2F;词性&#x2F;句子成分&#x2F;主谓一致</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#48%E9%9F%B3%E6%A0%87%E5%9F%BA%E7%A1%80"><span class="toc-text">48音标基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8%E5%A4%A7%E8%AF%8D%E6%80%A7"><span class="toc-text">8大词性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%A5%E5%AD%90%E6%88%90%E5%88%86-%E4%B8%BB-%E8%B0%93-%E5%AE%BE-%E8%A1%A8-%E5%AE%9A%E8%AF%AD-%E8%A1%A5%E8%AF%AD"><span class="toc-text">句子成分(主&#x2F;谓&#x2F;宾&#x2F;表&#x2F;定语&#x2F;补语)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5%E7%A7%8D%E7%AE%80%E5%8D%95%E5%8F%A5"><span class="toc-text">5种简单句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%B0%93%E4%B8%80%E8%87%B4"><span class="toc-text">主谓一致</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Summary-Assignment"><span class="toc-text">Summary&amp;Assignment</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%90%8D%E8%AF%8D%E3%80%81%E5%86%A0%E8%AF%8D%E3%80%81%E4%BB%A3%E8%AF%8D%E3%80%81%E5%BD%A2%E5%AE%B9%E8%AF%8D%E4%B8%8E%E5%89%AF%E8%AF%8D"><span class="toc-text">2-名词、冠词、代词、形容词与副词</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8D%E8%AF%8D-Noun%E2%80%93%E5%8F%AF%E6%95%B0%E5%90%8D%E8%AF%8D-%E4%B8%8D%E5%8F%AF%E6%95%B0%E5%90%8D%E8%AF%8D"><span class="toc-text">名词 Noun–可数名词&#x2F;不可数名词</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%A0%E8%AF%8D-%E2%80%93a-an-the"><span class="toc-text">冠词 –a&#x2F;an&#x2F;the</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E8%AF%8D-i-you-he-she-it-we-they"><span class="toc-text">代词-i&#x2F;you&#x2F;he&#x2F;she&#x2F;it&#x2F;we&#x2F;they</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%A2%E5%AE%B9%E8%AF%8D%E2%80%94Adj%E2%80%A6%E7%9A%84-%E5%90%8D%E8%AF%8D"><span class="toc-text">形容词—Adj…的(名词)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%AF%E8%AF%8D%E2%80%93adv%E2%80%A6%E5%9C%B0-%E5%8A%A8%E4%BD%9C"><span class="toc-text">副词–adv…地(动作)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Summary-Assignment-1"><span class="toc-text">Summary&amp;Assignment</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%B9%9D%E5%A4%A7%E6%97%B6%E6%80%81%E2%80%93%E4%B8%80%E8%88%AC%E5%BC%8F-%E8%BF%9B%E8%A1%8C%E5%BC%8F-%E5%AE%8C%E6%88%90%E5%BC%8F"><span class="toc-text">3-九大时态–一般式&#x2F;进行式&#x2F;完成式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E6%80%81%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7"><span class="toc-text">时态的重要性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E8%88%AC%E5%BC%8F"><span class="toc-text">一般式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E8%A1%8C%E5%BC%8F"><span class="toc-text">进行式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8C%E6%88%90%E5%BC%8F"><span class="toc-text">完成式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Summary-Assignment-2"><span class="toc-text">Summary&amp;Assignment</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E8%AF%AD%E6%80%81%E2%80%93%E4%B8%BB%E5%8A%A8-%E8%A2%AB%E5%8A%A8%E8%AF%AD%E6%80%81"><span class="toc-text">4-语态–主动&#x2F;被动语态</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AB%E5%A4%A7%E6%A0%B8%E5%BF%83%E8%A2%AB%E5%8A%A8%E8%AF%AD%E6%80%81%E6%80%BB%E7%BB%93"><span class="toc-text">八大核心被动语态总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E8%88%AC%E5%BC%8F-1"><span class="toc-text">一般式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E8%A1%8C%E5%BC%8F-1"><span class="toc-text">进行式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8C%E6%88%90%E5%BC%8F-1"><span class="toc-text">完成式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E7%9A%84%E8%A2%AB%E5%8A%A8%E7%BB%93%E6%9E%84"><span class="toc-text">特殊的被动结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Summary"><span class="toc-text">Summary</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%A4%8D%E5%90%88%E5%8F%A5%E2%80%93%E5%AE%9A%E8%AF%AD-%E7%8A%B6%E8%AF%AD-%E5%90%8D%E8%AF%8D%E6%80%A7%E4%BB%8E%E5%8F%A5"><span class="toc-text">5-复合句–定语&#x2F;状语&#x2F;名词性从句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E8%AF%AD%E4%BB%8E%E5%8F%A5%E2%80%93%E4%BF%AE%E9%A5%B0%E5%90%8D%E8%AF%8D"><span class="toc-text">定语从句–修饰名词</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E4%BB%A3%E8%AF%8D-who-whom-which-that"><span class="toc-text">关系代词-who&#x2F;whom&#x2F;which&#x2F;that</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E5%89%AF%E8%AF%8D%E2%80%94when-where-why-for-at-on-in-which"><span class="toc-text">关系副词—when&#x2F;where&#x2F;why (for&#x2F;at&#x2F;on&#x2F;in which)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E5%BD%A2%E5%AE%B9%E8%AF%8D%E2%80%93whose%E7%9A%84%E7%94%A8%E6%B3%95"><span class="toc-text">关系形容词–whose的用法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E8%AF%AD%E4%BB%8E%E5%8F%A5%E5%88%86%E7%B1%BB%E2%80%93%E9%99%90%E5%88%B6-%E9%9D%9E%E9%99%90%E5%88%B6"><span class="toc-text">定语从句分类–限制&#x2F;非限制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Summary-1"><span class="toc-text">Summary</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8A%B6%E8%AF%AD%E4%BB%8E%E5%8F%A5%E2%80%93%E4%BF%AE%E9%A5%B0%E5%8A%A8%E8%AF%8D"><span class="toc-text">状语从句–修饰动词</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E7%8A%B6%E8%AF%AD%E4%BB%8E%E5%8F%A5"><span class="toc-text">时间状语从句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8E%9F%E5%9B%A0%E7%8A%B6%E8%AF%AD%E4%BB%8E%E5%8F%A5"><span class="toc-text">原因状语从句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%AE%E7%9A%84%E7%8A%B6%E8%AF%AD%E4%BB%8E%E5%8F%A5"><span class="toc-text">目的状语从句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C%E7%8A%B6%E8%AF%AD%E4%BB%8E%E5%8F%A5"><span class="toc-text">结果状语从句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E7%8A%B6%E8%AF%AD%E4%BB%8E%E5%8F%A5"><span class="toc-text">条件状语从句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A9%E6%AD%A5%E7%8A%B6%E8%AF%AD%E4%BB%8E%E5%8F%A5"><span class="toc-text">让步状语从句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E7%8A%B6%E8%AF%AD%E4%BB%8E%E5%8F%A5"><span class="toc-text">比较状语从句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E5%BC%8F%E7%8A%B6%E8%AF%AD%E4%BB%8E%E5%8F%A5"><span class="toc-text">方式状语从句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%B0%E7%82%B9%E7%8A%B6%E8%AF%AD%E4%BB%8E%E5%8F%A5"><span class="toc-text">地点状语从句</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8D%E8%AF%8D%E6%80%A7%E4%BB%8E%E5%8F%A5"><span class="toc-text">名词性从句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%B6%E5%88%97%E5%8F%A5%E2%80%93%E5%B9%B6%E5%88%97-%E8%BD%AC%E6%8A%98-%E5%9B%A0%E6%9E%9C-%E9%80%89%E6%8B%A9"><span class="toc-text">并列句–并列&#x2F;转折&#x2F;因果&#x2F;选择</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%8D%E8%AF%8D%E6%80%A7%E4%BB%8E%E5%8F%A5-1"><span class="toc-text">名词性从句</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E9%9D%9E%E8%B0%93%E8%AF%AD%E5%8A%A8%E8%AF%8D%E2%80%93%E4%B8%8D%E6%98%AF%E8%B0%93%E8%AF%AD-%E5%85%B6%E4%BB%96%E9%83%BD%E5%8F%AF%E4%BB%A5"><span class="toc-text">6 -非谓语动词–不是谓语,其他都可以</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%9E%E8%B0%93%E8%AF%AD%E5%8A%A8%E8%AF%8D%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-text">非谓语动词的分类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#to-to-%E4%B8%8D%E5%AE%9A%E5%BC%8F%E4%BD%9C%E6%88%90%E5%88%86"><span class="toc-text">to to 不定式作成分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%AE%9A%E5%BC%8F%E7%9A%84%E6%97%B6%E6%80%81%E5%92%8C%E8%AF%AD%E6%80%81"><span class="toc-text">不定式的时态和语态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%AE%9A%E5%BC%8F%E7%9A%84%E9%80%BB%E8%BE%91%E4%B8%BB%E8%AF%AD"><span class="toc-text">不定式的逻辑主语</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%AE%9A%E5%BC%8F%E7%9A%84%E5%90%A6%E5%AE%9A%E5%BD%A2%E5%BC%8F"><span class="toc-text">不定式的否定形式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E5%90%8D%E8%AF%8D%E4%BD%9C%E6%88%90%E5%88%86"><span class="toc-text">动名词作成分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E5%90%8D%E8%AF%8D%E7%9A%84%E6%97%B6%E6%80%81%E5%92%8C%E8%AF%AD%E6%80%81"><span class="toc-text">动名词的时态和语态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E8%AF%8D%E4%BD%9C%E6%88%90%E5%88%86"><span class="toc-text">分词作成分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E8%AF%8D%E7%9A%84%E6%97%B6%E6%80%81%E5%92%8C%E8%AF%AD%E6%80%81"><span class="toc-text">分词的时态和语态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Summary-2"><span class="toc-text">Summary</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E7%89%B9%E6%AE%8A%E5%8F%A5%E5%9E%8B-%E5%80%92%E8%A3%85%E5%8F%A5-%E5%BC%BA%E8%B0%83%E5%8F%A5-%E8%99%9A%E6%8B%9F%E8%AF%AD%E6%B0%94"><span class="toc-text">7-特殊句型-倒装句&#x2F;强调句&#x2F;虚拟语气</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%80%92%E8%A3%85%E5%8F%A5"><span class="toc-text">倒装句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%BA%E8%B0%83%E5%8F%A5"><span class="toc-text">强调句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E8%AF%AD%E6%B0%94"><span class="toc-text">虚拟语气</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#00-%E5%85%B6%E4%BB%96%E7%9F%A5%E8%AF%86%E8%A1%A5%E5%85%85"><span class="toc-text">00-其他知识补充</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E5%AE%BE%E8%AF%AD%E5%8A%A8%E8%AF%8D%E8%A1%A8"><span class="toc-text">双宾语动词表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%BC%80"><span class="toc-text">前缀</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E8%A7%84%E5%88%99%E6%AF%94%E8%BE%83%E7%BA%A7-%E6%9C%80%E9%AB%98%E7%BA%A7%E5%8F%98%E5%8C%96%E8%A1%A8"><span class="toc-text">不规则比较级&#x2F;最高级变化表</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A1%94%E6%8E%A5%E8%AF%BE"><span class="toc-text">衔接课</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%85%E6%80%9D%E8%A1%94%E6%8E%A5%E8%AF%BE-1"><span class="toc-text">雅思衔接课 1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%85%E6%80%9D%E5%90%AC%E5%8A%9B%E8%80%83%E8%AF%95%E4%BB%8B%E7%BB%8D"><span class="toc-text">雅思听力考试介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8B%B1%E8%AF%AD%E5%8F%91%E9%9F%B3%E8%A7%84%E5%88%99"><span class="toc-text">英语发音规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AC%E5%8A%9B%E7%B2%BE%E5%90%AC%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0"><span class="toc-text">听力精听方法学习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%85%E6%80%9D%E8%A1%94%E6%8E%A5%E8%AF%BE2"><span class="toc-text">雅思衔接课2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Listening-Practice1"><span class="toc-text">Listening-Practice1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Listening-Practice2"><span class="toc-text">Listening-Practice2</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%85%E6%80%9D%E8%A1%94%E6%8E%A5%E8%AF%BE3"><span class="toc-text">雅思衔接课3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Listening-Practice3"><span class="toc-text">Listening-Practice3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%85%E6%80%9D%E5%8F%A3%E8%AF%AD%E8%80%83%E8%AF%95%E5%86%85%E5%AE%B9-introduction"><span class="toc-text">雅思口语考试内容 introduction</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%85%E6%80%9D%E8%A1%94%E6%8E%A5%E8%AF%BE4"><span class="toc-text">雅思衔接课4</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%85%E6%80%9D%E9%98%85%E8%AF%BB%E8%80%83%E8%AF%95%E4%BB%8B%E7%BB%8D"><span class="toc-text">雅思阅读考试介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%8D%E6%B1%87%E8%A1%A5%E5%85%85-%E7%BB%BC%E5%90%88%E8%AE%AD%E7%BB%83"><span class="toc-text">词汇补充+综合训练</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%85%E8%AF%BB%E5%AE%9E%E6%88%98%E8%AE%AD%E7%BB%83"><span class="toc-text">阅读实战训练</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%85%E6%80%9D%E8%A1%94%E6%8E%A5%E8%AF%BE5"><span class="toc-text">雅思衔接课5</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%85%E6%80%9D%E5%86%99%E4%BD%9C%E8%80%83%E8%AF%95%E4%BB%8B%E7%BB%8D"><span class="toc-text">雅思写作考试介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%84%E5%88%86%E6%A0%87%E5%87%86"><span class="toc-text">评分标准</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%99%E4%BD%9C%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD"><span class="toc-text">写作综合实训</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-1"><span class="toc-text">总结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%8B%B1%E8%AF%AD%E6%8F%90%E4%BC%98%E8%AF%BE"><span class="toc-text">英语提优课</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%A3%E8%AF%ADlesson1"><span class="toc-text">口语lesson1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Sth-about-you"><span class="toc-text">Sth. about you</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%A0%E5%8F%A5"><span class="toc-text">造句</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -4321,6 +4298,67 @@ adolesscent <span class="hljs-comment"># adj. 青春期的，未成熟的；n. �
 <span class="hljs-string"></span>
 <span class="hljs-string"></span>
 <span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string">#### Passage2</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">## 2.1 Read this text about development in adolescence. Then complete the folowing sentences with words from the text.</span>
+<span class="hljs-string">The final stage before adulthood is dolescence. This is a period of transicion for teenagers and there are many crucial milestones. Socially and emotionally, teens worry that they may not be developing at the same rate as their peets. They become extremely self-conscious and may be overly sensitive about their appeearance. Teens may rebel against their parents but are also more able to accept the consequences of their actions.</span>
+<span class="hljs-string">This is also a period of enormous physical change and adolescents experience changes in their physical development at a rate unparalleled since infancy. These changes include significant gains in height and weight. Within a year, boys and girls can gain an average of 4.1 inches and 3.5 inches in height repectively. This growth spurt typically occurs two years earlier for girls than for boys and can tend to make both sexes go through a clumsy phase. In terms of their cognitive development, adolescents have greater reasoning skills and have developed the ability to think logically and hypothetically. They are also to discuss more abstract concepts. They should also have developed strategies to help them study.</span>
+<span class="hljs-string"># Vocabulary</span>
+<span class="hljs-string">1. transition: Transition is the process in which something changes from one state to another. # n. 转变;过渡</span>
+<span class="hljs-string">2. period: A period is a length of time. # n. 一段时间</span>
+<span class="hljs-string">3. growth: The growth in something is the increase in it. # 增长</span>
+<span class="hljs-string">4. gain: If a person or place gains something such as an ability or quality, they gradually get more of it. # 获得</span>
+<span class="hljs-string">5. significantly: in a way that is large or important enough to have an effect on sth or to be noticed. # 有重大意义地; 显著地; 明显地</span>
+<span class="hljs-string">6. unparalleled # adj 前所未有得; 无与伦比的。</span>
+<span class="hljs-string"># Fill in the blank</span>
+<span class="hljs-string">1. First-year students often struggle with the ____ from high school to university.</span>
+<span class="hljs-string">transition</span>
+<span class="hljs-string">2. The ____ at which a change occurs can cause problems for both the very young and the elderly.</span>
+<span class="hljs-string">3. It can be less stressful to make a presentation to your ____ rather than to your teachers.</span>
+<span class="hljs-string">peer</span>
+<span class="hljs-string">4. The increase in violence among young people may be a ____ of watching too much violence on TV and in video games</span>
+<span class="hljs-string">5. Petrol prices are increasing at a speed that is ____ since the oil crisis of the 70s.</span>
+<span class="hljs-string">6. Teenagers ____ rebel against their parents between the ages of 14 and 16.</span>
+<span class="hljs-string">7. In part three of the speaking test you are expected to be able to talk about more ____ topics.</span>
+<span class="hljs-string">8. Infinity is a very difficult ____ for children to grasp.</span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string">### True / False / Not given</span>
+<span class="hljs-string">## Paragraph 1-2</span>
+<span class="hljs-string"># The causes, diagnosis and prevention of stress</span>
+<span class="hljs-string">In prehistoric times, the physical changes in reponese to stress were an essential adaptation for meeting natural threats. Even in the modern world, the stress response can be an asset for raising levels of performance during critical events such as sports activities, important meetings, or in situations of actual danger or crisis. If stress becomes persistent and low-level, however, all parts of the body&#x27;</span>s stress apparatus (the brain, heart, lungs, vessels and muscles) become chronically over-or under-activated. This may produce physical or psychological damage over <span class="hljs-keyword">time</span>. Acute stress can also be harmful <span class="hljs-keyword">in</span> certain situations.
+<span class="hljs-comment"># Psychological effects of stress</span>
+Studies suggest that the inability to deal with strese is associated with the onset of depression or anxiety. In one study, two-thirds of subjects <span class="hljs-built_in">who</span> experienced a stressful situation had nearly six <span class="hljs-built_in">times</span> the risk of developing depression within that month. Some devidence suggests that repeated release of stress hormones disrupts normal levels of serotonin, the nerve chemical that is critical of feelings of well-being. Certainly, on a more obvious level, stress diminishes the quality of life by reducing feelings of pleasure and accomplishment, and relationships are often threatened.
+Nevertheless, some stress may be beneficial. For example, although some research has suggested that stress may be a risk <span class="hljs-built_in">factor</span> <span class="hljs-keyword">for</span> suicide (a 2003 study found a higher risk <span class="hljs-keyword">for</span> suicide <span class="hljs-keyword">in</span> women reporting both low and very high stress), those with moderate stress levels had the lowest risk.
+
+
+<span class="hljs-comment">## Questions 1-4</span>
+Do the following satements agree with the information given <span class="hljs-keyword">in</span> the passage?
+Next to question 1-4 write
+	True	<span class="hljs-keyword">if</span> the statement agrees with the information <span class="hljs-keyword">in</span> the passage.
+	False	<span class="hljs-keyword">if</span> the statement contradicts the information <span class="hljs-keyword">in</span> the passage.
+	Not Given <span class="hljs-keyword">if</span> there is no information on this
+1. Stress was originally an important way of keeping humans safe. __True__
+2. If stress continues <span class="hljs-keyword">for</span> a long <span class="hljs-keyword">time</span>, all of the body<span class="hljs-string">&#x27;s organs are affected. __True__</span>
+<span class="hljs-string">3. The study into the psychological effects of stress involved people with a history of depression. __Not Given__</span>
+<span class="hljs-string">4. Increased stress causes the body to produce more serotonin. __False___</span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string">### Leisure</span>
+<span class="hljs-string">## 3.1 Read the text and decide whether the sentences below are true or false. Match the words in bold in the sentences with one of the underlined words or phrases in the text.</span>
+<span class="hljs-string">Leisure activity isn’t just for fun, says a Universiry of Florida psychologist who has developed a scale that classifies hobbies based on needs they satisfy in people. The scale can help people find more personal fulfilment by giving them insight into what they really like. &quot;The surprisng thing is that activities you might think think are very different have similar effects on people, &quot; said Howard E.A. Tinslty, a UF psychlology professor who developed the measurement. &quot;Probably no one would consider acting to have the same characteristics as roller-skating or playing baseball, but men and women who act as a hobby report feeling an intense sense of belonging to a group ,much the same way other do in playing sports.&quot;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">And activities providing the strongest sense of competition are not sports, but card, arcade and computer games, he found. Participating in soccer satisfies our desire for a sense of &#x27;</span>belonging<span class="hljs-string">&#x27; and coin collccting and baking fulfil their need for &#x27;</span>creativity<span class="hljs-string">&#x27;, &quot;With so many people in jobs they don&#x27;</span>t care <span class="hljs-keyword">for</span>, leisure is a prized aspect of people<span class="hljs-string">&#x27;s lives, &quot; Tinsley said. &quot;yet it&#x27;</span>s not something psychologists really study. Economists tell us how much money people spend skiing, but nobody explains why skiing really appeals to people.<span class="hljs-string">&quot; Or how one activity relates to another, perhaps in unexpected ways, Tinsley said. Fishing, generally considered more of an outdoor recreational activity, for example, is a form of self-expression like quilring or stamp collecting, because it gives people it gives people the opportunity to express some aspect of their personaliry by doing something completely different from their daily routine, he said.</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">## Questions 1-5</span>
+<span class="hljs-string">1. Both acting and roller-skating give people a &#x27;strong feeling&#x27; of being part of a team. ____</span>
+<span class="hljs-string">2. &#x27;Taking part in&#x27; sports gives you the stongest &#x27;desire to win&#x27;. ____</span>
+<span class="hljs-string">3. Collecting things &quot;</span>satisfies peoples<span class="hljs-string">&#x27;s desire&quot; for making things. ____</span>
+<span class="hljs-string">4. Researchers already know why a hobby &#x27;</span>attracts<span class="hljs-string">&#x27; a person. ____</span>
+<span class="hljs-string">5. Fishing allows you to show the &#x27;</span><span class="hljs-built_in">type</span> of person you are<span class="hljs-string">&#x27;. ____</span>
 <span class="hljs-string"></span></code></pre>
 
 <table>
@@ -4360,13 +4398,337 @@ adolesscent <span class="hljs-comment"># adj. 青春期的，未成熟的；n. �
 <h3 id="阅读实战训练"><a href="#阅读实战训练" class="headerlink" title="阅读实战训练"></a>阅读实战训练</h3><pre><code class="hljs bash">
 </code></pre>
 
-<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><pre><code class="hljs bash">
 
+
+<h2 id="雅思衔接课5"><a href="#雅思衔接课5" class="headerlink" title="雅思衔接课5"></a>雅思衔接课5</h2><h3 id="雅思写作考试介绍"><a href="#雅思写作考试介绍" class="headerlink" title="雅思写作考试介绍"></a>雅思写作考试介绍</h3><pre><code class="hljs bash"><span class="hljs-comment">### Task1 (小作文)</span>
+<span class="hljs-comment">## 常考题型</span>
+1. 线形图 Line graph <span class="hljs-comment"># 20min 三分之一</span>
+2. 饼图 pie chart <span class="hljs-comment"># 40min 三分之一</span>
+3. 柱状图 bar chart
+4. 表格题 table
+<span class="hljs-comment">## 非常考题型</span>
+1. 地图 map
+2. 流程图 process
+<span class="hljs-comment">## 特殊题型 (混合图标)</span>
+常考题型4类，直接的两两组合
+
+<span class="hljs-comment">### Task2 题型介绍 (大作文)</span>
+<span class="hljs-comment"># Opinion 70%</span>
+1. 观点类: agree or disagree
+2. 讨论类: discuss both views
+3. 利弊类: advantages outweigh disadvantages / positive or negative
+<span class="hljs-comment"># Report 30%</span>
+报告类: problems-solution / cause-effect /cause-solution
+
+<span class="hljs-comment">### 观点类 agree or disagree</span>
+You should spend about 40 minutes on this task
+Write about the following topic:
+<span class="hljs-comment"># In the future, nobody will buy printed newspapers or books because they will be able to read everything they want online without paying.</span>
+<span class="hljs-comment"># To what extent do you agree or disagree with this statement?</span>
+Give reasons <span class="hljs-keyword">for</span> you answer and include any relevant examples from your own knowledge or experience.
+Write at least 250 words.
+<span class="hljs-comment"># 笔记</span>
+To what extent <span class="hljs-keyword">do</span> you agree or disagree
+To such a extent that .. (结果的程度)
+
+<span class="hljs-comment">### 讨论类 discuss both views</span>
+You should spend about 40 minutes on this task.
+Write about the following topic
+<span class="hljs-comment"># Some people say that advertising is extremely successful at persuading us to buy things. Other people think that advertising is so common that we no longer pay attention to it.</span>
+<span class="hljs-comment"># Discss both these views and give your own opinion.</span>
+Give reasons <span class="hljs-keyword">for</span> your answer and include any relevant examples from your own knowledge or experience.
+Write at least 250 words.
+<span class="hljs-comment">## 笔记</span>
+1. Persuade sb to <span class="hljs-keyword">do</span> sth <span class="hljs-comment"># 劝说某人做某事</span>
+
+
+<span class="hljs-comment">### Task2题型-Opinion</span>
+<span class="hljs-string">&#x27;利弊类&#x27;</span> advantages outweigh disadvantages
+You should spend about 40 minutes on this task.
+Write about the following topic:
+<span class="hljs-comment"># In many countries, people are now living longer than ever before. Some people say an ageing population creates problems for governments. Other people think there are benefits if society has more elderly people.</span>
+<span class="hljs-comment"># To what extent do the advantages of having an ageing population outweigh the disadvantages?</span>
+Give reasons <span class="hljs-keyword">for</span> your answer and include any relevant examples from your own knowledge or experience.
+Write at least 250 words.
+
+<span class="hljs-comment">### Task2题型-Opinion</span>
+<span class="hljs-string">&#x27;利弊类&#x27;</span> positive or negative
+You should spend about 40 minutes on this task.
+Write about the following topic:
+<span class="hljs-comment"># Nowadays, a growing number of people with health problems are trying alternative medicines and treatments instead of visiting their usual doctor.</span>
+<span class="hljs-comment"># Do you think this is a positive or a negative development?</span>
+Give reasons <span class="hljs-keyword">for</span> your answer and include any relevant examples from your own knowledge or experience.
+Write at least 250 words.
+<span class="hljs-comment"># 笔记</span>
+Alternative <span class="hljs-comment"># adj 可替代的</span>
+
+
+<span class="hljs-comment">### Task2题型-Report</span>
+<span class="hljs-string">&#x27;报告类&#x27;</span> causes/solutions
+You should spend about 40 minutes on this task.
+Write about the following topic:
+<span class="hljs-comment"># In some countries the average weight of people is increasing and their levels of health and fitness are decreasing.</span>
+<span class="hljs-comment"># What do you think are the causes of these problems and what measures could be taken to solve them?</span>
+Give reasons <span class="hljs-keyword">for</span> your answer and include any relevant examples from your own knowledge or experience.
+Write at least 250 words.
+
+
+<span class="hljs-comment">### Task2题型-Report</span>
+<span class="hljs-string">&#x27;报告类&#x27;</span> causes/effect
+You should spend about 40 minutes on this task.
+Write about the following topic:
+<span class="hljs-comment"># Nowadays many people choose to be self-employed, rather than to work for a company or organisation.</span>
+<span class="hljs-comment"># Why might this be the case?</span>
+<span class="hljs-comment"># What could be the disadvantages of being self-employed?</span>
+Give reasons <span class="hljs-keyword">for</span> your answer and include any relevant examples from your own knowledge or experience.
+Write at least 250 words.
+
+</code></pre>
+
+<h3 id="评分标准"><a href="#评分标准" class="headerlink" title="评分标准"></a>评分标准</h3><pre><code class="hljs bash"><span class="hljs-comment">### 雅思写作评价标准</span>
+1. TR (Task Response) 任务回应情况
+2. CC (Coherence and Cohesion) 流利性与连贯性 <span class="hljs-comment"># On the one hand  一方面; On the other hand 另一方面</span>
+3. LR (Lexical Resources) 词汇丰富度
+4. GRA (Grammatical Range and Accuracy)
+语法多样性及准确性</code></pre>
+
+<h3 id="写作综合实训"><a href="#写作综合实训" class="headerlink" title="写作综合实训"></a>写作综合实训</h3><pre><code class="hljs bash"><span class="hljs-comment">### Paraphrase-Task1</span>
+The graph below shows the quantities of goods transported <span class="hljs-keyword">in</span> the UK between 1974 and 2002 by four different modes of transport.
+Summarise the information by selecting and reporting the main features, and make comparisons <span class="hljs-built_in">where</span> relevant.
+<span class="hljs-comment"># Paraphrase 转述标题 (同义转换、词性转换、句型转换)</span>
+The line graph (below) __illustrate__ the __volume__ of goods delivered by four _mode___ of transport <span class="hljs-keyword">in</span> the UK during the __perior__ from 1974 to 2002.
+<span class="hljs-comment"># 笔记</span>
+展示: shows, reveal, display, demonstrate, illustrate, give, information about
+the quantities/volume of ... <span class="hljs-comment"># ...数量; The amount of + 不可数名词; The number of + 可数名词复数</span>
+类型: mode, <span class="hljs-built_in">type</span>, category, means(单复通行), ways
+During the perior of ...+时间段 (整体名词, During the period of this term在这个学期) <span class="hljs-comment"># 在某一刻期间; </span>
+
+<span class="hljs-comment">### Parphrase-Task2</span>
+The charts give information about the proportions of boys and girls of a school <span class="hljs-built_in">who</span> achieved high grades (A or B+) <span class="hljs-keyword">in</span> respective courses.
+Summarise the information by selecting and reporting the main features, and make comparisons <span class="hljs-built_in">where</span> relevant.
+<span class="hljs-comment"># Paraphrase 转述标题 (同义转换、词性转换、句型转换)</span>
+The charts __illustrate__ the __proportions__ of male and female students <span class="hljs-keyword">in</span> a school <span class="hljs-built_in">who</span> _achievd__ high grades (A or B+) <span class="hljs-keyword">in</span> __respective___ subjects.
+<span class="hljs-comment"># 笔记</span>
+The proportions/percentages of... <span class="hljs-comment"># ...的比例</span>
+Respective <span class="hljs-comment"># adj 各自的</span>
+
+<span class="hljs-comment">### Paraphrase-Take3</span>
+The table shows the amount of waste produced by different countries <span class="hljs-keyword">in</span> 1980, 1990 and 2000.
+Summarise the information by selecting and reporting the main features, and make comparisons <span class="hljs-built_in">where</span> relevant.
+<span class="hljs-comment"># Paraphrase 转述标题 (同义转换、词性转换、句型转换)</span>
+This pie charts <span class="hljs-string">&#x27;compare&#x27;</span> the factors that students considered when choosing a university <span class="hljs-keyword">in</span> the UK <span class="hljs-string">&#x27;in two different years&#x27;</span>. <span class="hljs-comment"># 这些饼图对比了学生在英国选择大学时所考量的因素，涵盖了两个不同的年份。</span>
+<span class="hljs-comment"># 笔记</span>
+1. It is researched that factors <span class="hljs-built_in">which</span> can metivate students to choose a college or university <span class="hljs-keyword">in</span> two spearete year <span class="hljs-keyword">in</span> the UK. <span class="hljs-comment"># 展示了一些因素，他可以驱动学生取选择大学的因素。有研究探讨了在英国，促使学生选择某所高校的各项因素（基于两个不同年份的数据）</span>
+2. It is researched that factors <span class="hljs-built_in">which</span> students considered when choosing a college or university <span class="hljs-keyword">in</span> two separate years <span class="hljs-keyword">in</span> the UK.
+
+<span class="hljs-comment">### Vocabulary-Task4</span>
+1. Every/each + 单数名词 <span class="hljs-comment"># Every kind of=</span>
+2. <span class="hljs-comment"># 上升后下降时转折逻辑 but, however, whereas, nevertheless</span>
+3.  <span class="hljs-comment"># 表示下降: decline, decrease, fall</span>
+4.</code></pre>
+
+
+
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261111095126919.png"></p>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><pre><code class="hljs bash">Cambridge vocabulary <span class="hljs-comment"># 剑桥词汇书</span>
+Scaffoding 
+
+
+</code></pre>
+
+<h1 id="英语提优课"><a href="#英语提优课" class="headerlink" title="英语提优课"></a>英语提优课</h1><h2 id="口语lesson1"><a href="#口语lesson1" class="headerlink" title="口语lesson1"></a>口语lesson1</h2><h3 id="Sth-about-you"><a href="#Sth-about-you" class="headerlink" title="Sth. about you"></a>Sth. about you</h3><pre><code class="hljs bash">1. Name
+2. Study or work
+3. Hobbies
+4. hometown
+<span class="hljs-comment">#### 口语考试组成</span>
+
+<span class="hljs-comment">## 第一部分 (雅思哥机考软件)</span>
+1. 时间长度: 4-5 分钟
+2. 互动的内容: (简介以及问答) 考官会向考生进行自我简介，并核对考生的身份。之后，考官会就考生熟悉的话题(如朋友、兴趣习惯或者食物)进行询问。为保证题目的一致性，这些问题都是从一个事先拟定的范围内抽取的。
+3. 考察能力: 考生就日常性的观点和信息、常见的生活经历或情形以回答问题的形式进行交流的能力。
+<span class="hljs-comment"># 笔记</span>
+备注: 答案3-4句即可, 15-20s, 10-15题 (每个问题，4个小问)
+
+
+<span class="hljs-comment">## Part1 题目示例</span>
+<span class="hljs-string">&#x27;Have you ever&#x27;</span> watched a movie about rebots?
+What kind of clothes <span class="hljs-keyword">do</span> you <span class="hljs-string">&#x27;usually&#x27;</span> wear?
+Are robots <span class="hljs-string">&#x27;important&#x27;</span>?
+Do you <span class="hljs-string">&#x27;like&#x27;</span> eating fish?
+<span class="hljs-comment">## 注意</span>
+1. 想法多而乱 -- 容易出现逻辑问题。
+2. 想法太高级，不接地气，不好转换成英语。
+3. 基础词汇不熟练 -- 输入基础词汇。
+
+<span class="hljs-comment">### 第二部分</span>
+1. 时间长度: 3-4 分钟
+2. 互动的内容: (个人陈述) 考官会交给考生一个答题任务卡、铅笔和草稿纸做笔记。答题任务卡上会给出一个话题和需要在个人陈述中包含的要点，并在最后提示考生解释这个话题的某一个方面。考生有一分钟的准备时间(如笔记)，然后需就此话题进行1到2分钟的陈述。考官会在2分钟后打断考生，并在最后提问一两个问题作为结束语。
+3. 考察能力: 考生(在没有任何其他提示的情况下)就一个特定的话题进行较长时间的陈述的能力，考察考生是否能恰当地运用语言、是否能连贯地组织自己的观点。考生有可能需要联系自己的经历完成这部分内容。
+
+<span class="hljs-comment">## Part 2 任务卡</span>
+Describe <span class="hljs-string">&#x27;a foreigner who speaks Chinese very well&#x27;</span>. <span class="hljs-comment"># 关键，通过下面的提示去回答，要围绕下面的小文内容去表达。</span>
+You should say:
+Who the person is
+Where he/she is from
+How he/she learns Chinese
+And explain why he can speak Chinesee well.
+
+
+<span class="hljs-comment">### 第三部分</span>
+1. 时间长度: 4-5分钟
+2. 互动的内容: (双向讨论) <span class="hljs-comment"># 8句左右, 40-50s</span>
+考官将考生就第二部分中出现的话题较为抽象的部分进行双向讨论。
+3. 考生表达和论述看法、分析、讨论以及深入思考问题的能力。
+
+<span class="hljs-comment">## Part2 是跟 part2 相关联的问题</span>
+1. Why <span class="hljs-keyword">do</span> Chinese children learn English?
+2. Are there any differences <span class="hljs-keyword">in</span> the relationship between you and your friends and between you and other people?
+3. Do you think cooking should be a compulsory or a selective course? Why?
+4. Is it important to study Scvience at school?
+
+
+<span class="hljs-comment">### 总结: 口语考试组成</span>
+<span class="hljs-comment">## Part 1</span>
+1. Content: Personal Questions <span class="hljs-comment"># 每个人都有话要说， 回答不要超过30秒</span>
+2. Time: 4-5 mins
+<span class="hljs-comment">## Part 2</span>
+1. Individual long turn <span class="hljs-comment"># 草稿纸 + 铅笔</span>
+2. Time: 3-4 mins (preparation 1 min + talking 1-2 mins) <span class="hljs-comment"># 不要打断考官</span>
+<span class="hljs-comment">## Part 3</span>
+1. Content: Two-way Discussion <span class="hljs-comment"># 自适应难度，答好提高难度测试，答不好会降低难度</span>
+2. Time: 4-5 mins
+
+<span class="hljs-comment">### 口语评分标准解读</span>
+1. Fluency and Coherence
+2. Lexical Resource (Vocabulary)
+3. Grammatical Range &amp; Accuracy
+4. Pronunciation
+<span class="hljs-comment">## 笔记 【重要】</span>
+1. <span class="hljs-string">&#x27;流利度最重要&#x27;</span>。part1 看是否愿意说4句话，part2 看是否愿意说8句话。
+2. 思维连贯度。要使用连接词，要减少长停顿(3秒以上的停顿)。
+3. 话题熟悉度。雅思哥机考软件题库要过一遍。
+4. 自然度 (filer words/sentences)。看文档
+5. 语速。雅思 part1或part2的语速就可以了。
+备注: coach shane的视频，Daily English Dictation；口语<span class="hljs-string">&quot;【外教美语连读发音训练课程】&quot;</span>
 </code></pre>
 
 
 
+<p><img src="https://cdn.jsdelivr.net/gh/hjxstart/PicGo@main/img/20261114201818654.png" alt="口语评分标准解答"></p>
+<h3 id="造句"><a href="#造句" class="headerlink" title="造句"></a>造句</h3><pre><code class="hljs bash"><span class="hljs-comment">### 造句</span>
+I normally take a self-drive trip with my family on holidays  / on the beach to have fun. <span class="hljs-comment"># 主谓宾 方地时</span>
+<span class="hljs-comment"># What</span>
+Sb. + 动词 + 名词
+<span class="hljs-comment"># Who</span>
+With + 人 <span class="hljs-comment"># On my own</span>
+<span class="hljs-comment"># Where</span>
+at/in/to
+<span class="hljs-comment"># When</span>
+during my <span class="hljs-keyword">time</span> off
+on holidays
+when I am feeling
+bored
+During/on
+Weekends
+<span class="hljs-comment"># Why</span>
+to have fun
+to improve myself to 
+keep fit = be healthy
+to loosen up = relax
+to get some exercise
+to enrich myself
+to <span class="hljs-built_in">expand</span> my horizons
+to <span class="hljs-built_in">kill</span> <span class="hljs-keyword">time</span>
 
+<span class="hljs-comment">### Part1 题型分类与基本思路</span>
+<span class="hljs-comment"># Like or disklike: ARE</span>
+Do you like reading?
+Do you like to <span class="hljs-built_in">read</span> by yourself or with other people?
+<span class="hljs-comment"># Experience: WH</span>
+When was the last <span class="hljs-keyword">time</span> you visited a museum?
+What makes you feel proud of your country?
+<span class="hljs-comment"># Opinion: ARE</span>
+Do you think museums are important?
+Is it important to be happy?
+<span class="hljs-comment"># How often: Depend / ARE</span>
+Do you often visit a museum?
+How often <span class="hljs-keyword">do</span> you take a rest?
+<span class="hljs-comment">## 答题思路 - ARE</span>
+Answer + Reason + Example
+WH 补充细节 - what <span class="hljs-built_in">where</span> when why <span class="hljs-built_in">who</span> how
+感受 + 假设 (<span class="hljs-keyword">if</span>/when) + 转折
+<span class="hljs-comment"># Like or dislike: AR (E)</span>
+Do you like ...?
+Do you prefer ...?
+What ... <span class="hljs-keyword">do</span> you like?
+What<span class="hljs-string">&#x27;s your favorite ...?</span>
+<span class="hljs-string"># 解题思路 (参考他人的点子、跟AI练习)</span>
+<span class="hljs-string">1. 原因 + 例子</span>
+<span class="hljs-string">2. 原因1 + 原因2</span>
+<span class="hljs-string">3. 原因 + 结果/现象 (举例的一种)</span>
+<span class="hljs-string"># 表达喜恶 (Yes)</span>
+<span class="hljs-string">- Absolutely/Definitely</span>
+<span class="hljs-string">- I suppose so.</span>
+<span class="hljs-string">- My answer is definitely yes.</span>
+<span class="hljs-string">- My answer is positive.</span>
+<span class="hljs-string">- I am pretty keen on...</span>
+<span class="hljs-string">- I am really into...</span>
+<span class="hljs-string">- I&#x27;</span>m a big(huge) fan of ...
+- I prefer...
+- I<span class="hljs-string">&#x27;m kind of into ...</span>
+<span class="hljs-string"># 表达喜恶</span>
+<span class="hljs-string">- Nope, not really</span>
+<span class="hljs-string">- Not particularly</span>
+<span class="hljs-string">- Not exactly</span>
+<span class="hljs-string">- I&#x27;</span>m afraid not
+- To be honest, i am not really into...
+- I totally delest / loathe...
+<span class="hljs-comment"># Neutral 中立</span>
+- It<span class="hljs-string">&#x27;s hard to say, maybe...</span>
+<span class="hljs-string">- It can be ..., but, ...</span>
+<span class="hljs-string">- I admit that..., but in the meantime,...</span>
+<span class="hljs-string">- &quot;it&#x27;</span>s love-hate relationship<span class="hljs-string">&quot;</span>
+<span class="hljs-string">- &quot;</span>It<span class="hljs-string">&#x27;s a yes-and-no&quot;</span>
+<span class="hljs-string">- It depends.</span>
+<span class="hljs-string">I admit that fish is nutritious and it contain Rich protein, but it doesn&#x27;</span>t necessarily mean... the taste would be...
+<span class="hljs-comment">###  ARE: 答案 + 原因 + 例子</span>
+<span class="hljs-comment">## 1. Do you like chocolate?  -答案 + 原因 + 例子 - ARE</span>
+Answer: Yes, I<span class="hljs-string">&#x27;m a big fan of chocolate.</span>
+<span class="hljs-string">1. Reason-(simply/mainly because) I have a sweet tooth.</span>
+<span class="hljs-string">2. Example: I like different kinds of chocolate, such as dark chocolate or milk chocolate.</span>
+<span class="hljs-string">3. When: feel sad/down/upset/sleepy/every week/daily, after work, achieve sth. - treat 小奖励</span>
+<span class="hljs-string">4. Yep, I&#x27;</span>m fond of chocolate, simply because I favor sweet food. Btw, I am into various types of chocolate, including ...; Among them, ... is the best / tops the list.
+列举之后 可强调
+<span class="hljs-comment">## 2. Do you like cackes? -原因 + 例子</span>
+Answer: Yes, I<span class="hljs-string">&#x27;m a big fan of cakes</span>
+<span class="hljs-string">1. Reason: (simply/mainly because) I have a sweet tooth.</span>
+<span class="hljs-string">2. Example: I like different kinds of cakes, such as mousse cakes or chocolate cakes.</span>
+<span class="hljs-string">同种类型的题，可以固定/统一答案</span>
+<span class="hljs-string">## 3. Do you like swimming/running?</span>
+<span class="hljs-string">Answer: Yes, I&#x27;</span>m a big fan of swimming
+1. Reason: (simply/mainly because) I wanna have a higher fitness level and perfect skin, and swimming is a marvelous way of keeping my figure.
+2. Example: whenever I have spare <span class="hljs-keyword">time</span> during summer, I<span class="hljs-string">&#x27;ll hit the swimming pool or just swim around in the river for a few hours/an hour or two.</span>
+<span class="hljs-string">同种类型的题，可以固定/统一答案</span>
+<span class="hljs-string">## 4. Do you like math/geography/history/science? - 原因 + 例子</span>
+<span class="hljs-string">100%: yes... - have a strong passion for it...</span>
+<span class="hljs-string">Sense of satisfaction/fulfillment/accomplishment</span>
+<span class="hljs-string">Sharp mind # 脑子敏捷</span>
+<span class="hljs-string">Good memory</span>
+<span class="hljs-string">Born talent/gift/have it in your blood/have a natural knack for Socialize - bond up with others who share common grounds</span>
+<span class="hljs-string">Cooking/photography ... # 技能类 天赋类 也能用</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">### 中立</span>
+<span class="hljs-string">## 扩展 -- When</span>
+<span class="hljs-string"># 1. How often do you use the subway/ride a bike/take a walk?</span>
+<span class="hljs-string">1. Answer: It&#x27;</span>s hard to say.
+2. When <span class="hljs-string">&#x27;the walther is pleasant,&#x27;</span> I prefer to take subway, coz it<span class="hljs-string">&#x27;s quite convenient. You know, the nearest station is well within walking distance, and I can get there in 5 minutes.</span>
+<span class="hljs-string">3. Yet when it&#x27;</span>s rainy or stormy, I will take a cab instead.
+<span class="hljs-comment"># 2. Do you usually go to the library?</span>
+1. Answer: It<span class="hljs-string">&#x27;s hard to say.</span>
+<span class="hljs-string">2. When the weather is pleasant, I prefer to visit the library, coz I can borrow some books home or do self-study there.</span>
+<span class="hljs-string">3. Yet when it&#x27;</span>s rainy or stormy, I will stay indoors and play video games.
+
+</code></pre>
 
 
 

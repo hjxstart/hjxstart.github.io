@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>HAM | 黄金贤的博客</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="HAM | 黄金贤的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="概述准备笔记本准备### Vmware workstation 网络规划 1. 仅主机: 192.168.41.4&#x2F;24, GW: 192.168.41.1 # 优先级3 2. Nat: 192.168.42.4&#x2F;24, GW: 192.168.42.2 # 优先级0 3. PXE-桥接: 192.168.44.4&#x2F;24 # 优先级1 3. PXE-bmc: 192.168.2.10&#x2F;24 # 优">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PAK">
+<meta property="og:url" content="https://hjxstart.github.io/2026/11/17/PAK/index.html">
+<meta property="og:site_name" content="黄金贤的博客">
+<meta property="og:description" content="概述准备笔记本准备### Vmware workstation 网络规划 1. 仅主机: 192.168.41.4&#x2F;24, GW: 192.168.41.1 # 优先级3 2. Nat: 192.168.42.4&#x2F;24, GW: 192.168.42.2 # 优先级0 3. PXE-桥接: 192.168.44.4&#x2F;24 # 优先级1 3. PXE-bmc: 192.168.2.10&#x2F;24 # 优">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-11-17T02:32:50.000Z">
+<meta property="article:modified_time" content="2026-11-17T08:33:20.877Z">
+<meta property="article:author" content="黄金贤">
+<meta property="article:tag" content="计算机网络 数据库 操作系统 数据结构 算法 Java Nodejs">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-dark.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 8.0.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>黄金贤</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="github"
+               href="https://github.com/hjxstart"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="email"
+               href="mailto:hjxstart@126.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=1726283687&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(83)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="读书">
+                        
+                        读书
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(15)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据库">
+                        
+                        数据库
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(22)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(6)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="开发">
+                        
+                        开发
+                        <small>(13)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="网络">
+                        
+                        网络
+                        <small>(16)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="83">
+<input type="hidden" id="yelog_site_word_count" value="614.2k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://github.com/hjxstart">hjxstart</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="全部文章 网络 "
+           href="/2024/05/06/HCIE%20Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HCIE Lab">HCIE Lab</span>
+            <span class="post-date" title="2024-05-06 19:42:00">2024/05/06</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2026/04/09/KylinOS/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="KylinOS">KylinOS</span>
+            <span class="post-date" title="2026-04-09 17:39:50">2026/04/09</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2026/04/01/RHCA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="RHCA">RHCA</span>
+            <span class="post-date" title="2026-04-01 09:25:53">2026/04/01</span>
+        </a>
+        
+        <a id="top" class="全部文章 安全 "
+           href="/2025/08/17/PTE/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PTE">PTE</span>
+            <span class="post-date" title="2025-08-17 11:12:00">2025/08/17</span>
+        </a>
+        
+        <a id="top" class="全部文章 安全 "
+           href="/2024/08/23/CISO/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CISO">CISO</span>
+            <span class="post-date" title="2024-08-23 19:29:00">2024/08/23</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2021/09/09/VMware/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="VMware">VMware</span>
+            <span class="post-date" title="2021-09-09 15:38:00">2021/09/09</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2025/04/04/PXE-Kickstart/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PXE+Kickstart">PXE+Kickstart</span>
+            <span class="post-date" title="2025-04-04 10:45:00">2025/04/04</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2025/08/24/Windows/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Windows">Windows</span>
+            <span class="post-date" title="2025-08-24 11:19:00">2025/08/24</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2022/03/24/Linux/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Linux">Linux</span>
+            <span class="post-date" title="2022-03-24 11:53:00">2022/03/24</span>
+        </a>
+        
+        <a id="top" class="全部文章 工具 "
+           href="/2024/07/28/NTLite/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="NTLite">NTLite</span>
+            <span class="post-date" title="2024-07-28 21:32:00">2024/07/28</span>
+        </a>
+        
+        <a id="top" class="全部文章 数据库 "
+           href="/2020/03/19/MySQL/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="MySQL">MySQL</span>
+            <span class="post-date" title="2020-03-19 21:51:00">2020/03/19</span>
+        </a>
+        
+        <a id="top" class="全部文章 开发 "
+           href="/2025/09/13/Php/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Php">Php</span>
+            <span class="post-date" title="2025-09-13 23:10:00">2025/09/13</span>
+        </a>
+        
+        <a id="top" class="全部文章 运维 "
+           href="/2023/05/13/IBMC/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="IBMC">IBMC</span>
+            <span class="post-date" title="2023-05-13 21:04:00">2023/05/13</span>
+        </a>
+        
+        <a id="top" class="全部文章 工具 "
+           href="/2026/03/02/DaVinci/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="DaVinci">DaVinci</span>
+            <span class="post-date" title="2026-03-02 10:05:22">2026/03/02</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2026/11/17/PAK/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PAK">PAK</span>
+            <span class="post-date" title="2026-11-17 10:32:50">2026/11/17</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2026/11/09/HAM/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HAM">HAM</span>
+            <span class="post-date" title="2026-11-09 16:44:02">2026/11/09</span>
+        </a>
+        
+        <a  class="全部文章 安全 "
+           href="/2026/10/02/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%B7%A5%E7%A8%8B%E5%B8%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="信息安全工程师">信息安全工程师</span>
+            <span class="post-date" title="2026-10-02 09:41:17">2026/10/02</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2026/08/15/Ubuntu/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Ubuntu">Ubuntu</span>
+            <span class="post-date" title="2026-08-15 11:40:23">2026/08/15</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2026/07/17/OBS/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OBS">OBS</span>
+            <span class="post-date" title="2026-07-17 09:29:08">2026/07/17</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2026/06/25/HermesAgent/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HermesAgent">HermesAgent</span>
+            <span class="post-date" title="2026-06-25 21:44:51">2026/06/25</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2026/06/25/OpenClaw/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OpenClaw">OpenClaw</span>
+            <span class="post-date" title="2026-06-25 18:00:18">2026/06/25</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2026/06/16/%E5%AD%A6%E4%B9%A0%E5%8A%9B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="学习力">学习力</span>
+            <span class="post-date" title="2026-06-16 21:00:09">2026/06/16</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2026/05/26/CKA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CKA">CKA</span>
+            <span class="post-date" title="2026-05-26 23:29:16">2026/05/26</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2026/05/04/WSL/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="WSL">WSL</span>
+            <span class="post-date" title="2026-05-04 21:55:07">2026/05/04</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2026/04/23/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%84/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="软件测评">软件测评</span>
+            <span class="post-date" title="2026-04-23 21:40:53">2026/04/23</span>
+        </a>
+        
+        <a  class="全部文章 安全 "
+           href="/2026/02/01/%E5%AE%89%E5%85%A8%E4%BA%A7%E5%93%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="安全产品">安全产品</span>
+            <span class="post-date" title="2026-02-01 09:23:23">2026/02/01</span>
+        </a>
+        
+        <a  class="全部文章 安全 "
+           href="/2026/01/04/BSL/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="BSL">BSL</span>
+            <span class="post-date" title="2026-01-04 21:37:49">2026/01/04</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2025/11/27/%E5%86%99%E4%BD%9C%E8%A7%84%E8%8C%83/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="写作规范">写作规范</span>
+            <span class="post-date" title="2025-11-27 16:04:08">2025/11/27</span>
+        </a>
+        
+        <a  class="全部文章 安全 "
+           href="/2025/08/21/cisp-practice/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="cisp-practice">cisp-practice</span>
+            <span class="post-date" title="2025-08-21 19:41:00">2025/08/21</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2025/04/24/Openstack/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OpenStack">OpenStack</span>
+            <span class="post-date" title="2025-04-24 09:04:00">2025/04/24</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2024/11/04/%E6%99%BA%E8%83%BD%E8%BF%90%E7%BB%B4/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="智能运维">智能运维</span>
+            <span class="post-date" title="2024-11-04 15:56:53">2024/11/04</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/04/16/%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="网络工程师">网络工程师</span>
+            <span class="post-date" title="2024-04-16 22:14:00">2024/04/16</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/STP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="STP">STP</span>
+            <span class="post-date" title="2024-01-27 14:01:00">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/VLAN/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="VLAN">VLAN</span>
+            <span class="post-date" title="2024-01-27 11:42:00">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/LLDP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="LLDP">LLDP</span>
+            <span class="post-date" title="2024-01-27 11:31:00">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/Telnet/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Telnet">Telnet</span>
+            <span class="post-date" title="2024-01-27 10:45:00">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2024/01/27/SSH/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SSH">SSH</span>
+            <span class="post-date" title="2024-01-27 10:44:00">2024/01/27</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2023/12/22/WireGuard/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="WireGuard">WireGuard</span>
+            <span class="post-date" title="2023-12-22 07:40:00">2023/12/22</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/12/21/Stack-Port/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Stack Port">Stack Port</span>
+            <span class="post-date" title="2023-12-21 19:31:00">2023/12/21</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/12/18/RouterOS/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="RouterOS">RouterOS</span>
+            <span class="post-date" title="2023-12-18 17:05:00">2023/12/18</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2023/12/18/Git/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="GIT">GIT</span>
+            <span class="post-date" title="2023-12-18 17:00:00">2023/12/18</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2023/11/30/HelpDesk/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HelpDesk">HelpDesk</span>
+            <span class="post-date" title="2023-11-30 21:21:00">2023/11/30</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2023/11/18/OpenWrt/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OpenWrt">OpenWrt</span>
+            <span class="post-date" title="2023-11-18 17:03:00">2023/11/18</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2023/09/07/IELTS/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="IELTS">IELTS</span>
+            <span class="post-date" title="2023-09-07 17:57:07">2023/09/07</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/06/01/HCNP-Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="华为NP网络实验">华为NP网络实验</span>
+            <span class="post-date" title="2023-06-01 10:46:04">2023/06/01</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/06/01/CCNP-Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CCNP Lab">CCNP Lab</span>
+            <span class="post-date" title="2023-06-01 10:46:00">2023/06/01</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2023/04/26/1Panel/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1Panel">1Panel</span>
+            <span class="post-date" title="2023-04-26 14:09:00">2023/04/26</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/08/HCNA-Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HCNA Lab">HCNA Lab</span>
+            <span class="post-date" title="2023-04-08 11:46:00">2023/04/08</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/07/CCNA-Lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CCNA Lab">CCNA Lab</span>
+            <span class="post-date" title="2023-04-07 20:13:29">2023/04/07</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2023/04/07/OSPF/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OSPF">OSPF</span>
+            <span class="post-date" title="2023-04-07 19:19:00">2023/04/07</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2022/08/12/HomeLab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HomeLab">HomeLab</span>
+            <span class="post-date" title="2022-08-12 15:09:00">2022/08/12</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2022/08/10/frp/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="FRP">FRP</span>
+            <span class="post-date" title="2022-08-10 10:22:24">2022/08/10</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2022/07/28/WDS-MDT/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="WDS+MDT">WDS+MDT</span>
+            <span class="post-date" title="2022-07-28 21:33:00">2022/07/28</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2022/06/21/Anaconda/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Anaconda">Anaconda</span>
+            <span class="post-date" title="2022-06-21 20:56:00">2022/06/21</span>
+        </a>
+        
+        <a  class="全部文章 网络 "
+           href="/2022/05/25/%E7%BD%91%E7%BB%9C%E8%A7%84%E5%88%92%E5%B8%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="网络规划师">网络规划师</span>
+            <span class="post-date" title="2022-05-25 11:57:00">2022/05/25</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2022/03/14/influxDB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="InfluxDB">InfluxDB</span>
+            <span class="post-date" title="2022-03-14 13:25:00">2022/03/14</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2022/03/06/MongoDB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="MongoDB">MongoDB</span>
+            <span class="post-date" title="2022-03-06 17:38:00">2022/03/06</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/12/27/Vim/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="VIM">VIM</span>
+            <span class="post-date" title="2021-12-27 09:15:00">2021/12/27</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/12/16/vsftpd/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="VSFTPD">VSFTPD</span>
+            <span class="post-date" title="2021-12-16 08:49:00">2021/12/16</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2021/10/06/Redis/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="REDIS">REDIS</span>
+            <span class="post-date" title="2021-10-06 17:19:00">2021/10/06</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/20/K8s-lab/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="K8s_lab">K8s_lab</span>
+            <span class="post-date" title="2021-09-20 08:04:00">2021/09/20</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/15/K8s/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="K8s">K8s</span>
+            <span class="post-date" title="2021-09-15 20:48:00">2021/09/15</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/08/Ingress/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Ingress">Ingress</span>
+            <span class="post-date" title="2021-09-08 23:56:00">2021/09/08</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/09/08/Harbor/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Harbor">Harbor</span>
+            <span class="post-date" title="2021-09-08 18:04:00">2021/09/08</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/08/26/GO/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Go">Go</span>
+            <span class="post-date" title="2021-08-26 11:50:00">2021/08/26</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/08/15/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Java多线程">Java多线程</span>
+            <span class="post-date" title="2021-08-15 14:36:00">2021/08/15</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/08/11/Nginx/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Nginx">Nginx</span>
+            <span class="post-date" title="2021-08-11 23:28:00">2021/08/11</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/08/06/Maven/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Maven">Maven</span>
+            <span class="post-date" title="2021-08-06 09:38:00">2021/08/06</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/07/31/Springboot%E9%A1%B9%E7%9B%AE/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Springboot项目">Springboot项目</span>
+            <span class="post-date" title="2021-07-31 19:34:00">2021/07/31</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/07/22/Docker/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Docker">Docker</span>
+            <span class="post-date" title="2021-07-22 14:53:00">2021/07/22</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/07/19/SpringSecurity/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SpringSecurity">SpringSecurity</span>
+            <span class="post-date" title="2021-07-19 20:58:00">2021/07/19</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/07/13/Mybatis/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Mybatis">Mybatis</span>
+            <span class="post-date" title="2021-07-13 10:38:00">2021/07/13</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/07/05/NVM/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="NVM">NVM</span>
+            <span class="post-date" title="2021-07-05 08:15:00">2021/07/05</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/06/26/Java-Project/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Java Project">Java Project</span>
+            <span class="post-date" title="2021-06-26 07:58:00">2021/06/26</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/06/23/Vue/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Vue">Vue</span>
+            <span class="post-date" title="2021-06-23 10:48:00">2021/06/23</span>
+        </a>
+        
+        <a  class="全部文章 开发 "
+           href="/2021/06/08/SpringBoot2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SpringBoot2">SpringBoot2</span>
+            <span class="post-date" title="2021-06-08 16:51:00">2021/06/08</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2021/06/07/CentOS7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CentOS7">CentOS7</span>
+            <span class="post-date" title="2021-06-07 23:16:00">2021/06/07</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/04/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="设计模式">设计模式</span>
+            <span class="post-date" title="2021-04-18 22:19:00">2021/04/18</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/2021/03/22/SQL/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SQL">SQL</span>
+            <span class="post-date" title="2021-03-22 18:33:00">2021/03/22</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2021/03/14/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="时间管理">时间管理</span>
+            <span class="post-date" title="2021-03-14 21:49:00">2021/03/14</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2021/03/14/Hexo/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hexo">Hexo</span>
+            <span class="post-date" title="2021-03-14 08:31:00">2021/03/14</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2020/09/12/UltraISO/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="UltraISO">UltraISO</span>
+            <span class="post-date" title="2020-09-12 11:42:00">2020/09/12</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2020/09/12/Ventoy/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Ventoy">Ventoy</span>
+            <span class="post-date" title="2020-09-12 11:42:00">2020/09/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-HAM" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">HAM</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="网络">网络</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2026-11-12 17:55:01'>2026-11-09 16:44</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:6.6k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#B%E7%B1%BB"><span class="toc-text">B类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE"><span class="toc-text">题目</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="B类"><a href="#B类" class="headerlink" title="B类"></a>B类</h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><pre><code class="hljs bash">
+
+1. 135.7-137.8kHz频段属于低频(LF)，又称长波。
+2. 1800-2000kHz频段属于中频(MF)，又称为中波。
+3. 28-29.7MHz频段属于高频(HF)，又称短波。
+4. 50-54MHz频段属于甚高频(VHF)，又称为米波
+5. 2300-2450MHz频段属于特高频(UHF)，又称为分米波。WiFi的2.4GHz频段与此相邻。
+6. 5.650-5.850GHz频段属于超高频(SHF)，又称厘米波。C波段卫星下行频率(3.7-4.2Ghz)与之相邻。
+7. 10-10.5GHz频段属于超高频(SHF)，又称厘米波。Ku波段卫星下行频率(11.7-12.2Ghz)与之相邻。
+8. 241-250GHz频段属于极高频(EHF)，又称毫米波。
+9. THF一般指300Ghz以上。
+
+
+
+
+
+
+<span class="hljs-comment"># 212</span>
+业余电台与公众对讲机分属不同业务，频率和调制方式均不同，擅自 “扩频” 使用属违法操作，不能互相通信。
+<span class="hljs-comment"># 220</span>
+ITU 《无线电规则》将世界划分为3个区域 (region)，中国位于第3区。
+<span class="hljs-comment"># 221</span>
+全球3大区域的划分方法源自国际电信联盟 (ITU) 的 《无线电规则》
+<span class="hljs-comment"># 222</span>
+ITU 三大区域划分的概要描述: 1区 (欧洲、非洲、俄罗斯亚洲部分等), 2区(美洲), 3区(亚洲大部、大洋洲)。
+<span class="hljs-comment"># 223</span>
+在 ITU 第 3 区 (中国所在区)，40米业余波段的频率范围是 7.000-7.200MHz
+<span class="hljs-comment"># 224</span>
+对于 FM 模式 (带宽~20kHz)，为保证信号边带不超出规划范围。主载波需距频段边缘至少半个带宽 (10kHz)。
+144.035 + 0.012 = 144.047MHz;
+145.800 - 0.012 = 145.788MHz;
+<span class="hljs-comment"># 225</span>
+对于 SSB 模式 (带宽 ~3kHz)，主载波需距频段边缘至少半个带宽 (1.5 kHz)。
+144.035 + 0.002 = 144.037MHz
+145.800 - 0.005 = 145.795MHz (计算中考虑了频率容限)
+<span class="hljs-comment"># 228</span>
+29.3-29.51MHz是10米业余波段中划分给卫星业余业务 (Space Service) 的专用频段，其他业务不应占用。
+<span class="hljs-comment"># 229</span>
+145.8-146MHz是2米业余波段中划分给卫星业余业务的专用频段。
+<span class="hljs-comment"># 230</span>
+435-438MHz是70厘米业余波段中划分给卫星业余业务的主要频段。
+<span class="hljs-comment"># 231</span>
+“CQ分区” 是由美国 《CQ》 杂志制定的WAZ (Worked All zones) 奖状规则中定义的。
+<span class="hljs-comment"># 232</span>
+中国的 CQ 分区主要为 23、24、27分区
+<span class="hljs-comment"># 233</span>
+中国的 ITU 分区主要为 33、42、43、44、50分区
+<span class="hljs-comment"># 234</span>
+使用 ITU 标准的语音字母解释法 (如 Alpha, Bravo, Charlie等) 是国际通行的清晰拼读方法。
+<span class="hljs-comment"># 235</span>
+呼号 BH1XYZ: B=Bravo, H=Hotel, 1=One, X=X-ray, Y=Yankee, Z=Zulu
+<span class="hljs-comment"># 236</span>
+呼号 B7CRA: B=Bravo, 7=Seven, C=Charlie, R=Romeo, A=Alfa
+<span class="hljs-comment"># 237</span>
+呼号 4U1UN: 4=Four, U=Uniform, 1=One, U=Uniform, N=November
+<span class="hljs-comment"># 238</span>
+呼号 VR2ZQW: V=Victor, R=Romeo, 2=Two, Z=Zulu, Q=Quebec, W=Whiskey
+<span class="hljs-comment"># 239</span>
+呼号 BS7H: B=Bravo, S=Sierra, 7=Seven, H=Hotel
+<span class="hljs-comment"># 240</span>
+呼号 JA2IGY: Juliett, A=Alfa, 2=Two, I=India, G=Golf, Y=Yankee
+<span class="hljs-comment"># 241</span>
+呼号 K3TRX/VE6: K=Kilo, 3=Three, T=Tango, R=Romeo, X=Xray, Portable=便携操作分隔符, V=Victor, E=Echo, 6=Six
+<span class="hljs-comment"># 242</span>
+3DA0FZ/DL5CMP: 3=Three, D=Delta, A=Alfa, 0=Zero, F=Foxtrot, Z=Zulu, Portable=便携操作分隔符, D=Delta, L=Lima, 5=Five, C=Charlie, M=Mike, P=Papa
+<span class="hljs-comment"># 243 </span>
+呼号(广为流传的另类字母解释法来拼读呼号) JA2IGY: Japan America Two Italy Germany Yokohama
+<span class="hljs-comment"># 244</span>
+呼号(广为流传的另类字母解释法来拼读呼号) F5EQU: Florida Five England Queenk United
+<span class="hljs-comment"># 245</span>
+呼号(广为流传的另类字母解释法来拼读呼号) WH8ZDP: Washington Honolulu Eight Zanzibar Denmark Portugal
+<span class="hljs-comment"># 246</span>
+呼号(广为流传的另类字母解释法来拼读呼号) S53MNO: Sugar Five Three Mexico Norway Ontario
+<span class="hljs-comment"># 247</span>
+CQ 呼叫是普遍呼叫 (Call <span class="hljs-keyword">for</span> Any station), 面向所有电台，部分国内国外。
+<span class="hljs-comment"># 248</span>
+标准呼叫格式: 重复 CQ 两到三次，报己方呼号两到三次，并说明 “呼叫CQ并等待” (calling CQ and standing by)
+<span class="hljs-comment"># 249</span>
+标准应答格式: 先报出对方呼号一次至两次，再报己方呼号一至两次，表示正在回应其呼号。
+<span class="hljs-comment"># 250</span>
+呼叫特定电台时应先呼对方呼号，再报己方呼号。建立联络后再说明具体事宜。
+<span class="hljs-comment"># 251</span>
+信号报告 (RST) 是业余无线电通联中首选交换的核心信息，用于相互确认通信质量和传播状况。
+<span class="hljs-comment"># 252</span>
+交换信号报告的首要目的是实时了解传播条件，以便双方选择最合适的频率、功率和天线进行操作。
+<span class="hljs-comment"># 253</span>
+RST 报告中，R(Readability) 代表信号可辨度，即信号清晰程度，从1 (无法辨识) 到 5 (非常清晰)
+<span class="hljs-comment"># 254</span>
+CW 报告用 RST 三位数 (559: 可辨度5, 强度5, 音调9); FM 报告用 RS 两位数 (55: 可辨度5, 强度5)。强度表指示为 S5, 故强度为 5。
+<span class="hljs-comment"># 255</span>
+在呼叫前询问 <span class="hljs-string">&quot;Is this frequency in use?&quot;</span> (本频率有人使用吗？) 是国际通行的礼仪，可有效避免干扰他人正在进行的通信。
+<span class="hljs-comment"># 256</span>
+请求插入 (Break) 的正确方法是在对方通话间隙发出请求，得到许可后再加入，并报上自己的呼号。
+<span class="hljs-comment"># 257</span>
+遇险呼叫拥有最高优先级。听到遇险呼叫应立即停止所有发射，优先倾听并确认遇险情况，提供可能的帮助。
+<span class="hljs-comment"># 258</span>
+业余无线电礼仪的核心是尊重他人。请求插入前应考虑自己的加入是否会打扰原通信放的交谈。
+<span class="hljs-comment"># 259</span>
+对于不影响他人的飞快原则性操作问题，应通过私下方式友好地提出建议，避免在频率上公开指责。
+<span class="hljs-comment"># 260</span>
+对违法电台的干扰，个人不应在频率上与之对抗或进行压制，而应记录信息 (时间、频率、内容) 并向无委举报。
+<span class="hljs-comment"># 261</span>
+对于长时间的深入交流，使用电话或互联网等商用通信方式更为可靠、高效，且不占用宝贵的业余频谱资源。
+<span class="hljs-comment"># 262</span>
+电台日志必须包含的基本要素是: 日期、时间、频率、模式、对方呼号、双方信号报告。
+<span class="hljs-comment"># 263</span>
+用缩语表示日志必要内容即为: DATE, TIME, FREQ, MODE, CALL(对方), RST(双方)。
+<span class="hljs-comment"># 264</span>
+交换 QSL 卡片具有确认通联、设备验证、申请奖状、收藏纪念等多重意义。
+<span class="hljs-comment"># 265</span>
+一张有效的 QSL 卡片应包含双方呼号，通联时间、频率、模式、信号报告、操作员签名和通信地址等基本信息。
+<span class="hljs-comment"># 266</span>
+QSL 卡片是确认通联或收听 (SWL) 的证明，不应作为空白名片随意赠送。非通联获得的卡片应注明 <span class="hljs-string">&quot;Eyeball QSO&quot;</span> 等
+<span class="hljs-comment"># 267</span>
+IRC (International Reply Coupon, 国际回信卷) 是对方为支付回邮邮资而附上的。收到后应确认日志，尽快直接回卡。
+<span class="hljs-comment"># 268</span>
+SASE (Self-Addressed Stamped Envelope) 即自带地址邮资的回邮信封，是请求对方回卡的常用方式。
+<span class="hljs-comment"># 269</span>
+SWL (Short Wave listener) 是指短波收听者，他们不发射，只收听并寄发收听报告卡。
+<span class="hljs-comment"># 270</span>
+144MHz (2米) 业余中继台大的标准频差是 0.6MHz (600kHz); 430Mhz(70厘米) 业余中继台的标准频差是 5MHz.
+<span class="hljs-comment"># 271</span>
+通过中继台呼叫某特定电台时，应直接呼叫对方呼号并报出己方呼号。
+<span class="hljs-comment"># 272</span>
+业余中继台是宝贵的公众资源，首要设计目标是保障应急通信，因此应尽量保持通信，避免长时间占用。
+<span class="hljs-comment"># 273</span>
+国际电信联盟 (ITU) 对 <span class="hljs-string">&quot;深空&quot;</span> 的定义是指离地球距离大于等于 2 * 10^6 km的空间。
+<span class="hljs-comment"># 274</span>
+轨道倾角是指轨道平面与地区赤道平面的夹角，从赤道平面沿地球自传方向 (逆时针) 到轨道升交点的角度。
+<span class="hljs-comment"># 275</span>
+卫星的周期是指卫星连续两次经过升交点 (或轨道上其他固定点) 的时间间隔。
+<span class="hljs-comment"># 276</span>
+地球同步卫星的运行周期等于地球的自转周期 (23小时56分04秒)
+<span class="hljs-comment"># 277</span>
+太阳同步卫星的轨道平面与太阳和地球的连线始终保持一个固定的夹角，从而使卫星每次过顶某地的地方时大致相同。
+<span class="hljs-comment"># 278</span>
+地球静止卫星是位于地球赤道上空约 35786 公里、运行周期与地球自转周期相同、对地相对禁止的卫星。它是地球同步卫星的一种特殊类型。
+<span class="hljs-comment"># 279</span>
+升轨道 (Ascending Pass) 指卫星从南半球向北半球飞越的轨道段。
+<span class="hljs-comment"># 280</span>
+降轨道 (Descending) 指卫星从北半球向南半球飞越的轨道段。
+<span class="hljs-comment"># 281</span>
+卫星的周期是指它绕地球轨道运行一周所需的时间。
+<span class="hljs-comment"># 282</span>
+线性转发器将上行频率整体平移 (或反转) 一个固定频差后转发下来，不改变信号的调制特性，可同时中继多个信号。
+<span class="hljs-comment"># 283</span>
+线性转发器的核心特点是透明转发，保留输入信号的所有调制信息，支持SSB、CW、AM、FM等多种模式。
+<span class="hljs-comment"># 284 </span>
+卫星姿态变化 (翻滚) 会导致其天线极化方向相对于地面站发生变化，从而引起信号强度的周期性快哀落。
+<span class="hljs-comment"># 285</span>
+开普勒轨道看根数 (Keplerian Elements) 是描述卫星瞬间轨道状态的一组参数，是预测软件计算卫星位置的基础。
+<span class="hljs-comment"># 286</span>
+低轨卫星覆盖范围小，采用存储转发 (Store and Forward) 方式可实现全球通信，如APRS、SSTV、分组无线电等
+<span class="hljs-comment"># 287</span>
+最有效的方法是监听卫星的信标信号，调整上行功率使自己的下行型号强度与信标强度相近。
+<span class="hljs-comment"># 288 业余卫星通信中所说的A、B、K、JA、JD、S、T等工作方式，表示的是:</span>
+这些字母代号定义了转发器上下行频段和模式。例如: Mode A=2m上行/10m下行; modeB=70m上行/2m下行; Mode J=2m上行/70cm下行。
+<span class="hljs-comment"># 289</span>
+多普勒效应是指由于发射源与接收者之间的相对运动，导致接收频率发生偏移的物理现象。
+<span class="hljs-comment"># 290</span>
+多普勒频移规律是: 卫星飞来时相对速度增加，接收频率变高 (正频偏); 飞离时相对抗速度小，接收频率变低 （负频偏）; 距离越远，相对速度变化越快，频偏越大; 过顶时相对速度径向分量为零，频偏最小。
+<span class="hljs-comment"># 291</span>
+低轨道和椭圆轨道所需的发射能量较小，发射成本远低于地球同步轨道。
+<span class="hljs-comment"># 295</span>
+中文话音呼叫CQ的标准格式: 重复CQ三次，报己方呼号并用解释法拼读，再次说明 <span class="hljs-string">&quot;呼叫CQ,听到请回答&quot;</span>.
+<span class="hljs-comment"># 296</span>
+英文话音呼叫CQ的标准格式：CQ CQ CQ, this is [呼号] [拼读呼号], [呼号] calling CQ and standing by.
+<span class="hljs-comment"># 297</span>
+中文呼叫特定电台的标准格式: 重复对方呼号三次，报己方呼号并用解释法拼读，说明 <span class="hljs-string">&quot;呼叫，听到请回答&quot;</span>。
+<span class="hljs-comment"># 298</span>
+英文呼叫特定电台的标准格式: [对方呼号] [对方呼号] [对方呼号], this is [己方呼号] [拼读己方呼号], [己方呼号] calling you and standing by.
+<span class="hljs-comment"># 299</span>
+中文报告信号的标准方式: 对方呼号，你的信号时xxx(报告值), 并询问对方是否超收(QSL?)。
+<span class="hljs-comment"># 300</span>
+英文报告信号的标准方式: 对方呼号: you are XXX(报告值), QSL?
+<span class="hljs-comment"># 301</span>
+QTH是Q简语，代表 <span class="hljs-string">&quot;我的位置是...&quot;</span>
+<span class="hljs-comment"># 302</span>
+英文介绍位置: My QRH is [地点]
+<span class="hljs-comment"># 303</span>
+不通国家或地区的爱好者互致美好祝愿并表达再见之意的词:
+Cheeiro(英式再见)、Ciao ciao(意式再见)、Do svidaniya(俄式再见)是不同国家爱好者在通联结束时的告别用语。
+<span class="hljs-comment"># 304</span>
+回应CW呼叫时，发报速度不应超过对方的速度，且必须保证自己能够准确抄收这个速度下的电码，以确保沟通顺畅。
+<span class="hljs-comment"># 305</span>
+QRL?是Q简语，意为 <span class="hljs-string">&quot;这个频率有人使用吗?&quot;</span> <span class="hljs-string">&quot;或你忙吗?&quot;</span> 用于呼叫前确认频率空闲。
+<span class="hljs-comment"># 306</span>
+业余电台 BH1ZZZ 用 CW 或其他文字方式发起CQ呼号的方法为: 
+CQ CQ CQ DE BH1ZZSZ BH1ZZZ BH1ZZZ PSE K
+CW呼叫CQ的标准格式: CQ CQ CQ DE[己方呼号] [己方呼号] [己方呼号] K (邀请任何电台回答)。
+<span class="hljs-comment"># 307 </span>
+业余电台 BH1ZZZ 使用 CW 或其他文字方式呼叫 BH8YYY 的方法为:
+BH8YYY BH8YYY BH8YYY DE BH1ZZZZ BH1ZZZ BH1ZZZ PSE K
+CW 呼叫特定电台的标准格式: [对方呼号] [对方呼号] [对方呼号] DE [己方呼号] [己方呼号] [己方呼号] K (要求该电台回答)
+<span class="hljs-comment"># 308</span>
+发送信号报告的标准格式: UR RST 579(您的RST报告是579) 或简化为 UR 579。
+<span class="hljs-comment"># 309</span>
+确认收到信号报告并致谢的标准格式: R(Roger, 收到) TKS(Thanks) FER(<span class="hljs-keyword">for</span>) RPT(Report).
+<span class="hljs-comment"># 310</span>
+感谢对方进行良好通联的常用句: TNX FER NICE QSO(感谢这次良好的通联) ES HPE CU AGN(希望下次再见) 73 TU (致以最好的祝愿，谢谢你)
+<span class="hljs-comment"># 311</span>
+在竞赛或DX通联中，为追求速度，常用极简的 <span class="hljs-string">&quot;TU&quot;</span> (Thank You) 来表达感谢和结束通联。
+<span class="hljs-comment"># 312</span>
+介绍自己的名字的标准格式: NAME [名字]
+<span class="hljs-comment"># 313</span>
+OP是Operrator (操作员)的缩语，介绍操作员名字: OP [名字]
+<span class="hljs-comment"># 314</span>
+DR是Dear (尊称的) 的缩语，用于礼貌地称呼对方操作员名字: DR [名字]
+<span class="hljs-comment"># 315</span>
+描述设备的常用缩语: RCVR/RX(接收机), XMTR/TX(发射机), XCVR/TXRX(收发信机), RIG(电台设备统称)
+<span class="hljs-comment"># 317</span>
+询问对方功率的最简单直接的方式: PWR? (功率?)
+<span class="hljs-comment"># 318</span>
+介绍功率约值的格式: PWR ABT [数值] w (功率约xx瓦). ABT=About
+<span class="hljs-comment"># 319</span>
+介绍天线的标准格式: ANT [天线类型] [高度] [单位]. GP=Ground Plane(垂直接地天线), MH=Meters High(米高)
+<span class="hljs-comment"># 320</span>
+交换天气信息的格式: WX [天气状况] ES TEMP ABT [温度] [单位]. WX=Wealther, ES=and, TEMP=Temperature, ABT=about.
+<span class="hljs-comment"># 321</span>
+进行CW联络，如需了解对方的抄手情况，除了 <span class="hljs-string">&quot;QSL?&quot;</span>之外，我们还可以问 HW?
+HW? (How Copy?) 是 <span class="hljs-string">&quot;超收情况如何？&quot;</span>的常用缩语，用于询问对方是否听清或抄收。
+<span class="hljs-comment"># 323</span>
+QRM? 是询问 <span class="hljs-string">&quot;我的信号有收到他台干扰吗?&quot;</span>
+<span class="hljs-comment"># 324</span>
+QRM 是告知对方 <span class="hljs-string">&quot;你的信号正遭受他台干扰&quot;</span>。
+<span class="hljs-comment"># 325</span>
+QRN? 是询问 <span class="hljs-string">&quot;我的信号有收到天电干扰吗？&quot;</span>
+<span class="hljs-comment"># 326</span>
+QRN 是告知对方 <span class="hljs-string">&quot;你的信号正遭受天电干扰&quot;</span>。
+<span class="hljs-comment"># 327</span>
+CW 符号 <span class="hljs-string">&quot;AS&quot;</span> (.--...) 表示 <span class="hljs-string">&quot;等待 Stand By&quot;</span>。
+<span class="hljs-comment"># 328</span>
+<span class="hljs-string">&quot;PSE QSL VIA BURO&quot;</span> 意为 <span class="hljs-string">&quot;请通过卡片管理局 (Bureau) 寄送QSL卡片&quot;</span>。这里的QSL指实体确认卡片。
+<span class="hljs-comment"># 329</span>
+常用告别缩语: CU (See You), CU AGN (See You Again), GB (Good Bye)。
+<span class="hljs-comment"># 330</span>
+CW 符号 <span class="hljs-string">&quot;SK&quot;</span> (...----.---) 通常表示通联结束 (End of Contact), 常与 <span class="hljs-string">&quot;CL&quot;</span> (Closing) 同义。
+<span class="hljs-comment"># 331</span>
+QRP 操作时如果对方反映信号不好，我们可能会追问是否需要增加功率。此时可发送:
+QRO? 是询问 <span class="hljs-string">&quot;需要我增大功率吗？&quot;</span>.
+<span class="hljs-comment"># 332</span>
+通联时，如认为 QRP 操作足以保证可靠联络，则可与对方协商降低功率。短句为:
+QRP? 是询问 <span class="hljs-string">&quot;(我) 可以降低功率 (进行QRP操作)吗？&quot;</span>。
+<span class="hljs-comment"># 333</span>
+QRP 是 Q 简语，表示 “请降低发射功率” 或 “我正在使用小功率发射”。在呼号后加/QRP通常表示操作功率不超过5W。
+<span class="hljs-comment"># 334</span>
+PSE QRQ 是 “请发得快一些” 的标准请求。
+<span class="hljs-comment"># 335</span>
+QRQ? 是 “(你是要求我) 发快一些吗？”， 用于确认对方的速度请求。
+<span class="hljs-comment"># 336</span>
+PSE QRS 是 “请发得慢一些” 得标准请求。
+<span class="hljs-comment"># 337</span>
+QRS? 是 “（你是要求我） 发慢一些吗？”，用于确认对方的速度请求。
+<span class="hljs-comment"># 338</span>
+QRT 是 Q 简语，表示 “停止发射”，常用于通联结束，表示要关机了。
+<span class="hljs-comment"># 339</span>
+QRU? 是询问 “你还有事吗？” 或 “你有消息要发吗？”，常用于通联结束前。
+<span class="hljs-comment"># 340</span>
+QRU 是告知对方 “我这里没事了” 或 “我没有消息要发了”。
+<span class="hljs-comment"># 341</span>
+QRV IN [活动名]？ 是 “你准备参加[某活动]吗？” 的常用句式。 QRV=Ready。
+<span class="hljs-comment"># 342</span>
+QRV 是 Q 简语，含义是 “我准备好了。”
+<span class="hljs-comment"># 343</span>
+QRZ? 是 “谁在呼叫我？” 或 “请重复你的呼号”，用于未听清对方呼号时请求重复。
+<span class="hljs-comment"># 344</span>
+QRZ 是 Q 简语，含义是 “你被XXX呼叫”，用于呼叫特定电台。做疑问句时意为 “谁在叫我？”
+
+<span class="hljs-comment"># 345</span>
+早期用 QSA 报告信号强度，分 1-5 级。现在信号报告中的 S(Strenght) 即源于此。
+<span class="hljs-comment"># 346</span>
+QSB? 是询问 “我的信号有衰落吗？”
+<span class="hljs-comment"># 347</span>
+QSB 是 Q 简语，含义是 “你的信号有衰落”，指信号强度发生波动。
+<span class="hljs-comment"># 348</span>
+QSD? 是询问 “我的发报手法有问题吗？”。 QSD=Keying defect.
+<span class="hljs-comment"># 349</span>
+QSD AT [字母] 是告知对方 “发[某字母]时手法有问题”。
+<span class="hljs-comment"># 350</span>
+QSD PSE CK 是告知对方 “发报有键击声，请检查 (你的电键)”。 CK=Check.
+<span class="hljs-comment"># 351</span>
+QSK 是 Q 简语，表示 “我可以在你发射的间隙中收听”， 即具备全断通 (Break-<span class="hljs-keyword">in</span>) 功能，运行插入。
+<span class="hljs-comment"># 352</span>
+QSL? 是请求对方确认 “是否抄收?”。
+<span class="hljs-comment"># 353</span>
+QSL 是 Q 简语，含义是 “我承认收妥”，即确认抄收对方发送的消息。
+<span class="hljs-comment"># 354</span>
+QSO 是 Q 简语，含义是 “直接联络”，泛指业余电台之间的通信。
+<span class="hljs-comment"># 355</span>
+QSP [呼号]？ 是询问 “你能把消息转给[某某电台]吗？”。
+<span class="hljs-comment"># 356 </span>
+QSP 是 Q 简语，含义是 “我将为你转信至某台”。
+<span class="hljs-comment"># 356</span>
+QSX [频率]？ 是询问 “你正在[某频率]守听吗？”。
+<span class="hljs-comment"># 358</span>
+QSX [频率] 是告知对方 “我正在[某频率]守听”。
+<span class="hljs-comment"># 359</span>
+QSY [频率]? 是询问 “能否将频率改到[某某频率]？”。
+<span class="hljs-comment"># 360</span>
+QSY 是 Q 简语，含义是 “改变频率”。
+
+<span class="hljs-comment"># 361</span>
+QTH? 是询问 “你的位置 (地理位置) 在哪里？”。
+<span class="hljs-comment"># 362</span>
+<span class="hljs-string">&quot;73&quot;</span> 是业余无线电中表示 “致以最美好的祝愿” 的传统缩语，用于通联结束。
+<span class="hljs-comment"># 363</span>
+<span class="hljs-string">&quot;UR ADR?&quot;</span> 或 <span class="hljs-string">&quot;UR ADDR?&quot;</span> 是询问 “你的地址是？”。 ADR/ADDR=Address。
+<span class="hljs-comment"># 364</span>
+AGN 是 <span class="hljs-string">&quot;Again&quot;</span> 的缩语，表示 “请重复”。
+<span class="hljs-comment"># 365</span>
+AHR 是 <span class="hljs-string">&quot;Another&quot;</span> 的缩语，表示 “另一个”
+<span class="hljs-comment"># 366</span>
+ARDF 是  <span class="hljs-string">&quot;Amateur Radio Direction Finding&quot;</span> 的缩语，即业余无线电测向。
+<span class="hljs-comment"># 367</span>
+<span class="hljs-string">&quot;BOX&quot;</span> 或 <span class="hljs-string">&quot;P O BOX&quot;</span> 是 <span class="hljs-string">&quot;Post Office Box&quot;</span> (邮政信箱) 的常用缩语
+<span class="hljs-comment"># 368</span>
+BURO 是 <span class="hljs-string">&quot;QSL Bureau&quot;</span> (QSL卡片管理局) 的常用缩语。
+<span class="hljs-comment"># 369</span>
+CK 是 <span class="hljs-string">&quot;Check&quot;</span> 的缩语，表示检查
+<span class="hljs-comment"># 370</span>
+CQ 是 <span class="hljs-string">&quot;Calling any station&quot;</span> 的缩语，表示 “普遍呼叫”。
+<span class="hljs-comment"># 371</span>
+DX 是 <span class="hljs-string">&quot;Distance&quot;</span> 或 <span class="hljs-string">&quot;Distant&quot;</span> 的缩语，泛指 “远距离通信” 或 “国外电台”
+<span class="hljs-comment"># 372</span>
+ES 是 <span class="hljs-string">&quot;And&quot;</span> 的缩语，表示 “和”。
+<span class="hljs-comment"># 373</span>
+FB 是 <span class="hljs-string">&quot;Fine Business&quot;</span> 的缩语，表示 “很好”、“真棒”。
+<span class="hljs-comment"># 374</span>
+FER 是 <span class="hljs-string">&quot;for&quot;</span> 的缩语，表示 “为了”。
+<span class="hljs-comment"># 375</span>
+FREQ 是 <span class="hljs-string">&quot;Frequency&quot;</span> 的缩语，表示 “频率”
+<span class="hljs-comment"># 376</span>
+GA 是 <span class="hljs-string">&quot;Good Afternoon&quot;</span> 或 <span class="hljs-string">&quot;Go Ahead&quot;</span> 的缩语，此处意为 “下午好”
+<span class="hljs-comment"># 377</span>
+GE 是 <span class="hljs-string">&quot;Good Evening&quot;</span> 的缩语，表示 “晚上好”
+<span class="hljs-comment"># 378</span>
+GL 是 <span class="hljs-string">&quot;Good Luch&quot;</span> 的缩语，表示 “祝你好运”
+<span class="hljs-comment"># 379</span>
+GLD 是 <span class="hljs-string">&quot;Glad&quot;</span> 的缩语，表示 “高兴”。
+<span class="hljs-comment"># 380</span>
+GM 是 <span class="hljs-string">&quot;Good Morning&quot;</span> 的缩语，表示 “早晨好”
+<span class="hljs-comment"># 381</span>
+GMT 是 <span class="hljs-string">&quot;Greenwich Mean Time&quot;</span> 的缩语，即格林尼治标准时间，是世界时的基础。
+<span class="hljs-comment"># 382</span>
+GN 是 <span class="hljs-string">&quot;Good Night&quot;</span> 的缩语，表示 “晚安”。
+<span class="hljs-comment"># 383</span>
+GND 是 <span class="hljs-string">&quot;Ground&quot;</span> 的缩语，表示 “地线” 后 “接地”。
+<span class="hljs-comment"># 384</span>
+HNY 是 <span class="hljs-string">&quot;Happy New Year&quot;</span> 的缩语，表示 “新年快乐”。
+<span class="hljs-comment"># 385</span>
+HPE 是 <span class="hljs-string">&quot;Hope&quot;</span> 的缩语，表示 “希望”。 希望去做某件事
+<span class="hljs-comment"># 386</span>
+HPY 或 HPI 是 <span class="hljs-string">&quot;Happy&quot;</span> 的缩语，表示 “幸福”、“快乐”
+<span class="hljs-comment"># 387</span>
+HST 是 <span class="hljs-string">&quot;High Speed Telegraphy&quot;</span> 的缩语，表示 “快速收发报”
+<span class="hljs-comment"># 388</span>
+<span class="hljs-string">&#x27;K&#x27;</span> 是 CW 中表示 “我已发送完毕，请任何电台回复” 的邀请符号。
+<span class="hljs-comment"># 389</span>
+缩语 <span class="hljs-string">&#x27;KN&#x27;</span> 用于指示特定电台回复，常用于竞赛或拥挤频率，表示“请[某某电台]发射，其他电台保持守听”。
+<span class="hljs-comment"># 390</span>
+在 CW 通信中，<span class="hljs-string">&quot;MNY TNX&quot;</span> 或 <span class="hljs-string">&quot;MNI TNX&quot;</span> 是表达 “非常感谢” 的常用缩语组合。
+<span class="hljs-comment"># 391</span>
+业余无线电通信缩语 <span class="hljs-string">&quot;NW&quot;</span> 的意思是 “现在” (Now)。
+<span class="hljs-comment"># 392</span>
+<span class="hljs-string">&#x27;old man&#x27;</span> 的缩语是 <span class="hljs-string">&#x27;OM&#x27;</span>, 用于友好地称呼对方操作员，无关年龄。
+<span class="hljs-comment"># 393</span>
+“操作员” 的缩语是 <span class="hljs-string">&quot;OP&quot;</span> (Operator)
+<span class="hljs-comment"># 394</span>
+“请” 的缩语是 <span class="hljs-string">&quot;PSE&quot;</span> 或 <span class="hljs-string">&quot;PLS&quot;</span> (Please)
+<span class="hljs-comment"># 395</span>
+<span class="hljs-string">&quot;Roger&quot;</span> 的缩语是 <span class="hljs-string">&quot;R&quot;</span>, 表示 “已收妥”、“完全抄收”
+<span class="hljs-comment"># 396</span>
+<span class="hljs-string">&quot;SAE&quot;</span> 指 写好收信人地址的信封 <span class="hljs-string">&quot;(Self-Addressed Envelope)&quot;</span>, 用于请求对方寄回 QSL 卡片。
+<span class="hljs-comment"># 397</span>
+<span class="hljs-string">&quot;SASE&quot;</span> 指 “写好收信人地址并贴好邮票的信封” (Self-Addressed Stamped Envelope), 方便对方回寄卡片。
+<span class="hljs-comment"># 398</span>
+更正错误时表示 “抱歉” 的缩语是 <span class="hljs-string">&quot;SRI&quot;</span> (Sorry)
+<span class="hljs-comment"># 399</span>
+“温度” 的缩语是 <span class="hljs-string">&quot;TEMP&quot;</span> (Temperature)
+<span class="hljs-comment"># 400</span>
+“谢谢” 的缩语是 <span class="hljs-string">&quot;TNX&quot;</span> 或 <span class="hljs-string">&quot;TKS&quot;</span>(Thanks)
+<span class="hljs-comment"># 401</span>
+“谢谢你” 的缩语是 <span class="hljs-string">&quot;TU&quot;</span> (Thank You)
+<span class="hljs-comment"># 402</span>
+“你的” 或 “你是” 的缩语是 <span class="hljs-string">&quot;UR&quot;</span> (Your/You<span class="hljs-string">&#x27;re)</span>
+<span class="hljs-string"># 403</span>
+<span class="hljs-string">缩语 &quot;WL&quot; 意思是 “将要” (Will)</span>
+<span class="hljs-string"># 404</span>
+<span class="hljs-string">缩语 &quot;XYL&quot; 意思是 “妻子” (XYL = ex Young Lady)</span>
+<span class="hljs-string"># 405</span>
+<span class="hljs-string">缩语 &quot;YL&quot; 意思是 “年轻女士” (Young Lady), 泛指女性爱好者。</span>
+<span class="hljs-string"></span>
+<span class="hljs-string"># 406</span>
+<span class="hljs-string">天线 “单元” 的缩语是 &quot;EL&quot;、&quot;ELE&quot; 或 &quot;ELS&quot; (Element/Elements)</span>
+<span class="hljs-string"># 407</span>
+<span class="hljs-string">天线缩写 &quot;DP&quot; 代表 “偶极天线” (Dipole)</span>
+<span class="hljs-string"># 408</span>
+<span class="hljs-string">天线缩写 &quot;GP&quot; 代表 “垂直接地天线” (Ground Plane)。</span>
+<span class="hljs-string"># 409</span>
+<span class="hljs-string">天线缩写 &quot;VER&quot; 代表 “垂直天线” (Vertical)</span>
+<span class="hljs-string"># 410</span>
+<span class="hljs-string">天线缩写 &quot;LW&quot; 代表 “长线天线” (Long Wire)</span>
+<span class="hljs-string"># 411</span>
+<span class="hljs-string">天线缩写 &quot;YAGI&quot; 代表 “八木天线” (Yagi-Uda Antenna)。</span>
+<span class="hljs-string"># 412</span>
+<span class="hljs-string">天线缩写 &quot;BEAM&quot; 常泛指 “定向天线” (Directional Antenna)</span>
+<span class="hljs-string"></span>
+<span class="hljs-string"># 413</span>
+<span class="hljs-string">CW 包的发射类别是 &quot;A1A&quot;, 表示未调制载波的电报。</span>
+<span class="hljs-string"># 414</span>
+<span class="hljs-string">单边带话的发射类别是 &quot;J3E&quot;，表示抑制载波的单边带电话。</span>
+<span class="hljs-string"># 415</span>
+<span class="hljs-string">用 SSB 传输 SSTV 的发射类别是 &quot;F3F&quot;, 表示调频传值。</span>
+<span class="hljs-string"># 416</span>
+<span class="hljs-string">调频话的发射类别是 &quot;F3E&quot;，表示调频电话。</span>
+<span class="hljs-string"># 417</span>
+<span class="hljs-string">用FM话传输 SSTV 的发射类别通用是 &quot;F3F&quot; (调频传真)</span>
+<span class="hljs-string"># 418</span>
+<span class="hljs-string">调频ATV (业余电视) 的发射类别是 &quot;F3F&quot; (调频传真)</span>
+<span class="hljs-string"># 419</span>
+<span class="hljs-string">带外发射调制产生的、刚超出必要带宽的发射 (杂散发射除外)，是需要控制的干扰。</span>
+<span class="hljs-string"># 420</span>
+<span class="hljs-string">AM、FM、PM的中文名称分别是幅度调制 (调幅)、频率调制 (调频)、相位调制 (调相)</span>
+<span class="hljs-string"># 421</span>
+<span class="hljs-string">FM 调制方式抗干扰能力强、音质好，被广泛应用于 VHF/UHF 本地通联。</span>
+<span class="hljs-string"># 422</span>
+<span class="hljs-string">SSB 调制方式带宽窄、功率利用率高，适用于 VHF/UHF 弱信号和远距离通信。</span>
+<span class="hljs-string"># 423</span>
+<span class="hljs-string">SSB 调制方式带宽窄、功率利用率高，是HF话音通信的主要方式。</span>
+<span class="hljs-string"># 424</span>
+<span class="hljs-string">与FM相比、SSB的主要有点是发射带宽窄，节省频谱</span>
+<span class="hljs-string"># 425</span>
+<span class="hljs-string">相比 SSB 方式，FM 的主要缺点是: 无法同时守听多个信号。</span>
+<span class="hljs-string"># 426</span>
+<span class="hljs-string">VHF/UHF 频率的SSB通联通常选用上边带 (USB)</span>
+<span class="hljs-string"># 427</span>
+<span class="hljs-string">14MHz 及以上HF频段的语言通信通常选用上边带 (USB)</span>
+<span class="hljs-string"># 428</span>
+<span class="hljs-string">7MHz 及以下HF频率的语音通信通常选用下边带 (LSB)</span>
+<span class="hljs-string"># 429</span>
+<span class="hljs-string">10.1MHZ 上下使用不同边带是业余无线电界长期形成的惯例，旨在统一标准，减少 confusion</span>
+<span class="hljs-string"># 430</span>
+<span class="hljs-string">发起SSB呼叫时，应与周边电台频率保持 2-3kHz 间隔，避免相互干扰。</span>
+<span class="hljs-string"># 431</span>
+<span class="hljs-string">单边带调制(SSB)是从调幅(AM)发展而来，属于调幅范畴(抑制载波调幅)</span>
+<span class="hljs-string"># 432</span>
+<span class="hljs-string">业余无线电中，CW特指等幅电报 (Continuous Wave), 即莫里斯电码通信</span>
+<span class="hljs-string"># 433</span>
+<span class="hljs-string">CW (等辐包) 只需极窄的带宽来传输信号，是所有调制方式中带宽最窄的。</span>
+<span class="hljs-string"># 434</span>
+<span class="hljs-string">FM 带宽远大于 CW 所需的最小带宽，不符合 &quot;带宽最小化&quot; 的无线电管理原则。</span>
+<span class="hljs-string"># 435</span>
+<span class="hljs-string">过强的音频输入会导致信号失真，产生不必要的谐波和互调，展宽发射带宽，降低通信质量。</span>
+<span class="hljs-string"># 436</span>
+<span class="hljs-string">&#x27;</span>AM 调制中<span class="hljs-string">&#x27;，载波幅度随调制信号变化，&#x27;</span>频率不变<span class="hljs-string">&#x27;(A); 已&#x27;</span>调波振幅<span class="hljs-string">&#x27;与调制信号瞬时值&#x27;</span>成正比<span class="hljs-string">&#x27;(B)</span>
+<span class="hljs-string"># 437</span>
+<span class="hljs-string">调幅型号可根据载波和边带抑制情况分为多种类型: AM、DSB-SC、SSB-SC、VSB，描述均正确</span>
+<span class="hljs-string"># 438</span>
+<span class="hljs-string">&#x27;</span>USB 调制<span class="hljs-string">&#x27; 在频域上相当于将基带信号频谱 (幅度和频率关系) 线性 &#x27;</span>平移<span class="hljs-string">&#x27; 至载频位置。</span>
+<span class="hljs-string"># 439</span>
+<span class="hljs-string">&#x27;</span>LSB 调制<span class="hljs-string">&#x27; 在频域上相当于将基带信号频谱 &#x27;</span>倒置后<span class="hljs-string">&#x27; 再线性平移至载频位置。</span>
+<span class="hljs-string"># 440</span>
+<span class="hljs-string">&#x27;</span>FM 调制中<span class="hljs-string">&#x27;，载波频率随调制信号变化，&#x27;</span>振幅不变<span class="hljs-string">&#x27;(A), &#x27;</span>瞬时频偏(频率变化的幅度)<span class="hljs-string">&#x27;与调制信号瞬时值&#x27;</span>成正比<span class="hljs-string">&#x27;(B)</span>
+<span class="hljs-string"># 441</span>
+<span class="hljs-string">FM 信号的频偏 (频率变化的幅度) 由调制信号的幅度决定。</span>
+<span class="hljs-string"># 442</span>
+<span class="hljs-string">&#x27;</span>PM 调制中<span class="hljs-string">&#x27;， 载波相位随调制信号变化，&#x27;</span>振幅不变<span class="hljs-string">&#x27;(A)；&#x27;</span>瞬时相移<span class="hljs-string">&#x27;与调制信号瞬时&#x27;</span>成正比<span class="hljs-string">&#x27;(B)</span>
+<span class="hljs-string"># 443</span>
+<span class="hljs-string">FM 信号带宽由调制信号的 &#x27;</span>最高频率和最大频偏共同决定<span class="hljs-string">&#x27; (卡森公式)</span>
+<span class="hljs-string"># 444</span>
+<span class="hljs-string">SsB 信号带宽基本等于调制信号本身的带宽 (例如 语言带宽约2.7kHz)</span>
+<span class="hljs-string"># 445</span>
+<span class="hljs-string">WPM (Words Per Minute) 速度的一种计算方法是统计一分钟内的 “点” 数除以 &#x27;</span>50<span class="hljs-string">&#x27;</span>
+<span class="hljs-string"># 446</span>
+<span class="hljs-string">WPM 速度的标准定义是以&#x27;</span>单词<span class="hljs-string">&#x27; “PARIS” 为基准，一分钟能发多少个 “PARIS” 即为多少 WPM.</span>
+<span class="hljs-string"># 447</span>
+<span class="hljs-string">标准莫尔斯电码 timing 为: 点=1T, 划=3t, 点划间隔=1t, 字符间隔=3t, 词间隔=7t (t为点长) &#x27;</span>13137<span class="hljs-string">&#x27;</span>
+<span class="hljs-string"># 448</span>
+<span class="hljs-string">波特率(B)与WPM的换算关系为: B(波特)=WPM/1.2 # &#x27;</span>/<span class="hljs-string">&#x27;</span>
+<span class="hljs-string"># 449</span>
+<span class="hljs-string">常数 K 取决于信道条件: 衰落信道(如HF) 取&#x27;</span>5<span class="hljs-string">&#x27;, &#x27;</span>非衰落<span class="hljs-string">&#x27;信道(如VHF FM) 取3</span>
+<span class="hljs-string"># 450</span>
+<span class="hljs-string">调频话必要带宽的估算公式为: Bn=&#x27;</span>2*(M+D)<span class="hljs-string">&#x27;, 其中M为最高调制频率，D为峰值频偏</span>
+<span class="hljs-string"># 451</span>
+<span class="hljs-string">业余SSTV和FAX通常采用 &#x27;</span>FM<span class="hljs-string">&#x27; 调制方式将视频音频信号调制到射频上。</span>
+<span class="hljs-string"># 454 </span>
+<span class="hljs-string">SSTV 信号中的短促 &quot;咯咯&quot; 声是 &#x27;</span>行同步信号<span class="hljs-string">&#x27;， 用于接收端同步扫描行起始。</span>
+<span class="hljs-string"># 455</span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span></code></pre>
+
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 hjxstart@126.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry"><span class="miit">
+                <img src="/img/gov.png" title="中华人民共和国工业和信息化部">
+                <a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">粤ICP备2021170625号-1</a>
+        </span>
+    
+    ©2019-2022 hjxstart
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
